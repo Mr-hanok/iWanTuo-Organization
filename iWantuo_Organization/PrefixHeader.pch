@@ -1,0 +1,29 @@
+//
+//  PrefixHeader.pch
+//  iWantuo_Organization
+//
+//  Created by 月 吴 on 16/1/12.
+//  Copyright © 2016年 月 吴. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "AppMacro.h"
+#import "ValueUtils.h"
+#import "AlertViewManager.h"
+#import "HUDManager.h"
+#import "UIColor+NSString.h"
+#import "BaseViewController.h"
+#import "APIClient.h"
+
+
+#pragma mark - cocoapods
+#import <BlocksKit/BlocksKit.h>
+#import <BlocksKit/BlocksKit+UIKit.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+
+#endif /* PrefixHeader_pch */
