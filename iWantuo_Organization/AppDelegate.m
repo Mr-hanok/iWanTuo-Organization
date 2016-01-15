@@ -23,6 +23,8 @@
     [self.window  makeKeyAndVisible];
     self.window.rootViewController = [SystemHandler rootViewController];
     
+    [self initializePlat];
+    
     return YES;
 }
 
@@ -47,5 +49,17 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+#pragma mark 初始化第三方
+- (void)initializePlat {
+
+    [self initUmeng];
+}
+
+- (void)initUmeng {
+    //key已更换为iWantuo的了
+    [MobClick startWithAppkey:@"569864e7e0f55af78b001fbb" reportPolicy:BATCH   channelId:nil];
+}
+
 
 @end

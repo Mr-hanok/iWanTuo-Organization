@@ -19,7 +19,7 @@
 #import "UIColor+NSString.h"
 #import "BaseViewController.h"
 #import "APIClient.h"
-
+#import "MobClick.h"
 
 #pragma mark - cocoapods
 #import <BlocksKit/BlocksKit.h>
