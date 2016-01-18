@@ -5,3 +5,4 @@ pod "MagicalRecord"
 pod 'BlocksKit', '~> 2.2.5'
 pod 'SDWebImage'
 pod 'ImagePlayerView'
+pod 'MJRefresh'
