@@ -24,10 +24,11 @@
     [self.navigationController.navigationBar setBarTintColor:kNavigationColor];
     self.navigationController.navigationBar.translucent = NO;
     [self.navigationController.navigationBar setBarStyle:(UIBarStyleBlack)];
-    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    [self.navigationController.navigationBar setTintColor:kNavigationColor];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:19]}];
     [self setBackBtn];
     
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:kNavigationColor};
     UINavigationBar *appearance = [UINavigationBar appearance];
     NSMutableDictionary *textAttrs=[NSMutableDictionary dictionary];
     textAttrs[NSFontAttributeName]=[UIFont systemFontOfSize:20];
@@ -45,7 +46,6 @@
     backItem.title = @"返回";
     backItem.tintColor = [UIColor whiteColor];
     
-    
 //    if (self.tabBarController == nil) {
 //        self.navigationController.navigationItem.backBarButtonItem = backItem;
 //        self.navigationItem.backBarButtonItem = backItem;
@@ -58,8 +58,8 @@
 }
 
 -(void)setBackBtnEventHandler:(void (^)(id sender))handler {
-    UIImage *image = [UIImage imageNamed:@"navigationbarBack"];
-    UIImage *image_h = [UIImage imageNamed:@"navigationbarBack_h"];
+    UIImage *image = [UIImage imageNamed:@"backImage"];
+    UIImage *image_h = [UIImage imageNamed:@"backImage"];
     UIButton* btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.exclusiveTouch = YES;
     NSString* backTitle = @"返回";

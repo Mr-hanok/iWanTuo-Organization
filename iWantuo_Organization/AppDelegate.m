@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "SystemHandler.h"
+#import "LoginViewController.h"
 
 @interface AppDelegate ()
 
@@ -21,7 +22,11 @@
     //设置根视图
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
     [self.window  makeKeyAndVisible];
-    self.window.rootViewController = [SystemHandler rootViewController];
+    //self.window.rootViewController = [SystemHandler rootViewController];
+    LoginViewController *vc = [[LoginViewController alloc]init];
+    UINavigationController *navi = [[UINavigationController alloc]initWithRootViewController:vc];
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navigationBg"] forBarMetrics:UIBarMetricsDefault];
+    self.window.rootViewController = navi;
     
     [self initializePlat];
     

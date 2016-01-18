@@ -20,6 +20,7 @@
 #import "BaseViewController.h"
 #import "APIClient.h"
 #import "MobClick.h"
+#import "NSString+Verify.h"
 
 #pragma mark - cocoapods
 #import <BlocksKit/BlocksKit.h>

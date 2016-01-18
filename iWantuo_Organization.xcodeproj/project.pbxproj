@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37033E331C4C9033009F27DB /* ForgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37033E2B1C4C9033009F27DB /* ForgetViewController.m */; };
+		37033E341C4C9033009F27DB /* ForgetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37033E2C1C4C9033009F27DB /* ForgetViewController.xib */; };
+		37033E351C4C9033009F27DB /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37033E2E1C4C9033009F27DB /* LoginViewController.m */; };
+		37033E361C4C9033009F27DB /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37033E2F1C4C9033009F27DB /* LoginViewController.xib */; };
+		37033E371C4C9033009F27DB /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37033E311C4C9033009F27DB /* RegisterViewController.m */; };
+		37033E381C4C9033009F27DB /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37033E321C4C9033009F27DB /* RegisterViewController.xib */; };
+		37033E401C4C910B009F27DB /* ApiAuthenCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 37033E3B1C4C910B009F27DB /* ApiAuthenCode.m */; };
+		37033E411C4C910B009F27DB /* ApiLoginOutRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 37033E3D1C4C910B009F27DB /* ApiLoginOutRequest.m */; };
+		37033E421C4C910B009F27DB /* ApiLoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 37033E3F1C4C910B009F27DB /* ApiLoginRequest.m */; };
+		37033E461C4C914C009F27DB /* JKCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 37033E451C4C914C009F27DB /* JKCountDownButton.m */; };
+		37033E4A1C4CB7EC009F27DB /* SigningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37033E481C4CB7EC009F27DB /* SigningViewController.m */; };
+		37033E4B1C4CB7EC009F27DB /* SigningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37033E491C4CB7EC009F27DB /* SigningViewController.xib */; };
+		37033E4F1C4CBBCA009F27DB /* SubmitInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37033E4D1C4CBBCA009F27DB /* SubmitInfoViewController.m */; };
+		37033E501C4CBBCA009F27DB /* SubmitInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37033E4E1C4CBBCA009F27DB /* SubmitInfoViewController.xib */; };
 		5B00D7127E6170524D8DD67E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B131BB5C3C7788EB0066AC0 /* libPods.a */; };
 		BE25EB341C44FC5F00068309 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE25EB331C44FC5F00068309 /* main.m */; };
 		BE25EB371C44FC5F00068309 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE25EB361C44FC5F00068309 /* AppDelegate.m */; };
@@ -72,6 +86,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		37033E2A1C4C9033009F27DB /* ForgetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetViewController.h; sourceTree = "<group>"; };
+		37033E2B1C4C9033009F27DB /* ForgetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetViewController.m; sourceTree = "<group>"; };
+		37033E2C1C4C9033009F27DB /* ForgetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgetViewController.xib; sourceTree = "<group>"; };
+		37033E2D1C4C9033009F27DB /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		37033E2E1C4C9033009F27DB /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		37033E2F1C4C9033009F27DB /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		37033E301C4C9033009F27DB /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		37033E311C4C9033009F27DB /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		37033E321C4C9033009F27DB /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		37033E3A1C4C910B009F27DB /* ApiAuthenCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiAuthenCode.h; sourceTree = "<group>"; };
+		37033E3B1C4C910B009F27DB /* ApiAuthenCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiAuthenCode.m; sourceTree = "<group>"; };
+		37033E3C1C4C910B009F27DB /* ApiLoginOutRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiLoginOutRequest.h; sourceTree = "<group>"; };
+		37033E3D1C4C910B009F27DB /* ApiLoginOutRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiLoginOutRequest.m; sourceTree = "<group>"; };
+		37033E3E1C4C910B009F27DB /* ApiLoginRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiLoginRequest.h; sourceTree = "<group>"; };
+		37033E3F1C4C910B009F27DB /* ApiLoginRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiLoginRequest.m; sourceTree = "<group>"; };
+		37033E441C4C914C009F27DB /* JKCountDownButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKCountDownButton.h; sourceTree = "<group>"; };
+		37033E451C4C914C009F27DB /* JKCountDownButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKCountDownButton.m; sourceTree = "<group>"; };
+		37033E471C4CB7EC009F27DB /* SigningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SigningViewController.h; sourceTree = "<group>"; };
+		37033E481C4CB7EC009F27DB /* SigningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SigningViewController.m; sourceTree = "<group>"; };
+		37033E491C4CB7EC009F27DB /* SigningViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SigningViewController.xib; sourceTree = "<group>"; };
+		37033E4C1C4CBBCA009F27DB /* SubmitInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmitInfoViewController.h; sourceTree = "<group>"; };
+		37033E4D1C4CBBCA009F27DB /* SubmitInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmitInfoViewController.m; sourceTree = "<group>"; };
+		37033E4E1C4CBBCA009F27DB /* SubmitInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubmitInfoViewController.xib; sourceTree = "<group>"; };
 		7B131BB5C3C7788EB0066AC0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACA8CD8FCCEFD0CEA801BB92 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BE25EB2F1C44FC5F00068309 /* iWantuo_Organization.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iWantuo_Organization.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -212,6 +249,50 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		37033E291C4C9033009F27DB /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				37033E2A1C4C9033009F27DB /* ForgetViewController.h */,
+				37033E2B1C4C9033009F27DB /* ForgetViewController.m */,
+				37033E2C1C4C9033009F27DB /* ForgetViewController.xib */,
+				37033E2D1C4C9033009F27DB /* LoginViewController.h */,
+				37033E2E1C4C9033009F27DB /* LoginViewController.m */,
+				37033E2F1C4C9033009F27DB /* LoginViewController.xib */,
+				37033E301C4C9033009F27DB /* RegisterViewController.h */,
+				37033E311C4C9033009F27DB /* RegisterViewController.m */,
+				37033E321C4C9033009F27DB /* RegisterViewController.xib */,
+				37033E471C4CB7EC009F27DB /* SigningViewController.h */,
+				37033E481C4CB7EC009F27DB /* SigningViewController.m */,
+				37033E491C4CB7EC009F27DB /* SigningViewController.xib */,
+				37033E4C1C4CBBCA009F27DB /* SubmitInfoViewController.h */,
+				37033E4D1C4CBBCA009F27DB /* SubmitInfoViewController.m */,
+				37033E4E1C4CBBCA009F27DB /* SubmitInfoViewController.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		37033E391C4C910B009F27DB /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				37033E3A1C4C910B009F27DB /* ApiAuthenCode.h */,
+				37033E3B1C4C910B009F27DB /* ApiAuthenCode.m */,
+				37033E3C1C4C910B009F27DB /* ApiLoginOutRequest.h */,
+				37033E3D1C4C910B009F27DB /* ApiLoginOutRequest.m */,
+				37033E3E1C4C910B009F27DB /* ApiLoginRequest.h */,
+				37033E3F1C4C910B009F27DB /* ApiLoginRequest.m */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		37033E431C4C914C009F27DB /* JKCountDownButton */ = {
+			isa = PBXGroup;
+			children = (
+				37033E441C4C914C009F27DB /* JKCountDownButton.h */,
+				37033E451C4C914C009F27DB /* JKCountDownButton.m */,
+			);
+			path = JKCountDownButton;
+			sourceTree = "<group>";
+		};
 		8193BE87F7EA4981EE9BFAF6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,6 +383,7 @@
 		BE25EB651C44FD8500068309 /* ApiTools */ = {
 			isa = PBXGroup;
 			children = (
+				37033E391C4C910B009F27DB /* Login */,
 				BE25EB661C44FD8500068309 /* Api */,
 			);
 			path = ApiTools;
@@ -475,6 +557,7 @@
 		BE25EBC41C44FDFD00068309 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				37033E431C4C914C009F27DB /* JKCountDownButton */,
 				BEE4DA001C48BFB300510308 /* GtSdkLib1.3.2 */,
 				BEE4D9F11C489BBB00510308 /* UMAnalytics_Sdk_3.6.7 */,
 				BE25EBE01C44FDFD00068309 /* TPKeyboardAvoiding */,
@@ -509,6 +592,7 @@
 		BE25EC031C4501C000068309 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				37033E291C4C9033009F27DB /* Login */,
 				BE25EC041C4501C000068309 /* BaseViewController.h */,
 				BE25EC051C4501C000068309 /* BaseViewController.m */,
 			);
@@ -646,7 +730,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37033E361C4C9033009F27DB /* LoginViewController.xib in Resources */,
+				37033E381C4C9033009F27DB /* RegisterViewController.xib in Resources */,
 				BE25EB421C44FC5F00068309 /* LaunchScreen.storyboard in Resources */,
+				37033E341C4C9033009F27DB /* ForgetViewController.xib in Resources */,
+				37033E501C4CBBCA009F27DB /* SubmitInfoViewController.xib in Resources */,
+				37033E4B1C4CB7EC009F27DB /* SigningViewController.xib in Resources */,
 				BE25EB3F1C44FC5F00068309 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -728,26 +817,35 @@
 				BE25EBA01C44FD9200068309 /* NSURL+Path.m in Sources */,
 				BE25EB371C44FC5F00068309 /* AppDelegate.m in Sources */,
 				BE25EB981C44FD9200068309 /* NSCalendar+FSExtension.m in Sources */,
+				37033E351C4C9033009F27DB /* LoginViewController.m in Sources */,
 				BE25EB6D1C44FD8500068309 /* APIClient.m in Sources */,
 				BE25EB9D1C44FD9200068309 /* NSString+Size.m in Sources */,
 				BE25EBA61C44FD9200068309 /* UIView+Image.m in Sources */,
+				37033E331C4C9033009F27DB /* ForgetViewController.m in Sources */,
 				BE25EB6F1C44FD8500068309 /* APIResult.m in Sources */,
+				37033E4A1C4CB7EC009F27DB /* SigningViewController.m in Sources */,
 				BE25EBB11C44FDB300068309 /* TimerHelper.m in Sources */,
 				BE25EB991C44FD9200068309 /* NSDate+CalendarLogic.m in Sources */,
+				37033E421C4C910B009F27DB /* ApiLoginRequest.m in Sources */,
+				37033E401C4C910B009F27DB /* ApiAuthenCode.m in Sources */,
 				BE25EB9E1C44FD9200068309 /* NSString+Validation.m in Sources */,
 				BE25EBA31C44FD9200068309 /* UIImage+Video.m in Sources */,
 				BE25EB6E1C44FD8500068309 /* APIRequest.m in Sources */,
+				37033E461C4C914C009F27DB /* JKCountDownButton.m in Sources */,
 				BE25EBA41C44FD9200068309 /* UIView+Frame.m in Sources */,
 				BE25EBFB1C44FDFE00068309 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				BE25EBF81C44FDFE00068309 /* TPKeyboardAvoidingCollectionView.m in Sources */,
+				37033E371C4C9033009F27DB /* RegisterViewController.m in Sources */,
 				BE25EB341C44FC5F00068309 /* main.m in Sources */,
 				BE25EBF91C44FDFE00068309 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				BE25EC021C45018800068309 /* ValueUtils.m in Sources */,
+				37033E411C4C910B009F27DB /* ApiLoginOutRequest.m in Sources */,
 				BE25EBC11C44FDC700068309 /* AlertViewManager.m in Sources */,
 				BE25EBA11C44FD9200068309 /* UIColor+NSString.m in Sources */,
 				BE25EBC21C44FDC700068309 /* HUDManager.m in Sources */,
 				BE25EB9C1C44FD9200068309 /* NSString+Security.m in Sources */,
 				BE25EB9A1C44FD9200068309 /* NSDate+FSExtension.m in Sources */,
+				37033E4F1C4CBBCA009F27DB /* SubmitInfoViewController.m in Sources */,
 				BE25EB9B1C44FD9200068309 /* NSString+Device.m in Sources */,
 				BE25EBFA1C44FDFE00068309 /* TPKeyboardAvoidingTableView.m in Sources */,
 			);

@@ -32,6 +32,9 @@
 #define kRequestDataRows  @"15"
 
 
+#define LoginAction                 @"login/IosParentlogin"  // 登录接口
+#define LoginQuitAction             @""             // 退出登录接口
+#define AuthenCodeAction            @""            // 获取验证码接口
 
 
 #endif
