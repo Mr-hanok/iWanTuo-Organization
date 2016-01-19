@@ -133,8 +133,9 @@
  *  退出按钮
  */
 - (IBAction)Logout:(UIButton *)sender {
-    
-    kRootViewController = [[LoginViewController alloc]init];
+    LoginViewController *vc = [[LoginViewController alloc]init];
+    UINavigationController *navi = [[UINavigationController alloc]initWithRootViewController:vc];
+    kRootViewController = navi;
 }
 
 #pragma mark - private methods
