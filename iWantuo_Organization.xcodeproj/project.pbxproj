@@ -21,6 +21,40 @@
 		37033E4B1C4CB7EC009F27DB /* SigningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37033E491C4CB7EC009F27DB /* SigningViewController.xib */; };
 		37033E4F1C4CBBCA009F27DB /* SubmitInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37033E4D1C4CBBCA009F27DB /* SubmitInfoViewController.m */; };
 		37033E501C4CBBCA009F27DB /* SubmitInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37033E4E1C4CBBCA009F27DB /* SubmitInfoViewController.xib */; };
+		37E1DDC31C4DD92600245BE6 /* PersonDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E1DD9E1C4DD92600245BE6 /* PersonDetailController.m */; };
+		37E1DDC41C4DD92600245BE6 /* PersonDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E1DD9F1C4DD92600245BE6 /* PersonDetailController.xib */; };
+		37E1DDC51C4DD92600245BE6 /* MyBookingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E1DDA21C4DD92600245BE6 /* MyBookingViewController.m */; };
+		37E1DDC61C4DD92600245BE6 /* MyBookingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E1DDA31C4DD92600245BE6 /* MyBookingViewController.xib */; };
+		37E1DDCB1C4DD92600245BE6 /* MyMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E1DDAE1C4DD92600245BE6 /* MyMessageViewController.m */; };
+		37E1DDCC1C4DD92600245BE6 /* MyMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E1DDAF1C4DD92600245BE6 /* MyMessageViewController.xib */; };
+		37E1DDCD1C4DD92600245BE6 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E1DDB11C4DD92600245BE6 /* MyViewController.m */; };
+		37E1DDCE1C4DD92600245BE6 /* MyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E1DDB21C4DD92600245BE6 /* MyViewController.xib */; };
+		37E1DDCF1C4DD92600245BE6 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E1DDB61C4DD92600245BE6 /* AboutViewController.m */; };
+		37E1DDD01C4DD92600245BE6 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E1DDB71C4DD92600245BE6 /* AboutViewController.xib */; };
+		37E1DDD11C4DD92600245BE6 /* ChangePasswordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E1DDBA1C4DD92600245BE6 /* ChangePasswordController.m */; };
+		37E1DDD21C4DD92600245BE6 /* ChangePasswordController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E1DDBB1C4DD92600245BE6 /* ChangePasswordController.xib */; };
+		37E1DDD31C4DD92600245BE6 /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E1DDBE1C4DD92600245BE6 /* FeedbackViewController.m */; };
+		37E1DDD41C4DD92600245BE6 /* FeedbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E1DDBF1C4DD92600245BE6 /* FeedbackViewController.xib */; };
+		37E1DDD51C4DD92600245BE6 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E1DDC11C4DD92600245BE6 /* SettingViewController.m */; };
+		37E1DDD61C4DD92600245BE6 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E1DDC21C4DD92600245BE6 /* SettingViewController.xib */; };
+		37E1DDDC1C4DDA8A00245BE6 /* MyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E1DDDA1C4DDA8A00245BE6 /* MyCell.m */; };
+		37E1DDDD1C4DDA8A00245BE6 /* MyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E1DDDB1C4DDA8A00245BE6 /* MyCell.xib */; };
+		37E1DDE51C4DDD3E00245BE6 /* MyClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E1DDE31C4DDD3E00245BE6 /* MyClassViewController.m */; };
+		37E1DDE61C4DDD3E00245BE6 /* MyClassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E1DDE41C4DDD3E00245BE6 /* MyClassViewController.xib */; };
+		37E1DDEA1C4DDD5800245BE6 /* MyClassTeacherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E1DDE81C4DDD5800245BE6 /* MyClassTeacherViewController.m */; };
+		37E1DDEB1C4DDD5800245BE6 /* MyClassTeacherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E1DDE91C4DDD5800245BE6 /* MyClassTeacherViewController.xib */; };
+		37E1DDEF1C4DDD7400245BE6 /* MyPushMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E1DDED1C4DDD7400245BE6 /* MyPushMessageViewController.m */; };
+		37E1DDF01C4DDD7400245BE6 /* MyPushMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E1DDEE1C4DDD7400245BE6 /* MyPushMessageViewController.xib */; };
+		37E1DDF41C4DDD8C00245BE6 /* MyStudentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E1DDF21C4DDD8C00245BE6 /* MyStudentViewController.m */; };
+		37E1DDF51C4DDD8C00245BE6 /* MyStudentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E1DDF31C4DDD8C00245BE6 /* MyStudentViewController.xib */; };
+		37E1DDFA1C4DDE3C00245BE6 /* MyFollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E1DDF81C4DDE3C00245BE6 /* MyFollowViewController.m */; };
+		37E1DDFB1C4DDE3C00245BE6 /* MyFollowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E1DDF91C4DDE3C00245BE6 /* MyFollowViewController.xib */; };
+		37E1DE021C4DE29500245BE6 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E1DE001C4DE29500245BE6 /* HomeViewController.m */; };
+		37E1DE031C4DE29500245BE6 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E1DE011C4DE29500245BE6 /* HomeViewController.xib */; };
+		37E1DE071C4DE2B200245BE6 /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E1DE051C4DE2B200245BE6 /* DiscoverViewController.m */; };
+		37E1DE081C4DE2B200245BE6 /* DiscoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E1DE061C4DE2B200245BE6 /* DiscoverViewController.xib */; };
+		37E1DE0C1C4DE2CC00245BE6 /* TopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E1DE0A1C4DE2CC00245BE6 /* TopViewController.m */; };
+		37E1DE0D1C4DE2CC00245BE6 /* TopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E1DE0B1C4DE2CC00245BE6 /* TopViewController.xib */; };
 		5B00D7127E6170524D8DD67E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B131BB5C3C7788EB0066AC0 /* libPods.a */; };
 		BE25EB341C44FC5F00068309 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE25EB331C44FC5F00068309 /* main.m */; };
 		BE25EB371C44FC5F00068309 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE25EB361C44FC5F00068309 /* AppDelegate.m */; };
@@ -109,6 +143,57 @@
 		37033E4C1C4CBBCA009F27DB /* SubmitInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmitInfoViewController.h; sourceTree = "<group>"; };
 		37033E4D1C4CBBCA009F27DB /* SubmitInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmitInfoViewController.m; sourceTree = "<group>"; };
 		37033E4E1C4CBBCA009F27DB /* SubmitInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubmitInfoViewController.xib; sourceTree = "<group>"; };
+		37E1DD9D1C4DD92600245BE6 /* PersonDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonDetailController.h; sourceTree = "<group>"; };
+		37E1DD9E1C4DD92600245BE6 /* PersonDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonDetailController.m; sourceTree = "<group>"; };
+		37E1DD9F1C4DD92600245BE6 /* PersonDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonDetailController.xib; sourceTree = "<group>"; };
+		37E1DDA11C4DD92600245BE6 /* MyBookingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBookingViewController.h; sourceTree = "<group>"; };
+		37E1DDA21C4DD92600245BE6 /* MyBookingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBookingViewController.m; sourceTree = "<group>"; };
+		37E1DDA31C4DD92600245BE6 /* MyBookingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyBookingViewController.xib; sourceTree = "<group>"; };
+		37E1DDAD1C4DD92600245BE6 /* MyMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMessageViewController.h; sourceTree = "<group>"; };
+		37E1DDAE1C4DD92600245BE6 /* MyMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMessageViewController.m; sourceTree = "<group>"; };
+		37E1DDAF1C4DD92600245BE6 /* MyMessageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyMessageViewController.xib; sourceTree = "<group>"; };
+		37E1DDB01C4DD92600245BE6 /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
+		37E1DDB11C4DD92600245BE6 /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
+		37E1DDB21C4DD92600245BE6 /* MyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyViewController.xib; sourceTree = "<group>"; };
+		37E1DDB51C4DD92600245BE6 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		37E1DDB61C4DD92600245BE6 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		37E1DDB71C4DD92600245BE6 /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
+		37E1DDB91C4DD92600245BE6 /* ChangePasswordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordController.h; sourceTree = "<group>"; };
+		37E1DDBA1C4DD92600245BE6 /* ChangePasswordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordController.m; sourceTree = "<group>"; };
+		37E1DDBB1C4DD92600245BE6 /* ChangePasswordController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePasswordController.xib; sourceTree = "<group>"; };
+		37E1DDBD1C4DD92600245BE6 /* FeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
+		37E1DDBE1C4DD92600245BE6 /* FeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
+		37E1DDBF1C4DD92600245BE6 /* FeedbackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedbackViewController.xib; sourceTree = "<group>"; };
+		37E1DDC01C4DD92600245BE6 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		37E1DDC11C4DD92600245BE6 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		37E1DDC21C4DD92600245BE6 /* SettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
+		37E1DDD91C4DDA8A00245BE6 /* MyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCell.h; sourceTree = "<group>"; };
+		37E1DDDA1C4DDA8A00245BE6 /* MyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCell.m; sourceTree = "<group>"; };
+		37E1DDDB1C4DDA8A00245BE6 /* MyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCell.xib; sourceTree = "<group>"; };
+		37E1DDE21C4DDD3E00245BE6 /* MyClassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyClassViewController.h; sourceTree = "<group>"; };
+		37E1DDE31C4DDD3E00245BE6 /* MyClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyClassViewController.m; sourceTree = "<group>"; };
+		37E1DDE41C4DDD3E00245BE6 /* MyClassViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyClassViewController.xib; sourceTree = "<group>"; };
+		37E1DDE71C4DDD5800245BE6 /* MyClassTeacherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyClassTeacherViewController.h; sourceTree = "<group>"; };
+		37E1DDE81C4DDD5800245BE6 /* MyClassTeacherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyClassTeacherViewController.m; sourceTree = "<group>"; };
+		37E1DDE91C4DDD5800245BE6 /* MyClassTeacherViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyClassTeacherViewController.xib; sourceTree = "<group>"; };
+		37E1DDEC1C4DDD7400245BE6 /* MyPushMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPushMessageViewController.h; sourceTree = "<group>"; };
+		37E1DDED1C4DDD7400245BE6 /* MyPushMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPushMessageViewController.m; sourceTree = "<group>"; };
+		37E1DDEE1C4DDD7400245BE6 /* MyPushMessageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyPushMessageViewController.xib; sourceTree = "<group>"; };
+		37E1DDF11C4DDD8C00245BE6 /* MyStudentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyStudentViewController.h; sourceTree = "<group>"; };
+		37E1DDF21C4DDD8C00245BE6 /* MyStudentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyStudentViewController.m; sourceTree = "<group>"; };
+		37E1DDF31C4DDD8C00245BE6 /* MyStudentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyStudentViewController.xib; sourceTree = "<group>"; };
+		37E1DDF71C4DDE3C00245BE6 /* MyFollowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFollowViewController.h; sourceTree = "<group>"; };
+		37E1DDF81C4DDE3C00245BE6 /* MyFollowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFollowViewController.m; sourceTree = "<group>"; };
+		37E1DDF91C4DDE3C00245BE6 /* MyFollowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyFollowViewController.xib; sourceTree = "<group>"; };
+		37E1DDFF1C4DE29500245BE6 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		37E1DE001C4DE29500245BE6 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		37E1DE011C4DE29500245BE6 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		37E1DE041C4DE2B200245BE6 /* DiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverViewController.h; sourceTree = "<group>"; };
+		37E1DE051C4DE2B200245BE6 /* DiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverViewController.m; sourceTree = "<group>"; };
+		37E1DE061C4DE2B200245BE6 /* DiscoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiscoverViewController.xib; sourceTree = "<group>"; };
+		37E1DE091C4DE2CC00245BE6 /* TopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopViewController.h; sourceTree = "<group>"; };
+		37E1DE0A1C4DE2CC00245BE6 /* TopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopViewController.m; sourceTree = "<group>"; };
+		37E1DE0B1C4DE2CC00245BE6 /* TopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopViewController.xib; sourceTree = "<group>"; };
 		7B131BB5C3C7788EB0066AC0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACA8CD8FCCEFD0CEA801BB92 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BE25EB2F1C44FC5F00068309 /* iWantuo_Organization.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iWantuo_Organization.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -293,6 +378,197 @@
 			path = JKCountDownButton;
 			sourceTree = "<group>";
 		};
+		37E1DD9B1C4DD92600245BE6 /* My */ = {
+			isa = PBXGroup;
+			children = (
+				37E1DDF61C4DDE1800245BE6 /* MyFollow(每日跟踪) */,
+				37E1DDDE1C4DDD1300245BE6 /* MyClass(班级管理) */,
+				37E1DDDF1C4DDD1300245BE6 /* MyClassTeacher(班主任管理) */,
+				37E1DDE01C4DDD1300245BE6 /* MyPusheMessage(推送消息) */,
+				37E1DDE11C4DDD1300245BE6 /* MyStudent(学员管理) */,
+				37E1DD9C1C4DD92600245BE6 /* BasicInfo(基本信息) */,
+				37E1DDA01C4DD92600245BE6 /* MyBooking(预约管理) */,
+				37E1DDAC1C4DD92600245BE6 /* MyMessage(我的消息) */,
+				37E1DDB01C4DD92600245BE6 /* MyViewController.h */,
+				37E1DDB11C4DD92600245BE6 /* MyViewController.m */,
+				37E1DDB21C4DD92600245BE6 /* MyViewController.xib */,
+				37E1DDB31C4DD92600245BE6 /* Setting */,
+			);
+			path = My;
+			sourceTree = "<group>";
+		};
+		37E1DD9C1C4DD92600245BE6 /* BasicInfo(基本信息) */ = {
+			isa = PBXGroup;
+			children = (
+				37E1DD9D1C4DD92600245BE6 /* PersonDetailController.h */,
+				37E1DD9E1C4DD92600245BE6 /* PersonDetailController.m */,
+				37E1DD9F1C4DD92600245BE6 /* PersonDetailController.xib */,
+			);
+			path = "BasicInfo(基本信息)";
+			sourceTree = "<group>";
+		};
+		37E1DDA01C4DD92600245BE6 /* MyBooking(预约管理) */ = {
+			isa = PBXGroup;
+			children = (
+				37E1DDA11C4DD92600245BE6 /* MyBookingViewController.h */,
+				37E1DDA21C4DD92600245BE6 /* MyBookingViewController.m */,
+				37E1DDA31C4DD92600245BE6 /* MyBookingViewController.xib */,
+			);
+			name = "MyBooking(预约管理)";
+			path = "MyBooking(我的预约)";
+			sourceTree = "<group>";
+		};
+		37E1DDAC1C4DD92600245BE6 /* MyMessage(我的消息) */ = {
+			isa = PBXGroup;
+			children = (
+				37E1DDAD1C4DD92600245BE6 /* MyMessageViewController.h */,
+				37E1DDAE1C4DD92600245BE6 /* MyMessageViewController.m */,
+				37E1DDAF1C4DD92600245BE6 /* MyMessageViewController.xib */,
+			);
+			path = "MyMessage(我的消息)";
+			sourceTree = "<group>";
+		};
+		37E1DDB31C4DD92600245BE6 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				37E1DDB41C4DD92600245BE6 /* About */,
+				37E1DDB81C4DD92600245BE6 /* ChangePassword */,
+				37E1DDBC1C4DD92600245BE6 /* Feedback(意见反馈) */,
+				37E1DDC01C4DD92600245BE6 /* SettingViewController.h */,
+				37E1DDC11C4DD92600245BE6 /* SettingViewController.m */,
+				37E1DDC21C4DD92600245BE6 /* SettingViewController.xib */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		37E1DDB41C4DD92600245BE6 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				37E1DDB51C4DD92600245BE6 /* AboutViewController.h */,
+				37E1DDB61C4DD92600245BE6 /* AboutViewController.m */,
+				37E1DDB71C4DD92600245BE6 /* AboutViewController.xib */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		37E1DDB81C4DD92600245BE6 /* ChangePassword */ = {
+			isa = PBXGroup;
+			children = (
+				37E1DDB91C4DD92600245BE6 /* ChangePasswordController.h */,
+				37E1DDBA1C4DD92600245BE6 /* ChangePasswordController.m */,
+				37E1DDBB1C4DD92600245BE6 /* ChangePasswordController.xib */,
+			);
+			path = ChangePassword;
+			sourceTree = "<group>";
+		};
+		37E1DDBC1C4DD92600245BE6 /* Feedback(意见反馈) */ = {
+			isa = PBXGroup;
+			children = (
+				37E1DDBD1C4DD92600245BE6 /* FeedbackViewController.h */,
+				37E1DDBE1C4DD92600245BE6 /* FeedbackViewController.m */,
+				37E1DDBF1C4DD92600245BE6 /* FeedbackViewController.xib */,
+			);
+			path = "Feedback(意见反馈)";
+			sourceTree = "<group>";
+		};
+		37E1DDD71C4DDA7F00245BE6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				37E1DDD81C4DDA8A00245BE6 /* My */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		37E1DDD81C4DDA8A00245BE6 /* My */ = {
+			isa = PBXGroup;
+			children = (
+				37E1DDD91C4DDA8A00245BE6 /* MyCell.h */,
+				37E1DDDA1C4DDA8A00245BE6 /* MyCell.m */,
+				37E1DDDB1C4DDA8A00245BE6 /* MyCell.xib */,
+			);
+			path = My;
+			sourceTree = "<group>";
+		};
+		37E1DDDE1C4DDD1300245BE6 /* MyClass(班级管理) */ = {
+			isa = PBXGroup;
+			children = (
+				37E1DDE21C4DDD3E00245BE6 /* MyClassViewController.h */,
+				37E1DDE31C4DDD3E00245BE6 /* MyClassViewController.m */,
+				37E1DDE41C4DDD3E00245BE6 /* MyClassViewController.xib */,
+			);
+			path = "MyClass(班级管理)";
+			sourceTree = "<group>";
+		};
+		37E1DDDF1C4DDD1300245BE6 /* MyClassTeacher(班主任管理) */ = {
+			isa = PBXGroup;
+			children = (
+				37E1DDE71C4DDD5800245BE6 /* MyClassTeacherViewController.h */,
+				37E1DDE81C4DDD5800245BE6 /* MyClassTeacherViewController.m */,
+				37E1DDE91C4DDD5800245BE6 /* MyClassTeacherViewController.xib */,
+			);
+			path = "MyClassTeacher(班主任管理)";
+			sourceTree = "<group>";
+		};
+		37E1DDE01C4DDD1300245BE6 /* MyPusheMessage(推送消息) */ = {
+			isa = PBXGroup;
+			children = (
+				37E1DDEC1C4DDD7400245BE6 /* MyPushMessageViewController.h */,
+				37E1DDED1C4DDD7400245BE6 /* MyPushMessageViewController.m */,
+				37E1DDEE1C4DDD7400245BE6 /* MyPushMessageViewController.xib */,
+			);
+			path = "MyPusheMessage(推送消息)";
+			sourceTree = "<group>";
+		};
+		37E1DDE11C4DDD1300245BE6 /* MyStudent(学员管理) */ = {
+			isa = PBXGroup;
+			children = (
+				37E1DDF11C4DDD8C00245BE6 /* MyStudentViewController.h */,
+				37E1DDF21C4DDD8C00245BE6 /* MyStudentViewController.m */,
+				37E1DDF31C4DDD8C00245BE6 /* MyStudentViewController.xib */,
+			);
+			path = "MyStudent(学员管理)";
+			sourceTree = "<group>";
+		};
+		37E1DDF61C4DDE1800245BE6 /* MyFollow(每日跟踪) */ = {
+			isa = PBXGroup;
+			children = (
+				37E1DDF71C4DDE3C00245BE6 /* MyFollowViewController.h */,
+				37E1DDF81C4DDE3C00245BE6 /* MyFollowViewController.m */,
+				37E1DDF91C4DDE3C00245BE6 /* MyFollowViewController.xib */,
+			);
+			path = "MyFollow(每日跟踪)";
+			sourceTree = "<group>";
+		};
+		37E1DDFC1C4DE26C00245BE6 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				37E1DE041C4DE2B200245BE6 /* DiscoverViewController.h */,
+				37E1DE051C4DE2B200245BE6 /* DiscoverViewController.m */,
+				37E1DE061C4DE2B200245BE6 /* DiscoverViewController.xib */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		37E1DDFD1C4DE26C00245BE6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				37E1DDFF1C4DE29500245BE6 /* HomeViewController.h */,
+				37E1DE001C4DE29500245BE6 /* HomeViewController.m */,
+				37E1DE011C4DE29500245BE6 /* HomeViewController.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		37E1DDFE1C4DE26C00245BE6 /* Top */ = {
+			isa = PBXGroup;
+			children = (
+				37E1DE091C4DE2CC00245BE6 /* TopViewController.h */,
+				37E1DE0A1C4DE2CC00245BE6 /* TopViewController.m */,
+				37E1DE0B1C4DE2CC00245BE6 /* TopViewController.xib */,
+			);
+			path = Top;
+			sourceTree = "<group>";
+		};
 		8193BE87F7EA4981EE9BFAF6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -334,6 +610,7 @@
 		BE25EB311C44FC5F00068309 /* iWantuo_Organization */ = {
 			isa = PBXGroup;
 			children = (
+				37E1DDD71C4DDA7F00245BE6 /* Views */,
 				BE25EC031C4501C000068309 /* Controller */,
 				BE25EBFF1C45018800068309 /* Utils */,
 				BE25EBC41C44FDFD00068309 /* Vendors */,
@@ -592,6 +869,10 @@
 		BE25EC031C4501C000068309 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				37E1DDFC1C4DE26C00245BE6 /* Discover */,
+				37E1DDFD1C4DE26C00245BE6 /* Home */,
+				37E1DDFE1C4DE26C00245BE6 /* Top */,
+				37E1DD9B1C4DD92600245BE6 /* My */,
 				37033E291C4C9033009F27DB /* Login */,
 				BE25EC041C4501C000068309 /* BaseViewController.h */,
 				BE25EC051C4501C000068309 /* BaseViewController.m */,
@@ -731,12 +1012,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				37033E361C4C9033009F27DB /* LoginViewController.xib in Resources */,
+				37E1DDC41C4DD92600245BE6 /* PersonDetailController.xib in Resources */,
+				37E1DDC61C4DD92600245BE6 /* MyBookingViewController.xib in Resources */,
+				37E1DDFB1C4DDE3C00245BE6 /* MyFollowViewController.xib in Resources */,
+				37E1DDD61C4DD92600245BE6 /* SettingViewController.xib in Resources */,
+				37E1DDEB1C4DDD5800245BE6 /* MyClassTeacherViewController.xib in Resources */,
 				37033E381C4C9033009F27DB /* RegisterViewController.xib in Resources */,
 				BE25EB421C44FC5F00068309 /* LaunchScreen.storyboard in Resources */,
+				37E1DE0D1C4DE2CC00245BE6 /* TopViewController.xib in Resources */,
 				37033E341C4C9033009F27DB /* ForgetViewController.xib in Resources */,
+				37E1DDF51C4DDD8C00245BE6 /* MyStudentViewController.xib in Resources */,
+				37E1DDDD1C4DDA8A00245BE6 /* MyCell.xib in Resources */,
+				37E1DDCE1C4DD92600245BE6 /* MyViewController.xib in Resources */,
+				37E1DDCC1C4DD92600245BE6 /* MyMessageViewController.xib in Resources */,
+				37E1DDD01C4DD92600245BE6 /* AboutViewController.xib in Resources */,
 				37033E501C4CBBCA009F27DB /* SubmitInfoViewController.xib in Resources */,
+				37E1DE081C4DE2B200245BE6 /* DiscoverViewController.xib in Resources */,
 				37033E4B1C4CB7EC009F27DB /* SigningViewController.xib in Resources */,
 				BE25EB3F1C44FC5F00068309 /* Assets.xcassets in Resources */,
+				37E1DDF01C4DDD7400245BE6 /* MyPushMessageViewController.xib in Resources */,
+				37E1DDE61C4DDD3E00245BE6 /* MyClassViewController.xib in Resources */,
+				37E1DDD21C4DD92600245BE6 /* ChangePasswordController.xib in Resources */,
+				37E1DDD41C4DD92600245BE6 /* FeedbackViewController.xib in Resources */,
+				37E1DE031C4DE29500245BE6 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -812,41 +1110,58 @@
 				BE25EBA21C44FD9200068309 /* UIImage+Camera.m in Sources */,
 				BE25EC161C4501C000068309 /* BaseViewController.m in Sources */,
 				BE25EBAD1C44FDA500068309 /* SystemHandler.m in Sources */,
+				37E1DDDC1C4DDA8A00245BE6 /* MyCell.m in Sources */,
+				37E1DDD11C4DD92600245BE6 /* ChangePasswordController.m in Sources */,
 				BE25EB9F1C44FD9200068309 /* NSString+Verify.m in Sources */,
 				BE25EBA51C44FD9200068309 /* UIView+GestureRecognizer.m in Sources */,
 				BE25EBA01C44FD9200068309 /* NSURL+Path.m in Sources */,
 				BE25EB371C44FC5F00068309 /* AppDelegate.m in Sources */,
 				BE25EB981C44FD9200068309 /* NSCalendar+FSExtension.m in Sources */,
+				37E1DDD51C4DD92600245BE6 /* SettingViewController.m in Sources */,
 				37033E351C4C9033009F27DB /* LoginViewController.m in Sources */,
 				BE25EB6D1C44FD8500068309 /* APIClient.m in Sources */,
 				BE25EB9D1C44FD9200068309 /* NSString+Size.m in Sources */,
 				BE25EBA61C44FD9200068309 /* UIView+Image.m in Sources */,
 				37033E331C4C9033009F27DB /* ForgetViewController.m in Sources */,
+				37E1DDC51C4DD92600245BE6 /* MyBookingViewController.m in Sources */,
 				BE25EB6F1C44FD8500068309 /* APIResult.m in Sources */,
 				37033E4A1C4CB7EC009F27DB /* SigningViewController.m in Sources */,
 				BE25EBB11C44FDB300068309 /* TimerHelper.m in Sources */,
 				BE25EB991C44FD9200068309 /* NSDate+CalendarLogic.m in Sources */,
 				37033E421C4C910B009F27DB /* ApiLoginRequest.m in Sources */,
+				37E1DDF41C4DDD8C00245BE6 /* MyStudentViewController.m in Sources */,
+				37E1DE021C4DE29500245BE6 /* HomeViewController.m in Sources */,
+				37E1DE0C1C4DE2CC00245BE6 /* TopViewController.m in Sources */,
 				37033E401C4C910B009F27DB /* ApiAuthenCode.m in Sources */,
+				37E1DDD31C4DD92600245BE6 /* FeedbackViewController.m in Sources */,
+				37E1DDCF1C4DD92600245BE6 /* AboutViewController.m in Sources */,
 				BE25EB9E1C44FD9200068309 /* NSString+Validation.m in Sources */,
 				BE25EBA31C44FD9200068309 /* UIImage+Video.m in Sources */,
 				BE25EB6E1C44FD8500068309 /* APIRequest.m in Sources */,
 				37033E461C4C914C009F27DB /* JKCountDownButton.m in Sources */,
+				37E1DDCB1C4DD92600245BE6 /* MyMessageViewController.m in Sources */,
 				BE25EBA41C44FD9200068309 /* UIView+Frame.m in Sources */,
+				37E1DDEF1C4DDD7400245BE6 /* MyPushMessageViewController.m in Sources */,
+				37E1DDFA1C4DDE3C00245BE6 /* MyFollowViewController.m in Sources */,
 				BE25EBFB1C44FDFE00068309 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				BE25EBF81C44FDFE00068309 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				37033E371C4C9033009F27DB /* RegisterViewController.m in Sources */,
 				BE25EB341C44FC5F00068309 /* main.m in Sources */,
 				BE25EBF91C44FDFE00068309 /* TPKeyboardAvoidingScrollView.m in Sources */,
+				37E1DE071C4DE2B200245BE6 /* DiscoverViewController.m in Sources */,
 				BE25EC021C45018800068309 /* ValueUtils.m in Sources */,
 				37033E411C4C910B009F27DB /* ApiLoginOutRequest.m in Sources */,
 				BE25EBC11C44FDC700068309 /* AlertViewManager.m in Sources */,
 				BE25EBA11C44FD9200068309 /* UIColor+NSString.m in Sources */,
+				37E1DDC31C4DD92600245BE6 /* PersonDetailController.m in Sources */,
 				BE25EBC21C44FDC700068309 /* HUDManager.m in Sources */,
+				37E1DDEA1C4DDD5800245BE6 /* MyClassTeacherViewController.m in Sources */,
+				37E1DDCD1C4DD92600245BE6 /* MyViewController.m in Sources */,
 				BE25EB9C1C44FD9200068309 /* NSString+Security.m in Sources */,
 				BE25EB9A1C44FD9200068309 /* NSDate+FSExtension.m in Sources */,
 				37033E4F1C4CBBCA009F27DB /* SubmitInfoViewController.m in Sources */,
 				BE25EB9B1C44FD9200068309 /* NSString+Device.m in Sources */,
+				37E1DDE51C4DDD3E00245BE6 /* MyClassViewController.m in Sources */,
 				BE25EBFA1C44FDFE00068309 /* TPKeyboardAvoidingTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

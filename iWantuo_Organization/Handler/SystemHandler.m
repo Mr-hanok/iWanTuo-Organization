@@ -7,10 +7,10 @@
 //
 
 #import "SystemHandler.h"
-//#import "HomeViewController.h"
-//#import "DiscoverViewController.h"
-//#import "TopViewController.h"
-//#import "MyViewController.h"
+#import "HomeViewController.h"
+#import "DiscoverViewController.h"
+#import "TopViewController.h"
+#import "MyViewController.h"
 
 @implementation SystemHandler
 
@@ -18,26 +18,28 @@
     
     UITabBarController *rootTabBarController = [[UITabBarController alloc] init];
     
-//    UINavigationController *homeNav     = [[UINavigationController alloc] initWithRootViewController:[[HomeViewController alloc]     init]];
-//    UINavigationController *discoverNav = [[UINavigationController alloc] initWithRootViewController:[[DiscoverViewController alloc] init]];
-//    UINavigationController *topNav      = [[UINavigationController alloc] initWithRootViewController:[[TopViewController alloc]      init]];
-//    UINavigationController *myNav       = [[UINavigationController alloc] initWithRootViewController:[[MyViewController alloc]       init]];
-//    
-//    homeNav.tabBarItem     = [[UITabBarItem alloc] initWithTitle:@"首页" image:[[UIImage imageNamed:@"unSelect"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@"Select"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-//    discoverNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"发现" image:[[UIImage imageNamed:@"unSelect"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@"Select"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-//    topNav.tabBarItem      = [[UITabBarItem alloc] initWithTitle:@"排行榜" image:[[UIImage imageNamed:@"unSelect"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@"Select"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-//    myNav.tabBarItem       = [[UITabBarItem alloc] initWithTitle:@"我的" image:[[UIImage imageNamed:@"unSelect"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@"Select"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-//    
-//    [rootTabBarController setViewControllers:@[homeNav, discoverNav, topNav, myNav]];
+    UINavigationController *homeNav     = [[UINavigationController alloc] initWithRootViewController:[[HomeViewController alloc]     init]];
+    UINavigationController *discoverNav = [[UINavigationController alloc] initWithRootViewController:[[DiscoverViewController alloc] init]];
+    UINavigationController *topNav      = [[UINavigationController alloc] initWithRootViewController:[[TopViewController alloc]      init]];
+    UINavigationController *myNav       = [[UINavigationController alloc] initWithRootViewController:[[MyViewController alloc]       init]];
+    
+    homeNav.tabBarItem     = [[UITabBarItem alloc] initWithTitle:@"首页" image:[[UIImage imageNamed:@"home_unSelect"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@"home_Select"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    discoverNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"发现" image:[[UIImage imageNamed:@"discover_unSelect"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@"discover_Select"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    topNav.tabBarItem      = [[UITabBarItem alloc] initWithTitle:@"广场" image:[[UIImage imageNamed:@"top_unSelect"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@"top_Select"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    myNav.tabBarItem       = [[UITabBarItem alloc] initWithTitle:@"我的" image:[[UIImage imageNamed:@"my_unSelect"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@"my_Select"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    
+    [rootTabBarController setViewControllers:@[homeNav, discoverNav, topNav, myNav]];
     
     
     //调整tabbar的颜色
-//    rootTabBarController.tabBar.barTintColor = [UIColor whiteColor];
+    //    rootTabBarController.tabBar.barTintColor = [UIColor whiteColor];
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navigationBg"] forBarMetrics:UIBarMetricsDefault];
     //选中的颜色
-    rootTabBarController.tabBar.tintColor = [UIColor purpleColor];
+    rootTabBarController.tabBar.tintColor = kNavigationColor;
     //调整bar模糊效果
     rootTabBarController.tabBar.translucent = YES;
     return rootTabBarController;
+
 }
 
 @end
