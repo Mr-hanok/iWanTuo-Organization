@@ -37,8 +37,7 @@
         SettingViewController *vc = [[SettingViewController alloc]init];
         [weakSelf.navigationController pushViewController:vc animated:YES];
     }];
-    self.logoutBtn.backgroundColor = kNavigationColor;
-
+   
 }
 
 -(void)viewWillAppear:(BOOL)animated{

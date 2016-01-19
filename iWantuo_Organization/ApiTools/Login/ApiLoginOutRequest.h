@@ -11,5 +11,5 @@
  *  退出登陆接口
  */
 @interface ApiLoginOutRequest : APIRequest
-
+-(void)setApiParamsWithPhoneNum:(NSString *)phone;
 @end

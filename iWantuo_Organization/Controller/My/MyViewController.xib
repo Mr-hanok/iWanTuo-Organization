@@ -33,7 +33,7 @@
                         <constraint firstAttribute="height" constant="35" id="bkn-Ec-5hM"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <state key="normal" title="退出登陆"/>
+                    <state key="normal" backgroundImage="quitBtn"/>
                     <connections>
                         <action selector="Logout:" destination="-1" eventType="touchUpInside" id="2Uz-ob-Vbf"/>
                     </connections>
@@ -52,4 +52,7 @@
             <point key="canvasLocation" x="216.5" y="250.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="quitBtn" width="263" height="35"/>
+    </resources>
 </document>

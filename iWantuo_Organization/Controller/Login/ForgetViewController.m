@@ -7,8 +7,9 @@
 //
 
 #import "ForgetViewController.h"
+#import "ApiFindPassWord.h"
 
-@interface ForgetViewController ()
+@interface ForgetViewController ()<APIRequestDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *registerBtn;
 
 @property (nonatomic,strong)UIButton *leftBtn;//返回按钮
@@ -16,35 +17,17 @@
 @property (weak, nonatomic) IBOutlet UITextField *registerNumTF;//验证码
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumTF;//电话号
 @property (weak, nonatomic) IBOutlet UITextField *passwordTF;//密码
+
+@property (nonatomic, strong) ApiFindPassWord *apiFind;//找回密码
 @end
 
 @implementation ForgetViewController
 
 #pragma mark - life cycle
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navigationBg"] forBarMetrics:UIBarMetricsDefault];
-    }
-    return self;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.title = @"忘记密码";
-    [self.navigationController.navigationBar setBarStyle:(UIBarStyleBlack)];
-    [self.navigationController.navigationBar setTintColor:kNavigationColor];
-    [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:20]}];
-    //设置标题颜色
-    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:kNavigationColor};
-    
-    self.leftBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 10, 20)];
-    [self.leftBtn.titleLabel setFont:[UIFont systemFontOfSize:15]];
-    [self.leftBtn setTitleColor:kNavigationColor forState:UIControlStateNormal];
-    [self.leftBtn addTarget:self action:@selector(backItemAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.leftBtn setBackgroundImage:[UIImage imageNamed:@"backImage"] forState:UIControlStateNormal];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:self.leftBtn];
     //设置验证码按钮
     [self.registerBtn setTitleColor:kNavigationColor forState:UIControlStateNormal];
 }
@@ -57,7 +40,52 @@
     [MobClick endLogPageView:self.title];
 }
 
-#pragma mark - 协议名
+#pragma mark - UITextFieldDelegate
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    if (string.length == 0) return YES;
+    NSInteger existedLength = textField.text.length;
+    NSInteger selectedLength = range.length;
+    NSInteger replaceLength = string.length;
+    //大于11位 不能在输入
+    if (existedLength - selectedLength + replaceLength > 11) {
+        return NO;
+    }
+    return YES;
+}
+#pragma mark -  APIRequestDelegate
+
+- (void)serverApi_RequestFailed:(APIRequest *)api error:(NSError *)error {
+    
+    [HUDManager hideHUDView];
+    
+    [AlertViewManager showAlertViewWithMessage:kDefaultNetWorkErrorString];
+    
+}
+
+- (void)serverApi_FinishedSuccessed:(APIRequest *)api result:(APIResult *)sr {
+    
+    [HUDManager hideHUDView];
+    
+    if (sr.dic == nil || [sr.dic isKindOfClass:[NSNull class]]) {
+        return;
+    }
+    //修改成功 重新登陆
+    [HUDManager showWarningWithText:@"修改成功!重新登陆"];
+    [self.navigationController popViewControllerAnimated:YES];
+    
+}
+
+- (void)serverApi_FinishedFailed:(APIRequest *)api result:(APIResult *)sr {
+    
+    NSString *message = sr.msg;
+    [HUDManager hideHUDView];
+    if (message.length == 0) {
+        message = kDefaultServerErrorString;
+    }
+    [AlertViewManager showAlertViewWithMessage:message];
+}
+
+
 
 #pragma mark - event response
 
@@ -69,7 +97,10 @@
  */
 - (IBAction)commitAction:(UIButton *)sender {
     
-    
+    self.apiFind = [[ApiFindPassWord alloc]initWithDelegate:self];
+
+    [self.apiFind setApiParamsWithLoginAccount:self.passwordTF.text Password:self.passwordTF.text];
+    [APIClient execute:self.apiFind];
 }
 /**
  *  验证码按钮

@@ -21,7 +21,7 @@
 }
 
 -(void)setApiParamsWithPhoneNum:(NSString *)phone{
-    [self.params setValue:phone forKey:@"loginAccount"];
+    [self.params setValue:phone forKey:@"loginAccounts"];
     
 }
 

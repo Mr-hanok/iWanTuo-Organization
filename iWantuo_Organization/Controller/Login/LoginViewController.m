@@ -16,7 +16,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *userNameTF;//用户名
 @property (weak, nonatomic) IBOutlet UITextField *passWordTF;//密码
-@property (nonatomic, strong) ApiLoginRequest *apiLogin;
+@property (nonatomic, strong) ApiLoginRequest *apiLogin;//登陆接口
 @end
 
 @implementation LoginViewController
@@ -110,8 +110,7 @@
 - (IBAction)forgetPasswordAction:(UIButton *)sender {
     
     ForgetViewController *vc = [[ForgetViewController alloc]init];
-    UINavigationController *navi = [[UINavigationController alloc]initWithRootViewController:vc];
-    [self presentViewController:navi animated:YES completion:nil];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 /**
  *  注册

@@ -10,7 +10,7 @@
 #import "JKCountDownButton.h"
 #import "SigningViewController.h"
 
-@interface RegisterViewController ()
+@interface RegisterViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet JKCountDownButton *registerBtn;
 @property (weak, nonatomic) IBOutlet UIButton *commitBtn;//提交
 @property (weak, nonatomic) IBOutlet UITextField *registerNumTF;//验证码
@@ -38,7 +38,18 @@
     [MobClick endLogPageView:self.title];
 }
 
-#pragma mark - 协议名
+#pragma mark - UITextFieldDelegate
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    if (string.length == 0) return YES;
+    NSInteger existedLength = textField.text.length;
+    NSInteger selectedLength = range.length;
+    NSInteger replaceLength = string.length;
+    //大于11位 不能在输入
+    if (existedLength - selectedLength + replaceLength > 11) {
+        return NO;
+    }
+    return YES;
+}
 
 #pragma mark - event response
 
@@ -46,7 +57,10 @@
  *  提交按钮
  */
 - (IBAction)commitAction:(UIButton *)sender {
-    
+    //校验>>发送验证码请求
+    if (![self dataCheck]) {
+        return;
+    }
     SigningViewController *vc = [[SigningViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
     
@@ -78,4 +92,28 @@
 
 #pragma mark - private methods
 
+- (BOOL)dataCheck{
+    if (![NSString tf_isSimpleMobileNumber:self.phoneNumTF.text]) {
+        [HUDManager showWarningWithText:@"请输入正确手机号码！"];
+        return NO;
+    }
+    if (self.phoneNumTF.text.length==0) {
+        [HUDManager showWarningWithText:@"请输入手机号码！"];
+        return NO;
+    }
+    if (self.registerNumTF.text.length == 0) {
+        [HUDManager showWarningWithText:@"请输入验证码"];
+        return NO;
+    }
+    if (self.passwordTF.text.length == 0) {
+        [HUDManager showWarningWithText:@"请输入密码"];
+        return NO;
+    }
+    
+    if (self.passwordTF.text.length<6 || self.passwordTF.text.length>30) {
+        [HUDManager showWarningWithText:@"请输入6位以上密码"];
+        return NO;
+    }
+    return YES;
+}
 @end

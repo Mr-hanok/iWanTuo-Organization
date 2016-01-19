@@ -55,6 +55,9 @@
 		37E1DE081C4DE2B200245BE6 /* DiscoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E1DE061C4DE2B200245BE6 /* DiscoverViewController.xib */; };
 		37E1DE0C1C4DE2CC00245BE6 /* TopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E1DE0A1C4DE2CC00245BE6 /* TopViewController.m */; };
 		37E1DE0D1C4DE2CC00245BE6 /* TopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E1DE0B1C4DE2CC00245BE6 /* TopViewController.xib */; };
+		37E1DE101C4E149800245BE6 /* ApiFindPassWord.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E1DE0F1C4E149800245BE6 /* ApiFindPassWord.m */; };
+		37E1DE191C4E241500245BE6 /* ApiRegisterRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E1DE181C4E241500245BE6 /* ApiRegisterRequest.m */; };
+		37E1DE761C4E3FFF00245BE6 /* ZHPickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E1DE751C4E3FFF00245BE6 /* ZHPickView.m */; };
 		5B00D7127E6170524D8DD67E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B131BB5C3C7788EB0066AC0 /* libPods.a */; };
 		BE25EB341C44FC5F00068309 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE25EB331C44FC5F00068309 /* main.m */; };
 		BE25EB371C44FC5F00068309 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE25EB361C44FC5F00068309 /* AppDelegate.m */; };
@@ -194,6 +197,12 @@
 		37E1DE091C4DE2CC00245BE6 /* TopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopViewController.h; sourceTree = "<group>"; };
 		37E1DE0A1C4DE2CC00245BE6 /* TopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopViewController.m; sourceTree = "<group>"; };
 		37E1DE0B1C4DE2CC00245BE6 /* TopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopViewController.xib; sourceTree = "<group>"; };
+		37E1DE0E1C4E149800245BE6 /* ApiFindPassWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiFindPassWord.h; sourceTree = "<group>"; };
+		37E1DE0F1C4E149800245BE6 /* ApiFindPassWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiFindPassWord.m; sourceTree = "<group>"; };
+		37E1DE171C4E241500245BE6 /* ApiRegisterRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiRegisterRequest.h; sourceTree = "<group>"; };
+		37E1DE181C4E241500245BE6 /* ApiRegisterRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiRegisterRequest.m; sourceTree = "<group>"; };
+		37E1DE741C4E3FFF00245BE6 /* ZHPickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHPickView.h; sourceTree = "<group>"; };
+		37E1DE751C4E3FFF00245BE6 /* ZHPickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHPickView.m; sourceTree = "<group>"; };
 		7B131BB5C3C7788EB0066AC0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACA8CD8FCCEFD0CEA801BB92 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BE25EB2F1C44FC5F00068309 /* iWantuo_Organization.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iWantuo_Organization.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -365,6 +374,10 @@
 				37033E3D1C4C910B009F27DB /* ApiLoginOutRequest.m */,
 				37033E3E1C4C910B009F27DB /* ApiLoginRequest.h */,
 				37033E3F1C4C910B009F27DB /* ApiLoginRequest.m */,
+				37E1DE0E1C4E149800245BE6 /* ApiFindPassWord.h */,
+				37E1DE0F1C4E149800245BE6 /* ApiFindPassWord.m */,
+				37E1DE171C4E241500245BE6 /* ApiRegisterRequest.h */,
+				37E1DE181C4E241500245BE6 /* ApiRegisterRequest.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -569,6 +582,43 @@
 			path = Top;
 			sourceTree = "<group>";
 		};
+		37E1DE131C4E1A2000245BE6 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		37E1DE141C4E1A2000245BE6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		37E1DE151C4E1A2000245BE6 /* My */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = My;
+			sourceTree = "<group>";
+		};
+		37E1DE161C4E1A2000245BE6 /* Top */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Top;
+			sourceTree = "<group>";
+		};
+		37E1DE731C4E3FFF00245BE6 /* ZHPickView */ = {
+			isa = PBXGroup;
+			children = (
+				37E1DE741C4E3FFF00245BE6 /* ZHPickView.h */,
+				37E1DE751C4E3FFF00245BE6 /* ZHPickView.m */,
+			);
+			path = ZHPickView;
+			sourceTree = "<group>";
+		};
 		8193BE87F7EA4981EE9BFAF6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -660,6 +710,10 @@
 		BE25EB651C44FD8500068309 /* ApiTools */ = {
 			isa = PBXGroup;
 			children = (
+				37E1DE131C4E1A2000245BE6 /* Discover */,
+				37E1DE141C4E1A2000245BE6 /* Home */,
+				37E1DE151C4E1A2000245BE6 /* My */,
+				37E1DE161C4E1A2000245BE6 /* Top */,
 				37033E391C4C910B009F27DB /* Login */,
 				BE25EB661C44FD8500068309 /* Api */,
 			);
@@ -834,6 +888,7 @@
 		BE25EBC41C44FDFD00068309 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				37E1DE731C4E3FFF00245BE6 /* ZHPickView */,
 				37033E431C4C914C009F27DB /* JKCountDownButton */,
 				BEE4DA001C48BFB300510308 /* GtSdkLib1.3.2 */,
 				BEE4D9F11C489BBB00510308 /* UMAnalytics_Sdk_3.6.7 */,
@@ -1128,6 +1183,7 @@
 				37033E4A1C4CB7EC009F27DB /* SigningViewController.m in Sources */,
 				BE25EBB11C44FDB300068309 /* TimerHelper.m in Sources */,
 				BE25EB991C44FD9200068309 /* NSDate+CalendarLogic.m in Sources */,
+				37E1DE101C4E149800245BE6 /* ApiFindPassWord.m in Sources */,
 				37033E421C4C910B009F27DB /* ApiLoginRequest.m in Sources */,
 				37E1DDF41C4DDD8C00245BE6 /* MyStudentViewController.m in Sources */,
 				37E1DE021C4DE29500245BE6 /* HomeViewController.m in Sources */,
@@ -1141,8 +1197,10 @@
 				37033E461C4C914C009F27DB /* JKCountDownButton.m in Sources */,
 				37E1DDCB1C4DD92600245BE6 /* MyMessageViewController.m in Sources */,
 				BE25EBA41C44FD9200068309 /* UIView+Frame.m in Sources */,
+				37E1DE191C4E241500245BE6 /* ApiRegisterRequest.m in Sources */,
 				37E1DDEF1C4DDD7400245BE6 /* MyPushMessageViewController.m in Sources */,
 				37E1DDFA1C4DDE3C00245BE6 /* MyFollowViewController.m in Sources */,
+				37E1DE761C4E3FFF00245BE6 /* ZHPickView.m in Sources */,
 				BE25EBFB1C44FDFE00068309 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				BE25EBF81C44FDFE00068309 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				37033E371C4C9033009F27DB /* RegisterViewController.m in Sources */,

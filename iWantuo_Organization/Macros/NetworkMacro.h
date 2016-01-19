@@ -10,7 +10,7 @@
 #define StudyChina_NetworkMacro_h
 
 //#define SERVER_HOST_PRODUCT             @"http://192.168.1.208/ThinkSNS_V4_Beta_Full/api.php?app=api&"           // 内网地址
-#define SERVER_HOST_PRODUCT             @"http://www.v2099.com.cn/api.php?app=api"           // 外网地址
+#define SERVER_HOST_PRODUCT             @"http://192.168.1.169:8090/wantuo/"           // 外网地址
 #define SERVER_FILE_PRODUCT             @"http://img.yilingboshi.com/"              // 图片服务器地址
 
 #define SDKKey_Msg                  @"msg"
@@ -32,9 +32,10 @@
 #define kRequestDataRows  @"15"
 
 
-#define LoginAction                 @"login/IosParentlogin"  // 登录接口
-#define LoginQuitAction             @""             // 退出登录接口
-#define AuthenCodeAction            @""            // 获取验证码接口
-
+#define LoginAction                 @"login/ozAndTeacherLogin"  // 登录接口
+#define LoginQuitAction             @"login/outLogin"              // 退出登录接口
+#define AuthenCodeAction            @""              // 获取验证码接口
+#define FindPassword                @"findPassword"  //找回密码
+#define RegisterOganiza             @"register/oganizationRegister"//机构注册
 
 #endif

@@ -60,6 +60,9 @@
                                             <include reference="He6-DZ-pdu"/>
                                         </mask>
                                     </variation>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="VhN-qg-GVj"/>
+                                    </connections>
                                 </textField>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sto-zc-mBq">
                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>

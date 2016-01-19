@@ -7,8 +7,9 @@
 //
 
 #import "SubmitInfoViewController.h"
+#import "ZHPickView.h"
 
-@interface SubmitInfoViewController ()
+@interface SubmitInfoViewController ()<ZHPickViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *workRoomBtn;/**工作室*/
 @property (weak, nonatomic) IBOutlet UIButton *companyBtn;/**公司*/
@@ -21,7 +22,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *licenseBtn;/**执照*/
 @property (weak, nonatomic) IBOutlet UIImageView *imageIV;/**图片*/
 @property (weak, nonatomic) IBOutlet UIButton *addImageBtn;/**添加图片按钮*/
+@property (weak, nonatomic) IBOutlet UITextField *areaTF;//地区
 
+@property(nonatomic,strong)ZHPickView *pickview;//可选地区Pickview
 @end
 
 @implementation SubmitInfoViewController
@@ -44,7 +47,12 @@
     [MobClick endLogPageView:self.title];
 }
 
-#pragma mark - 协议名
+#pragma mark ZhpickVIewDelegate
+
+-(void)toobarDonBtnHaveClick:(ZHPickView *)pickView resultString:(NSString *)resultString{
+    NSLog(@"%@",resultString);
+
+}
 
 
 #pragma mark - event response
@@ -90,7 +98,49 @@
 - (IBAction)commitBtn:(UIButton *)sender {
 }
 
-#pragma mark - private methods
+//选择地区
+- (IBAction)areaBtnAction:(UIButton *)sender {
+    NSArray *array=@[@[@"上海"],@[@"上回",@"福东",@"不知"]];
+    _pickview=[[ZHPickView alloc] initPickviewWithArray:array isHaveNavControler:NO];
+    _pickview.delegate=self;
+    [_pickview show];
+}
 
+#pragma mark - private methods
+- (BOOL)dataCheck{
+    if (self.shortNameTF.text.length == 0) {
+        [HUDManager showWarningWithText:@"请输入机构简称"];
+        return NO;
+    }
+    if (self.FullNameTF.text.length == 0) {
+        [HUDManager showWarningWithText:@"请输入机构全称"];
+        return NO;
+    }
+    if (self.trueNameTF.text.length == 0) {
+        [HUDManager showWarningWithText:@"请输入真实姓名"];
+        return NO;
+    }
+    if (self.detialAdressTF.text.length == 0) {
+        [HUDManager showWarningWithText:@"请输入详细地址"];
+        return NO;
+    }
+    if (self.emailTF.text.length == 0) {
+        [HUDManager showWarningWithText:@"请输入邮箱"];
+        return NO;
+    }
+    if (![NSString tf_isValidateEmail:self.emailTF.text]) {
+        [HUDManager showWarningWithText:@"请输入正确邮箱地址"];
+        return NO;
+    }
+    if (self.shortNameTF.text.length>10) {
+        [HUDManager showWarningWithText:@"请输入10字以内的简称"];
+        return NO;
+    }
+    if (self.FullNameTF.text.length>30) {
+        [HUDManager showWarningWithText:@"请输入30字以内的全称"];
+        return NO;
+    }
+    return YES;
+}
 
 @end
