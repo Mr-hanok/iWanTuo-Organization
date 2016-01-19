@@ -169,6 +169,7 @@
     UIToolbar *toolbar=[[UIToolbar alloc] init];
     
     UIBarButtonItem *lefttem=[[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(remove)];
+    
     [lefttem setTitleTextAttributes:@{NSForegroundColorAttributeName:kNavigationColor} forState:UIControlStateNormal];
     UIBarButtonItem *centerSpace=[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
     

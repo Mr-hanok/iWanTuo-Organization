@@ -43,15 +43,9 @@
 
 -(void)setBackBtn {
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc] init];
-    backItem.title = @"返回";
+    backItem.title = @"";
     backItem.tintColor = [UIColor whiteColor];
     
-//    if (self.tabBarController == nil) {
-//        self.navigationController.navigationItem.backBarButtonItem = backItem;
-//        self.navigationItem.backBarButtonItem = backItem;
-//    } else {
-//        self.tabBarController.navigationItem.backBarButtonItem = nil;
-//    }
     self.navigationController.navigationItem.backBarButtonItem = backItem;
     self.navigationItem.backBarButtonItem = backItem;
     self.tabBarController.navigationItem.backBarButtonItem = backItem;

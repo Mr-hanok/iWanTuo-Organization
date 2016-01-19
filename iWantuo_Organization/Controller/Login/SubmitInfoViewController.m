@@ -36,6 +36,10 @@
     self.title = @"提交资料";
     self.workRoomBtn.selected = YES;
     self.cardIdBtn.selected = YES;
+    //添加手势
+    UITapGestureRecognizer *ontTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(swapLabels:)];
+    ontTap.numberOfTapsRequired = 1;
+    [self.view addGestureRecognizer:ontTap];
 
 }
 -(void)viewWillAppear:(BOOL)animated{
@@ -107,6 +111,10 @@
 }
 
 #pragma mark - private methods
+- (void)swapLabels:(UITapGestureRecognizer *)tap{
+    [self.pickview remove];
+}
+
 - (BOOL)dataCheck{
     if (self.shortNameTF.text.length == 0) {
         [HUDManager showWarningWithText:@"请输入机构简称"];
