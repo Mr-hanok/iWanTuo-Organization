@@ -21,6 +21,10 @@
 #import "APIClient.h"
 #import "MobClick.h"
 #import "NSString+Verify.h"
+#import "CameraTakeMamanger.h"
+#import "UploadManager.h"
+#import "AccountManager.h"
+
 
 #pragma mark - cocoapods
 #import <BlocksKit/BlocksKit.h>

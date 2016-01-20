@@ -21,18 +21,33 @@
     return RegisterOganiza;
 }
 
--(void)setApiParamsWithLoginAccount:(NSString *)loginAccount
-                           password:(NSString *)Password
+-(void)setApiParamsWithLoginAccount:(NSString *)loginAccounts
+                           password:(NSString *)password
                             address:(NSString *)address
                               email:(NSString *)email
-                    organizatioType:(NSString *)organizatioType
            organizationAbbreviation:(NSString *)organizationAbbreviation
                        organization:(NSString *)organization
                organizationContacts:(NSString *)organizationContacts
-                        idCardImage:(NSString *)idCardImage{
+                        locationName:(NSString *)locationName
+                           location:(NSString *)location
+                             bairro:(NSString *)bairro
+                         bairroName:(NSString *)bairroName
+{
     
-    [self.params setValue:loginAccount forKey:@"loginAccounts"];
-    [self.params setValue:Password forKey:@"newPassword"];
+    [self.params setValue:loginAccounts forKey:@"loginAccounts"];
+    
+    [self.params setValue:password  forKey:@"password"];
+    [self.params setValue:organizationAbbreviation forKey:@"organizationAbbreviation"];
+    [self.params setValue:organization forKey:@"organization"];
+    [self.params setValue:organizationContacts forKey:@"organizationContacts"];
+    [self.params setValue:email forKey:@"email"];
+    [self.params setValue:address forKey:@"address"];
+    [self.params setValue:locationName forKey:@"locationName"];
+    [self.params setValue:location forKey:@"location"];
+    [self.params setValue:bairro forKey:@"bairro"];
+    [self.params setValue:bairroName forKey:@"bairroName"];
+
+    
 }
 
 @end

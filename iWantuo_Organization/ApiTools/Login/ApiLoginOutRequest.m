@@ -20,8 +20,8 @@
     return LoginQuitAction;
 }
 
--(void)setApiParamsWithPhoneNum:(NSString *)phone{
-    [self.params setValue:phone forKey:@"loginAccounts"];
+-(void)setApiParams{
+    [self.params setValue:[AccountManager sharedInstance].account.loginAccounts forKey:@"loginAccounts"];
     
 }
 

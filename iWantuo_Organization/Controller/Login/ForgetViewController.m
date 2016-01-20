@@ -8,6 +8,8 @@
 
 #import "ForgetViewController.h"
 #import "ApiFindPassWord.h"
+#import "ApiSendPhoneMessage.h"
+#import "JKCountDownButton.h"
 
 @interface ForgetViewController ()<APIRequestDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *registerBtn;
@@ -19,6 +21,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *passwordTF;//密码
 
 @property (nonatomic, strong) ApiFindPassWord *apiFind;//找回密码
+@property (nonatomic, strong) ApiSendPhoneMessage *apiSM;//短信
+@property (nonatomic, copy) NSString *verificatCode;
 @end
 
 @implementation ForgetViewController
@@ -69,9 +73,15 @@
     if (sr.dic == nil || [sr.dic isKindOfClass:[NSNull class]]) {
         return;
     }
-    //修改成功 重新登陆
-    [HUDManager showWarningWithText:@"修改成功!重新登陆"];
-    [self.navigationController popViewControllerAnimated:YES];
+    if (api == self.apiFind) {//找回密码
+        //修改成功 重新登陆
+        [HUDManager showWarningWithText:@"找回成功，请登陆"];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    if (api == self.apiSM) {//短信验证
+        //记录验证码
+        self.verificatCode = [ValueUtils stringFromObject:[sr.dic objectForKey:@"verificatCode"]];
+    }
     
 }
 
@@ -89,13 +99,18 @@
 
 #pragma mark - event response
 
-- (void)backItemAction{//返回按钮
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 /**
  *  提交按钮
  */
 - (IBAction)commitAction:(UIButton *)sender {
+    if (![self dataCheck]) {
+        return;
+    }
+    if (![self.verificatCode isEqualToString:self.registerNumTF.text]) {
+        [HUDManager showWarningWithText:@"验证码不正确"];
+        return;
+    }
+
     
     self.apiFind = [[ApiFindPassWord alloc]initWithDelegate:self];
 
@@ -105,10 +120,47 @@
 /**
  *  验证码按钮
  */
-- (IBAction)registerAction:(UIButton *)sender {
-    
+- (IBAction)registerAction:(JKCountDownButton *)sender {
+    if (![NSString tf_isSimpleMobileNumber:self.phoneNumTF.text]) {
+        [HUDManager showWarningWithText:@"请输入正确手机号码！"];
+        return;
+    }
+    //倒计时
+    sender.enabled = NO;
+    [sender startWithSecond:5];
+    [sender didChange:^NSString *(JKCountDownButton *countDownButton,int second) {
+        NSString *title = [NSString stringWithFormat:@"剩余%d秒",second];
+        [countDownButton setBackgroundColor:[UIColor clearColor]];
+        return title;
+    }];
+    [sender didFinished:^NSString *(JKCountDownButton *countDownButton, int second) {
+        countDownButton.enabled = YES;
+        return @"重新获取";
+    }];
+    //获取验证码请求
+    self.apiSM = [[ApiSendPhoneMessage alloc]initWithDelegate:self];
+    [self.apiSM setApiParamsWithPhone:self.phoneNumTF.text];
+    [APIClient execute:self.apiSM];
+
 }
+
 #pragma mark - private methods
+- (BOOL)dataCheck{
+    if (![NSString tf_isSimpleMobileNumber:self.phoneNumTF.text]) {
+        [HUDManager showWarningWithText:@"请输入正确手机号码！"];
+        return NO;
+    }
+    if (self.phoneNumTF.text.length==0) {
+        [HUDManager showWarningWithText:@"请输入手机号码！"];
+        return NO;
+    }
+    if (self.registerNumTF.text.length == 0) {
+        [HUDManager showWarningWithText:@"请输入验证码"];
+        return NO;
+    }
+    
+    return YES;
+}
 
 
 @end

@@ -12,4 +12,15 @@
  */
 @interface ApiRegisterRequest : APIRequest
 
+-(void)setApiParamsWithLoginAccount:(NSString *)loginAccounts
+                           password:(NSString *)password
+                            address:(NSString *)address
+                              email:(NSString *)email
+           organizationAbbreviation:(NSString *)organizationAbbreviation
+                       organization:(NSString *)organization
+               organizationContacts:(NSString *)organizationContacts
+                       locationName:(NSString *)locationName
+                           location:(NSString *)location
+                             bairro:(NSString *)bairro
+                         bairroName:(NSString *)bairroName;
 @end

@@ -11,5 +11,6 @@
  *  提交资料
  */
 @interface SubmitInfoViewController : BaseViewController
-
+@property (nonatomic, copy) NSString *phoneNum;
+@property (nonatomic, copy) NSString *passWord;
 @end

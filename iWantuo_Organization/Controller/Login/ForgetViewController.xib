@@ -141,7 +141,7 @@
                                         <action selector="commitAction:" destination="-1" eventType="touchUpInside" id="Vz5-8N-4TJ"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nic-lf-j2m">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nic-lf-j2m" customClass="JKCountDownButton">
                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="70" id="bB8-ro-cIp"/>
@@ -164,7 +164,7 @@
                                         </mask>
                                     </variation>
                                     <connections>
-                                        <action selector="registerAction:" destination="-1" eventType="touchUpInside" id="Ycb-ce-5cl"/>
+                                        <action selector="registerAction:" destination="-1" eventType="touchUpInside" id="tuC-Pq-8Qv"/>
                                     </connections>
                                 </button>
                             </subviews>
@@ -210,27 +210,27 @@
                                     <exclude reference="ME4-Pd-osf"/>
                                     <exclude reference="m6i-td-bfd"/>
                                     <exclude reference="xxX-5D-7o4"/>
-                                    <exclude reference="Onw-fC-4Wr"/>
-                                    <exclude reference="gst-Kz-46y"/>
-                                    <exclude reference="pOJ-nW-NCe"/>
+                                    <exclude reference="3wc-tV-n23"/>
+                                    <exclude reference="6bG-H6-Wm4"/>
                                     <exclude reference="k98-2M-o4c"/>
                                     <exclude reference="q0V-WK-56I"/>
                                     <exclude reference="wmq-ue-MHJ"/>
+                                    <exclude reference="AGv-gF-xjg"/>
+                                    <exclude reference="ea0-r8-HBx"/>
+                                    <exclude reference="xnn-ft-9ll"/>
+                                    <exclude reference="8Hi-g6-Yfa"/>
+                                    <exclude reference="PT8-g9-gic"/>
+                                    <exclude reference="njg-3T-v01"/>
                                     <exclude reference="4y3-af-bxv"/>
                                     <exclude reference="MPA-iO-A1g"/>
                                     <exclude reference="WbU-ke-brv"/>
                                     <exclude reference="z46-bt-9wk"/>
-                                    <exclude reference="3wc-tV-n23"/>
-                                    <exclude reference="6bG-H6-Wm4"/>
+                                    <exclude reference="Onw-fC-4Wr"/>
+                                    <exclude reference="gst-Kz-46y"/>
+                                    <exclude reference="pOJ-nW-NCe"/>
                                     <exclude reference="9dG-A9-HnF"/>
                                     <exclude reference="aaG-yO-Cg2"/>
                                     <exclude reference="cF6-7N-7cz"/>
-                                    <exclude reference="8Hi-g6-Yfa"/>
-                                    <exclude reference="PT8-g9-gic"/>
-                                    <exclude reference="njg-3T-v01"/>
-                                    <exclude reference="AGv-gF-xjg"/>
-                                    <exclude reference="ea0-r8-HBx"/>
-                                    <exclude reference="xnn-ft-9ll"/>
                                 </mask>
                             </variation>
                             <variation key="heightClass=regular-widthClass=compact">
@@ -248,27 +248,27 @@
                                     <include reference="ME4-Pd-osf"/>
                                     <include reference="m6i-td-bfd"/>
                                     <include reference="xxX-5D-7o4"/>
-                                    <include reference="Onw-fC-4Wr"/>
-                                    <include reference="gst-Kz-46y"/>
-                                    <include reference="pOJ-nW-NCe"/>
+                                    <include reference="3wc-tV-n23"/>
+                                    <include reference="6bG-H6-Wm4"/>
                                     <include reference="k98-2M-o4c"/>
                                     <include reference="q0V-WK-56I"/>
                                     <include reference="wmq-ue-MHJ"/>
+                                    <include reference="AGv-gF-xjg"/>
+                                    <include reference="ea0-r8-HBx"/>
+                                    <include reference="xnn-ft-9ll"/>
+                                    <include reference="8Hi-g6-Yfa"/>
+                                    <include reference="PT8-g9-gic"/>
+                                    <include reference="njg-3T-v01"/>
                                     <include reference="4y3-af-bxv"/>
                                     <include reference="MPA-iO-A1g"/>
                                     <include reference="WbU-ke-brv"/>
                                     <include reference="z46-bt-9wk"/>
-                                    <include reference="3wc-tV-n23"/>
-                                    <include reference="6bG-H6-Wm4"/>
+                                    <include reference="Onw-fC-4Wr"/>
+                                    <include reference="gst-Kz-46y"/>
+                                    <include reference="pOJ-nW-NCe"/>
                                     <include reference="9dG-A9-HnF"/>
                                     <include reference="aaG-yO-Cg2"/>
                                     <include reference="cF6-7N-7cz"/>
-                                    <include reference="8Hi-g6-Yfa"/>
-                                    <include reference="PT8-g9-gic"/>
-                                    <include reference="njg-3T-v01"/>
-                                    <include reference="AGv-gF-xjg"/>
-                                    <include reference="ea0-r8-HBx"/>
-                                    <include reference="xnn-ft-9ll"/>
                                 </mask>
                             </variation>
                         </view>

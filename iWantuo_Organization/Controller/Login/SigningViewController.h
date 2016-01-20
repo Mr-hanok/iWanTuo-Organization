@@ -11,5 +11,6 @@
  *  在线签约
  */
 @interface SigningViewController : BaseViewController
-
+@property (nonatomic, copy) NSString *phoneNum;
+@property (nonatomic, copy) NSString *passWord;
 @end

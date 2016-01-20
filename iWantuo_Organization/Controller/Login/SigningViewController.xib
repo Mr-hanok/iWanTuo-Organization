@@ -63,22 +63,9 @@
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HcS-mN-kXd">
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="300" id="K8z-28-aGE"/>
-                    </constraints>
-                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <mutableString key="text">欢迎机构用户入驻爱晚托！爱晚托App由上海哈鸣信息技术有限公司负责运营，致力于打造同时服务家长和晚托服务机构的互联网平台。请机构用户在入驻爱晚托之前仔细阅读本协议。机构用户接收本协议点击“同意”按钮完成入驻签约，这表示机构用户与爱晚托已达成入驻协议并接受所有的入驻条款。一、定义机构用户是指合法成立并存续的具有法人主体资格的企业、非企业单位，或者个体教师工作室以团体名义入驻爱晚托的非法人单位。机构用户，以下亦称机构。机构用户及其注册教师，以下统称用户。爱晚托网站，以下简称爱晚托。二、合作模式及入驻流程1、机构用户通过注册并经审核入驻爱晚托后，将在爱晚托上拥有专属的网上旗舰店，机构可在旗舰店展示其logo、基本信息、介绍、地址路线、课程、教师照片、教学视频等内容；机构可将其自有教师及学生资源运营到爱晚托并为自有教师资源加注机构推荐图标。机构认真维护专属的网上旗舰店，通过给学生提供优秀师资、优质课程和良好的服务，创造更多的线上交易额。爱晚托通过网络推广积极提升机构的业界知名度、为机构扩大生源。爱晚托为机构网上旗舰店提供技术服务。2、机构入驻应依照下列流程（详见爱晚托首页“机构平台入驻流程“）：注册帐号 在线签约 提交资料 进入审核 进入机构平台三、双方权利义务及法律责任1、机构应对自身提交及上传爱晚托的资料信息的真实性、合法性、有效性承担法律责任。2、机构应在征得教师本人同意的前提下将教师运营至爱晚托平台，并负责审核注册教师相关资质的真实性与合法性。机构审核教师的资质文件包括但不限于身份证、教师证、学历证等。机构应为注册教师拍摄自我介绍视频和授课演示视频。3、机构应确保注册教师的教学水平达到同行业中等及中等以上的教学水准。4、机构应加强对注册教师的管理，敦促注册教师严格遵守爱晚托“网站条款“的约定，合法使用爱晚托的服务。机构及注册教师均不得利用爱晚托平台发布虚假信息、侵权信息及其他违法信息，不得利用爱晚托的服务从事违法活动。5、机构应敦促注册教师及时维护其个人主页的活跃度，并确保更新内容的真实性、合法性、准确性及有效性。基于注册教师上传信息的虚假性或其他非法行为给爱晚托造成损害的，机构与注册教师应承担连带赔偿责任。6、学员家长与机构通过线上预约，线下试听和确定是否签约，晚托服务的时间、地点和教师由线下自行约定。晚托服务过程中发生的教师及学员的人身、财产损害事件，由相关责任方承担法律责任。7、机构及注册教师应妥善保管自己的帐号及密码，爱晚托也应采取适当的技术措施，共同维护机构及注册教师帐号的安全性。8、爱晚托受理学员(家长)对机构注册教师投诉事件的，机构应积极协助并妥善处理。9、爱晚托有权保留并合理使用机构及其教师注册及上传的所有信息。10、爱晚托谨慎使用用户的所有信息，非依法律规定及用户许可，不得向任何第三方透露用户信息。爱晚托对相关信息采用专业加密存储与传输方式，保障用户个人信息的安全。11、用户上传爱晚托的任何内容如涉嫌侵犯第三方合法权益的，爱晚托有权采取删除、屏蔽或断开链接等技术措施，用户须独立承担因侵权所产生法律责任。四、入驻费用爱晚托对入驻机构暂不收取任何费用。五、知识产权1、用户在爱晚托发布书稿、课件等信息或作品的，用户应独立享有相关著作权。如受到第三方的投诉或举报，用户应独立承担相关法律责任。2、爱晚托在服务中提供的内容（包括但不限于网页、文字、图片、音频、视频、图表等）的知识产权归爱晚托所有，非经爱晚托书面许可，用户不得任意使用或创造相关衍生作品。3、用户未经爱晚托书面许可不得擅自使用、不得以任何方式或理由对爱晚托文字及图形标识的任何部分进行使用、复制、修改、传播或与其他产品捆绑使用，不得以任何可能引起消费者混淆的方式或任何诋毁或诽谤爱晚托的方式用于任何商品或服务上。4、机构按照本协议第三条第2项要求为注册教师拍摄的视频，相关著作权归爱晚托所有，机构除上传爱晚托之外，非经爱晚托书面许可，不得用作任何其他用途。5、软件使用：用户需要下载爱晚托提供的手机/pad软件并安装后方得以从客户端使用爱晚托所提供的服务。爱晚托在此授予用户免费的、不可转让的、非独占的全球性个人许可，允许用户使用由爱晚托提供的、包含在服务中的软件。但是，用户不得复制、修改、发布、出售或出租爱晚托的服务软件或所含软件的任何部分，也不得进行反向工程或试图提取该软件的源代码。六、免责条款基于包括但不限于下列爱晚托不可控制的原因或并非爱晚托的过错所造成的损失，机构及注册教师应自行承担或向有关责任方追偿：1、不可抗力事件导致的服务中断；2、由于受到计算机病毒、木马或其他恶意程序、黑客攻击的破坏等不可抗拒因素可能引起的信息丢失、泄漏等风险；3、用户的电脑软件、系统、硬件和通信线路出现故障或自身操作不当；4、由于网络信号不稳定等原因所引起的登录失败、资料同步不完整、页面打开速度慢等；5、用户发布的内容被他人转发、复制等传播可能带来的风险和责任；6、其他爱晚托无法控制的原因；7、如因系统维护或升级而需要暂停网络服务，爱晚托将事先在网站发布通知。七、法律适用与争议解决1、本协议的履行与解释均适用中华人民共和国法律。2、爱晚托与用户之间的任何争议应友好协商解决，协商不成的，任一方有权将争议提交北京市海淀区人民法院诉讼解决。八、本协议条款的修改权与可分性1、为更好地提供服务并符合相关监管政策，爱晚托有权及时修改本协议条款。请用户定期查阅本协议条款。爱晚托会在网页上公布这些条款的修改通知。2、本协议条款中任何一条被视为无效或因任何理由不可执行，不影响任何其余条款的有效性和可执行性。九、通知爱晚托将通过在网站上发布通知或其他方式与用户进行联系。用户同意用网站发布通知方式接收所有协议、通知、披露和其他信息。十、协议生效本协议自机构点击同意之日起生效。</mutableString>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="K8z-28-aGE"/>
-                        </mask>
-                    </variation>
-                    <variation key="heightClass=regular-widthClass=compact">
-                        <mask key="constraints">
-                            <include reference="K8z-28-aGE"/>
-                        </mask>
-                    </variation>
                 </textView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="服务协议" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vkm-La-6Y5">
                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -106,7 +93,8 @@
                 <constraint firstItem="Vkm-La-6Y5" firstAttribute="top" secondItem="kOt-CV-ZL4" secondAttribute="bottom" constant="15" id="4Oe-rx-0ZN"/>
                 <constraint firstItem="Vkm-La-6Y5" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="5DX-vE-7pI"/>
                 <constraint firstItem="kOt-CV-ZL4" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="FRC-Fu-LYu"/>
-                <constraint firstAttribute="bottom" secondItem="EsO-5Y-Ihd" secondAttribute="bottom" constant="50" id="Zna-Lj-X6g"/>
+                <constraint firstItem="EsO-5Y-Ihd" firstAttribute="top" secondItem="HcS-mN-kXd" secondAttribute="bottom" constant="5" id="MCy-Gj-yYD"/>
+                <constraint firstAttribute="bottom" secondItem="EsO-5Y-Ihd" secondAttribute="bottom" constant="25" id="Zna-Lj-X6g"/>
                 <constraint firstItem="HcS-mN-kXd" firstAttribute="top" secondItem="Vkm-La-6Y5" secondAttribute="bottom" constant="10" id="azS-TA-ga4"/>
                 <constraint firstItem="EsO-5Y-Ihd" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bNF-w1-mzM"/>
                 <constraint firstAttribute="trailing" secondItem="HcS-mN-kXd" secondAttribute="trailing" constant="10" id="jCf-kH-DRW"/>
@@ -121,15 +109,16 @@
                     <exclude reference="Vkm-La-6Y5"/>
                 </mask>
                 <mask key="constraints">
-                    <exclude reference="Zna-Lj-X6g"/>
-                    <exclude reference="bNF-w1-mzM"/>
-                    <exclude reference="4Oe-rx-0ZN"/>
-                    <exclude reference="5DX-vE-7pI"/>
+                    <exclude reference="FRC-Fu-LYu"/>
+                    <exclude reference="yjz-E0-WpW"/>
                     <exclude reference="3NS-CC-478"/>
                     <exclude reference="azS-TA-ga4"/>
                     <exclude reference="jCf-kH-DRW"/>
-                    <exclude reference="FRC-Fu-LYu"/>
-                    <exclude reference="yjz-E0-WpW"/>
+                    <exclude reference="4Oe-rx-0ZN"/>
+                    <exclude reference="5DX-vE-7pI"/>
+                    <exclude reference="MCy-Gj-yYD"/>
+                    <exclude reference="Zna-Lj-X6g"/>
+                    <exclude reference="bNF-w1-mzM"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
@@ -140,15 +129,16 @@
                     <include reference="Vkm-La-6Y5"/>
                 </mask>
                 <mask key="constraints">
-                    <include reference="Zna-Lj-X6g"/>
-                    <include reference="bNF-w1-mzM"/>
-                    <include reference="4Oe-rx-0ZN"/>
-                    <include reference="5DX-vE-7pI"/>
+                    <include reference="FRC-Fu-LYu"/>
+                    <include reference="yjz-E0-WpW"/>
                     <include reference="3NS-CC-478"/>
                     <include reference="azS-TA-ga4"/>
                     <include reference="jCf-kH-DRW"/>
-                    <include reference="FRC-Fu-LYu"/>
-                    <include reference="yjz-E0-WpW"/>
+                    <include reference="4Oe-rx-0ZN"/>
+                    <include reference="5DX-vE-7pI"/>
+                    <include reference="MCy-Gj-yYD"/>
+                    <include reference="Zna-Lj-X6g"/>
+                    <include reference="bNF-w1-mzM"/>
                 </mask>
             </variation>
         </view>

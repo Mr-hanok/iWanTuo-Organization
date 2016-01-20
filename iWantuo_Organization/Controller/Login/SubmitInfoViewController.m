@@ -8,23 +8,41 @@
 
 #import "SubmitInfoViewController.h"
 #import "ZHPickView.h"
+#import "ApiRegisterRequest.h"
+#import "ApiAddressListRequest.h"
+#import "CityInfoModel.h"
 
-@interface SubmitInfoViewController ()<ZHPickViewDelegate>
-
-@property (weak, nonatomic) IBOutlet UIButton *workRoomBtn;/**工作室*/
-@property (weak, nonatomic) IBOutlet UIButton *companyBtn;/**公司*/
-@property (weak, nonatomic) IBOutlet UITextField *shortNameTF;/**简称*/
-@property (weak, nonatomic) IBOutlet UITextField *FullNameTF;/**全称*/
-@property (weak, nonatomic) IBOutlet UITextField *trueNameTF;/**真实姓名*/
-@property (weak, nonatomic) IBOutlet UITextField *detialAdressTF;/**详细地址*/
-@property (weak, nonatomic) IBOutlet UITextField *emailTF;/**邮箱*/
-@property (weak, nonatomic) IBOutlet UIButton *cardIdBtn;/**身份证*/
-@property (weak, nonatomic) IBOutlet UIButton *licenseBtn;/**执照*/
-@property (weak, nonatomic) IBOutlet UIImageView *imageIV;/**图片*/
-@property (weak, nonatomic) IBOutlet UIButton *addImageBtn;/**添加图片按钮*/
-@property (weak, nonatomic) IBOutlet UITextField *areaTF;//地区
+@interface SubmitInfoViewController ()<ZHPickViewDelegate,APIRequestDelegate>
+/**工作室*/
+@property (weak, nonatomic) IBOutlet UIButton *workRoomBtn;
+/**公司*/
+@property (weak, nonatomic) IBOutlet UIButton *companyBtn;
+/**简称*/
+@property (weak, nonatomic) IBOutlet UITextField *shortNameTF;
+/**全称*/
+@property (weak, nonatomic) IBOutlet UITextField *FullNameTF;
+/**真实姓名*/
+@property (weak, nonatomic) IBOutlet UITextField *trueNameTF;
+/**详细地址*/
+@property (weak, nonatomic) IBOutlet UITextField *detialAdressTF;
+/**邮箱*/
+@property (weak, nonatomic) IBOutlet UITextField *emailTF;
+/**身份证*/
+@property (weak, nonatomic) IBOutlet UIButton *cardIdBtn;
+/**执照*/
+@property (weak, nonatomic) IBOutlet UIButton *licenseBtn;
+/**图片*/
+@property (weak, nonatomic) IBOutlet UIImageView *imageIV;
+/**添加图片按钮*/
+@property (weak, nonatomic) IBOutlet UIButton *addImageBtn;
+//地区
+@property (weak, nonatomic) IBOutlet UITextField *areaTF;
 
 @property(nonatomic,strong)ZHPickView *pickview;//可选地区Pickview
+@property (nonatomic, strong) ApiRegisterRequest *apiRegister;//注册
+@property (nonatomic, strong) ApiAddressListRequest *apiAddressList;//地区列表
+@property (nonatomic, strong) NSMutableArray *addressArray;
+@property (nonatomic, strong) NSMutableArray *areaArray;
 @end
 
 @implementation SubmitInfoViewController
@@ -36,10 +54,18 @@
     self.title = @"提交资料";
     self.workRoomBtn.selected = YES;
     self.cardIdBtn.selected = YES;
+    self.addressArray = [NSMutableArray array];
+    self.areaArray = [NSMutableArray array];
     //添加手势
     UITapGestureRecognizer *ontTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(swapLabels:)];
     ontTap.numberOfTapsRequired = 1;
     [self.view addGestureRecognizer:ontTap];
+    
+    //获得地区列表
+    self.apiAddressList = [[ApiAddressListRequest alloc]initWithDelegate:self];
+    [self.apiAddressList setApiParamsWithParentId:@"3"];
+    [APIClient execute:self.apiAddressList];
+    
 
 }
 -(void)viewWillAppear:(BOOL)animated{
@@ -50,6 +76,43 @@
     [super viewWillDisappear:animated];
     [MobClick endLogPageView:self.title];
 }
+#pragma mark -  APIRequestDelegate
+
+- (void)serverApi_RequestFailed:(APIRequest *)api error:(NSError *)error {
+    
+    [HUDManager hideHUDView];
+    
+    [AlertViewManager showAlertViewWithMessage:kDefaultNetWorkErrorString];
+    
+}
+
+- (void)serverApi_FinishedSuccessed:(APIRequest *)api result:(APIResult *)sr {
+    
+    [HUDManager hideHUDView];
+    
+    if (sr.dic == nil || [sr.dic isKindOfClass:[NSNull class]]) {
+        return;
+    }
+    if (api == self.apiAddressList) {//地区列表
+        NSArray *array = [sr.dic objectForKey:@"sysCodeList"];
+        for (NSDictionary *dic in array) {
+            CityInfoModel *model = [CityInfoModel initWithDic:dic];
+            [self.areaArray addObject:model.name];
+        }
+
+    }
+}
+
+- (void)serverApi_FinishedFailed:(APIRequest *)api result:(APIResult *)sr {
+    
+    NSString *message = sr.msg;
+    [HUDManager hideHUDView];
+    if (message.length == 0) {
+        message = kDefaultServerErrorString;
+    }
+    [AlertViewManager showAlertViewWithMessage:message];
+}
+
 
 #pragma mark ZhpickVIewDelegate
 
@@ -95,16 +158,53 @@
  *  上传图片按钮
  */
 - (IBAction)upLoadImageBtn:(UIButton *)sender {
+    
+    // 上传图片
+    [[CameraTakeMamanger sharedInstance] cameraSheetInController:self handler:^(UIImage *image, NSString *imagePath) {
+        
+        [HUDManager showLoadingHUDView:self.view];
+        [[UploadManager sharedInstance] uploadFileWithFilePath:imagePath success:^(NSString *fileUrl, NSString *serverUrl, NSString *message) {
+            [HUDManager hideHUDView];
+            if (fileUrl == nil || [fileUrl isKindOfClass:[NSNull class]]) {
+                [AlertViewManager showAlertViewWithMessage:@"服务器异常,请稍后重试"];
+                return ;
+            }
+            
+            // 记录图片地址
+            
+        } failure:^(NSString *message) {
+            [HUDManager showWarningWithText:message];
+            [HUDManager hideHUDView];
+        }];
+    } cancelHandler:^{
+        
+    }];
+
 }
 /**
  *  提交按钮
  */
 - (IBAction)commitBtn:(UIButton *)sender {
+    
+    self.apiRegister = [[ApiRegisterRequest alloc]initWithDelegate:self];
+    [self.apiRegister setApiParamsWithLoginAccount:self.phoneNum
+                                          password:self.passWord
+                                           address:self.detialAdressTF.text
+                                             email:self.emailTF.text
+                          organizationAbbreviation:self.shortNameTF.text
+                                      organization:self.FullNameTF.text
+                              organizationContacts:self.trueNameTF.text
+                                      locationName:@""
+                                          location:@"id"
+                                            bairro:@"id"
+                                        bairroName:@""];
+
+    [APIClient execute:self.apiRegister];
 }
 
 //选择地区
 - (IBAction)areaBtnAction:(UIButton *)sender {
-    NSArray *array=@[@[@"上海"],@[@"上回",@"福东",@"不知"]];
+    NSArray *array=@[@[@"上海市"],self.areaArray];
     _pickview=[[ZHPickView alloc] initPickviewWithArray:array isHaveNavControler:NO];
     _pickview.delegate=self;
     [_pickview show];

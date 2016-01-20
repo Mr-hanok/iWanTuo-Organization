@@ -11,16 +11,17 @@
 #import "SettingViewController.h"
 #import "LoginViewController.h"
 #import "PersonDetailController.h"
-#import "MyBookingViewController.h"
 #import "MyFollowViewController.h"
 #import "MyClassViewController.h"
 #import "MyClassTeacherViewController.h"
 #import "MyPushMessageViewController.h"
 #import "MyStudentViewController.h"
 #import "MyMessageViewController.h"
+#import "ApiLoginOutRequest.h"
 
-@interface MyViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface MyViewController ()<UITableViewDataSource,UITableViewDelegate,APIRequestDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *logoutBtn;
+@property (nonatomic, strong) ApiLoginOutRequest *apiLoginOut;
 
 @end
 
@@ -50,13 +51,53 @@
     [super viewWillDisappear:animated];
     [MobClick endLogPageView:@"我的"];
 }
+#pragma mark -  APIRequestDelegate
+
+- (void)serverApi_RequestFailed:(APIRequest *)api error:(NSError *)error {
+    
+    [HUDManager hideHUDView];
+    
+    [AlertViewManager showAlertViewWithMessage:kDefaultNetWorkErrorString];
+    
+}
+
+- (void)serverApi_FinishedSuccessed:(APIRequest *)api result:(APIResult *)sr {
+    
+    [HUDManager hideHUDView];
+    
+    if (sr.dic == nil || [sr.dic isKindOfClass:[NSNull class]]) {
+        return;
+    }
+    
+    //保存用户信息
+    AccountModel *model =[AccountManager sharedInstance].account;
+    model.isLogin = @"no";
+    [[AccountManager sharedInstance] saveAccountInfoToDisk];
+    LoginViewController *vc = [[LoginViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+    
+    [HUDManager showWarningWithText:@"退出登陆成功"];
+
+}
+
+- (void)serverApi_FinishedFailed:(APIRequest *)api result:(APIResult *)sr {
+    
+    NSString *message = sr.msg;
+    [HUDManager hideHUDView];
+    if (message.length == 0) {
+        message = kDefaultServerErrorString;
+    }
+    [AlertViewManager showAlertViewWithMessage:message];
+}
+
+
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 8;
+    return 7;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -95,6 +136,17 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    //判断是否登陆
+    if ([[AccountManager sharedInstance].account.isLogin isEqualToString:@"no"] ||[[ValueUtils stringFromObject:[AccountManager sharedInstance].account.isLogin] isEqualToString:@""]) {
+        [AlertViewManager showAlertViewMessage:@"尚未登陆,请登录!" handlerBlock:^{
+            LoginViewController *vc = [[LoginViewController alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }];
+        
+        return;
+    }
+
+    
     BaseViewController *vc = nil;
     switch (indexPath.row) {
         case 0://基本信息
@@ -106,19 +158,16 @@
         case 2://学员管理
             vc = [[MyStudentViewController alloc]init];
             break;
-        case 3://预约管理
-            vc = [[MyBookingViewController alloc]init];
-            break;
-        case 4://我的消息
+        case 3://我的消息
             vc = [[MyMessageViewController alloc]init];
             break;
-        case 5://班级管理
+        case 4://班级管理
             vc = [[MyClassViewController alloc]init];
             break;
-        case 6://班主任管理
+        case 5://班主任管理
             vc = [[MyClassTeacherViewController alloc]init];
             break;
-        case 7://推送消息
+        case 6://推送消息
             vc = [[MyPushMessageViewController alloc]init];
             break;
 
@@ -132,6 +181,20 @@
  *  退出按钮
  */
 - (IBAction)Logout:(UIButton *)sender {
+    
+    if ([[AccountManager sharedInstance].account.isLogin isEqualToString:@"no"] ||[[ValueUtils stringFromObject:[AccountManager sharedInstance].account.isLogin] isEqualToString:@""]) {
+        [HUDManager showWarningWithText:@"尚未登陆"];
+        return;
+    }
+    [AlertViewManager showAlertViewMessage:@"确定要退出登陆吗" handlerBlock:^{
+        self.apiLoginOut = [[ApiLoginOutRequest alloc]initWithDelegate:self];
+        [self.apiLoginOut setApiParams];
+        [APIClient execute:self.apiLoginOut];
+        [HUDManager showLoadingHUDView:self.view];
+        
+    }];
+
+    
     LoginViewController *vc = [[LoginViewController alloc]init];
     UINavigationController *navi = [[UINavigationController alloc]initWithRootViewController:vc];
     kRootViewController = navi;

@@ -39,6 +39,8 @@
  */
 - (IBAction)agreeBtnAction:(UIButton *)sender {
     SubmitInfoViewController *vc = [[SubmitInfoViewController alloc]init];
+    vc.phoneNum = self.phoneNum;
+    vc.passWord = self.passWord;
     [self.navigationController pushViewController:vc animated:YES];
 }
 #pragma mark - private methods

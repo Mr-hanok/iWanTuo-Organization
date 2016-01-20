@@ -9,15 +9,18 @@
 #import "RegisterViewController.h"
 #import "JKCountDownButton.h"
 #import "SigningViewController.h"
+#import "ApiSendPhoneMessage.h"
 
-@interface RegisterViewController ()<UITextFieldDelegate>
+
+@interface RegisterViewController ()<UITextFieldDelegate,APIRequestDelegate>
 @property (weak, nonatomic) IBOutlet JKCountDownButton *registerBtn;
 @property (weak, nonatomic) IBOutlet UIButton *commitBtn;//提交
 @property (weak, nonatomic) IBOutlet UITextField *registerNumTF;//验证码
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumTF;//电话号
 @property (weak, nonatomic) IBOutlet UITextField *passwordTF;//密码
 
-
+@property (nonatomic, strong) ApiSendPhoneMessage *apiSM;//短信验证
+@property (nonatomic, copy) NSString *verificatCode;//记录短信码
 @end
 
 @implementation RegisterViewController
@@ -50,6 +53,38 @@
     }
     return YES;
 }
+#pragma mark -  APIRequestDelegate
+
+- (void)serverApi_RequestFailed:(APIRequest *)api error:(NSError *)error {
+    
+    [HUDManager hideHUDView];
+    
+    [AlertViewManager showAlertViewWithMessage:kDefaultNetWorkErrorString];
+    
+}
+
+- (void)serverApi_FinishedSuccessed:(APIRequest *)api result:(APIResult *)sr {
+    
+    [HUDManager hideHUDView];
+    
+    if (sr.dic == nil || [sr.dic isKindOfClass:[NSNull class]]) {
+        return;
+    }
+   self.verificatCode = [ValueUtils stringFromObject:[sr.dic objectForKey:@"verificatCode"]];
+    
+}
+
+- (void)serverApi_FinishedFailed:(APIRequest *)api result:(APIResult *)sr {
+    
+    NSString *message = sr.msg;
+    [HUDManager hideHUDView];
+    if (message.length == 0) {
+        message = kDefaultServerErrorString;
+    }
+    [AlertViewManager showAlertViewWithMessage:message];
+}
+
+
 
 #pragma mark - event response
 
@@ -58,10 +93,16 @@
  */
 - (IBAction)commitAction:(UIButton *)sender {
     //校验>>发送验证码请求
-    if (![self dataCheck]) {
-        return;
-    }
+//    if (![self dataCheck]) {
+//        return;
+//    }
+//    if (![self.verificatCode isEqualToString:self.registerNumTF.text]) {
+//        [HUDManager showWarningWithText:@"验证码不正确"];
+//        return;
+//    }
     SigningViewController *vc = [[SigningViewController alloc]init];
+    vc.phoneNum = self.phoneNumTF.text;
+    vc.passWord = self.passwordTF.text;
     [self.navigationController pushViewController:vc animated:YES];
     
 }
@@ -86,6 +127,10 @@
         countDownButton.enabled = YES;
         return @"重新获取";
     }];
+    //请求接口
+    self.apiSM = [[ApiSendPhoneMessage alloc]initWithDelegate:self];
+    [self.apiSM setApiParamsWithPhone:self.phoneNumTF.text];
+    [APIClient execute:self.apiSM];
     
     
 }

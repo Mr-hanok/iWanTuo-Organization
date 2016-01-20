@@ -70,9 +70,11 @@
     if (sr.dic == nil || [sr.dic isKindOfClass:[NSNull class]]) {
         return;
     }
-//    AccountModel *model =[AccountModel sharedInstance];
-//    model = [model initWithDict:[sr.dic objectForKey:@"Patriarch"]];
-//    [model saveAccountInfoToDisk];
+    //保存用户信息
+    AccountModel *model =[AccountModel initWithDict:[sr.dic objectForKey:@"Patriarch"]];
+    model.isLogin = @"yes";
+    [AccountManager sharedInstance].account = model;
+    [[AccountManager sharedInstance] saveAccountInfoToDisk];
     //登陆成功 切换根控制器
     KeyWindow.rootViewController= [SystemHandler rootViewController];
     
@@ -101,7 +103,7 @@
         [APIClient execute:self.apiLogin];
     }
     //登陆成功 切换根控制器
-    KeyWindow.rootViewController= [SystemHandler rootViewController];
+    //KeyWindow.rootViewController= [SystemHandler rootViewController];
     
 }
 /**
