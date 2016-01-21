@@ -32,6 +32,10 @@
                            location:(NSString *)location
                              bairro:(NSString *)bairro
                          bairroName:(NSString *)bairroName
+                    organizatioType:(NSString *)organizatioType
+                organizatioTypeName:(NSString *)organizatioTypeName
+                        idCardImage:(NSString *)idCardImage
+
 {
     
     [self.params setValue:loginAccounts forKey:@"loginAccounts"];
@@ -46,6 +50,9 @@
     [self.params setValue:location forKey:@"location"];
     [self.params setValue:bairro forKey:@"bairro"];
     [self.params setValue:bairroName forKey:@"bairroName"];
+    [self.params setValue:organizatioType forKey:@"organizatioType"];
+    [self.params setValue:organizatioTypeName forKey:@"organizatioTypeName"];
+    [self.params setValue:idCardImage forKey:@"idCardImage"];
 
     
 }

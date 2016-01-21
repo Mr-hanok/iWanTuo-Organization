@@ -26,6 +26,10 @@
 @property(nonatomic,strong)NSMutableArray *dicKeyArray;
 @property(nonatomic,copy)NSMutableArray *state;
 @property(nonatomic,copy)NSMutableArray *city;
+
+@property (nonatomic, assign) NSInteger row1;
+@property (nonatomic, assign) NSInteger row2;
+@property (nonatomic, copy) NSString *level1;
 @end
 
 @implementation ZHPickView
@@ -264,18 +268,29 @@
         for (int i=0; i<_plistArray.count;i++) {
             if ([self.componentArray containsObject:@(i)]) {
                 NSInteger cIndex = [pickerView selectedRowInComponent:i];
+                self.level1 = _resultString;
                 _resultString=[NSString stringWithFormat:@"%@",_plistArray[i][cIndex]];
+                self.row1 = i;
+                self.row2 = cIndex;
+                
             }else{
-                _resultString=[NSString stringWithFormat:@"%@%@",_resultString,_plistArray[i][0]];
+                _resultString=[NSString stringWithFormat:@"%@",_plistArray[i][0]];
+                self.row1 = i;
+                self.row2 = 0;
+                self.level1 = _resultString;
                           }
         }
     }else if (_isLevelDic){
         if (component==0) {
           _state =_dicKeyArray[row][0];
+            self.row1 = row;
+            self.row2 = 0;
         }else{
             NSInteger cIndex = [pickerView selectedRowInComponent:0];
             NSDictionary *dicValueDic=_plistArray[cIndex];
             NSArray *dicValueArray=[dicValueDic allValues][0];
+            self.row1 = row;
+            self.row2 = cIndex;
             if (dicValueArray.count>row) {
                 _city =dicValueArray[row];
             }
@@ -304,7 +319,10 @@
             }else if (_isLevelArray){
                 _resultString=@"";
                 for (int i=0; i<_plistArray.count;i++) {
-                    _resultString=[NSString stringWithFormat:@"%@%@",_resultString,_plistArray[i][0]];
+                    self.level1 = _resultString;
+                    _resultString=[NSString stringWithFormat:@"%@",_plistArray[i][0]];
+                    self.row1 = i;
+                    self.row2 = 0;
                 }
             }else if (_isLevelDic){
                 
@@ -312,22 +330,29 @@
                      _state =_dicKeyArray[0][0];
                     NSDictionary *dicValueDic=_plistArray[0];
                     _city=[dicValueDic allValues][0][0];
+                    self.row1 = 0;
+                    self.row2 = 0;
                 }
                 if (_city==nil){
                     NSInteger cIndex = [_pickerView selectedRowInComponent:0];
                     NSDictionary *dicValueDic=_plistArray[cIndex];
                     _city=[dicValueDic allValues][0][0];
+                    self.row1 = 0;
+                    self.row2 = 0;
                     
                 }
-              _resultString=[NSString stringWithFormat:@"%@%@",_state,_city];
+            self.level1 = _state;
+              _resultString=[NSString stringWithFormat:@"%@",_city];
+                
            }
         }
     }else if (_datePicker) {
       
         _resultString=[NSString stringWithFormat:@"%@",_datePicker.date];
     }
-    if ([self.delegate respondsToSelector:@selector(toobarDonBtnHaveClick:resultString:)]) {
-        [self.delegate toobarDonBtnHaveClick:self resultString:_resultString];
+    if ([self.delegate respondsToSelector:@selector(toobarDonBtnHaveClick:resultString:level1:row1:row2:)]) {
+        //[self.delegate toobarDonBtnHaveClick:self resultString:_resultString];
+        [self.delegate toobarDonBtnHaveClick:self resultString:_resultString level1:self.level1 row1:self.row1 row2:self.row2];
     }
     [self removeFromSuperview];
 }

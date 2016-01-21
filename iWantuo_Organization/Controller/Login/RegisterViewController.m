@@ -93,13 +93,13 @@
  */
 - (IBAction)commitAction:(UIButton *)sender {
     //校验>>发送验证码请求
-//    if (![self dataCheck]) {
-//        return;
-//    }
-//    if (![self.verificatCode isEqualToString:self.registerNumTF.text]) {
-//        [HUDManager showWarningWithText:@"验证码不正确"];
-//        return;
-//    }
+    if (![self dataCheck]) {
+        return;
+    }
+    if (![self.verificatCode isEqualToString:self.registerNumTF.text]) {
+        [HUDManager showWarningWithText:@"验证码不正确"];
+        return;
+    }
     SigningViewController *vc = [[SigningViewController alloc]init];
     vc.phoneNum = self.phoneNumTF.text;
     vc.passWord = self.passwordTF.text;

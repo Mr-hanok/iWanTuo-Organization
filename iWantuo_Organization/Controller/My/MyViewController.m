@@ -139,37 +139,63 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     //判断是否登陆
-//    if ([[AccountManager sharedInstance].account.isLogin isEqualToString:@"no"] ||[[ValueUtils stringFromObject:[AccountManager sharedInstance].account.isLogin] isEqualToString:@""]) {
-//        [AlertViewManager showAlertViewMessage:@"尚未登陆,请登录!" handlerBlock:^{
-//            LoginViewController *vc = [[LoginViewController alloc]init];
-//            [self.navigationController pushViewController:vc animated:YES];
-//        }];
-//        
-//        return;
-//    }
-
+    if ([[AccountManager sharedInstance].account.isLogin isEqualToString:@"no"] ||[[ValueUtils stringFromObject:[AccountManager sharedInstance].account.isLogin] isEqualToString:@""]) {
+        [AlertViewManager showAlertViewMessage:@"尚未登陆,请登录!" handlerBlock:^{
+            LoginViewController *vc = [[LoginViewController alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }];
+        
+        return;
+    }
+    
+    BOOL accountType =[[AccountManager sharedInstance].account.accountsType isEqualToString:@"3"];
     
     BaseViewController *vc = nil;
     switch (indexPath.row) {
+            
         case 0://基本信息
+            if (accountType) {
+                [HUDManager showWarningWithText:@"您没有权限操作！"];
+                return;
+            }
             vc = [[PersonDetailController alloc]init];
             break;
         case 1://每日跟踪
             vc = [[MyFollowViewController alloc]init];
             break;
-        case 2://学员管理
-            vc = [[MyStudentViewController alloc]init];
-            break;
         case 3://我的消息
+            if (accountType) {
+                [HUDManager showWarningWithText:@"您没有权限操作！"];
+                return;
+            }
             vc = [[MyMessageViewController alloc]init];
             break;
+        case 2://学员管理
+            if (accountType) {
+                [HUDManager showWarningWithText:@"您没有权限操作！"];
+                return;
+            }
+            vc = [[MyStudentViewController alloc]init];
+            break;
         case 4://班级管理
+            if (accountType) {
+                [HUDManager showWarningWithText:@"您没有权限操作！"];
+                return;
+            }
             vc = [[MyClassViewController alloc]init];
             break;
         case 5://班主任管理
+            if (accountType) {
+                [HUDManager showWarningWithText:@"您没有权限操作！"];
+                return;
+            }
             vc = [[MyClassTeacherViewController alloc]init];
             break;
         case 6://推送消息
+            if (accountType) {
+                [HUDManager showWarningWithText:@"您没有权限操作！"];
+                return;
+            }
             vc = [[MyPushMessageViewController alloc]init];
             break;
 

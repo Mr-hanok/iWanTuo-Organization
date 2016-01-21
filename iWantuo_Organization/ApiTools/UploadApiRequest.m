@@ -22,6 +22,7 @@
 
 - (void)setApiParamsWithFilePath:(NSString *)filePath{
     self.filePath = filePath;
+    self.filePathArray = @[self.filePath];
 
 
 }
