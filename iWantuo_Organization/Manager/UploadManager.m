@@ -53,7 +53,7 @@ static UploadManager *sharedInstance = nil;
                // NSString *serverUrl = [AccountManager sharedInstance].imageBaseUrl;
                 NSString *serverUrl = @"";
 //                serverUrl = [@"" stringByAppendingPathComponent:serverUrl];
-                NSString *message = sr.dic[@"message"];
+                NSString *message = sr.dic[@"fielName"];
                 self.success(fileUrl,serverUrl,message);
             } else {
                 NSString *message = sr.dic[@"message"];

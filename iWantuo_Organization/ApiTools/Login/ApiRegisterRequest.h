@@ -22,5 +22,8 @@
                        locationName:(NSString *)locationName
                            location:(NSString *)location
                              bairro:(NSString *)bairro
-                         bairroName:(NSString *)bairroName;
+                         bairroName:(NSString *)bairroName
+                    organizatioType:(NSString *)organizatioType
+                organizatioTypeName:(NSString *)organizatioTypeName
+                        idCardImage:(NSString *)idCardImage;
 @end

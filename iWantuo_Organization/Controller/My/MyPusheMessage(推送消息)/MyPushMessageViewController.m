@@ -9,6 +9,7 @@
 #import "MyPushMessageViewController.h"
 
 @interface MyPushMessageViewController ()
+@property (weak, nonatomic) IBOutlet UITextView *messageTV;
 
 @end
 
@@ -19,6 +20,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.title = @"推送消息";
+    
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -28,12 +30,22 @@
     [super viewWillDisappear:animated];
     [MobClick endLogPageView:self.title];
 }
-
+-(void)viewWillLayoutSubviews{
+    [super viewWillLayoutSubviews];
+    self.messageTV.layer.borderWidth = 1.f;
+    self.messageTV.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    
+}
 #pragma mark - 协议名
 
 
 #pragma mark - event response
-
+/**
+ * 发送按钮
+ */
+- (IBAction)sendBtnAction:(UIButton *)sender {
+    [self.view endEditing:YES];
+}
 
 #pragma mark - private methods
 

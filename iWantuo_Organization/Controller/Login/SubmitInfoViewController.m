@@ -11,6 +11,7 @@
 #import "ApiRegisterRequest.h"
 #import "ApiAddressListRequest.h"
 #import "CityInfoModel.h"
+#import "LoginViewController.h"
 
 @interface SubmitInfoViewController ()<ZHPickViewDelegate,APIRequestDelegate>
 /**工作室*/
@@ -42,7 +43,13 @@
 @property (nonatomic, strong) ApiRegisterRequest *apiRegister;//注册
 @property (nonatomic, strong) ApiAddressListRequest *apiAddressList;//地区列表
 @property (nonatomic, strong) NSMutableArray *addressArray;
-@property (nonatomic, strong) NSMutableArray *areaArray;
+@property (nonatomic, strong) NSMutableArray *areaArray;//地区数组
+@property (nonatomic, strong) NSMutableArray *areaModelArry;//区域model数组
+@property (nonatomic, assign) NSInteger number;//记录地区数组选中
+
+@property (nonatomic, copy) NSString *organiType;//记录机构类型id
+@property (nonatomic, copy) NSString *organiTypeName;//记录机构名称
+@property (nonatomic, copy) NSString *imageName;//记录图片名称（多张上传接口只穿名称）
 @end
 
 @implementation SubmitInfoViewController
@@ -56,12 +63,13 @@
     self.cardIdBtn.selected = YES;
     self.addressArray = [NSMutableArray array];
     self.areaArray = [NSMutableArray array];
+    self.areaModelArry = [NSMutableArray array];
     //添加手势
     UITapGestureRecognizer *ontTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(swapLabels:)];
     ontTap.numberOfTapsRequired = 1;
     [self.view addGestureRecognizer:ontTap];
     
-    //获得地区列表
+    //获得地区列表 固定设置为上海市 的地区
     self.apiAddressList = [[ApiAddressListRequest alloc]initWithDelegate:self];
     [self.apiAddressList setApiParamsWithParentId:@"3"];
     [APIClient execute:self.apiAddressList];
@@ -98,8 +106,16 @@
         for (NSDictionary *dic in array) {
             CityInfoModel *model = [CityInfoModel initWithDic:dic];
             [self.areaArray addObject:model.name];
+            [self.areaModelArry addObject:model];
         }
 
+    }
+    
+    if (api == self.apiRegister) {//注册
+        
+        [HUDManager showWarningWithText:@"注册成功，请登录"];
+        LoginViewController *vc = [[LoginViewController alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 
@@ -116,11 +132,11 @@
 
 #pragma mark ZhpickVIewDelegate
 
--(void)toobarDonBtnHaveClick:(ZHPickView *)pickView resultString:(NSString *)resultString{
-    NSLog(@"%@",resultString);
-
+-(void)toobarDonBtnHaveClick:(ZHPickView *)pickView resultString:(NSString *)resultString level1:(NSString *)level1 row1:(NSInteger)row1 row2:(NSInteger)row2{
+    self.number = row2;
+    self.areaTF.text = [NSString stringWithFormat:@"%@%@",@"上海市",resultString];
+    NSLog(@"%@-%@-%ld-%ld",resultString,level1,row1,row2);
 }
-
 
 #pragma mark - event response
 /**
@@ -130,10 +146,14 @@
     sender.selected = YES;
     switch (sender.tag) {
         case 101://工作室
+            self.organiType = @"15";
+            self.organiTypeName = @"工作室";
             self.companyBtn.selected = NO;
             break;
             
         case 102://公司
+            self.organiType = @"16";
+            self.organiTypeName = @"公司";
             self.workRoomBtn.selected = NO;
             break;
     }
@@ -170,7 +190,10 @@
                 return ;
             }
             
-            // 记录图片地址
+            // 记录图片地址  设置图片
+            self.imageName = message;
+            self.imageIV.image = image;
+            [self.addImageBtn setBackgroundImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
             
         } failure:^(NSString *message) {
             [HUDManager showWarningWithText:message];
@@ -185,7 +208,12 @@
  *  提交按钮
  */
 - (IBAction)commitBtn:(UIButton *)sender {
+    //校验 提交
+    if (![self dataCheck]) {
+        return;
+    }
     
+    CityInfoModel *model = self.areaModelArry[self.number];
     self.apiRegister = [[ApiRegisterRequest alloc]initWithDelegate:self];
     [self.apiRegister setApiParamsWithLoginAccount:self.phoneNum
                                           password:self.passWord
@@ -194,16 +222,19 @@
                           organizationAbbreviation:self.shortNameTF.text
                                       organization:self.FullNameTF.text
                               organizationContacts:self.trueNameTF.text
-                                      locationName:@""
-                                          location:@"id"
-                                            bairro:@"id"
-                                        bairroName:@""];
-
+                                      locationName:@"上海市"
+                                          location:@"3"
+                                            bairro:model.cityId
+                                        bairroName:model.name
+                                   organizatioType:self.organiType
+                               organizatioTypeName:self.organiTypeName
+                                       idCardImage:self.imageName];
     [APIClient execute:self.apiRegister];
 }
 
 //选择地区
 - (IBAction)areaBtnAction:(UIButton *)sender {
+    [self.view endEditing:YES];
     NSArray *array=@[@[@"上海市"],self.areaArray];
     _pickview=[[ZHPickView alloc] initPickviewWithArray:array isHaveNavControler:NO];
     _pickview.delegate=self;
@@ -246,6 +277,14 @@
     }
     if (self.FullNameTF.text.length>30) {
         [HUDManager showWarningWithText:@"请输入30字以内的全称"];
+        return NO;
+    }
+    if (self.number == 0) {
+        [HUDManager showWarningWithText:@"请选择地区"];
+        return NO;
+    }
+    if (self.imageName.length == 0) {
+        [HUDManager showWarningWithText:@"请上传图片"];
         return NO;
     }
     return YES;

@@ -12,7 +12,7 @@
 @protocol ZHPickViewDelegate <NSObject>
 
 @optional
--(void)toobarDonBtnHaveClick:(ZHPickView *)pickView resultString:(NSString *)resultString;
+-(void)toobarDonBtnHaveClick:(ZHPickView *)pickView resultString:(NSString *)resultString level1:(NSString *)level1 row1:(NSInteger)row1 row2:(NSInteger)row2;
 
 @end
 
