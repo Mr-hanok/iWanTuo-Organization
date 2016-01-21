@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassDetailCell" id="KGk-i7-Jjw" customClass="ClassDetailCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUf-dO-i6Z">
+                        <rect key="frame" x="0.0" y="0.0" width="50" height="43"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="h6L-QE-nss"/>
+                        </constraints>
+                        <state key="normal" image="register_unSelect"/>
+                        <state key="selected" image="register_agree"/>
+                        <connections>
+                            <action selector="seleteBtnAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="5cR-aZ-1tx"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eo3-aF-jrN">
+                        <rect key="frame" x="50" y="0.0" width="260" height="43"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LLr-gI-job">
+                        <rect key="frame" x="0.0" y="43" width="320" height="1"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="ciw-de-WdR"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="VUf-dO-i6Z" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="296-Ls-npL"/>
+                    <constraint firstAttribute="trailing" secondItem="eo3-aF-jrN" secondAttribute="trailing" constant="10" id="2kc-Hw-61L"/>
+                    <constraint firstItem="LLr-gI-job" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="GCb-6n-l3o"/>
+                    <constraint firstItem="VUf-dO-i6Z" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="cJo-X6-cz1"/>
+                    <constraint firstItem="LLr-gI-job" firstAttribute="top" secondItem="VUf-dO-i6Z" secondAttribute="bottom" id="iTo-yg-DqQ"/>
+                    <constraint firstItem="LLr-gI-job" firstAttribute="top" secondItem="eo3-aF-jrN" secondAttribute="bottom" id="igZ-Yt-uI3"/>
+                    <constraint firstItem="eo3-aF-jrN" firstAttribute="leading" secondItem="VUf-dO-i6Z" secondAttribute="trailing" id="jSJ-D1-VEp"/>
+                    <constraint firstAttribute="bottom" secondItem="LLr-gI-job" secondAttribute="bottom" id="pOU-0o-I22"/>
+                    <constraint firstAttribute="trailing" secondItem="LLr-gI-job" secondAttribute="trailing" id="sB5-a2-RCK"/>
+                    <constraint firstItem="eo3-aF-jrN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="stI-af-dtd"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="nameLabel" destination="eo3-aF-jrN" id="0AH-5F-ieH"/>
+            </connections>
+            <point key="canvasLocation" x="149" y="197"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="register_agree" width="12" height="12"/>
+        <image name="register_unSelect" width="12" height="12"/>
+    </resources>
+</document>

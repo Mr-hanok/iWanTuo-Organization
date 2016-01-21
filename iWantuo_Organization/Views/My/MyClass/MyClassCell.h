@@ -16,6 +16,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *studentCountLabel;//人数
 @property (nonatomic, assign) NSInteger row;
 
-@property (nonatomic, assign) id<MyClassCellDelegate> delegate;
+@property (nonatomic, weak) id<MyClassCellDelegate> delegate;
 + (MyClassCell *)shareMyClassCell;
 @end

@@ -9,6 +9,7 @@
 #import "MyClassViewController.h"
 #import "MyClassCell.h"
 #import "AddMyClassViewController.h"
+#import "ClassDetailViewController.h"
 
 @interface MyClassViewController ()<UITableViewDataSource,UITableViewDelegate,MyClassCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
@@ -72,6 +73,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    ClassDetailViewController *vc = [[ClassDetailViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - myclassCelldelegate

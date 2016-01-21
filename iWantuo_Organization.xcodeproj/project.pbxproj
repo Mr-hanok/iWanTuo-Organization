@@ -24,6 +24,10 @@
 		375001AC1C50C90400B14021 /* AddClassTeacherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 375001AA1C50C90400B14021 /* AddClassTeacherViewController.xib */; };
 		375001B01C50D85800B14021 /* AddMyClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 375001AE1C50D85800B14021 /* AddMyClassViewController.m */; };
 		375001B11C50D85800B14021 /* AddMyClassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 375001AF1C50D85800B14021 /* AddMyClassViewController.xib */; };
+		375001B51C50FD0D00B14021 /* ClassDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 375001B31C50FD0D00B14021 /* ClassDetailViewController.m */; };
+		375001B61C50FD0D00B14021 /* ClassDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 375001B41C50FD0D00B14021 /* ClassDetailViewController.xib */; };
+		375001BA1C50FFD400B14021 /* ClassDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 375001B81C50FFD400B14021 /* ClassDetailCell.m */; };
+		375001BB1C50FFD400B14021 /* ClassDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 375001B91C50FFD400B14021 /* ClassDetailCell.xib */; };
 		37D724E21C4F1AA40055721B /* ApiSendPhoneMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D724E11C4F1AA40055721B /* ApiSendPhoneMessage.m */; };
 		37D724E71C4F264E0055721B /* CameraTakeMamanger.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D724E41C4F264E0055721B /* CameraTakeMamanger.m */; };
 		37D724EB1C4F26AF0055721B /* UploadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D724EA1C4F26AF0055721B /* UploadManager.m */; };
@@ -163,6 +167,12 @@
 		375001AD1C50D85800B14021 /* AddMyClassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddMyClassViewController.h; sourceTree = "<group>"; };
 		375001AE1C50D85800B14021 /* AddMyClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddMyClassViewController.m; sourceTree = "<group>"; };
 		375001AF1C50D85800B14021 /* AddMyClassViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddMyClassViewController.xib; sourceTree = "<group>"; };
+		375001B21C50FD0D00B14021 /* ClassDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassDetailViewController.h; sourceTree = "<group>"; };
+		375001B31C50FD0D00B14021 /* ClassDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassDetailViewController.m; sourceTree = "<group>"; };
+		375001B41C50FD0D00B14021 /* ClassDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassDetailViewController.xib; sourceTree = "<group>"; };
+		375001B71C50FFD400B14021 /* ClassDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassDetailCell.h; sourceTree = "<group>"; };
+		375001B81C50FFD400B14021 /* ClassDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassDetailCell.m; sourceTree = "<group>"; };
+		375001B91C50FFD400B14021 /* ClassDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassDetailCell.xib; sourceTree = "<group>"; };
 		37D724E01C4F1AA40055721B /* ApiSendPhoneMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiSendPhoneMessage.h; sourceTree = "<group>"; };
 		37D724E11C4F1AA40055721B /* ApiSendPhoneMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiSendPhoneMessage.m; sourceTree = "<group>"; };
 		37D724E31C4F264E0055721B /* CameraTakeMamanger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraTakeMamanger.h; sourceTree = "<group>"; };
@@ -452,6 +462,9 @@
 				37D725071C4F97E10055721B /* MyClassCell.h */,
 				37D725081C4F97E10055721B /* MyClassCell.m */,
 				37D725091C4F97E10055721B /* MyClassCell.xib */,
+				375001B71C50FFD400B14021 /* ClassDetailCell.h */,
+				375001B81C50FFD400B14021 /* ClassDetailCell.m */,
+				375001B91C50FFD400B14021 /* ClassDetailCell.xib */,
 			);
 			path = MyClass;
 			sourceTree = "<group>";
@@ -576,6 +589,9 @@
 				375001AD1C50D85800B14021 /* AddMyClassViewController.h */,
 				375001AE1C50D85800B14021 /* AddMyClassViewController.m */,
 				375001AF1C50D85800B14021 /* AddMyClassViewController.xib */,
+				375001B21C50FD0D00B14021 /* ClassDetailViewController.h */,
+				375001B31C50FD0D00B14021 /* ClassDetailViewController.m */,
+				375001B41C50FD0D00B14021 /* ClassDetailViewController.xib */,
 			);
 			path = "MyClass(班级管理)";
 			sourceTree = "<group>";
@@ -1157,6 +1173,7 @@
 				BE25EB421C44FC5F00068309 /* LaunchScreen.storyboard in Resources */,
 				37D725131C4FA6960055721B /* MyClassTeacherCell.xib in Resources */,
 				37E1DE0D1C4DE2CC00245BE6 /* TopViewController.xib in Resources */,
+				375001BB1C50FFD400B14021 /* ClassDetailCell.xib in Resources */,
 				37033E341C4C9033009F27DB /* ForgetViewController.xib in Resources */,
 				37E1DDF51C4DDD8C00245BE6 /* MyStudentViewController.xib in Resources */,
 				37E1DDDD1C4DDA8A00245BE6 /* MyCell.xib in Resources */,
@@ -1174,6 +1191,7 @@
 				37D7250B1C4F97E10055721B /* MyClassCell.xib in Resources */,
 				37E1DDD21C4DD92600245BE6 /* ChangePasswordController.xib in Resources */,
 				37E1DDD41C4DD92600245BE6 /* FeedbackViewController.xib in Resources */,
+				375001B61C50FD0D00B14021 /* ClassDetailViewController.xib in Resources */,
 				37E1DE031C4DE29500245BE6 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1285,6 +1303,7 @@
 				BE25EBA31C44FD9200068309 /* UIImage+Video.m in Sources */,
 				BE25EB6E1C44FD8500068309 /* APIRequest.m in Sources */,
 				37033E461C4C914C009F27DB /* JKCountDownButton.m in Sources */,
+				375001B51C50FD0D00B14021 /* ClassDetailViewController.m in Sources */,
 				37E1DDCB1C4DD92600245BE6 /* MyMessageViewController.m in Sources */,
 				BE25EBA41C44FD9200068309 /* UIView+Frame.m in Sources */,
 				37E1DE191C4E241500245BE6 /* ApiRegisterRequest.m in Sources */,
@@ -1311,6 +1330,7 @@
 				37E1DDEA1C4DDD5800245BE6 /* MyClassTeacherViewController.m in Sources */,
 				37E1DDCD1C4DD92600245BE6 /* MyViewController.m in Sources */,
 				BE25EB9C1C44FD9200068309 /* NSString+Security.m in Sources */,
+				375001BA1C50FFD400B14021 /* ClassDetailCell.m in Sources */,
 				BE25EB9A1C44FD9200068309 /* NSDate+FSExtension.m in Sources */,
 				37033E4F1C4CBBCA009F27DB /* SubmitInfoViewController.m in Sources */,
 				BE25EB9B1C44FD9200068309 /* NSString+Device.m in Sources */,

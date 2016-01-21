@@ -37,6 +37,7 @@
     __weak typeof(self) weakSelf = self;
     [self setRightBtnImage:[UIImage imageNamed:@"home_unSelect"] eventHandler:^(id sender) {
         SettingViewController *vc = [[SettingViewController alloc]init];
+        vc.hidesBottomBarWhenPushed = YES;
         [weakSelf.navigationController pushViewController:vc animated:YES];
     }];
    
@@ -44,14 +45,11 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    self.tabBarController.tabBar.hidden = NO;
     [MobClick beginLogPageView:@"我的"];
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [MobClick endLogPageView:@"我的"];
-    self.tabBarController.tabBar.hidden = YES;
-
 }
 
 #pragma mark -  APIRequestDelegate
@@ -140,14 +138,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     //判断是否登陆
-    if ([[AccountManager sharedInstance].account.isLogin isEqualToString:@"no"] ||[[ValueUtils stringFromObject:[AccountManager sharedInstance].account.isLogin] isEqualToString:@""]) {
-        [AlertViewManager showAlertViewMessage:@"尚未登陆,请登录!" handlerBlock:^{
-            LoginViewController *vc = [[LoginViewController alloc]init];
-            [self.navigationController pushViewController:vc animated:YES];
-        }];
-        
-        return;
-    }
+//    if ([[AccountManager sharedInstance].account.isLogin isEqualToString:@"no"] ||[[ValueUtils stringFromObject:[AccountManager sharedInstance].account.isLogin] isEqualToString:@""]) {
+//        [AlertViewManager showAlertViewMessage:@"尚未登陆,请登录!" handlerBlock:^{
+//            LoginViewController *vc = [[LoginViewController alloc]init];
+//            [self.navigationController pushViewController:vc animated:YES];
+//        }];
+//        
+//        return;
+//    }
     
     BaseViewController *vc = nil;
     switch (indexPath.row) {
@@ -181,6 +179,7 @@
             break;
 
     }
+    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 
 }
