@@ -41,7 +41,7 @@
                                 <constraint firstAttribute="height" constant="1" id="oYu-Su-JIt"/>
                             </constraints>
                         </view>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="18210890192" placeholder="账号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X2a-eH-7sD">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="账号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X2a-eH-7sD">
                             <rect key="frame" x="64" y="197" width="231" height="25"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="25" id="xIu-kK-eoP"/>

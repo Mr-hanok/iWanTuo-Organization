@@ -70,6 +70,15 @@
     if (sr.dic == nil || [sr.dic isKindOfClass:[NSNull class]]) {
         return;
     }
+    NSDictionary *teacherDic = [sr.dic objectForKey:[ValueUtils stringFromObject:@"Teacher"]];
+    NSDictionary *origanDic = [sr.dic objectForKey:[ValueUtils stringFromObject:@"Organization"]];
+    if (teacherDic) {//教师登陆
+        
+    }
+    
+    if (origanDic) {//机构登陆
+        
+    }
     //保存用户信息
     AccountModel *model =[AccountModel initWithDict:[sr.dic objectForKey:@"Patriarch"]];
     model.isLogin = @"yes";
@@ -103,7 +112,7 @@
         [APIClient execute:self.apiLogin];
     }
     //登陆成功 切换根控制器
-    //KeyWindow.rootViewController= [SystemHandler rootViewController];
+    KeyWindow.rootViewController= [SystemHandler rootViewController];
     
 }
 /**
