@@ -39,4 +39,9 @@
 #define SendPhoneMessage            @"SendSMS/phoneSendSMSToRegister"//发送验证码请求
 #define UploadImageApi              @"FileUpload/phoneHeadImgsUpload"//上传图片头像
 #define CityAreaList                @"/syscode/phoneQueryByList"//城市地区列表
+
+
+
+//my
+#define SaveStudentAction            @"student/phoneStudentSave" //添加学生
 #endif

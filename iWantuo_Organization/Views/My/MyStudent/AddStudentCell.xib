@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="AddStudentCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓      名 : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mfn-g3-ogq">
+                        <rect key="frame" x="8" y="11" width="74" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XMS-Qb-ABU">
+                        <rect key="frame" x="83" y="7" width="229" height="30"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Mfn-g3-ogq" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="1st-ZD-mlf"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="XMS-Qb-ABU" secondAttribute="trailing" id="Alb-x4-iS3"/>
+                    <constraint firstItem="XMS-Qb-ABU" firstAttribute="centerY" secondItem="Mfn-g3-ogq" secondAttribute="centerY" id="UJ9-IX-E6R"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="Mfn-g3-ogq" secondAttribute="leading" id="adM-ok-ab0"/>
+                    <constraint firstItem="XMS-Qb-ABU" firstAttribute="leading" secondItem="Mfn-g3-ogq" secondAttribute="trailing" constant="1" id="dku-mS-Hfs"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="attributeNameLabel" destination="Mfn-g3-ogq" id="7wG-ES-4aZ"/>
+                <outlet property="attributeValueLabel" destination="XMS-Qb-ABU" id="nHN-r2-G2J"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>
