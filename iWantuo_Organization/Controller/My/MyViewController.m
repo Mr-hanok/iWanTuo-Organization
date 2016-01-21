@@ -44,13 +44,15 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.tabBarController.tabBar.hidden = NO;
-    self.hidesBottomBarWhenPushed = NO;
     [MobClick beginLogPageView:@"我的"];
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [MobClick endLogPageView:@"我的"];
+    self.tabBarController.tabBar.hidden = YES;
+
 }
+
 #pragma mark -  APIRequestDelegate
 
 - (void)serverApi_RequestFailed:(APIRequest *)api error:(NSError *)error {
