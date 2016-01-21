@@ -7,14 +7,17 @@
 //
 
 #import "AccountListViewController.h"
-#import "APIRequest.h"
+#import "ApiPatriarchListRequest.h"
 #import "PageManager.h"
+#import "PatriarchModel.h"
 
 @interface AccountListViewController ()<UITableViewDataSource, UITableViewDelegate, APIRequestDelegate, PageManagerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (nonatomic, strong) NSMutableArray *dataArray;
 @property (nonatomic, strong) PageManager *pageManager;
+@property (nonatomic, strong) ApiPatriarchListRequest *apiPatriarch;
+@property (nonatomic, strong) NSString *searchKey;
 
 @end
 
@@ -31,10 +34,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.apiPatriarch = [[ApiPatriarchListRequest alloc] initWithDelegate:self];
     self.pageManager = [PageManager handlerWithDelegate:self TableView:self.tableView];
-//    [self.tableView.mj_header beginRefreshing];
+    [self.tableView.mj_header beginRefreshing];
     self.tableView.tableFooterView = [[UIView alloc] init];
     
+    self.title = @"家长账号列表";
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -48,7 +53,6 @@
 
 #pragma mark - UITableViewDataSource, UITableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
     return self.dataArray.count;
 }
 
@@ -57,13 +61,15 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kReusableTableViewCell];
     }
-
+    PatriarchModel *model = [self.dataArray objectAtIndex:indexPath.row];
+    cell.textLabel.text = model.loginAccounts;
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    self.backBlock(@"13354285540");
+    PatriarchModel *model = [self.dataArray objectAtIndex:indexPath.row];
+    self.backBlock(model.loginAccounts);
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -91,11 +97,11 @@
             [self.dataArray removeAllObjects];
         }
         api.requestCurrentPage ++;
-//        NSArray *array = [sr.dic objectForKey:@"schoolList"];
-//        for (NSDictionary *dic in array) {
-//            SchoolModel *model = [SchoolModel initWithDic:dic];
-//            [self.dataArray addObject:model];
-//        }
+        NSArray *array = [sr.dic objectForKey:@"patriarchList"];
+        for (NSDictionary *dic in array) {
+            PatriarchModel *model = [PatriarchModel initWithDic:dic];
+            [self.dataArray addObject:model];
+        }
         [self.tableView reloadData];
     } else {
         [HUDManager showWarningWithText:sr.msg];
@@ -115,13 +121,15 @@
 }
 #pragma mark - PageManagerDelegate
 - (void)headerRefreshing {
-//    self.api.requestCurrentPage = 1;
-//    [self.api setApiParamsWithLocation:[AccountManager sharedInstance].locationId schoolName:self.searchKey page:[NSString stringWithFormat:@"%@", @(self.api.requestCurrentPage)] locationX:[AccountManager sharedInstance].locationX locationY:[AccountManager sharedInstance].locationY];
-//    [APIClient execute:self.api];
+    
+    self.apiPatriarch.requestCurrentPage = 1;
+    [self.apiPatriarch setApiParamsWithLoginAccounts:self.searchKey page:[NSString stringWithFormat:@"%@", @(self.apiPatriarch.requestCurrentPage)]];
+    [APIClient execute:self.apiPatriarch];
 }
 - (void)footerRereshing {
-//    [self.api setApiParamsWithLocation:[AccountManager sharedInstance].locationId schoolName:self.searchKey page:[NSString stringWithFormat:@"%@", @(self.api.requestCurrentPage)] locationX:[AccountManager sharedInstance].locationX locationY:[AccountManager sharedInstance].locationY];
-//    [APIClient execute:self.api];
+    
+    [self.apiPatriarch setApiParamsWithLoginAccounts:self.searchKey page:[NSString stringWithFormat:@"%@", @(self.apiPatriarch.requestCurrentPage)]];
+    [APIClient execute:self.apiPatriarch];
 }
 
 
