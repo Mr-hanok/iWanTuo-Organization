@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iWantuo_Organization/Controller/Login/SubmitInfoViewController.m"
-            timestampString = "475052554.013818"
+            timestampString = "475055825.726473"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "221"
-            endingLineNumber = "221"
+            startingLineNumber = "217"
+            endingLineNumber = "217"
             landmarkName = "-commitBtn:"
             landmarkType = "5">
          </BreakpointContent>

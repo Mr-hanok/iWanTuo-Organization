@@ -8,6 +8,7 @@
 
 #import "MyClassTeacherViewController.h"
 #import "MyClassTeacherCell.h"
+#import "AddClassTeacherViewController.h"
 
 @interface MyClassTeacherViewController ()<MyClassTeacherCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
@@ -21,8 +22,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.title = @"辅导老师管理";
-    //导航栏右侧按钮
+    //导航栏右侧按钮 添加老师
+    __weak typeof(self) weakSelf = self;
     [self setRightBtnImage:[UIImage imageNamed:@"my_myclassadd"] eventHandler:^(id sender) {
+        AddClassTeacherViewController *vc = [[AddClassTeacherViewController alloc]init];
+        [weakSelf.navigationController pushViewController:vc animated:YES];
         
     }];
 }

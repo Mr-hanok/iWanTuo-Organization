@@ -33,6 +33,7 @@
     [super viewDidLoad];
     
     self.title = @"我的";
+
     __weak typeof(self) weakSelf = self;
     [self setRightBtnImage:[UIImage imageNamed:@"home_unSelect"] eventHandler:^(id sender) {
         SettingViewController *vc = [[SettingViewController alloc]init];
@@ -148,54 +149,34 @@
         return;
     }
     
-    BOOL accountType =[[AccountManager sharedInstance].account.accountsType isEqualToString:@"3"];
-    
     BaseViewController *vc = nil;
     switch (indexPath.row) {
             
         case 0://基本信息
-            if (accountType) {
-                [HUDManager showWarningWithText:@"您没有权限操作！"];
-                return;
-            }
+            [self limitAccountType];
             vc = [[PersonDetailController alloc]init];
             break;
         case 1://每日跟踪
             vc = [[MyFollowViewController alloc]init];
             break;
         case 3://我的消息
-            if (accountType) {
-                [HUDManager showWarningWithText:@"您没有权限操作！"];
-                return;
-            }
+            [self limitAccountType];
             vc = [[MyMessageViewController alloc]init];
             break;
         case 2://学员管理
-            if (accountType) {
-                [HUDManager showWarningWithText:@"您没有权限操作！"];
-                return;
-            }
+            [self limitAccountType];
             vc = [[MyStudentViewController alloc]init];
             break;
         case 4://班级管理
-            if (accountType) {
-                [HUDManager showWarningWithText:@"您没有权限操作！"];
-                return;
-            }
+            [self limitAccountType];
             vc = [[MyClassViewController alloc]init];
             break;
         case 5://班主任管理
-            if (accountType) {
-                [HUDManager showWarningWithText:@"您没有权限操作！"];
-                return;
-            }
+            [self limitAccountType];
             vc = [[MyClassTeacherViewController alloc]init];
             break;
         case 6://推送消息
-            if (accountType) {
-                [HUDManager showWarningWithText:@"您没有权限操作！"];
-                return;
-            }
+            [self limitAccountType];
             vc = [[MyPushMessageViewController alloc]init];
             break;
 
@@ -224,6 +205,14 @@
 }
 
 #pragma mark - private methods
-
-
+/**
+ *  判断是否有权限操作
+ */
+- (void)limitAccountType{
+    BOOL accountType =[[AccountManager sharedInstance].account.accountsType isEqualToString:@"3"];
+    if (accountType) {
+        [HUDManager showWarningWithText:@"您没有权限操作！"];
+        return;
+    }
+}
 @end

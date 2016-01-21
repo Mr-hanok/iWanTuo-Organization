@@ -8,6 +8,7 @@
 
 #import "MyClassViewController.h"
 #import "MyClassCell.h"
+#import "AddMyClassViewController.h"
 
 @interface MyClassViewController ()<UITableViewDataSource,UITableViewDelegate,MyClassCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
@@ -22,8 +23,10 @@
     // Do any additional setup after loading the view from its nib.
     self.title = @"班级管理";
     //导航栏右侧按钮
+    __weak typeof(self) weakself = self;
     [self setRightBtnImage:[UIImage imageNamed:@"my_myclassadd"] eventHandler:^(id sender) {
-        
+        AddMyClassViewController *vc = [[AddMyClassViewController alloc]init];
+        [weakself.navigationController pushViewController:vc animated:YES];
     }];
 }
 -(void)viewWillAppear:(BOOL)animated{
