@@ -140,14 +140,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     //判断是否登陆
-//    if ([[AccountManager sharedInstance].account.isLogin isEqualToString:@"no"] ||[[ValueUtils stringFromObject:[AccountManager sharedInstance].account.isLogin] isEqualToString:@""]) {
-//        [AlertViewManager showAlertViewMessage:@"尚未登陆,请登录!" handlerBlock:^{
-//            LoginViewController *vc = [[LoginViewController alloc]init];
-//            [self.navigationController pushViewController:vc animated:YES];
-//        }];
-//        
-//        return;
-//    }
+    if ([[AccountManager sharedInstance].account.isLogin isEqualToString:@"no"] ||[[ValueUtils stringFromObject:[AccountManager sharedInstance].account.isLogin] isEqualToString:@""]) {
+        [AlertViewManager showAlertViewMessage:@"尚未登陆,请登录!" handlerBlock:^{
+            LoginViewController *vc = [[LoginViewController alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }];
+        
+        return;
+    }
     
     BaseViewController *vc = nil;
     switch (indexPath.row) {
