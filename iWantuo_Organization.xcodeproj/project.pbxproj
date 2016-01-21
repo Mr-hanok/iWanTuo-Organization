@@ -110,6 +110,16 @@
 		BE25EBFB1C44FDFE00068309 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BE25EBE81C44FDFD00068309 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		BE25EC021C45018800068309 /* ValueUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BE25EC011C45018800068309 /* ValueUtils.m */; };
 		BE25EC161C4501C000068309 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE25EC051C4501C000068309 /* BaseViewController.m */; };
+		BED7D8B91C50A6DB005A338E /* AddStudentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BED7D8B71C50A6DB005A338E /* AddStudentCell.m */; };
+		BED7D8BA1C50A6DB005A338E /* AddStudentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BED7D8B81C50A6DB005A338E /* AddStudentCell.xib */; };
+		BED7D8BE1C50BA7C005A338E /* ApiSaveStudentRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BED7D8BD1C50BA7C005A338E /* ApiSaveStudentRequest.m */; };
+		BED7D8C21C50CCC4005A338E /* TFDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BED7D8C01C50CCC4005A338E /* TFDatePickerView.m */; };
+		BED7D8C31C50CCC4005A338E /* TFDatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BED7D8C11C50CCC4005A338E /* TFDatePickerView.xib */; };
+		BED7D8C71C50D085005A338E /* AccountListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BED7D8C51C50D085005A338E /* AccountListViewController.m */; };
+		BED7D8C81C50D085005A338E /* AccountListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BED7D8C61C50D085005A338E /* AccountListViewController.xib */; };
+		BED7D8CB1C50D3E6005A338E /* PageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BED7D8CA1C50D3E6005A338E /* PageManager.m */; };
+		BED7D8CE1C510217005A338E /* ApiPatriarchListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BED7D8CD1C510217005A338E /* ApiPatriarchListRequest.m */; };
+		BED7D8D21C51044F005A338E /* PatriarchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BED7D8D11C51044F005A338E /* PatriarchModel.m */; };
 		BEE4D9F51C489BBB00510308 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE4D9F21C489BBB00510308 /* libMobClickLibrary.a */; };
 		BEE4DA031C48BFB300510308 /* libGeTuiSdk-1.3.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE4DA021C48BFB300510308 /* libGeTuiSdk-1.3.2.a */; };
 		BEE4DA051C48C06D00510308 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE4DA041C48C06D00510308 /* libz.tbd */; };
@@ -328,6 +338,23 @@
 		BE25EC011C45018800068309 /* ValueUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValueUtils.m; sourceTree = "<group>"; };
 		BE25EC041C4501C000068309 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		BE25EC051C4501C000068309 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		BED7D8B61C50A6DB005A338E /* AddStudentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddStudentCell.h; sourceTree = "<group>"; };
+		BED7D8B71C50A6DB005A338E /* AddStudentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddStudentCell.m; sourceTree = "<group>"; };
+		BED7D8B81C50A6DB005A338E /* AddStudentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddStudentCell.xib; sourceTree = "<group>"; };
+		BED7D8BC1C50BA7C005A338E /* ApiSaveStudentRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiSaveStudentRequest.h; sourceTree = "<group>"; };
+		BED7D8BD1C50BA7C005A338E /* ApiSaveStudentRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiSaveStudentRequest.m; sourceTree = "<group>"; };
+		BED7D8BF1C50CCC4005A338E /* TFDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFDatePickerView.h; sourceTree = "<group>"; };
+		BED7D8C01C50CCC4005A338E /* TFDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFDatePickerView.m; sourceTree = "<group>"; };
+		BED7D8C11C50CCC4005A338E /* TFDatePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TFDatePickerView.xib; sourceTree = "<group>"; };
+		BED7D8C41C50D085005A338E /* AccountListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountListViewController.h; sourceTree = "<group>"; };
+		BED7D8C51C50D085005A338E /* AccountListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountListViewController.m; sourceTree = "<group>"; };
+		BED7D8C61C50D085005A338E /* AccountListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountListViewController.xib; sourceTree = "<group>"; };
+		BED7D8C91C50D3E6005A338E /* PageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageManager.h; sourceTree = "<group>"; };
+		BED7D8CA1C50D3E6005A338E /* PageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageManager.m; sourceTree = "<group>"; };
+		BED7D8CC1C510217005A338E /* ApiPatriarchListRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiPatriarchListRequest.h; sourceTree = "<group>"; };
+		BED7D8CD1C510217005A338E /* ApiPatriarchListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiPatriarchListRequest.m; sourceTree = "<group>"; };
+		BED7D8D01C51044F005A338E /* PatriarchModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatriarchModel.h; sourceTree = "<group>"; };
+		BED7D8D11C51044F005A338E /* PatriarchModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatriarchModel.m; sourceTree = "<group>"; };
 		BEE4D9F21C489BBB00510308 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
 		BEE4D9F31C489BBB00510308 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
 		BEE4D9F41C489BBB00510308 /* MobClickSocialAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClickSocialAnalytics.h; sourceTree = "<group>"; };
@@ -440,6 +467,7 @@
 		37D724FB1C4F6ABC0055721B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BED7D8CF1C51043A005A338E /* My */,
 				37D725021C4F7AF70055721B /* Home */,
 				37D724FC1C4F6B500055721B /* AccountModel.h */,
 				37D724FD1C4F6B500055721B /* AccountModel.m */,
@@ -571,6 +599,10 @@
 		37E1DDD81C4DDA8A00245BE6 /* My */ = {
 			isa = PBXGroup;
 			children = (
+				BED7D8BF1C50CCC4005A338E /* TFDatePickerView.h */,
+				BED7D8C01C50CCC4005A338E /* TFDatePickerView.m */,
+				BED7D8C11C50CCC4005A338E /* TFDatePickerView.xib */,
+				BED7D8B51C50A6BC005A338E /* MyStudent */,
 				37D7250E1C4FA6870055721B /* MyClassTeacher */,
 				37D725061C4F97BC0055721B /* MyClass */,
 				37E1DDD91C4DDA8A00245BE6 /* MyCell.h */,
@@ -625,6 +657,9 @@
 				37E1DDF11C4DDD8C00245BE6 /* MyStudentViewController.h */,
 				37E1DDF21C4DDD8C00245BE6 /* MyStudentViewController.m */,
 				37E1DDF31C4DDD8C00245BE6 /* MyStudentViewController.xib */,
+				BED7D8C41C50D085005A338E /* AccountListViewController.h */,
+				BED7D8C51C50D085005A338E /* AccountListViewController.m */,
+				BED7D8C61C50D085005A338E /* AccountListViewController.xib */,
 			);
 			path = "MyStudent(学员管理)";
 			sourceTree = "<group>";
@@ -683,13 +718,6 @@
 				37D725001C4F78AF0055721B /* ApiAddressListRequest.m */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		37E1DE151C4E1A2000245BE6 /* My */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = My;
 			sourceTree = "<group>";
 		};
 		37E1DE161C4E1A2000245BE6 /* Top */ = {
@@ -800,9 +828,9 @@
 		BE25EB651C44FD8500068309 /* ApiTools */ = {
 			isa = PBXGroup;
 			children = (
+				BED7D8BB1C50BA45005A338E /* My */,
 				37E1DE131C4E1A2000245BE6 /* Discover */,
 				37E1DE141C4E1A2000245BE6 /* Home */,
-				37E1DE151C4E1A2000245BE6 /* My */,
 				37E1DE161C4E1A2000245BE6 /* Top */,
 				37033E391C4C910B009F27DB /* Login */,
 				BE25EB661C44FD8500068309 /* Api */,
@@ -969,6 +997,8 @@
 		BE25EBBA1C44FDC700068309 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				BED7D8C91C50D3E6005A338E /* PageManager.h */,
+				BED7D8CA1C50D3E6005A338E /* PageManager.m */,
 				37D724F81C4F6A4C0055721B /* AccountManager.h */,
 				37D724F91C4F6A4C0055721B /* AccountManager.m */,
 				BE25EBBB1C44FDC700068309 /* AlertViewManager.h */,
@@ -1031,6 +1061,36 @@
 				BE25EC051C4501C000068309 /* BaseViewController.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		BED7D8B51C50A6BC005A338E /* MyStudent */ = {
+			isa = PBXGroup;
+			children = (
+				BED7D8B61C50A6DB005A338E /* AddStudentCell.h */,
+				BED7D8B71C50A6DB005A338E /* AddStudentCell.m */,
+				BED7D8B81C50A6DB005A338E /* AddStudentCell.xib */,
+			);
+			path = MyStudent;
+			sourceTree = "<group>";
+		};
+		BED7D8BB1C50BA45005A338E /* My */ = {
+			isa = PBXGroup;
+			children = (
+				BED7D8BC1C50BA7C005A338E /* ApiSaveStudentRequest.h */,
+				BED7D8BD1C50BA7C005A338E /* ApiSaveStudentRequest.m */,
+				BED7D8CC1C510217005A338E /* ApiPatriarchListRequest.h */,
+				BED7D8CD1C510217005A338E /* ApiPatriarchListRequest.m */,
+			);
+			path = My;
+			sourceTree = "<group>";
+		};
+		BED7D8CF1C51043A005A338E /* My */ = {
+			isa = PBXGroup;
+			children = (
+				BED7D8D01C51044F005A338E /* PatriarchModel.h */,
+				BED7D8D11C51044F005A338E /* PatriarchModel.m */,
+			);
+			path = My;
 			sourceTree = "<group>";
 		};
 		BEE4D9F11C489BBB00510308 /* UMAnalytics_Sdk_3.6.7 */ = {
@@ -1165,9 +1225,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				37033E361C4C9033009F27DB /* LoginViewController.xib in Resources */,
+				BED7D8BA1C50A6DB005A338E /* AddStudentCell.xib in Resources */,
 				37E1DDC41C4DD92600245BE6 /* PersonDetailController.xib in Resources */,
 				37E1DDFB1C4DDE3C00245BE6 /* MyFollowViewController.xib in Resources */,
+				BED7D8C31C50CCC4005A338E /* TFDatePickerView.xib in Resources */,
 				37E1DDD61C4DD92600245BE6 /* SettingViewController.xib in Resources */,
+				BED7D8C81C50D085005A338E /* AccountListViewController.xib in Resources */,
 				37E1DDEB1C4DDD5800245BE6 /* MyClassTeacherViewController.xib in Resources */,
 				37033E381C4C9033009F27DB /* RegisterViewController.xib in Resources */,
 				BE25EB421C44FC5F00068309 /* LaunchScreen.storyboard in Resources */,
@@ -1267,11 +1330,13 @@
 			files = (
 				BE25EBA21C44FD9200068309 /* UIImage+Camera.m in Sources */,
 				BE25EC161C4501C000068309 /* BaseViewController.m in Sources */,
+				BED7D8D21C51044F005A338E /* PatriarchModel.m in Sources */,
 				BE25EBAD1C44FDA500068309 /* SystemHandler.m in Sources */,
 				37D724FE1C4F6B500055721B /* AccountModel.m in Sources */,
 				37E1DDDC1C4DDA8A00245BE6 /* MyCell.m in Sources */,
 				37D725121C4FA6960055721B /* MyClassTeacherCell.m in Sources */,
 				37E1DDD11C4DD92600245BE6 /* ChangePasswordController.m in Sources */,
+				BED7D8B91C50A6DB005A338E /* AddStudentCell.m in Sources */,
 				BE25EB9F1C44FD9200068309 /* NSString+Verify.m in Sources */,
 				BE25EBA51C44FD9200068309 /* UIView+GestureRecognizer.m in Sources */,
 				BE25EBA01C44FD9200068309 /* NSURL+Path.m in Sources */,
@@ -1280,16 +1345,20 @@
 				37E1DDD51C4DD92600245BE6 /* SettingViewController.m in Sources */,
 				37D724E21C4F1AA40055721B /* ApiSendPhoneMessage.m in Sources */,
 				37033E351C4C9033009F27DB /* LoginViewController.m in Sources */,
+				BED7D8CB1C50D3E6005A338E /* PageManager.m in Sources */,
 				BE25EB6D1C44FD8500068309 /* APIClient.m in Sources */,
 				375001AB1C50C90400B14021 /* AddClassTeacherViewController.m in Sources */,
 				BE25EB9D1C44FD9200068309 /* NSString+Size.m in Sources */,
 				BE25EBA61C44FD9200068309 /* UIView+Image.m in Sources */,
 				37033E331C4C9033009F27DB /* ForgetViewController.m in Sources */,
+				BED7D8C71C50D085005A338E /* AccountListViewController.m in Sources */,
 				37D724E71C4F264E0055721B /* CameraTakeMamanger.m in Sources */,
+				BED7D8BE1C50BA7C005A338E /* ApiSaveStudentRequest.m in Sources */,
 				BE25EB6F1C44FD8500068309 /* APIResult.m in Sources */,
 				37033E4A1C4CB7EC009F27DB /* SigningViewController.m in Sources */,
 				BE25EBB11C44FDB300068309 /* TimerHelper.m in Sources */,
 				BE25EB991C44FD9200068309 /* NSDate+CalendarLogic.m in Sources */,
+				BED7D8C21C50CCC4005A338E /* TFDatePickerView.m in Sources */,
 				37D725011C4F78AF0055721B /* ApiAddressListRequest.m in Sources */,
 				37E1DE101C4E149800245BE6 /* ApiFindPassWord.m in Sources */,
 				37033E421C4C910B009F27DB /* ApiLoginRequest.m in Sources */,
@@ -1319,6 +1388,7 @@
 				BE25EB341C44FC5F00068309 /* main.m in Sources */,
 				BE25EBF91C44FDFE00068309 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				37E1DE071C4DE2B200245BE6 /* DiscoverViewController.m in Sources */,
+				BED7D8CE1C510217005A338E /* ApiPatriarchListRequest.m in Sources */,
 				BE25EC021C45018800068309 /* ValueUtils.m in Sources */,
 				37033E411C4C910B009F27DB /* ApiLoginOutRequest.m in Sources */,
 				BE25EBC11C44FDC700068309 /* AlertViewManager.m in Sources */,
