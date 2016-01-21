@@ -193,11 +193,6 @@
         [HUDManager showLoadingHUDView:self.view];
         
     }];
-
-    
-    LoginViewController *vc = [[LoginViewController alloc]init];
-    UINavigationController *navi = [[UINavigationController alloc]initWithRootViewController:vc];
-    kRootViewController = navi;
 }
 
 #pragma mark - private methods

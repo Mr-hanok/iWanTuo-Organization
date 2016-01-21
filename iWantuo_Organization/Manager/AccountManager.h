@@ -14,7 +14,9 @@
 @property (nonatomic, strong) AccountModel *account;
 @property (nonatomic, readonly) NSString *uuid;
 @property (nonatomic, strong) NSString *imageBaseUrl;
+
 @property (nonatomic, readonly) BOOL isLogin;
+
 @property (nonatomic, strong) NSString *locationName;
 @property (nonatomic, strong) NSString *locationId;
 @property (nonatomic, strong) NSString *locationX; //用户当前位置坐标

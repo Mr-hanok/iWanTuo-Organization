@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface AccountModel : NSObject
-
+#pragma mark - 以下是机构信息字段
 /**后台表id*/
 @property (nonatomic, copy) NSString *userId;
 /**城市id*/
@@ -92,20 +92,32 @@
 @property (nonatomic, copy) NSString *type;
 
 
+#pragma mark - 以下是老师独有字段
+//"id": 1,
+//"loginAccounts": "13479413163",
+//"organizationAccounts": "13479413167",
+//"status": 2,
+//"statusName": "新建",
+//"createDate": "2016-01-16 16:28:00.0",
+//"phone": "",
+//"name": ""
+/***/
+@property (nonatomic, copy) NSString *organizationAccounts;
+/***/
+@property (nonatomic, copy) NSString *statusName;
+/***/
+@property (nonatomic, copy) NSString *name;
 
+
+
+#pragma mark - 单独加的地段
 /**1家长，2机构，3老师*/
-@property (nonatomic, copy) NSString *accountsType;
+@property (nonatomic, strong) NSString *accountsType;
 /**是否登陆*/
 @property (nonatomic, strong) NSString *isLogin;
 
 
-+ (AccountModel *)initWithDict:(NSDictionary *)dict;
++ (AccountModel *)initWithDict:(NSDictionary *)dict accountType:(NSString *)accountType;
 
 @end
 
-#pragma mark  -  老师模型
-@interface TeacherAccountModel : NSObject
-
-+ (AccountModel *)initWithDict:(NSDictionary *)dict;
-
-@end

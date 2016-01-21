@@ -12,11 +12,19 @@
 #import "ForgetViewController.h"
 #import "ApiLoginRequest.h"
 
+typedef enum :NSInteger {
+    AccountParent=1,//家长 机构 老师
+    AccountOrganizaton,
+    AccountTeacher
+}AccoutnLoginType;
+
 @interface LoginViewController ()<UITextFieldDelegate,APIRequestDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *userNameTF;//用户名
 @property (weak, nonatomic) IBOutlet UITextField *passWordTF;//密码
 @property (nonatomic, strong) ApiLoginRequest *apiLogin;//登陆接口
+
+@property (nonatomic, assign) AccoutnLoginType type;
 @end
 
 @implementation LoginViewController
@@ -72,15 +80,18 @@
     }
     NSDictionary *teacherDic = [sr.dic objectForKey:[ValueUtils stringFromObject:@"Teacher"]];
     NSDictionary *origanDic = [sr.dic objectForKey:[ValueUtils stringFromObject:@"Organization"]];
+    AccountModel *model = nil;
+    
     if (teacherDic) {//教师登陆
-        
+        self.type = AccountTeacher;
+        model =[AccountModel initWithDict:[sr.dic objectForKey:@"Teacher"] accountType:@"3"];
     }
     
     if (origanDic) {//机构登陆
-        
+        self.type = AccountOrganizaton;
+        model =[AccountModel initWithDict:[sr.dic objectForKey:@"Organization"] accountType:@"2"];
     }
     //保存用户信息
-    AccountModel *model =[AccountModel initWithDict:[sr.dic objectForKey:@"Patriarch"]];
     model.isLogin = @"yes";
     [AccountManager sharedInstance].account = model;
     [[AccountManager sharedInstance] saveAccountInfoToDisk];
@@ -112,7 +123,7 @@
         [APIClient execute:self.apiLogin];
     }
     //登陆成功 切换根控制器
-    KeyWindow.rootViewController= [SystemHandler rootViewController];
+   // KeyWindow.rootViewController= [SystemHandler rootViewController];
     
 }
 /**

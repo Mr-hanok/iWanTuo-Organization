@@ -14,15 +14,47 @@
     
     AccountModel *copy = [[[self class] allocWithZone:zone] init];
     copy.userId = [self.userId copyWithZone:zone];
-//    copy.loginAccounts = [self.loginAccounts copyWithZone:zone];
-//    copy.patriarchName = [self.patriarchName copyWithZone:zone];
-//    copy.phone = [self.phone copyWithZone:zone];
-//    copy.sex = [self.sex copyWithZone:zone];
-//    copy.statusName = [self.statusName copyWithZone:zone];
-//    copy.status = [self.status copyWithZone:zone];
-//    copy.address = [self.address copyWithZone:zone];
-//    copy.age = [self.age copyWithZone:zone];
-//    copy.createDate = [self.createDate copyWithZone:zone];
+    copy.location = [self.location copyWithZone:zone];
+    copy.locationName = [self.locationName copyWithZone:zone];
+    copy.bairroName = [self.bairroName copyWithZone:zone];
+    copy.address = [self.address copyWithZone:zone];
+    copy.loginAccounts = [self.loginAccounts copyWithZone:zone];
+    copy.email = [self.email copyWithZone:zone];
+    copy.organizatioType = [self.organizatioType copyWithZone:zone];
+    copy.organizatioTypeName = [self.organizatioTypeName copyWithZone:zone];
+    copy.organizationAbbreviation = [self.organizationAbbreviation copyWithZone:zone];
+    copy.organization = [self.organization copyWithZone:zone];
+    copy.organizationContacts = [self.organizationContacts copyWithZone:zone];
+    copy.idCardImage = [self.idCardImage copyWithZone:zone];
+    copy.businessLicenseImage = [self.businessLicenseImage copyWithZone:zone];
+    copy.coordinateX = [self.coordinateX copyWithZone:zone];
+    copy.coordinateY = [self.coordinateY copyWithZone:zone];
+    copy.phone = [self.phone copyWithZone:zone];
+    copy.idCard = [self.idCard copyWithZone:zone];
+    copy.businessLicense = [self.businessLicense copyWithZone:zone];
+    copy.createDate = [self.createDate copyWithZone:zone];
+    copy.updateDate = [self.updateDate copyWithZone:zone];
+    copy.check = [self.check copyWithZone:zone];
+    copy.checkName = [self.checkName copyWithZone:zone];
+    copy.attestation = [self.attestation copyWithZone:zone];
+    copy.attestationName = [self.attestationName copyWithZone:zone];
+    copy.warranty = [self.warranty copyWithZone:zone];
+    copy.warrantyName = [self.warrantyName copyWithZone:zone];
+    copy.introduce = [self.introduce copyWithZone:zone];
+    copy.label = [self.label copyWithZone:zone];
+    copy.photoAlbum = [self.photoAlbum copyWithZone:zone];
+    copy.cost = [self.cost copyWithZone:zone];
+    copy.orderNum = [self.orderNum copyWithZone:zone];
+    copy.evaluate = [self.evaluate copyWithZone:zone];
+    copy.evaluateNum = [self.evaluateNum copyWithZone:zone];
+    copy.subject = [self.subject copyWithZone:zone];
+    copy.teacher = [self.teacher copyWithZone:zone];
+    copy.headPortrait = [self.headPortrait copyWithZone:zone];
+    copy.type = [self.type copyWithZone:zone];
+    
+    copy.organizationAccounts = [self.organizationAccounts copyWithZone:zone];
+    copy.statusName = [self.statusName copyWithZone:zone];
+    copy.name = [self.name copyWithZone:zone];
     
     copy.isLogin = [self.isLogin copyWithZone:zone];
     copy.accountsType = [self.accountsType copyWithZone:zone];
@@ -30,7 +62,7 @@
 }
 
 
-+ (AccountModel *)initWithDict:(NSDictionary *)dict {
++ (AccountModel *)initWithDict:(NSDictionary *)dict accountType:(NSString *)accountType{
     AccountModel *account = [[AccountModel alloc] init];
     if (account) {
         account.userId = [ValueUtils stringFromObject:[dict objectForKey:@"id"]];
@@ -72,15 +104,15 @@
         account.teacher = [ValueUtils stringFromObject:[dict objectForKey:@"teacher"]];
         account.headPortrait = [ValueUtils stringFromObject:[dict objectForKey:@"headPortrait"]];
         account.type = [ValueUtils stringFromObject:[dict objectForKey:@"type"]];
+        
+        account.organizationAccounts = [ValueUtils stringFromObject:[dict objectForKey:@"organizationAccounts"]];
+        account.name = [ValueUtils stringFromObject:[dict objectForKey:@"name"]];
+        account.statusName = [ValueUtils stringFromObject:[dict objectForKey:@"statusName"]];
+        
+        account.accountsType = [ValueUtils stringFromObject:accountType];
     }
     return account;
 }
 
 @end
 
-#pragma mark  -  老师模型
-@implementation TeacherAccountModel
-
-
-
-@end
