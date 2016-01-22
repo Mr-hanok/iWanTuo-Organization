@@ -10,7 +10,9 @@
 - (void)myClassCellCliecDeleBtn:(UIButton *)btn withIndexPathRow:(NSInteger)row;
 @end
 #import <UIKit/UIKit.h>
-
+/**
+ *  班级管理cell
+ */
 @interface MyClassCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *classNameLabel;//班级名
 @property (weak, nonatomic) IBOutlet UILabel *studentCountLabel;//人数

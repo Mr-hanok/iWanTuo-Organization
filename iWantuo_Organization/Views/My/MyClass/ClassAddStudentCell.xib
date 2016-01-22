@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassAddStudentCell" id="KGk-i7-Jjw" customClass="ClassAddStudentCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="109.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="学生名称：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A9H-WM-kQz">
+                        <rect key="frame" x="30" y="13" width="70" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="9zp-Ut-PnM"/>
+                            <constraint firstAttribute="width" constant="70" id="GLR-YE-3L9"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="学       校：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eas-CM-F18">
+                        <rect key="frame" x="30" y="35" width="70" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="Xtd-cI-8XA"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="班级名称：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FwY-dI-0yL">
+                        <rect key="frame" x="105" y="57" width="197" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3bK-ZK-w2e">
+                        <rect key="frame" x="0.0" y="108" width="320" height="1"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="Ihu-x9-Tku"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="年       级：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oqn-kJ-wfd">
+                        <rect key="frame" x="30" y="57" width="70" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="Tiw-aK-5Vi"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="班级名称：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9pl-0Z-uPt">
+                        <rect key="frame" x="105" y="79" width="197" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="家长账号：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5n2-tg-sYe">
+                        <rect key="frame" x="30" y="79" width="70" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="1LQ-qU-Lpt"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="班级名称：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RjE-00-7ba">
+                        <rect key="frame" x="105" y="13" width="197" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBI-PJ-ieL">
+                        <rect key="frame" x="0.0" y="10" width="30" height="22.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22.5" id="U3k-uF-j1f"/>
+                            <constraint firstAttribute="width" constant="30" id="kch-sK-ZHi"/>
+                        </constraints>
+                        <state key="normal" image="register_unSelect"/>
+                        <state key="selected" image="register_agree"/>
+                        <connections>
+                            <action selector="seletedBtnAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="OsJ-nf-8iq"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="班级名称：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQC-Dc-5Bj">
+                        <rect key="frame" x="105" y="35" width="197" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="A9H-WM-kQz" firstAttribute="centerY" secondItem="rBI-PJ-ieL" secondAttribute="centerY" id="5Sf-ci-xFU"/>
+                    <constraint firstItem="eas-CM-F18" firstAttribute="top" secondItem="RjE-00-7ba" secondAttribute="bottom" constant="5" id="7wy-op-09b"/>
+                    <constraint firstItem="FwY-dI-0yL" firstAttribute="trailing" secondItem="RjE-00-7ba" secondAttribute="trailing" id="A7y-To-3mr"/>
+                    <constraint firstItem="eas-CM-F18" firstAttribute="leading" secondItem="A9H-WM-kQz" secondAttribute="leading" id="ALz-aL-zN3"/>
+                    <constraint firstItem="5n2-tg-sYe" firstAttribute="top" secondItem="Oqn-kJ-wfd" secondAttribute="bottom" constant="5" id="AtQ-5Y-HaV"/>
+                    <constraint firstItem="5n2-tg-sYe" firstAttribute="trailing" secondItem="Oqn-kJ-wfd" secondAttribute="trailing" id="FwE-wz-vda"/>
+                    <constraint firstItem="SQC-Dc-5Bj" firstAttribute="leading" secondItem="RjE-00-7ba" secondAttribute="leading" id="GgG-Ps-Qqv"/>
+                    <constraint firstItem="FwY-dI-0yL" firstAttribute="leading" secondItem="RjE-00-7ba" secondAttribute="leading" id="HH2-58-nG4"/>
+                    <constraint firstItem="9pl-0Z-uPt" firstAttribute="centerY" secondItem="5n2-tg-sYe" secondAttribute="centerY" id="Hd0-82-Vnn"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="RjE-00-7ba" secondAttribute="trailing" constant="10" id="JmU-xC-3dQ"/>
+                    <constraint firstItem="Oqn-kJ-wfd" firstAttribute="top" secondItem="eas-CM-F18" secondAttribute="bottom" constant="5" id="MMw-7I-Cnd"/>
+                    <constraint firstItem="A9H-WM-kQz" firstAttribute="leading" secondItem="rBI-PJ-ieL" secondAttribute="trailing" id="OIx-Mw-iq0"/>
+                    <constraint firstItem="SQC-Dc-5Bj" firstAttribute="centerY" secondItem="eas-CM-F18" secondAttribute="centerY" id="P4O-Bi-A8w"/>
+                    <constraint firstAttribute="trailing" secondItem="3bK-ZK-w2e" secondAttribute="trailing" id="QUz-F3-lo3"/>
+                    <constraint firstItem="9pl-0Z-uPt" firstAttribute="trailing" secondItem="RjE-00-7ba" secondAttribute="trailing" id="RsP-by-ExE"/>
+                    <constraint firstItem="3bK-ZK-w2e" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="aKy-Tk-juX"/>
+                    <constraint firstItem="9pl-0Z-uPt" firstAttribute="leading" secondItem="RjE-00-7ba" secondAttribute="leading" id="c4j-wH-h2C"/>
+                    <constraint firstItem="rBI-PJ-ieL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="fVU-CU-IOU"/>
+                    <constraint firstItem="rBI-PJ-ieL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="fbL-BN-sET"/>
+                    <constraint firstItem="FwY-dI-0yL" firstAttribute="centerY" secondItem="Oqn-kJ-wfd" secondAttribute="centerY" id="gzK-M0-y1t"/>
+                    <constraint firstItem="RjE-00-7ba" firstAttribute="leading" secondItem="A9H-WM-kQz" secondAttribute="trailing" constant="5" id="kJm-cB-yVz"/>
+                    <constraint firstItem="SQC-Dc-5Bj" firstAttribute="trailing" secondItem="RjE-00-7ba" secondAttribute="trailing" id="mqF-xb-MiF"/>
+                    <constraint firstAttribute="bottom" secondItem="3bK-ZK-w2e" secondAttribute="bottom" id="ose-O6-rJb"/>
+                    <constraint firstItem="Oqn-kJ-wfd" firstAttribute="leading" secondItem="eas-CM-F18" secondAttribute="leading" id="sGN-Pn-0Dp"/>
+                    <constraint firstItem="eas-CM-F18" firstAttribute="trailing" secondItem="A9H-WM-kQz" secondAttribute="trailing" id="uIH-KF-7gB"/>
+                    <constraint firstItem="Oqn-kJ-wfd" firstAttribute="trailing" secondItem="eas-CM-F18" secondAttribute="trailing" id="ufL-PC-Y2J"/>
+                    <constraint firstItem="5n2-tg-sYe" firstAttribute="leading" secondItem="Oqn-kJ-wfd" secondAttribute="leading" id="xwG-Qx-cDI"/>
+                    <constraint firstItem="RjE-00-7ba" firstAttribute="centerY" secondItem="A9H-WM-kQz" secondAttribute="centerY" id="yxb-vp-tYB"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="classNameLabel" destination="FwY-dI-0yL" id="ufi-Ia-oL9"/>
+                <outlet property="parentAccountLabel" destination="9pl-0Z-uPt" id="TgQ-IV-VHo"/>
+                <outlet property="schoolNameLabel" destination="SQC-Dc-5Bj" id="UI8-2A-rxs"/>
+                <outlet property="studentNameLabel" destination="RjE-00-7ba" id="JgV-4L-2hi"/>
+            </connections>
+            <point key="canvasLocation" x="194" y="180"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="register_agree" width="12" height="12"/>
+        <image name="register_unSelect" width="12" height="12"/>
+    </resources>
+</document>

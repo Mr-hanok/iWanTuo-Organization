@@ -25,6 +25,7 @@
     self.navigationController.navigationBar.translucent = NO;
     [self.navigationController.navigationBar setBarStyle:(UIBarStyleBlack)];
     [self.navigationController.navigationBar setTintColor:kNavigationColor];
+
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:19]}];
     [self setBackBtn];
     
@@ -125,7 +126,8 @@
     btn.frame = CGRectMake(0, 0, 44, 44);
     [btn setTitle:btnTitle forState:UIControlStateNormal];
     btn.backgroundColor = [UIColor clearColor];
-    
+    //btn.titleLabel.textColor = kNavigationColor;
+    [btn setTitleColor:kNavigationColor forState:UIControlStateNormal];
     [btn bk_addEventHandler:^(id sender) {
         handler(btn);
     } forControlEvents:UIControlEventTouchUpInside];
@@ -133,7 +135,9 @@
     if (self.tabBarController == nil) {
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
     } else {
-        self.tabBarController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
+        //self.tabBarController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
+
     }
 }
 

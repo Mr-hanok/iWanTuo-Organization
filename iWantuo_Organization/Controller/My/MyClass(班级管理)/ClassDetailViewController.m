@@ -8,6 +8,7 @@
 
 #import "ClassDetailViewController.h"
 #import "ClassDetailCell.h"
+#import "ClassAddStudentController.h"
 
 @interface ClassDetailViewController ()<UITableViewDataSource,UITableViewDelegate,ClassDetailCellDelegate>
 
@@ -21,8 +22,12 @@
     // Do any additional setup after loading the view from its nib.
     self.title = @"班级详情";
     
+    //导航栏右侧按钮
+    __weak typeof(self) weakself = self;
     [self setRightBtnImage:nil eventHandler:^(id sender) {
-        //添加
+        //添加学生
+        ClassAddStudentController *vc = [[ClassAddStudentController alloc]init];
+        [weakself.navigationController pushViewController:vc animated:YES];
         
     } anddel:^(id sender) {
         //删除
