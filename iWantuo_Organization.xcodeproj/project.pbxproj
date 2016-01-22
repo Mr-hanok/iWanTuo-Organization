@@ -32,6 +32,10 @@
 		37C4E8F61C51BEEE00583902 /* ClassAddStudentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37C4E8F41C51BEEE00583902 /* ClassAddStudentController.xib */; };
 		37C4E8FA1C51C26C00583902 /* ClassAddStudentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C4E8F81C51C26C00583902 /* ClassAddStudentCell.m */; };
 		37C4E8FB1C51C26C00583902 /* ClassAddStudentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37C4E8F91C51C26C00583902 /* ClassAddStudentCell.xib */; };
+		37C4E8FF1C51DEFB00583902 /* StudentChoseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C4E8FD1C51DEFB00583902 /* StudentChoseViewController.m */; };
+		37C4E9001C51DEFB00583902 /* StudentChoseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37C4E8FE1C51DEFB00583902 /* StudentChoseViewController.xib */; };
+		37C4E9051C51E02A00583902 /* StudentChoseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C4E9031C51E02A00583902 /* StudentChoseCell.m */; };
+		37C4E9061C51E02A00583902 /* StudentChoseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37C4E9041C51E02A00583902 /* StudentChoseCell.xib */; };
 		37D724E21C4F1AA40055721B /* ApiSendPhoneMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D724E11C4F1AA40055721B /* ApiSendPhoneMessage.m */; };
 		37D724E71C4F264E0055721B /* CameraTakeMamanger.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D724E41C4F264E0055721B /* CameraTakeMamanger.m */; };
 		37D724EB1C4F26AF0055721B /* UploadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D724EA1C4F26AF0055721B /* UploadManager.m */; };
@@ -193,6 +197,12 @@
 		37C4E8F71C51C26C00583902 /* ClassAddStudentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassAddStudentCell.h; sourceTree = "<group>"; };
 		37C4E8F81C51C26C00583902 /* ClassAddStudentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassAddStudentCell.m; sourceTree = "<group>"; };
 		37C4E8F91C51C26C00583902 /* ClassAddStudentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassAddStudentCell.xib; sourceTree = "<group>"; };
+		37C4E8FC1C51DEFB00583902 /* StudentChoseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentChoseViewController.h; sourceTree = "<group>"; };
+		37C4E8FD1C51DEFB00583902 /* StudentChoseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentChoseViewController.m; sourceTree = "<group>"; };
+		37C4E8FE1C51DEFB00583902 /* StudentChoseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StudentChoseViewController.xib; sourceTree = "<group>"; };
+		37C4E9021C51E02A00583902 /* StudentChoseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentChoseCell.h; sourceTree = "<group>"; };
+		37C4E9031C51E02A00583902 /* StudentChoseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentChoseCell.m; sourceTree = "<group>"; };
+		37C4E9041C51E02A00583902 /* StudentChoseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StudentChoseCell.xib; sourceTree = "<group>"; };
 		37D724E01C4F1AA40055721B /* ApiSendPhoneMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiSendPhoneMessage.h; sourceTree = "<group>"; };
 		37D724E11C4F1AA40055721B /* ApiSendPhoneMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiSendPhoneMessage.m; sourceTree = "<group>"; };
 		37D724E31C4F264E0055721B /* CameraTakeMamanger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraTakeMamanger.h; sourceTree = "<group>"; };
@@ -474,6 +484,16 @@
 			path = JKCountDownButton;
 			sourceTree = "<group>";
 		};
+		37C4E9011C51DFFD00583902 /* MyFollow */ = {
+			isa = PBXGroup;
+			children = (
+				37C4E9021C51E02A00583902 /* StudentChoseCell.h */,
+				37C4E9031C51E02A00583902 /* StudentChoseCell.m */,
+				37C4E9041C51E02A00583902 /* StudentChoseCell.xib */,
+			);
+			path = MyFollow;
+			sourceTree = "<group>";
+		};
 		37D724FB1C4F6ABC0055721B /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -612,6 +632,7 @@
 		37E1DDD81C4DDA8A00245BE6 /* My */ = {
 			isa = PBXGroup;
 			children = (
+				37C4E9011C51DFFD00583902 /* MyFollow */,
 				BED7D8BF1C50CCC4005A338E /* TFDatePickerView.h */,
 				BED7D8C01C50CCC4005A338E /* TFDatePickerView.m */,
 				BED7D8C11C50CCC4005A338E /* TFDatePickerView.xib */,
@@ -686,6 +707,9 @@
 				37E1DDF71C4DDE3C00245BE6 /* MyFollowViewController.h */,
 				37E1DDF81C4DDE3C00245BE6 /* MyFollowViewController.m */,
 				37E1DDF91C4DDE3C00245BE6 /* MyFollowViewController.xib */,
+				37C4E8FC1C51DEFB00583902 /* StudentChoseViewController.h */,
+				37C4E8FD1C51DEFB00583902 /* StudentChoseViewController.m */,
+				37C4E8FE1C51DEFB00583902 /* StudentChoseViewController.xib */,
 			);
 			path = "MyFollow(每日跟踪)";
 			sourceTree = "<group>";
@@ -1248,11 +1272,13 @@
 				BED7D8C31C50CCC4005A338E /* TFDatePickerView.xib in Resources */,
 				37E1DDD61C4DD92600245BE6 /* SettingViewController.xib in Resources */,
 				BED7D8C81C50D085005A338E /* AccountListViewController.xib in Resources */,
+				37C4E9001C51DEFB00583902 /* StudentChoseViewController.xib in Resources */,
 				37E1DDEB1C4DDD5800245BE6 /* MyClassTeacherViewController.xib in Resources */,
 				37033E381C4C9033009F27DB /* RegisterViewController.xib in Resources */,
 				BE25EB421C44FC5F00068309 /* LaunchScreen.storyboard in Resources */,
 				37D725131C4FA6960055721B /* MyClassTeacherCell.xib in Resources */,
 				37E1DE0D1C4DE2CC00245BE6 /* TopViewController.xib in Resources */,
+				37C4E9061C51E02A00583902 /* StudentChoseCell.xib in Resources */,
 				375001BB1C50FFD400B14021 /* ClassDetailCell.xib in Resources */,
 				37033E341C4C9033009F27DB /* ForgetViewController.xib in Resources */,
 				37E1DDF51C4DDD8C00245BE6 /* MyStudentViewController.xib in Resources */,
@@ -1378,6 +1404,7 @@
 				BE25EBB11C44FDB300068309 /* TimerHelper.m in Sources */,
 				BE25EB991C44FD9200068309 /* NSDate+CalendarLogic.m in Sources */,
 				BED7D8C21C50CCC4005A338E /* TFDatePickerView.m in Sources */,
+				37C4E9051C51E02A00583902 /* StudentChoseCell.m in Sources */,
 				37D725011C4F78AF0055721B /* ApiAddressListRequest.m in Sources */,
 				37E1DE101C4E149800245BE6 /* ApiFindPassWord.m in Sources */,
 				37033E421C4C910B009F27DB /* ApiLoginRequest.m in Sources */,
@@ -1402,6 +1429,7 @@
 				BE25EBFB1C44FDFE00068309 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				37C4E8FA1C51C26C00583902 /* ClassAddStudentCell.m in Sources */,
 				BE25EBF81C44FDFE00068309 /* TPKeyboardAvoidingCollectionView.m in Sources */,
+				37C4E8FF1C51DEFB00583902 /* StudentChoseViewController.m in Sources */,
 				375001B01C50D85800B14021 /* AddMyClassViewController.m in Sources */,
 				37033E371C4C9033009F27DB /* RegisterViewController.m in Sources */,
 				37D724EE1C4F27040055721B /* UploadApiRequest.m in Sources */,

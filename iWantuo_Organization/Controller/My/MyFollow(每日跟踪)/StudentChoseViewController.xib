@@ -5,56 +5,55 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyFollowViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StudentChoseViewController">
             <connections>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YA2-Tj-kOR">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Myj-fe-rcH">
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
-                        <outlet property="dataSource" destination="-1" id="dv9-xd-CzB"/>
-                        <outlet property="delegate" destination="-1" id="guC-Sy-yrT"/>
+                        <outlet property="dataSource" destination="-1" id="uGT-i8-rij"/>
+                        <outlet property="delegate" destination="-1" id="l5y-O3-6Ob"/>
                     </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="YA2-Tj-kOR" secondAttribute="bottom" id="2Zx-sS-Pwg"/>
-                <constraint firstAttribute="trailing" secondItem="YA2-Tj-kOR" secondAttribute="trailing" id="FZi-xK-vnp"/>
-                <constraint firstItem="YA2-Tj-kOR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="YoM-w4-r6O"/>
-                <constraint firstItem="YA2-Tj-kOR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="y8y-y0-vX8"/>
+                <constraint firstAttribute="bottom" secondItem="Myj-fe-rcH" secondAttribute="bottom" id="Ce5-SE-0Ew"/>
+                <constraint firstItem="Myj-fe-rcH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Itc-Us-YeU"/>
+                <constraint firstAttribute="trailing" secondItem="Myj-fe-rcH" secondAttribute="trailing" id="Jux-kT-QNl"/>
+                <constraint firstItem="Myj-fe-rcH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Lm7-wj-3Jh"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <variation key="default">
                 <mask key="subviews">
-                    <exclude reference="YA2-Tj-kOR"/>
+                    <exclude reference="Myj-fe-rcH"/>
                 </mask>
                 <mask key="constraints">
-                    <exclude reference="2Zx-sS-Pwg"/>
-                    <exclude reference="FZi-xK-vnp"/>
-                    <exclude reference="YoM-w4-r6O"/>
-                    <exclude reference="y8y-y0-vX8"/>
+                    <exclude reference="Ce5-SE-0Ew"/>
+                    <exclude reference="Itc-Us-YeU"/>
+                    <exclude reference="Jux-kT-QNl"/>
+                    <exclude reference="Lm7-wj-3Jh"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
                 <mask key="subviews">
-                    <include reference="YA2-Tj-kOR"/>
+                    <include reference="Myj-fe-rcH"/>
                 </mask>
                 <mask key="constraints">
-                    <include reference="2Zx-sS-Pwg"/>
-                    <include reference="FZi-xK-vnp"/>
-                    <include reference="YoM-w4-r6O"/>
-                    <include reference="y8y-y0-vX8"/>
+                    <include reference="Ce5-SE-0Ew"/>
+                    <include reference="Itc-Us-YeU"/>
+                    <include reference="Jux-kT-QNl"/>
+                    <include reference="Lm7-wj-3Jh"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="218" y="209"/>
         </view>
     </objects>
 </document>

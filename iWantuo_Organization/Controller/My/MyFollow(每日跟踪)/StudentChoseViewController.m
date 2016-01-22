@@ -1,36 +1,33 @@
 //
-//  MyFollowViewController.m
+//  StudentChoseViewController.m
 //  iWantuo_Organization
 //
-//  Created by yuntai on 16/1/19.
+//  Created by yuntai on 16/1/22.
 //  Copyright © 2016年 月 吴. All rights reserved.
 //
 
-#import "MyFollowViewController.h"
-#import "MyClassCell.h"
 #import "StudentChoseViewController.h"
+#import "StudentChoseCell.h"
 
-@interface MyFollowViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface StudentChoseViewController ()
 
 @end
 
-@implementation MyFollowViewController
+@implementation StudentChoseViewController
 #pragma mark - life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    [self inistalSearch];
     
+    [self inistalSearch];
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [MobClick beginLogPageView:@"我的跟踪选择班级"];
+    [MobClick beginLogPageView:@"每日追踪选择学生"];
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    [MobClick endLogPageView:@"我的跟踪选择班级"];
+    [MobClick endLogPageView:@"每日追踪选择学生"];
 }
-
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -42,17 +39,14 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *classCell = @"myClassCell";
-    MyClassCell *cell = [tableView dequeueReusableCellWithIdentifier:classCell];
-    if (!cell) {
-        cell = [MyClassCell shareMyClassCell];
-    }
-    //公用班级管理班级cell
-    cell.deleBtn.hidden = YES;
-    cell.classNameLabel.text= @"爱晚托";//班级名称
-    cell.studentCountLabel.text = @"100";//班级人数
-    return cell;
+    static NSString *myTypeCell = @"StudentChoseCell";
     
+    StudentChoseCell *cell = [tableView dequeueReusableCellWithIdentifier:myTypeCell];
+    if (!cell) {
+        cell = [StudentChoseCell shareStudentChoseCell];
+    }
+    
+    return cell;
 }
 
 #pragma mark - UITableViewDelegate
@@ -62,24 +56,20 @@
  */
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    return 70;
+    return kTableViewCellHeightText;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    StudentChoseViewController *vc = [[StudentChoseViewController alloc]init];
-    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - event response
-
-
 #pragma mark - private methods
 - (void)inistalSearch{
     UIImageView *iv = [[UIImageView alloc]initWithFrame:CGRectMake(0, 2, 30, 25)];
     iv.image = [UIImage imageNamed:@"home_glass"];
     UITextField *tf = [[UITextField alloc]initWithFrame:CGRectMake(0, 0, 200, 30)];
-    tf.placeholder = @"班级";
+    tf.placeholder = @"选择学生";
     tf.leftView = iv;
     tf.leftViewMode = UITextFieldViewModeAlways;
     tf.layer.cornerRadius = 5;
@@ -87,10 +77,9 @@
     tf.layer.borderWidth = 1.f;
     [tf setBorderStyle:UITextBorderStyleRoundedRect];
     tf.layer.borderColor = kNavigationColor.CGColor;
-
+    
     self.navigationItem.titleView =tf;
     
 }
-
 
 @end

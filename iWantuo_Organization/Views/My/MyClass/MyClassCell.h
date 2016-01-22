@@ -14,6 +14,7 @@
  *  班级管理cell
  */
 @interface MyClassCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIButton *deleBtn;
 @property (weak, nonatomic) IBOutlet UILabel *classNameLabel;//班级名
 @property (weak, nonatomic) IBOutlet UILabel *studentCountLabel;//人数
 @property (nonatomic, assign) NSInteger row;
