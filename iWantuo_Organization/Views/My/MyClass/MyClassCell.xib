@@ -88,9 +88,10 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="classNameLabel" destination="qZn-zU-raN" id="ywT-ey-0Te"/>
+                <outlet property="deleBtn" destination="19Y-aR-2UB" id="7Tb-72-DGw"/>
                 <outlet property="studentCountLabel" destination="oD0-UE-mPs" id="Qmb-CN-e86"/>
             </connections>
-            <point key="canvasLocation" x="221" y="223.5"/>
+            <point key="canvasLocation" x="287" y="173.5"/>
         </tableViewCell>
     </objects>
     <resources>
