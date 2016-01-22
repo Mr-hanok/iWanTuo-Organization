@@ -10,7 +10,9 @@
 - (void)classDetailCellSeletBtn:(UIButton *)btn withIndexPathRow:(NSInteger)row;
 @end
 #import <UIKit/UIKit.h>
-
+/**
+ *  班级详情cell
+ */
 @interface ClassDetailCell : UITableViewCell
 @property (nonatomic, assign) NSInteger row;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;

@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ORN-aq-Hh0">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ORN-aq-Hh0" customClass="TPKeyboardAvoidingScrollView">
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dVR-Vc-3OP">
@@ -101,13 +101,13 @@
                                     <exclude reference="t5E-Bu-Vtk"/>
                                 </mask>
                                 <mask key="constraints">
+                                    <exclude reference="0gf-QG-DXV"/>
+                                    <exclude reference="TPe-z8-JxR"/>
                                     <exclude reference="01z-PA-y3B"/>
                                     <exclude reference="3V2-Mq-v25"/>
                                     <exclude reference="5gl-tb-qRI"/>
                                     <exclude reference="AFd-ng-ciu"/>
                                     <exclude reference="uYr-fR-zVQ"/>
-                                    <exclude reference="0gf-QG-DXV"/>
-                                    <exclude reference="TPe-z8-JxR"/>
                                 </mask>
                             </variation>
                             <variation key="heightClass=regular-widthClass=compact">
@@ -117,13 +117,13 @@
                                     <include reference="t5E-Bu-Vtk"/>
                                 </mask>
                                 <mask key="constraints">
+                                    <include reference="0gf-QG-DXV"/>
+                                    <include reference="TPe-z8-JxR"/>
                                     <include reference="01z-PA-y3B"/>
                                     <include reference="3V2-Mq-v25"/>
                                     <include reference="5gl-tb-qRI"/>
                                     <include reference="AFd-ng-ciu"/>
                                     <include reference="uYr-fR-zVQ"/>
-                                    <include reference="0gf-QG-DXV"/>
-                                    <include reference="TPe-z8-JxR"/>
                                 </mask>
                             </variation>
                         </view>
