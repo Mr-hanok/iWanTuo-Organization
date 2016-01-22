@@ -118,6 +118,9 @@
 		BE25EBFB1C44FDFE00068309 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BE25EBE81C44FDFD00068309 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		BE25EC021C45018800068309 /* ValueUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BE25EC011C45018800068309 /* ValueUtils.m */; };
 		BE25EC161C4501C000068309 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE25EC051C4501C000068309 /* BaseViewController.m */; };
+		BE69F3A11C51C88B00EFA44D /* ApiTeacherListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F3A01C51C88B00EFA44D /* ApiTeacherListRequest.m */; };
+		BE69F3A41C51C94D00EFA44D /* TeacherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F3A31C51C94D00EFA44D /* TeacherModel.m */; };
+		BE69F3A71C51D81E00EFA44D /* ApiAddTeacherRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F3A61C51D81E00EFA44D /* ApiAddTeacherRequest.m */; };
 		BED7D8B91C50A6DB005A338E /* AddStudentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BED7D8B71C50A6DB005A338E /* AddStudentCell.m */; };
 		BED7D8BA1C50A6DB005A338E /* AddStudentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BED7D8B81C50A6DB005A338E /* AddStudentCell.xib */; };
 		BED7D8BE1C50BA7C005A338E /* ApiSaveStudentRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BED7D8BD1C50BA7C005A338E /* ApiSaveStudentRequest.m */; };
@@ -358,6 +361,12 @@
 		BE25EC011C45018800068309 /* ValueUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValueUtils.m; sourceTree = "<group>"; };
 		BE25EC041C4501C000068309 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		BE25EC051C4501C000068309 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		BE69F39F1C51C88B00EFA44D /* ApiTeacherListRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiTeacherListRequest.h; sourceTree = "<group>"; };
+		BE69F3A01C51C88B00EFA44D /* ApiTeacherListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiTeacherListRequest.m; sourceTree = "<group>"; };
+		BE69F3A21C51C94D00EFA44D /* TeacherModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeacherModel.h; sourceTree = "<group>"; };
+		BE69F3A31C51C94D00EFA44D /* TeacherModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeacherModel.m; sourceTree = "<group>"; };
+		BE69F3A51C51D81E00EFA44D /* ApiAddTeacherRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiAddTeacherRequest.h; sourceTree = "<group>"; };
+		BE69F3A61C51D81E00EFA44D /* ApiAddTeacherRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiAddTeacherRequest.m; sourceTree = "<group>"; };
 		BED7D8B61C50A6DB005A338E /* AddStudentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddStudentCell.h; sourceTree = "<group>"; };
 		BED7D8B71C50A6DB005A338E /* AddStudentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddStudentCell.m; sourceTree = "<group>"; };
 		BED7D8B81C50A6DB005A338E /* AddStudentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddStudentCell.xib; sourceTree = "<group>"; };
@@ -1120,6 +1129,10 @@
 				BED7D8BD1C50BA7C005A338E /* ApiSaveStudentRequest.m */,
 				BED7D8CC1C510217005A338E /* ApiPatriarchListRequest.h */,
 				BED7D8CD1C510217005A338E /* ApiPatriarchListRequest.m */,
+				BE69F39F1C51C88B00EFA44D /* ApiTeacherListRequest.h */,
+				BE69F3A01C51C88B00EFA44D /* ApiTeacherListRequest.m */,
+				BE69F3A51C51D81E00EFA44D /* ApiAddTeacherRequest.h */,
+				BE69F3A61C51D81E00EFA44D /* ApiAddTeacherRequest.m */,
 			);
 			path = My;
 			sourceTree = "<group>";
@@ -1129,6 +1142,8 @@
 			children = (
 				BED7D8D01C51044F005A338E /* PatriarchModel.h */,
 				BED7D8D11C51044F005A338E /* PatriarchModel.m */,
+				BE69F3A21C51C94D00EFA44D /* TeacherModel.h */,
+				BE69F3A31C51C94D00EFA44D /* TeacherModel.m */,
 			);
 			path = My;
 			sourceTree = "<group>";
@@ -1379,6 +1394,7 @@
 				BE25EBAD1C44FDA500068309 /* SystemHandler.m in Sources */,
 				37D724FE1C4F6B500055721B /* AccountModel.m in Sources */,
 				37E1DDDC1C4DDA8A00245BE6 /* MyCell.m in Sources */,
+				BE69F3A41C51C94D00EFA44D /* TeacherModel.m in Sources */,
 				37D725121C4FA6960055721B /* MyClassTeacherCell.m in Sources */,
 				37E1DDD11C4DD92600245BE6 /* ChangePasswordController.m in Sources */,
 				BED7D8B91C50A6DB005A338E /* AddStudentCell.m in Sources */,
@@ -1422,6 +1438,7 @@
 				37E1DDCB1C4DD92600245BE6 /* MyMessageViewController.m in Sources */,
 				BE25EBA41C44FD9200068309 /* UIView+Frame.m in Sources */,
 				37E1DE191C4E241500245BE6 /* ApiRegisterRequest.m in Sources */,
+				BE69F3A11C51C88B00EFA44D /* ApiTeacherListRequest.m in Sources */,
 				37E1DDEF1C4DDD7400245BE6 /* MyPushMessageViewController.m in Sources */,
 				37D724FA1C4F6A4C0055721B /* AccountManager.m in Sources */,
 				37E1DDFA1C4DDE3C00245BE6 /* MyFollowViewController.m in Sources */,
@@ -1434,6 +1451,7 @@
 				37033E371C4C9033009F27DB /* RegisterViewController.m in Sources */,
 				37D724EE1C4F27040055721B /* UploadApiRequest.m in Sources */,
 				BE25EB341C44FC5F00068309 /* main.m in Sources */,
+				BE69F3A71C51D81E00EFA44D /* ApiAddTeacherRequest.m in Sources */,
 				BE25EBF91C44FDFE00068309 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				37E1DE071C4DE2B200245BE6 /* DiscoverViewController.m in Sources */,
 				BED7D8CE1C510217005A338E /* ApiPatriarchListRequest.m in Sources */,

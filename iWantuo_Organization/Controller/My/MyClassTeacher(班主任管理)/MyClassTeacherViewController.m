@@ -9,15 +9,30 @@
 #import "MyClassTeacherViewController.h"
 #import "MyClassTeacherCell.h"
 #import "AddClassTeacherViewController.h"
+#import "ApiTeacherListRequest.h"
+#import "PageManager.h"
+#import "TeacherModel.h"
 
-@interface MyClassTeacherViewController ()<MyClassTeacherCellDelegate>
+@interface MyClassTeacherViewController ()<MyClassTeacherCellDelegate, PageManagerDelegate, APIRequestDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
+
+@property (nonatomic, strong) NSMutableArray *dataArray;
+@property (nonatomic, strong) ApiTeacherListRequest *api;
+@property (nonatomic, strong) PageManager *pageManager;
 
 @end
 
 @implementation MyClassTeacherViewController
 
 #pragma mark - life cycle
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.dataArray = [NSMutableArray array];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -29,6 +44,11 @@
         [weakSelf.navigationController pushViewController:vc animated:YES];
         
     }];
+    
+    self.api = [[ApiTeacherListRequest alloc] initWithDelegate:self];
+    self.pageManager = [PageManager handlerWithDelegate:self TableView:self.tableview];
+    [self.tableview.mj_header beginRefreshing];
+    self.tableview.tableFooterView = [[UIView alloc] init];
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -44,7 +64,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return self.dataArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -55,10 +75,11 @@
         cell = [MyClassTeacherCell shareMyClassTeacherCell];
     }
     cell.delegate = self;
-    cell.row = indexPath.row;
+    cell.indexPath = indexPath;
+    TeacherModel *model = [self.dataArray objectAtIndex:indexPath.row];
+    [cell configWithModel:model];
     return cell;
 
-    
 }
 
 #pragma mark - UITableViewDelegate
@@ -72,13 +93,78 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
 #pragma mark - MyClassTeacherCellDelegate
--(void)myClassTeacherCellCliecDeleBtn:(UIButton *)btn withIndexPathRow:(NSInteger)row{
+-(void)myClassTeacherCellCliecDeleBtn:(UIButton *)btn withIndexPath:(NSIndexPath *)indexPath {
+    
+    
+    [self.tableview deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationRight];
+    [self.dataArray removeObjectAtIndex:indexPath.row];
+    [self.tableview reloadData];
     
 }
+
+#pragma mark - APIRequestDelegate
+- (void)serverApi_RequestFailed:(APIRequest *)api error:(NSError *)error {
+    [self.tableview.mj_header endRefreshing];
+    [self.tableview.mj_footer endRefreshing];
+    [HUDManager hideHUDView];
+    
+    [AlertViewManager showAlertViewWithMessage:kDefaultNetWorkErrorString];
+    
+}
+
+- (void)serverApi_FinishedSuccessed:(APIRequest *)api result:(APIResult *)sr {
+    [self.tableview.mj_header endRefreshing];
+    [self.tableview.mj_footer endRefreshing];
+    [HUDManager hideHUDView];
+    
+    if (sr.dic == nil || [sr.dic isKindOfClass:[NSNull class]]) {
+        return;
+    }
+    
+    if (sr.status == 0) {
+        if (api.requestCurrentPage == 1) {
+            [self.dataArray removeAllObjects];
+        }
+        api.requestCurrentPage ++;
+        NSArray *array = [sr.dic objectForKey:@"queryList"];
+        for (NSDictionary *dic in array) {
+            TeacherModel *model = [TeacherModel initWithDic:dic];
+            [self.dataArray addObject:model];
+        }
+        [self.tableview reloadData];
+    } else {
+        [HUDManager showWarningWithText:sr.msg];
+    }
+    
+}
+
+- (void)serverApi_FinishedFailed:(APIRequest *)api result:(APIResult *)sr {
+    [self.tableview.mj_header endRefreshing];
+    [self.tableview.mj_footer endRefreshing];
+    NSString *message = sr.msg;
+    [HUDManager hideHUDView];
+    if (message.length == 0) {
+        message = kDefaultServerErrorString;
+    }
+    [AlertViewManager showAlertViewWithMessage:message];
+}
+#pragma mark - PageManagerDelegate
+- (void)headerRefreshing {
+    
+    self.api.requestCurrentPage = 1;
+    [self.api setApiParamsWithLoginAccounts:[AccountManager sharedInstance].account.loginAccounts page:[NSString stringWithFormat:@"%@", @(self.api.requestCurrentPage)]];
+    [APIClient execute:self.api];
+}
+- (void)footerRereshing {
+    
+    [self.api setApiParamsWithLoginAccounts:[AccountManager sharedInstance].account.loginAccounts page:[NSString stringWithFormat:@"%@", @(self.api.requestCurrentPage)]];
+    [APIClient execute:self.api];
+}
+
 
 #pragma mark - event response
 

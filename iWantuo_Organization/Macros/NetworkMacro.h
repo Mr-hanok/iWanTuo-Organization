@@ -45,5 +45,7 @@
 //my
 #define SaveStudentAction            @"student/phoneStudentSave" //添加学生
 #define PatriarchListAction          @"Patriarch/phoneQueryByList" //搜索家长信息列表
+#define TeacherListAction            @"teacher/phoneQueryByList" //获取取机构下的班主任
+#define AddTeacherAction             @"register/phoneRegisterTeacher" //添加班主任
 
 #endif
