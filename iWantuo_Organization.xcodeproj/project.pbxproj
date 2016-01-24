@@ -28,6 +28,14 @@
 		375001B61C50FD0D00B14021 /* ClassDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 375001B41C50FD0D00B14021 /* ClassDetailViewController.xib */; };
 		375001BA1C50FFD400B14021 /* ClassDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 375001B81C50FFD400B14021 /* ClassDetailCell.m */; };
 		375001BB1C50FFD400B14021 /* ClassDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 375001B91C50FFD400B14021 /* ClassDetailCell.xib */; };
+		37AE23751C546AD9006CFCCC /* FollowSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AE23731C546AD9006CFCCC /* FollowSignInViewController.m */; };
+		37AE23761C546AD9006CFCCC /* FollowSignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37AE23741C546AD9006CFCCC /* FollowSignInViewController.xib */; };
+		37AE237A1C546B49006CFCCC /* FollowLeaveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AE23781C546B49006CFCCC /* FollowLeaveViewController.m */; };
+		37AE237B1C546B49006CFCCC /* FollowLeaveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37AE23791C546B49006CFCCC /* FollowLeaveViewController.xib */; };
+		37AE237F1C5490C8006CFCCC /* FollowSummaryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AE237D1C5490C8006CFCCC /* FollowSummaryController.m */; };
+		37AE23801C5490C8006CFCCC /* FollowSummaryController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37AE237E1C5490C8006CFCCC /* FollowSummaryController.xib */; };
+		37AE23841C549102006CFCCC /* FollowBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AE23821C549102006CFCCC /* FollowBaseViewController.m */; };
+		37AE23851C549102006CFCCC /* FollowBaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37AE23831C549102006CFCCC /* FollowBaseViewController.xib */; };
 		37C4E8F51C51BEEE00583902 /* ClassAddStudentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C4E8F31C51BEEE00583902 /* ClassAddStudentController.m */; };
 		37C4E8F61C51BEEE00583902 /* ClassAddStudentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37C4E8F41C51BEEE00583902 /* ClassAddStudentController.xib */; };
 		37C4E8FA1C51C26C00583902 /* ClassAddStudentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C4E8F81C51C26C00583902 /* ClassAddStudentCell.m */; };
@@ -194,6 +202,18 @@
 		375001B71C50FFD400B14021 /* ClassDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassDetailCell.h; sourceTree = "<group>"; };
 		375001B81C50FFD400B14021 /* ClassDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassDetailCell.m; sourceTree = "<group>"; };
 		375001B91C50FFD400B14021 /* ClassDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassDetailCell.xib; sourceTree = "<group>"; };
+		37AE23721C546AD9006CFCCC /* FollowSignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowSignInViewController.h; sourceTree = "<group>"; };
+		37AE23731C546AD9006CFCCC /* FollowSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowSignInViewController.m; sourceTree = "<group>"; };
+		37AE23741C546AD9006CFCCC /* FollowSignInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowSignInViewController.xib; sourceTree = "<group>"; };
+		37AE23771C546B49006CFCCC /* FollowLeaveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowLeaveViewController.h; sourceTree = "<group>"; };
+		37AE23781C546B49006CFCCC /* FollowLeaveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowLeaveViewController.m; sourceTree = "<group>"; };
+		37AE23791C546B49006CFCCC /* FollowLeaveViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowLeaveViewController.xib; sourceTree = "<group>"; };
+		37AE237C1C5490C8006CFCCC /* FollowSummaryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowSummaryController.h; sourceTree = "<group>"; };
+		37AE237D1C5490C8006CFCCC /* FollowSummaryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowSummaryController.m; sourceTree = "<group>"; };
+		37AE237E1C5490C8006CFCCC /* FollowSummaryController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowSummaryController.xib; sourceTree = "<group>"; };
+		37AE23811C549102006CFCCC /* FollowBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowBaseViewController.h; sourceTree = "<group>"; };
+		37AE23821C549102006CFCCC /* FollowBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowBaseViewController.m; sourceTree = "<group>"; };
+		37AE23831C549102006CFCCC /* FollowBaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowBaseViewController.xib; sourceTree = "<group>"; };
 		37C4E8F21C51BEEE00583902 /* ClassAddStudentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassAddStudentController.h; sourceTree = "<group>"; };
 		37C4E8F31C51BEEE00583902 /* ClassAddStudentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassAddStudentController.m; sourceTree = "<group>"; };
 		37C4E8F41C51BEEE00583902 /* ClassAddStudentController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassAddStudentController.xib; sourceTree = "<group>"; };
@@ -719,6 +739,18 @@
 				37C4E8FC1C51DEFB00583902 /* StudentChoseViewController.h */,
 				37C4E8FD1C51DEFB00583902 /* StudentChoseViewController.m */,
 				37C4E8FE1C51DEFB00583902 /* StudentChoseViewController.xib */,
+				37AE23721C546AD9006CFCCC /* FollowSignInViewController.h */,
+				37AE23731C546AD9006CFCCC /* FollowSignInViewController.m */,
+				37AE23741C546AD9006CFCCC /* FollowSignInViewController.xib */,
+				37AE23771C546B49006CFCCC /* FollowLeaveViewController.h */,
+				37AE23781C546B49006CFCCC /* FollowLeaveViewController.m */,
+				37AE23791C546B49006CFCCC /* FollowLeaveViewController.xib */,
+				37AE237C1C5490C8006CFCCC /* FollowSummaryController.h */,
+				37AE237D1C5490C8006CFCCC /* FollowSummaryController.m */,
+				37AE237E1C5490C8006CFCCC /* FollowSummaryController.xib */,
+				37AE23811C549102006CFCCC /* FollowBaseViewController.h */,
+				37AE23821C549102006CFCCC /* FollowBaseViewController.m */,
+				37AE23831C549102006CFCCC /* FollowBaseViewController.xib */,
 			);
 			path = "MyFollow(每日跟踪)";
 			sourceTree = "<group>";
@@ -1286,14 +1318,18 @@
 				37E1DDFB1C4DDE3C00245BE6 /* MyFollowViewController.xib in Resources */,
 				BED7D8C31C50CCC4005A338E /* TFDatePickerView.xib in Resources */,
 				37E1DDD61C4DD92600245BE6 /* SettingViewController.xib in Resources */,
+				37AE23761C546AD9006CFCCC /* FollowSignInViewController.xib in Resources */,
 				BED7D8C81C50D085005A338E /* AccountListViewController.xib in Resources */,
 				37C4E9001C51DEFB00583902 /* StudentChoseViewController.xib in Resources */,
 				37E1DDEB1C4DDD5800245BE6 /* MyClassTeacherViewController.xib in Resources */,
+				37AE237B1C546B49006CFCCC /* FollowLeaveViewController.xib in Resources */,
 				37033E381C4C9033009F27DB /* RegisterViewController.xib in Resources */,
 				BE25EB421C44FC5F00068309 /* LaunchScreen.storyboard in Resources */,
 				37D725131C4FA6960055721B /* MyClassTeacherCell.xib in Resources */,
 				37E1DE0D1C4DE2CC00245BE6 /* TopViewController.xib in Resources */,
 				37C4E9061C51E02A00583902 /* StudentChoseCell.xib in Resources */,
+				37AE23801C5490C8006CFCCC /* FollowSummaryController.xib in Resources */,
+				37AE23851C549102006CFCCC /* FollowBaseViewController.xib in Resources */,
 				375001BB1C50FFD400B14021 /* ClassDetailCell.xib in Resources */,
 				37033E341C4C9033009F27DB /* ForgetViewController.xib in Resources */,
 				37E1DDF51C4DDD8C00245BE6 /* MyStudentViewController.xib in Resources */,
@@ -1390,8 +1426,11 @@
 				BE25EBA21C44FD9200068309 /* UIImage+Camera.m in Sources */,
 				BE25EC161C4501C000068309 /* BaseViewController.m in Sources */,
 				37C4E8F51C51BEEE00583902 /* ClassAddStudentController.m in Sources */,
+				37AE23841C549102006CFCCC /* FollowBaseViewController.m in Sources */,
 				BED7D8D21C51044F005A338E /* PatriarchModel.m in Sources */,
+				37AE237A1C546B49006CFCCC /* FollowLeaveViewController.m in Sources */,
 				BE25EBAD1C44FDA500068309 /* SystemHandler.m in Sources */,
+				37AE23751C546AD9006CFCCC /* FollowSignInViewController.m in Sources */,
 				37D724FE1C4F6B500055721B /* AccountModel.m in Sources */,
 				37E1DDDC1C4DDA8A00245BE6 /* MyCell.m in Sources */,
 				BE69F3A41C51C94D00EFA44D /* TeacherModel.m in Sources */,
@@ -1434,6 +1473,7 @@
 				BE25EBA31C44FD9200068309 /* UIImage+Video.m in Sources */,
 				BE25EB6E1C44FD8500068309 /* APIRequest.m in Sources */,
 				37033E461C4C914C009F27DB /* JKCountDownButton.m in Sources */,
+				37AE237F1C5490C8006CFCCC /* FollowSummaryController.m in Sources */,
 				375001B51C50FD0D00B14021 /* ClassDetailViewController.m in Sources */,
 				37E1DDCB1C4DD92600245BE6 /* MyMessageViewController.m in Sources */,
 				BE25EBA41C44FD9200068309 /* UIView+Frame.m in Sources */,

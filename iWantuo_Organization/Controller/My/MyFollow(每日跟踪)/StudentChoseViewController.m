@@ -8,6 +8,8 @@
 
 #import "StudentChoseViewController.h"
 #import "StudentChoseCell.h"
+#import "FollowSignInViewController.h"
+#import "FollowBaseViewController.h"
 
 @interface StudentChoseViewController ()
 
@@ -60,6 +62,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    FollowBaseViewController *vc = [[FollowBaseViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
     
 }
 
