@@ -18,7 +18,14 @@
     }
 
 }
-
+- (void)configCellWithModel:(StudentModel *)model {
+    self.parentAccountLabel.text = model.loginAccounts;
+    self.classNameLabel.text = model.grade;
+    self.studentNameLabel.text = model.name;
+    self.schoolNameLabel.text = model.school;
+    self.selectBtn.selected = model.isAdd;
+    
+}
 - (void)awakeFromNib {
     // Initialization code
 }

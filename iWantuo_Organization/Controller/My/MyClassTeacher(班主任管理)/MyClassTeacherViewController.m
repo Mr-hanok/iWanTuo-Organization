@@ -12,13 +12,16 @@
 #import "ApiTeacherListRequest.h"
 #import "PageManager.h"
 #import "TeacherModel.h"
+#import "ApiDeleteTeacherRequest.h"
 
 @interface MyClassTeacherViewController ()<MyClassTeacherCellDelegate, PageManagerDelegate, APIRequestDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 
 @property (nonatomic, strong) NSMutableArray *dataArray;
 @property (nonatomic, strong) ApiTeacherListRequest *api;
+@property (nonatomic, strong) ApiDeleteTeacherRequest *apiDelete;
 @property (nonatomic, strong) PageManager *pageManager;
+@property (nonatomic, strong) NSIndexPath *indexPath;
 
 @end
 
@@ -98,11 +101,13 @@
 
 #pragma mark - MyClassTeacherCellDelegate
 -(void)myClassTeacherCellCliecDeleBtn:(UIButton *)btn withIndexPath:(NSIndexPath *)indexPath {
+    self.indexPath = indexPath;
+    TeacherModel *model = [self.dataArray objectAtIndex:indexPath.row];
+    self.apiDelete = [[ApiDeleteTeacherRequest alloc] initWithDelegate:self];
+    [self.apiDelete setApiParamsWithTeacherId:model.teacherId];
+    [APIClient execute:self.apiDelete];
+    [HUDManager showLoadingHUDView:self.tableview];
     
-    
-    [self.tableview deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationRight];
-    [self.dataArray removeObjectAtIndex:indexPath.row];
-    [self.tableview reloadData];
     
 }
 
@@ -125,21 +130,30 @@
         return;
     }
     
-    if (sr.status == 0) {
-        if (api.requestCurrentPage == 1) {
-            [self.dataArray removeAllObjects];
+    if (api == self.apiDelete) {
+        if (sr.status == 0) {
+            [self.tableview deleteRowsAtIndexPaths:@[self.indexPath] withRowAnimation:UITableViewRowAnimationRight];
+            [self.dataArray removeObjectAtIndex:self.indexPath.row];
+            [self.tableview reloadData];
         }
-        api.requestCurrentPage ++;
-        NSArray *array = [sr.dic objectForKey:@"queryList"];
-        for (NSDictionary *dic in array) {
-            TeacherModel *model = [TeacherModel initWithDic:dic];
-            [self.dataArray addObject:model];
+
+    } else if (api == self.api) {
+        if (sr.status == 0) {
+            if (api.requestCurrentPage == 1) {
+                [self.dataArray removeAllObjects];
+            }
+            api.requestCurrentPage ++;
+            NSArray *array = [sr.dic objectForKey:@"queryList"];
+            for (NSDictionary *dic in array) {
+                TeacherModel *model = [TeacherModel initWithDic:dic];
+                [self.dataArray addObject:model];
+            }
+            [self.tableview reloadData];
+        } else {
+            [HUDManager showWarningWithText:sr.msg];
         }
-        [self.tableview reloadData];
-    } else {
-        [HUDManager showWarningWithText:sr.msg];
     }
-    
+
 }
 
 - (void)serverApi_FinishedFailed:(APIRequest *)api result:(APIResult *)sr {

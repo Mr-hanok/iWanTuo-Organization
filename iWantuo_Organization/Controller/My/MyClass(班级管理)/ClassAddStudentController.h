@@ -9,5 +9,5 @@
 #import "BaseViewController.h"
 /**添加学生进班级*/
 @interface ClassAddStudentController : BaseViewController
-
+@property (nonatomic, copy) NSString *classId;
 @end

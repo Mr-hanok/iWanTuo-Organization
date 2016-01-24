@@ -7,7 +7,9 @@
 //
 
 #import "BaseViewController.h"
+#import "ClassModel.h"
 
 @interface ClassDetailViewController : BaseViewController
 
+@property (nonatomic, strong) ClassModel *classModel;
 @end

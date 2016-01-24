@@ -16,9 +16,14 @@
     if ([self.delegate respondsToSelector:@selector(classDetailCellSeletBtn:withIndexPathRow:)]) {
         [self.delegate classDetailCellSeletBtn:sender withIndexPathRow:self.row];
     }
-
-    
 }
+
+- (void)configCellWithModel:(StudentModel *)model {
+
+    self.selectBtn.selected = model.isDelete;
+    self.nameLabel.text = model.name;
+}
+
 - (void)awakeFromNib {
     // Initialization code
 }
