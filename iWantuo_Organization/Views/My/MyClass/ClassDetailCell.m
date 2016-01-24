@@ -19,6 +19,8 @@
 }
 
 - (void)configCellWithModel:(StudentModel *)model {
+
+    self.selectBtn.selected = model.isDelete;
     self.nameLabel.text = model.name;
 }
 

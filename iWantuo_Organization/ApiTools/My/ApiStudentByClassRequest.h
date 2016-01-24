@@ -10,6 +10,5 @@
 
 @interface ApiStudentByClassRequest : APIRequest
 
-- (void)setApiParamsWithClassId:(NSString *)classId page:(NSString *)page;
-
+- (void)setApiParamsWithClassId:(NSString *)classId name:(NSString *)name page:(NSString *)page;
 @end

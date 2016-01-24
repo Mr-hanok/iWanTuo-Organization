@@ -17,6 +17,7 @@
 @interface ClassDetailCell : UITableViewCell
 @property (nonatomic, assign) NSInteger row;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UIButton *selectBtn;
 
 @property (nonatomic, weak) id<ClassDetailCellDelegate> delegate;
 + (ClassDetailCell *)shareMyCell;

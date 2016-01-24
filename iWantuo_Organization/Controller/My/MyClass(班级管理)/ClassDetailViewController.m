@@ -43,13 +43,27 @@
     [self setRightBtnImage:nil eventHandler:^(id sender) {
         //添加学生
         ClassAddStudentController *vc = [[ClassAddStudentController alloc]init];
+        vc.classId = weakself.classModel.classId;
         [weakself.navigationController pushViewController:vc animated:YES];
         
     } anddel:^(id sender) {
         //删除
+        NSString *deleteStr;
+        for (int i = 0; i < self.deleteArray.count; i++) {
+            StudentModel *model = [weakself.deleteArray objectAtIndex:i];
+            if (i == 0) {
+                
+                deleteStr = [NSString stringWithFormat:@"%@", model.studentId];
+               
+            } else {
+                //最后一个不加逗号
+                 deleteStr = [NSString stringWithFormat:@"%@,%@", deleteStr, model.studentId];
+            }
+        }
         weakself.apiDelete = [[ApiDeleteStudentsByClassRequest alloc] initWithDelegate:weakself];
-        [weakself.apiDelete setApiParamsWithStudentIds:@"1,2" classId:weakself.classModel.classId];
+        [weakself.apiDelete setApiParamsWithStudentIds:deleteStr classId:weakself.classModel.classId];
         [APIClient execute:weakself.apiDelete];
+        [HUDManager showLoadingHUDView:weakself.tableview];
     }];
     
     self.tableview.tableFooterView = [[UIView alloc] init];
@@ -103,8 +117,9 @@
         }
     } else if (api == self.apiDelete) {
         if (sr.status == 0) {
-#warning gai
-//            [self.dataArray removeObjectAtIndex:self.indexPath.row];
+            
+            [self.dataArray removeObjectsInArray:self.deleteArray];
+            [self.deleteArray removeAllObjects];
             [self.tableview reloadData];
             
         }
@@ -129,12 +144,12 @@
     
     self.api.requestCurrentPage = 1;
     
-    [self.api setApiParamsWithClassId:self.classModel.classId page:[NSString stringWithFormat:@"%@", @(self.api.requestCurrentPage)]];
+    [self.api setApiParamsWithClassId:self.classModel.classId name:@"" page:[NSString stringWithFormat:@"%@", @(self.api.requestCurrentPage)]];
     [APIClient execute:self.api];
 }
 - (void)footerRereshing {
     
-    [self.api setApiParamsWithClassId:self.classModel.classId page:[NSString stringWithFormat:@"%@", @(self.api.requestCurrentPage)]];
+    [self.api setApiParamsWithClassId:self.classModel.classId name:@"" page:[NSString stringWithFormat:@"%@", @(self.api.requestCurrentPage)]];
     [APIClient execute:self.api];
 }
 
@@ -204,11 +219,13 @@
 }
 #pragma mark -ClassDetailCellDelegate
 -(void)classDetailCellSeletBtn:(UIButton *)btn withIndexPathRow:(NSInteger)row{
-//    if (btn.selected == YES) {
-//        
-//    } else {
-//        
-//    }
+    StudentModel *model = [self.dataArray objectAtIndex:row];
+    model.isDelete = !btn.selected;
+    if ([self.deleteArray indexOfObject:model]) {
+        [self.deleteArray removeObject:model];
+    } else {
+        [self.deleteArray addObject:model];
+    }
     btn.selected = !btn.selected;
 }
 

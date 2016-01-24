@@ -12,8 +12,16 @@
 
 @property (nonatomic, copy) NSString *Id;//
 @property (nonatomic, copy) NSString *studentId;//
+@property (nonatomic, copy) NSString *organizationAccounts;
 @property (nonatomic, copy) NSString *classId;//
 @property (nonatomic, copy) NSString *name;//
+@property (nonatomic, copy) NSString *school;
+@property (nonatomic, copy) NSString *grade;
+@property (nonatomic, assign) BOOL isDelete;
+@property (nonatomic, assign) BOOL isAdd;
+@property (nonatomic, copy) NSString *loginAccounts;
+@property (nonatomic, copy) NSString *beginDate;
+@property (nonatomic, copy) NSString *endDate;
 
 + (StudentModel *)initWithDic:(NSDictionary *)dic;
 

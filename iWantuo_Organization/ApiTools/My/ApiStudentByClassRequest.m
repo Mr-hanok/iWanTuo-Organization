@@ -18,9 +18,10 @@
     return kApiAccessPost;
 }
 
-- (void)setApiParamsWithClassId:(NSString *)classId page:(NSString *)page{
+- (void)setApiParamsWithClassId:(NSString *)classId name:(NSString *)name page:(NSString *)page{
     
     [self.params setValue:classId forKey:@"classId"];
+    [self.params setValue:name forKey:@"name"];
     [self.params setValue:page forKey:@"page"];
     [self.params setValue:kRequestDataRows forKey:@"rows"];
     

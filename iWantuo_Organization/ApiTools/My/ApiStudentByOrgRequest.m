@@ -11,19 +11,19 @@
 @implementation ApiStudentByOrgRequest
 
 - (NSString *)urlAction {
-    return StudentByOrgAction;
+    return StudentByOrgAndClassAction;
 }
 - (ApiAccessType)accessType
 {
     return kApiAccessPost;
 }
 
-- (void)setApiParamsWithOrganizationAccounts:(NSString *)organizationAccounts name:(NSString *)name page:(NSString *)page {
+- (void)setApiParamsWithOrganizationAccounts:(NSString *)organizationAccounts classId:(NSString *)classId {
     
     [self.params setValue:organizationAccounts forKey:@"organizationAccounts"];
-    [self.params setValue:name forKey:@"name"];
-    [self.params setValue:page forKey:@"page"];
-    [self.params setValue:kRequestDataRows forKey:@"rows"];
+    [self.params setValue:classId forKey:@"classId"];
+//    [self.params setValue:page forKey:@"page"];
+//    [self.params setValue:kRequestDataRows forKey:@"rows"];
 }
 
 @end
