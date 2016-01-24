@@ -13,10 +13,16 @@
     return[[[NSBundle mainBundle]loadNibNamed:@"MyClassCell" owner:nil options:0]firstObject];
 }
 - (IBAction)deleteBtnAction:(UIButton *)sender {//删除按钮点击
-    if ([self.delegate respondsToSelector:@selector(myClassCellCliecDeleBtn:withIndexPathRow:)]) {
-        [self.delegate myClassCellCliecDeleBtn:sender withIndexPathRow:self.row];
+    if ([self.delegate respondsToSelector:@selector(myClassCellCliecDeleBtn:withIndexPath:)]) {
+        [self.delegate myClassCellCliecDeleBtn:sender withIndexPath:self.indexPath];
     }
     
+}
+
+- (void)configWithModel:(ClassModel *)model {
+
+    self.classNameLabel.text = model.organizationClass;
+    self.studentCountLabel.text = model.num;
 }
 - (void)awakeFromNib {
     // Initialization code

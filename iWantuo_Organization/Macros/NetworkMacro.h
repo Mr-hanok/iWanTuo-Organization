@@ -47,5 +47,12 @@
 #define PatriarchListAction          @"Patriarch/phoneQueryByList" //搜索家长信息列表
 #define TeacherListAction            @"teacher/phoneQueryByList" //获取取机构下的班主任
 #define AddTeacherAction             @"register/phoneRegisterTeacher" //添加班主任
-
+#define StudentByClassAction         @"studentClass/phoneSelect" //查询班级下学生
+#define AddClassAction               @"class/phoneSave" //添加班级
+#define ClassListAction              @"class/phoneSelect" //获取机构下的班级
+#define DeleteClassAction            @"class/phoneDelete"//删除班级
+#define StudentByOrgAction           @"studentSchool/phoneStudentList" //获取机构下的学生
+#define SaveStudentsByClassAction    @"studentClass/phoneSaveList" //批量保存学员与班级关系
+#define DeleteStudentsByClassAction  @"studentClass/phoneDeleteList" //批量删除学员与班级关系
+#define DeleteTeacherAction          @"teacher/phoneDelete" //删除老师
 #endif

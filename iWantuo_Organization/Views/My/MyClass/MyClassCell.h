@@ -7,9 +7,10 @@
 //
 @protocol MyClassCellDelegate <NSObject>
 
-- (void)myClassCellCliecDeleBtn:(UIButton *)btn withIndexPathRow:(NSInteger)row;
+- (void)myClassCellCliecDeleBtn:(UIButton *)btn withIndexPath:(NSIndexPath *)indexPath;
 @end
 #import <UIKit/UIKit.h>
+#import "ClassModel.h"
 /**
  *  班级管理cell
  */
@@ -17,8 +18,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *deleBtn;
 @property (weak, nonatomic) IBOutlet UILabel *classNameLabel;//班级名
 @property (weak, nonatomic) IBOutlet UILabel *studentCountLabel;//人数
-@property (nonatomic, assign) NSInteger row;
+@property (nonatomic, strong) NSIndexPath *indexPath;
 
 @property (nonatomic, weak) id<MyClassCellDelegate> delegate;
 + (MyClassCell *)shareMyClassCell;
+- (void)configWithModel:(ClassModel *)model;
 @end

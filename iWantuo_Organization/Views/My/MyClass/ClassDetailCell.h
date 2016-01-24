@@ -10,6 +10,7 @@
 - (void)classDetailCellSeletBtn:(UIButton *)btn withIndexPathRow:(NSInteger)row;
 @end
 #import <UIKit/UIKit.h>
+#import "StudentModel.h"
 /**
  *  班级详情cell
  */
@@ -19,4 +20,5 @@
 
 @property (nonatomic, weak) id<ClassDetailCellDelegate> delegate;
 + (ClassDetailCell *)shareMyCell;
+- (void)configCellWithModel:(StudentModel *)model;
 @end

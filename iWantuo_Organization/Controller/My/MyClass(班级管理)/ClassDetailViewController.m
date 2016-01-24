@@ -9,14 +9,30 @@
 #import "ClassDetailViewController.h"
 #import "ClassDetailCell.h"
 #import "ClassAddStudentController.h"
+#import "ApiStudentByClassRequest.h"
+#import "PageManager.h"
+#import "ApiDeleteStudentsByClassRequest.h"
+#import "StudentModel.h"
 
-@interface ClassDetailViewController ()<UITableViewDataSource,UITableViewDelegate,ClassDetailCellDelegate>
-
+@interface ClassDetailViewController ()<UITableViewDataSource,UITableViewDelegate,ClassDetailCellDelegate, APIRequestDelegate, PageManagerDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *tableview;
+@property (nonatomic, strong) NSMutableArray *dataArray;
+@property (nonatomic, strong) PageManager *pageManager;
+@property (nonatomic, strong) ApiStudentByClassRequest *api;
+@property (nonatomic, strong) ApiDeleteStudentsByClassRequest *apiDelete;
+@property (nonatomic, strong) NSMutableArray *deleteArray;
 @end
 
 @implementation ClassDetailViewController
 #pragma mark - life cycle
-
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.dataArray = [NSMutableArray array];
+        self.deleteArray = [NSMutableArray array];
+    }
+    return self;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -31,7 +47,15 @@
         
     } anddel:^(id sender) {
         //删除
+        weakself.apiDelete = [[ApiDeleteStudentsByClassRequest alloc] initWithDelegate:weakself];
+        [weakself.apiDelete setApiParamsWithStudentIds:@"1,2" classId:weakself.classModel.classId];
+        [APIClient execute:weakself.apiDelete];
     }];
+    
+    self.tableview.tableFooterView = [[UIView alloc] init];
+    self.api = [[ApiStudentByClassRequest alloc] initWithDelegate:self];
+    self.pageManager = [PageManager handlerWithDelegate:self TableView:self.tableview];
+    [self.tableview.mj_header beginRefreshing];
     
 }
 -(void)viewWillAppear:(BOOL)animated{
@@ -43,6 +67,77 @@
     [MobClick endLogPageView:self.title];
 }
 
+#pragma mark - APIRequestDelegate
+- (void)serverApi_RequestFailed:(APIRequest *)api error:(NSError *)error {
+    [self.tableview.mj_header endRefreshing];
+    [self.tableview.mj_footer endRefreshing];
+    [HUDManager hideHUDView];
+    
+    [AlertViewManager showAlertViewWithMessage:kDefaultNetWorkErrorString];
+    
+}
+
+- (void)serverApi_FinishedSuccessed:(APIRequest *)api result:(APIResult *)sr {
+    [self.tableview.mj_header endRefreshing];
+    [self.tableview.mj_footer endRefreshing];
+    [HUDManager hideHUDView];
+    
+    if (sr.dic == nil || [sr.dic isKindOfClass:[NSNull class]]) {
+        return;
+    }
+    if (api == self.api) {
+        if (sr.status == 0) {
+            if (api.requestCurrentPage == 1) {
+                [self.dataArray removeAllObjects];
+            }
+            api.requestCurrentPage ++;
+            NSArray *array = [sr.dic objectForKey:@"StudentClassList"];
+            for (NSDictionary *dic in array) {
+                
+                StudentModel *model = [StudentModel initWithDic:dic];
+                [self.dataArray addObject:model];
+            }
+            [self.tableview reloadData];
+        } else {
+            [HUDManager showWarningWithText:sr.msg];
+        }
+    } else if (api == self.apiDelete) {
+        if (sr.status == 0) {
+#warning gai
+//            [self.dataArray removeObjectAtIndex:self.indexPath.row];
+            [self.tableview reloadData];
+            
+        }
+        [HUDManager showWarningWithText:sr.msg];
+    }
+    
+    
+}
+
+- (void)serverApi_FinishedFailed:(APIRequest *)api result:(APIResult *)sr {
+    [self.tableview.mj_header endRefreshing];
+    [self.tableview.mj_footer endRefreshing];
+    NSString *message = sr.msg;
+    [HUDManager hideHUDView];
+    if (message.length == 0) {
+        message = kDefaultServerErrorString;
+    }
+    [AlertViewManager showAlertViewWithMessage:message];
+}
+#pragma mark - PageManagerDelegate
+- (void)headerRefreshing {
+    
+    self.api.requestCurrentPage = 1;
+    
+    [self.api setApiParamsWithClassId:self.classModel.classId page:[NSString stringWithFormat:@"%@", @(self.api.requestCurrentPage)]];
+    [APIClient execute:self.api];
+}
+- (void)footerRereshing {
+    
+    [self.api setApiParamsWithClassId:self.classModel.classId page:[NSString stringWithFormat:@"%@", @(self.api.requestCurrentPage)]];
+    [APIClient execute:self.api];
+}
+
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 2;
@@ -50,7 +145,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return section == 0 ? 1:10;
+    return section == 0 ? 1:self.dataArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -62,7 +157,7 @@
         if (!cell) {
             cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:classCell];
         }
-        cell.textLabel.text = @"班级名称:123";
+        cell.textLabel.text = [NSString stringWithFormat:@"班级名称:%@", self.classModel.organizationClass];
         return cell;
     }
     
@@ -72,7 +167,8 @@
     }
     cell.row = indexPath.row;
     cell.delegate = self;
-    
+    StudentModel *model = [self.dataArray objectAtIndex:indexPath.row];
+    [cell configCellWithModel:model];
     return cell;
     
 }
@@ -104,10 +200,15 @@
     return section == 0 ? 0 :28;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 #pragma mark -ClassDetailCellDelegate
 -(void)classDetailCellSeletBtn:(UIButton *)btn withIndexPathRow:(NSInteger)row{
+//    if (btn.selected == YES) {
+//        
+//    } else {
+//        
+//    }
     btn.selected = !btn.selected;
 }
 
