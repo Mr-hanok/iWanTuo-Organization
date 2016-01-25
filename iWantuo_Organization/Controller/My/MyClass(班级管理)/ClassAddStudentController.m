@@ -11,7 +11,7 @@
 #import "ApiStudentByOrgRequest.h"
 #import "ApiSaveStudentsByClassRequest.h"
 
-@interface ClassAddStudentController ()<UITableViewDataSource,UITableViewDelegate,ClassAddStudentCellDelegate, APIRequestDelegate>
+@interface ClassAddStudentController ()<UITableViewDataSource,UITableViewDelegate,ClassAddStudentCellDelegate, APIRequestDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 @property (nonatomic, strong) NSMutableArray *dataArray;
 @property (nonatomic, strong) ApiStudentByOrgRequest *api;
@@ -35,16 +35,20 @@
     
     __weak typeof(self) weakself = self;
     [self setRightBtn:@"确定" eventHandler:^(id sender) {
+        if (weakself.addArray.count == 0) {
+            [HUDManager showWarningWithText:@"请选择学生"];
+            return ;
+        }
         NSString *addStr;
         for (int i = 0; i < self.addArray.count; i++) {
             StudentModel *model = [weakself.addArray objectAtIndex:i];
             if (i == 0) {
                 
-                addStr = [NSString stringWithFormat:@"%@", model.studentId];
+                addStr = [NSString stringWithFormat:@"%@", model.Id];
                 
             } else {
                 //最后一个不加逗号
-                addStr = [NSString stringWithFormat:@"%@,%@", addStr, model.studentId];
+                addStr = [NSString stringWithFormat:@"%@,%@", addStr, model.Id];
             }
         }
         weakself.apiSave = [[ApiSaveStudentsByClassRequest alloc] initWithDelegate:weakself];
@@ -57,7 +61,7 @@
     
     self.tableview.tableFooterView = [[UIView alloc] init];
     self.api = [[ApiStudentByOrgRequest alloc] initWithDelegate:self];
-    [self.api setApiParamsWithOrganizationAccounts:[AccountManager sharedInstance].account.loginAccounts classId:self.classId ];
+    [self.api setApiParamsWithOrganizationAccounts:[AccountManager sharedInstance].account.loginAccounts classId:self.classId name:@""];
     [APIClient execute:self.api];
     [HUDManager showLoadingHUDView:self.view];
 }
@@ -88,10 +92,8 @@
     }
     if (api == self.api) {
         if (sr.status == 0) {
-            if (api.requestCurrentPage == 1) {
-                [self.dataArray removeAllObjects];
-            }
-            api.requestCurrentPage ++;
+
+            [self.dataArray removeAllObjects];
             NSArray *array = [sr.dic objectForKey:@"studentList"];
             for (NSDictionary *dic in array) {
                 StudentModel *model = [StudentModel initWithDic:dic];
@@ -126,12 +128,24 @@
     [AlertViewManager showAlertViewWithMessage:message];
 }
 
+#pragma mark - UITextFieldDelegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    //网络请求~~~
+    self.api = [[ApiStudentByOrgRequest alloc] initWithDelegate:self];
+    [self.api setApiParamsWithOrganizationAccounts:[AccountManager sharedInstance].account.loginAccounts classId:self.classId name:textField.text];
+    [APIClient execute:self.api];
+    [HUDManager showLoadingHUDView:self.view];
+
+    return YES;
+}
 
 #pragma mark - ClassAddStudentCellDelegate
 -(void)classAddStudentCellSeletBtn:(UIButton *)btn withIndexPathRow:(NSInteger)row{
     
     StudentModel *model = [self.dataArray objectAtIndex:row];
     model.isAdd = !btn.selected;
+    
     if ([self.addArray indexOfObject:model] < self.addArray.count) {
         [self.addArray removeObject:model];
     } else {
@@ -188,7 +202,8 @@
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 200, 30)];
     UIImageView *iv = [[UIImageView alloc]initWithFrame:view.bounds];
     iv.image = [UIImage imageNamed:@"my_search"];
-    UITextField *tf = [[UITextField alloc]initWithFrame:CGRectMake(27, 0, 200, 30)];
+    UITextField *tf = [[UITextField alloc]initWithFrame:CGRectMake(33, 0, 200, 30)];
+    tf.delegate = self;
     [tf setBorderStyle:UITextBorderStyleNone];
     [view addSubview:iv];
     [view addSubview:tf];

@@ -29,6 +29,7 @@
     
     self.phoneNumTF.keyboardType = UIKeyboardTypePhonePad;
     self.accountTF.delegate = self;
+    self.passWordTF.delegate = self;
     
 }
 #pragma mark - 协议名
@@ -67,7 +68,7 @@
 
 #pragma mark - UITextFieldDelegate
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    if (textField == self.accountTF) {
+    if (textField == self.accountTF || textField == self.passWordTF) {
         NSCharacterSet *cs;
         
         cs = [[NSCharacterSet characterSetWithCharactersInString:NUMBERS] invertedSet];
@@ -117,5 +118,7 @@
     }
     return YES;
 }
+
+
 
 @end

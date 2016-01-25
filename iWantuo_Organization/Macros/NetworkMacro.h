@@ -10,8 +10,8 @@
 #define StudyChina_NetworkMacro_h
 
 //#define SERVER_HOST_PRODUCT             @"http://192.168.1.169:8090/wantuo/"           // 内网地址
+//#define SERVER_HOST_PRODUCT             @"http://192.168.1.107:8080/wantuo/"           // 外网地址
 #define SERVER_HOST_PRODUCT             @"http://www.iwantuo.com/"           // 外网地址
-//#define SERVER_HOST_PRODUCT             @"http://www.iwantuo.com/"           // 外网地址
 #define SERVER_FILE_PRODUCT             @"http://img.yilingboshi.com/"              // 图片服务器地址
 
 #define SDKKey_Msg                  @"msg"
@@ -56,10 +56,4 @@
 #define SaveStudentsByClassAction    @"studentClass/phoneSaveList" //批量保存学员与班级关系
 #define DeleteStudentsByClassAction  @"studentClass/phoneDeleteList" //批量删除学员与班级关系
 #define DeleteTeacherAction          @"teacher/phoneDelete" //删除老师
-
-#define FollowAddRequest          @"trace/phoneSave" //追踪增加接口
-#define FollowCheckRequest        @"trace/phoneGetById" //追踪查询接口
-#define FollowChangeRequest       @"trace/phoneUpdate" //追踪修改接口
-#define SyscodePhoneQueryByList   @"syscode/phoneQueryByList" //学科查询接口
-
 #endif
