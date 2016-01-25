@@ -28,6 +28,11 @@
 		375001B61C50FD0D00B14021 /* ClassDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 375001B41C50FD0D00B14021 /* ClassDetailViewController.xib */; };
 		375001BA1C50FFD400B14021 /* ClassDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 375001B81C50FFD400B14021 /* ClassDetailCell.m */; };
 		375001BB1C50FFD400B14021 /* ClassDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 375001B91C50FFD400B14021 /* ClassDetailCell.xib */; };
+		3794641B1C55C6AD00368B3A /* ApiFollowAddRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3794641A1C55C6AD00368B3A /* ApiFollowAddRequest.m */; };
+		3794641E1C55EB7100368B3A /* ApiFollowCheckRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3794641D1C55EB7100368B3A /* ApiFollowCheckRequest.m */; };
+		379464221C55EC7300368B3A /* FollowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 379464211C55EC7300368B3A /* FollowModel.m */; };
+		379464251C55F0B200368B3A /* ApiFollowChangeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 379464241C55F0B200368B3A /* ApiFollowChangeRequest.m */; };
+		379464281C55F57400368B3A /* ApiFollowSubject.m in Sources */ = {isa = PBXBuildFile; fileRef = 379464271C55F57400368B3A /* ApiFollowSubject.m */; };
 		37AE23751C546AD9006CFCCC /* FollowSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AE23731C546AD9006CFCCC /* FollowSignInViewController.m */; };
 		37AE23761C546AD9006CFCCC /* FollowSignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37AE23741C546AD9006CFCCC /* FollowSignInViewController.xib */; };
 		37AE237A1C546B49006CFCCC /* FollowLeaveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AE23781C546B49006CFCCC /* FollowLeaveViewController.m */; };
@@ -212,6 +217,16 @@
 		375001B71C50FFD400B14021 /* ClassDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassDetailCell.h; sourceTree = "<group>"; };
 		375001B81C50FFD400B14021 /* ClassDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassDetailCell.m; sourceTree = "<group>"; };
 		375001B91C50FFD400B14021 /* ClassDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassDetailCell.xib; sourceTree = "<group>"; };
+		379464191C55C6AD00368B3A /* ApiFollowAddRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiFollowAddRequest.h; sourceTree = "<group>"; };
+		3794641A1C55C6AD00368B3A /* ApiFollowAddRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiFollowAddRequest.m; sourceTree = "<group>"; };
+		3794641C1C55EB7100368B3A /* ApiFollowCheckRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiFollowCheckRequest.h; sourceTree = "<group>"; };
+		3794641D1C55EB7100368B3A /* ApiFollowCheckRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiFollowCheckRequest.m; sourceTree = "<group>"; };
+		379464201C55EC7300368B3A /* FollowModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowModel.h; sourceTree = "<group>"; };
+		379464211C55EC7300368B3A /* FollowModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowModel.m; sourceTree = "<group>"; };
+		379464231C55F0B200368B3A /* ApiFollowChangeRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiFollowChangeRequest.h; sourceTree = "<group>"; };
+		379464241C55F0B200368B3A /* ApiFollowChangeRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiFollowChangeRequest.m; sourceTree = "<group>"; };
+		379464261C55F57400368B3A /* ApiFollowSubject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiFollowSubject.h; sourceTree = "<group>"; };
+		379464271C55F57400368B3A /* ApiFollowSubject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiFollowSubject.m; sourceTree = "<group>"; };
 		37AE23721C546AD9006CFCCC /* FollowSignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowSignInViewController.h; sourceTree = "<group>"; };
 		37AE23731C546AD9006CFCCC /* FollowSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowSignInViewController.m; sourceTree = "<group>"; };
 		37AE23741C546AD9006CFCCC /* FollowSignInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowSignInViewController.xib; sourceTree = "<group>"; };
@@ -541,6 +556,30 @@
 				37033E451C4C914C009F27DB /* JKCountDownButton.m */,
 			);
 			path = JKCountDownButton;
+			sourceTree = "<group>";
+		};
+		379464151C55BDC500368B3A /* Follow */ = {
+			isa = PBXGroup;
+			children = (
+				379464191C55C6AD00368B3A /* ApiFollowAddRequest.h */,
+				3794641A1C55C6AD00368B3A /* ApiFollowAddRequest.m */,
+				3794641C1C55EB7100368B3A /* ApiFollowCheckRequest.h */,
+				3794641D1C55EB7100368B3A /* ApiFollowCheckRequest.m */,
+				379464231C55F0B200368B3A /* ApiFollowChangeRequest.h */,
+				379464241C55F0B200368B3A /* ApiFollowChangeRequest.m */,
+				379464261C55F57400368B3A /* ApiFollowSubject.h */,
+				379464271C55F57400368B3A /* ApiFollowSubject.m */,
+			);
+			path = Follow;
+			sourceTree = "<group>";
+		};
+		3794641F1C55EC5300368B3A /* Follow */ = {
+			isa = PBXGroup;
+			children = (
+				379464201C55EC7300368B3A /* FollowModel.h */,
+				379464211C55EC7300368B3A /* FollowModel.m */,
+			);
+			path = Follow;
 			sourceTree = "<group>";
 		};
 		37C4E9011C51DFFD00583902 /* MyFollow */ = {
@@ -1187,6 +1226,7 @@
 		BED7D8BB1C50BA45005A338E /* My */ = {
 			isa = PBXGroup;
 			children = (
+				379464151C55BDC500368B3A /* Follow */,
 				BED7D8BC1C50BA7C005A338E /* ApiSaveStudentRequest.h */,
 				BED7D8BD1C50BA7C005A338E /* ApiSaveStudentRequest.m */,
 				BED7D8CC1C510217005A338E /* ApiPatriarchListRequest.h */,
@@ -1218,6 +1258,7 @@
 		BED7D8CF1C51043A005A338E /* My */ = {
 			isa = PBXGroup;
 			children = (
+				3794641F1C55EC5300368B3A /* Follow */,
 				BED7D8D01C51044F005A338E /* PatriarchModel.h */,
 				BED7D8D11C51044F005A338E /* PatriarchModel.m */,
 				BE69F3A21C51C94D00EFA44D /* TeacherModel.h */,
@@ -1483,6 +1524,7 @@
 				BE25EBAD1C44FDA500068309 /* SystemHandler.m in Sources */,
 				37AE23751C546AD9006CFCCC /* FollowSignInViewController.m in Sources */,
 				37D724FE1C4F6B500055721B /* AccountModel.m in Sources */,
+				379464281C55F57400368B3A /* ApiFollowSubject.m in Sources */,
 				37E1DDDC1C4DDA8A00245BE6 /* MyCell.m in Sources */,
 				BE69F3A41C51C94D00EFA44D /* TeacherModel.m in Sources */,
 				37D725121C4FA6960055721B /* MyClassTeacherCell.m in Sources */,
@@ -1507,6 +1549,7 @@
 				BED7D8C71C50D085005A338E /* AccountListViewController.m in Sources */,
 				37D724E71C4F264E0055721B /* CameraTakeMamanger.m in Sources */,
 				BED7D8BE1C50BA7C005A338E /* ApiSaveStudentRequest.m in Sources */,
+				3794641E1C55EB7100368B3A /* ApiFollowCheckRequest.m in Sources */,
 				BE25EB6F1C44FD8500068309 /* APIResult.m in Sources */,
 				37033E4A1C4CB7EC009F27DB /* SigningViewController.m in Sources */,
 				BE25EBB11C44FDB300068309 /* TimerHelper.m in Sources */,
@@ -1534,6 +1577,7 @@
 				375001B51C50FD0D00B14021 /* ClassDetailViewController.m in Sources */,
 				37E1DDCB1C4DD92600245BE6 /* MyMessageViewController.m in Sources */,
 				BE25EBA41C44FD9200068309 /* UIView+Frame.m in Sources */,
+				379464221C55EC7300368B3A /* FollowModel.m in Sources */,
 				37E1DE191C4E241500245BE6 /* ApiRegisterRequest.m in Sources */,
 				BE69F3A11C51C88B00EFA44D /* ApiTeacherListRequest.m in Sources */,
 				37E1DDEF1C4DDD7400245BE6 /* MyPushMessageViewController.m in Sources */,
@@ -1544,11 +1588,13 @@
 				37C4E8FA1C51C26C00583902 /* ClassAddStudentCell.m in Sources */,
 				BE25EBF81C44FDFE00068309 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				37C4E8FF1C51DEFB00583902 /* StudentChoseViewController.m in Sources */,
+				3794641B1C55C6AD00368B3A /* ApiFollowAddRequest.m in Sources */,
 				375001B01C50D85800B14021 /* AddMyClassViewController.m in Sources */,
 				37033E371C4C9033009F27DB /* RegisterViewController.m in Sources */,
 				37D724EE1C4F27040055721B /* UploadApiRequest.m in Sources */,
 				BE25EB341C44FC5F00068309 /* main.m in Sources */,
 				BE69F3A71C51D81E00EFA44D /* ApiAddTeacherRequest.m in Sources */,
+				379464251C55F0B200368B3A /* ApiFollowChangeRequest.m in Sources */,
 				BE40557B1C5369A700590788 /* StudentModel.m in Sources */,
 				BE25EBF91C44FDFE00068309 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				37E1DE071C4DE2B200245BE6 /* DiscoverViewController.m in Sources */,

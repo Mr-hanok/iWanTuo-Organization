@@ -44,19 +44,20 @@
     switch (indexPath.row) {
         case 0:
             cell.typeLabel.text = @"修改密码";
-            cell.typeIV.image = [UIImage imageNamed:@"my_follow"];
+            cell.typeIV.image = [UIImage imageNamed:@""];
             break;
         case 1:
             cell.typeLabel.text = @"意见反馈";
-            cell.typeIV.image = [UIImage imageNamed:@"my_follow"];
+            cell.typeIV.image = [UIImage imageNamed:@""];
             break;
         case 2:
             cell.typeLabel.text = @"关于爱晚托";
-            cell.typeIV.image = [UIImage imageNamed:@"my_follow"];
+            cell.typeIV.image = [UIImage imageNamed:@""];
             break;
 
     }
-    
+    cell.imageWithConstran.constant = 1.f;
+    cell.typeLeftConstran.constant = 1.f;
     return cell;
     
 }

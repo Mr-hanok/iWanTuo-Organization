@@ -10,5 +10,6 @@
 
 @interface StudentChoseCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+
 + (StudentChoseCell *)shareStudentChoseCell;
 @end

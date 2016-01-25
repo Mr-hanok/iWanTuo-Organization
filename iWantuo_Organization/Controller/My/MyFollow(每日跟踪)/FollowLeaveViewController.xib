@@ -14,7 +14,7 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ct3-HE-Gkb">
@@ -32,7 +32,7 @@
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="尽量快速减肥了就是的立刻就发了卡数据的路口附近的数量可见分离开谁极爱点快了几分开了点睡觉啊jflsajlfkjsla" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wqV-OQ-FYo">
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wqV-OQ-FYo">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -184,15 +184,15 @@
                                     <exclude reference="DL7-5v-6rK"/>
                                 </mask>
                                 <mask key="constraints">
+                                    <exclude reference="krw-QA-Ed2"/>
+                                    <exclude reference="s08-JD-zg9"/>
+                                    <exclude reference="wAU-8a-E5c"/>
                                     <exclude reference="fwR-2t-at8"/>
                                     <exclude reference="rdJ-Vy-6Xg"/>
                                     <exclude reference="y7M-Vz-hJs"/>
                                     <exclude reference="AGR-Vg-iCh"/>
                                     <exclude reference="Kvz-wq-1mm"/>
                                     <exclude reference="vpX-HL-qMN"/>
-                                    <exclude reference="krw-QA-Ed2"/>
-                                    <exclude reference="s08-JD-zg9"/>
-                                    <exclude reference="wAU-8a-E5c"/>
                                 </mask>
                             </variation>
                             <variation key="heightClass=regular-widthClass=compact">
@@ -202,15 +202,15 @@
                                     <include reference="DL7-5v-6rK"/>
                                 </mask>
                                 <mask key="constraints">
+                                    <include reference="krw-QA-Ed2"/>
+                                    <include reference="s08-JD-zg9"/>
+                                    <include reference="wAU-8a-E5c"/>
                                     <include reference="fwR-2t-at8"/>
                                     <include reference="rdJ-Vy-6Xg"/>
                                     <include reference="y7M-Vz-hJs"/>
                                     <include reference="AGR-Vg-iCh"/>
                                     <include reference="Kvz-wq-1mm"/>
                                     <include reference="vpX-HL-qMN"/>
-                                    <include reference="krw-QA-Ed2"/>
-                                    <include reference="s08-JD-zg9"/>
-                                    <include reference="wAU-8a-E5c"/>
                                 </mask>
                             </variation>
                         </view>

@@ -259,6 +259,7 @@
     }
     if (_isLevelString) {
         _resultString=_plistArray[row];
+        self.row1= row;
         
     }else if (_isLevelArray){
         _resultString=@"";

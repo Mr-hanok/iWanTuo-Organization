@@ -235,6 +235,7 @@
 //选择地区
 - (IBAction)areaBtnAction:(UIButton *)sender {
     [self.view endEditing:YES];
+    [_pickview remove];
     NSArray *array=@[@[@"上海市"],self.areaArray];
     _pickview=[[ZHPickView alloc] initPickviewWithArray:array isHaveNavControler:NO];
     _pickview.delegate=self;

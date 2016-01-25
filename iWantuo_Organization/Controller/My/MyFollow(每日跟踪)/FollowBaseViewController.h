@@ -7,9 +7,10 @@
 //
 
 #import "BaseViewController.h"
+#import "StudentModel.h"
 /**
  *  我的追踪基本页面
  */
 @interface FollowBaseViewController : BaseViewController
-
+@property (nonatomic, strong) StudentModel *student;
 @end
