@@ -56,4 +56,11 @@
 #define SaveStudentsByClassAction    @"studentClass/phoneSaveList" //批量保存学员与班级关系
 #define DeleteStudentsByClassAction  @"studentClass/phoneDeleteList" //批量删除学员与班级关系
 #define DeleteTeacherAction          @"teacher/phoneDelete" //删除老师
+
+#define FollowAddRequest          @"trace/phoneSave" //追踪增加接口
+#define FollowCheckRequest        @"trace/phoneGetById" //追踪查询接口
+#define FollowChangeRequest       @"trace/phoneUpdate" //追踪修改接口
+#define SyscodePhoneQueryByList   @"syscode/phoneQueryByList" //学科查询接口
+
+
 #endif
