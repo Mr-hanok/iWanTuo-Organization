@@ -11,7 +11,7 @@
 #import "PageManager.h"
 #import "PatriarchModel.h"
 
-@interface AccountListViewController ()<UITableViewDataSource, UITableViewDelegate, APIRequestDelegate, PageManagerDelegate>
+@interface AccountListViewController ()<UITableViewDataSource, UITableViewDelegate, APIRequestDelegate, PageManagerDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (nonatomic, strong) NSMutableArray *dataArray;
@@ -38,7 +38,7 @@
     self.pageManager = [PageManager handlerWithDelegate:self TableView:self.tableView];
     [self.tableView.mj_header beginRefreshing];
     self.tableView.tableFooterView = [[UIView alloc] init];
-    
+    [self inistalSearch];
     self.title = @"家长账号列表";
 }
 
@@ -131,7 +131,28 @@
     [self.apiPatriarch setApiParamsWithLoginAccounts:self.searchKey page:[NSString stringWithFormat:@"%@", @(self.apiPatriarch.requestCurrentPage)]];
     [APIClient execute:self.apiPatriarch];
 }
+#pragma mark - UITextFieldDelegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    self.searchKey = textField.text;
+    [self.tableView.mj_header beginRefreshing];
+    return YES;
+}
 
+#pragma mark - private methods
+- (void)inistalSearch{
+    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 200, 30)];
+    UIImageView *iv = [[UIImageView alloc]initWithFrame:view.bounds];
+    iv.image = [UIImage imageNamed:@"my_search"];
+    UITextField *tf = [[UITextField alloc]initWithFrame:CGRectMake(33, 0, 200, 30)];
+    tf.delegate = self;
+    [tf setBorderStyle:UITextBorderStyleNone];
+    [view addSubview:iv];
+    [view addSubview:tf];
+    
+    self.navigationItem.titleView =view;
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -26,11 +26,7 @@
     model.loginAccounts = [ValueUtils stringFromObject:[dic objectForKey:@"loginAccounts"]];
     model.beginDate = [ValueUtils stringFromObject:[dic objectForKey:@"beginDate"]];
     model.isDelete = NO;
-//    @property (nonatomic, copy) NSString *;
-//    @property (nonatomic, copy) NSString *;
-//    @property (nonatomic, copy) NSString *;
-//    @property (nonatomic, copy) NSString *;
-//    @property (nonatomic, copy) NSString *endDate;
+    model.isAdd = NO;
     return model;
 }
 @end

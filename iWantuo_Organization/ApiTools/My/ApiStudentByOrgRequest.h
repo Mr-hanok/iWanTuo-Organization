@@ -10,6 +10,8 @@
 
 @interface ApiStudentByOrgRequest : APIRequest
 
-- (void)setApiParamsWithOrganizationAccounts:(NSString *)organizationAccounts classId:(NSString *)classId;
+//- (void)setApiParamsWithOrganizationAccounts:(NSString *)organizationAccounts classId:(NSString *)classId;
+
+- (void)setApiParamsWithOrganizationAccounts:(NSString *)organizationAccounts classId:(NSString *)classId name:(NSString *)name;
 
 @end

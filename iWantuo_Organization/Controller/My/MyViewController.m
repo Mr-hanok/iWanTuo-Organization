@@ -35,7 +35,7 @@
     self.title = @"我的";
 
     __weak typeof(self) weakSelf = self;
-    [self setRightBtnImage:[UIImage imageNamed:@"home_unSelect"] eventHandler:^(id sender) {
+    [self setRightBtnImage:[UIImage imageNamed:@"setting"] eventHandler:^(id sender) {
         SettingViewController *vc = [[SettingViewController alloc]init];
         vc.hidesBottomBarWhenPushed = YES;
         [weakSelf.navigationController pushViewController:vc animated:YES];

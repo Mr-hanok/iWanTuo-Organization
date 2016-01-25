@@ -221,7 +221,7 @@
 -(void)classDetailCellSeletBtn:(UIButton *)btn withIndexPathRow:(NSInteger)row{
     StudentModel *model = [self.dataArray objectAtIndex:row];
     model.isDelete = !btn.selected;
-    if ([self.deleteArray indexOfObject:model]) {
+    if ([self.deleteArray indexOfObject:model] < self.deleteArray.count) {
         [self.deleteArray removeObject:model];
     } else {
         [self.deleteArray addObject:model];
