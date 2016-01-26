@@ -1759,6 +1759,7 @@
 				);
 				GCC_PREFIX_HEADER = iWantuo_Organization/PrefixHeader.pch;
 				INFOPLIST_FILE = iWantuo_Organization/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1786,6 +1787,7 @@
 				);
 				GCC_PREFIX_HEADER = iWantuo_Organization/PrefixHeader.pch;
 				INFOPLIST_FILE = iWantuo_Organization/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

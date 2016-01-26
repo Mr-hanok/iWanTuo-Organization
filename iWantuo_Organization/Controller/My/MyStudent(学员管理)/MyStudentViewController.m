@@ -233,8 +233,8 @@
             }
         }
         self.apiSaveStudent = [[ApiSaveStudentRequest alloc] initWithDelegate:self];
-        [self.apiSaveStudent setApiParamsWithName:self.nameTextField.text school:self.schoolTextField.text grade:self.gradeTextField.text loginAccounts:self.parentAccountTextField.text patriarch:self.parentSexTextField.text phone:self.otherPhoneTextField.text sex:self.sex organizationAccounts:[AccountManager sharedInstance].account.loginAccounts createDate:self.time locationId:@"3" location:@"上海" bairroId:bairroId bairro:self.locationTextField.text kinsfolk:self.otherRelationTextField.text];
-//        [self.apiSaveStudent setApiParamsWithName:self.nameTextField.text school:self.schoolTextField.text grade:self.gradeTextField.text loginAccounts:self.parentAccountTextField.text patriarch:self.parentSexTextField.text phone:self.otherPhoneTextField.text sex:self.sex organizationAccounts:[AccountManager sharedInstance].account.loginAccounts createDate:self.time locationId:@"3" location:@"上海" bairroId:bairroId bairro:self.locationTextField.text kinsfolk:self.otherRelationTextField.text];
+        [self.apiSaveStudent setApiParamsWithName:self.nameTextField.text school:self.schoolTextField.text grade:self.gradeTextField.text loginAccounts:self.parentAccountTextField.text patriarch:self.parentSexTextField.text phone:self.otherPhoneTextField.text sex:self.sex organizationAccounts:[AccountManager sharedInstance].account.loginAccounts createDate:self.time locationId:[AccountManager sharedInstance].locationId location:[AccountManager sharedInstance].locationName bairroId:bairroId bairro:self.locationTextField.text kinsfolk:self.otherRelationTextField.text];
+
         [APIClient execute:self.apiSaveStudent];
         [HUDManager showLoadingHUDView:self.view];
     }
