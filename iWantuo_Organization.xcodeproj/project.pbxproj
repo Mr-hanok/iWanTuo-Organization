@@ -144,6 +144,10 @@
 		BE69F3B01C520F2900EFA44D /* ApiClassListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F3AF1C520F2900EFA44D /* ApiClassListRequest.m */; };
 		BE69F3B31C520FEC00EFA44D /* ApiDeleteClassRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F3B21C520FEC00EFA44D /* ApiDeleteClassRequest.m */; };
 		BE69F3B61C52108200EFA44D /* ApiStudentByOrgRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F3B51C52108200EFA44D /* ApiStudentByOrgRequest.m */; };
+		BECC8C331C5771ED00AB93E3 /* NewVersionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BECC8C311C5771ED00AB93E3 /* NewVersionViewController.m */; };
+		BECC8C341C5771ED00AB93E3 /* NewVersionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BECC8C321C5771ED00AB93E3 /* NewVersionViewController.xib */; };
+		BECC8C391C57721900AB93E3 /* NewVersionCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BECC8C371C57721900AB93E3 /* NewVersionCollectionCell.m */; };
+		BECC8C3A1C57721900AB93E3 /* NewVersionCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BECC8C381C57721900AB93E3 /* NewVersionCollectionCell.xib */; };
 		BED7D8B91C50A6DB005A338E /* AddStudentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BED7D8B71C50A6DB005A338E /* AddStudentCell.m */; };
 		BED7D8BA1C50A6DB005A338E /* AddStudentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BED7D8B81C50A6DB005A338E /* AddStudentCell.xib */; };
 		BED7D8BE1C50BA7C005A338E /* ApiSaveStudentRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BED7D8BD1C50BA7C005A338E /* ApiSaveStudentRequest.m */; };
@@ -432,6 +436,12 @@
 		BE69F3B21C520FEC00EFA44D /* ApiDeleteClassRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiDeleteClassRequest.m; sourceTree = "<group>"; };
 		BE69F3B41C52108200EFA44D /* ApiStudentByOrgRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiStudentByOrgRequest.h; sourceTree = "<group>"; };
 		BE69F3B51C52108200EFA44D /* ApiStudentByOrgRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiStudentByOrgRequest.m; sourceTree = "<group>"; };
+		BECC8C301C5771ED00AB93E3 /* NewVersionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewVersionViewController.h; sourceTree = "<group>"; };
+		BECC8C311C5771ED00AB93E3 /* NewVersionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewVersionViewController.m; sourceTree = "<group>"; };
+		BECC8C321C5771ED00AB93E3 /* NewVersionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewVersionViewController.xib; sourceTree = "<group>"; };
+		BECC8C361C57721900AB93E3 /* NewVersionCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewVersionCollectionCell.h; sourceTree = "<group>"; };
+		BECC8C371C57721900AB93E3 /* NewVersionCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewVersionCollectionCell.m; sourceTree = "<group>"; };
+		BECC8C381C57721900AB93E3 /* NewVersionCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewVersionCollectionCell.xib; sourceTree = "<group>"; };
 		BED7D8B61C50A6DB005A338E /* AddStudentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddStudentCell.h; sourceTree = "<group>"; };
 		BED7D8B71C50A6DB005A338E /* AddStudentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddStudentCell.m; sourceTree = "<group>"; };
 		BED7D8B81C50A6DB005A338E /* AddStudentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddStudentCell.xib; sourceTree = "<group>"; };
@@ -722,6 +732,7 @@
 		37E1DDD71C4DDA7F00245BE6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BECC8C351C57721200AB93E3 /* Main */,
 				37E1DDD81C4DDA8A00245BE6 /* My */,
 			);
 			path = Views;
@@ -837,6 +848,9 @@
 		37E1DDFD1C4DE26C00245BE6 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				BECC8C301C5771ED00AB93E3 /* NewVersionViewController.h */,
+				BECC8C311C5771ED00AB93E3 /* NewVersionViewController.m */,
+				BECC8C321C5771ED00AB93E3 /* NewVersionViewController.xib */,
 				37E1DDFF1C4DE29500245BE6 /* HomeViewController.h */,
 				37E1DE001C4DE29500245BE6 /* HomeViewController.m */,
 				37E1DE011C4DE29500245BE6 /* HomeViewController.xib */,
@@ -1213,6 +1227,16 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		BECC8C351C57721200AB93E3 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				BECC8C361C57721900AB93E3 /* NewVersionCollectionCell.h */,
+				BECC8C371C57721900AB93E3 /* NewVersionCollectionCell.m */,
+				BECC8C381C57721900AB93E3 /* NewVersionCollectionCell.xib */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		BED7D8B51C50A6BC005A338E /* MyStudent */ = {
 			isa = PBXGroup;
 			children = (
@@ -1405,6 +1429,7 @@
 				37C4E8FB1C51C26C00583902 /* ClassAddStudentCell.xib in Resources */,
 				37033E361C4C9033009F27DB /* LoginViewController.xib in Resources */,
 				BED7D8BA1C50A6DB005A338E /* AddStudentCell.xib in Resources */,
+				BECC8C341C5771ED00AB93E3 /* NewVersionViewController.xib in Resources */,
 				37E1DDC41C4DD92600245BE6 /* PersonDetailController.xib in Resources */,
 				37E1DDFB1C4DDE3C00245BE6 /* MyFollowViewController.xib in Resources */,
 				BED7D8C31C50CCC4005A338E /* TFDatePickerView.xib in Resources */,
@@ -1436,6 +1461,7 @@
 				375001AC1C50C90400B14021 /* AddClassTeacherViewController.xib in Resources */,
 				BE25EB3F1C44FC5F00068309 /* Assets.xcassets in Resources */,
 				37E1DDF01C4DDD7400245BE6 /* MyPushMessageViewController.xib in Resources */,
+				BECC8C3A1C57721900AB93E3 /* NewVersionCollectionCell.xib in Resources */,
 				37E1DDE61C4DDD3E00245BE6 /* MyClassViewController.xib in Resources */,
 				37D7250B1C4F97E10055721B /* MyClassCell.xib in Resources */,
 				37E1DDD21C4DD92600245BE6 /* ChangePasswordController.xib in Resources */,
@@ -1525,6 +1551,7 @@
 				37AE23751C546AD9006CFCCC /* FollowSignInViewController.m in Sources */,
 				37D724FE1C4F6B500055721B /* AccountModel.m in Sources */,
 				379464281C55F57400368B3A /* ApiFollowSubject.m in Sources */,
+				BECC8C331C5771ED00AB93E3 /* NewVersionViewController.m in Sources */,
 				37E1DDDC1C4DDA8A00245BE6 /* MyCell.m in Sources */,
 				BE69F3A41C51C94D00EFA44D /* TeacherModel.m in Sources */,
 				37D725121C4FA6960055721B /* MyClassTeacherCell.m in Sources */,
@@ -1532,6 +1559,7 @@
 				BED7D8B91C50A6DB005A338E /* AddStudentCell.m in Sources */,
 				BE25EB9F1C44FD9200068309 /* NSString+Verify.m in Sources */,
 				BE25EBA51C44FD9200068309 /* UIView+GestureRecognizer.m in Sources */,
+				BECC8C391C57721900AB93E3 /* NewVersionCollectionCell.m in Sources */,
 				BE25EBA01C44FD9200068309 /* NSURL+Path.m in Sources */,
 				BE25EB371C44FC5F00068309 /* AppDelegate.m in Sources */,
 				BE25EB981C44FD9200068309 /* NSCalendar+FSExtension.m in Sources */,

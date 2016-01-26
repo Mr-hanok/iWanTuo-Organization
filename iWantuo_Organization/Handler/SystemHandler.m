@@ -11,11 +11,40 @@
 #import "DiscoverViewController.h"
 #import "TopViewController.h"
 #import "MyViewController.h"
+#import "NewVersionViewController.h"
 
+#define kVersionKey @"version"
 @implementation SystemHandler
 
 + (UIViewController *)rootViewController {
     
+    // ---- 第一次启动当前版本 ----
+    // 获取Info.plist
+    NSDictionary *infoDict = [NSBundle mainBundle].infoDictionary;
+    // 获取当前用户的软件版本
+    NSString *currentVersion = infoDict[@"CFBundleVersion"];
+    // 获取上一次最新的版本
+    NSString *lastVersion = [[NSUserDefaults standardUserDefaults] objectForKey:kVersionKey];
+    
+    // 如果是新版本
+    if (![currentVersion isEqualToString:lastVersion]) {
+        
+        // 存储新版本
+        [[NSUserDefaults standardUserDefaults] setObject:currentVersion forKey:kVersionKey];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        NewVersionViewController *newVc = [[NewVersionViewController alloc] init];
+        return newVc;
+        
+    } else {
+        return [SystemHandler mainViewController];
+    }
+
+    
+   
+
+}
++ (UIViewController *)mainViewController {
     UITabBarController *rootTabBarController = [[UITabBarController alloc] init];
     
     UINavigationController *homeNav     = [[UINavigationController alloc] initWithRootViewController:[[HomeViewController alloc]     init]];
@@ -39,7 +68,7 @@
     //调整bar模糊效果
     rootTabBarController.tabBar.translucent = YES;
     return rootTabBarController;
-
 }
+
 
 @end

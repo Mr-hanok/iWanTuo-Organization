@@ -17,4 +17,6 @@
  */
 + (UIViewController *)rootViewController;
 
++ (UIViewController *)mainViewController;
+
 @end
