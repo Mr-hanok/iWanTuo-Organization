@@ -29,6 +29,9 @@
                subjectName:(NSString *)subjectName
                     status:(NSString *)status
                 statusName:(NSString *)statusName
+                    signIn:(NSString *)signIn
+               signInImage:(NSString *)signInImage
+                      note:(NSString *)note
 {
     [self.params setValue:kid forKey:@"Id"];
     [self.params setValue:leave forKey:@"leave"];
@@ -42,6 +45,10 @@
     [self.params setValue:subjectName forKey:@"subjectName"];
     [self.params setValue:status forKey:@"status"];
     [self.params setValue:statusName forKey:@"statusName"];
+    
+    [self.params setValue:signIn forKey:@"signIn"];
+    [self.params setValue:signInImage forKey:@"signInImage"];
+    [self.params setValue:note forKey:@"note"];
     
 }
 

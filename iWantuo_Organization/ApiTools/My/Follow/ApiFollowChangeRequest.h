@@ -26,6 +26,9 @@
  *  @param subjectName    学科name
  *  @param status         状态0删除1签到2总结3离校
  *  @param statusName     状态0删除1签到2总结3离校
+ *  @param subject        签到文字
+ *  @param subjectName    签到图片
+ *  @param note    总结文字
  */
 - (void)setApiParamsWithId:(NSString *)kid
                      leave:(NSString *)leave
@@ -38,5 +41,8 @@
                    subject:(NSString *)subject
                subjectName:(NSString *)subjectName
                     status:(NSString *)status
-                statusName:(NSString *)statusName;
+                statusName:(NSString *)statusName
+                    signIn:(NSString *)signIn
+               signInImage:(NSString *)signInImage
+                      note:(NSString *)note;
 @end

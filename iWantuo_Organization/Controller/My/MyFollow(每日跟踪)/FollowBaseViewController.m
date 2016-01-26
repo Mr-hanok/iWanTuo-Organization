@@ -44,21 +44,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title =@"每日追踪";
-    
-//    NSDate *  senddate=[NSDate date];
-//    NSDateFormatter  *dateformatter=[[NSDateFormatter alloc] init];
-//    [dateformatter setDateFormat:@"yyyy-MM-dd"];
-//    NSString *str  = [dateformatter stringFromDate:senddate];
-//    [self.timeBtn setTitle:str forState:UIControlStateNormal];
-//    self.createDate =[NSString stringWithFormat:@"%.0f", senddate.timeIntervalSince1970 ];
-    
+    //设置默认属性
     self.signBtn.selected = YES;
     self.signVC.createDate = self.createDate;
     self.signVC.status = @"1";
     self.signVC.statusName = @"签到";
     self.signVC.studentId = self.student.studentId;
-    
     self.followIV.image = [UIImage imageNamed:@"followshortofline"];
+    // 添加view 进scrollview
     [self.scrollview addSubview:self.signVC.view];
     [self.scrollview addSubview:self.summaryVC.view];
     [self.scrollview addSubview:self.leaveVC.view];
@@ -71,7 +64,23 @@
         self.loginAccounts = [AccountManager sharedInstance].account.loginAccounts;
     }
     
+    //设置时间按钮时间->页面加载执行查询操作
+    NSDate *  senddate=[NSDate date];
+    NSDateFormatter  *dateformatter=[[NSDateFormatter alloc] init];
+    [dateformatter setDateFormat:@"yyyy-MM-dd"];
+    NSString *str  = [dateformatter stringFromDate:senddate];
+    [self.timeBtn setTitle:str forState:UIControlStateNormal];
+    self.createDate =[NSString stringWithFormat:@"%.0f", senddate.timeIntervalSince1970 ];
+    //执行追踪查询操作
+    [HUDManager showLoadingHUDView:KeyWindow];
+    self.apiFollowCheck = [[ApiFollowCheckRequest alloc]initWithDelegate:self];
+    [self.apiFollowCheck setApiParamsWithCreateDate:self.createDate studentId:self.student.studentId organizationAccounts:self.loginAccounts];
+    [APIClient execute:self.apiFollowCheck];
+
+    //注册通知  改变进度条图片
      [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeImageIvNotification:) name:ChangeImageIvNoti object:nil];
+    //注册 刷新页面 通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeViewInfoNotification:) name:ChangeViewInfoNoti object:nil];
     
 }
 -(void)viewWillAppear:(BOOL)animated{
@@ -125,9 +134,12 @@
             if ([self.followmodel.status isEqualToString:@"3"]) {//离校
                 self.followIV.image = [UIImage imageNamed:@"followleaveline"];
             }
-            //发送通知 刷新界面
-            [[NSNotificationCenter defaultCenter] postNotificationName:ChangeViewInfoNoti object:self.followmodel];
+        }else{
+            self.followIV.image = [UIImage imageNamed:@"followshortofline"];
         }
+        
+        //发送通知 刷新界面
+        [[NSNotificationCenter defaultCenter] postNotificationName:ChangeViewInfoNoti object:self.followmodel];
     }
 }
 
@@ -157,15 +169,11 @@
     [self.timeBtn setTitle:str forState:UIControlStateNormal];
     self.createDate = [NSString stringWithFormat:@"%.0f", date.timeIntervalSince1970];
     self.signVC.createDate = self.createDate;
-    
-    
     //执行追踪查询操作
     [HUDManager showLoadingHUDView:self.view];
     self.apiFollowCheck = [[ApiFollowCheckRequest alloc]initWithDelegate:self];
     [self.apiFollowCheck setApiParamsWithCreateDate:self.createDate studentId:self.student.studentId organizationAccounts:self.loginAccounts];
     [APIClient execute:self.apiFollowCheck];
-    
-
 
 }
 
@@ -184,7 +192,7 @@
         {
             self.sumaryBtn.selected = NO;
             self.leaveBtn.selected = NO;
-            self.followIV.image = [UIImage imageNamed:@"followshortofline"];
+            //self.followIV.image = [UIImage imageNamed:@"followshortofline"];
             self.signVC.createDate = self.createDate;
             self.signVC.status = @"1";
             self.signVC.statusName = @"签到";
@@ -196,7 +204,7 @@
         {
             self.signBtn.selected = NO;
             self.leaveBtn.selected = NO;
-            self.followIV.image = [UIImage imageNamed:@"followsignline"];
+            //self.followIV.image = [UIImage imageNamed:@"followsignline"];
             self.summaryVC.createDate = self.createDate;
             self.summaryVC.status = @"2";
             self.summaryVC.statusName = @"总结";
@@ -209,7 +217,7 @@
         {
             self.sumaryBtn.selected = NO;
             self.signBtn.selected = NO;
-            self.followIV.image = [UIImage imageNamed:@"followsumupline"];
+           // self.followIV.image = [UIImage imageNamed:@"followsumupline"];
             self.leaveVC.createDate = self.createDate;
             self.leaveVC.status = @"3";
             self.leaveVC.statusName = @"离校";
@@ -222,15 +230,15 @@
     if (self.followmodel == nil) {
         self.followIV.image = [UIImage imageNamed:@"followshortofline"];
     }else {
-        if ([self.followmodel.status isEqualToString:@"1"]) {//签到
-            self.followIV.image = [UIImage imageNamed:@"followsignline"];
-        }
-        if ([self.followmodel.status isEqualToString:@"2"]) {//总结
-            self.followIV.image = [UIImage imageNamed:@"followsumupline"];
-        }
-        if ([self.followmodel.status isEqualToString:@"3"]) {//离校
-            self.followIV.image = [UIImage imageNamed:@"followleaveline"];
-        }
+//        if ([self.followmodel.status isEqualToString:@"1"]) {//签到
+//            self.followIV.image = [UIImage imageNamed:@"followsignline"];
+//        }
+//        if ([self.followmodel.status isEqualToString:@"2"]) {//总结
+//            self.followIV.image = [UIImage imageNamed:@"followsumupline"];
+//        }
+//        if ([self.followmodel.status isEqualToString:@"3"]) {//离校
+//            self.followIV.image = [UIImage imageNamed:@"followleaveline"];
+//        }
 
     }
     //设置scrollview 偏移
@@ -239,7 +247,7 @@
     
 }
 /**
- *  时间按钮
+ *  选择时间按钮
  */
 - (IBAction)followTimeBtnAction:(UIButton *)sender {
     [_dataPickView remove];
@@ -268,6 +276,25 @@
         self.followIV.image = [UIImage imageNamed:@"followleaveline"];
     }
 }
+- (void)changeViewInfoNotification:(NSNotification *)noti{
+    FollowModel *info = noti.object;
+    self.followmodel = info;
+    NSString *str = info.signInImage;
+    if ([str isEqualToString:@"1"]) {//签到
+        self.followIV.image = [UIImage imageNamed:@"followsignline"];
+    }
+    if ([str isEqualToString:@"2"]) {//总结
+        self.followIV.image = [UIImage imageNamed:@"followsumupline"];
+    }
+    if ([str isEqualToString:@"3"]) {//离校
+        self.followIV.image = [UIImage imageNamed:@"followleaveline"];
+    }
+    if ([str isEqualToString:@"4"]) {//缺勤
+        self.followIV.image = [UIImage imageNamed:@"followshortofline"];
+    }
+
+}
+
 #pragma mark - getters & setters
 -(FollowSignInViewController *)signVC{
     if (_signVC == nil) {

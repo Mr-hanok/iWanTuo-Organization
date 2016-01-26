@@ -26,7 +26,7 @@
 @property (nonatomic, strong) ApiFollowSubject *apiSubject;//学科查询
 @property (nonatomic, strong) NSMutableArray *subjectArray;//学科数组
 @property (nonatomic, strong) NSMutableArray *subjectModelArray;//学科模型数组
-@property (nonatomic, strong) ApiFollowChangeRequest *apiChange;//修改追踪
+@property (nonatomic, strong) ApiFollowChangeRequest *apiChange;//改变跟踪状态接口
 @property (nonatomic, strong) CityInfoModel *model;//记录选中模型
 
 @property (nonatomic, copy) NSString *behavior;//行为评价
@@ -95,8 +95,8 @@
         self.followmodel = [FollowModel initWithDic:dic];
         //发送通知 传入界面
         [[NSNotificationCenter defaultCenter] postNotificationName:ChangeViewInfoNoti object:self.followmodel];
-        
-        [[NSNotificationCenter defaultCenter] postNotificationName:ChangeImageIvNoti object:@"2"];
+        //发送通知 改变进度条图片
+        [[NSNotificationCenter defaultCenter] postNotificationName:ChangeImageIvNoti object:self.status];
         [HUDManager showWarningWithText:@"总结成功"];
     }
     
@@ -191,6 +191,18 @@
  */
 - (IBAction)sumupAction:(UIButton *)sender {
     [HUDManager showLoadingHUDView:KeyWindow];
+    if ([self.followmodel.status isEqualToString:@"1"]||self.followmodel == nil) {
+        [HUDManager showWarningWithText:@"请先签到"];
+        return;
+    }
+    if ([self.followmodel.status isEqualToString:@"2"]) {
+        self.status = @"2";
+        self.statusName =@"总结";
+    }
+    if ([self.followmodel.status isEqualToString:@"3"]) {
+        self.status = @"3";
+        self.statusName =@"离校";
+    }
     
     [self.apiChange setApiParamsWithId:self.followmodel.kid
                                  leave:@""
@@ -202,8 +214,11 @@
                                  grade:self.gradeTF.text
                                subject:self.model.cityId
                            subjectName:self.model.name
-                                status:@"2"
-                            statusName:@"总结"];
+                                status:self.status
+                            statusName:self.statusName
+                                signIn:@""
+                           signInImage:@""
+                                  note:self.remarkTV.text];
     [APIClient execute:self.apiChange];
 
 }
@@ -211,12 +226,26 @@
 - (void)changeViewInfoNotification:(NSNotification *)noti{
     FollowModel *info = noti.object;
     self.followmodel = info;
-    self.remarkTV.text = info.leave;
-    if ([self.followmodel.workStatus isEqualToString:@"1"]) {
-        self.completeBtn.selected = YES;
+    if (info != nil) {
+        self.remarkTV.text = info.note;
+        if ([self.followmodel.workStatus isEqualToString:@"1"]) {
+            self.completeBtn.selected = YES;
+            self.uncompleteBtn.selected = NO;
+        }
+        if ([self.followmodel.subjectName isEqualToString:@""]) {
+            [self.classChoseBtn setTitle:@"选择学科" forState:UIControlStateNormal];
+        }else{
+            [self.classChoseBtn setTitle:self.followmodel.subjectName forState:UIControlStateNormal];
+        }
+        
+        
+    }else{
+        self.remarkTV.text = @"";
+        self.completeBtn.selected = NO;
         self.uncompleteBtn.selected = NO;
+        [self.classChoseBtn setTitle:@"选择学科" forState:UIControlStateNormal];
     }
-    [self.classChoseBtn setTitle:self.followmodel.subjectName forState:UIControlStateNormal];
+    //设置学科分数
     self.gradeTF.text = self.followmodel.grade;
     //设置星星显示
     NSInteger num1 = [self.followmodel.behavior integerValue]+100;
@@ -240,6 +269,7 @@
         }
     }
 
-
 }
+
+
 @end

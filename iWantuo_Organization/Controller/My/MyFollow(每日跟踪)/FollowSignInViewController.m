@@ -12,7 +12,7 @@
 #import "UploadApiRequest.h"
 #import "UploadManager.h"
 #import <UIButton+WebCache.h>
-
+#import "ApiFollowChangeRequest.h"
 
 
 @interface FollowSignInViewController ()<APIRequestDelegate>
@@ -25,6 +25,7 @@
 
 @property (nonatomic, copy) NSString *imageName;//图片名称
 @property (nonatomic, strong) ApiFollowAddRequest *apiFollowAdd;//签到
+@property (nonatomic, strong) ApiFollowChangeRequest *apiChange;//修改签到
 
 @end
 
@@ -36,9 +37,9 @@
     self.remarkTV.layer.borderWidth = 1.f;
     self.remarkTV.layer.borderColor = kBGColor.CGColor;
     self.remarkTV.layer.cornerRadius = 5.f;
-    self.signBtn.selected = YES;
+    //self.signBtn.selected = YES;
     self.apiFollowAdd = [[ApiFollowAddRequest alloc]initWithDelegate:self];
-    
+    //注册 刷新页面 通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeViewInfoNotification:) name:ChangeViewInfoNoti object:nil];
     
 }
@@ -70,16 +71,19 @@
     if (sr.dic == nil || [sr.dic isKindOfClass:[NSNull class]]) {
         return;
     }
-    if (api == self.apiFollowAdd) {//追踪查询 按钮
-        NSDictionary *dic =  [sr.dic objectForKey:@"trace"];
-        self.followmodel = [FollowModel initWithDic:dic];
-
-        //发送通知 传入界面
-        [[NSNotificationCenter defaultCenter] postNotificationName:ChangeViewInfoNoti object:self.followmodel];
+    NSDictionary *dic =  [sr.dic objectForKey:@"trace"];
+    self.followmodel = [FollowModel initWithDic:dic];
+    
+    if (api == self.apiFollowAdd) {//追踪签到按钮 新增签到
+        [HUDManager showWarningWithText:@"签到成功"];
     }
-
-   [[NSNotificationCenter defaultCenter] postNotificationName:ChangeImageIvNoti object:@"1"];
-    [HUDManager showWarningWithText:@"签到成功"];
+    if (api == self.apiChange) {//追踪签到修改
+        [HUDManager showWarningWithText:@"修改成功"];
+    }
+    //发送通知 修改界面
+    [[NSNotificationCenter defaultCenter] postNotificationName:ChangeViewInfoNoti object:self.followmodel];
+    //发送通知 修改进度条
+    [[NSNotificationCenter defaultCenter] postNotificationName:ChangeImageIvNoti object:self.status];
 }
 
 - (void)serverApi_FinishedFailed:(APIRequest *)api result:(APIResult *)sr {
@@ -101,9 +105,13 @@
     sender.selected = !sender.selected;
     if (sender == self.signBtn) {
         self.lossBtn.selected = NO;
+        self.status = @"1";
+        self.statusName = @"签到";
     }
     if (sender == self.lossBtn) {
         self.signBtn.selected = NO;
+        self.status = @"4";
+        self.statusName = @"缺勤";
     }
 }
 /**
@@ -139,18 +147,50 @@
  */
 - (IBAction)signBtnAction:(UIButton *)sender {
     [HUDManager showLoadingHUDView:KeyWindow];
-    if (![self limitAccountType]) {
-        return;
-    }
+//    if (![self limitAccountType]) {
+//        return;
+//    }
     
-    [self.apiFollowAdd setApiParamsWithCreateDate:self.createDate
-                                        studentId:self.studentId
-                             organizationAccounts:[AccountManager sharedInstance].account.loginAccounts
-                                           signIn:self.remarkTV.text
-                                      signInImage:self.imageName
-                                           status:self.status
-                                       statusName:self.statusName];
-    [APIClient execute:self.apiFollowAdd];
+    if (self.followmodel == nil) {//增加签到
+        [self.apiFollowAdd setApiParamsWithCreateDate:self.createDate
+                                            studentId:self.studentId
+                                 organizationAccounts:[AccountManager sharedInstance].account.loginAccounts
+                                               signIn:self.remarkTV.text
+                                          signInImage:self.imageName
+                                               status:self.status
+                                           statusName:self.statusName];
+        [APIClient execute:self.apiFollowAdd];
+
+    }
+    if (self.followmodel != nil) {//修改签到
+        if ([self.followmodel.status isEqualToString:@"2"]) {
+            self.status = @"2";
+            self.statusName =@"总结";
+        }
+        if ([self.followmodel.status isEqualToString:@"3"]) {
+            self.status = @"3";
+            self.statusName =@"离校";
+        }
+
+        self.apiChange = [[ApiFollowChangeRequest alloc]initWithDelegate:self];
+        [self.apiChange setApiParamsWithId:self.followmodel.kid
+                                     leave:self.remarkTV.text
+                                leaveImage:self.imageName
+                                workStatus:@""
+                            workStatusName:@""
+                                  behavior:@""
+                                     study:@""
+                                     grade:@""
+                                   subject:@""
+                               subjectName:@""
+                                    status:self.status
+                                statusName:self.statusName
+                                    signIn:self.remarkTV.text
+                               signInImage:self.imageName
+                                      note:@""];
+
+        [APIClient execute:self.apiChange];
+    }
 }
 #pragma mark - private methods
 
@@ -166,13 +206,44 @@
         return YES;
     }
 }
+/**
+ *  通知方法
+ *
+ *  @param noti 通知体 包涵追踪model
+ */
 - (void)changeViewInfoNotification:(NSNotification *)noti{
     FollowModel *info = noti.object;
-    self.remarkTV.text = info.signIn;
-    NSString *str = [NSString stringWithFormat:@"%@%@",@"http://www.",info.signInImage];
-    NSURL *url = [NSURL URLWithString:str];
-    NSLog(@"%@",url);
-    [self.upLoadBtn sd_setImageWithURL:url forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"register_addImageBtn"]];
-
+    self.followmodel = info;
+    [self initstallViewWithFollowModel:info];
+    if (info != nil) {
+        self.remarkTV.text = info.signIn;
+        if (![info.status isEqualToString:@"4"]) {
+            self.signBtn.selected = YES;
+            self.lossBtn.selected = NO;
+        }
+        if ([info.status isEqualToString:@"4"]) {
+            self.lossBtn.selected = YES;
+            self.signBtn.selected = NO;
+        }
+        NSString *str = nil;
+        if ([info.leaveImage hasPrefix:@"http://www"]) {
+            str = info.signInImage;
+        }else{
+            str = [NSString stringWithFormat:@"%@%@",@"http://www.",info.signInImage];
+        }
+        NSURL *url = [NSURL URLWithString:str];
+        [self.upLoadBtn sd_setImageWithURL:url forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"register_addImageBtn"]];
+ 
+    }
+    
+}
+- (void)initstallViewWithFollowModel:(FollowModel *)followModel{
+    if (followModel == nil) {
+        self.remarkTV.text = @"";
+        self.signBtn.selected = NO;
+        self.lossBtn.selected = NO;
+        [self.upLoadBtn sd_setImageWithURL:nil forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"register_addImageBtn"]];
+    }
+   
 }
 @end

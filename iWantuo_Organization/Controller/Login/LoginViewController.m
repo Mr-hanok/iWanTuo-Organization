@@ -81,7 +81,10 @@ typedef enum :NSInteger {
     NSDictionary *teacherDic = [sr.dic objectForKey:[ValueUtils stringFromObject:@"Teacher"]];
     NSDictionary *origanDic = [sr.dic objectForKey:[ValueUtils stringFromObject:@"Organization"]];
     AccountModel *model = nil;
-    
+    if (teacherDic == nil && origanDic == nil) {
+        [HUDManager showWarningWithText:@"账号审核中"];
+        return;
+    }
     if (teacherDic) {//教师登陆
         self.type = AccountTeacher;
         model =[AccountModel initWithDict:[sr.dic objectForKey:@"Teacher"] accountType:@"3"];

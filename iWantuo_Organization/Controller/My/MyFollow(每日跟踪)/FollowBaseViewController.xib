@@ -37,8 +37,7 @@
                                     <exclude reference="Rob-TH-JJf"/>
                                 </mask>
                             </variation>
-                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                <rect key="frame" x="22" y="15" width="28" height="25"/>
+                            <variation key="heightClass=regular-widthClass=compact">
                                 <mask key="constraints">
                                     <include reference="Rob-TH-JJf"/>
                                 </mask>

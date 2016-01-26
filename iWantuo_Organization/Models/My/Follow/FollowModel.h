@@ -43,6 +43,9 @@
 @property (nonatomic, copy) NSString *status;
 /**状态名称*/
 @property (nonatomic, copy) NSString *statusName;
+/**总结文字*/
+@property (nonatomic, copy) NSString *note;
+
 
 + (FollowModel *)initWithDic:(NSDictionary *)dic;
 

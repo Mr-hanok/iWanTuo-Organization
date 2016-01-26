@@ -32,6 +32,7 @@
     model.subjectName = [ValueUtils stringFromObject:[dic objectForKey:@"subjectName"]];
     model.status = [ValueUtils stringFromObject:[dic objectForKey:@"status"]];
     model.statusName = [ValueUtils stringFromObject:[dic objectForKey:@"statusName"]];
+    model.note = [ValueUtils stringFromObject:[dic objectForKey:@"note"]];
     
         
     return model;
