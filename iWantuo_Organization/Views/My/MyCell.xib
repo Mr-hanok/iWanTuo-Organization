@@ -84,6 +84,7 @@
             <connections>
                 <outlet property="acountLabel" destination="bth-3K-d96" id="6Cm-hg-mk7"/>
                 <outlet property="headIV" destination="6K8-rN-VHo" id="AvQ-ke-xf6"/>
+                <outlet property="typeLeftConstran" destination="nGk-HW-vw8" id="5b2-d9-XlN"/>
             </connections>
             <point key="canvasLocation" x="75" y="136"/>
         </tableViewCell>
@@ -139,10 +140,11 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="imageWithConstran" destination="AtA-gg-sW3" id="8ZL-DJ-GvO"/>
                 <outlet property="typeIV" destination="Ts9-xR-brl" id="cdg-Ug-Ytj"/>
                 <outlet property="typeLabel" destination="fXt-fb-eDK" id="6G4-sR-a5E"/>
             </connections>
-            <point key="canvasLocation" x="75" y="292"/>
+            <point key="canvasLocation" x="-70" y="228"/>
         </tableViewCell>
     </objects>
     <resources>

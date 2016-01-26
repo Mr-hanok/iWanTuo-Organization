@@ -20,6 +20,8 @@
  */
 @property (weak, nonatomic) IBOutlet UILabel *typeLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *typeIV;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageWithConstran;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *typeLeftConstran;
 + (MyCell *)shareMyTypeCell;
 @property (nonatomic, assign)NSInteger row;
 

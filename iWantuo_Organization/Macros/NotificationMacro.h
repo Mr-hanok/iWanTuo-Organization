@@ -13,4 +13,6 @@
 
 #define kKeyBoardHideNotification UIKeyboardWillHideNotification
 
+#define ChangeImageIvNoti  @"ChangeImageIvNoti"
+#define ChangeViewInfoNoti @"ChangeViewInfo"
 #endif

@@ -12,6 +12,7 @@
 + (StudentChoseCell *)shareStudentChoseCell{
     return  [[[NSBundle mainBundle]loadNibNamed:@"StudentChoseCell" owner:nil options:0]lastObject];
 }
+
 - (void)awakeFromNib {
     // Initialization code
 }

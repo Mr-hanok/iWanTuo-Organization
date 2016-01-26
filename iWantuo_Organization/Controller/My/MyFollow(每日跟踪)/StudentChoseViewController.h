@@ -7,9 +7,10 @@
 //
 
 #import "BaseViewController.h"
+#import "ClassModel.h"
 /**
  *  每日追踪 选择学生
  */
 @interface StudentChoseViewController : BaseViewController
-
+@property (nonatomic, strong) ClassModel *classModel;
 @end

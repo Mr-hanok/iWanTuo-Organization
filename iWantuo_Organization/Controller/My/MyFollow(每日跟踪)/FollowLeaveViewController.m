@@ -7,11 +7,19 @@
 //
 
 #import "FollowLeaveViewController.h"
+#import "ApiFollowChangeRequest.h"
+#import "UploadManager.h"
+#import "CameraTakeMamanger.h"
+#import <UIButton+WebCache.h>
 
-@interface FollowLeaveViewController ()
+@interface FollowLeaveViewController ()<APIRequestDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextView *remarkTV;//备注
 @property (weak, nonatomic) IBOutlet UIButton *upLoadBtn;//上传图片按钮
+@property (nonatomic, copy) NSString *imageName;//记录图片名
+
+
+@property (nonatomic, strong) ApiFollowChangeRequest *apiChange;
 @end
 
 @implementation FollowLeaveViewController
@@ -22,6 +30,10 @@
     self.remarkTV.layer.borderWidth = 1.f;
     self.remarkTV.layer.borderColor = kBGColor.CGColor;
     self.remarkTV.layer.cornerRadius = 5.f;
+    
+    self.apiChange = [[ApiFollowChangeRequest alloc]initWithDelegate:self];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeViewInfoNotification:) name:ChangeViewInfoNoti object:nil];
 
 }
 -(void)viewWillAppear:(BOOL)animated{
@@ -32,21 +44,100 @@
     [super viewWillDisappear:animated];
     [MobClick endLogPageView:@"每日追踪离校"];
 }
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
+}
+#pragma mark -  APIRequestDelegate
 
-#pragma mark - 协议名
+- (void)serverApi_RequestFailed:(APIRequest *)api error:(NSError *)error {
+    
+    [HUDManager hideHUDView];
+    
+    [AlertViewManager showAlertViewWithMessage:kDefaultNetWorkErrorString];
+    
+}
+
+- (void)serverApi_FinishedSuccessed:(APIRequest *)api result:(APIResult *)sr {
+    
+    [HUDManager hideHUDView];
+    
+    if (sr.dic == nil || [sr.dic isKindOfClass:[NSNull class]]) {
+        return;
+    }
+    
+}
+
+- (void)serverApi_FinishedFailed:(APIRequest *)api result:(APIResult *)sr {
+    
+    NSString *message = sr.msg;
+    [HUDManager hideHUDView];
+    if (message.length == 0) {
+        message = kDefaultServerErrorString;
+    }
+    [AlertViewManager showAlertViewWithMessage:message];
+}
+
+
 #pragma mark - event response
 /**
  *  上传图片按钮
  */
 - (IBAction)upLoadBtnAction:(UIButton *)sender {
+    // 上传图片
+    [[CameraTakeMamanger sharedInstance] cameraSheetInController:self handler:^(UIImage *image, NSString *imagePath) {
+        
+        [HUDManager showLoadingHUDView:self.view];
+        [[UploadManager sharedInstance] uploadFileWithFilePath:imagePath success:^(NSString *fileUrl, NSString *serverUrl, NSString *message) {
+            [HUDManager hideHUDView];
+            if (fileUrl == nil || [fileUrl isKindOfClass:[NSNull class]]) {
+                [AlertViewManager showAlertViewWithMessage:@"服务器异常,请稍后重试"];
+                return ;
+            }
+            
+            // 记录图片地址  设置图片
+            self.imageName = message;
+            [self.upLoadBtn setImage:image forState:UIControlStateNormal];
+            
+        } failure:^(NSString *message) {
+            [HUDManager showWarningWithText:message];
+            [HUDManager hideHUDView];
+        }];
+    } cancelHandler:^{
+        
+    }];
+
 }
 /**
  * 离校按钮
  */
 - (IBAction)signBtnAction:(UIButton *)sender {
+    [HUDManager showLoadingHUDView:KeyWindow];
     
+    [self.apiChange setApiParamsWithId:self.followmodel.kid
+                                 leave:self.remarkTV.text
+                            leaveImage:self.imageName
+                            workStatus:@""
+                        workStatusName:@""
+                              behavior:@""
+                                 study:@""
+                                 grade:@""
+                               subject:@""
+                           subjectName:@""
+                                status:@"3"
+                            statusName:@"离校"];
+    [APIClient execute:self.apiChange];
 }
 #pragma mark - private methods
+- (void)changeViewInfoNotification:(NSNotification *)noti{
+    FollowModel *info = noti.object;
+    self.followmodel = info;
+    self.remarkTV.text = info.leave;
+    NSString *str = [NSString stringWithFormat:@"%@%@",@"http://www.",info.leaveImage];
+    NSURL *url = [NSURL URLWithString:str];
+    NSLog(@"%@",url);
+    [self.upLoadBtn sd_setImageWithURL:url forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"register_addImageBtn"]];
+    
+}
 
 
 @end

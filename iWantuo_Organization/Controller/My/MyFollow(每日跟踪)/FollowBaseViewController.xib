@@ -18,7 +18,7 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="KLT-fj-2Uj">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vek-zj-yQc">
@@ -37,7 +37,8 @@
                                     <exclude reference="Rob-TH-JJf"/>
                                 </mask>
                             </variation>
-                            <variation key="heightClass=regular-widthClass=compact">
+                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                <rect key="frame" x="22" y="15" width="28" height="25"/>
                                 <mask key="constraints">
                                     <include reference="Rob-TH-JJf"/>
                                 </mask>
@@ -49,7 +50,7 @@
                                 <constraint firstAttribute="width" constant="100" id="PG6-dl-1KA"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <state key="normal" title="2016-19-30" backgroundImage="followtimebtn">
+                            <state key="normal" title="选择日期" backgroundImage="followtimebtn">
                                 <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <variation key="default">
@@ -100,14 +101,14 @@
                                     </state>
                                     <variation key="default">
                                         <mask key="constraints">
-                                            <exclude reference="w64-NM-xGV"/>
                                             <exclude reference="RPi-IC-YTv"/>
+                                            <exclude reference="w64-NM-xGV"/>
                                         </mask>
                                     </variation>
                                     <variation key="heightClass=regular-widthClass=compact">
                                         <mask key="constraints">
-                                            <include reference="w64-NM-xGV"/>
                                             <include reference="RPi-IC-YTv"/>
+                                            <include reference="w64-NM-xGV"/>
                                         </mask>
                                     </variation>
                                     <connections>
@@ -188,13 +189,13 @@
                                 <mask key="constraints">
                                     <exclude reference="zW9-3D-fHC"/>
                                     <exclude reference="ADr-Io-VoN"/>
-                                    <exclude reference="DjN-Q0-oJe"/>
-                                    <exclude reference="72r-Ux-GDt"/>
-                                    <exclude reference="pNb-SD-P4z"/>
-                                    <exclude reference="fJ5-xh-Nyg"/>
                                     <exclude reference="ExT-Vd-UdX"/>
-                                    <exclude reference="m23-zg-3fr"/>
+                                    <exclude reference="fJ5-xh-Nyg"/>
+                                    <exclude reference="pNb-SD-P4z"/>
                                     <exclude reference="cK9-1k-zek"/>
+                                    <exclude reference="m23-zg-3fr"/>
+                                    <exclude reference="72r-Ux-GDt"/>
+                                    <exclude reference="DjN-Q0-oJe"/>
                                 </mask>
                             </variation>
                             <variation key="heightClass=regular-widthClass=compact">
@@ -206,13 +207,13 @@
                                 <mask key="constraints">
                                     <include reference="zW9-3D-fHC"/>
                                     <include reference="ADr-Io-VoN"/>
-                                    <include reference="DjN-Q0-oJe"/>
-                                    <include reference="72r-Ux-GDt"/>
-                                    <include reference="pNb-SD-P4z"/>
-                                    <include reference="fJ5-xh-Nyg"/>
                                     <include reference="ExT-Vd-UdX"/>
-                                    <include reference="m23-zg-3fr"/>
+                                    <include reference="fJ5-xh-Nyg"/>
+                                    <include reference="pNb-SD-P4z"/>
                                     <include reference="cK9-1k-zek"/>
+                                    <include reference="m23-zg-3fr"/>
+                                    <include reference="72r-Ux-GDt"/>
+                                    <include reference="DjN-Q0-oJe"/>
                                 </mask>
                             </variation>
                         </view>
@@ -235,13 +236,13 @@
                         </mask>
                         <mask key="constraints">
                             <exclude reference="v2W-zX-vP8"/>
+                            <exclude reference="DTX-0e-0UR"/>
+                            <exclude reference="nOT-C1-S0O"/>
                             <exclude reference="bJx-cX-W8g"/>
                             <exclude reference="gdG-6D-Zed"/>
                             <exclude reference="1UF-8Y-kXX"/>
                             <exclude reference="ULL-fQ-OQb"/>
                             <exclude reference="p0x-az-Mr0"/>
-                            <exclude reference="DTX-0e-0UR"/>
-                            <exclude reference="nOT-C1-S0O"/>
                         </mask>
                     </variation>
                     <variation key="heightClass=regular-widthClass=compact">
@@ -251,13 +252,13 @@
                         </mask>
                         <mask key="constraints">
                             <include reference="v2W-zX-vP8"/>
+                            <include reference="DTX-0e-0UR"/>
+                            <include reference="nOT-C1-S0O"/>
                             <include reference="bJx-cX-W8g"/>
                             <include reference="gdG-6D-Zed"/>
                             <include reference="1UF-8Y-kXX"/>
                             <include reference="ULL-fQ-OQb"/>
                             <include reference="p0x-az-Mr0"/>
-                            <include reference="DTX-0e-0UR"/>
-                            <include reference="nOT-C1-S0O"/>
                         </mask>
                     </variation>
                 </view>

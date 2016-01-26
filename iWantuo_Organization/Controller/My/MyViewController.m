@@ -151,31 +151,39 @@
     switch (indexPath.row) {
             
         case 0://基本信息
-            [self limitAccountType];
-            vc = [[PersonDetailController alloc]init];
+            if ([self limitAccountType]) {
+                vc = [[PersonDetailController alloc]init];
+            }
             break;
         case 1://每日跟踪
-            vc = [[MyFollowViewController alloc]init];
+            //if ([self limitAccountType]) {
+                vc = [[MyFollowViewController alloc]init];
+           // }
+            
             break;
         case 3://我的消息
-            [self limitAccountType];
-            vc = [[MyMessageViewController alloc]init];
+            if ([self limitAccountType]) {
+                vc = [[MyMessageViewController alloc]init];
+            }
             break;
         case 2://学员管理
-            [self limitAccountType];
-            vc = [[MyStudentViewController alloc]init];
+            if ([self limitAccountType]) {
+                vc = [[MyStudentViewController alloc]init];
+            }
             break;
         case 4://班级管理
             [self limitAccountType];
             vc = [[MyClassViewController alloc]init];
             break;
         case 5://班主任管理
-            [self limitAccountType];
-            vc = [[MyClassTeacherViewController alloc]init];
+            if ([self limitAccountType]) {
+                vc = [[MyClassTeacherViewController alloc]init];
+            }
             break;
         case 6://推送消息
-            [self limitAccountType];
-            vc = [[MyPushMessageViewController alloc]init];
+            if ([self limitAccountType]) {
+                vc = [[MyPushMessageViewController alloc]init];
+            }
             break;
 
     }
@@ -207,11 +215,13 @@
 /**
  *  判断是否有权限操作
  */
-- (void)limitAccountType{
-    BOOL accountType =[[AccountManager sharedInstance].account.accountsType isEqualToString:@"3"];
-    if (accountType) {
+- (BOOL)limitAccountType{
+    if ([[AccountManager sharedInstance].account.accountsType isEqualToString:@"3"]) {
         [HUDManager showWarningWithText:@"您没有权限操作！"];
-        return;
+        return NO;
+        
+    }else {
+        return YES;
     }
 }
 @end
