@@ -19,7 +19,7 @@
 @property (nonatomic, copy) NSString *imageName;//记录图片名
 
 
-@property (nonatomic, strong) ApiFollowChangeRequest *apiChange;
+@property (nonatomic, strong) ApiFollowChangeRequest *apiChange;//改变跟踪状态接口
 @end
 
 @implementation FollowLeaveViewController
@@ -64,7 +64,11 @@
     if (sr.dic == nil || [sr.dic isKindOfClass:[NSNull class]]) {
         return;
     }
-    
+    NSDictionary *dic =  [sr.dic objectForKey:@"trace"];
+    self.followmodel = [FollowModel initWithDic:dic];
+    //发送通知 改变进度条图片
+    [[NSNotificationCenter defaultCenter] postNotificationName:ChangeImageIvNoti object:@"3"];
+    [HUDManager showWarningWithText:@"成功"];
 }
 
 - (void)serverApi_FinishedFailed:(APIRequest *)api result:(APIResult *)sr {
@@ -124,18 +128,34 @@
                                subject:@""
                            subjectName:@""
                                 status:@"3"
-                            statusName:@"离校"];
+                            statusName:@"离校"
+                                signIn:@""
+                           signInImage:@""
+                                  note:@""];
     [APIClient execute:self.apiChange];
 }
 #pragma mark - private methods
 - (void)changeViewInfoNotification:(NSNotification *)noti{
     FollowModel *info = noti.object;
     self.followmodel = info;
-    self.remarkTV.text = info.leave;
-    NSString *str = [NSString stringWithFormat:@"%@%@",@"http://www.",info.leaveImage];
-    NSURL *url = [NSURL URLWithString:str];
-    NSLog(@"%@",url);
-    [self.upLoadBtn sd_setImageWithURL:url forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"register_addImageBtn"]];
+    if (info != nil) {
+        self.remarkTV.text = info.leave;
+        //设置图片
+        NSString *str = nil;
+        if ([info.leaveImage hasPrefix:@"http://www"]) {
+            str = info.leaveImage;
+        }else{
+            str = [NSString stringWithFormat:@"%@%@",@"http://www.",info.leaveImage];
+        }
+        NSURL *url = [NSURL URLWithString:str];
+        [self.upLoadBtn sd_setImageWithURL:url forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"register_addImageBtn"]];
+
+    }else{
+        self.remarkTV.text = @"";
+        [self.upLoadBtn sd_setImageWithURL:nil forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"register_addImageBtn"]];
+    }
+    
+    
     
 }
 
