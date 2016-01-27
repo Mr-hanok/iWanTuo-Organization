@@ -44,8 +44,7 @@
     self.remarkTV.layer.borderColor = kBGColor.CGColor;
     self.remarkTV.layer.cornerRadius = 5.f;
     self.subjectArray = [NSMutableArray array];
-    self.subjectModelArray = [NSMutableArray array];
-    
+    self.subjectModelArray = [NSMutableArray array];    
     
     self.apiChange = [[ApiFollowChangeRequest alloc]initWithDelegate:self];
     self.apiSubject = [[ApiFollowSubject alloc]initWithDelegate:self];
@@ -191,7 +190,7 @@
  */
 - (IBAction)sumupAction:(UIButton *)sender {
     [HUDManager showLoadingHUDView:KeyWindow];
-    if ([self.followmodel.status isEqualToString:@"1"]||self.followmodel == nil) {
+    if (self.followmodel == nil) {
         [HUDManager showWarningWithText:@"请先签到"];
         return;
     }

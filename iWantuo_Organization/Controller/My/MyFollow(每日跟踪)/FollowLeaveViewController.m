@@ -30,6 +30,7 @@
     self.remarkTV.layer.borderWidth = 1.f;
     self.remarkTV.layer.borderColor = kBGColor.CGColor;
     self.remarkTV.layer.cornerRadius = 5.f;
+    [self.upLoadBtn.imageView setContentMode:UIViewContentModeScaleAspectFill];
     
     self.apiChange = [[ApiFollowChangeRequest alloc]initWithDelegate:self];
 
@@ -87,6 +88,7 @@
  *  上传图片按钮
  */
 - (IBAction)upLoadBtnAction:(UIButton *)sender {
+    [self.view endEditing:YES];
     // 上传图片
     [[CameraTakeMamanger sharedInstance] cameraSheetInController:self handler:^(UIImage *image, NSString *imagePath) {
         
@@ -115,8 +117,12 @@
  * 离校按钮
  */
 - (IBAction)signBtnAction:(UIButton *)sender {
+    [self.view endEditing:YES];
     [HUDManager showLoadingHUDView:KeyWindow];
-    
+    if (self.followmodel ==nil) {
+        [HUDManager showWarningWithText:@"请先签到"];
+        return;
+    }
     [self.apiChange setApiParamsWithId:self.followmodel.kid
                                  leave:self.remarkTV.text
                             leaveImage:self.imageName

@@ -55,6 +55,8 @@
     [self.scrollview addSubview:self.signVC.view];
     [self.scrollview addSubview:self.summaryVC.view];
     [self.scrollview addSubview:self.leaveVC.view];
+    [self.scrollview setPagingEnabled:YES];
+    self.scrollview.scrollEnabled = NO;
     
     //判断是老师还是机构
     if ([[AccountManager sharedInstance].account.accountsType isEqualToString:@"3"]) {

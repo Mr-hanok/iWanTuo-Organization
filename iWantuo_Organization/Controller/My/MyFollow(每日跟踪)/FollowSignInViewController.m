@@ -15,7 +15,7 @@
 #import "ApiFollowChangeRequest.h"
 
 
-@interface FollowSignInViewController ()<APIRequestDelegate>
+@interface FollowSignInViewController ()<APIRequestDelegate,UITextViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextView *remarkTV;//备注
 @property (weak, nonatomic) IBOutlet UIButton *upLoadBtn;//上传图片按钮
@@ -37,6 +37,7 @@
     self.remarkTV.layer.borderWidth = 1.f;
     self.remarkTV.layer.borderColor = kBGColor.CGColor;
     self.remarkTV.layer.cornerRadius = 5.f;
+    [self.upLoadBtn.imageView setContentMode:UIViewContentModeScaleAspectFill];
     //self.signBtn.selected = YES;
     self.apiFollowAdd = [[ApiFollowAddRequest alloc]initWithDelegate:self];
     //注册 刷新页面 通知
@@ -95,7 +96,10 @@
     }
     [AlertViewManager showAlertViewWithMessage:message];
 }
-
+#pragma mark -  uitextView
+-(void)textViewDidBeginEditing:(UITextView *)textView{
+    
+}
 
 #pragma mark - event respons
 /**
@@ -118,6 +122,7 @@
  *  上传图片按钮
  */
 - (IBAction)upLoadBtnAction:(UIButton *)sender {
+    [self.view endEditing:YES];
     // 上传图片
     [[CameraTakeMamanger sharedInstance] cameraSheetInController:self handler:^(UIImage *image, NSString *imagePath) {
         
@@ -146,6 +151,7 @@
  * 签到按钮
  */
 - (IBAction)signBtnAction:(UIButton *)sender {
+    [self.view endEditing:YES];
     [HUDManager showLoadingHUDView:KeyWindow];
 //    if (![self limitAccountType]) {
 //        return;
