@@ -19,4 +19,6 @@
 
 + (UIViewController *)mainViewController;
 
++ (UIViewController *)loginViewController;
+
 @end

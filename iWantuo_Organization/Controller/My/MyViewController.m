@@ -18,6 +18,7 @@
 #import "MyStudentViewController.h"
 #import "MyMessageViewController.h"
 #import "ApiLoginOutRequest.h"
+#import "SystemHandler.h"
 
 @interface MyViewController ()<UITableViewDataSource,UITableViewDelegate,APIRequestDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *logoutBtn;
@@ -74,10 +75,8 @@
     AccountModel *model =[AccountManager sharedInstance].account;
     model.isLogin = @"no";
     [[AccountManager sharedInstance] saveAccountInfoToDisk];
-    LoginViewController *vc = [[LoginViewController alloc]init];
-    [self.navigationController pushViewController:vc animated:YES];
-    
-    [HUDManager showWarningWithText:@"退出登陆成功"];
+    [HUDManager showWarningWithText:@"退出登录成功"];
+    kRootViewController = [SystemHandler rootViewController];
 
 }
 
@@ -112,9 +111,16 @@
         if (!cell1) {
             cell1 = [MyCell shareMyCell];
         }
-        
+        [cell1.headIV sd_setImageWithURL:[NSURL URLWithString:[AccountManager sharedInstance].account.headPortrait] placeholderImage:[UIImage imageNamed:@"defaultHead"]];
+        cell1.acountLabel.text = [AccountManager sharedInstance].account.loginAccounts;
+        if ([[AccountManager sharedInstance].account.accountsType isEqualToString:@"3"]) {
+            cell1.userNameLabel.text = [AccountManager sharedInstance].account.name;
+        } else {
+            cell1.userNameLabel.text = [AccountManager sharedInstance].account.organizationAbbreviation;
+        }
+
         return cell1;
-    }else {
+    } else {
         if (!cell2) {
             cell2 = [MyCell shareMyTypeCell];
         }
@@ -137,15 +143,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    //判断是否登陆
-    if ([[AccountManager sharedInstance].account.isLogin isEqualToString:@"no"] ||[[ValueUtils stringFromObject:[AccountManager sharedInstance].account.isLogin] isEqualToString:@""]) {
-        [AlertViewManager showAlertViewMessage:@"尚未登陆,请登录!" handlerBlock:^{
-            LoginViewController *vc = [[LoginViewController alloc]init];
-            [self.navigationController pushViewController:vc animated:YES];
-        }];
-        
-        return;
-    }
+
     
     BaseViewController *vc = nil;
     switch (indexPath.row) {
@@ -172,8 +170,9 @@
             }
             break;
         case 4://班级管理
-            [self limitAccountType];
-            vc = [[MyClassViewController alloc]init];
+            if ([self limitAccountType]) {
+                vc = [[MyClassViewController alloc]init];
+            }
             break;
         case 5://班主任管理
             if ([self limitAccountType]) {
@@ -199,10 +198,10 @@
 - (IBAction)Logout:(UIButton *)sender {
     
     if ([[AccountManager sharedInstance].account.isLogin isEqualToString:@"no"] ||[[ValueUtils stringFromObject:[AccountManager sharedInstance].account.isLogin] isEqualToString:@""]) {
-        [HUDManager showWarningWithText:@"尚未登陆"];
+        [HUDManager showWarningWithText:@"尚未登录"];
         return;
     }
-    [AlertViewManager showAlertViewMessage:@"确定要退出登陆吗" handlerBlock:^{
+    [AlertViewManager showAlertViewMessage:@"确定要退出登录吗" handlerBlock:^{
         self.apiLoginOut = [[ApiLoginOutRequest alloc]initWithDelegate:self];
         [self.apiLoginOut setApiParams];
         [APIClient execute:self.apiLoginOut];

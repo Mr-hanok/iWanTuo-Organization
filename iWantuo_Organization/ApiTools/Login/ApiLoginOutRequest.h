@@ -8,7 +8,7 @@
 
 #import "APIRequest.h"
 /**
- *  退出登陆接口
+ *  退出登录接口
  */
 @interface ApiLoginOutRequest : APIRequest
 -(void)setApiParams;

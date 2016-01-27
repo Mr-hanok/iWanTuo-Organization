@@ -22,7 +22,7 @@ typedef enum :NSInteger {
 
 @property (weak, nonatomic) IBOutlet UITextField *userNameTF;//用户名
 @property (weak, nonatomic) IBOutlet UITextField *passWordTF;//密码
-@property (nonatomic, strong) ApiLoginRequest *apiLogin;//登陆接口
+@property (nonatomic, strong) ApiLoginRequest *apiLogin;//登录接口
 
 @property (nonatomic, assign) AccoutnLoginType type;
 @end
@@ -36,6 +36,7 @@ typedef enum :NSInteger {
     self.title = @"登录";
     self.view.backgroundColor = [UIColor whiteColor];
     self.apiLogin = [[ApiLoginRequest alloc]initWithDelegate:self];
+    self.userNameTF.text = [AccountManager sharedInstance].account.loginAccounts;
     
 }
 -(void)viewWillAppear:(BOOL)animated{
@@ -85,12 +86,12 @@ typedef enum :NSInteger {
         [HUDManager showWarningWithText:@"账号审核中"];
         return;
     }
-    if (teacherDic) {//教师登陆
+    if (teacherDic) {//教师登录
         self.type = AccountTeacher;
         model =[AccountModel initWithDict:[sr.dic objectForKey:@"Teacher"] accountType:@"3"];
     }
     
-    if (origanDic) {//机构登陆
+    if (origanDic) {//机构登录
         self.type = AccountOrganizaton;
         model =[AccountModel initWithDict:[sr.dic objectForKey:@"Organization"] accountType:@"2"];
     }
@@ -98,8 +99,8 @@ typedef enum :NSInteger {
     model.isLogin = @"yes";
     [AccountManager sharedInstance].account = model;
     [[AccountManager sharedInstance] saveAccountInfoToDisk];
-    //登陆成功 切换根控制器
-    KeyWindow.rootViewController= [SystemHandler rootViewController];
+    //登录成功 切换根控制器
+    kRootViewController = [SystemHandler rootViewController];
     
     
 }
@@ -116,7 +117,7 @@ typedef enum :NSInteger {
 
 #pragma mark - event response
 /**
- *  登陆
+ *  登录
  */
 - (IBAction)loginAction {
     //数据校验
@@ -125,7 +126,7 @@ typedef enum :NSInteger {
         [self.apiLogin setApiParamsWithLoginAccount:self.userNameTF.text Password:self.passWordTF.text];
         [APIClient execute:self.apiLogin];
     }
-    //登陆成功 切换根控制器
+    //登录成功 切换根控制器
    // KeyWindow.rootViewController= [SystemHandler rootViewController];
     
 }
@@ -149,17 +150,17 @@ typedef enum :NSInteger {
 
 - (BOOL)dataCheck{
     if (self.userNameTF.text.length==0) {
-        [HUDManager showWarningWithText:@"请输入手机号"];
+        [HUDManager showWarningWithText:@"请输入账号"];
         return NO;
     }
     if (self.passWordTF.text.length==0) {
         [HUDManager showWarningWithText:@"请输入密码"];
         return NO;
     }
-    if (![NSString tf_isSimpleMobileNumber:self.userNameTF.text]  ) {
-        [HUDManager showWarningWithText:@"请输入正确手机号"];
-        return NO;
-    }
+//    if (![NSString tf_isSimpleMobileNumber:self.userNameTF.text]  ) {
+//        [HUDManager showWarningWithText:@"请输入正确手机号"];
+//        return NO;
+//    }
     return YES;
 }
 @end

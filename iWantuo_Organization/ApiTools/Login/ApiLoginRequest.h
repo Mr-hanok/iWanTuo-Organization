@@ -8,7 +8,7 @@
 
 #import "APIRequest.h"
 /**
- *  登陆接口
+ *  登录接口
  */
 @interface ApiLoginRequest : APIRequest
 

@@ -76,7 +76,7 @@
     self.apiAddressList = [[ApiAddressListRequest alloc]initWithDelegate:self];
     [self.apiAddressList setApiParamsWithParentId:@"3"];
     [APIClient execute:self.apiAddressList];
-    [HUDManager showLoadingHUDView:self.view];
+//    [HUDManager showLoadingHUDView:self.view];
     
 }
 -(void)viewWillAppear:(BOOL)animated{

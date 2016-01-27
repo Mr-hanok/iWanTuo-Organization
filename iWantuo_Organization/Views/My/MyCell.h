@@ -14,6 +14,7 @@
  */
 @property (weak, nonatomic) IBOutlet UIImageView *headIV;//头像
 @property (weak, nonatomic) IBOutlet UILabel *acountLabel;//账号
+@property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 + (MyCell *)shareMyCell;
 /**
  *  myTypeCell
