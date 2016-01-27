@@ -74,8 +74,8 @@
         return;
     }
     if (api == self.apiFind) {//找回密码
-        //修改成功 重新登陆
-        [HUDManager showWarningWithText:@"找回成功，请登陆"];
+        //修改成功 重新登录
+        [HUDManager showWarningWithText:@"找回成功，请登录"];
         [self.navigationController popViewControllerAnimated:YES];
     }
     if (api == self.apiSM) {//短信验证

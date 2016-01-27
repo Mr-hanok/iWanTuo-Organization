@@ -38,7 +38,7 @@
 - (void)chooseRootVc
 {
     //设置根视图控制器
-    self.window.rootViewController = [SystemHandler mainViewController];
+    self.window.rootViewController = [SystemHandler rootViewController];
 
 }
 

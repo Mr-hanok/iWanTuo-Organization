@@ -114,8 +114,9 @@
     if (api == self.apiRegister) {//注册
         
         [HUDManager showWarningWithText:@"注册成功，请登录"];
-        LoginViewController *vc = [[LoginViewController alloc]init];
-        [self.navigationController pushViewController:vc animated:YES];
+//        LoginViewController *vc = [[LoginViewController alloc]init];
+//        [self.navigationController pushViewController:vc animated:YES];
+        [self.navigationController popToRootViewControllerAnimated:YES];
     }
 }
 

@@ -12,6 +12,7 @@
 #import "TopViewController.h"
 #import "MyViewController.h"
 #import "NewVersionViewController.h"
+#import "LoginViewController.h"
 
 #define kVersionKey @"version"
 @implementation SystemHandler
@@ -37,13 +38,15 @@
         return newVc;
         
     } else {
-        return [SystemHandler mainViewController];
+        if ([AccountManager sharedInstance].isLogin) {
+            return [SystemHandler mainViewController];
+        } else {
+            return [SystemHandler loginViewController];
+        }
+        
     }
-
-    
-   
-
 }
+
 + (UIViewController *)mainViewController {
     UITabBarController *rootTabBarController = [[UITabBarController alloc] init];
     
@@ -68,6 +71,13 @@
     //调整bar模糊效果
     rootTabBarController.tabBar.translucent = YES;
     return rootTabBarController;
+}
+
++ (UIViewController *)loginViewController {
+    LoginViewController *vc = [[LoginViewController alloc]init];
+    UINavigationController *navi = [[UINavigationController alloc]initWithRootViewController:vc];
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navigationBg"] forBarMetrics:UIBarMetricsDefault];
+    return navi;
 }
 
 

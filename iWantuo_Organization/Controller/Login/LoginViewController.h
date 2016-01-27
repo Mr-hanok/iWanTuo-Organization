@@ -8,7 +8,7 @@
 
 #import "BaseViewController.h"
 /**
- *  登陆页面
+ *  登录页面
  */
 @interface LoginViewController : BaseViewController
 

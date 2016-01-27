@@ -113,7 +113,7 @@
 #pragma mark - 单独加的地段
 /**1家长，2机构，3老师*/
 @property (nonatomic, strong) NSString *accountsType;
-/**是否登陆*/
+/**是否登录*/
 @property (nonatomic, strong) NSString *isLogin;
 
 
