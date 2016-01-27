@@ -111,7 +111,6 @@
 }
 - (void)footerRereshing {
     
-    self.apiClassList = [[ApiClassListRequest alloc] initWithDelegate:self];
     [self.apiClassList setApiParamsWithOrganizationAccounts:self.loginAccounts page:[NSString stringWithFormat:@"%@", @(self.apiClassList.requestCurrentPage)]];
     [APIClient execute:self.apiClassList];
 }

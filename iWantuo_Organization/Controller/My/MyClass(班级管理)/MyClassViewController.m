@@ -129,7 +129,7 @@
 }
 - (void)footerRereshing {
     
-    self.apiClassList = [[ApiClassListRequest alloc] initWithDelegate:self];
+    
     [self.apiClassList setApiParamsWithOrganizationAccounts:[AccountManager sharedInstance].account.loginAccounts page:[NSString stringWithFormat:@"%@", @(self.apiClassList.requestCurrentPage)]];
     [APIClient execute:self.apiClassList];
 }
@@ -182,10 +182,23 @@
     NSLog(@"%ld",indexPath.row);
     self.indexPath = indexPath;
     ClassModel *model = [self.dataArray objectAtIndex:indexPath.row];
-    self.apiDelete = [[ApiDeleteClassRequest alloc] initWithDelegate:self];
-    [self.apiDelete setApiParamsWithClassId:model.classId];
-    [APIClient execute:self.apiDelete];
-    [HUDManager showLoadingHUDView:self.tableview];
+    if (model.num.intValue > 0) {
+        [AlertViewManager showAlertViewMessage:@"班级内还有学生, 是否删除?" handlerBlock:^{
+            
+//            ClassModel *model = [self.dataArray objectAtIndex:indexPath.row];
+            self.apiDelete = [[ApiDeleteClassRequest alloc] initWithDelegate:self];
+            [self.apiDelete setApiParamsWithClassId:model.classId];
+            [APIClient execute:self.apiDelete];
+            [HUDManager showLoadingHUDView:self.tableview];
+        }];
+    } else {
+        self.apiDelete = [[ApiDeleteClassRequest alloc] initWithDelegate:self];
+        [self.apiDelete setApiParamsWithClassId:model.classId];
+        [APIClient execute:self.apiDelete];
+        [HUDManager showLoadingHUDView:self.tableview];
+    }
+    
+   
     
 }
 #pragma mark - event response

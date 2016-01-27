@@ -101,13 +101,15 @@
 
 #pragma mark - MyClassTeacherCellDelegate
 -(void)myClassTeacherCellCliecDeleBtn:(UIButton *)btn withIndexPath:(NSIndexPath *)indexPath {
-    self.indexPath = indexPath;
-    TeacherModel *model = [self.dataArray objectAtIndex:indexPath.row];
-    self.apiDelete = [[ApiDeleteTeacherRequest alloc] initWithDelegate:self];
-    [self.apiDelete setApiParamsWithTeacherId:model.teacherId];
-    [APIClient execute:self.apiDelete];
-    [HUDManager showLoadingHUDView:self.tableview];
-    
+    [AlertViewManager showAlertViewMessage:@"是否删除辅导老师?" handlerBlock:^{
+        self.indexPath = indexPath;
+        TeacherModel *model = [self.dataArray objectAtIndex:indexPath.row];
+        self.apiDelete = [[ApiDeleteTeacherRequest alloc] initWithDelegate:self];
+        [self.apiDelete setApiParamsWithTeacherId:model.teacherId];
+        [APIClient execute:self.apiDelete];
+        [HUDManager showLoadingHUDView:self.tableview];
+       
+    }];
     
 }
 
