@@ -155,6 +155,9 @@
                                                     <include reference="EIR-zx-odt"/>
                                                 </mask>
                                             </variation>
+                                            <connections>
+                                                <outlet property="delegate" destination="-1" id="UMw-v3-Ysy"/>
+                                            </connections>
                                         </textView>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
