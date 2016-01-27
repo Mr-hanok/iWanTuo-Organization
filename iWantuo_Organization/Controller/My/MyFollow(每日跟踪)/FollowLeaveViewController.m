@@ -118,11 +118,12 @@
  */
 - (IBAction)signBtnAction:(UIButton *)sender {
     [self.view endEditing:YES];
-    [HUDManager showLoadingHUDView:KeyWindow];
+    
     if (self.followmodel ==nil) {
         [HUDManager showWarningWithText:@"请先签到"];
         return;
     }
+    [HUDManager showLoadingHUDView:KeyWindow];
     [self.apiChange setApiParamsWithId:self.followmodel.kid
                                  leave:self.remarkTV.text
                             leaveImage:self.imageName

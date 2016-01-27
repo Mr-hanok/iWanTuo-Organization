@@ -44,19 +44,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title =@"每日追踪";
-    //设置默认属性
-    self.signBtn.selected = YES;
-    self.signVC.createDate = self.createDate;
-    self.signVC.status = @"1";
-    self.signVC.statusName = @"签到";
-    self.signVC.studentId = self.student.studentId;
-    self.followIV.image = [UIImage imageNamed:@"followshortofline"];
-    // 添加view 进scrollview
-    [self.scrollview addSubview:self.signVC.view];
-    [self.scrollview addSubview:self.summaryVC.view];
-    [self.scrollview addSubview:self.leaveVC.view];
-    [self.scrollview setPagingEnabled:YES];
-    self.scrollview.scrollEnabled = NO;
     
     //判断是老师还是机构
     if ([[AccountManager sharedInstance].account.accountsType isEqualToString:@"3"]) {
@@ -73,6 +60,21 @@
     NSString *str  = [dateformatter stringFromDate:senddate];
     [self.timeBtn setTitle:str forState:UIControlStateNormal];
     self.createDate =[NSString stringWithFormat:@"%.0f", senddate.timeIntervalSince1970 ];
+    
+    //设置默认属性
+    self.signBtn.selected = YES;
+    self.signVC.createDate = self.createDate;
+    self.signVC.status = @"1";
+    self.signVC.statusName = @"签到";
+    self.signVC.studentId = self.student.studentId;
+    self.followIV.image = [UIImage imageNamed:@"followshortofline"];
+    // 添加view 进scrollview
+    [self.scrollview addSubview:self.signVC.view];
+    [self.scrollview addSubview:self.summaryVC.view];
+    [self.scrollview addSubview:self.leaveVC.view];
+    [self.scrollview setPagingEnabled:YES];
+    self.scrollview.scrollEnabled = NO;
+
     //执行追踪查询操作
     [HUDManager showLoadingHUDView:KeyWindow];
     self.apiFollowCheck = [[ApiFollowCheckRequest alloc]initWithDelegate:self];

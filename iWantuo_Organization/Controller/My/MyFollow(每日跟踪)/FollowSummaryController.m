@@ -189,7 +189,7 @@
  * 总结按钮
  */
 - (IBAction)sumupAction:(UIButton *)sender {
-    [HUDManager showLoadingHUDView:KeyWindow];
+    
     if (self.followmodel == nil) {
         [HUDManager showWarningWithText:@"请先签到"];
         return;
@@ -202,7 +202,7 @@
         self.status = @"3";
         self.statusName =@"离校";
     }
-    
+    [HUDManager showLoadingHUDView:KeyWindow];
     [self.apiChange setApiParamsWithId:self.followmodel.kid
                                  leave:@""
                             leaveImage:@""
