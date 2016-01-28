@@ -17,7 +17,7 @@
 @end
 
 @interface ZHPickView : UIView
-
+@property (nonatomic, strong) UIView *backView;
 @property(nonatomic,weak) id<ZHPickViewDelegate> delegate;
 
 /**

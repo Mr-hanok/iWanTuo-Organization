@@ -217,7 +217,9 @@
                             statusName:self.statusName
                                 signIn:@""
                            signInImage:@""
-                                  note:self.remarkTV.text];
+                                  note:self.remarkTV.text
+                         summaryPerson:[AccountManager sharedInstance].account.name
+                           leavePerson:@""];
     [APIClient execute:self.apiChange];
 
 }

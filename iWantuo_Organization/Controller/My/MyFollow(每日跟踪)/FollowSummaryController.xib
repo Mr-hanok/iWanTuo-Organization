@@ -561,10 +561,10 @@
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kYh-Cn-gbA">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kYh-Cn-gbA">
                                             <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <state key="normal" title="学科选择">
+                                            <state key="normal" title="学科&gt;">
                                                 <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
@@ -576,17 +576,25 @@
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="V1o-mn-Veo" secondAttribute="bottom" id="5Lm-19-65E"/>
                                         <constraint firstItem="Cps-ag-GjF" firstAttribute="leading" secondItem="1mk-DF-wD5" secondAttribute="leading" id="8wP-1o-edf"/>
-                                        <constraint firstItem="kYh-Cn-gbA" firstAttribute="leading" secondItem="V1o-mn-Veo" secondAttribute="leading" id="CZw-c8-f7k"/>
+                                        <constraint firstItem="kYh-Cn-gbA" firstAttribute="leading" secondItem="V1o-mn-Veo" secondAttribute="leading" id="CZw-c8-f7k">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                                        </constraint>
                                         <constraint firstItem="Cps-ag-GjF" firstAttribute="trailing" secondItem="1mk-DF-wD5" secondAttribute="trailing" id="EeI-fN-noJ"/>
                                         <constraint firstItem="Cps-ag-GjF" firstAttribute="bottom" secondItem="1mk-DF-wD5" secondAttribute="bottom" id="FF1-7x-qCz"/>
                                         <constraint firstItem="1mk-DF-wD5" firstAttribute="leading" secondItem="V1o-mn-Veo" secondAttribute="trailing" constant="10" id="KNY-FN-fpZ"/>
                                         <constraint firstAttribute="trailing" secondItem="1mk-DF-wD5" secondAttribute="trailing" constant="20" id="PTT-9O-Gm9"/>
-                                        <constraint firstItem="kYh-Cn-gbA" firstAttribute="bottom" secondItem="V1o-mn-Veo" secondAttribute="bottom" id="Zbt-F6-tZF"/>
+                                        <constraint firstItem="kYh-Cn-gbA" firstAttribute="bottom" secondItem="V1o-mn-Veo" secondAttribute="bottom" id="Zbt-F6-tZF">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                                        </constraint>
                                         <constraint firstItem="1mk-DF-wD5" firstAttribute="centerY" secondItem="V1o-mn-Veo" secondAttribute="centerY" id="aJL-T8-RiW"/>
-                                        <constraint firstItem="kYh-Cn-gbA" firstAttribute="trailing" secondItem="V1o-mn-Veo" secondAttribute="trailing" id="b0b-eg-g93"/>
+                                        <constraint firstItem="kYh-Cn-gbA" firstAttribute="trailing" secondItem="V1o-mn-Veo" secondAttribute="trailing" id="b0b-eg-g93">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                                        </constraint>
                                         <constraint firstItem="V1o-mn-Veo" firstAttribute="leading" secondItem="gTP-vF-0mP" secondAttribute="leading" constant="20" id="cqk-H5-yH7"/>
                                         <constraint firstAttribute="height" constant="40" id="e5D-ZC-1lD"/>
-                                        <constraint firstItem="kYh-Cn-gbA" firstAttribute="top" secondItem="V1o-mn-Veo" secondAttribute="top" id="gPL-dg-dIs"/>
+                                        <constraint firstItem="kYh-Cn-gbA" firstAttribute="top" secondItem="V1o-mn-Veo" secondAttribute="top" id="gPL-dg-dIs">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                                        </constraint>
                                         <constraint firstItem="V1o-mn-Veo" firstAttribute="top" secondItem="gTP-vF-0mP" secondAttribute="top" id="pKW-WS-4jt"/>
                                     </constraints>
                                     <variation key="default">

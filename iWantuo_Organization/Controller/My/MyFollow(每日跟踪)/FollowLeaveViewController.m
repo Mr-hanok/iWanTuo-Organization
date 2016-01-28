@@ -138,7 +138,9 @@
                             statusName:@"离校"
                                 signIn:@""
                            signInImage:@""
-                                  note:@""];
+                                  note:@""
+                         summaryPerson:@""
+                           leavePerson:[AccountManager sharedInstance].account.name];
     [APIClient execute:self.apiChange];
 }
 #pragma mark - private methods

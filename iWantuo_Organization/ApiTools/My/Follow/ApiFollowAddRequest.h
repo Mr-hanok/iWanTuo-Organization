@@ -28,5 +28,6 @@
                             signIn:(NSString *)signIn
                        signInImage:(NSString *)signInImage
                             status:(NSString *)status
-                        statusName:(NSString *)statusName;
+                        statusName:(NSString *)statusName
+                      signInPerson:(NSString *)signInPerson;
 @end

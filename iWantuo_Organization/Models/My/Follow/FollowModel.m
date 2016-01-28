@@ -34,6 +34,13 @@
     model.statusName = [ValueUtils stringFromObject:[dic objectForKey:@"statusName"]];
     model.note = [ValueUtils stringFromObject:[dic objectForKey:@"note"]];
     
+    model.signinDate = [ValueUtils stringFromObject:[dic objectForKey:@"signinDate"]];
+    model.signinPerson = [ValueUtils stringFromObject:[dic objectForKey:@"signinPerson"]];
+    model.leaveDate = [ValueUtils stringFromObject:[dic objectForKey:@"leaveDate"]];
+    model.leavePerson = [ValueUtils stringFromObject:[dic objectForKey:@"leavePerson"]];
+    model.summaryPerson = [ValueUtils stringFromObject:[dic objectForKey:@"summaryPerson"]];
+    model.summaryDate = [ValueUtils stringFromObject:[dic objectForKey:@"summaryDate"]];
+    
         
     return model;
 

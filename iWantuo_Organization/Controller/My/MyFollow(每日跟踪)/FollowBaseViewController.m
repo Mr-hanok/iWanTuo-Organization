@@ -260,9 +260,8 @@
  */
 - (IBAction)followTimeBtnAction:(UIButton *)sender {
     [_dataPickView remove];
-    UIView *view = [[UIView alloc]initWithFrame:self.view.frame];
     NSDate *date=[NSDate date];
-    _dataPickView=[[ZHPickView alloc] initDatePickWithDate:date datePickerMode:UIDatePickerModeDate isHaveNavControler:NO];
+    _dataPickView=[[ZHPickView alloc] initDatePickWithDate:date datePickerMode:UIDatePickerModeDate isHaveNavControler:YES];
     _dataPickView.delegate=self;
     [_dataPickView show];
     
