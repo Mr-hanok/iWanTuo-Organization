@@ -193,6 +193,7 @@
     if (sender) {
         
     }
+    [self.view endEditing:YES];
     switch (sender.tag) {
         case 101://签到
         {
