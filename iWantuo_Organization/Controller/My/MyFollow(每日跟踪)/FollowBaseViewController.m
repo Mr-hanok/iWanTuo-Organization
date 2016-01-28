@@ -96,6 +96,8 @@
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [MobClick endLogPageView:self.title];
+    [self.dataPickView remove];
+    
 }
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
@@ -258,6 +260,7 @@
  */
 - (IBAction)followTimeBtnAction:(UIButton *)sender {
     [_dataPickView remove];
+    UIView *view = [[UIView alloc]initWithFrame:self.view.frame];
     NSDate *date=[NSDate date];
     _dataPickView=[[ZHPickView alloc] initDatePickWithDate:date datePickerMode:UIDatePickerModeDate isHaveNavControler:NO];
     _dataPickView.delegate=self;
@@ -304,6 +307,7 @@
 
 - (void)tapAction{
     [self.view endEditing:YES];
+    [self.dataPickView remove];
 }
 #pragma mark - getters & setters
 -(FollowSignInViewController *)signVC{

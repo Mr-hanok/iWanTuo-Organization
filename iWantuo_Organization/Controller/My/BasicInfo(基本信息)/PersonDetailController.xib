@@ -29,7 +29,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7gJ-6M-5ez">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7gJ-6M-5ez" customClass="TPKeyboardAvoidingScrollView">
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IG7-gf-wiu">
@@ -686,73 +686,99 @@
                                         </mask>
                                     </variation>
                                 </view>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pi0-qG-d1S">
-                                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ocs-0g-iPb">
+                                    <rect key="frame" x="10" y="485" width="300" height="75"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pi0-qG-d1S">
+                                            <rect key="frame" x="20" y="20" width="260" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="35" id="cSS-Vk-mEL"/>
+                                            </constraints>
+                                            <state key="normal" image="register_commitBtn"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="cSS-Vk-mEL"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="constraints">
+                                                    <include reference="cSS-Vk-mEL"/>
+                                                </mask>
+                                            </variation>
+                                            <connections>
+                                                <action selector="commitBtnAction:" destination="-1" eventType="touchUpInside" id="mTY-pe-beo"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="35" id="cSS-Vk-mEL"/>
+                                        <constraint firstAttribute="trailing" secondItem="Pi0-qG-d1S" secondAttribute="trailing" constant="20" id="Edd-bv-ehl"/>
+                                        <constraint firstItem="Pi0-qG-d1S" firstAttribute="leading" secondItem="Ocs-0g-iPb" secondAttribute="leading" constant="20" id="ghZ-vz-4Lm"/>
+                                        <constraint firstItem="Pi0-qG-d1S" firstAttribute="top" secondItem="Ocs-0g-iPb" secondAttribute="top" constant="5" id="m4k-ow-EuJ"/>
+                                        <constraint firstAttribute="height" constant="40" id="xEP-3d-0eV"/>
                                     </constraints>
-                                    <state key="normal" image="register_commitBtn"/>
                                     <variation key="default">
                                         <mask key="constraints">
-                                            <exclude reference="cSS-Vk-mEL"/>
+                                            <exclude reference="xEP-3d-0eV"/>
+                                            <exclude reference="Edd-bv-ehl"/>
+                                            <exclude reference="ghZ-vz-4Lm"/>
+                                            <exclude reference="m4k-ow-EuJ"/>
                                         </mask>
                                     </variation>
                                     <variation key="heightClass=regular-widthClass=compact">
                                         <mask key="constraints">
-                                            <include reference="cSS-Vk-mEL"/>
+                                            <include reference="xEP-3d-0eV"/>
+                                            <include reference="Edd-bv-ehl"/>
+                                            <include reference="ghZ-vz-4Lm"/>
+                                            <include reference="m4k-ow-EuJ"/>
                                         </mask>
                                     </variation>
-                                    <connections>
-                                        <action selector="commitBtnAction:" destination="-1" eventType="touchUpInside" id="mTY-pe-beo"/>
-                                    </connections>
-                                </button>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="JTE-yN-DIo" secondAttribute="trailing" id="5L1-Dg-i4b"/>
                                 <constraint firstItem="dO6-v0-gxw" firstAttribute="leading" secondItem="IG7-gf-wiu" secondAttribute="leading" id="8lD-NA-cKf"/>
                                 <constraint firstItem="JTE-yN-DIo" firstAttribute="leading" secondItem="IG7-gf-wiu" secondAttribute="leading" id="CcQ-PN-moP"/>
+                                <constraint firstItem="Ocs-0g-iPb" firstAttribute="top" secondItem="JTE-yN-DIo" secondAttribute="bottom" id="GuI-gR-hm2"/>
                                 <constraint firstAttribute="trailing" secondItem="dO6-v0-gxw" secondAttribute="trailing" id="Hiu-f0-D6q"/>
-                                <constraint firstItem="Pi0-qG-d1S" firstAttribute="leading" secondItem="IG7-gf-wiu" secondAttribute="leading" constant="30" id="MGh-MV-pFU"/>
+                                <constraint firstAttribute="trailing" secondItem="Ocs-0g-iPb" secondAttribute="trailing" id="M9c-qS-8lT"/>
+                                <constraint firstItem="Ocs-0g-iPb" firstAttribute="leading" secondItem="IG7-gf-wiu" secondAttribute="leading" id="dXz-Rp-sEG"/>
                                 <constraint firstItem="JTE-yN-DIo" firstAttribute="top" secondItem="dO6-v0-gxw" secondAttribute="bottom" constant="5" id="eP8-MO-Awg"/>
-                                <constraint firstAttribute="trailing" secondItem="Pi0-qG-d1S" secondAttribute="trailing" constant="30" id="hm8-SW-58b"/>
-                                <constraint firstAttribute="bottom" secondItem="Pi0-qG-d1S" secondAttribute="bottom" constant="20" id="w3X-UK-zvw"/>
                                 <constraint firstItem="dO6-v0-gxw" firstAttribute="top" secondItem="IG7-gf-wiu" secondAttribute="top" id="xR5-1T-xHo"/>
                             </constraints>
                             <variation key="default">
                                 <mask key="subviews">
                                     <exclude reference="dO6-v0-gxw"/>
                                     <exclude reference="JTE-yN-DIo"/>
-                                    <exclude reference="Pi0-qG-d1S"/>
                                 </mask>
                                 <mask key="constraints">
-                                    <exclude reference="MGh-MV-pFU"/>
-                                    <exclude reference="hm8-SW-58b"/>
-                                    <exclude reference="w3X-UK-zvw"/>
-                                    <exclude reference="5L1-Dg-i4b"/>
-                                    <exclude reference="CcQ-PN-moP"/>
-                                    <exclude reference="eP8-MO-Awg"/>
                                     <exclude reference="8lD-NA-cKf"/>
                                     <exclude reference="Hiu-f0-D6q"/>
                                     <exclude reference="xR5-1T-xHo"/>
+                                    <exclude reference="5L1-Dg-i4b"/>
+                                    <exclude reference="CcQ-PN-moP"/>
+                                    <exclude reference="eP8-MO-Awg"/>
+                                    <exclude reference="GuI-gR-hm2"/>
+                                    <exclude reference="M9c-qS-8lT"/>
+                                    <exclude reference="dXz-Rp-sEG"/>
                                 </mask>
                             </variation>
                             <variation key="heightClass=regular-widthClass=compact">
                                 <mask key="subviews">
                                     <include reference="dO6-v0-gxw"/>
                                     <include reference="JTE-yN-DIo"/>
-                                    <include reference="Pi0-qG-d1S"/>
                                 </mask>
                                 <mask key="constraints">
-                                    <include reference="MGh-MV-pFU"/>
-                                    <include reference="hm8-SW-58b"/>
-                                    <include reference="w3X-UK-zvw"/>
-                                    <include reference="5L1-Dg-i4b"/>
-                                    <include reference="CcQ-PN-moP"/>
-                                    <include reference="eP8-MO-Awg"/>
                                     <include reference="8lD-NA-cKf"/>
                                     <include reference="Hiu-f0-D6q"/>
                                     <include reference="xR5-1T-xHo"/>
+                                    <include reference="5L1-Dg-i4b"/>
+                                    <include reference="CcQ-PN-moP"/>
+                                    <include reference="eP8-MO-Awg"/>
+                                    <include reference="GuI-gR-hm2"/>
+                                    <include reference="M9c-qS-8lT"/>
+                                    <include reference="dXz-Rp-sEG"/>
                                 </mask>
                             </variation>
                         </view>
