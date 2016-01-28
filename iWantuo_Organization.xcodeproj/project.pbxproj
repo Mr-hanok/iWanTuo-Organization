@@ -71,8 +71,6 @@
 		37E1DDCE1C4DD92600245BE6 /* MyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E1DDB21C4DD92600245BE6 /* MyViewController.xib */; };
 		37E1DDCF1C4DD92600245BE6 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E1DDB61C4DD92600245BE6 /* AboutViewController.m */; };
 		37E1DDD01C4DD92600245BE6 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E1DDB71C4DD92600245BE6 /* AboutViewController.xib */; };
-		37E1DDD11C4DD92600245BE6 /* ChangePasswordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E1DDBA1C4DD92600245BE6 /* ChangePasswordController.m */; };
-		37E1DDD21C4DD92600245BE6 /* ChangePasswordController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E1DDBB1C4DD92600245BE6 /* ChangePasswordController.xib */; };
 		37E1DDD31C4DD92600245BE6 /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E1DDBE1C4DD92600245BE6 /* FeedbackViewController.m */; };
 		37E1DDD41C4DD92600245BE6 /* FeedbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E1DDBF1C4DD92600245BE6 /* FeedbackViewController.xib */; };
 		37E1DDD51C4DD92600245BE6 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E1DDC11C4DD92600245BE6 /* SettingViewController.m */; };
@@ -99,6 +97,10 @@
 		37E1DE191C4E241500245BE6 /* ApiRegisterRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E1DE181C4E241500245BE6 /* ApiRegisterRequest.m */; };
 		37E1DE761C4E3FFF00245BE6 /* ZHPickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E1DE751C4E3FFF00245BE6 /* ZHPickView.m */; };
 		5B00D7127E6170524D8DD67E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B131BB5C3C7788EB0066AC0 /* libPods.a */; };
+		63B2E7DC1C59E80D0038EEF3 /* ChangePasswordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B2E7DA1C59E80D0038EEF3 /* ChangePasswordController.m */; };
+		63B2E7DD1C59E80D0038EEF3 /* ChangePasswordController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B2E7DB1C59E80D0038EEF3 /* ChangePasswordController.xib */; };
+		63B2E7E21C59E8670038EEF3 /* ChangePasswordRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B2E7DF1C59E8670038EEF3 /* ChangePasswordRequest.m */; };
+		63B2E7E31C59E8670038EEF3 /* FeedBackRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B2E7E11C59E8670038EEF3 /* FeedBackRequest.m */; };
 		BE25EB341C44FC5F00068309 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE25EB331C44FC5F00068309 /* main.m */; };
 		BE25EB371C44FC5F00068309 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE25EB361C44FC5F00068309 /* AppDelegate.m */; };
 		BE25EB3F1C44FC5F00068309 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE25EB3E1C44FC5F00068309 /* Assets.xcassets */; };
@@ -297,9 +299,6 @@
 		37E1DDB51C4DD92600245BE6 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		37E1DDB61C4DD92600245BE6 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		37E1DDB71C4DD92600245BE6 /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
-		37E1DDB91C4DD92600245BE6 /* ChangePasswordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordController.h; sourceTree = "<group>"; };
-		37E1DDBA1C4DD92600245BE6 /* ChangePasswordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordController.m; sourceTree = "<group>"; };
-		37E1DDBB1C4DD92600245BE6 /* ChangePasswordController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePasswordController.xib; sourceTree = "<group>"; };
 		37E1DDBD1C4DD92600245BE6 /* FeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
 		37E1DDBE1C4DD92600245BE6 /* FeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
 		37E1DDBF1C4DD92600245BE6 /* FeedbackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedbackViewController.xib; sourceTree = "<group>"; };
@@ -339,6 +338,14 @@
 		37E1DE181C4E241500245BE6 /* ApiRegisterRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiRegisterRequest.m; sourceTree = "<group>"; };
 		37E1DE741C4E3FFF00245BE6 /* ZHPickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHPickView.h; sourceTree = "<group>"; };
 		37E1DE751C4E3FFF00245BE6 /* ZHPickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHPickView.m; sourceTree = "<group>"; };
+		63B2E7D91C59E80D0038EEF3 /* ChangePasswordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordController.h; sourceTree = "<group>"; };
+		63B2E7DA1C59E80D0038EEF3 /* ChangePasswordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordController.m; sourceTree = "<group>"; };
+		63B2E7DB1C59E80D0038EEF3 /* ChangePasswordController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePasswordController.xib; sourceTree = "<group>"; };
+		63B2E7DE1C59E8670038EEF3 /* ChangePasswordRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordRequest.h; sourceTree = "<group>"; };
+		63B2E7DF1C59E8670038EEF3 /* ChangePasswordRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordRequest.m; sourceTree = "<group>"; };
+		63B2E7E01C59E8670038EEF3 /* FeedBackRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedBackRequest.h; sourceTree = "<group>"; };
+		63B2E7E11C59E8670038EEF3 /* FeedBackRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedBackRequest.m; sourceTree = "<group>"; };
+		63B2E7E41C59E88E0038EEF3 /* MineNetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineNetWork.h; sourceTree = "<group>"; };
 		7B131BB5C3C7788EB0066AC0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACA8CD8FCCEFD0CEA801BB92 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BE25EB2F1C44FC5F00068309 /* iWantuo_Organization.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iWantuo_Organization.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -723,9 +730,9 @@
 		37E1DDB81C4DD92600245BE6 /* ChangePassword */ = {
 			isa = PBXGroup;
 			children = (
-				37E1DDB91C4DD92600245BE6 /* ChangePasswordController.h */,
-				37E1DDBA1C4DD92600245BE6 /* ChangePasswordController.m */,
-				37E1DDBB1C4DD92600245BE6 /* ChangePasswordController.xib */,
+				63B2E7D91C59E80D0038EEF3 /* ChangePasswordController.h */,
+				63B2E7DA1C59E80D0038EEF3 /* ChangePasswordController.m */,
+				63B2E7DB1C59E80D0038EEF3 /* ChangePasswordController.xib */,
 			);
 			path = ChangePassword;
 			sourceTree = "<group>";
@@ -1165,6 +1172,7 @@
 				BE25EBB41C44FDBD00068309 /* ColorMacro.h */,
 				BE25EBB51C44FDBD00068309 /* FontMacro.h */,
 				BE25EBB61C44FDBD00068309 /* NetworkMacro.h */,
+				63B2E7E41C59E88E0038EEF3 /* MineNetWork.h */,
 				BE25EBB71C44FDBD00068309 /* NotificationMacro.h */,
 				BE25EBB81C44FDBD00068309 /* ReusableMacros.h */,
 				BE25EBB91C44FDBD00068309 /* SizeMacro.h */,
@@ -1293,6 +1301,10 @@
 				37BE7E5F1C58BA40000F7CF8 /* ApiChangeArganization.m */,
 				37BE7E611C58C7E4000F7CF8 /* ApiOrganizationInfoRequest.h */,
 				37BE7E621C58C7E4000F7CF8 /* ApiOrganizationInfoRequest.m */,
+				63B2E7DE1C59E8670038EEF3 /* ChangePasswordRequest.h */,
+				63B2E7DF1C59E8670038EEF3 /* ChangePasswordRequest.m */,
+				63B2E7E01C59E8670038EEF3 /* FeedBackRequest.h */,
+				63B2E7E11C59E8670038EEF3 /* FeedBackRequest.m */,
 			);
 			path = My;
 			sourceTree = "<group>";
@@ -1456,6 +1468,7 @@
 				BED7D8C81C50D085005A338E /* AccountListViewController.xib in Resources */,
 				37C4E9001C51DEFB00583902 /* StudentChoseViewController.xib in Resources */,
 				37E1DDEB1C4DDD5800245BE6 /* MyClassTeacherViewController.xib in Resources */,
+				63B2E7DD1C59E80D0038EEF3 /* ChangePasswordController.xib in Resources */,
 				37AE237B1C546B49006CFCCC /* FollowLeaveViewController.xib in Resources */,
 				37033E381C4C9033009F27DB /* RegisterViewController.xib in Resources */,
 				BE25EB421C44FC5F00068309 /* LaunchScreen.storyboard in Resources */,
@@ -1483,7 +1496,6 @@
 				BECC8C3A1C57721900AB93E3 /* NewVersionCollectionCell.xib in Resources */,
 				37E1DDE61C4DDD3E00245BE6 /* MyClassViewController.xib in Resources */,
 				37D7250B1C4F97E10055721B /* MyClassCell.xib in Resources */,
-				37E1DDD21C4DD92600245BE6 /* ChangePasswordController.xib in Resources */,
 				37E1DDD41C4DD92600245BE6 /* FeedbackViewController.xib in Resources */,
 				375001B61C50FD0D00B14021 /* ClassDetailViewController.xib in Resources */,
 				37E1DE031C4DE29500245BE6 /* HomeViewController.xib in Resources */,
@@ -1559,6 +1571,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63B2E7E31C59E8670038EEF3 /* FeedBackRequest.m in Sources */,
 				BE25EBA21C44FD9200068309 /* UIImage+Camera.m in Sources */,
 				BE25EC161C4501C000068309 /* BaseViewController.m in Sources */,
 				37C4E8F51C51BEEE00583902 /* ClassAddStudentController.m in Sources */,
@@ -1575,7 +1588,6 @@
 				BE69F3A41C51C94D00EFA44D /* TeacherModel.m in Sources */,
 				37BE7E601C58BA40000F7CF8 /* ApiChangeArganization.m in Sources */,
 				37D725121C4FA6960055721B /* MyClassTeacherCell.m in Sources */,
-				37E1DDD11C4DD92600245BE6 /* ChangePasswordController.m in Sources */,
 				BED7D8B91C50A6DB005A338E /* AddStudentCell.m in Sources */,
 				BE25EB9F1C44FD9200068309 /* NSString+Verify.m in Sources */,
 				BE25EBA51C44FD9200068309 /* UIView+GestureRecognizer.m in Sources */,
@@ -1590,6 +1602,7 @@
 				BE69F3AD1C520E9400EFA44D /* ApiAddClassRequest.m in Sources */,
 				BE69F3B01C520F2900EFA44D /* ApiClassListRequest.m in Sources */,
 				BE25EB6D1C44FD8500068309 /* APIClient.m in Sources */,
+				63B2E7E21C59E8670038EEF3 /* ChangePasswordRequest.m in Sources */,
 				375001AB1C50C90400B14021 /* AddClassTeacherViewController.m in Sources */,
 				BE25EB9D1C44FD9200068309 /* NSString+Size.m in Sources */,
 				BE25EBA61C44FD9200068309 /* UIView+Image.m in Sources */,
@@ -1667,6 +1680,7 @@
 				37033E4F1C4CBBCA009F27DB /* SubmitInfoViewController.m in Sources */,
 				BE25EB9B1C44FD9200068309 /* NSString+Device.m in Sources */,
 				37E1DDE51C4DDD3E00245BE6 /* MyClassViewController.m in Sources */,
+				63B2E7DC1C59E80D0038EEF3 /* ChangePasswordController.m in Sources */,
 				BE25EBFA1C44FDFE00068309 /* TPKeyboardAvoidingTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
