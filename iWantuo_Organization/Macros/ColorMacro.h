@@ -17,5 +17,6 @@
 #endif
 
 #define kBGColor            [UIColor colorWithString:@"#eaedec"]    //灰色背景
+#define kOtherBgColor       [UIColor colorWithString:@"#efeff4"]    //浅灰色背景
 #define kNavigationColor    [UIColor colorWithString:@"#fca31e"]    //Navigation背景#720000  --
 #define kClearColor         [UIColor clearColor]  //透明颜色

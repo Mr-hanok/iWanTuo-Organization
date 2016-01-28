@@ -18,6 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.title = @"关于爱晚托";
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 #pragma mark - 协议名

@@ -24,6 +24,7 @@
 #import "CameraTakeMamanger.h"
 #import "UploadManager.h"
 #import "AccountManager.h"
+#import "UIView+Frame.h"
 
 
 #pragma mark - cocoapods
