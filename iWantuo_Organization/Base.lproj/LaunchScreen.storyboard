@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,7 +17,40 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welcome" translatesAutoresizingMaskIntoConstraints="NO" id="w3f-XH-Dvx">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="w3f-XH-Dvx" secondAttribute="bottom" id="DFW-5B-c8v"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="w3f-XH-Dvx" secondAttribute="trailing" constant="-20" id="QeN-u8-Ehm"/>
+                            <constraint firstItem="w3f-XH-Dvx" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="eKL-E1-kp2"/>
+                            <constraint firstItem="w3f-XH-Dvx" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" id="hLb-cQ-mUp"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="w3f-XH-Dvx"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="QeN-u8-Ehm"/>
+                                <exclude reference="eKL-E1-kp2"/>
+                                <exclude reference="hLb-cQ-mUp"/>
+                                <exclude reference="DFW-5B-c8v"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="w3f-XH-Dvx"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="QeN-u8-Ehm"/>
+                                <include reference="eKL-E1-kp2"/>
+                                <include reference="hLb-cQ-mUp"/>
+                                <include reference="DFW-5B-c8v"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -24,4 +58,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="welcome" width="320" height="568"/>
+    </resources>
 </document>

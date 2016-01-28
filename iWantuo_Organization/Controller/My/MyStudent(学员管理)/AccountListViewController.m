@@ -10,7 +10,9 @@
 #import "ApiPatriarchListRequest.h"
 #import "PageManager.h"
 #import "PatriarchModel.h"
+#import "UserInfoCell.h"
 
+#define kUserInfoCellReuse @"UserInfoCell"
 @interface AccountListViewController ()<UITableViewDataSource, UITableViewDelegate, APIRequestDelegate, PageManagerDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -38,6 +40,8 @@
     self.pageManager = [PageManager handlerWithDelegate:self TableView:self.tableView];
     [self.tableView.mj_header beginRefreshing];
     self.tableView.tableFooterView = [[UIView alloc] init];
+    [self.tableView registerNib:[UINib nibWithNibName:@"UserInfoCell" bundle:nil] forCellReuseIdentifier:kUserInfoCellReuse];
+    
     [self inistalSearch];
     self.title = @"家长账号列表";
 }
@@ -57,12 +61,15 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kReusableTableViewCell];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kReusableTableViewCell];
-    }
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kReusableTableViewCell];
+//    if (!cell) {
+//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kReusableTableViewCell];
+//    }
+    UserInfoCell *cell = [self.tableView dequeueReusableCellWithIdentifier:kUserInfoCellReuse];
     PatriarchModel *model = [self.dataArray objectAtIndex:indexPath.row];
-    cell.textLabel.text = model.loginAccounts;
+    cell.nameLabel.text = model.nickName;
+    [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:model.headPortrait] placeholderImage:[UIImage imageNamed:@"defaultHead"]];
+    cell.accountLabel.text = model.loginAccounts;
     return cell;
 }
 
