@@ -44,6 +44,9 @@
 @property (nonatomic, copy) NSString *areaId;//区域id
 @property (nonatomic, copy) NSString *areaName;//区域名称
 @property (nonatomic, copy) NSString *imageName;//记录图片名称
+@property (nonatomic, copy) NSString *imageName1;
+@property (nonatomic, copy) NSString *imageName2;
+@property (nonatomic, copy) NSString *imageName3;
 @end
 
 @implementation PersonDetailController
@@ -118,6 +121,9 @@
     }
     if (api == self.apiChange) {//信息修改接口
         
+        [AlertViewManager showAlertViewSuccessedMessage:@"修改成功" handlerBlock:^{
+            [self.navigationController popViewControllerAnimated:YES];
+        }];
     }
 }
 
@@ -139,18 +145,19 @@
         CityInfoModel *cityModel = self.areaModelArry[row1];
         self.areaId = cityModel.cityId;
         self.areaName = cityModel.name;
+        self.areaTF.text = resultString;
     }
     if (pickView == self.typePick) {
         if ([resultString isEqualToString:@"公司"]) {
             self.organiType = @"16";
-            self.organiTypeName = @"公司";
         }
         if ([resultString isEqualToString:@"工作室"]) {
             self.organiType = @"15";
-            self.organiTypeName = @"工作室";
         }
-    
+        self.typeTF.text = resultString;
+        self.organiTypeName = resultString;
     }
+    
     //nsstring->nsdate->设置按钮显示时间 记录时间
 //    NSString *dateStr = [resultString substringToIndex:10];
 //    NSLog(@"%@",dateStr);
@@ -174,6 +181,7 @@
 /**区域选择按钮*/
 - (IBAction)areaBtnAction:(UIButton *)sender {
     [_areaPick remove];
+    [_typePick remove];
     
     _areaPick=[[ZHPickView alloc]initPickviewWithArray:self.areaArray isHaveNavControler:NO];
     _areaPick.delegate=self;
@@ -184,10 +192,11 @@
 /**机构类型按钮*/
 - (IBAction)typeBtnAction:(UIButton *)sender {
     [_areaPick remove];
+    [_typePick remove];
     
-    _areaPick=[[ZHPickView alloc]initPickviewWithArray:@[@"公司",@"工作室"] isHaveNavControler:NO];
-    _areaPick.delegate=self;
-    [_areaPick show];
+    _typePick=[[ZHPickView alloc]initPickviewWithArray:@[@"公司",@"工作室"] isHaveNavControler:NO];
+    _typePick.delegate=self;
+    [_typePick show];
 
 }
 /**提交修改按钮*/
@@ -219,32 +228,55 @@
 
 //根据获取的机构信息 在界面显示
 - (void)initstallView{
+    //记录区域 机构类型 id name 图片
     self.organiType = self.model.organizatioType;
     self.organiTypeName = self.model.organizatioTypeName;
     self.areaId = self.model.bairro;
     self.areaName = self.model.bairroName;
+    self.imageName = self.model.photoAlbum;
+    NSArray *imageArray = [self.model.photoAlbum componentsSeparatedByString:@","];
+    for (int i = 0; i<imageArray.count; i++) {
+        if (imageArray.count == 0) {
+            return;
+        }
+        NSString *str = imageArray[i];
+        if ([str hasPrefix:@"http://www"]) {
+            str = str;
+        }else{
+            str = [NSString stringWithFormat:@"%@%@",@"http://www.",str];
+        }
+        if (i ==1) {
+            self.imageName1 = str;
+            [self.imageIV1 sd_setImageWithURL:[NSURL URLWithString:str] placeholderImage:[UIImage imageNamed:@"register_addImageBtn"]];
+        }
+        if (i ==2) {
+            self.imageName2 = str;
+            [self.imageIV2 sd_setImageWithURL:[NSURL URLWithString:str] placeholderImage:[UIImage imageNamed:@"register_addImageBtn"]];
+        }
+        if (i == 3) {
+            self.imageName3 = str;
+            [self.imageIV3 sd_setImageWithURL:[NSURL URLWithString:str] placeholderImage:[UIImage imageNamed:@"register_addImageBtn"]];
+        }
+       
+    }
+
+    //设置界面显示内容
     self.typeTF.text = self.organiTypeName;
     self.areaTF.text = self.areaName;
-    
     self.nameTF.text = self.model.organization;
     self.describeTF.text = self.model.introduce;
     self.tagTF.text = self.model.label;
     self.priceTF.text = self.model.cost;
     self.adressTF.text = self.model.address;
     self.phoneTF.text = self.model.phone;
-
-    
-    
-    
 }
 /**
- *  上传ImageView1
+ *  上传ImageView
  *
  *  @param tap 单击手势
  */
 - (void)changeImage1:(UITapGestureRecognizer*)singleTapGestureRecognizer{
     [self cameraAndUploadImage:self.imageIV1];
-    
 }
 - (void)changeImage2:(UITapGestureRecognizer*)singleTapGestureRecognizer{
     [self cameraAndUploadImage:self.imageIV2];
@@ -265,7 +297,8 @@
                 return ;
             }
             // 记录图片地址  设置图片
-            self.imageName = [NSString stringWithFormat:@"%@,%@",self.imageName,message];
+//            self.imageName = [NSString stringWithFormat:@"%@,%@",message,self.imageName];
+            self.imageName = [NSString stringWithFormat:@"%@",message];
             imageIv.image = image;
             
         } failure:^(NSString *message) {

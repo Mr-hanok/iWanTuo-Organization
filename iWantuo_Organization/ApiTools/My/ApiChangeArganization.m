@@ -12,6 +12,10 @@
 - (NSString *)urlAction {
     return OrganizationPhoneUpdate;
 }
+- (NSString *)serviceUrl {
+    return SERVER_HOST_PRODUCT;
+   // return @"http://192.168.1.169:8090/wantuo/";
+}
 - (ApiAccessType)accessType
 {
     return kApiAccessPost;

@@ -45,6 +45,8 @@
     [super viewDidLoad];
     self.title =@"每日追踪";
     
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction)];
+    [self.view addGestureRecognizer:tap];
     //判断是老师还是机构
     if ([[AccountManager sharedInstance].account.accountsType isEqualToString:@"3"]) {
         self.loginAccounts = [AccountManager sharedInstance].account.organizationAccounts;
@@ -299,6 +301,9 @@
 
 }
 
+- (void)tapAction{
+    [self.view endEditing:YES];
+}
 #pragma mark - getters & setters
 -(FollowSignInViewController *)signVC{
     if (_signVC == nil) {

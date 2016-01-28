@@ -232,7 +232,7 @@
             self.signBtn.selected = NO;
         }
         NSString *str = nil;
-        if ([info.leaveImage hasPrefix:@"http://www"]) {
+        if ([info.signInImage hasPrefix:@"http://www"]) {
             str = info.signInImage;
         }else{
             str = [NSString stringWithFormat:@"%@%@",@"http://www.",info.signInImage];
