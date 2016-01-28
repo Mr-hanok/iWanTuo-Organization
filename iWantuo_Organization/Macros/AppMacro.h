@@ -42,9 +42,13 @@
 #ifdef DEBUG
 #define NSLog(...) NSLog(__VA_ARGS__)
 #define debugMethod() NSLog(@"%s", __func__)
+#define DDLog(xx, ...)  NSLog(@"%s(%d): " xx, __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+
 #else
 #define NSLog(...)
 #define debugMethod()
+#define DDLog(xx, ...)  ((void)0)
+
 #endif
 
 #endif
