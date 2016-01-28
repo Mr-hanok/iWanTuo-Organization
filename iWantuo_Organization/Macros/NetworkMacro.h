@@ -61,6 +61,8 @@
 #define FollowCheckRequest        @"trace/phoneGetById" //追踪查询接口
 #define FollowChangeRequest       @"trace/phoneUpdate" //追踪修改接口
 #define SyscodePhoneQueryByList   @"syscode/phoneQueryByList" //学科查询接口
+#define OrganizationPhoneUpdate   @"organization/phoneUpdate" //机构修改接口
+#define OrganizationPhoneGetById   @"organization/phoneGetById" //获取机构信息接口
 
 
 #endif

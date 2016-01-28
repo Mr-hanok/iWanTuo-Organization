@@ -41,6 +41,8 @@
 		37AE23801C5490C8006CFCCC /* FollowSummaryController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37AE237E1C5490C8006CFCCC /* FollowSummaryController.xib */; };
 		37AE23841C549102006CFCCC /* FollowBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AE23821C549102006CFCCC /* FollowBaseViewController.m */; };
 		37AE23851C549102006CFCCC /* FollowBaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37AE23831C549102006CFCCC /* FollowBaseViewController.xib */; };
+		37BE7E601C58BA40000F7CF8 /* ApiChangeArganization.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BE7E5F1C58BA40000F7CF8 /* ApiChangeArganization.m */; };
+		37BE7E631C58C7E4000F7CF8 /* ApiOrganizationInfoRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BE7E621C58C7E4000F7CF8 /* ApiOrganizationInfoRequest.m */; };
 		37C4E8F51C51BEEE00583902 /* ClassAddStudentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C4E8F31C51BEEE00583902 /* ClassAddStudentController.m */; };
 		37C4E8F61C51BEEE00583902 /* ClassAddStudentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37C4E8F41C51BEEE00583902 /* ClassAddStudentController.xib */; };
 		37C4E8FA1C51C26C00583902 /* ClassAddStudentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C4E8F81C51C26C00583902 /* ClassAddStudentCell.m */; };
@@ -243,6 +245,10 @@
 		37AE23811C549102006CFCCC /* FollowBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowBaseViewController.h; sourceTree = "<group>"; };
 		37AE23821C549102006CFCCC /* FollowBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowBaseViewController.m; sourceTree = "<group>"; };
 		37AE23831C549102006CFCCC /* FollowBaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowBaseViewController.xib; sourceTree = "<group>"; };
+		37BE7E5E1C58BA40000F7CF8 /* ApiChangeArganization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiChangeArganization.h; sourceTree = "<group>"; };
+		37BE7E5F1C58BA40000F7CF8 /* ApiChangeArganization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiChangeArganization.m; sourceTree = "<group>"; };
+		37BE7E611C58C7E4000F7CF8 /* ApiOrganizationInfoRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiOrganizationInfoRequest.h; sourceTree = "<group>"; };
+		37BE7E621C58C7E4000F7CF8 /* ApiOrganizationInfoRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiOrganizationInfoRequest.m; sourceTree = "<group>"; };
 		37C4E8F21C51BEEE00583902 /* ClassAddStudentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassAddStudentController.h; sourceTree = "<group>"; };
 		37C4E8F31C51BEEE00583902 /* ClassAddStudentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassAddStudentController.m; sourceTree = "<group>"; };
 		37C4E8F41C51BEEE00583902 /* ClassAddStudentController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassAddStudentController.xib; sourceTree = "<group>"; };
@@ -1275,6 +1281,10 @@
 				BE4055711C5355FF00590788 /* ApiDeleteStudentsByClassRequest.m */,
 				BE4055761C535F3300590788 /* ApiDeleteTeacherRequest.h */,
 				BE4055771C535F3300590788 /* ApiDeleteTeacherRequest.m */,
+				37BE7E5E1C58BA40000F7CF8 /* ApiChangeArganization.h */,
+				37BE7E5F1C58BA40000F7CF8 /* ApiChangeArganization.m */,
+				37BE7E611C58C7E4000F7CF8 /* ApiOrganizationInfoRequest.h */,
+				37BE7E621C58C7E4000F7CF8 /* ApiOrganizationInfoRequest.m */,
 			);
 			path = My;
 			sourceTree = "<group>";
@@ -1554,6 +1564,7 @@
 				BECC8C331C5771ED00AB93E3 /* NewVersionViewController.m in Sources */,
 				37E1DDDC1C4DDA8A00245BE6 /* MyCell.m in Sources */,
 				BE69F3A41C51C94D00EFA44D /* TeacherModel.m in Sources */,
+				37BE7E601C58BA40000F7CF8 /* ApiChangeArganization.m in Sources */,
 				37D725121C4FA6960055721B /* MyClassTeacherCell.m in Sources */,
 				37E1DDD11C4DD92600245BE6 /* ChangePasswordController.m in Sources */,
 				BED7D8B91C50A6DB005A338E /* AddStudentCell.m in Sources */,
@@ -1602,6 +1613,7 @@
 				BE25EB6E1C44FD8500068309 /* APIRequest.m in Sources */,
 				37033E461C4C914C009F27DB /* JKCountDownButton.m in Sources */,
 				37AE237F1C5490C8006CFCCC /* FollowSummaryController.m in Sources */,
+				37BE7E631C58C7E4000F7CF8 /* ApiOrganizationInfoRequest.m in Sources */,
 				375001B51C50FD0D00B14021 /* ClassDetailViewController.m in Sources */,
 				37E1DDCB1C4DD92600245BE6 /* MyMessageViewController.m in Sources */,
 				BE25EBA41C44FD9200068309 /* UIView+Frame.m in Sources */,
