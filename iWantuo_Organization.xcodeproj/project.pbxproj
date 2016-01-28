@@ -144,6 +144,8 @@
 		BE69F3B01C520F2900EFA44D /* ApiClassListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F3AF1C520F2900EFA44D /* ApiClassListRequest.m */; };
 		BE69F3B31C520FEC00EFA44D /* ApiDeleteClassRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F3B21C520FEC00EFA44D /* ApiDeleteClassRequest.m */; };
 		BE69F3B61C52108200EFA44D /* ApiStudentByOrgRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F3B51C52108200EFA44D /* ApiStudentByOrgRequest.m */; };
+		BEBDEE831C58D4CD006AE4EF /* UserInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBDEE811C58D4CD006AE4EF /* UserInfoCell.m */; };
+		BEBDEE841C58D4CD006AE4EF /* UserInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEBDEE821C58D4CD006AE4EF /* UserInfoCell.xib */; };
 		BECC8C331C5771ED00AB93E3 /* NewVersionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BECC8C311C5771ED00AB93E3 /* NewVersionViewController.m */; };
 		BECC8C341C5771ED00AB93E3 /* NewVersionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BECC8C321C5771ED00AB93E3 /* NewVersionViewController.xib */; };
 		BECC8C391C57721900AB93E3 /* NewVersionCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BECC8C371C57721900AB93E3 /* NewVersionCollectionCell.m */; };
@@ -436,6 +438,9 @@
 		BE69F3B21C520FEC00EFA44D /* ApiDeleteClassRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiDeleteClassRequest.m; sourceTree = "<group>"; };
 		BE69F3B41C52108200EFA44D /* ApiStudentByOrgRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiStudentByOrgRequest.h; sourceTree = "<group>"; };
 		BE69F3B51C52108200EFA44D /* ApiStudentByOrgRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiStudentByOrgRequest.m; sourceTree = "<group>"; };
+		BEBDEE801C58D4CD006AE4EF /* UserInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoCell.h; sourceTree = "<group>"; };
+		BEBDEE811C58D4CD006AE4EF /* UserInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoCell.m; sourceTree = "<group>"; };
+		BEBDEE821C58D4CD006AE4EF /* UserInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInfoCell.xib; sourceTree = "<group>"; };
 		BECC8C301C5771ED00AB93E3 /* NewVersionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewVersionViewController.h; sourceTree = "<group>"; };
 		BECC8C311C5771ED00AB93E3 /* NewVersionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewVersionViewController.m; sourceTree = "<group>"; };
 		BECC8C321C5771ED00AB93E3 /* NewVersionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewVersionViewController.xib; sourceTree = "<group>"; };
@@ -751,6 +756,9 @@
 				37E1DDD91C4DDA8A00245BE6 /* MyCell.h */,
 				37E1DDDA1C4DDA8A00245BE6 /* MyCell.m */,
 				37E1DDDB1C4DDA8A00245BE6 /* MyCell.xib */,
+				BEBDEE801C58D4CD006AE4EF /* UserInfoCell.h */,
+				BEBDEE811C58D4CD006AE4EF /* UserInfoCell.m */,
+				BEBDEE821C58D4CD006AE4EF /* UserInfoCell.xib */,
 			);
 			path = My;
 			sourceTree = "<group>";
@@ -1441,6 +1449,7 @@
 				37AE237B1C546B49006CFCCC /* FollowLeaveViewController.xib in Resources */,
 				37033E381C4C9033009F27DB /* RegisterViewController.xib in Resources */,
 				BE25EB421C44FC5F00068309 /* LaunchScreen.storyboard in Resources */,
+				BEBDEE841C58D4CD006AE4EF /* UserInfoCell.xib in Resources */,
 				37D725131C4FA6960055721B /* MyClassTeacherCell.xib in Resources */,
 				37E1DE0D1C4DE2CC00245BE6 /* TopViewController.xib in Resources */,
 				37C4E9061C51E02A00583902 /* StudentChoseCell.xib in Resources */,
@@ -1592,6 +1601,7 @@
 				BE4055751C535AB900590788 /* ClassModel.m in Sources */,
 				37D7250A1C4F97E10055721B /* MyClassCell.m in Sources */,
 				37E1DDF41C4DDD8C00245BE6 /* MyStudentViewController.m in Sources */,
+				BEBDEE831C58D4CD006AE4EF /* UserInfoCell.m in Sources */,
 				37E1DE021C4DE29500245BE6 /* HomeViewController.m in Sources */,
 				37E1DE0C1C4DE2CC00245BE6 /* TopViewController.m in Sources */,
 				37E1DDD31C4DD92600245BE6 /* FeedbackViewController.m in Sources */,
