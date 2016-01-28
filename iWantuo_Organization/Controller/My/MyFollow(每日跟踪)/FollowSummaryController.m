@@ -154,7 +154,7 @@
             [btn setImage:[UIImage imageNamed:@"organization_StarGray"] forState:UIControlStateNormal];
         }
         if (sender.tag == btn.tag) {
-            self.behavior = [NSString stringWithFormat:@"%d",btn.tag-100];
+            self.behavior = [NSString stringWithFormat:@"%ld",btn.tag-100];
         }
     }
 
@@ -170,7 +170,7 @@
             [btn setImage:[UIImage imageNamed:@"organization_StarGray"] forState:UIControlStateNormal];
         }
         if (sender.tag == btn.tag) {
-            self.study = [NSString stringWithFormat:@"%d",btn.tag-105];
+            self.study = [NSString stringWithFormat:@"%ld",btn.tag-105];
         }
     }
 
@@ -254,7 +254,7 @@
             [btn setImage:[UIImage imageNamed:@"organization_StarGray"] forState:UIControlStateNormal];
         }
         if (num1 == btn.tag) {
-            self.study = [NSString stringWithFormat:@"%d",btn.tag-100];
+            self.study = [NSString stringWithFormat:@"%ld",btn.tag-100];
         }
     }
     NSInteger num2 = [self.followmodel.study integerValue]+105;
@@ -264,7 +264,7 @@
             [btn setImage:[UIImage imageNamed:@"organization_StarGray"] forState:UIControlStateNormal];
         }
         if (num2 == btn.tag) {
-            self.study = [NSString stringWithFormat:@"%d",btn.tag-105];
+            self.study = [NSString stringWithFormat:@"%ld",btn.tag-105];
         }
     }
 
