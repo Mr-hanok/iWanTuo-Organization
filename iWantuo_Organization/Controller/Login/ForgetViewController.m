@@ -127,7 +127,7 @@
     }
     //倒计时
     sender.enabled = NO;
-    [sender startWithSecond:5];
+    [sender startWithSecond:30];
     [sender didChange:^NSString *(JKCountDownButton *countDownButton,int second) {
         NSString *title = [NSString stringWithFormat:@"剩余%d秒",second];
         [countDownButton setBackgroundColor:[UIColor clearColor]];
