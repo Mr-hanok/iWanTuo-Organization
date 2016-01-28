@@ -8,6 +8,7 @@
 
 #ifndef StudyChina_NetworkMacro_h
 #define StudyChina_NetworkMacro_h
+#import "MineNetWork.h"
 
 //#define SERVER_HOST_PRODUCT             @"http://192.168.1.169:8090/wantuo/"           // 内网地址
 //#define SERVER_HOST_PRODUCT             @"http://192.168.1.107:8080/wantuo/"           // 外网地址
