@@ -69,10 +69,6 @@
 		37E1DDCC1C4DD92600245BE6 /* MyMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E1DDAF1C4DD92600245BE6 /* MyMessageViewController.xib */; };
 		37E1DDCD1C4DD92600245BE6 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E1DDB11C4DD92600245BE6 /* MyViewController.m */; };
 		37E1DDCE1C4DD92600245BE6 /* MyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E1DDB21C4DD92600245BE6 /* MyViewController.xib */; };
-		37E1DDCF1C4DD92600245BE6 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E1DDB61C4DD92600245BE6 /* AboutViewController.m */; };
-		37E1DDD01C4DD92600245BE6 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E1DDB71C4DD92600245BE6 /* AboutViewController.xib */; };
-		37E1DDD31C4DD92600245BE6 /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E1DDBE1C4DD92600245BE6 /* FeedbackViewController.m */; };
-		37E1DDD41C4DD92600245BE6 /* FeedbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E1DDBF1C4DD92600245BE6 /* FeedbackViewController.xib */; };
 		37E1DDD51C4DD92600245BE6 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E1DDC11C4DD92600245BE6 /* SettingViewController.m */; };
 		37E1DDD61C4DD92600245BE6 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E1DDC21C4DD92600245BE6 /* SettingViewController.xib */; };
 		37E1DDDC1C4DDA8A00245BE6 /* MyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E1DDDA1C4DDA8A00245BE6 /* MyCell.m */; };
@@ -101,6 +97,14 @@
 		63B2E7DD1C59E80D0038EEF3 /* ChangePasswordController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B2E7DB1C59E80D0038EEF3 /* ChangePasswordController.xib */; };
 		63B2E7E21C59E8670038EEF3 /* ChangePasswordRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B2E7DF1C59E8670038EEF3 /* ChangePasswordRequest.m */; };
 		63B2E7E31C59E8670038EEF3 /* FeedBackRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B2E7E11C59E8670038EEF3 /* FeedBackRequest.m */; };
+		63B2E7E81C59EB4D0038EEF3 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B2E7E61C59EB4D0038EEF3 /* AboutViewController.m */; };
+		63B2E7E91C59EB4D0038EEF3 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B2E7E71C59EB4D0038EEF3 /* AboutViewController.xib */; };
+		63B2E7ED1C59EBB20038EEF3 /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B2E7EB1C59EBB20038EEF3 /* FeedbackViewController.m */; };
+		63B2E7EE1C59EBB20038EEF3 /* FeedbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B2E7EC1C59EBB20038EEF3 /* FeedbackViewController.xib */; };
+		63B2E8001C59EE170038EEF3 /* MyNewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B2E7FE1C59EE170038EEF3 /* MyNewsTableViewCell.m */; };
+		63B2E8011C59EE170038EEF3 /* MyNewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B2E7FF1C59EE170038EEF3 /* MyNewsTableViewCell.xib */; };
+		63B2E8051C59EECD0038EEF3 /* MyNewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B2E8031C59EECD0038EEF3 /* MyNewsDetailViewController.m */; };
+		63B2E8061C59EECD0038EEF3 /* MyNewsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B2E8041C59EECD0038EEF3 /* MyNewsDetailViewController.xib */; };
 		BE25EB341C44FC5F00068309 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE25EB331C44FC5F00068309 /* main.m */; };
 		BE25EB371C44FC5F00068309 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE25EB361C44FC5F00068309 /* AppDelegate.m */; };
 		BE25EB3F1C44FC5F00068309 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE25EB3E1C44FC5F00068309 /* Assets.xcassets */; };
@@ -296,12 +300,6 @@
 		37E1DDB01C4DD92600245BE6 /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
 		37E1DDB11C4DD92600245BE6 /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
 		37E1DDB21C4DD92600245BE6 /* MyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyViewController.xib; sourceTree = "<group>"; };
-		37E1DDB51C4DD92600245BE6 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
-		37E1DDB61C4DD92600245BE6 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
-		37E1DDB71C4DD92600245BE6 /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
-		37E1DDBD1C4DD92600245BE6 /* FeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
-		37E1DDBE1C4DD92600245BE6 /* FeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
-		37E1DDBF1C4DD92600245BE6 /* FeedbackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedbackViewController.xib; sourceTree = "<group>"; };
 		37E1DDC01C4DD92600245BE6 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		37E1DDC11C4DD92600245BE6 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		37E1DDC21C4DD92600245BE6 /* SettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
@@ -346,6 +344,18 @@
 		63B2E7E01C59E8670038EEF3 /* FeedBackRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedBackRequest.h; sourceTree = "<group>"; };
 		63B2E7E11C59E8670038EEF3 /* FeedBackRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedBackRequest.m; sourceTree = "<group>"; };
 		63B2E7E41C59E88E0038EEF3 /* MineNetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineNetWork.h; sourceTree = "<group>"; };
+		63B2E7E51C59EB4D0038EEF3 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		63B2E7E61C59EB4D0038EEF3 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		63B2E7E71C59EB4D0038EEF3 /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
+		63B2E7EA1C59EBB20038EEF3 /* FeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
+		63B2E7EB1C59EBB20038EEF3 /* FeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
+		63B2E7EC1C59EBB20038EEF3 /* FeedbackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedbackViewController.xib; sourceTree = "<group>"; };
+		63B2E7FD1C59EE170038EEF3 /* MyNewsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNewsTableViewCell.h; sourceTree = "<group>"; };
+		63B2E7FE1C59EE170038EEF3 /* MyNewsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNewsTableViewCell.m; sourceTree = "<group>"; };
+		63B2E7FF1C59EE170038EEF3 /* MyNewsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyNewsTableViewCell.xib; sourceTree = "<group>"; };
+		63B2E8021C59EECD0038EEF3 /* MyNewsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNewsDetailViewController.h; sourceTree = "<group>"; };
+		63B2E8031C59EECD0038EEF3 /* MyNewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNewsDetailViewController.m; sourceTree = "<group>"; };
+		63B2E8041C59EECD0038EEF3 /* MyNewsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyNewsDetailViewController.xib; sourceTree = "<group>"; };
 		7B131BB5C3C7788EB0066AC0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACA8CD8FCCEFD0CEA801BB92 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BE25EB2F1C44FC5F00068309 /* iWantuo_Organization.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iWantuo_Organization.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -643,6 +653,9 @@
 		37D725061C4F97BC0055721B /* MyClass */ = {
 			isa = PBXGroup;
 			children = (
+				63B2E7FD1C59EE170038EEF3 /* MyNewsTableViewCell.h */,
+				63B2E7FE1C59EE170038EEF3 /* MyNewsTableViewCell.m */,
+				63B2E7FF1C59EE170038EEF3 /* MyNewsTableViewCell.xib */,
 				37D725071C4F97E10055721B /* MyClassCell.h */,
 				37D725081C4F97E10055721B /* MyClassCell.m */,
 				37D725091C4F97E10055721B /* MyClassCell.xib */,
@@ -700,6 +713,9 @@
 				37E1DDAD1C4DD92600245BE6 /* MyMessageViewController.h */,
 				37E1DDAE1C4DD92600245BE6 /* MyMessageViewController.m */,
 				37E1DDAF1C4DD92600245BE6 /* MyMessageViewController.xib */,
+				63B2E8021C59EECD0038EEF3 /* MyNewsDetailViewController.h */,
+				63B2E8031C59EECD0038EEF3 /* MyNewsDetailViewController.m */,
+				63B2E8041C59EECD0038EEF3 /* MyNewsDetailViewController.xib */,
 			);
 			path = "MyMessage(我的消息)";
 			sourceTree = "<group>";
@@ -720,9 +736,9 @@
 		37E1DDB41C4DD92600245BE6 /* About */ = {
 			isa = PBXGroup;
 			children = (
-				37E1DDB51C4DD92600245BE6 /* AboutViewController.h */,
-				37E1DDB61C4DD92600245BE6 /* AboutViewController.m */,
-				37E1DDB71C4DD92600245BE6 /* AboutViewController.xib */,
+				63B2E7E51C59EB4D0038EEF3 /* AboutViewController.h */,
+				63B2E7E61C59EB4D0038EEF3 /* AboutViewController.m */,
+				63B2E7E71C59EB4D0038EEF3 /* AboutViewController.xib */,
 			);
 			path = About;
 			sourceTree = "<group>";
@@ -740,9 +756,9 @@
 		37E1DDBC1C4DD92600245BE6 /* Feedback(意见反馈) */ = {
 			isa = PBXGroup;
 			children = (
-				37E1DDBD1C4DD92600245BE6 /* FeedbackViewController.h */,
-				37E1DDBE1C4DD92600245BE6 /* FeedbackViewController.m */,
-				37E1DDBF1C4DD92600245BE6 /* FeedbackViewController.xib */,
+				63B2E7EA1C59EBB20038EEF3 /* FeedbackViewController.h */,
+				63B2E7EB1C59EBB20038EEF3 /* FeedbackViewController.m */,
+				63B2E7EC1C59EBB20038EEF3 /* FeedbackViewController.xib */,
 			);
 			path = "Feedback(意见反馈)";
 			sourceTree = "<group>";
@@ -1460,6 +1476,7 @@
 				37033E361C4C9033009F27DB /* LoginViewController.xib in Resources */,
 				BED7D8BA1C50A6DB005A338E /* AddStudentCell.xib in Resources */,
 				BECC8C341C5771ED00AB93E3 /* NewVersionViewController.xib in Resources */,
+				63B2E8061C59EECD0038EEF3 /* MyNewsDetailViewController.xib in Resources */,
 				37E1DDC41C4DD92600245BE6 /* PersonDetailController.xib in Resources */,
 				37E1DDFB1C4DDE3C00245BE6 /* MyFollowViewController.xib in Resources */,
 				BED7D8C31C50CCC4005A338E /* TFDatePickerView.xib in Resources */,
@@ -1469,6 +1486,7 @@
 				37C4E9001C51DEFB00583902 /* StudentChoseViewController.xib in Resources */,
 				37E1DDEB1C4DDD5800245BE6 /* MyClassTeacherViewController.xib in Resources */,
 				63B2E7DD1C59E80D0038EEF3 /* ChangePasswordController.xib in Resources */,
+				63B2E7E91C59EB4D0038EEF3 /* AboutViewController.xib in Resources */,
 				37AE237B1C546B49006CFCCC /* FollowLeaveViewController.xib in Resources */,
 				37033E381C4C9033009F27DB /* RegisterViewController.xib in Resources */,
 				BE25EB421C44FC5F00068309 /* LaunchScreen.storyboard in Resources */,
@@ -1481,14 +1499,15 @@
 				375001BB1C50FFD400B14021 /* ClassDetailCell.xib in Resources */,
 				37033E341C4C9033009F27DB /* ForgetViewController.xib in Resources */,
 				37E1DDF51C4DDD8C00245BE6 /* MyStudentViewController.xib in Resources */,
+				63B2E8011C59EE170038EEF3 /* MyNewsTableViewCell.xib in Resources */,
 				37E1DDDD1C4DDA8A00245BE6 /* MyCell.xib in Resources */,
 				375001B11C50D85800B14021 /* AddMyClassViewController.xib in Resources */,
 				37E1DDCE1C4DD92600245BE6 /* MyViewController.xib in Resources */,
 				37E1DDCC1C4DD92600245BE6 /* MyMessageViewController.xib in Resources */,
 				37C4E8F61C51BEEE00583902 /* ClassAddStudentController.xib in Resources */,
-				37E1DDD01C4DD92600245BE6 /* AboutViewController.xib in Resources */,
 				37033E501C4CBBCA009F27DB /* SubmitInfoViewController.xib in Resources */,
 				37E1DE081C4DE2B200245BE6 /* DiscoverViewController.xib in Resources */,
+				63B2E7EE1C59EBB20038EEF3 /* FeedbackViewController.xib in Resources */,
 				37033E4B1C4CB7EC009F27DB /* SigningViewController.xib in Resources */,
 				375001AC1C50C90400B14021 /* AddClassTeacherViewController.xib in Resources */,
 				BE25EB3F1C44FC5F00068309 /* Assets.xcassets in Resources */,
@@ -1496,7 +1515,6 @@
 				BECC8C3A1C57721900AB93E3 /* NewVersionCollectionCell.xib in Resources */,
 				37E1DDE61C4DDD3E00245BE6 /* MyClassViewController.xib in Resources */,
 				37D7250B1C4F97E10055721B /* MyClassCell.xib in Resources */,
-				37E1DDD41C4DD92600245BE6 /* FeedbackViewController.xib in Resources */,
 				375001B61C50FD0D00B14021 /* ClassDetailViewController.xib in Resources */,
 				37E1DE031C4DE29500245BE6 /* HomeViewController.xib in Resources */,
 			);
@@ -1580,6 +1598,7 @@
 				BED7D8D21C51044F005A338E /* PatriarchModel.m in Sources */,
 				37AE237A1C546B49006CFCCC /* FollowLeaveViewController.m in Sources */,
 				BE25EBAD1C44FDA500068309 /* SystemHandler.m in Sources */,
+				63B2E7E81C59EB4D0038EEF3 /* AboutViewController.m in Sources */,
 				37AE23751C546AD9006CFCCC /* FollowSignInViewController.m in Sources */,
 				37D724FE1C4F6B500055721B /* AccountModel.m in Sources */,
 				379464281C55F57400368B3A /* ApiFollowSubject.m in Sources */,
@@ -1608,6 +1627,7 @@
 				BE25EBA61C44FD9200068309 /* UIView+Image.m in Sources */,
 				37033E331C4C9033009F27DB /* ForgetViewController.m in Sources */,
 				BED7D8C71C50D085005A338E /* AccountListViewController.m in Sources */,
+				63B2E7ED1C59EBB20038EEF3 /* FeedbackViewController.m in Sources */,
 				37D724E71C4F264E0055721B /* CameraTakeMamanger.m in Sources */,
 				BED7D8BE1C50BA7C005A338E /* ApiSaveStudentRequest.m in Sources */,
 				3794641E1C55EB7100368B3A /* ApiFollowCheckRequest.m in Sources */,
@@ -1625,16 +1645,16 @@
 				BE4055751C535AB900590788 /* ClassModel.m in Sources */,
 				37D7250A1C4F97E10055721B /* MyClassCell.m in Sources */,
 				37E1DDF41C4DDD8C00245BE6 /* MyStudentViewController.m in Sources */,
+				63B2E8001C59EE170038EEF3 /* MyNewsTableViewCell.m in Sources */,
 				BEBDEE831C58D4CD006AE4EF /* UserInfoCell.m in Sources */,
 				37E1DE021C4DE29500245BE6 /* HomeViewController.m in Sources */,
 				37E1DE0C1C4DE2CC00245BE6 /* TopViewController.m in Sources */,
-				37E1DDD31C4DD92600245BE6 /* FeedbackViewController.m in Sources */,
-				37E1DDCF1C4DD92600245BE6 /* AboutViewController.m in Sources */,
 				BE40556F1C5355EC00590788 /* ApiSaveStudentsByClassRequest.m in Sources */,
 				BE25EB9E1C44FD9200068309 /* NSString+Validation.m in Sources */,
 				BE25EBA31C44FD9200068309 /* UIImage+Video.m in Sources */,
 				BE25EB6E1C44FD8500068309 /* APIRequest.m in Sources */,
 				37033E461C4C914C009F27DB /* JKCountDownButton.m in Sources */,
+				63B2E8051C59EECD0038EEF3 /* MyNewsDetailViewController.m in Sources */,
 				37AE237F1C5490C8006CFCCC /* FollowSummaryController.m in Sources */,
 				37BE7E631C58C7E4000F7CF8 /* ApiOrganizationInfoRequest.m in Sources */,
 				375001B51C50FD0D00B14021 /* ClassDetailViewController.m in Sources */,

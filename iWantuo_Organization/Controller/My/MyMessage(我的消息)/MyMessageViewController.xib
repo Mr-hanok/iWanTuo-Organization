@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyMessageViewController">
             <connections>
+                <outlet property="messageTableView" destination="1pn-3m-lOv" id="le2-rE-ucK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,7 +15,45 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1pn-3m-lOv">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Xcu-PZ-Pje"/>
+                        <outlet property="delegate" destination="-1" id="1S1-vU-eDh"/>
+                    </connections>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="1pn-3m-lOv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="B5B-2w-Lab"/>
+                <constraint firstAttribute="bottom" secondItem="1pn-3m-lOv" secondAttribute="bottom" id="KjH-qB-hCR"/>
+                <constraint firstItem="1pn-3m-lOv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="RUe-JS-gbe"/>
+                <constraint firstAttribute="trailing" secondItem="1pn-3m-lOv" secondAttribute="trailing" id="hkv-0R-nTH"/>
+            </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="1pn-3m-lOv"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="B5B-2w-Lab"/>
+                    <exclude reference="KjH-qB-hCR"/>
+                    <exclude reference="RUe-JS-gbe"/>
+                    <exclude reference="hkv-0R-nTH"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="1pn-3m-lOv"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="B5B-2w-Lab"/>
+                    <include reference="KjH-qB-hCR"/>
+                    <include reference="RUe-JS-gbe"/>
+                    <include reference="hkv-0R-nTH"/>
+                </mask>
+            </variation>
         </view>
     </objects>
 </document>
