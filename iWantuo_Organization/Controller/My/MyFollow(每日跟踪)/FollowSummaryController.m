@@ -33,6 +33,7 @@
 @property (nonatomic, copy) NSString *study;//学习评价
 @property (nonatomic, copy) NSString *workStatus;//作业状态0未完成1完成
 @property (nonatomic, copy) NSString *workStatusName;//作业状态
+@property (nonatomic, copy) NSString *loginName;
 
 @end
 
@@ -40,6 +41,16 @@
 #pragma mark - life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //判断是老师还是机构
+    if ([[AccountManager sharedInstance].account.accountsType isEqualToString:@"3"]) {//老师
+        self.loginName = [AccountManager sharedInstance].account.name;
+        
+    }else {//机构
+        self.loginName = [AccountManager sharedInstance].account.organization;
+    }
+
+    
     self.remarkTV.layer.borderWidth = 1.f;
     self.remarkTV.layer.borderColor = kBGColor.CGColor;
     self.remarkTV.layer.cornerRadius = 5.f;
@@ -218,7 +229,7 @@
                                 signIn:@""
                            signInImage:@""
                                   note:self.remarkTV.text
-                         summaryPerson:[AccountManager sharedInstance].account.name
+                         summaryPerson:self.loginName
                            leavePerson:@""];
     [APIClient execute:self.apiChange];
 

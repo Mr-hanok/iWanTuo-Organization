@@ -17,7 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *remarkTV;//备注
 @property (weak, nonatomic) IBOutlet UIButton *upLoadBtn;//上传图片按钮
 @property (nonatomic, copy) NSString *imageName;//记录图片名
-
+@property (nonatomic, copy) NSString *loginName;
 
 @property (nonatomic, strong) ApiFollowChangeRequest *apiChange;//改变跟踪状态接口
 @end
@@ -26,6 +26,16 @@
 #pragma mark - life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //判断是老师还是机构
+    if ([[AccountManager sharedInstance].account.accountsType isEqualToString:@"3"]) {//老师
+        self.loginName = [AccountManager sharedInstance].account.name;
+        
+    }else {//机构
+        self.loginName = [AccountManager sharedInstance].account.organization;
+    }
+    
+
 
     self.remarkTV.layer.borderWidth = 1.f;
     self.remarkTV.layer.borderColor = kBGColor.CGColor;
@@ -140,7 +150,7 @@
                            signInImage:@""
                                   note:@""
                          summaryPerson:@""
-                           leavePerson:[AccountManager sharedInstance].account.name];
+                           leavePerson:self.loginName];
     [APIClient execute:self.apiChange];
 }
 #pragma mark - private methods

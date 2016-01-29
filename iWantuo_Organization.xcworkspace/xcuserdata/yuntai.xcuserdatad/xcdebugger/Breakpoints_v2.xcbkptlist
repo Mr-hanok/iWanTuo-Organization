@@ -16,7 +16,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iWantuo_Organization/Controller/My/BasicInfo(&#x57fa;&#x672c;&#x4fe1;&#x606f;)/PersonDetailController.m"
@@ -99,13 +99,77 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "iWantuo_Organization/Controller/My/MyFollow(&#x6bcf;&#x65e5;&#x8ddf;&#x8e2a;)/FollowBaseViewController.m"
-            timestampString = "475673668.397389"
+            filePath = "iWantuo_Organization/Controller/My/MyFollow(&#x6bcf;&#x65e5;&#x8ddf;&#x8e2a;)/FollowSignInViewController.m"
+            timestampString = "475723536.738719"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "188"
-            endingLineNumber = "188"
-            landmarkName = "-toobarDonBtnHaveClick:resultString:level1:row1:row2:"
+            startingLineNumber = "211"
+            endingLineNumber = "211"
+            landmarkName = "-signBtnAction:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iWantuo_Organization/Controller/My/MyFollow(&#x6bcf;&#x65e5;&#x8ddf;&#x8e2a;)/FollowSignInViewController.m"
+            timestampString = "475723733.710175"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "179"
+            endingLineNumber = "179"
+            landmarkName = "-signBtnAction:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iWantuo_Organization/Controller/My/MyFollow(&#x6bcf;&#x65e5;&#x8ddf;&#x8e2a;)/FollowSignInViewController.m"
+            timestampString = "475724069.163961"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "-serverApi_FinishedFailed:result:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iWantuo_Organization/Controller/My/MyFollow(&#x6bcf;&#x65e5;&#x8ddf;&#x8e2a;)/FollowSignInViewController.m"
+            timestampString = "475724071.660101"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "-serverApi_RequestFailed:error:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iWantuo_Organization/Controller/My/MyFollow(&#x6bcf;&#x65e5;&#x8ddf;&#x8e2a;)/FollowSignInViewController.m"
+            timestampString = "475724547.217388"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "210"
+            endingLineNumber = "210"
+            landmarkName = "-signBtnAction:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -48,10 +48,10 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction)];
     [self.view addGestureRecognizer:tap];
     //判断是老师还是机构
-    if ([[AccountManager sharedInstance].account.accountsType isEqualToString:@"3"]) {
+    if ([[AccountManager sharedInstance].account.accountsType isEqualToString:@"3"]) {//老师
         self.loginAccounts = [AccountManager sharedInstance].account.organizationAccounts;
         
-    }else {
+    }else {//机构
         self.loginAccounts = [AccountManager sharedInstance].account.loginAccounts;
     }
     
@@ -180,11 +180,12 @@
     NSInteger selDate = [seleteDatestr integerValue];
     NSInteger curDate = [curDatestr integerValue]+600;
     if (selDate >curDate) {
-        [HUDManager showWarningWithText:@"请选择正确日期"];
+        [AlertViewManager showAlertViewWithMessage:@"请选择正确日期"];
         self.mview = [[UIView alloc]initWithFrame:self.scrollview.frame];
         [self.view addSubview:self.mview];
         return ;
     }else {
+        self.mview.frame = CGRectZero;
         [self.mview removeFromSuperview];
     }
     self.createDate = [NSString stringWithFormat:@"%.0f", date.timeIntervalSince1970];
@@ -273,7 +274,7 @@
 - (IBAction)followTimeBtnAction:(UIButton *)sender {
     [_dataPickView remove];
     NSDate *date=[NSDate date];
-    _dataPickView=[[ZHPickView alloc] initDatePickWithDate:date datePickerMode:UIDatePickerModeDate isHaveNavControler:YES];
+    _dataPickView=[[ZHPickView alloc] initDatePickWithDate:date datePickerMode:UIDatePickerModeDate isHaveNavControler:NO];
     _dataPickView.delegate=self;
     [_dataPickView show];
     
