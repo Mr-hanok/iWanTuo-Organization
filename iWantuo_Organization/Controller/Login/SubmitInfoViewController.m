@@ -180,7 +180,7 @@
  *  上传图片按钮
  */
 - (IBAction)upLoadImageBtn:(UIButton *)sender {
-    
+    [self.view endEditing:YES];
     // 上传图片
     [[CameraTakeMamanger sharedInstance] cameraSheetInController:self handler:^(UIImage *image, NSString *imagePath) {
         
@@ -210,6 +210,8 @@
  *  提交按钮
  */
 - (IBAction)commitBtn:(UIButton *)sender {
+    [self.view endEditing:YES];
+    [self.pickview remove];
     //校验 提交
     if (![self dataCheck]) {
         return;

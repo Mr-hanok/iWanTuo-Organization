@@ -320,7 +320,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iWantuo_Organization/Controller/My/BasicInfo(&#x57fa;&#x672c;&#x4fe1;&#x606f;)/PersonDetailController.m"
@@ -333,14 +333,14 @@
             landmarkType = "5">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "-[PersonDetailController serverApi_FinishedSuccessed:result:]"
                   moduleName = "iWantuo_Organization"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yuntai/Documents/aiWanTuoOrganization/iWantuo_Organization/Controller/My/BasicInfo(%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF)/PersonDetailController.m"
-                  timestampString = "475746109.30859"
+                  timestampString = "475747516.270652"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "127"
@@ -348,14 +348,14 @@
                   offsetFromSymbolStart = "1548">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "__61-[PersonDetailController serverApi_FinishedSuccessed:result:]_block_invoke"
                   moduleName = "iWantuo_Organization"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yuntai/Documents/aiWanTuoOrganization/iWantuo_Organization/Controller/My/BasicInfo(%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF)/PersonDetailController.m"
-                  timestampString = "475746109.308826"
+                  timestampString = "475747516.271202"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "127"
