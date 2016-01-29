@@ -82,6 +82,9 @@ static AccountManager *sharedInstance;
     [ud setValue:self.account.headPortrait forKey:@"headPortrait"];
     [ud setValue:self.account.type forKey:@"type"];
     
+    [ud setValue:self.account.pathName forKey:@"pathName"];
+
+    
     [ud setValue:self.account.organizationAccounts forKey:@"organizationAccounts"];
     [ud setValue:self.account.name forKey:@"name"];
     [ud setValue:self.account.statusName forKey:@"statusName"];
@@ -138,6 +141,8 @@ static AccountManager *sharedInstance;
     self.account.teacher = [ValueUtils stringFromObject:[ud objectForKey:@"teacher"]];
     self.account.headPortrait = [ValueUtils stringFromObject:[ud objectForKey:@"headPortrait"]];
     self.account.type = [ValueUtils stringFromObject:[ud objectForKey:@"type"]];
+    
+    self.account.pathName = [ValueUtils stringFromObject:[ud objectForKey:@"pathName"]];
     
     self.account.organizationAccounts = [ValueUtils stringFromObject:[ud objectForKey:@"organizationAccounts"]];
     self.account.name = [ValueUtils stringFromObject:[ud objectForKey:@"name"]];

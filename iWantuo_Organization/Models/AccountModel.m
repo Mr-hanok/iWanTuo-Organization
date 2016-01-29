@@ -56,6 +56,7 @@
     copy.statusName = [self.statusName copyWithZone:zone];
     copy.name = [self.name copyWithZone:zone];
     
+    copy.pathName = [self.pathName copyWithZone:zone];
     copy.isLogin = [self.isLogin copyWithZone:zone];
     copy.accountsType = [self.accountsType copyWithZone:zone];
     return copy;
@@ -104,6 +105,8 @@
         account.teacher = [ValueUtils stringFromObject:[dict objectForKey:@"teacher"]];
         account.headPortrait = [ValueUtils stringFromObject:[dict objectForKey:@"headPortrait"]];
         account.type = [ValueUtils stringFromObject:[dict objectForKey:@"type"]];
+        
+        account.pathName = [ValueUtils stringFromObject:[dict objectForKey:@"pathName"]];
         
         account.organizationAccounts = [ValueUtils stringFromObject:[dict objectForKey:@"organizationAccounts"]];
         account.name = [ValueUtils stringFromObject:[dict objectForKey:@"name"]];

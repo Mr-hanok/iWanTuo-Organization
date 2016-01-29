@@ -83,6 +83,7 @@
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [MobClick endLogPageView:self.title];
+    [self.pickview remove];
 }
 #pragma mark -  APIRequestDelegate
 
@@ -281,7 +282,7 @@
         [HUDManager showWarningWithText:@"请输入30字以内的全称"];
         return NO;
     }
-    if (self.number == 0) {
+    if (self.areaTF.text.length == 0) {
         [HUDManager showWarningWithText:@"请选择地区"];
         return NO;
     }

@@ -90,7 +90,8 @@
 @property (nonatomic, copy) NSString *isCollect;
 /***/
 @property (nonatomic, copy) NSString *type;
-
+/**相片名称*/
+@property (nonatomic, copy) NSString *pathName;
 
 #pragma mark - 以下是老师独有字段
 //"id": 1,

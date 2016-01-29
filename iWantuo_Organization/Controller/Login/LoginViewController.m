@@ -82,8 +82,12 @@ typedef enum :NSInteger {
     NSDictionary *teacherDic = [sr.dic objectForKey:[ValueUtils stringFromObject:@"Teacher"]];
     NSDictionary *origanDic = [sr.dic objectForKey:[ValueUtils stringFromObject:@"Organization"]];
     AccountModel *model = nil;
-    if (teacherDic == nil && origanDic == nil) {
-        [HUDManager showWarningWithText:@"账号审核中"];
+    if ([teacherDic isKindOfClass:[NSNull class]] && origanDic ==nil ) {
+        [HUDManager showWarningWithText:@"尚未认证！"];
+        return;
+    }
+    if ([origanDic isKindOfClass:[NSNull class]] && teacherDic == nil ) {
+        [HUDManager showWarningWithText:@"尚未认证！"];
         return;
     }
     if (teacherDic) {//教师登录
@@ -120,6 +124,7 @@ typedef enum :NSInteger {
  *  登录
  */
 - (IBAction)loginAction {
+    [self.view endEditing:YES];
     //数据校验
     if([self dataCheck]){
         [HUDManager showLoadingHUDView:self.view];

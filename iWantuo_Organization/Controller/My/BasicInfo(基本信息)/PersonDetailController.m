@@ -87,6 +87,8 @@
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [MobClick endLogPageView:self.title];
+    [self.areaPick remove];
+    [self.typePick remove];
 }
 #pragma mark -  APIRequestDelegate
 
@@ -158,23 +160,7 @@
         self.typeTF.text = resultString;
         self.organiTypeName = resultString;
     }
-    
-    //nsstring->nsdate->设置按钮显示时间 记录时间
-//    NSString *dateStr = [resultString substringToIndex:10];
-//    NSLog(@"%@",dateStr);
-//    NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
-//    outputFormatter.dateFormat       = @"yyyy-MM-dd";
-//    NSDate *date = [outputFormatter dateFromString:dateStr];
-//    NSString *str                    = [outputFormatter stringFromDate:date];
-//    [self.timeBtn setTitle:str forState:UIControlStateNormal];
-//    self.createDate = [NSString stringWithFormat:@"%.0f", date.timeIntervalSince1970];
-//    self.signVC.createDate = self.createDate;
-//    //执行追踪查询操作
-//    [HUDManager showLoadingHUDView:self.view];
-//    self.apiFollowCheck = [[ApiFollowCheckRequest alloc]initWithDelegate:self];
-//    [self.apiFollowCheck setApiParamsWithCreateDate:self.createDate studentId:self.student.studentId organizationAccounts:self.loginAccounts];
-//    [APIClient execute:self.apiFollowCheck];
-    
+        
 }
 
 
@@ -260,7 +246,7 @@
         }
     }
     //记录图片name
-    self.imageName = self.model.photoAlbum;
+    self.imageName = self.model.pathName;
     NSArray *imageNameArray = [self.model.photoAlbum componentsSeparatedByString:@","];
     for (int i = 0; i<imageNameArray.count; i++) {
         if (imageNameArray.count == 0) {
