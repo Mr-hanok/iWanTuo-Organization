@@ -29,6 +29,14 @@
     self.collectionView.showsHorizontalScrollIndicator = NO;
     [self.collectionView registerNib:[UINib nibWithNibName:@"NewVersionCollectionCell" bundle:nil] forCellWithReuseIdentifier:@"cell"];
 }
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [MobClick beginLogPageView:@"引导页"];
+}
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [MobClick endLogPageView:@"引导页"];
+}
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {

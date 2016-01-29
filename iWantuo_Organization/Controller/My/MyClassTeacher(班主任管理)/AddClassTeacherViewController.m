@@ -32,6 +32,15 @@
     self.passWordTF.delegate = self;
     
 }
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [MobClick beginLogPageView:self.title];
+}
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [MobClick endLogPageView:self.title];
+}
+
 #pragma mark - 协议名
 #pragma mark - APIRequestDelegate
 - (void)serverApi_RequestFailed:(APIRequest *)api error:(NSError *)error {
