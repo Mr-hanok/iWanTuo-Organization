@@ -88,11 +88,11 @@
                                         </mask>
                                     </variation>
                                 </imageView>
-                                <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qIc-tR-UVh">
+                                <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qIc-tR-UVh">
                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="80" id="RPi-IC-YTv"/>
-                                        <constraint firstAttribute="height" constant="30" id="w64-NM-xGV"/>
+                                        <constraint firstAttribute="height" constant="40" id="w64-NM-xGV"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <state key="normal" title="总结">
@@ -114,10 +114,10 @@
                                         <action selector="followBtnsAction:" destination="-1" eventType="touchUpInside" id="yii-p8-nzv"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" tag="103" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qzI-m9-LYU">
+                                <button opaque="NO" tag="103" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qzI-m9-LYU">
                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="30" id="01U-Qu-D7u"/>
+                                        <constraint firstAttribute="height" constant="40" id="01U-Qu-D7u"/>
                                         <constraint firstAttribute="width" constant="80" id="Wrb-Nm-rx0"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -140,11 +140,11 @@
                                         <action selector="followBtnsAction:" destination="-1" eventType="touchUpInside" id="avu-Rt-pCA"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rdy-bi-q9m">
+                                <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rdy-bi-q9m">
                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="80" id="7C1-kz-Y56"/>
-                                        <constraint firstAttribute="height" constant="30" id="XQc-zy-Htz"/>
+                                        <constraint firstAttribute="height" constant="40" id="XQc-zy-Htz"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <state key="normal" title="签到">
@@ -174,7 +174,7 @@
                                 <constraint firstItem="UFd-r7-PmC" firstAttribute="centerX" secondItem="k3Z-8S-nl3" secondAttribute="centerX" id="DjN-Q0-oJe"/>
                                 <constraint firstItem="qIc-tR-UVh" firstAttribute="centerX" secondItem="UFd-r7-PmC" secondAttribute="centerX" id="ExT-Vd-UdX"/>
                                 <constraint firstItem="qzI-m9-LYU" firstAttribute="leading" secondItem="qIc-tR-UVh" secondAttribute="trailing" constant="27" id="cK9-1k-zek"/>
-                                <constraint firstItem="qIc-tR-UVh" firstAttribute="top" secondItem="UFd-r7-PmC" secondAttribute="bottom" constant="2" id="fJ5-xh-Nyg"/>
+                                <constraint firstItem="qIc-tR-UVh" firstAttribute="top" secondItem="UFd-r7-PmC" secondAttribute="bottom" constant="-15" id="fJ5-xh-Nyg"/>
                                 <constraint firstItem="qzI-m9-LYU" firstAttribute="centerY" secondItem="qIc-tR-UVh" secondAttribute="centerY" id="m23-zg-3fr"/>
                                 <constraint firstItem="qIc-tR-UVh" firstAttribute="leading" secondItem="Rdy-bi-q9m" secondAttribute="trailing" constant="25" id="pNb-SD-P4z"/>
                                 <constraint firstAttribute="height" constant="50" id="zW9-3D-fHC"/>

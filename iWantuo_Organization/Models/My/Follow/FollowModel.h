@@ -45,6 +45,18 @@
 @property (nonatomic, copy) NSString *statusName;
 /**总结文字*/
 @property (nonatomic, copy) NSString *note;
+/**签到时间*/
+@property (nonatomic, copy) NSString *signinDate;
+/**签到人*/
+@property (nonatomic, copy) NSString *signinPerson;
+/**离校时间*/
+@property (nonatomic, copy) NSString *leaveDate;
+/**离校人*/
+@property (nonatomic, copy) NSString *leavePerson;
+/**总结人*/
+@property (nonatomic, copy) NSString *summaryPerson;
+/**总结时间*/
+@property (nonatomic, copy) NSString *summaryDate;
 
 
 + (FollowModel *)initWithDic:(NSDictionary *)dic;

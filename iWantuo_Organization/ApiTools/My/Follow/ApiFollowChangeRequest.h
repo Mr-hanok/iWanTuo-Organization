@@ -44,5 +44,7 @@
                 statusName:(NSString *)statusName
                     signIn:(NSString *)signIn
                signInImage:(NSString *)signInImage
-                      note:(NSString *)note;
+                      note:(NSString *)note
+             summaryPerson:(NSString *)summaryPerson
+               leavePerson:(NSString *)leavePerson;
 @end

@@ -26,6 +26,7 @@
 @property (nonatomic, copy) NSString *imageName;//图片名称
 @property (nonatomic, strong) ApiFollowAddRequest *apiFollowAdd;//签到
 @property (nonatomic, strong) ApiFollowChangeRequest *apiChange;//修改签到
+@property (nonatomic, copy) NSString *loginName;
 
 @end
 
@@ -34,6 +35,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    //判断是老师还是机构
+    if ([[AccountManager sharedInstance].account.accountsType isEqualToString:@"3"]) {//老师
+        self.loginName = [AccountManager sharedInstance].account.name;
+        
+    }else {//机构
+        self.loginName = [AccountManager sharedInstance].account.organization;
+    }
+
+    
     self.remarkTV.layer.borderWidth = 1.f;
     self.remarkTV.layer.borderColor = kBGColor.CGColor;
     self.remarkTV.layer.cornerRadius = 5.f;
@@ -164,7 +175,7 @@
                                                signIn:self.remarkTV.text
                                           signInImage:self.imageName
                                                status:self.status
-                                           statusName:self.statusName];
+                                           statusName:self.statusName signInPerson:self.loginName];
         [APIClient execute:self.apiFollowAdd];
 
     }
@@ -193,7 +204,9 @@
                                 statusName:self.statusName
                                     signIn:self.remarkTV.text
                                signInImage:self.imageName
-                                      note:@""];
+                                      note:@""
+                             summaryPerson:@""
+                               leavePerson:@""];
 
         [APIClient execute:self.apiChange];
     }

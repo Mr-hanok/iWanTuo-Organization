@@ -14,6 +14,7 @@
 #import "ZHPickView.h"
 #import "ApiAddressListRequest.h"
 #import "CityInfoModel.h"
+#import "NSString+Verify.h"
 
 
 #define kAddStudentCellReuse  @"AddStudentCellReuse"
@@ -65,6 +66,7 @@
     self.sexTextField.text = @"男";
     self.gradeTextField.text = @"小学一年级";
     self.parentSexTextField.text = @"父亲";
+    self.otherPhoneTextField.keyboardType = UIKeyboardTypeNumberPad;
     
     self.pickView = [TFDatePickerView tfDatePickerViewWithDatePickerMode:UIDatePickerModeDateAndTime Delegate:self];
     [self.view bk_whenTapped:^{
@@ -271,6 +273,11 @@
     
     if (self.otherPhoneTextField.text.length <= 0  || [[self.otherPhoneTextField.text stringByTrimmingCharactersInSet:[NSMutableCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
         [HUDManager showWarningWithText:@"请输入其他亲属联系方式"];
+        return NO;
+    }
+    
+    if (![NSString tf_isSimpleMobileNumber:self.otherPhoneTextField.text]) {
+        [HUDManager showWarningWithText:@"请输入正确的联系方式"];
         return NO;
     }
     

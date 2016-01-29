@@ -36,7 +36,7 @@
 @property (nonatomic, strong) ApiFollowCheckRequest *apiFollowCheck;//查询
 @property (nonatomic, copy) NSString *loginAccounts;
 @property (nonatomic, strong) FollowModel *followmodel;
-
+@property (nonatomic, strong) UIView *mview;
 @end
 
 @implementation FollowBaseViewController
@@ -48,10 +48,10 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction)];
     [self.view addGestureRecognizer:tap];
     //判断是老师还是机构
-    if ([[AccountManager sharedInstance].account.accountsType isEqualToString:@"3"]) {
+    if ([[AccountManager sharedInstance].account.accountsType isEqualToString:@"3"]) {//老师
         self.loginAccounts = [AccountManager sharedInstance].account.organizationAccounts;
         
-    }else {
+    }else {//机构
         self.loginAccounts = [AccountManager sharedInstance].account.loginAccounts;
     }
     
@@ -96,6 +96,8 @@
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [MobClick endLogPageView:self.title];
+    [self.dataPickView remove];
+    
 }
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
@@ -167,12 +169,25 @@
     
     //nsstring->nsdate->设置按钮显示时间 记录时间
     NSString *dateStr = [resultString substringToIndex:10];
-    NSLog(@"%@",dateStr);
-    NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
-    outputFormatter.dateFormat       = @"yyyy-MM-dd";
-    NSDate *date = [outputFormatter dateFromString:dateStr];
-    NSString *str                    = [outputFormatter stringFromDate:date];
-    [self.timeBtn setTitle:str forState:UIControlStateNormal];
+    [self.timeBtn setTitle:dateStr forState:UIControlStateNormal];
+    
+    NSDate *date = [self stringToDate:resultString];
+    NSDate *curedate = [NSDate date];
+    
+    NSString *seleteDatestr = [NSString stringWithFormat:@"%.0f",date.timeIntervalSince1970];
+    NSString *curDatestr = [NSString stringWithFormat:@"%.0f",curedate.timeIntervalSince1970];
+    
+    NSInteger selDate = [seleteDatestr integerValue];
+    NSInteger curDate = [curDatestr integerValue]+600;
+    if (selDate >curDate) {
+        [AlertViewManager showAlertViewWithMessage:@"请选择正确日期"];
+        self.mview = [[UIView alloc]initWithFrame:self.scrollview.frame];
+        [self.view addSubview:self.mview];
+        return ;
+    }else {
+        self.mview.frame = CGRectZero;
+        [self.mview removeFromSuperview];
+    }
     self.createDate = [NSString stringWithFormat:@"%.0f", date.timeIntervalSince1970];
     self.signVC.createDate = self.createDate;
     //执行追踪查询操作
@@ -193,6 +208,7 @@
     if (sender) {
         
     }
+    [self.view endEditing:YES];
     switch (sender.tag) {
         case 101://签到
         {
@@ -303,7 +319,17 @@
 
 - (void)tapAction{
     [self.view endEditing:YES];
+    [self.dataPickView remove];
 }
+
+- (NSDate *)stringToDate:(NSString *)strdate
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss Z"];
+    NSDate *retdate = [dateFormatter dateFromString:strdate];
+    return retdate;
+}
+
 #pragma mark - getters & setters
 -(FollowSignInViewController *)signVC{
     if (_signVC == nil) {

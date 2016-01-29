@@ -53,11 +53,14 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self setUpToolBar];
-        
     }
     return self;
 }
-
+-(void)hidenPickView{
+    [self removeFromSuperview];
+    [self.backView removeFromSuperview];
+    
+}
 
 -(instancetype)initPickviewWithPlistName:(NSString *)plistName isHaveNavControler:(BOOL)isHaveNavControler{
     
@@ -300,12 +303,16 @@
 }
 
 -(void)remove{
-    
     [self removeFromSuperview];
+    [self.backView removeFromSuperview];
+    
 }
 -(void)show{
-    
-    [[UIApplication sharedApplication].keyWindow addSubview:self];
+    self.backView = [[UIView alloc]initWithFrame:CGRectMake(0, 64, kScreenBoundWidth, kScreenBoundHeight)];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(hidenPickView)];
+    [self.backView addGestureRecognizer:tap];
+    [self.backView addSubview:self];
+    [[UIApplication sharedApplication].keyWindow addSubview:self.backView];
     
 }
 -(void)doneClick
@@ -356,6 +363,7 @@
         [self.delegate toobarDonBtnHaveClick:self resultString:_resultString level1:self.level1 row1:self.row1 row2:self.row2];
     }
     [self removeFromSuperview];
+    [self.backView removeFromSuperview];
 }
 /**
  *  设置PickView的颜色

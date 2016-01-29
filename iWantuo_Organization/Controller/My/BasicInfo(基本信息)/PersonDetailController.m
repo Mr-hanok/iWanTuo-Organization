@@ -182,6 +182,7 @@
 - (IBAction)areaBtnAction:(UIButton *)sender {
     [_areaPick remove];
     [_typePick remove];
+    [self.view endEditing:YES];
     
     _areaPick=[[ZHPickView alloc]initPickviewWithArray:self.areaArray isHaveNavControler:NO];
     _areaPick.delegate=self;
@@ -193,6 +194,7 @@
 - (IBAction)typeBtnAction:(UIButton *)sender {
     [_areaPick remove];
     [_typePick remove];
+    [self.view endEditing:YES];
     
     _typePick=[[ZHPickView alloc]initPickviewWithArray:@[@"公司",@"工作室"] isHaveNavControler:NO];
     _typePick.delegate=self;
@@ -245,15 +247,15 @@
         }else{
             str = [NSString stringWithFormat:@"%@%@",@"http://www.",str];
         }
-        if (i ==1) {
+        if (i ==0) {
             self.imageName1 = str;
             [self.imageIV1 sd_setImageWithURL:[NSURL URLWithString:str] placeholderImage:[UIImage imageNamed:@"register_addImageBtn"]];
         }
-        if (i ==2) {
+        if (i ==1) {
             self.imageName2 = str;
             [self.imageIV2 sd_setImageWithURL:[NSURL URLWithString:str] placeholderImage:[UIImage imageNamed:@"register_addImageBtn"]];
         }
-        if (i == 3) {
+        if (i == 2) {
             self.imageName3 = str;
             [self.imageIV3 sd_setImageWithURL:[NSURL URLWithString:str] placeholderImage:[UIImage imageNamed:@"register_addImageBtn"]];
         }
@@ -285,7 +287,7 @@
     [self cameraAndUploadImage:self.imageIV3];
 }
 - (void)cameraAndUploadImage:(UIImageView *)imageIv{
-    
+    [self.view endEditing:YES];
     //上传图片
     [[CameraTakeMamanger sharedInstance] cameraSheetInController:self handler:^(UIImage *image, NSString *imagePath) {
         
@@ -297,8 +299,7 @@
                 return ;
             }
             // 记录图片地址  设置图片
-//            self.imageName = [NSString stringWithFormat:@"%@,%@",message,self.imageName];
-            self.imageName = [NSString stringWithFormat:@"%@",message];
+            self.imageName = [NSString stringWithFormat:@"%@,%@",message,self.imageName];
             imageIv.image = image;
             
         } failure:^(NSString *message) {
