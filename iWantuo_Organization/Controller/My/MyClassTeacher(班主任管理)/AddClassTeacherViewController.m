@@ -28,6 +28,8 @@
     self.title = @"添加辅导员";
     
     self.phoneNumTF.keyboardType = UIKeyboardTypePhonePad;
+    self.accountTF.keyboardType = UIKeyboardTypeEmailAddress;
+    self.passWordTF.keyboardType = UIKeyboardTypeEmailAddress;
     self.accountTF.delegate = self;
     self.passWordTF.delegate = self;
     
