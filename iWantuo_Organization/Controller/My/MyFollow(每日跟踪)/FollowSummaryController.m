@@ -52,12 +52,11 @@
         self.loginName = [AccountManager sharedInstance].account.organization;
     }
 
-    
     self.remarkTV.layer.borderWidth = 1.f;
     self.remarkTV.layer.borderColor = kBGColor.CGColor;
     self.remarkTV.layer.cornerRadius = 5.f;
     self.subjectArray = [NSMutableArray array];
-    self.subjectModelArray = [NSMutableArray array];    
+    self.subjectModelArray = [NSMutableArray array];
     
     self.apiChange = [[ApiFollowChangeRequest alloc]initWithDelegate:self];
     self.apiSubject = [[ApiFollowSubject alloc]initWithDelegate:self];
@@ -162,10 +161,10 @@
 - (IBAction)xingweiCommentAction:(UIButton *)sender {
     
         for (UIButton *btn in self.xingweiStarts) {
-        [btn setImage:[UIImage imageNamed:@"organization_StarYellow"] forState:UIControlStateNormal];
-        if (btn.tag > sender.tag) {
-            [btn setImage:[UIImage imageNamed:@"organization_StarGray"] forState:UIControlStateNormal];
-        }
+            btn.selected = YES;
+            if (btn.tag > sender.tag) {
+                btn.selected = NO;
+            }
         if (sender.tag == btn.tag) {
             self.behavior = [NSString stringWithFormat:@"%ld",btn.tag-100];
         }
@@ -178,9 +177,9 @@
 - (IBAction)studyCommentAction:(UIButton *)sender {
 
     for (UIButton *btn in self.studyStarts) {
-        [btn setImage:[UIImage imageNamed:@"organization_StarYellow"] forState:UIControlStateNormal];
+        btn.selected = YES;
         if (btn.tag > sender.tag) {
-            [btn setImage:[UIImage imageNamed:@"organization_StarGray"] forState:UIControlStateNormal];
+            btn.selected = NO;
         }
         if (sender.tag == btn.tag) {
             self.study = [NSString stringWithFormat:@"%ld",btn.tag-105];
@@ -266,42 +265,57 @@
             self.uncompleteBtn.selected = NO;
         }
         if ([self.followmodel.subjectName isEqualToString:@""]) {
-            [self.classChoseBtn setTitle:@"学科 >" forState:UIControlStateNormal];
+            [self.classChoseBtn setTitle:@"学科  v" forState:UIControlStateNormal];
         }else{
             [self.classChoseBtn setTitle:self.followmodel.subjectName forState:UIControlStateNormal];
         }
         
-        
-    }else{
-        self.remarkTV.text = @"";
-        self.completeBtn.selected = NO;
-        self.uncompleteBtn.selected = NO;
-        [self.classChoseBtn setTitle:@"学科 >" forState:UIControlStateNormal];
-    }
-    //设置学科分数
-    self.gradeTF.text = self.followmodel.grade;
-    //设置星星显示
-    NSInteger num1 = [self.followmodel.behavior integerValue]+100;
-    for (UIButton *btn in self.xingweiStarts) {
-        [btn setImage:[UIImage imageNamed:@"organization_StarYellow"] forState:UIControlStateNormal];
-        if (btn.tag > num1) {
-            [btn setImage:[UIImage imageNamed:@"organization_StarGray"] forState:UIControlStateNormal];
+        //设置学科分数
+        if (![self.followmodel.grade isEqualToString:@"0"]) {
+            self.gradeTF.text = self.followmodel.grade;
         }
-        if (num1 == btn.tag) {
-            self.study = [NSString stringWithFormat:@"%ld",btn.tag-100];
+        //设置星星显示
+        NSInteger num1 = [self.followmodel.behavior integerValue]+100;
+        for (UIButton *btn in self.xingweiStarts) {
+            btn.selected = YES;
+            if (btn.tag > num1) {
+                btn.selected = NO;
+            }
+            if (num1 == btn.tag) {
+                self.study = [NSString stringWithFormat:@"%ld",btn.tag-100];
+            }
         }
-    }
-    NSInteger num2 = [self.followmodel.study integerValue]+105;
-    for (UIButton *btn in self.studyStarts) {
-        [btn setImage:[UIImage imageNamed:@"organization_StarYellow"] forState:UIControlStateNormal];
-        if (btn.tag > num2) {
-            [btn setImage:[UIImage imageNamed:@"organization_StarGray"] forState:UIControlStateNormal];
+        NSInteger num2 = [self.followmodel.study integerValue]+105;
+        for (UIButton *btn in self.studyStarts) {
+            btn.selected = YES;
+            if (btn.tag > num2) {
+                btn.selected = NO;
+            }
+            if (num2 == btn.tag) {
+                self.study = [NSString stringWithFormat:@"%ld",btn.tag-105];
+            }
         }
-        if (num2 == btn.tag) {
-            self.study = [NSString stringWithFormat:@"%ld",btn.tag-105];
-        }
-    }
 
+        
+    }
+    if (info == nil) {
+        for (UIButton *btn in self.xingweiStarts) {
+            btn.selected = YES;
+        }
+        for (UIButton *btn in self.studyStarts) {
+            btn.selected = YES;
+        }
+        self.behavior = @"5";
+        self.study = @"5";
+        self.workStatus = @"1";
+        self.completeBtn.selected = YES;
+        self.workStatusName = @"完成作业";
+
+        self.remarkTV.text = @"";
+        self.uncompleteBtn.selected = NO;
+        [self.classChoseBtn setTitle:@"学科  v" forState:UIControlStateNormal];
+    }
+    
 }
 
 

@@ -247,7 +247,7 @@
     }
     //记录图片name
     self.imageName = self.model.pathName;
-    NSArray *imageNameArray = [self.model.photoAlbum componentsSeparatedByString:@","];
+    NSArray *imageNameArray = [self.model.pathName componentsSeparatedByString:@","];
     for (int i = 0; i<imageNameArray.count; i++) {
         if (imageNameArray.count == 0) {
             return;
