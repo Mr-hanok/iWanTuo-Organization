@@ -164,7 +164,7 @@
                                                signIn:self.remarkTV.text
                                           signInImage:self.imageName
                                                status:self.status
-                                           statusName:self.statusName];
+                                           statusName:self.statusName signInPerson:[AccountManager sharedInstance].account.name];
         [APIClient execute:self.apiFollowAdd];
 
     }
@@ -193,7 +193,9 @@
                                 statusName:self.statusName
                                     signIn:self.remarkTV.text
                                signInImage:self.imageName
-                                      note:@""];
+                                      note:@""
+                             summaryPerson:@""
+                               leavePerson:@""];
 
         [APIClient execute:self.apiChange];
     }

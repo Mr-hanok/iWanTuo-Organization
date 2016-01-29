@@ -217,7 +217,9 @@
                             statusName:self.statusName
                                 signIn:@""
                            signInImage:@""
-                                  note:self.remarkTV.text];
+                                  note:self.remarkTV.text
+                         summaryPerson:[AccountManager sharedInstance].account.name
+                           leavePerson:@""];
     [APIClient execute:self.apiChange];
 
 }
@@ -232,7 +234,7 @@
             self.uncompleteBtn.selected = NO;
         }
         if ([self.followmodel.subjectName isEqualToString:@""]) {
-            [self.classChoseBtn setTitle:@"选择学科" forState:UIControlStateNormal];
+            [self.classChoseBtn setTitle:@"学科 >" forState:UIControlStateNormal];
         }else{
             [self.classChoseBtn setTitle:self.followmodel.subjectName forState:UIControlStateNormal];
         }
@@ -242,7 +244,7 @@
         self.remarkTV.text = @"";
         self.completeBtn.selected = NO;
         self.uncompleteBtn.selected = NO;
-        [self.classChoseBtn setTitle:@"选择学科" forState:UIControlStateNormal];
+        [self.classChoseBtn setTitle:@"学科 >" forState:UIControlStateNormal];
     }
     //设置学科分数
     self.gradeTF.text = self.followmodel.grade;

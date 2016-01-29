@@ -32,6 +32,8 @@
                     signIn:(NSString *)signIn
                signInImage:(NSString *)signInImage
                       note:(NSString *)note
+             summaryPerson:(NSString *)summaryPerson
+               leavePerson:(NSString *)leavePerson
 {
     [self.params setValue:kid forKey:@"Id"];
     [self.params setValue:leave forKey:@"leave"];
@@ -49,6 +51,8 @@
     [self.params setValue:signIn forKey:@"signIn"];
     [self.params setValue:signInImage forKey:@"signInImage"];
     [self.params setValue:note forKey:@"note"];
+    [self.params setValue:summaryPerson forKey:@"summaryPerson"];
+    [self.params setValue:leavePerson forKey:@"leavePerson"];
     
 }
 
