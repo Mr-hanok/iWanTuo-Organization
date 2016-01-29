@@ -49,7 +49,8 @@
     self.remarkTV.layer.borderColor = kBGColor.CGColor;
     self.remarkTV.layer.cornerRadius = 5.f;
     [self.upLoadBtn.imageView setContentMode:UIViewContentModeScaleAspectFill];
-    //self.signBtn.selected = YES;
+    self.signBtn.selected = YES;
+    self.statusName = @"签到";
     self.apiFollowAdd = [[ApiFollowAddRequest alloc]initWithDelegate:self];
     //注册 刷新页面 通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeViewInfoNotification:) name:ChangeViewInfoNoti object:nil];
@@ -92,6 +93,7 @@
     if (api == self.apiChange) {//追踪签到修改
         [HUDManager showWarningWithText:@"修改成功"];
     }
+    self.imageName = @"";
     //发送通知 修改界面
     [[NSNotificationCenter defaultCenter] postNotificationName:ChangeViewInfoNoti object:self.followmodel];
     //发送通知 修改进度条
@@ -191,8 +193,8 @@
 
         self.apiChange = [[ApiFollowChangeRequest alloc]initWithDelegate:self];
         [self.apiChange setApiParamsWithId:self.followmodel.kid
-                                     leave:self.remarkTV.text
-                                leaveImage:self.imageName
+                                     leave:@""
+                                leaveImage:@""
                                 workStatus:@""
                             workStatusName:@""
                                   behavior:@""
@@ -259,7 +261,9 @@
 - (void)initstallViewWithFollowModel:(FollowModel *)followModel{
     if (followModel == nil) {
         self.remarkTV.text = @"";
-        self.signBtn.selected = NO;
+        self.signBtn.selected = YES;
+        self.status = @"1";
+        self.statusName = @"签到";
         self.lossBtn.selected = NO;
         [self.upLoadBtn sd_setImageWithURL:nil forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"register_addImageBtn"]];
     }

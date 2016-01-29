@@ -77,6 +77,7 @@
     }
     NSDictionary *dic =  [sr.dic objectForKey:@"trace"];
     self.followmodel = [FollowModel initWithDic:dic];
+    self.imageName = @"";
     //发送通知 改变进度条图片
     [[NSNotificationCenter defaultCenter] postNotificationName:ChangeImageIvNoti object:@"3"];
     [HUDManager showWarningWithText:@"成功"];
