@@ -13,7 +13,7 @@
 #import "CityInfoModel.h"
 #import "ApiFollowChangeRequest.h"
 
-@interface FollowSummaryController ()<ZHPickViewDelegate,APIRequestDelegate>
+@interface FollowSummaryController ()<ZHPickViewDelegate,APIRequestDelegate,UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *remarkTV;//备注
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *xingweiStarts;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *studyStarts;
@@ -104,6 +104,7 @@
     if (api == self.apiChange) {//总结
         NSDictionary *dic =  [sr.dic objectForKey:@"trace"];
         self.followmodel = [FollowModel initWithDic:dic];
+        self.gradeTF.text = nil;
         //发送通知 传入界面
         [[NSNotificationCenter defaultCenter] postNotificationName:ChangeViewInfoNoti object:self.followmodel];
         //发送通知 改变进度条图片
@@ -122,9 +123,15 @@
     }
     [AlertViewManager showAlertViewWithMessage:message];
 }
-
-
-#pragma mark ZhpickVIewDelegate
+#pragma mark  - UITextFieldDelegate
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    if ([self.classChoseBtn.titleLabel.text isEqualToString:@"学科  v"]) {
+        [HUDManager  showWarningWithText:@"请选择科目"];
+        return NO;
+    }
+    return YES;
+}
+#pragma mark  - ZhpickVIewDelegate
 
 -(void)toobarDonBtnHaveClick:(ZHPickView *)pickView resultString:(NSString *)resultString level1:(NSString *)level1 row1:(NSInteger)row1 row2:(NSInteger)row2{
     NSLog(@"%@-%@-%d-%d",resultString,level1,row1,row2);
@@ -191,6 +198,7 @@
  * 学科选择
  */
 - (IBAction)classChoseAction:(UIButton *)sender {
+    [self.view endEditing:YES];
     [_classPick remove];
     _classPick=[[ZHPickView alloc] initPickviewWithArray:self.subjectArray isHaveNavControler:NO];
     _classPick.delegate=self;
@@ -310,7 +318,7 @@
         self.workStatus = @"1";
         self.completeBtn.selected = YES;
         self.workStatusName = @"完成作业";
-
+        self.gradeTF.text = nil;
         self.remarkTV.text = @"";
         self.uncompleteBtn.selected = NO;
         [self.classChoseBtn setTitle:@"学科  v" forState:UIControlStateNormal];

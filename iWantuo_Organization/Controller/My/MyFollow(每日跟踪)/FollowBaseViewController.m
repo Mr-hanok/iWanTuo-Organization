@@ -70,6 +70,9 @@
     self.signVC.statusName = @"签到";
     self.signVC.studentId = self.student.studentId;
     self.followIV.image = [UIImage imageNamed:@"followshortofline"];
+    [self.signBtn setTitleColor:kNavigationColor forState:UIControlStateSelected];
+    [self.sumaryBtn setTitleColor:kNavigationColor forState:UIControlStateSelected];
+    [self.leaveBtn setTitleColor:kNavigationColor forState:UIControlStateSelected];
     // 添加view 进scrollview
     [self.scrollview addSubview:self.signVC.view];
     [self.scrollview addSubview:self.summaryVC.view];
