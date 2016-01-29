@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -14,11 +14,11 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJm-oD-eTr">
-                        <rect key="frame" x="95.5" y="478" width="130" height="40"/>
+                        <rect key="frame" x="70.5" y="508" width="180" height="40"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="AOq-2C-qUR"/>
-                            <constraint firstAttribute="width" constant="130" id="Tao-6X-D3E"/>
+                            <constraint firstAttribute="width" constant="180" id="Tao-6X-D3E"/>
                         </constraints>
                         <state key="normal" image="signinImage">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -31,15 +31,9 @@
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
-                <constraint firstAttribute="centerY" secondItem="yJm-oD-eTr" secondAttribute="centerY" constant="-16" id="ETd-Ee-pnL"/>
-                <constraint firstAttribute="bottom" secondItem="yJm-oD-eTr" secondAttribute="bottom" constant="50" id="oJJ-Di-Qi5"/>
+                <constraint firstAttribute="bottom" secondItem="yJm-oD-eTr" secondAttribute="bottom" constant="20" id="oJJ-Di-Qi5"/>
                 <constraint firstAttribute="centerX" secondItem="yJm-oD-eTr" secondAttribute="centerX" constant="-0.5" id="wXm-UC-xsv"/>
             </constraints>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="ETd-Ee-pnL"/>
-                </mask>
-            </variation>
             <connections>
                 <outlet property="enterBtn" destination="yJm-oD-eTr" id="H1K-ex-RgN"/>
             </connections>
@@ -47,6 +41,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="signinImage" width="130" height="40"/>
+        <image name="signinImage" width="188" height="35"/>
     </resources>
 </document>
