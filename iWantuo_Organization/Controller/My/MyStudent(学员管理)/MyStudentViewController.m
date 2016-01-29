@@ -95,6 +95,9 @@
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [MobClick endLogPageView:self.title];
+    [self.pickviewArea remove];
+    [self.pickviewGrade remove];
+    [self.pickviewSex remove];
 }
 #pragma mark ZhpickVIewDelegate
 
