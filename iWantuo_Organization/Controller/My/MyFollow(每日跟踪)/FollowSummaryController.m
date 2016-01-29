@@ -34,6 +34,8 @@
 @property (nonatomic, copy) NSString *workStatus;//作业状态0未完成1完成
 @property (nonatomic, copy) NSString *workStatusName;//作业状态
 @property (nonatomic, copy) NSString *loginName;
+@property (nonatomic, copy) NSString *summaryPerson;
+@property (nonatomic, copy) NSString *leavePerson;
 
 @end
 
@@ -205,32 +207,51 @@
         [HUDManager showWarningWithText:@"请先签到"];
         return;
     }
-    if ([self.followmodel.status isEqualToString:@"2"]) {
+    [HUDManager showLoadingHUDView:KeyWindow];
+    if ([self.followmodel.status isEqualToString:@"2"]||[self.followmodel.status isEqualToString:@"1"]) {
         self.status = @"2";
         self.statusName =@"总结";
+        [self.apiChange setApiParamsWithId:self.followmodel.kid
+                                     leave:@""
+                                leaveImage:@""
+                                workStatus:self.workStatus
+                            workStatusName:self.workStatusName
+                                  behavior:self.behavior
+                                     study:self.study
+                                     grade:self.gradeTF.text
+                                   subject:self.model.cityId
+                               subjectName:self.model.name
+                                    status:self.status
+                                statusName:self.statusName
+                                    signIn:@""
+                               signInImage:@""
+                                      note:self.remarkTV.text
+                             summaryPerson:self.loginName
+                               leavePerson:@""];
+
     }
     if ([self.followmodel.status isEqualToString:@"3"]) {
         self.status = @"3";
         self.statusName =@"离校";
+        [self.apiChange setApiParamsWithId:self.followmodel.kid
+                                     leave:@""
+                                leaveImage:@""
+                                workStatus:self.workStatus
+                            workStatusName:self.workStatusName
+                                  behavior:self.behavior
+                                     study:self.study
+                                     grade:self.gradeTF.text
+                                   subject:self.model.cityId
+                               subjectName:self.model.name
+                                    status:self.status
+                                statusName:self.statusName
+                                    signIn:@""
+                               signInImage:@""
+                                      note:self.remarkTV.text
+                             summaryPerson:@""
+                               leavePerson:self.loginName];
+
     }
-    [HUDManager showLoadingHUDView:KeyWindow];
-    [self.apiChange setApiParamsWithId:self.followmodel.kid
-                                 leave:@""
-                            leaveImage:@""
-                            workStatus:self.workStatus
-                        workStatusName:self.workStatusName
-                              behavior:self.behavior
-                                 study:self.study
-                                 grade:self.gradeTF.text
-                               subject:self.model.cityId
-                           subjectName:self.model.name
-                                status:self.status
-                            statusName:self.statusName
-                                signIn:@""
-                           signInImage:@""
-                                  note:self.remarkTV.text
-                         summaryPerson:self.loginName
-                           leavePerson:@""];
     [APIClient execute:self.apiChange];
 
 }

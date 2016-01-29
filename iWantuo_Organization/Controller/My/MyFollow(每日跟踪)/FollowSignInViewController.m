@@ -205,8 +205,8 @@
                                     signIn:self.remarkTV.text
                                signInImage:self.imageName
                                       note:@""
-                             summaryPerson:@""
-                               leavePerson:@""];
+                             summaryPerson:self.loginName
+                               leavePerson:self.loginName];
 
         [APIClient execute:self.apiChange];
     }

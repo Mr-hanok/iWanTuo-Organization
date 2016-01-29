@@ -44,6 +44,7 @@
 @property (nonatomic, copy) NSString *areaId;//区域id
 @property (nonatomic, copy) NSString *areaName;//区域名称
 @property (nonatomic, copy) NSString *imageName;//记录图片名称
+@property (nonatomic, copy) NSString *imageNameUrl;
 @property (nonatomic, copy) NSString *imageName1;
 @property (nonatomic, copy) NSString *imageName2;
 @property (nonatomic, copy) NSString *imageName3;
@@ -235,7 +236,8 @@
     self.organiTypeName = self.model.organizatioTypeName;
     self.areaId = self.model.bairro;
     self.areaName = self.model.bairroName;
-    self.imageName = self.model.photoAlbum;
+    //记录图片url
+    self.imageNameUrl = self.model.photoAlbum;
     NSArray *imageArray = [self.model.photoAlbum componentsSeparatedByString:@","];
     for (int i = 0; i<imageArray.count; i++) {
         if (imageArray.count == 0) {
@@ -248,18 +250,32 @@
             str = [NSString stringWithFormat:@"%@%@",@"http://www.",str];
         }
         if (i ==0) {
-            self.imageName1 = str;
             [self.imageIV1 sd_setImageWithURL:[NSURL URLWithString:str] placeholderImage:[UIImage imageNamed:@"register_addImageBtn"]];
         }
         if (i ==1) {
-            self.imageName2 = str;
             [self.imageIV2 sd_setImageWithURL:[NSURL URLWithString:str] placeholderImage:[UIImage imageNamed:@"register_addImageBtn"]];
         }
         if (i == 2) {
-            self.imageName3 = str;
             [self.imageIV3 sd_setImageWithURL:[NSURL URLWithString:str] placeholderImage:[UIImage imageNamed:@"register_addImageBtn"]];
         }
-       
+    }
+    //记录图片name
+    self.imageName = self.model.photoAlbum;
+    NSArray *imageNameArray = [self.model.photoAlbum componentsSeparatedByString:@","];
+    for (int i = 0; i<imageNameArray.count; i++) {
+        if (imageNameArray.count == 0) {
+            return;
+        }
+        NSString *str = imageNameArray[i];
+        if (i ==0) {
+            self.imageName1 = str;
+        }
+        if (i ==1) {
+            self.imageName2 = str;
+        }
+        if (i == 2) {
+            self.imageName3 = str;
+         }
     }
 
     //设置界面显示内容
@@ -298,8 +314,17 @@
                 [AlertViewManager showAlertViewWithMessage:@"服务器异常,请稍后重试"];
                 return ;
             }
+            if (imageIv.tag == 101) {
+                self.imageName1 = message;
+            }
+            if (imageIv.tag == 102) {
+                self.imageName2 = message;
+            }
+            if (imageIv.tag == 103) {
+                self.imageName3 = message;
+            }
             // 记录图片地址  设置图片
-            self.imageName = [NSString stringWithFormat:@"%@,%@",message,self.imageName];
+            self.imageName = [NSString stringWithFormat:@"%@,%@,%@",self.imageName1,self.imageName2,self.imageName3];
             imageIv.image = image;
             
         } failure:^(NSString *message) {
