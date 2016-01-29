@@ -61,14 +61,11 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kReusableTableViewCell];
-//    if (!cell) {
-//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kReusableTableViewCell];
-//    }
+
     UserInfoCell *cell = [self.tableView dequeueReusableCellWithIdentifier:kUserInfoCellReuse];
     PatriarchModel *model = [self.dataArray objectAtIndex:indexPath.row];
     cell.nameLabel.text = model.nickName;
-    [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:model.headPortrait] placeholderImage:[UIImage imageNamed:@"defaultHead"]];
+    [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.%@", model.headPortrait]] placeholderImage:[UIImage imageNamed:@"defaultHead"]];
     cell.accountLabel.text = model.loginAccounts;
     return cell;
 }
