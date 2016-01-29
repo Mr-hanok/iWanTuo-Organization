@@ -20,7 +20,14 @@
     self.title = @"关于爱晚托";
     self.view.backgroundColor = [UIColor whiteColor];
 }
-
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [MobClick beginLogPageView:self.title];
+}
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [MobClick endLogPageView:self.title];
+}
 #pragma mark - 协议名
 
 @end
