@@ -34,6 +34,10 @@
         [[NSUserDefaults standardUserDefaults] setObject:currentVersion forKey:kVersionKey];
         [[NSUserDefaults standardUserDefaults] synchronize];
         
+        [AccountManager sharedInstance].locationId = @"3";//默认是上海的id
+        [AccountManager sharedInstance].locationName = @"上海";
+        [[AccountManager sharedInstance] saveAccountInfoToDisk];
+        
         NewVersionViewController *newVc = [[NewVersionViewController alloc] init];
         return newVc;
         

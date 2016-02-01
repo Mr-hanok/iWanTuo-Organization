@@ -11,6 +11,7 @@
 
 
 #define kReusableTableViewCell   @"reusableTableViewCell"
+#define kReusableTableViewCellSubtitle   @"reusableTableViewCellSubtitle"
 
 #define kReusableCollectionViewCell  @"reusableCollectionViewCell"
 #endif
