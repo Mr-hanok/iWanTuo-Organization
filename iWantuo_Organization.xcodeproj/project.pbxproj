@@ -220,6 +220,7 @@
 		BED0C54D1C5EFCB3000A75B3 /* BaiduMapAPI_Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BED0C5471C5EFCB3000A75B3 /* BaiduMapAPI_Map.framework */; };
 		BED0C54E1C5EFCB3000A75B3 /* BaiduMapAPI_Search.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BED0C5481C5EFCB3000A75B3 /* BaiduMapAPI_Search.framework */; };
 		BED0C54F1C5EFCB3000A75B3 /* MapNeed.mm in Sources */ = {isa = PBXBuildFile; fileRef = BED0C54A1C5EFCB3000A75B3 /* MapNeed.mm */; };
+		BED0C5511C5F04FA000A75B3 /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BED0C5501C5F04FA000A75B3 /* mapapi.bundle */; };
 		BED7D8B91C50A6DB005A338E /* AddStudentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BED7D8B71C50A6DB005A338E /* AddStudentCell.m */; };
 		BED7D8BA1C50A6DB005A338E /* AddStudentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BED7D8B81C50A6DB005A338E /* AddStudentCell.xib */; };
 		BED7D8BE1C50BA7C005A338E /* ApiSaveStudentRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BED7D8BD1C50BA7C005A338E /* ApiSaveStudentRequest.m */; };
@@ -626,6 +627,7 @@
 		BED0C5481C5EFCB3000A75B3 /* BaiduMapAPI_Search.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Search.framework; sourceTree = "<group>"; };
 		BED0C5491C5EFCB3000A75B3 /* MapNeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapNeed.h; sourceTree = "<group>"; };
 		BED0C54A1C5EFCB3000A75B3 /* MapNeed.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MapNeed.mm; sourceTree = "<group>"; };
+		BED0C5501C5F04FA000A75B3 /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = mapapi.bundle; path = BaiduMapAPI_Map.framework/Resources/mapapi.bundle; sourceTree = "<group>"; };
 		BED7D8B61C50A6DB005A338E /* AddStudentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddStudentCell.h; sourceTree = "<group>"; };
 		BED7D8B71C50A6DB005A338E /* AddStudentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddStudentCell.m; sourceTree = "<group>"; };
 		BED7D8B81C50A6DB005A338E /* AddStudentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddStudentCell.xib; sourceTree = "<group>"; };
@@ -1622,6 +1624,7 @@
 		BED0C5441C5EFCB3000A75B3 /* BaiduMap_IOSSDK_v2.9.1_Lib */ = {
 			isa = PBXGroup;
 			children = (
+				BED0C5501C5F04FA000A75B3 /* mapapi.bundle */,
 				BED0C5451C5EFCB3000A75B3 /* BaiduMapAPI_Base.framework */,
 				BED0C5461C5EFCB3000A75B3 /* BaiduMapAPI_Location.framework */,
 				BED0C5471C5EFCB3000A75B3 /* BaiduMapAPI_Map.framework */,
@@ -1849,6 +1852,7 @@
 				BED7D8C81C50D085005A338E /* AccountListViewController.xib in Resources */,
 				37C4E9001C51DEFB00583902 /* StudentChoseViewController.xib in Resources */,
 				BED0C4C81C5EF74F000A75B3 /* TopListViewController.xib in Resources */,
+				BED0C5511C5F04FA000A75B3 /* mapapi.bundle in Resources */,
 				37E1DDEB1C4DDD5800245BE6 /* MyClassTeacherViewController.xib in Resources */,
 				BED0C4AE1C5EF71B000A75B3 /* OrganizationListViewController.xib in Resources */,
 				63B2E7DD1C59E80D0038EEF3 /* ChangePasswordController.xib in Resources */,
