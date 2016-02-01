@@ -152,19 +152,20 @@
 #pragma mark - event response
 #pragma mark - private methods
 - (void)inistalSearch{
-    UIImageView *iv = [[UIImageView alloc]initWithFrame:CGRectMake(0, 2, 30, 25)];
-    iv.image = [UIImage imageNamed:@"home_glass"];
-    UITextField *tf = [[UITextField alloc]initWithFrame:CGRectMake(0, 0, 200, 30)];
-    tf.placeholder = @"选择学生";
-    tf.leftView = iv;
-    tf.leftViewMode = UITextFieldViewModeAlways;
-    tf.layer.cornerRadius = 5;
-    tf.layer.masksToBounds = YES;
-    tf.layer.borderWidth = 1.f;
-    [tf setBorderStyle:UITextBorderStyleRoundedRect];
-    tf.layer.borderColor = kNavigationColor.CGColor;
-    
-    self.navigationItem.titleView =tf;
+    self.title = @"选择学生";
+//    UIImageView *iv = [[UIImageView alloc]initWithFrame:CGRectMake(0, 2, 30, 25)];
+//    iv.image = [UIImage imageNamed:@"home_glass"];
+//    UITextField *tf = [[UITextField alloc]initWithFrame:CGRectMake(0, 0, 200, 30)];
+//    tf.placeholder = @"选择学生";
+//    tf.leftView = iv;
+//    tf.leftViewMode = UITextFieldViewModeAlways;
+//    tf.layer.cornerRadius = 5;
+//    tf.layer.masksToBounds = YES;
+//    tf.layer.borderWidth = 1.f;
+//    [tf setBorderStyle:UITextBorderStyleRoundedRect];
+//    tf.layer.borderColor = kNavigationColor.CGColor;
+//    
+//    self.navigationItem.titleView =tf;
     
 }
 
