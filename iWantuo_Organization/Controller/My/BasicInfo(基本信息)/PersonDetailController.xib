@@ -282,7 +282,7 @@
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="价格" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mNc-Cj-pTi">
                                             <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                         </textField>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Fr-3j-4QW">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -468,7 +468,7 @@
                                         <constraint firstItem="mNc-Cj-pTi" firstAttribute="height" secondItem="KO5-mW-t2o" secondAttribute="height" id="Zsn-XU-42N"/>
                                         <constraint firstItem="FXQ-fd-wFq" firstAttribute="top" secondItem="52y-Ev-PVZ" secondAttribute="bottom" constant="5" id="a1p-uN-1l4"/>
                                         <constraint firstItem="VGf-Vs-use" firstAttribute="height" secondItem="mNc-Cj-pTi" secondAttribute="height" id="aSS-wi-JJj"/>
-                                        <constraint firstAttribute="height" constant="360" id="caL-1Z-p0n"/>
+                                        <constraint firstAttribute="height" constant="330" id="caL-1Z-p0n"/>
                                         <constraint firstItem="4NX-pl-SxF" firstAttribute="height" secondItem="KO5-mW-t2o" secondAttribute="height" id="dL8-ar-P9r"/>
                                         <constraint firstItem="BU8-Gd-0gN" firstAttribute="trailing" secondItem="rxq-Pd-H7m" secondAttribute="trailing" id="erO-IX-COS"/>
                                         <constraint firstItem="lCz-p6-M69" firstAttribute="trailing" secondItem="7Fr-3j-4QW" secondAttribute="trailing" id="f1F-va-K8Y"/>
@@ -743,6 +743,7 @@
                                 <constraint firstItem="Ocs-0g-iPb" firstAttribute="top" secondItem="JTE-yN-DIo" secondAttribute="bottom" id="GuI-gR-hm2"/>
                                 <constraint firstAttribute="trailing" secondItem="dO6-v0-gxw" secondAttribute="trailing" id="Hiu-f0-D6q"/>
                                 <constraint firstAttribute="trailing" secondItem="Ocs-0g-iPb" secondAttribute="trailing" id="M9c-qS-8lT"/>
+                                <constraint firstAttribute="bottom" secondItem="Ocs-0g-iPb" secondAttribute="bottom" constant="20" id="acp-yD-X7K"/>
                                 <constraint firstItem="Ocs-0g-iPb" firstAttribute="leading" secondItem="IG7-gf-wiu" secondAttribute="leading" id="dXz-Rp-sEG"/>
                                 <constraint firstItem="JTE-yN-DIo" firstAttribute="top" secondItem="dO6-v0-gxw" secondAttribute="bottom" constant="5" id="eP8-MO-Awg"/>
                                 <constraint firstItem="dO6-v0-gxw" firstAttribute="top" secondItem="IG7-gf-wiu" secondAttribute="top" id="xR5-1T-xHo"/>
@@ -753,14 +754,15 @@
                                     <exclude reference="JTE-yN-DIo"/>
                                 </mask>
                                 <mask key="constraints">
-                                    <exclude reference="5L1-Dg-i4b"/>
-                                    <exclude reference="CcQ-PN-moP"/>
-                                    <exclude reference="eP8-MO-Awg"/>
                                     <exclude reference="8lD-NA-cKf"/>
                                     <exclude reference="Hiu-f0-D6q"/>
                                     <exclude reference="xR5-1T-xHo"/>
+                                    <exclude reference="5L1-Dg-i4b"/>
+                                    <exclude reference="CcQ-PN-moP"/>
+                                    <exclude reference="eP8-MO-Awg"/>
                                     <exclude reference="GuI-gR-hm2"/>
                                     <exclude reference="M9c-qS-8lT"/>
+                                    <exclude reference="acp-yD-X7K"/>
                                     <exclude reference="dXz-Rp-sEG"/>
                                 </mask>
                             </variation>
@@ -770,14 +772,15 @@
                                     <include reference="JTE-yN-DIo"/>
                                 </mask>
                                 <mask key="constraints">
-                                    <include reference="5L1-Dg-i4b"/>
-                                    <include reference="CcQ-PN-moP"/>
-                                    <include reference="eP8-MO-Awg"/>
                                     <include reference="8lD-NA-cKf"/>
                                     <include reference="Hiu-f0-D6q"/>
                                     <include reference="xR5-1T-xHo"/>
+                                    <include reference="5L1-Dg-i4b"/>
+                                    <include reference="CcQ-PN-moP"/>
+                                    <include reference="eP8-MO-Awg"/>
                                     <include reference="GuI-gR-hm2"/>
                                     <include reference="M9c-qS-8lT"/>
+                                    <include reference="acp-yD-X7K"/>
                                     <include reference="dXz-Rp-sEG"/>
                                 </mask>
                             </variation>
