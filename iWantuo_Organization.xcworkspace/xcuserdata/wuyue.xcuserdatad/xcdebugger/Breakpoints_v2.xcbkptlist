@@ -84,38 +84,6 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iWantuo_Organization/Controller/My/MyClass(&#x73ed;&#x7ea7;&#x7ba1;&#x7406;)/MyClassViewController.m"
-            timestampString = "475575332.0874"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "185"
-            endingLineNumber = "185"
-            landmarkName = "-myClassCellCliecDeleBtn:withIndexPath:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iWantuo_Organization/Controller/My/MyClass(&#x73ed;&#x7ea7;&#x7ba1;&#x7406;)/MyClassViewController.m"
-            timestampString = "475575363.753509"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "189"
-            endingLineNumber = "189"
-            landmarkName = "-myClassCellCliecDeleBtn:withIndexPath:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iWantuo_Organization/Controller/My/MyClass(&#x73ed;&#x7ea7;&#x7ba1;&#x7406;)/MyClassViewController.m"
             timestampString = "475576044.311101"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
