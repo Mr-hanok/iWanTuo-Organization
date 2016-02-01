@@ -275,13 +275,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "iWantuo_Organization/Controller/Home/HomeViewController.m"
-            timestampString = "476005720.867835"
+            filePath = "iWantuo_Organization/Controller/Discover/DisSearchViewController.m"
+            timestampString = "476007852.703175"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
-            landmarkName = "-serverApi_FinishedSuccessed:result:"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
+            landmarkName = "-searchAddress"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iWantuo_Organization/Controller/Home/AddressListViewController.m"
+            timestampString = "476007999.797786"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "-searchAddress"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
