@@ -270,7 +270,11 @@
     self.nameTF.text = self.model.organization;
     self.describeTF.text = self.model.introduce;
     self.tagTF.text = self.model.label;
-    self.priceTF.text = self.model.cost;
+    if ([self.model.cost isEqualToString:@"0"]) {
+        self.priceTF.text = nil;
+    }else{
+        self.priceTF.text = self.model.cost;
+    }
     self.adressTF.text = self.model.address;
     self.phoneTF.text = self.model.phone;
 }
