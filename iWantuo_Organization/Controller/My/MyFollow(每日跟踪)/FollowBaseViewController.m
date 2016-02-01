@@ -207,10 +207,10 @@
  *  签到 总结 追踪按钮
  */
 - (IBAction)followBtnsAction:(UIButton *)sender {
-    sender.selected = !sender.selected;
-    if (sender) {
-        
+    if (sender.selected) {
+        return;
     }
+    sender.selected = !sender.selected;
     [self.view endEditing:YES];
     switch (sender.tag) {
         case 101://签到

@@ -144,7 +144,7 @@
                                                 <constraint firstAttribute="height" constant="80" id="EIR-zx-odt"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
                                             <variation key="default">
                                                 <mask key="constraints">
                                                     <exclude reference="EIR-zx-odt"/>

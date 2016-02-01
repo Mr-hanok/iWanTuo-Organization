@@ -105,6 +105,7 @@
         NSDictionary *dic =  [sr.dic objectForKey:@"trace"];
         self.followmodel = [FollowModel initWithDic:dic];
         self.gradeTF.text = nil;
+        self.model = nil;
         //发送通知 传入界面
         [[NSNotificationCenter defaultCenter] postNotificationName:ChangeViewInfoNoti object:self.followmodel];
         //发送通知 改变进度条图片
@@ -281,6 +282,8 @@
         //设置学科分数
         if (![self.followmodel.grade isEqualToString:@"0"]) {
             self.gradeTF.text = self.followmodel.grade;
+        }else {
+            self.gradeTF.text = nil;
         }
         //设置星星显示
         NSInteger num1 = [self.followmodel.behavior integerValue]+100;
