@@ -20,3 +20,4 @@
 #define kOtherBgColor       [UIColor colorWithString:@"#efeff4"]    //浅灰色背景
 #define kNavigationColor    [UIColor colorWithString:@"#fca31e"]    //Navigation背景#720000  --
 #define kClearColor         [UIColor clearColor]  //透明颜色
+#define kGrayColor          [UIColor colorWithString:@"#666666"]    //按钮title灰色

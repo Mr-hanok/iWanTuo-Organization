@@ -64,6 +64,21 @@
 #define SyscodePhoneQueryByList   @"syscode/phoneQueryByList" //学科查询接口
 #define OrganizationPhoneUpdate   @"organization/phoneUpdate" //机构修改接口
 #define OrganizationPhoneGetById   @"organization/phoneGetById" //获取机构信息接口
+//home
+#define SearchSchoolListAction       @"school/phoneQueryByList"
+#define SearchOrganizationListAction @"organization/phoneQueryByList"
+#define CityListAction               @"syscode/phoneQueryByList"
+#define OrganizationDetailAction     @"organization/phoneGetById"
+#define AddBookAction                @"organization/phoneUpdateOrder"
+#define CancelAttentionOrgAction     @"collect/phoneDelete"
+#define AttentionOrgAction           @"collect/phoneSave" //收藏机构
+#define SubmitCommentAction          @"evaluate/phoneAddEvaluate"
+#define CommentListAction            @"evaluate/phoneEvaluateList"
+#define MyCollectionAction           @"collect/phoneQueryByList"
+#define GrowCurveAction              @"trace/phoneSelectShow"
+#define MyChildAction                @"student/phoneSelect"//获取我的小孩
+#define FollowCheckRequest        @"trace/phoneGetById" //每日表现查询接口
+
 
 
 #endif

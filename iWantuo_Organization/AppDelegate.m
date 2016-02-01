@@ -10,8 +10,13 @@
 #import "SystemHandler.h"
 #import "LoginViewController.h"
 
-@interface AppDelegate ()
+//第三方平台的SDK头文件，根据需要的平台导入。
+#import <ShareSDK/ShareSDK.h>
+#import <ShareSDKConnector/ShareSDKConnector.h>
+#import "WXApi.h"
 
+@interface AppDelegate ()
+@property (nonatomic, strong) BMKMapManager *mapManager;
 @end
 
 @implementation AppDelegate
@@ -57,16 +62,65 @@
     [[AccountManager sharedInstance] saveAccountInfoToDisk];
 }
 
-#pragma mark 初始化第三方
-- (void)initializePlat {
 
+#pragma mark - private 初始化第三方平台
+- (void)initializePlat {
+    
+    [self initMap];
+    [self initShareSDK];
     [self initUmeng];
+}
+
+- (void)initMap {
+    //设置百度地图
+    self.mapManager = [[BMKMapManager alloc]init];
+    // 如果要关注网络及授权验证事件，请设定     generalDelegate参数
+    //key已更换为iWantuo的了
+    BOOL ret = [self.mapManager start:@"4YO0YwrrN3l75ftF5u5pO6Bb"  generalDelegate:nil];
+    if (!ret) {
+        NSLog(@"manager start failed!");
+    }
+}
+
+- (void)initShareSDK {
+    
+    [ShareSDK registerApp:@"d33bc55e6ff8"
+     
+          activePlatforms:@[
+                            @(SSDKPlatformTypeWechat)]
+                 onImport:^(SSDKPlatformType platformType)
+     {
+         switch (platformType)
+         {
+             case SSDKPlatformTypeWechat:
+                 [ShareSDKConnector connectWeChat:[WXApi class]];
+                 break;
+                 
+             default:
+                 break;
+         }
+     }
+          onConfiguration:^(SSDKPlatformType platformType, NSMutableDictionary *appInfo)
+     {
+         
+         switch (platformType)
+         {
+             case SSDKPlatformTypeWechat:
+                 [appInfo SSDKSetupWeChatByAppId:@"wx69aecc1a2a29b130"
+                                       appSecret:@"cb80fd46a5d9458750062721fe5a314e"];
+                 break;
+             default:
+                 break;
+         }
+     }];
 }
 
 - (void)initUmeng {
     //key已更换为iWantuo的了
     [MobClick startWithAppkey:@"569864e7e0f55af78b001fbb" reportPolicy:BATCH   channelId:nil];
 }
+
+
 
 
 @end

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HistoryCommentViewController">
+            <connections>
+                <outlet property="tableView" destination="WkU-XL-HZa" id="LUl-fd-OIL"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WkU-XL-HZa">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="TEu-nP-bqu"/>
+                        <outlet property="delegate" destination="-1" id="J6g-2j-9aN"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="WkU-XL-HZa" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="6tN-sB-K13"/>
+                <constraint firstItem="WkU-XL-HZa" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Jsd-Jy-QbZ"/>
+                <constraint firstAttribute="trailing" secondItem="WkU-XL-HZa" secondAttribute="trailing" id="Snv-5r-hwP"/>
+                <constraint firstAttribute="bottom" secondItem="WkU-XL-HZa" secondAttribute="bottom" id="iYU-xa-Nov"/>
+            </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="WkU-XL-HZa"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="6tN-sB-K13"/>
+                    <exclude reference="Jsd-Jy-QbZ"/>
+                    <exclude reference="Snv-5r-hwP"/>
+                    <exclude reference="iYU-xa-Nov"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="WkU-XL-HZa"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="6tN-sB-K13"/>
+                    <include reference="Jsd-Jy-QbZ"/>
+                    <include reference="Snv-5r-hwP"/>
+                    <include reference="iYU-xa-Nov"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+</document>

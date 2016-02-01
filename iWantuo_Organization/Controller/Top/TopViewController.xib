@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TopViewController">
             <connections>
+                <outlet property="topImageView" destination="1b6-z2-krC" id="ywc-aq-9Wk"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -13,7 +16,79 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="top" translatesAutoresizingMaskIntoConstraints="NO" id="1b6-z2-krC">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="1b6-z2-krC" secondAttribute="height" multiplier="50:19" id="deF-q0-9aL"/>
+                        <constraint firstAttribute="height" constant="152" id="yMR-Ab-0Or"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="deF-q0-9aL"/>
+                            <exclude reference="yMR-Ab-0Or"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="deF-q0-9aL"/>
+                            <exclude reference="yMR-Ab-0Or"/>
+                        </mask>
+                    </variation>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topBottom" translatesAutoresizingMaskIntoConstraints="NO" id="rvi-N9-gZ0">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                </imageView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="1b6-z2-krC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="237-1I-6as"/>
+                <constraint firstAttribute="bottom" secondItem="rvi-N9-gZ0" secondAttribute="bottom" id="R5x-d3-3HS">
+                    <variation key="heightClass=regular-widthClass=compact" constant="49"/>
+                </constraint>
+                <constraint firstItem="rvi-N9-gZ0" firstAttribute="trailing" secondItem="1b6-z2-krC" secondAttribute="trailing" id="aaP-bB-moj"/>
+                <constraint firstItem="rvi-N9-gZ0" firstAttribute="leading" secondItem="1b6-z2-krC" secondAttribute="leading" id="fEG-Mi-y6b"/>
+                <constraint firstAttribute="trailing" secondItem="1b6-z2-krC" secondAttribute="trailing" id="hpU-aJ-pwu"/>
+                <constraint firstItem="1b6-z2-krC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="igP-hG-zS0"/>
+                <constraint firstItem="1b6-z2-krC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ofz-1c-zA5"/>
+                <constraint firstItem="rvi-N9-gZ0" firstAttribute="top" secondItem="1b6-z2-krC" secondAttribute="bottom" id="ub5-p1-Add"/>
+            </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="1b6-z2-krC"/>
+                    <exclude reference="rvi-N9-gZ0"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="237-1I-6as"/>
+                    <exclude reference="hpU-aJ-pwu"/>
+                    <exclude reference="igP-hG-zS0"/>
+                    <exclude reference="ofz-1c-zA5"/>
+                    <exclude reference="R5x-d3-3HS"/>
+                    <exclude reference="aaP-bB-moj"/>
+                    <exclude reference="fEG-Mi-y6b"/>
+                    <exclude reference="ub5-p1-Add"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="1b6-z2-krC"/>
+                    <include reference="rvi-N9-gZ0"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="237-1I-6as"/>
+                    <include reference="hpU-aJ-pwu"/>
+                    <include reference="igP-hG-zS0"/>
+                    <include reference="ofz-1c-zA5"/>
+                    <include reference="R5x-d3-3HS"/>
+                    <include reference="aaP-bB-moj"/>
+                    <include reference="fEG-Mi-y6b"/>
+                    <include reference="ub5-p1-Add"/>
+                </mask>
+            </variation>
         </view>
     </objects>
+    <resources>
+        <image name="top" width="320" height="112"/>
+        <image name="topBottom" width="320" height="400"/>
+    </resources>
 </document>
