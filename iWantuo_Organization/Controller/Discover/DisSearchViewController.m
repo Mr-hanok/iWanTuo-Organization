@@ -158,7 +158,7 @@
     citySearchOption = [[BMKCitySearchOption alloc]init];
     citySearchOption.pageIndex = curPage;
     citySearchOption.pageCapacity = 10;
-    citySearchOption.city = [AccountManager sharedInstance].locationName;
+    citySearchOption.city = @"上海";//[AccountManager sharedInstance].locationName;
     citySearchOption.keyword = self.textField.text;
     BOOL flag = [_poisearch poiSearchInCity:citySearchOption];
     

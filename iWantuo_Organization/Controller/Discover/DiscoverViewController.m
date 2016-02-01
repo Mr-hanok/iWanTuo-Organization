@@ -244,7 +244,7 @@
     };
     DisSearchViewController *searchVC = [[DisSearchViewController alloc] init];
     searchVC.backBlock = backBlock;
-    searchVC.currentCity = [AccountManager sharedInstance].locationName;
+    searchVC.currentCity = @"上海";//[AccountManager sharedInstance].locationName;
     searchVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:searchVC animated:YES];
 }

@@ -167,7 +167,7 @@ typedef enum : NSUInteger {
         }
         AddressListViewController *addressVC = [[AddressListViewController alloc] init];
         addressVC.searchKey = self.searchTextField.text;
-        addressVC.currentCity = [AccountManager sharedInstance].locationName;
+        addressVC.currentCity = @"上海";//[AccountManager sharedInstance].locationName;
         addressVC.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:addressVC animated:YES];
     }
