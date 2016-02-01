@@ -217,7 +217,7 @@
 //            self.area = _currentAreaArr[indexPath.row];
             for (CityInfoModel *model in [AccountManager sharedInstance].addressArray) {
                 if ([model.name isEqualToString:_currentAreaArr[indexPath.row]]) {
-                    self.area = model.parentId;
+                    self.area = model.cityId;
                     self.distance = @"";
                 }
             }
@@ -271,7 +271,7 @@
 - (void)initDownMenu {
     
     [self.cityArr addObject:@"附近"];
-    [self.cityArr addObject:[AccountManager sharedInstance].locationName];
+    [self.cityArr addObject:@"上海"];//[AccountManager sharedInstance].locationName
     [self.areaArr addObject:@[@"1000米",@"2000米",@"5000米"]];
     
     NSMutableArray *array = [NSMutableArray array];
