@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyFollowViewController">
             <connections>
+                <outlet property="emptyImageView" destination="E0s-sW-NGD" id="gpw-Vs-Cf8"/>
                 <outlet property="tableview" destination="YA2-Tj-kOR" id="upi-N6-WXk"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -24,11 +25,16 @@
                         <outlet property="delegate" destination="-1" id="guC-Sy-yrT"/>
                     </connections>
                 </tableView>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty" translatesAutoresizingMaskIntoConstraints="NO" id="E0s-sW-NGD">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="E0s-sW-NGD" firstAttribute="centerX" secondItem="YA2-Tj-kOR" secondAttribute="centerX" id="0Si-mR-Lic"/>
                 <constraint firstAttribute="bottom" secondItem="YA2-Tj-kOR" secondAttribute="bottom" id="2Zx-sS-Pwg"/>
                 <constraint firstAttribute="trailing" secondItem="YA2-Tj-kOR" secondAttribute="trailing" id="FZi-xK-vnp"/>
+                <constraint firstItem="E0s-sW-NGD" firstAttribute="centerY" secondItem="YA2-Tj-kOR" secondAttribute="centerY" id="SCC-PB-Yt0"/>
                 <constraint firstItem="YA2-Tj-kOR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="YoM-w4-r6O"/>
                 <constraint firstItem="YA2-Tj-kOR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="y8y-y0-vX8"/>
             </constraints>
@@ -36,26 +42,35 @@
             <variation key="default">
                 <mask key="subviews">
                     <exclude reference="YA2-Tj-kOR"/>
+                    <exclude reference="E0s-sW-NGD"/>
                 </mask>
                 <mask key="constraints">
                     <exclude reference="2Zx-sS-Pwg"/>
                     <exclude reference="FZi-xK-vnp"/>
                     <exclude reference="YoM-w4-r6O"/>
                     <exclude reference="y8y-y0-vX8"/>
+                    <exclude reference="0Si-mR-Lic"/>
+                    <exclude reference="SCC-PB-Yt0"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
                 <mask key="subviews">
                     <include reference="YA2-Tj-kOR"/>
+                    <include reference="E0s-sW-NGD"/>
                 </mask>
                 <mask key="constraints">
                     <include reference="2Zx-sS-Pwg"/>
                     <include reference="FZi-xK-vnp"/>
                     <include reference="YoM-w4-r6O"/>
                     <include reference="y8y-y0-vX8"/>
+                    <include reference="0Si-mR-Lic"/>
+                    <include reference="SCC-PB-Yt0"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="218" y="209"/>
         </view>
     </objects>
+    <resources>
+        <image name="empty" width="158" height="134"/>
+    </resources>
 </document>

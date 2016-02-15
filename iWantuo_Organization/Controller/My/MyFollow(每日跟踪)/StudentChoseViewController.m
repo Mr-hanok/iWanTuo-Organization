@@ -15,11 +15,12 @@
 #import "StudentModel.h"
 #import "FollowSummaryController.h"
 
-@interface StudentChoseViewController ()<UITableViewDataSource,UITableViewDelegate,PageManagerDelegate,APIRequestDelegate>
+@interface StudentChoseViewController ()<UITableViewDataSource,UITableViewDelegate,PageManagerDelegate,APIRequestDelegate,UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 @property (nonatomic, strong) NSMutableArray *dataArray;
 @property (nonatomic, strong) PageManager *pageManager;
 @property (nonatomic, strong) ApiStudentByClassRequest *api;
+@property (weak, nonatomic) IBOutlet UIImageView *emptyImageView;
 @end
 
 @implementation StudentChoseViewController
@@ -69,6 +70,12 @@
             }
             api.requestCurrentPage ++;
             NSArray *array = [sr.dic objectForKey:@"StudentClassList"];
+            //判断是否有数据
+            if (array.count > 0 ) {
+                self.emptyImageView.hidden = YES;
+            } else {
+                self.emptyImageView.hidden = NO;
+            }
             for (NSDictionary *dic in array) {
                 
                 StudentModel *model = [StudentModel initWithDic:dic];
@@ -148,24 +155,43 @@
 //    [self.navigationController pushViewController:vc animated:YES];
     
 }
+#pragma mark - UITextFieldDelegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    //取消textField的第一响应者
+    [textField resignFirstResponder];
+    
+    //根据用户搜索的类型跳不同的页面.并把查询的值传过去.
+    if (textField.text.length == 0 || [[textField.text stringByTrimmingCharactersInSet:[NSMutableCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
+        [HUDManager showWarningWithText:@"请输入学生名称"];
+        return NO;
+    }
+    
+    //执行按名称查询
+    [HUDManager showLoadingHUDView:self.view];
+    self.api.requestCurrentPage = 1;
+    
+    [self.api setApiParamsWithClassId:self.classModel.classId name:textField.text page:[NSString stringWithFormat:@"%@", @(self.api.requestCurrentPage)]];
+    [APIClient execute:self.api];    return YES;
+}
 
 #pragma mark - event response
 #pragma mark - private methods
 - (void)inistalSearch{
-    self.title = @"选择学生";
-//    UIImageView *iv = [[UIImageView alloc]initWithFrame:CGRectMake(0, 2, 30, 25)];
-//    iv.image = [UIImage imageNamed:@"home_glass"];
-//    UITextField *tf = [[UITextField alloc]initWithFrame:CGRectMake(0, 0, 200, 30)];
-//    tf.placeholder = @"选择学生";
-//    tf.leftView = iv;
-//    tf.leftViewMode = UITextFieldViewModeAlways;
-//    tf.layer.cornerRadius = 5;
-//    tf.layer.masksToBounds = YES;
-//    tf.layer.borderWidth = 1.f;
-//    [tf setBorderStyle:UITextBorderStyleRoundedRect];
-//    tf.layer.borderColor = kNavigationColor.CGColor;
-//    
-//    self.navigationItem.titleView =tf;
+   // self.title = @"选择学生";
+    UIImageView *iv = [[UIImageView alloc]initWithFrame:CGRectMake(0, 2, 30, 25)];
+    iv.image = [UIImage imageNamed:@"home_glass"];
+    UITextField *tf = [[UITextField alloc]initWithFrame:CGRectMake(0, 0, 200, 30)];
+    tf.placeholder = @"选择学生";
+    tf.leftView = iv;
+    tf.leftViewMode = UITextFieldViewModeAlways;
+    tf.layer.cornerRadius = 5;
+    tf.layer.masksToBounds = YES;
+    tf.layer.borderWidth = 1.f;
+    [tf setBorderStyle:UITextBorderStyleRoundedRect];
+    tf.layer.borderColor = kNavigationColor.CGColor;
+    tf.delegate = self;
+    self.navigationItem.titleView =tf;
     
 }
 

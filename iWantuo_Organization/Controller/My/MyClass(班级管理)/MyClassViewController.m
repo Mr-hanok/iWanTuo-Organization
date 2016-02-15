@@ -124,13 +124,13 @@
     
     self.apiClassList.requestCurrentPage = 1;
 
-    [self.apiClassList setApiParamsWithOrganizationAccounts:[AccountManager sharedInstance].account.loginAccounts page:[NSString stringWithFormat:@"%@", @(self.apiClassList.requestCurrentPage)]];
+    [self.apiClassList setApiParamsWithOrganizationAccounts:[AccountManager sharedInstance].account.loginAccounts page:[NSString stringWithFormat:@"%@", @(self.apiClassList.requestCurrentPage)]organizationClass:@""];
     [APIClient execute:self.apiClassList];
 }
 - (void)footerRereshing {
     
     
-    [self.apiClassList setApiParamsWithOrganizationAccounts:[AccountManager sharedInstance].account.loginAccounts page:[NSString stringWithFormat:@"%@", @(self.apiClassList.requestCurrentPage)]];
+    [self.apiClassList setApiParamsWithOrganizationAccounts:[AccountManager sharedInstance].account.loginAccounts page:[NSString stringWithFormat:@"%@", @(self.apiClassList.requestCurrentPage)]organizationClass:@""];
     [APIClient execute:self.apiClassList];
 }
 
