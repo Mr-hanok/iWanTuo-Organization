@@ -108,11 +108,15 @@
 
 - (void)sendFeedback
 {
-    if (self.suggestionTView.text.length <= 0) {
+    if (self.suggestionTView.text.length <= 0 || [[self.suggestionTView.text stringByTrimmingCharactersInSet:[NSMutableCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
         [HUDManager showWarningWithText:@"请填写您的建议"];
         return;
     }
-    [self.feedbackApi setApiParmsWithDic:@{@"feedbackDetails":self.suggestionTView.text}];
+    if (self.connectTF.text.length <= 0 || [[self.connectTF.text stringByTrimmingCharactersInSet:[NSMutableCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
+        [HUDManager showWarningWithText:@"请填写您的联系方式"];
+        return;
+    }
+    [self.feedbackApi setApiParmsWithDic:@{@"feedbackDetails":self.suggestionTView.text, @"contact":self.connectTF.text}];
     [APIClient execute:self.feedbackApi];
     [HUDManager showLoadingHUDView:self.view withText:@"发送中..."];
     

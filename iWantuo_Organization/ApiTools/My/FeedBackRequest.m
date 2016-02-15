@@ -28,6 +28,7 @@
 {
     [self.params setObject:[AccountManager sharedInstance].account.loginAccounts forKey:@"loginAccounts"];
     [self.params setObject:dic[@"feedbackDetails"] forKey:@"feedbackDetails"];
+    [self.params setObject:dic[@"contact"] forKey:@"contact"];
     
 }
 @end
