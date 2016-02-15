@@ -1790,6 +1790,7 @@
 				TargetAttributes = {
 					BE25EB2E1C44FC5F00068309 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 9W9VC28A53;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -2237,7 +2238,8 @@
 			baseConfigurationReference = ACA8CD8FCCEFD0CEA801BB92 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: junyang an (824Q6C6EPJ)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Yuntai Software (Beijing) Technology Co., Ltd.";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/iWantuo_Organization/Vendors/BaiduMap_IOSSDK_v2.9.1_Lib",
@@ -2263,7 +2265,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.uniomx.iwantuoOrganization;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "bc0d40b3-571f-4333-93da-e9b2d500a99d";
+				PROVISIONING_PROFILE = "1bdafd56-043f-4b22-b39c-397714bdc9ee";
 			};
 			name = Debug;
 		};
@@ -2272,7 +2274,8 @@
 			baseConfigurationReference = E11EE862B914DC8D84148A51 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: junyang an (824Q6C6EPJ)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Yuntai Software (Beijing) Technology Co., Ltd.";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/iWantuo_Organization/Vendors/BaiduMap_IOSSDK_v2.9.1_Lib",
@@ -2298,7 +2301,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.uniomx.iwantuoOrganization;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "bc0d40b3-571f-4333-93da-e9b2d500a99d";
+				PROVISIONING_PROFILE = "1bdafd56-043f-4b22-b39c-397714bdc9ee";
 			};
 			name = Release;
 		};
