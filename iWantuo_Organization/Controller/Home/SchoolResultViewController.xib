@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SchoolResultViewController">
             <connections>
+                <outlet property="emptyImageView" destination="eg4-mz-NbD" id="1oY-Vi-y5S"/>
                 <outlet property="tableView" destination="F6F-bG-EMe" id="Xbz-LL-6sI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -24,36 +25,50 @@
                         <outlet property="delegate" destination="-1" id="Qve-Lv-uJh"/>
                     </connections>
                 </tableView>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty" translatesAutoresizingMaskIntoConstraints="NO" id="eg4-mz-NbD">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="eg4-mz-NbD" firstAttribute="centerY" secondItem="F6F-bG-EMe" secondAttribute="centerY" id="A9z-xx-eP3"/>
                 <constraint firstItem="F6F-bG-EMe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="D5y-xE-g6n"/>
                 <constraint firstAttribute="bottom" secondItem="F6F-bG-EMe" secondAttribute="bottom" id="E2F-dX-HTc"/>
+                <constraint firstItem="eg4-mz-NbD" firstAttribute="centerX" secondItem="F6F-bG-EMe" secondAttribute="centerX" id="Yhh-Hg-MZE"/>
                 <constraint firstAttribute="trailing" secondItem="F6F-bG-EMe" secondAttribute="trailing" id="qsJ-sZ-1zv"/>
                 <constraint firstItem="F6F-bG-EMe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="vbT-xS-hfA"/>
             </constraints>
             <variation key="default">
                 <mask key="subviews">
                     <exclude reference="F6F-bG-EMe"/>
+                    <exclude reference="eg4-mz-NbD"/>
                 </mask>
                 <mask key="constraints">
                     <exclude reference="D5y-xE-g6n"/>
                     <exclude reference="E2F-dX-HTc"/>
                     <exclude reference="qsJ-sZ-1zv"/>
                     <exclude reference="vbT-xS-hfA"/>
+                    <exclude reference="A9z-xx-eP3"/>
+                    <exclude reference="Yhh-Hg-MZE"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
                 <mask key="subviews">
                     <include reference="F6F-bG-EMe"/>
+                    <include reference="eg4-mz-NbD"/>
                 </mask>
                 <mask key="constraints">
                     <include reference="D5y-xE-g6n"/>
                     <include reference="E2F-dX-HTc"/>
                     <include reference="qsJ-sZ-1zv"/>
                     <include reference="vbT-xS-hfA"/>
+                    <include reference="A9z-xx-eP3"/>
+                    <include reference="Yhh-Hg-MZE"/>
                 </mask>
             </variation>
         </view>
     </objects>
+    <resources>
+        <image name="empty" width="158" height="134"/>
+    </resources>
 </document>
