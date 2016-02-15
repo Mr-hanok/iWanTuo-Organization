@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyClassTeacherViewController">
             <connections>
+                <outlet property="emptyImageView" destination="7qW-Q9-GZY" id="OLl-ow-qWV"/>
                 <outlet property="tableview" destination="NdM-CJ-YM8" id="vdz-YM-moY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -24,6 +25,12 @@
                         <outlet property="delegate" destination="-1" id="NIe-2d-uPN"/>
                     </connections>
                 </tableView>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty" translatesAutoresizingMaskIntoConstraints="NO" id="7qW-Q9-GZY">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                        <rect key="frame" x="81" y="217" width="158" height="134"/>
+                    </variation>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -36,6 +43,7 @@
             <variation key="default">
                 <mask key="subviews">
                     <exclude reference="NdM-CJ-YM8"/>
+                    <exclude reference="7qW-Q9-GZY"/>
                 </mask>
                 <mask key="constraints">
                     <exclude reference="PyY-lM-NrR"/>
@@ -47,6 +55,7 @@
             <variation key="heightClass=regular-widthClass=compact">
                 <mask key="subviews">
                     <include reference="NdM-CJ-YM8"/>
+                    <include reference="7qW-Q9-GZY"/>
                 </mask>
                 <mask key="constraints">
                     <include reference="PyY-lM-NrR"/>
@@ -58,4 +67,7 @@
             <point key="canvasLocation" x="160" y="4"/>
         </view>
     </objects>
+    <resources>
+        <image name="empty" width="158" height="134"/>
+    </resources>
 </document>

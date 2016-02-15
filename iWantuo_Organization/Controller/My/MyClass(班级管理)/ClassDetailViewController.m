@@ -21,6 +21,7 @@
 @property (nonatomic, strong) ApiStudentByClassRequest *api;
 @property (nonatomic, strong) ApiDeleteStudentsByClassRequest *apiDelete;
 @property (nonatomic, strong) NSMutableArray *deleteArray;
+@property (weak, nonatomic) IBOutlet UIImageView *emptyImageView;
 @end
 
 @implementation ClassDetailViewController
@@ -106,6 +107,13 @@
             }
             api.requestCurrentPage ++;
             NSArray *array = [sr.dic objectForKey:@"StudentClassList"];
+            //是否有数据
+            if (array.count > 0 ) {
+                self.emptyImageView.hidden = YES;
+            } else {
+                self.emptyImageView.hidden = NO;
+            }
+
             for (NSDictionary *dic in array) {
                 
                 StudentModel *model = [StudentModel initWithDic:dic];
