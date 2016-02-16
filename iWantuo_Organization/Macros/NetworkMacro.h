@@ -54,7 +54,8 @@
 #define AddClassAction               @"class/phoneSave" //添加班级
 #define ClassListAction              @"class/phoneSelect" //获取机构下的班级
 #define DeleteClassAction            @"class/phoneDelete"//删除班级
-#define StudentByOrgAndClassAction           @"studentClass/phoneSelectNoStudent" //获取班级下未添加的学生
+#define StudentByOrgAndClassAction   @"studentClass/phoneSelectNoStudent" //获取班级下未添加的学生
+#define StudentListByOrgAction       @"studentSchool/phoneStudentList" //获取机构下的学生
 #define SaveStudentsByClassAction    @"studentClass/phoneSaveList" //批量保存学员与班级关系
 #define DeleteStudentsByClassAction  @"studentClass/phoneDeleteList" //批量删除学员与班级关系
 #define DeleteTeacherAction          @"teacher/phoneDelete" //删除老师

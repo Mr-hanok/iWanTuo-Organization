@@ -106,7 +106,6 @@
         }
     } else if (api == self.apiDelete) {
         if (sr.status == 0) {
-//            [self.tableview deleteRowsAtIndexPaths:@[self.indexPath] withRowAnimation:UITableViewRowAnimationRight];
             [self.dataArray removeObjectAtIndex:self.indexPath.row];
             [self.tableview reloadData];
             

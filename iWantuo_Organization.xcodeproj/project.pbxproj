@@ -244,6 +244,11 @@
 		BEED9E961C72FCD10081BDBA /* MyNewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEED9E941C72FCD10081BDBA /* MyNewsDetailViewController.m */; };
 		BEED9E971C72FCD10081BDBA /* MyNewsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEED9E951C72FCD10081BDBA /* MyNewsDetailViewController.xib */; };
 		BEED9E9A1C73013D0081BDBA /* ApiPushMessageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BEED9E991C73013D0081BDBA /* ApiPushMessageRequest.m */; };
+		BEED9E9E1C730C7B0081BDBA /* StudentListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEED9E9C1C730C7B0081BDBA /* StudentListViewController.m */; };
+		BEED9E9F1C730C7B0081BDBA /* StudentListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEED9E9D1C730C7B0081BDBA /* StudentListViewController.xib */; };
+		BEED9EA21C7315E80081BDBA /* ApiStudentListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BEED9EA11C7315E80081BDBA /* ApiStudentListRequest.m */; };
+		BEED9EA61C7320530081BDBA /* StudentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BEED9EA41C7320530081BDBA /* StudentCell.m */; };
+		BEED9EA71C7320530081BDBA /* StudentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEED9EA51C7320530081BDBA /* StudentCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -667,6 +672,14 @@
 		BEED9E951C72FCD10081BDBA /* MyNewsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyNewsDetailViewController.xib; sourceTree = "<group>"; };
 		BEED9E981C73013D0081BDBA /* ApiPushMessageRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiPushMessageRequest.h; sourceTree = "<group>"; };
 		BEED9E991C73013D0081BDBA /* ApiPushMessageRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiPushMessageRequest.m; sourceTree = "<group>"; };
+		BEED9E9B1C730C7B0081BDBA /* StudentListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentListViewController.h; sourceTree = "<group>"; };
+		BEED9E9C1C730C7B0081BDBA /* StudentListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentListViewController.m; sourceTree = "<group>"; };
+		BEED9E9D1C730C7B0081BDBA /* StudentListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StudentListViewController.xib; sourceTree = "<group>"; };
+		BEED9EA01C7315E80081BDBA /* ApiStudentListRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiStudentListRequest.h; sourceTree = "<group>"; };
+		BEED9EA11C7315E80081BDBA /* ApiStudentListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiStudentListRequest.m; sourceTree = "<group>"; };
+		BEED9EA31C7320530081BDBA /* StudentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentCell.h; sourceTree = "<group>"; };
+		BEED9EA41C7320530081BDBA /* StudentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentCell.m; sourceTree = "<group>"; };
+		BEED9EA51C7320530081BDBA /* StudentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StudentCell.xib; sourceTree = "<group>"; };
 		E11EE862B914DC8D84148A51 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1036,6 +1049,9 @@
 				BED7D8C41C50D085005A338E /* AccountListViewController.h */,
 				BED7D8C51C50D085005A338E /* AccountListViewController.m */,
 				BED7D8C61C50D085005A338E /* AccountListViewController.xib */,
+				BEED9E9B1C730C7B0081BDBA /* StudentListViewController.h */,
+				BEED9E9C1C730C7B0081BDBA /* StudentListViewController.m */,
+				BEED9E9D1C730C7B0081BDBA /* StudentListViewController.xib */,
 			);
 			path = "MyStudent(学员管理)";
 			sourceTree = "<group>";
@@ -1650,6 +1666,9 @@
 				BED7D8B61C50A6DB005A338E /* AddStudentCell.h */,
 				BED7D8B71C50A6DB005A338E /* AddStudentCell.m */,
 				BED7D8B81C50A6DB005A338E /* AddStudentCell.xib */,
+				BEED9EA31C7320530081BDBA /* StudentCell.h */,
+				BEED9EA41C7320530081BDBA /* StudentCell.m */,
+				BEED9EA51C7320530081BDBA /* StudentCell.xib */,
 			);
 			path = MyStudent;
 			sourceTree = "<group>";
@@ -1678,6 +1697,8 @@
 				BE69F3B21C520FEC00EFA44D /* ApiDeleteClassRequest.m */,
 				BE69F3B41C52108200EFA44D /* ApiStudentByOrgRequest.h */,
 				BE69F3B51C52108200EFA44D /* ApiStudentByOrgRequest.m */,
+				BEED9EA01C7315E80081BDBA /* ApiStudentListRequest.h */,
+				BEED9EA11C7315E80081BDBA /* ApiStudentListRequest.m */,
 				BE40556D1C5355EC00590788 /* ApiSaveStudentsByClassRequest.h */,
 				BE40556E1C5355EC00590788 /* ApiSaveStudentsByClassRequest.m */,
 				BE4055701C5355FF00590788 /* ApiDeleteStudentsByClassRequest.h */,
@@ -1868,6 +1889,7 @@
 				37C4E9001C51DEFB00583902 /* StudentChoseViewController.xib in Resources */,
 				BED0C4C81C5EF74F000A75B3 /* TopListViewController.xib in Resources */,
 				BED0C5511C5F04FA000A75B3 /* mapapi.bundle in Resources */,
+				BEED9EA71C7320530081BDBA /* StudentCell.xib in Resources */,
 				37E1DDEB1C4DDD5800245BE6 /* MyClassTeacherViewController.xib in Resources */,
 				BED0C4AE1C5EF71B000A75B3 /* OrganizationListViewController.xib in Resources */,
 				63B2E7DD1C59E80D0038EEF3 /* ChangePasswordController.xib in Resources */,
@@ -1902,6 +1924,7 @@
 				BED0C4AA1C5EF71B000A75B3 /* AddressListViewController.xib in Resources */,
 				BED0C52E1C5EF95D000A75B3 /* read_me.txt in Resources */,
 				BE25EB3F1C44FC5F00068309 /* Assets.xcassets in Resources */,
+				BEED9E9F1C730C7B0081BDBA /* StudentListViewController.xib in Resources */,
 				37E1DDF01C4DDD7400245BE6 /* MyPushMessageViewController.xib in Resources */,
 				BED0C4DE1C5EF7B7000A75B3 /* OrganizationCell.xib in Resources */,
 				BECC8C3A1C57721900AB93E3 /* NewVersionCollectionCell.xib in Resources */,
@@ -2067,6 +2090,7 @@
 				37BE7E631C58C7E4000F7CF8 /* ApiOrganizationInfoRequest.m in Sources */,
 				375001B51C50FD0D00B14021 /* ClassDetailViewController.m in Sources */,
 				37E1DDCB1C4DD92600245BE6 /* MyMessageViewController.m in Sources */,
+				BEED9E9E1C730C7B0081BDBA /* StudentListViewController.m in Sources */,
 				BE25EBA41C44FD9200068309 /* UIView+Frame.m in Sources */,
 				379464221C55EC7300368B3A /* FollowModel.m in Sources */,
 				37E1DE191C4E241500245BE6 /* ApiRegisterRequest.m in Sources */,
@@ -2089,6 +2113,7 @@
 				375001B01C50D85800B14021 /* AddMyClassViewController.m in Sources */,
 				37033E371C4C9033009F27DB /* RegisterViewController.m in Sources */,
 				BED0C49B1C5EF6FF000A75B3 /* DisSearchViewController.m in Sources */,
+				BEED9EA61C7320530081BDBA /* StudentCell.m in Sources */,
 				37D724EE1C4F27040055721B /* UploadApiRequest.m in Sources */,
 				BE25EB341C44FC5F00068309 /* main.m in Sources */,
 				BE69F3A71C51D81E00EFA44D /* ApiAddTeacherRequest.m in Sources */,
@@ -2106,6 +2131,7 @@
 				BE25EBA11C44FD9200068309 /* UIColor+NSString.m in Sources */,
 				37D725051C4F7B030055721B /* CityInfoModel.m in Sources */,
 				37E1DDC31C4DD92600245BE6 /* PersonDetailController.m in Sources */,
+				BEED9EA21C7315E80081BDBA /* ApiStudentListRequest.m in Sources */,
 				BE25EBC21C44FDC700068309 /* HUDManager.m in Sources */,
 				BED0C4F51C5EF7F2000A75B3 /* ApiSearchSchoolRequest.m in Sources */,
 				37D724EB1C4F26AF0055721B /* UploadManager.m in Sources */,
