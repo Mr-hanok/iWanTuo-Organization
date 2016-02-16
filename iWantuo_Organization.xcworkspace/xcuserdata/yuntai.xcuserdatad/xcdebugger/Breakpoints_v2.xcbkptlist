@@ -256,7 +256,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iWantuo_Organization/Controller/My/BasicInfo(&#x57fa;&#x672c;&#x4fe1;&#x606f;)/PersonDetailController.m"
@@ -522,6 +522,38 @@
             startingLineNumber = "79"
             endingLineNumber = "79"
             landmarkName = "-serverApi_FinishedFailed:result:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iWantuo_Organization/Controller/My/BasicInfo(&#x57fa;&#x672c;&#x4fe1;&#x606f;)/PersonDetailController.m"
+            timestampString = "477297734.27059"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "316"
+            endingLineNumber = "316"
+            landmarkName = "-cameraAndUploadImage:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iWantuo_Organization/Controller/My/BasicInfo(&#x57fa;&#x672c;&#x4fe1;&#x606f;)/PersonDetailController.m"
+            timestampString = "477300951.745705"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
