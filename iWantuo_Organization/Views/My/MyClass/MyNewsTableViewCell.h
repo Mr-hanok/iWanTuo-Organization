@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MsgModel.h"
 /**
  *  我的消息的cell
  */
 @interface MyNewsTableViewCell : UITableViewCell
 
 + (UINib *)nibOfNewsCell;
+
+- (void)configCellWithModel:(MsgModel *)model;
 
 @end

@@ -27,6 +27,13 @@
     return [UINib nibWithNibName:@"MyNewsTableViewCell" bundle:nil];
 }
 
+- (void)configCellWithModel:(MsgModel *)model {
+    self.dateLabel.text = model.create_date;
+    self.nameLabel.text = model.push_name;
+    self.infoLabel.text = model.push_details;
+}
+
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.layer.borderColor = kBGColor.CGColor;

@@ -56,7 +56,7 @@
                         <constraint firstAttribute="height" constant="30" id="79r-3s-AdY"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <state key="normal" title="按学校搜索">
+                    <state key="normal" title="按学校搜">
                         <color key="titleColor" red="0.9882352941176471" green="0.63921568627450975" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <variation key="default">
@@ -84,7 +84,7 @@
                         <constraint firstAttribute="height" constant="30" id="oKc-of-SzW"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <state key="normal" title="按机构搜索">
+                    <state key="normal" title="按机构搜">
                         <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <variation key="default">
@@ -131,7 +131,7 @@
                         <constraint firstAttribute="height" constant="30" id="U3c-BQ-nqt"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <state key="normal" title="按周边搜索">
+                    <state key="normal" title="按周边搜">
                         <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <variation key="default">
@@ -367,6 +367,6 @@
         <image name="home_down" width="11" height="6"/>
         <image name="home_glass" width="30" height="25"/>
         <image name="home_logoImage" width="176" height="56"/>
-        <image name="home_logoTitle" width="160" height="16"/>
+        <image name="home_logoTitle" width="207" height="23"/>
     </resources>
 </document>

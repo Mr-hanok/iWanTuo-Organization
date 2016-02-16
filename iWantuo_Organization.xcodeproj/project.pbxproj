@@ -97,8 +97,6 @@
 		63B2E7EE1C59EBB20038EEF3 /* FeedbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B2E7EC1C59EBB20038EEF3 /* FeedbackViewController.xib */; };
 		63B2E8001C59EE170038EEF3 /* MyNewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B2E7FE1C59EE170038EEF3 /* MyNewsTableViewCell.m */; };
 		63B2E8011C59EE170038EEF3 /* MyNewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B2E7FF1C59EE170038EEF3 /* MyNewsTableViewCell.xib */; };
-		63B2E8051C59EECD0038EEF3 /* MyNewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B2E8031C59EECD0038EEF3 /* MyNewsDetailViewController.m */; };
-		63B2E8061C59EECD0038EEF3 /* MyNewsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B2E8041C59EECD0038EEF3 /* MyNewsDetailViewController.xib */; };
 		BE25EB341C44FC5F00068309 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE25EB331C44FC5F00068309 /* main.m */; };
 		BE25EB371C44FC5F00068309 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE25EB361C44FC5F00068309 /* AppDelegate.m */; };
 		BE25EB3F1C44FC5F00068309 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE25EB3E1C44FC5F00068309 /* Assets.xcassets */; };
@@ -241,6 +239,11 @@
 		BEE4DA0F1C48C09300510308 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE4DA0E1C48C09300510308 /* AVFoundation.framework */; };
 		BEE4DA111C48C09900510308 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE4DA101C48C09900510308 /* CoreLocation.framework */; };
 		BEE4DA131C48C09F00510308 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE4DA121C48C09F00510308 /* CoreBluetooth.framework */; };
+		BEED9E8F1C72FC730081BDBA /* MsgModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BEED9E8E1C72FC730081BDBA /* MsgModel.m */; };
+		BEED9E921C72FC8B0081BDBA /* ApiSystemMsgRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BEED9E911C72FC8B0081BDBA /* ApiSystemMsgRequest.m */; };
+		BEED9E961C72FCD10081BDBA /* MyNewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEED9E941C72FCD10081BDBA /* MyNewsDetailViewController.m */; };
+		BEED9E971C72FCD10081BDBA /* MyNewsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEED9E951C72FCD10081BDBA /* MyNewsDetailViewController.xib */; };
+		BEED9E9A1C73013D0081BDBA /* ApiPushMessageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BEED9E991C73013D0081BDBA /* ApiPushMessageRequest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -407,9 +410,6 @@
 		63B2E7FD1C59EE170038EEF3 /* MyNewsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNewsTableViewCell.h; sourceTree = "<group>"; };
 		63B2E7FE1C59EE170038EEF3 /* MyNewsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNewsTableViewCell.m; sourceTree = "<group>"; };
 		63B2E7FF1C59EE170038EEF3 /* MyNewsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyNewsTableViewCell.xib; sourceTree = "<group>"; };
-		63B2E8021C59EECD0038EEF3 /* MyNewsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNewsDetailViewController.h; sourceTree = "<group>"; };
-		63B2E8031C59EECD0038EEF3 /* MyNewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNewsDetailViewController.m; sourceTree = "<group>"; };
-		63B2E8041C59EECD0038EEF3 /* MyNewsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyNewsDetailViewController.xib; sourceTree = "<group>"; };
 		7B131BB5C3C7788EB0066AC0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACA8CD8FCCEFD0CEA801BB92 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BE25EB2F1C44FC5F00068309 /* iWantuo_Organization.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iWantuo_Organization.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -658,6 +658,15 @@
 		BEE4DA0E1C48C09300510308 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		BEE4DA101C48C09900510308 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		BEE4DA121C48C09F00510308 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		BEED9E8D1C72FC730081BDBA /* MsgModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsgModel.h; sourceTree = "<group>"; };
+		BEED9E8E1C72FC730081BDBA /* MsgModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MsgModel.m; sourceTree = "<group>"; };
+		BEED9E901C72FC8B0081BDBA /* ApiSystemMsgRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiSystemMsgRequest.h; sourceTree = "<group>"; };
+		BEED9E911C72FC8B0081BDBA /* ApiSystemMsgRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiSystemMsgRequest.m; sourceTree = "<group>"; };
+		BEED9E931C72FCD10081BDBA /* MyNewsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNewsDetailViewController.h; sourceTree = "<group>"; };
+		BEED9E941C72FCD10081BDBA /* MyNewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNewsDetailViewController.m; sourceTree = "<group>"; };
+		BEED9E951C72FCD10081BDBA /* MyNewsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyNewsDetailViewController.xib; sourceTree = "<group>"; };
+		BEED9E981C73013D0081BDBA /* ApiPushMessageRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiPushMessageRequest.h; sourceTree = "<group>"; };
+		BEED9E991C73013D0081BDBA /* ApiPushMessageRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiPushMessageRequest.m; sourceTree = "<group>"; };
 		E11EE862B914DC8D84148A51 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -896,9 +905,9 @@
 				37E1DDAD1C4DD92600245BE6 /* MyMessageViewController.h */,
 				37E1DDAE1C4DD92600245BE6 /* MyMessageViewController.m */,
 				37E1DDAF1C4DD92600245BE6 /* MyMessageViewController.xib */,
-				63B2E8021C59EECD0038EEF3 /* MyNewsDetailViewController.h */,
-				63B2E8031C59EECD0038EEF3 /* MyNewsDetailViewController.m */,
-				63B2E8041C59EECD0038EEF3 /* MyNewsDetailViewController.xib */,
+				BEED9E931C72FCD10081BDBA /* MyNewsDetailViewController.h */,
+				BEED9E941C72FCD10081BDBA /* MyNewsDetailViewController.m */,
+				BEED9E951C72FCD10081BDBA /* MyNewsDetailViewController.xib */,
 			);
 			path = "MyMessage(我的消息)";
 			sourceTree = "<group>";
@@ -1648,6 +1657,8 @@
 		BED7D8BB1C50BA45005A338E /* My */ = {
 			isa = PBXGroup;
 			children = (
+				BEED9E901C72FC8B0081BDBA /* ApiSystemMsgRequest.h */,
+				BEED9E911C72FC8B0081BDBA /* ApiSystemMsgRequest.m */,
 				379464151C55BDC500368B3A /* Follow */,
 				BED7D8BC1C50BA7C005A338E /* ApiSaveStudentRequest.h */,
 				BED7D8BD1C50BA7C005A338E /* ApiSaveStudentRequest.m */,
@@ -1681,6 +1692,8 @@
 				63B2E7DF1C59E8670038EEF3 /* ChangePasswordRequest.m */,
 				63B2E7E01C59E8670038EEF3 /* FeedBackRequest.h */,
 				63B2E7E11C59E8670038EEF3 /* FeedBackRequest.m */,
+				BEED9E981C73013D0081BDBA /* ApiPushMessageRequest.h */,
+				BEED9E991C73013D0081BDBA /* ApiPushMessageRequest.m */,
 			);
 			path = My;
 			sourceTree = "<group>";
@@ -1688,6 +1701,8 @@
 		BED7D8CF1C51043A005A338E /* My */ = {
 			isa = PBXGroup;
 			children = (
+				BEED9E8D1C72FC730081BDBA /* MsgModel.h */,
+				BEED9E8E1C72FC730081BDBA /* MsgModel.m */,
 				3794641F1C55EC5300368B3A /* Follow */,
 				BED7D8D01C51044F005A338E /* PatriarchModel.h */,
 				BED7D8D11C51044F005A338E /* PatriarchModel.m */,
@@ -1839,7 +1854,6 @@
 				BED0C4BC1C5EF739000A75B3 /* CommentViewController.xib in Resources */,
 				BECC8C341C5771ED00AB93E3 /* NewVersionViewController.xib in Resources */,
 				BED0C4981C5EF6FF000A75B3 /* DiscoverViewController.xib in Resources */,
-				63B2E8061C59EECD0038EEF3 /* MyNewsDetailViewController.xib in Resources */,
 				37E1DDC41C4DD92600245BE6 /* PersonDetailController.xib in Resources */,
 				BED0C4B01C5EF71B000A75B3 /* SchoolResultViewController.xib in Resources */,
 				BED0C4C01C5EF739000A75B3 /* OrganizationDetailViewController.xib in Resources */,
@@ -1868,6 +1882,7 @@
 				37AE23851C549102006CFCCC /* FollowBaseViewController.xib in Resources */,
 				BED0C4DC1C5EF7B7000A75B3 /* CommentCell.xib in Resources */,
 				375001BB1C50FFD400B14021 /* ClassDetailCell.xib in Resources */,
+				BEED9E971C72FCD10081BDBA /* MyNewsDetailViewController.xib in Resources */,
 				BED0C49C1C5EF6FF000A75B3 /* DisSearchViewController.xib in Resources */,
 				BED0C4CA1C5EF74F000A75B3 /* TopViewController.xib in Resources */,
 				37033E341C4C9033009F27DB /* ForgetViewController.xib in Resources */,
@@ -2031,7 +2046,9 @@
 				BE69F3AA1C520E0500EFA44D /* ApiStudentByClassRequest.m in Sources */,
 				37D725011C4F78AF0055721B /* ApiAddressListRequest.m in Sources */,
 				BED0C4F61C5EF7F2000A75B3 /* ApiSubmitCommentRequest.m in Sources */,
+				BEED9E921C72FC8B0081BDBA /* ApiSystemMsgRequest.m in Sources */,
 				37E1DE101C4E149800245BE6 /* ApiFindPassWord.m in Sources */,
+				BEED9E961C72FCD10081BDBA /* MyNewsDetailViewController.m in Sources */,
 				BE4055781C535F3300590788 /* ApiDeleteTeacherRequest.m in Sources */,
 				37033E421C4C910B009F27DB /* ApiLoginRequest.m in Sources */,
 				BE4055751C535AB900590788 /* ClassModel.m in Sources */,
@@ -2045,7 +2062,6 @@
 				BE25EBA31C44FD9200068309 /* UIImage+Video.m in Sources */,
 				BE25EB6E1C44FD8500068309 /* APIRequest.m in Sources */,
 				37033E461C4C914C009F27DB /* JKCountDownButton.m in Sources */,
-				63B2E8051C59EECD0038EEF3 /* MyNewsDetailViewController.m in Sources */,
 				37AE237F1C5490C8006CFCCC /* FollowSummaryController.m in Sources */,
 				BED0C4D21C5EF77F000A75B3 /* OrganizationModel.m in Sources */,
 				37BE7E631C58C7E4000F7CF8 /* ApiOrganizationInfoRequest.m in Sources */,
@@ -2055,6 +2071,7 @@
 				379464221C55EC7300368B3A /* FollowModel.m in Sources */,
 				37E1DE191C4E241500245BE6 /* ApiRegisterRequest.m in Sources */,
 				BE69F3A11C51C88B00EFA44D /* ApiTeacherListRequest.m in Sources */,
+				BEED9E9A1C73013D0081BDBA /* ApiPushMessageRequest.m in Sources */,
 				BED0C4971C5EF6FF000A75B3 /* DiscoverViewController.m in Sources */,
 				37E1DDEF1C4DDD7400245BE6 /* MyPushMessageViewController.m in Sources */,
 				37D724FA1C4F6A4C0055721B /* AccountManager.m in Sources */,
@@ -2081,6 +2098,7 @@
 				BED7D8CE1C510217005A338E /* ApiPatriarchListRequest.m in Sources */,
 				BE25EC021C45018800068309 /* ValueUtils.m in Sources */,
 				37033E411C4C910B009F27DB /* ApiLoginOutRequest.m in Sources */,
+				BEED9E8F1C72FC730081BDBA /* MsgModel.m in Sources */,
 				BE25EBC11C44FDC700068309 /* AlertViewManager.m in Sources */,
 				BE69F3B61C52108200EFA44D /* ApiStudentByOrgRequest.m in Sources */,
 				BED0C4991C5EF6FF000A75B3 /* DisListViewController.m in Sources */,

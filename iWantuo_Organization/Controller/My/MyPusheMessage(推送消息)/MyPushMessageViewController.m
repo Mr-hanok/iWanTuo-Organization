@@ -7,9 +7,11 @@
 //
 
 #import "MyPushMessageViewController.h"
+#import "ApiPushMessageRequest.h"
 
-@interface MyPushMessageViewController ()
+@interface MyPushMessageViewController ()<APIRequestDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *messageTV;
+@property (nonatomic, strong) ApiPushMessageRequest *api;
 
 @end
 
@@ -37,6 +39,35 @@
     
 }
 #pragma mark - 协议名
+#pragma mark - APIRequestDelegate
+- (void)serverApi_RequestFailed:(APIRequest *)api error:(NSError *)error {
+      [HUDManager hideHUDView];
+    
+    [AlertViewManager showAlertViewWithMessage:kDefaultNetWorkErrorString];
+    
+}
+
+- (void)serverApi_FinishedSuccessed:(APIRequest *)api result:(APIResult *)sr {
+
+    [HUDManager hideHUDView];
+    
+    if (sr.dic == nil || [sr.dic isKindOfClass:[NSNull class]]) {
+        return;
+    }
+
+    [HUDManager showWarningWithText:sr.msg];
+
+}
+
+- (void)serverApi_FinishedFailed:(APIRequest *)api result:(APIResult *)sr {
+
+    NSString *message = sr.msg;
+    [HUDManager hideHUDView];
+    if (message.length == 0) {
+        message = kDefaultServerErrorString;
+    }
+    [AlertViewManager showAlertViewWithMessage:message];
+}
 
 
 #pragma mark - event response
@@ -45,6 +76,14 @@
  */
 - (IBAction)sendBtnAction:(UIButton *)sender {
     [self.view endEditing:YES];
+    if (self.messageTV.text.length == 0 || [[self.messageTV.text stringByTrimmingCharactersInSet:[NSMutableCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
+        [HUDManager showWarningWithText:@"请输入推送内容"];
+        return;
+    }
+    self.api = [[ApiPushMessageRequest alloc] initWithDelegate:self];
+    [self.api setApiParmsWithContent:self.messageTV.text];
+    [APIClient execute:self.api];
+    [HUDManager showLoadingHUDView:self.view];
 }
 
 #pragma mark - private methods
