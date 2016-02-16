@@ -38,7 +38,8 @@
 #define LoginQuitAction             @"login/phoneOutLogin"              // 退出登录接口
 #define FindPassword                @"login/phoneFindPassword"  //找回密码
 #define RegisterOganiza             @"register/phoneOganizationRegister"//机构注册
-#define SendPhoneMessage            @"SendSMS/phoneSendSMSToRegister"//发送验证码请求
+#define SendPhoneMessage            @"SendSMS/phoneSendSMSToRegister"//发送验证码注册
+#define SendPhoneMessageToFind      @"SendSMS/phoneSendSMSToFind"//发送验证码找回密码
 #define UploadImageApi              @"FileUpload/phoneFilesUpload"//上传图片头像
 #define CityAreaList                @"syscode/phoneQueryByList"//城市地区列表
 

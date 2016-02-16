@@ -27,17 +27,16 @@
                 </tableView>
                 <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty" translatesAutoresizingMaskIntoConstraints="NO" id="7qW-Q9-GZY">
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                        <rect key="frame" x="81" y="217" width="158" height="134"/>
-                    </variation>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="7qW-Q9-GZY" firstAttribute="centerY" secondItem="NdM-CJ-YM8" secondAttribute="centerY" id="0A1-E0-3fB"/>
                 <constraint firstAttribute="trailing" secondItem="NdM-CJ-YM8" secondAttribute="trailing" id="PyY-lM-NrR"/>
                 <constraint firstItem="NdM-CJ-YM8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="V1w-Df-5jE"/>
                 <constraint firstAttribute="bottom" secondItem="NdM-CJ-YM8" secondAttribute="bottom" id="afK-gY-UVG"/>
                 <constraint firstItem="NdM-CJ-YM8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="bVf-Qf-btd"/>
+                <constraint firstItem="7qW-Q9-GZY" firstAttribute="centerX" secondItem="NdM-CJ-YM8" secondAttribute="centerX" id="zcR-Va-oQi"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <variation key="default">
@@ -50,6 +49,8 @@
                     <exclude reference="V1w-Df-5jE"/>
                     <exclude reference="afK-gY-UVG"/>
                     <exclude reference="bVf-Qf-btd"/>
+                    <exclude reference="0A1-E0-3fB"/>
+                    <exclude reference="zcR-Va-oQi"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
@@ -62,6 +63,8 @@
                     <include reference="V1w-Df-5jE"/>
                     <include reference="afK-gY-UVG"/>
                     <include reference="bVf-Qf-btd"/>
+                    <include reference="0A1-E0-3fB"/>
+                    <include reference="zcR-Va-oQi"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="160" y="4"/>

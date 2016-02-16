@@ -18,6 +18,9 @@
     return SERVER_HOST_PRODUCT;
 }
 - (NSString *)urlAction {
+    if ([self.type isEqualToString:@"1"]) {
+        return SendPhoneMessageToFind;
+    }
     return SendPhoneMessage;
 }
 
