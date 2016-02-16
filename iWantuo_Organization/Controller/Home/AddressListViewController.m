@@ -110,7 +110,9 @@
         
     } else if (error == BMK_SEARCH_RESULT_NOT_FOUND){
         NSLog(@"没有找到检索结果");
+        [self.dataArray removeAllObjects];
         self.emptyImageView.hidden = NO;
+        [self.tableView reloadData];
     } else if (error == BMK_SEARCH_NETWOKR_ERROR) {
         NSLog(@"网络连接错误");
     } else if (error == BMK_SEARCH_NETWOKR_TIMEOUT) {
