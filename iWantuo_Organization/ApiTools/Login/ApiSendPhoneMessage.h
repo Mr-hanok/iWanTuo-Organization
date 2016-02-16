@@ -9,6 +9,7 @@
 #import "APIRequest.h"
 
 @interface ApiSendPhoneMessage : APIRequest
+@property (nonatomic, copy) NSString *type;
 /**
  *  获取短信验证码
  */

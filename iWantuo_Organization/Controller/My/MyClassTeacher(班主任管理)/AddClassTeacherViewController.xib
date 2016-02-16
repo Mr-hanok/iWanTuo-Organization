@@ -16,7 +16,7 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ks-l7-AmS" customClass="TPKeyboardAvoidingScrollView">
@@ -201,30 +201,30 @@
                                     <exclude reference="8jv-Wh-aPT"/>
                                 </mask>
                                 <mask key="constraints">
+                                    <exclude reference="deg-rF-QEr"/>
+                                    <exclude reference="frn-jt-0f4"/>
+                                    <exclude reference="vyI-YJ-A14"/>
+                                    <exclude reference="0Hm-6c-nxy"/>
+                                    <exclude reference="coo-Me-xJA"/>
+                                    <exclude reference="pNv-jG-CUu"/>
+                                    <exclude reference="CVL-ia-Xeu"/>
+                                    <exclude reference="RfG-xF-3fC"/>
+                                    <exclude reference="iIl-Nx-hnP"/>
+                                    <exclude reference="7VM-1R-lnX"/>
+                                    <exclude reference="Lac-dI-pgD"/>
+                                    <exclude reference="u0w-ST-8Bo"/>
+                                    <exclude reference="H0A-2g-orV"/>
+                                    <exclude reference="JJq-Vi-ZG0"/>
+                                    <exclude reference="el6-k2-J1z"/>
+                                    <exclude reference="kEL-bb-MRO"/>
+                                    <exclude reference="yMK-9a-TAx"/>
                                     <exclude reference="CXE-Tk-qbf"/>
                                     <exclude reference="PTB-7h-O4x"/>
                                     <exclude reference="9WV-5E-TPz"/>
                                     <exclude reference="F4k-7n-cjg"/>
                                     <exclude reference="xwo-t9-7Lx"/>
-                                    <exclude reference="0Hm-6c-nxy"/>
-                                    <exclude reference="coo-Me-xJA"/>
-                                    <exclude reference="pNv-jG-CUu"/>
-                                    <exclude reference="el6-k2-J1z"/>
-                                    <exclude reference="kEL-bb-MRO"/>
-                                    <exclude reference="yMK-9a-TAx"/>
-                                    <exclude reference="CVL-ia-Xeu"/>
-                                    <exclude reference="RfG-xF-3fC"/>
-                                    <exclude reference="iIl-Nx-hnP"/>
                                     <exclude reference="Hwf-jY-HLG"/>
                                     <exclude reference="oWX-TM-r32"/>
-                                    <exclude reference="7VM-1R-lnX"/>
-                                    <exclude reference="Lac-dI-pgD"/>
-                                    <exclude reference="u0w-ST-8Bo"/>
-                                    <exclude reference="deg-rF-QEr"/>
-                                    <exclude reference="frn-jt-0f4"/>
-                                    <exclude reference="vyI-YJ-A14"/>
-                                    <exclude reference="H0A-2g-orV"/>
-                                    <exclude reference="JJq-Vi-ZG0"/>
                                 </mask>
                             </variation>
                             <variation key="heightClass=regular-widthClass=compact">
@@ -240,30 +240,30 @@
                                     <include reference="8jv-Wh-aPT"/>
                                 </mask>
                                 <mask key="constraints">
+                                    <include reference="deg-rF-QEr"/>
+                                    <include reference="frn-jt-0f4"/>
+                                    <include reference="vyI-YJ-A14"/>
+                                    <include reference="0Hm-6c-nxy"/>
+                                    <include reference="coo-Me-xJA"/>
+                                    <include reference="pNv-jG-CUu"/>
+                                    <include reference="CVL-ia-Xeu"/>
+                                    <include reference="RfG-xF-3fC"/>
+                                    <include reference="iIl-Nx-hnP"/>
+                                    <include reference="7VM-1R-lnX"/>
+                                    <include reference="Lac-dI-pgD"/>
+                                    <include reference="u0w-ST-8Bo"/>
+                                    <include reference="H0A-2g-orV"/>
+                                    <include reference="JJq-Vi-ZG0"/>
+                                    <include reference="el6-k2-J1z"/>
+                                    <include reference="kEL-bb-MRO"/>
+                                    <include reference="yMK-9a-TAx"/>
                                     <include reference="CXE-Tk-qbf"/>
                                     <include reference="PTB-7h-O4x"/>
                                     <include reference="9WV-5E-TPz"/>
                                     <include reference="F4k-7n-cjg"/>
                                     <include reference="xwo-t9-7Lx"/>
-                                    <include reference="0Hm-6c-nxy"/>
-                                    <include reference="coo-Me-xJA"/>
-                                    <include reference="pNv-jG-CUu"/>
-                                    <include reference="el6-k2-J1z"/>
-                                    <include reference="kEL-bb-MRO"/>
-                                    <include reference="yMK-9a-TAx"/>
-                                    <include reference="CVL-ia-Xeu"/>
-                                    <include reference="RfG-xF-3fC"/>
-                                    <include reference="iIl-Nx-hnP"/>
                                     <include reference="Hwf-jY-HLG"/>
                                     <include reference="oWX-TM-r32"/>
-                                    <include reference="7VM-1R-lnX"/>
-                                    <include reference="Lac-dI-pgD"/>
-                                    <include reference="u0w-ST-8Bo"/>
-                                    <include reference="deg-rF-QEr"/>
-                                    <include reference="frn-jt-0f4"/>
-                                    <include reference="vyI-YJ-A14"/>
-                                    <include reference="H0A-2g-orV"/>
-                                    <include reference="JJq-Vi-ZG0"/>
                                 </mask>
                             </variation>
                         </view>

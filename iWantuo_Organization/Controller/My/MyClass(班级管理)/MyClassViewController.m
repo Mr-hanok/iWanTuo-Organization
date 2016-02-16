@@ -23,6 +23,7 @@
 @property (nonatomic, strong) NSMutableArray *dataArray;
 @property (nonatomic, strong) PageManager *pageManager;
 @property (nonatomic, strong) NSIndexPath *indexPath;
+@property (weak, nonatomic) IBOutlet UIImageView *emptyImageView;
 
 @end
 
@@ -88,6 +89,13 @@
             }
             api.requestCurrentPage ++;
             NSArray *array = [sr.dic objectForKey:@"classtList"];
+            //是否有数据
+            if (array.count > 0 ) {
+                self.emptyImageView.hidden = YES;
+            } else {
+                self.emptyImageView.hidden = NO;
+            }
+
             for (NSDictionary *dic in array) {
                 ClassModel *model = [ClassModel initWithDic:dic];
                 [self.dataArray addObject:model];
@@ -124,13 +132,13 @@
     
     self.apiClassList.requestCurrentPage = 1;
 
-    [self.apiClassList setApiParamsWithOrganizationAccounts:[AccountManager sharedInstance].account.loginAccounts page:[NSString stringWithFormat:@"%@", @(self.apiClassList.requestCurrentPage)]];
+    [self.apiClassList setApiParamsWithOrganizationAccounts:[AccountManager sharedInstance].account.loginAccounts page:[NSString stringWithFormat:@"%@", @(self.apiClassList.requestCurrentPage)]organizationClass:@""];
     [APIClient execute:self.apiClassList];
 }
 - (void)footerRereshing {
     
     
-    [self.apiClassList setApiParamsWithOrganizationAccounts:[AccountManager sharedInstance].account.loginAccounts page:[NSString stringWithFormat:@"%@", @(self.apiClassList.requestCurrentPage)]];
+    [self.apiClassList setApiParamsWithOrganizationAccounts:[AccountManager sharedInstance].account.loginAccounts page:[NSString stringWithFormat:@"%@", @(self.apiClassList.requestCurrentPage)]organizationClass:@""];
     [APIClient execute:self.apiClassList];
 }
 

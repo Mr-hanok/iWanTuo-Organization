@@ -18,11 +18,12 @@
     return kApiAccessPost;
 }
 
-- (void)setApiParamsWithOrganizationAccounts:(NSString *)organizationAccounts page:(NSString *)page{
+- (void)setApiParamsWithOrganizationAccounts:(NSString *)organizationAccounts page:(NSString *)page organizationClass:(NSString *)organizationClass{
     
     [self.params setValue:organizationAccounts forKey:@"organizationAccounts"];
     [self.params setValue:page forKey:@"page"];
     [self.params setValue:kRequestDataRows forKey:@"rows"];
+    [self.params setValue:organizationClass forKey:@"organizationClass"];
 }
 
 @end

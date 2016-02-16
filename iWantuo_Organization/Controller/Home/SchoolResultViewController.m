@@ -17,6 +17,7 @@
 @property (nonatomic, strong) ApiSearchSchoolRequest *api;
 @property (nonatomic, strong) NSMutableArray *dataArray;
 @property (nonatomic, strong) PageManager *pageManager;
+@property (weak, nonatomic) IBOutlet UIImageView *emptyImageView;
 
 @end
 
@@ -101,6 +102,13 @@
         }
         api.requestCurrentPage ++;
         NSArray *array = [sr.dic objectForKey:@"schoolList"];
+        //是否有数据
+        if (array.count > 0 ) {
+            self.emptyImageView.hidden = YES;
+        } else {
+            self.emptyImageView.hidden = NO;
+        }
+
         for (NSDictionary *dic in array) {
             SchoolModel *model = [SchoolModel initWithDic:dic];
             [self.dataArray addObject:model];

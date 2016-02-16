@@ -27,6 +27,7 @@
 @property (nonatomic, strong) ApiFollowAddRequest *apiFollowAdd;//签到
 @property (nonatomic, strong) ApiFollowChangeRequest *apiChange;//修改签到
 @property (nonatomic, copy) NSString *loginName;
+@property (nonatomic, copy) NSString *loginAccount;
 
 @end
 
@@ -39,9 +40,11 @@
     //判断是老师还是机构
     if ([[AccountManager sharedInstance].account.accountsType isEqualToString:@"3"]) {//老师
         self.loginName = [AccountManager sharedInstance].account.name;
+        self.loginAccount = [AccountManager sharedInstance].account.organizationAccounts;
         
     }else {//机构
         self.loginName = [AccountManager sharedInstance].account.organization;
+        self.loginAccount = [AccountManager sharedInstance].account.loginAccounts;
     }
 
     
@@ -173,7 +176,7 @@
     if (self.followmodel == nil) {//增加签到
         [self.apiFollowAdd setApiParamsWithCreateDate:self.createDate
                                             studentId:self.studentId
-                                 organizationAccounts:[AccountManager sharedInstance].account.loginAccounts
+                                 organizationAccounts:self.loginAccount
                                                signIn:self.remarkTV.text
                                           signInImage:self.imageName
                                                status:self.status

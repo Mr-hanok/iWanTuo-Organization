@@ -10,6 +10,6 @@
 
 @interface ApiClassListRequest : APIRequest
 
-- (void)setApiParamsWithOrganizationAccounts:(NSString *)organizationAccounts page:(NSString *)page;
+- (void)setApiParamsWithOrganizationAccounts:(NSString *)organizationAccounts page:(NSString *)page organizationClass:(NSString *)organizationClass;
 
 @end

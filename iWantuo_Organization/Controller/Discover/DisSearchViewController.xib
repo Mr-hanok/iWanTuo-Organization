@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DisSearchViewController">
             <connections>
+                <outlet property="emptyImageView" destination="FzF-n8-Dvi" id="6dT-K5-vZs"/>
                 <outlet property="tableView" destination="45G-e3-4xP" id="cs2-xN-DLD"/>
                 <outlet property="textField" destination="LfH-fD-ph3" id="BfD-wM-mox"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -49,14 +50,19 @@
                         <outlet property="delegate" destination="-1" id="fTg-DC-7wB"/>
                     </connections>
                 </tableView>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty" translatesAutoresizingMaskIntoConstraints="NO" id="FzF-n8-Dvi">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="LfH-fD-ph3" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="283-yH-6sO"/>
                 <constraint firstAttribute="trailing" secondItem="45G-e3-4xP" secondAttribute="trailing" id="859-Qd-wsb"/>
+                <constraint firstItem="FzF-n8-Dvi" firstAttribute="centerY" secondItem="45G-e3-4xP" secondAttribute="centerY" id="Dv9-6t-FW4"/>
                 <constraint firstItem="45G-e3-4xP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="OUn-DN-doY"/>
                 <constraint firstItem="45G-e3-4xP" firstAttribute="top" secondItem="LfH-fD-ph3" secondAttribute="bottom" constant="10" id="ZjU-Ii-o6e"/>
                 <constraint firstAttribute="bottom" secondItem="45G-e3-4xP" secondAttribute="bottom" id="eFg-pQ-GlP"/>
+                <constraint firstItem="FzF-n8-Dvi" firstAttribute="centerX" secondItem="45G-e3-4xP" secondAttribute="centerX" id="qIh-p1-KPc"/>
                 <constraint firstItem="LfH-fD-ph3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="47" id="rY6-l4-r9P">
                     <variation key="heightClass=regular-widthClass=compact" constant="10"/>
                 </constraint>
@@ -65,6 +71,7 @@
                 <mask key="subviews">
                     <exclude reference="LfH-fD-ph3"/>
                     <exclude reference="45G-e3-4xP"/>
+                    <exclude reference="FzF-n8-Dvi"/>
                 </mask>
                 <mask key="constraints">
                     <exclude reference="859-Qd-wsb"/>
@@ -73,12 +80,15 @@
                     <exclude reference="eFg-pQ-GlP"/>
                     <exclude reference="283-yH-6sO"/>
                     <exclude reference="rY6-l4-r9P"/>
+                    <exclude reference="Dv9-6t-FW4"/>
+                    <exclude reference="qIh-p1-KPc"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
                 <mask key="subviews">
                     <include reference="LfH-fD-ph3"/>
                     <include reference="45G-e3-4xP"/>
+                    <include reference="FzF-n8-Dvi"/>
                 </mask>
                 <mask key="constraints">
                     <include reference="859-Qd-wsb"/>
@@ -87,8 +97,13 @@
                     <include reference="eFg-pQ-GlP"/>
                     <include reference="283-yH-6sO"/>
                     <include reference="rY6-l4-r9P"/>
+                    <include reference="Dv9-6t-FW4"/>
+                    <include reference="qIh-p1-KPc"/>
                 </mask>
             </variation>
         </view>
     </objects>
+    <resources>
+        <image name="empty" width="158" height="134"/>
+    </resources>
 </document>

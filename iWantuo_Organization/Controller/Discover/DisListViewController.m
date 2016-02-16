@@ -15,6 +15,7 @@
 @interface DisListViewController ()<UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIImageView *emptyImageView;
 
 @end
 
@@ -23,7 +24,7 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.dataArray = [NSMutableArray array];
+       // self.dataArray = [NSMutableArray array];
     }
     return self;
 }
@@ -32,6 +33,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.title = @"晚托机构";
+    if (self.dataArray.count == 0) {
+        self.emptyImageView.hidden = NO;
+    }
     [self.tableView registerNib:[OrganizationCell nibWithCell] forCellReuseIdentifier:kOrganizationCellReuse];
     self.tableView.tableFooterView = [[UIView alloc] init];
 }

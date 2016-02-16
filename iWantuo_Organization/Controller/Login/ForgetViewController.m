@@ -140,6 +140,7 @@
     //获取验证码请求
     self.apiSM = [[ApiSendPhoneMessage alloc]initWithDelegate:self];
     [self.apiSM setApiParamsWithPhone:self.phoneNumTF.text];
+    self.apiSM.type = @"1";
     [APIClient execute:self.apiSM];
 
 }

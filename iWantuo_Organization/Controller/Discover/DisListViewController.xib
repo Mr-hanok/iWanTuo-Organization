@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DisListViewController">
             <connections>
+                <outlet property="emptyImageView" destination="agG-Xm-aSW" id="Y68-Wc-WZu"/>
                 <outlet property="tableView" destination="0Z6-X8-LTb" id="FbE-pT-Vpu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -24,36 +25,50 @@
                         <outlet property="delegate" destination="-1" id="c4c-j6-Sln"/>
                     </connections>
                 </tableView>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty" translatesAutoresizingMaskIntoConstraints="NO" id="agG-Xm-aSW">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="0Z6-X8-LTb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="F8X-ZJ-QF8"/>
                 <constraint firstItem="0Z6-X8-LTb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="NFh-7S-Mpw"/>
                 <constraint firstAttribute="trailing" secondItem="0Z6-X8-LTb" secondAttribute="trailing" id="Tkg-oZ-Emc"/>
+                <constraint firstItem="agG-Xm-aSW" firstAttribute="centerY" secondItem="0Z6-X8-LTb" secondAttribute="centerY" id="fIv-Ra-wUt"/>
                 <constraint firstAttribute="bottom" secondItem="0Z6-X8-LTb" secondAttribute="bottom" id="n4X-sW-mm4"/>
+                <constraint firstItem="agG-Xm-aSW" firstAttribute="centerX" secondItem="0Z6-X8-LTb" secondAttribute="centerX" id="saq-d3-czx"/>
             </constraints>
             <variation key="default">
                 <mask key="subviews">
                     <exclude reference="0Z6-X8-LTb"/>
+                    <exclude reference="agG-Xm-aSW"/>
                 </mask>
                 <mask key="constraints">
                     <exclude reference="F8X-ZJ-QF8"/>
                     <exclude reference="NFh-7S-Mpw"/>
                     <exclude reference="Tkg-oZ-Emc"/>
                     <exclude reference="n4X-sW-mm4"/>
+                    <exclude reference="fIv-Ra-wUt"/>
+                    <exclude reference="saq-d3-czx"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
                 <mask key="subviews">
                     <include reference="0Z6-X8-LTb"/>
+                    <include reference="agG-Xm-aSW"/>
                 </mask>
                 <mask key="constraints">
                     <include reference="F8X-ZJ-QF8"/>
                     <include reference="NFh-7S-Mpw"/>
                     <include reference="Tkg-oZ-Emc"/>
                     <include reference="n4X-sW-mm4"/>
+                    <include reference="fIv-Ra-wUt"/>
+                    <include reference="saq-d3-czx"/>
                 </mask>
             </variation>
         </view>
     </objects>
+    <resources>
+        <image name="empty" width="158" height="134"/>
+    </resources>
 </document>

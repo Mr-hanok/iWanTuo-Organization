@@ -12,7 +12,7 @@
 #import "ApiClassListRequest.h"
 #import "PageManager.h"
 
-@interface MyFollowViewController ()<UITableViewDelegate,UITableViewDataSource,APIRequestDelegate,PageManagerDelegate>
+@interface MyFollowViewController ()<UITableViewDelegate,UITableViewDataSource,APIRequestDelegate,PageManagerDelegate,UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 @property (nonatomic, strong) ApiClassListRequest *apiClassList;
@@ -20,6 +20,7 @@
 @property (nonatomic, strong) PageManager *pageManager;
 @property (nonatomic, strong) NSIndexPath *indexPath;
 @property (nonatomic, copy) NSString *loginAccounts;
+@property (weak, nonatomic) IBOutlet UIImageView *emptyImageView;
 
 
 @end
@@ -80,6 +81,13 @@
             }
             api.requestCurrentPage ++;
             NSArray *array = [sr.dic objectForKey:@"classtList"];
+            //是否有数据
+            if (array.count > 0 ) {
+                self.emptyImageView.hidden = YES;
+            } else {
+                self.emptyImageView.hidden = NO;
+            }
+
             for (NSDictionary *dic in array) {
                 ClassModel *model = [ClassModel initWithDic:dic];
                 [self.dataArray addObject:model];
@@ -106,12 +114,12 @@
     
     self.apiClassList.requestCurrentPage = 1;
     
-    [self.apiClassList setApiParamsWithOrganizationAccounts:self.loginAccounts page:[NSString stringWithFormat:@"%@", @(self.apiClassList.requestCurrentPage)]];
+    [self.apiClassList setApiParamsWithOrganizationAccounts:self.loginAccounts page:[NSString stringWithFormat:@"%@", @(self.apiClassList.requestCurrentPage)]organizationClass:@""];
     [APIClient execute:self.apiClassList];
 }
 - (void)footerRereshing {
     
-    [self.apiClassList setApiParamsWithOrganizationAccounts:self.loginAccounts page:[NSString stringWithFormat:@"%@", @(self.apiClassList.requestCurrentPage)]];
+    [self.apiClassList setApiParamsWithOrganizationAccounts:self.loginAccounts page:[NSString stringWithFormat:@"%@", @(self.apiClassList.requestCurrentPage)]organizationClass:@""];
     [APIClient execute:self.apiClassList];
 }
 
@@ -155,27 +163,47 @@
     vc.classModel = self.dataArray[indexPath.row];
     [self.navigationController pushViewController:vc animated:YES];
 }
+#pragma mark - UITextFieldDelegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    //取消textField的第一响应者
+    [textField resignFirstResponder];
+    
+    //根据用户搜索的类型跳不同的页面.并把查询的值传过去.
+    if (textField.text.length == 0 || [[textField.text stringByTrimmingCharactersInSet:[NSMutableCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
+            [HUDManager showWarningWithText:@"请输入班级名称"];
+            return NO;
+        }
+    
+    //执行按名称查询
+    [HUDManager showLoadingHUDView:self.view];
+    self.apiClassList.requestCurrentPage = 1;
+    
+    [self.apiClassList setApiParamsWithOrganizationAccounts:self.loginAccounts page:[NSString stringWithFormat:@"%@", @(self.apiClassList.requestCurrentPage)]organizationClass:textField.text];
+    [APIClient execute:self.apiClassList];
+    return YES;
+}
 
 #pragma mark - event response
 
 
 #pragma mark - private methods
 - (void)inistalSearch{
-    self.title = @"选择班级";
+    // self.title = @"选择班级";
     //添加搜索框在navi
-//    UIImageView *iv = [[UIImageView alloc]initWithFrame:CGRectMake(0, 2, 30, 25)];
-//    iv.image = [UIImage imageNamed:@"home_glass"];
-//    UITextField *tf = [[UITextField alloc]initWithFrame:CGRectMake(0, 0, 200, 30)];
-//    tf.placeholder = @"班级";
-//    tf.leftView = iv;
-//    tf.leftViewMode = UITextFieldViewModeAlways;
-//    tf.layer.cornerRadius = 5;
-//    tf.layer.masksToBounds = YES;
-//    tf.layer.borderWidth = 1.f;
-//    [tf setBorderStyle:UITextBorderStyleRoundedRect];
-//    tf.layer.borderColor = kNavigationColor.CGColor;
-//
-//    self.navigationItem.titleView =tf;
+    UIImageView *iv = [[UIImageView alloc]initWithFrame:CGRectMake(0, 2, 30, 25)];
+    iv.image = [UIImage imageNamed:@"home_glass"];
+    UITextField *tf = [[UITextField alloc]initWithFrame:CGRectMake(0, 0, 200, 30)];
+    tf.placeholder = @"班级";
+    tf.leftView = iv;
+    tf.leftViewMode = UITextFieldViewModeAlways;
+    tf.layer.cornerRadius = 5;
+    tf.layer.masksToBounds = YES;
+    tf.layer.borderWidth = 1.f;
+    [tf setBorderStyle:UITextBorderStyleRoundedRect];
+    tf.layer.borderColor = kNavigationColor.CGColor;
+    tf.delegate = self;
+    self.navigationItem.titleView =tf;
     
 }
 
