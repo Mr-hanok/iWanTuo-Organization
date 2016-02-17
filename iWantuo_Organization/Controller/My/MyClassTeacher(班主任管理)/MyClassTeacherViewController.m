@@ -13,6 +13,7 @@
 #import "PageManager.h"
 #import "TeacherModel.h"
 #import "ApiDeleteTeacherRequest.h"
+#import "EditClassTeacherViewController.h"
 
 @interface MyClassTeacherViewController ()<MyClassTeacherCellDelegate, PageManagerDelegate, APIRequestDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
@@ -98,6 +99,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    TeacherModel *model = self.dataArray[indexPath.row];
+    EditClassTeacherViewController *vc = [[EditClassTeacherViewController alloc]init];
+    vc.model = model;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - MyClassTeacherCellDelegate

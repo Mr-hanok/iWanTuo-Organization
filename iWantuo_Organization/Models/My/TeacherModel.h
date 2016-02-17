@@ -18,6 +18,7 @@
 @property (nonatomic, copy) NSString *createDate; //
 @property (nonatomic, copy) NSString *phone; //
 @property (nonatomic, copy) NSString *teacherName; //
+@property (nonatomic, copy) NSString *passWord; //
 
 + (TeacherModel *)initWithDic:(NSDictionary *)dic;
 

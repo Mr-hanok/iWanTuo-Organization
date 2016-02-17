@@ -340,6 +340,7 @@
                     <include reference="i4O-iR-OMv"/>
                 </mask>
             </variation>
+            <point key="canvasLocation" x="188" y="214"/>
         </view>
     </objects>
     <resources>

@@ -41,6 +41,9 @@
 		37AE23801C5490C8006CFCCC /* FollowSummaryController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37AE237E1C5490C8006CFCCC /* FollowSummaryController.xib */; };
 		37AE23841C549102006CFCCC /* FollowBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AE23821C549102006CFCCC /* FollowBaseViewController.m */; };
 		37AE23851C549102006CFCCC /* FollowBaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37AE23831C549102006CFCCC /* FollowBaseViewController.xib */; };
+		37B864BF1C743884006CC640 /* EditClassTeacherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B864BD1C743884006CC640 /* EditClassTeacherViewController.m */; };
+		37B864C01C743884006CC640 /* EditClassTeacherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37B864BE1C743884006CC640 /* EditClassTeacherViewController.xib */; };
+		37B864C31C743DED006CC640 /* ApiEditTeacherRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B864C21C743DED006CC640 /* ApiEditTeacherRequest.m */; };
 		37BE7E601C58BA40000F7CF8 /* ApiChangeArganization.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BE7E5F1C58BA40000F7CF8 /* ApiChangeArganization.m */; };
 		37BE7E631C58C7E4000F7CF8 /* ApiOrganizationInfoRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BE7E621C58C7E4000F7CF8 /* ApiOrganizationInfoRequest.m */; };
 		37C4E8F51C51BEEE00583902 /* ClassAddStudentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C4E8F31C51BEEE00583902 /* ClassAddStudentController.m */; };
@@ -329,6 +332,11 @@
 		37AE23811C549102006CFCCC /* FollowBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowBaseViewController.h; sourceTree = "<group>"; };
 		37AE23821C549102006CFCCC /* FollowBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowBaseViewController.m; sourceTree = "<group>"; };
 		37AE23831C549102006CFCCC /* FollowBaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowBaseViewController.xib; sourceTree = "<group>"; };
+		37B864BC1C743884006CC640 /* EditClassTeacherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditClassTeacherViewController.h; sourceTree = "<group>"; };
+		37B864BD1C743884006CC640 /* EditClassTeacherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditClassTeacherViewController.m; sourceTree = "<group>"; };
+		37B864BE1C743884006CC640 /* EditClassTeacherViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditClassTeacherViewController.xib; sourceTree = "<group>"; };
+		37B864C11C743DED006CC640 /* ApiEditTeacherRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiEditTeacherRequest.h; sourceTree = "<group>"; };
+		37B864C21C743DED006CC640 /* ApiEditTeacherRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiEditTeacherRequest.m; sourceTree = "<group>"; };
 		37BE7E5E1C58BA40000F7CF8 /* ApiChangeArganization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiChangeArganization.h; sourceTree = "<group>"; };
 		37BE7E5F1C58BA40000F7CF8 /* ApiChangeArganization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiChangeArganization.m; sourceTree = "<group>"; };
 		37BE7E611C58C7E4000F7CF8 /* ApiOrganizationInfoRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiOrganizationInfoRequest.h; sourceTree = "<group>"; };
@@ -904,7 +912,7 @@
 			children = (
 				37E1DDF61C4DDE1800245BE6 /* MyFollow(每日跟踪) */,
 				37E1DDDE1C4DDD1300245BE6 /* MyClass(班级管理) */,
-				37E1DDDF1C4DDD1300245BE6 /* MyClassTeacher(班主任管理) */,
+				37E1DDDF1C4DDD1300245BE6 /* MyClassTeacher(辅导老师管理) */,
 				37E1DDE01C4DDD1300245BE6 /* MyPusheMessage(推送消息) */,
 				37E1DDE11C4DDD1300245BE6 /* MyStudent(学员管理) */,
 				37E1DD9C1C4DD92600245BE6 /* BasicInfo(基本信息) */,
@@ -1032,7 +1040,7 @@
 			path = "MyClass(班级管理)";
 			sourceTree = "<group>";
 		};
-		37E1DDDF1C4DDD1300245BE6 /* MyClassTeacher(班主任管理) */ = {
+		37E1DDDF1C4DDD1300245BE6 /* MyClassTeacher(辅导老师管理) */ = {
 			isa = PBXGroup;
 			children = (
 				37E1DDE71C4DDD5800245BE6 /* MyClassTeacherViewController.h */,
@@ -1041,7 +1049,11 @@
 				375001A81C50C90400B14021 /* AddClassTeacherViewController.h */,
 				375001A91C50C90400B14021 /* AddClassTeacherViewController.m */,
 				375001AA1C50C90400B14021 /* AddClassTeacherViewController.xib */,
+				37B864BC1C743884006CC640 /* EditClassTeacherViewController.h */,
+				37B864BD1C743884006CC640 /* EditClassTeacherViewController.m */,
+				37B864BE1C743884006CC640 /* EditClassTeacherViewController.xib */,
 			);
+			name = "MyClassTeacher(辅导老师管理)";
 			path = "MyClassTeacher(班主任管理)";
 			sourceTree = "<group>";
 		};
@@ -1748,6 +1760,8 @@
 				63B2E7E11C59E8670038EEF3 /* FeedBackRequest.m */,
 				BEED9E981C73013D0081BDBA /* ApiPushMessageRequest.h */,
 				BEED9E991C73013D0081BDBA /* ApiPushMessageRequest.m */,
+				37B864C11C743DED006CC640 /* ApiEditTeacherRequest.h */,
+				37B864C21C743DED006CC640 /* ApiEditTeacherRequest.m */,
 			);
 			path = My;
 			sourceTree = "<group>";
@@ -1952,6 +1966,7 @@
 				37C4E8F61C51BEEE00583902 /* ClassAddStudentController.xib in Resources */,
 				37033E501C4CBBCA009F27DB /* SubmitInfoViewController.xib in Resources */,
 				63B2E7EE1C59EBB20038EEF3 /* FeedbackViewController.xib in Resources */,
+				37B864C01C743884006CC640 /* EditClassTeacherViewController.xib in Resources */,
 				37033E4B1C4CB7EC009F27DB /* SigningViewController.xib in Resources */,
 				375001AC1C50C90400B14021 /* AddClassTeacherViewController.xib in Resources */,
 				BED0C4AA1C5EF71B000A75B3 /* AddressListViewController.xib in Resources */,
@@ -2156,6 +2171,7 @@
 				379464251C55F0B200368B3A /* ApiFollowChangeRequest.m in Sources */,
 				BE40557B1C5369A700590788 /* StudentModel.m in Sources */,
 				BE25EBF91C44FDFE00068309 /* TPKeyboardAvoidingScrollView.m in Sources */,
+				37B864BF1C743884006CC640 /* EditClassTeacherViewController.m in Sources */,
 				BED7D8CE1C510217005A338E /* ApiPatriarchListRequest.m in Sources */,
 				BE25EC021C45018800068309 /* ValueUtils.m in Sources */,
 				37033E411C4C910B009F27DB /* ApiLoginOutRequest.m in Sources */,
@@ -2185,6 +2201,7 @@
 				BE25EB9A1C44FD9200068309 /* NSDate+FSExtension.m in Sources */,
 				37033E4F1C4CBBCA009F27DB /* SubmitInfoViewController.m in Sources */,
 				BED0C4AF1C5EF71B000A75B3 /* SchoolResultViewController.m in Sources */,
+				37B864C31C743DED006CC640 /* ApiEditTeacherRequest.m in Sources */,
 				BE25EB9B1C44FD9200068309 /* NSString+Device.m in Sources */,
 				37E1DDE51C4DDD3E00245BE6 /* MyClassViewController.m in Sources */,
 				63B2E7DC1C59E80D0038EEF3 /* ChangePasswordController.m in Sources */,
