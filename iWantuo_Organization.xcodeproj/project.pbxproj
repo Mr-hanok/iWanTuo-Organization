@@ -144,8 +144,10 @@
 		BE69F3B01C520F2900EFA44D /* ApiClassListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F3AF1C520F2900EFA44D /* ApiClassListRequest.m */; };
 		BE69F3B31C520FEC00EFA44D /* ApiDeleteClassRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F3B21C520FEC00EFA44D /* ApiDeleteClassRequest.m */; };
 		BE69F3B61C52108200EFA44D /* ApiStudentByOrgRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F3B51C52108200EFA44D /* ApiStudentByOrgRequest.m */; };
+		BE976C641C740D770018EA33 /* ApiDelStudentByOrgRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE976C631C740D770018EA33 /* ApiDelStudentByOrgRequest.m */; };
 		BEBDEE831C58D4CD006AE4EF /* UserInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBDEE811C58D4CD006AE4EF /* UserInfoCell.m */; };
 		BEBDEE841C58D4CD006AE4EF /* UserInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEBDEE821C58D4CD006AE4EF /* UserInfoCell.xib */; };
+		BEC7A9BC1C7423BC00C34C34 /* ApiGetStudentInfoRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC7A9BB1C7423BC00C34C34 /* ApiGetStudentInfoRequest.m */; };
 		BECC8C331C5771ED00AB93E3 /* NewVersionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BECC8C311C5771ED00AB93E3 /* NewVersionViewController.m */; };
 		BECC8C341C5771ED00AB93E3 /* NewVersionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BECC8C321C5771ED00AB93E3 /* NewVersionViewController.xib */; };
 		BECC8C391C57721900AB93E3 /* NewVersionCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BECC8C371C57721900AB93E3 /* NewVersionCollectionCell.m */; };
@@ -520,9 +522,13 @@
 		BE69F3B21C520FEC00EFA44D /* ApiDeleteClassRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiDeleteClassRequest.m; sourceTree = "<group>"; };
 		BE69F3B41C52108200EFA44D /* ApiStudentByOrgRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiStudentByOrgRequest.h; sourceTree = "<group>"; };
 		BE69F3B51C52108200EFA44D /* ApiStudentByOrgRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiStudentByOrgRequest.m; sourceTree = "<group>"; };
+		BE976C621C740D770018EA33 /* ApiDelStudentByOrgRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiDelStudentByOrgRequest.h; sourceTree = "<group>"; };
+		BE976C631C740D770018EA33 /* ApiDelStudentByOrgRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiDelStudentByOrgRequest.m; sourceTree = "<group>"; };
 		BEBDEE801C58D4CD006AE4EF /* UserInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoCell.h; sourceTree = "<group>"; };
 		BEBDEE811C58D4CD006AE4EF /* UserInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoCell.m; sourceTree = "<group>"; };
 		BEBDEE821C58D4CD006AE4EF /* UserInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInfoCell.xib; sourceTree = "<group>"; };
+		BEC7A9BA1C7423BC00C34C34 /* ApiGetStudentInfoRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiGetStudentInfoRequest.h; sourceTree = "<group>"; };
+		BEC7A9BB1C7423BC00C34C34 /* ApiGetStudentInfoRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiGetStudentInfoRequest.m; sourceTree = "<group>"; };
 		BECC8C301C5771ED00AB93E3 /* NewVersionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewVersionViewController.h; sourceTree = "<group>"; };
 		BECC8C311C5771ED00AB93E3 /* NewVersionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewVersionViewController.m; sourceTree = "<group>"; };
 		BECC8C321C5771ED00AB93E3 /* NewVersionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewVersionViewController.xib; sourceTree = "<group>"; };
@@ -1528,6 +1534,17 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		BE976C611C740D2E0018EA33 /* MyStudent */ = {
+			isa = PBXGroup;
+			children = (
+				BE976C621C740D770018EA33 /* ApiDelStudentByOrgRequest.h */,
+				BE976C631C740D770018EA33 /* ApiDelStudentByOrgRequest.m */,
+				BEC7A9BA1C7423BC00C34C34 /* ApiGetStudentInfoRequest.h */,
+				BEC7A9BB1C7423BC00C34C34 /* ApiGetStudentInfoRequest.m */,
+			);
+			path = MyStudent;
+			sourceTree = "<group>";
+		};
 		BECC8C351C57721200AB93E3 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -1676,6 +1693,7 @@
 		BED7D8BB1C50BA45005A338E /* My */ = {
 			isa = PBXGroup;
 			children = (
+				BE976C611C740D2E0018EA33 /* MyStudent */,
 				BEED9E901C72FC8B0081BDBA /* ApiSystemMsgRequest.h */,
 				BEED9E911C72FC8B0081BDBA /* ApiSystemMsgRequest.m */,
 				379464151C55BDC500368B3A /* Follow */,
@@ -2104,6 +2122,7 @@
 				37E1DE761C4E3FFF00245BE6 /* ZHPickView.m in Sources */,
 				BE25EBFB1C44FDFE00068309 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				37C4E8FA1C51C26C00583902 /* ClassAddStudentCell.m in Sources */,
+				BE976C641C740D770018EA33 /* ApiDelStudentByOrgRequest.m in Sources */,
 				BED0C5161C5EF937000A75B3 /* CancelAttentionHandler.m in Sources */,
 				BE25EBF81C44FDFE00068309 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				37C4E8FF1C51DEFB00583902 /* StudentChoseViewController.m in Sources */,
@@ -2136,6 +2155,7 @@
 				BED0C4F51C5EF7F2000A75B3 /* ApiSearchSchoolRequest.m in Sources */,
 				37D724EB1C4F26AF0055721B /* UploadManager.m in Sources */,
 				37E1DDEA1C4DDD5800245BE6 /* MyClassTeacherViewController.m in Sources */,
+				BEC7A9BC1C7423BC00C34C34 /* ApiGetStudentInfoRequest.m in Sources */,
 				BED0C5101C5EF8FB000A75B3 /* SharSdkManager.m in Sources */,
 				BED0C50D1C5EF89B000A75B3 /* FSDropDownMenu.m in Sources */,
 				BED0C54F1C5EFCB3000A75B3 /* MapNeed.mm in Sources */,

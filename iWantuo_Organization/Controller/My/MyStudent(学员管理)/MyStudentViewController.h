@@ -7,9 +7,19 @@
 //
 
 #import "BaseViewController.h"
+#import "StudentModel.h"
+
+typedef enum : NSUInteger {
+    AddInfoType,
+    UpdateInfoType,
+} InfoType;
 /**
  *  添加学员
  */
 @interface MyStudentViewController : BaseViewController
+
+@property (nonatomic, strong) NSString *studentId;
+
+@property (nonatomic, assign) InfoType infoType;
 
 @end

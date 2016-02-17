@@ -25,8 +25,10 @@
     model.grade = [ValueUtils stringFromObject:[dic objectForKey:@"grade"]];
     model.loginAccounts = [ValueUtils stringFromObject:[dic objectForKey:@"loginAccounts"]];
     model.beginDate = [ValueUtils stringFromObject:[dic objectForKey:@"beginDate"]];
+    model.sex = [ValueUtils stringFromObject:[dic objectForKey:@"sex"]];
     model.isDelete = NO;
     model.isAdd = NO;
     return model;
 }
+
 @end
