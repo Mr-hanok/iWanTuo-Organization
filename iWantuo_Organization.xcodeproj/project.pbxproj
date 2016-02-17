@@ -88,6 +88,7 @@
 		37E1DE761C4E3FFF00245BE6 /* ZHPickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E1DE751C4E3FFF00245BE6 /* ZHPickView.m */; };
 		5B00D7127E6170524D8DD67E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B131BB5C3C7788EB0066AC0 /* libPods.a */; };
 		63B1EFC31C743A5900137B28 /* APNsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B1EFC21C743A5900137B28 /* APNsManager.m */; };
+		63B1EFC61C744B4E00137B28 /* AppDeviceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B1EFC51C744B4E00137B28 /* AppDeviceManager.m */; };
 		63B2E7DC1C59E80D0038EEF3 /* ChangePasswordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B2E7DA1C59E80D0038EEF3 /* ChangePasswordController.m */; };
 		63B2E7DD1C59E80D0038EEF3 /* ChangePasswordController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B2E7DB1C59E80D0038EEF3 /* ChangePasswordController.xib */; };
 		63B2E7E21C59E8670038EEF3 /* ChangePasswordRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B2E7DF1C59E8670038EEF3 /* ChangePasswordRequest.m */; };
@@ -401,6 +402,8 @@
 		37E1DE751C4E3FFF00245BE6 /* ZHPickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHPickView.m; sourceTree = "<group>"; };
 		63B1EFC11C743A5900137B28 /* APNsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APNsManager.h; sourceTree = "<group>"; };
 		63B1EFC21C743A5900137B28 /* APNsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APNsManager.m; sourceTree = "<group>"; };
+		63B1EFC41C744B4E00137B28 /* AppDeviceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDeviceManager.h; sourceTree = "<group>"; };
+		63B1EFC51C744B4E00137B28 /* AppDeviceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDeviceManager.m; sourceTree = "<group>"; };
 		63B2E7D91C59E80D0038EEF3 /* ChangePasswordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordController.h; sourceTree = "<group>"; };
 		63B2E7DA1C59E80D0038EEF3 /* ChangePasswordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordController.m; sourceTree = "<group>"; };
 		63B2E7DB1C59E80D0038EEF3 /* ChangePasswordController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePasswordController.xib; sourceTree = "<group>"; };
@@ -1475,6 +1478,8 @@
 				BE25EBBE1C44FDC700068309 /* HUDManager.m */,
 				63B1EFC11C743A5900137B28 /* APNsManager.h */,
 				63B1EFC21C743A5900137B28 /* APNsManager.m */,
+				63B1EFC41C744B4E00137B28 /* AppDeviceManager.h */,
+				63B1EFC51C744B4E00137B28 /* AppDeviceManager.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -2075,6 +2080,7 @@
 				37D725011C4F78AF0055721B /* ApiAddressListRequest.m in Sources */,
 				BED0C4F61C5EF7F2000A75B3 /* ApiSubmitCommentRequest.m in Sources */,
 				BEED9E921C72FC8B0081BDBA /* ApiSystemMsgRequest.m in Sources */,
+				63B1EFC61C744B4E00137B28 /* AppDeviceManager.m in Sources */,
 				37E1DE101C4E149800245BE6 /* ApiFindPassWord.m in Sources */,
 				BEED9E961C72FCD10081BDBA /* MyNewsDetailViewController.m in Sources */,
 				BE4055781C535F3300590788 /* ApiDeleteTeacherRequest.m in Sources */,
