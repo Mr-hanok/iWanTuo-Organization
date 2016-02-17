@@ -50,6 +50,7 @@
 #define PatriarchListAction          @"Patriarch/phoneQueryByList" //搜索家长信息列表
 #define TeacherListAction            @"teacher/phoneQueryByList" //获取取机构下的班主任
 #define AddTeacherAction             @"register/phoneRegisterTeacher" //添加班主任
+#define EditTeacherAction             @"teacher/phoneUpdateTeacher" //修改班主任
 #define StudentByClassAction         @"studentClass/phoneSelect" //查询班级下学生
 #define AddClassAction               @"class/phoneSave" //添加班级
 #define ClassListAction              @"class/phoneSelect" //获取机构下的班级
