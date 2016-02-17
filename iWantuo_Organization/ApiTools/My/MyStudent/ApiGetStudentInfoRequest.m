@@ -23,10 +23,10 @@
 }
 
 
-- (void)setApiParmsWithStudentId:(NSString *)studentId
+- (void)setApiParmsWithStudentId:(NSString *)studentId organizationAccounts:(NSString *)organizationAccounts
 {
     [self.params setObject:studentId forKey:@"studentId"];
-//    [self.params setObject:[AccountManager sharedInstance].account.xx forKey:<#(nonnull id<NSCopying>)#>]
+    [self.params setObject:organizationAccounts forKey:@"organizationAccounts"];
 }
 
 @end

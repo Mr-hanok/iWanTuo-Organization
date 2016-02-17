@@ -35,12 +35,12 @@
     
     self.title = @"我的";
 
-    __weak typeof(self) weakSelf = self;
-    [self setRightBtnImage:[UIImage imageNamed:@"setting"] eventHandler:^(id sender) {
-        SettingViewController *vc = [[SettingViewController alloc]init];
-        vc.hidesBottomBarWhenPushed = YES;
-        [weakSelf.navigationController pushViewController:vc animated:YES];
-    }];
+//    __weak typeof(self) weakSelf = self;
+//    [self setRightBtnImage:[UIImage imageNamed:@"setting"] eventHandler:^(id sender) {
+//        SettingViewController *vc = [[SettingViewController alloc]init];
+//        vc.hidesBottomBarWhenPushed = YES;
+//        [weakSelf.navigationController pushViewController:vc animated:YES];
+//    }];
    
 }
 
@@ -97,7 +97,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 7;
+    return 8;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -183,6 +183,9 @@
             if ([self limitAccountType]) {
                 vc = [[MyPushMessageViewController alloc]init];
             }
+            break;
+        case 7:
+            vc = [[SettingViewController alloc] init];
             break;
 
     }

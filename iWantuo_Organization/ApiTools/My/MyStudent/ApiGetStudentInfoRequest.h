@@ -10,7 +10,6 @@
 
 @interface ApiGetStudentInfoRequest : APIRequest
 
-- (void)setApiParmsWithStudentId:(NSString *)studentId;
-
+- (void)setApiParmsWithStudentId:(NSString *)studentId organizationAccounts:(NSString *)organizationAccounts;
 
 @end

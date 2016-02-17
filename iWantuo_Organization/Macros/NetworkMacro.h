@@ -61,6 +61,8 @@
 #define DeleteTeacherAction          @"teacher/phoneDelete" //删除老师
 #define DeleteStudentByOrgAction     @"studentSchool/phoneDeleteStudentSchool" //删除机构下的学员
 #define GetStudentInfoAction         @"student/phoneGetById" //获取学生信息
+#define UpdateStudentInfoAction      @"student/phoneStudentUpdate" //修改学生信息
+
 
 #define FollowAddRequest          @"trace/phoneSave" //追踪增加接口
 #define FollowCheckRequest        @"trace/phoneGetById" //追踪查询接口

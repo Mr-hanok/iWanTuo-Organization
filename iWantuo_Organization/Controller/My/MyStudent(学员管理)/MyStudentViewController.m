@@ -16,6 +16,8 @@
 #import "CityInfoModel.h"
 #import "NSString+Verify.h"
 #import "ApiGetStudentInfoRequest.h"
+#import "ApiUpdateStudentRequest.h"
+#import "PatriarchModel.h"
 
 
 #define kAddStudentCellReuse  @"AddStudentCellReuse"
@@ -44,6 +46,9 @@
 @property (nonatomic, strong) ApiSaveStudentRequest *apiSaveStudent;
 @property (nonatomic, strong) ApiAddressListRequest *apiAddressList;//地区列表
 @property (nonatomic, strong) ApiGetStudentInfoRequest *apiStudentInfo;
+@property (nonatomic, strong) ApiUpdateStudentRequest *apiUpdateStudent;
+@property (nonatomic, strong) NSDictionary *dataDic;
+@property (nonatomic, strong) NSString *patriarchId;
 
 @end
 
@@ -65,7 +70,7 @@
     // Do any additional setup after loading the view from its nib.
     self.otherPhoneTextField.keyboardType = UIKeyboardTypeNumberPad;
     
-    self.pickView = [TFDatePickerView tfDatePickerViewWithDatePickerMode:UIDatePickerModeDateAndTime Delegate:self];
+    self.pickView = [TFDatePickerView tfDatePickerViewWithDatePickerMode:UIDatePickerModeDate Delegate:self];
     [self.view bk_whenTapped:^{
         [self.pickviewSex remove];
         [self hiddenKeyBoard];
@@ -88,7 +93,15 @@
         self.title = @"修改学员信息";
         self.timeTextField.userInteractionEnabled = NO;
         self.apiStudentInfo = [[ApiGetStudentInfoRequest alloc] initWithDelegate:self];
-        [self.apiStudentInfo setApiParmsWithStudentId:self.studentId];
+        //判断是老师还是机构
+        if ([[AccountManager sharedInstance].account.accountsType isEqualToString:@"3"]) {//老师
+            [self.apiStudentInfo setApiParmsWithStudentId:self.studentId organizationAccounts:[AccountManager sharedInstance].account.organizationAccounts];
+        }else {//机构
+
+            [self.apiStudentInfo setApiParmsWithStudentId:self.studentId organizationAccounts:[AccountManager sharedInstance].account.loginAccounts];
+        }
+
+        
         [APIClient execute:self.apiStudentInfo];
         [HUDManager showLoadingHUDView:KeyWindow];
     
@@ -153,8 +166,9 @@
         //绑定账号
         [self hiddenKeyBoard];
         
-        void(^backBlock)(NSString *phone) = ^(NSString *phone){
-            self.parentAccountTextField.text = phone;
+        void(^backBlock)(PatriarchModel *model) = ^(PatriarchModel *model){
+            self.parentAccountTextField.text = model.loginAccounts;
+            self.patriarchId = model.patriarchId;
         };
         
         AccountListViewController *listVC = [[AccountListViewController alloc] init];
@@ -221,19 +235,25 @@
             [self.areaModelArry addObject:model];
         }
     } else if (api == self.apiStudentInfo) {
-        NSDictionary *dataDic = [sr.dic objectForKey:@"student"];
+        self.dataDic = [sr.dic objectForKey:@"student"];
        
-        self.nameTextField.text = [ValueUtils stringFromObject:[dataDic objectForKey:@"name"]];
-        NSString *sexStr = [ValueUtils stringFromObject:[dataDic objectForKey:@"sex"]];
-        self.sexTextField.text = sexStr;
-        self.locationTextField.text = [ValueUtils stringFromObject:[dataDic objectForKey:@"bairro"]];
-        self.schoolTextField.text = [ValueUtils stringFromObject:[dataDic objectForKey:@"school"]];
-        self.gradeTextField.text = [ValueUtils stringFromObject:[dataDic objectForKey:@"grade"]];
-        self.timeTextField.text = [ValueUtils stringFromObject:[dataDic objectForKey:@"createDate"]];
-        self.parentSexTextField.text = [ValueUtils stringFromObject:[dataDic objectForKey:@"patriarch"]];;
-        self.parentAccountTextField.text = [ValueUtils stringFromObject:[dataDic objectForKey:@"loginAccounts"]];
-        self.otherRelationTextField.text = [ValueUtils stringFromObject:[dataDic objectForKey:@"kinsfolk"]];
-        self.otherPhoneTextField.text = [ValueUtils stringFromObject:[dataDic objectForKey:@"phone"]];
+        self.nameTextField.text = [ValueUtils stringFromObject:[self.dataDic objectForKey:@"name"]];
+        NSString *sexStr = [ValueUtils stringFromObject:[self.dataDic objectForKey:@"sex"]];
+        if (sexStr.integerValue == 1) {
+            self.sexTextField.text = @"男";
+        } else if (sexStr.integerValue == 2) {
+            self.sexTextField.text = @"女";
+        }
+        
+        self.locationTextField.text = [ValueUtils stringFromObject:[self.dataDic objectForKey:@"bairro"]];
+        self.schoolTextField.text = [ValueUtils stringFromObject:[self.dataDic objectForKey:@"school"]];
+        self.gradeTextField.text = [ValueUtils stringFromObject:[self.dataDic objectForKey:@"grade"]];
+        self.timeTextField.text = [ValueUtils stringFromObject:[self.dataDic objectForKey:@"createDate"]];
+        self.parentSexTextField.text = [ValueUtils stringFromObject:[self.dataDic objectForKey:@"patriarch"]];;
+        self.parentAccountTextField.text = [ValueUtils stringFromObject:[self.dataDic objectForKey:@"loginAccounts"]];
+        self.otherRelationTextField.text = [ValueUtils stringFromObject:[self.dataDic objectForKey:@"kinsfolk"]];
+        self.otherPhoneTextField.text = [ValueUtils stringFromObject:[self.dataDic objectForKey:@"phone"]];
+        self.patriarchId = [ValueUtils stringFromObject:[self.dataDic objectForKey:@"patriarchId"]];
     }
     
 }
@@ -275,10 +295,27 @@
                 bairroId = model.cityId;
             }
         }
-        self.apiSaveStudent = [[ApiSaveStudentRequest alloc] initWithDelegate:self];
-        [self.apiSaveStudent setApiParamsWithName:self.nameTextField.text school:self.schoolTextField.text grade:self.gradeTextField.text loginAccounts:self.parentAccountTextField.text patriarch:self.parentSexTextField.text phone:self.otherPhoneTextField.text sex:self.sex organizationAccounts:[AccountManager sharedInstance].account.loginAccounts createDate:self.time locationId:[AccountManager sharedInstance].locationId location:@"上海" bairroId:bairroId bairro:self.locationTextField.text kinsfolk:self.otherRelationTextField.text];
-
-        [APIClient execute:self.apiSaveStudent];
+        NSString *orgLoginAccount;
+        //判断是老师还是机构
+        if ([[AccountManager sharedInstance].account.accountsType isEqualToString:@"3"]) {//老师
+            orgLoginAccount = [AccountManager sharedInstance].account.organizationAccounts;
+        }else {//机构
+            
+            orgLoginAccount = [AccountManager sharedInstance].account.loginAccounts;
+        }
+        
+        if (self.infoType == AddInfoType) {
+            self.apiSaveStudent = [[ApiSaveStudentRequest alloc] initWithDelegate:self];
+            [self.apiSaveStudent setApiParamsWithName:self.nameTextField.text school:self.schoolTextField.text grade:self.gradeTextField.text loginAccounts:self.parentAccountTextField.text patriarch:self.parentSexTextField.text phone:self.otherPhoneTextField.text sex:self.sex organizationAccounts:orgLoginAccount createDate:self.time locationId:[AccountManager sharedInstance].locationId location:@"上海" bairroId:bairroId bairro:self.locationTextField.text kinsfolk:self.otherRelationTextField.text];
+            
+            [APIClient execute:self.apiSaveStudent];
+        } else if (self.infoType == UpdateInfoType) {
+            self.apiUpdateStudent = [[ApiUpdateStudentRequest alloc] initWithDelegate:self];
+            [self.apiUpdateStudent setApiParmsWithStudentId:self.studentId name:self.nameTextField.text school:self.schoolTextField.text grade:self.gradeTextField.text loginAccounts:self.parentAccountTextField.text patriarchId:self.patriarchId patriarch:self.parentSexTextField.text kinsfolk:self.sex phone:self.otherPhoneTextField.text  sex:self.sex organizationAccounts:orgLoginAccount locationId:[AccountManager sharedInstance].locationId location:@"上海" bairroId:bairroId bairro:self.locationTextField.text];
+            [APIClient execute:self.apiUpdateStudent];
+        }
+        
+        
         [HUDManager showLoadingHUDView:self.view];
     }
 }
