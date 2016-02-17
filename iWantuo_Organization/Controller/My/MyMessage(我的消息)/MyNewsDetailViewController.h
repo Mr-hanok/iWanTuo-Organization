@@ -7,9 +7,12 @@
 //
 
 #import "BaseViewController.h"
+#import "MsgModel.h"
 /**
  *  消息详情VC
  */
 @interface MyNewsDetailViewController : BaseViewController
+
+@property (nonatomic, strong) MsgModel *model;
 
 @end

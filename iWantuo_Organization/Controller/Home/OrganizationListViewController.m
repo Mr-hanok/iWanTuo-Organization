@@ -39,6 +39,7 @@
 @property (nonatomic, strong) NSString *sortType;
 @property (nonatomic, strong) NSString *distance;
 @property (nonatomic, strong) NSString *area;
+@property (weak, nonatomic) IBOutlet UIImageView *emptyImageView;
 
 @end
 
@@ -150,6 +151,13 @@
         }
         api.requestCurrentPage ++;
         NSArray *array = [sr.dic objectForKey:@"organizationList"];
+        //是否有数据
+        if (array.count > 0 ) {
+            self.emptyImageView.hidden = YES;
+        } else {
+            self.emptyImageView.hidden = NO;
+        }
+
         for (NSDictionary *dic in array) {
             OrganizationModel *model = [OrganizationModel initWithDic:dic];
             [self.dataArray addObject:model];

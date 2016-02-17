@@ -22,6 +22,7 @@
 @property (nonatomic, strong) ApiDeleteTeacherRequest *apiDelete;
 @property (nonatomic, strong) PageManager *pageManager;
 @property (nonatomic, strong) NSIndexPath *indexPath;
+@property (weak, nonatomic) IBOutlet UIImageView *emptyImageView;
 
 @end
 
@@ -145,6 +146,13 @@
             }
             api.requestCurrentPage ++;
             NSArray *array = [sr.dic objectForKey:@"queryList"];
+            //是否有数据
+            if (array.count > 0 ) {
+                self.emptyImageView.hidden = YES;
+            } else {
+                self.emptyImageView.hidden = NO;
+            }
+
             for (NSDictionary *dic in array) {
                 TeacherModel *model = [TeacherModel initWithDic:dic];
                 [self.dataArray addObject:model];

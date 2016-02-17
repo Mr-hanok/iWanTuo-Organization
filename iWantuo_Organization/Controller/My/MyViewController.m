@@ -15,7 +15,7 @@
 #import "MyClassViewController.h"
 #import "MyClassTeacherViewController.h"
 #import "MyPushMessageViewController.h"
-#import "MyStudentViewController.h"
+#import "StudentListViewController.h"
 #import "MyMessageViewController.h"
 #import "ApiLoginOutRequest.h"
 #import "SystemHandler.h"
@@ -166,7 +166,7 @@
             break;
         case 2://学员管理
             if ([self limitAccountType]) {
-                vc = [[MyStudentViewController alloc]init];
+                vc = [[StudentListViewController alloc]init];
             }
             break;
         case 4://班级管理

@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *dataArray;
 @property (nonatomic, strong) PageManager *pageManager;
+@property (weak, nonatomic) IBOutlet UIImageView *emptyImageView;
 
 //百度检索属性
 //@property (nonatomic, strong) BMKCitySearchOption *citySearchOption;
@@ -101,6 +102,7 @@
             [self.dataArray addObject:poi];
 
         }
+        self.emptyImageView.hidden = YES;
         [self.tableView reloadData];
 
     } else if (error == BMK_SEARCH_AMBIGUOUS_ROURE_ADDR){
@@ -108,6 +110,9 @@
         
     } else if (error == BMK_SEARCH_RESULT_NOT_FOUND){
         NSLog(@"没有找到检索结果");
+        [self.dataArray removeAllObjects];
+        self.emptyImageView.hidden = NO;
+        [self.tableView reloadData];
     } else if (error == BMK_SEARCH_NETWOKR_ERROR) {
         NSLog(@"网络连接错误");
     } else if (error == BMK_SEARCH_NETWOKR_TIMEOUT) {

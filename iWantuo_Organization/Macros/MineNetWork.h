@@ -13,5 +13,8 @@
 #define kMineChangeMyInfoAction    @"Patriarch/phoneUpdateByPatriarch"//修改个人信息
 #define kMineChangePasswordAction  @"login/phoneUpdatePassword"//修改密码
 #define kMineFeedBackAction        @"feedBack/phoneSave"//意见反馈
+#define kMineSystemMsgAction       @"onePush/phoneMessageList" //获取后台推送消息列表
+#define kMinePushMsgAction         @"onePush/phoneSave" //机构推送给家长接口
+
 
 #endif /* MineNetWork_h */

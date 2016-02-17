@@ -70,6 +70,7 @@
     if (sr.dic == nil || [sr.dic isKindOfClass:[NSNull class]]) {
         return;
     }
+    [self countDownBtn:self.registerBtn];
    self.verificatCode = [ValueUtils stringFromObject:[sr.dic objectForKey:@"verificatCode"]];
     
 }
@@ -115,6 +116,16 @@
         [HUDManager showWarningWithText:@"请输入正确手机号码！"];
         return;
     }
+        //请求接口
+    self.apiSM = [[ApiSendPhoneMessage alloc]initWithDelegate:self];
+    [self.apiSM setApiParamsWithPhone:self.phoneNumTF.text];
+    [APIClient execute:self.apiSM];
+    
+    
+}
+
+#pragma mark - private methods
+- (void)countDownBtn:(JKCountDownButton *)sender{
     //倒计时
     sender.enabled = NO;
     [sender startWithSecond:30];
@@ -127,16 +138,8 @@
         countDownButton.enabled = YES;
         return @"重新获取";
     }];
-    //请求接口
-    self.apiSM = [[ApiSendPhoneMessage alloc]initWithDelegate:self];
-    [self.apiSM setApiParamsWithPhone:self.phoneNumTF.text];
-    [APIClient execute:self.apiSM];
-    
-    
+
 }
-
-#pragma mark - private methods
-
 - (BOOL)dataCheck{
     if (![NSString tf_isSimpleMobileNumber:self.phoneNumTF.text]) {
         [HUDManager showWarningWithText:@"请输入正确手机号码！"];

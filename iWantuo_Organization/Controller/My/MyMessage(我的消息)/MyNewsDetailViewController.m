@@ -21,6 +21,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.title = @"消息详情";
+    
+    self.dateLabel.text = self.model.create_date;
+    self.nameLabel.text = self.model.push_name;
+    self.detailLabel.text = self.model.push_details;
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];

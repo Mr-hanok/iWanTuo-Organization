@@ -8,7 +8,7 @@
 
 #import "BaseViewController.h"
 /**
- *  学员管理
+ *  添加学员
  */
 @interface MyStudentViewController : BaseViewController
 

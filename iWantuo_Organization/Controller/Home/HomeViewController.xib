@@ -50,11 +50,13 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K8w-1K-WMy">
                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="60" id="5vL-xf-rNb"/>
+                        <constraint firstAttribute="width" constant="60" id="5vL-xf-rNb">
+                            <variation key="heightClass=regular-widthClass=compact" constant="70"/>
+                        </constraint>
                         <constraint firstAttribute="height" constant="30" id="79r-3s-AdY"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <state key="normal" title="学校搜索">
+                    <state key="normal" title="按学校搜">
                         <color key="titleColor" red="0.9882352941176471" green="0.63921568627450975" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <variation key="default">
@@ -76,11 +78,13 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bx6-uG-Oaa">
                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="60" id="jp1-AM-UhL"/>
+                        <constraint firstAttribute="width" constant="60" id="jp1-AM-UhL">
+                            <variation key="heightClass=regular-widthClass=compact" constant="70"/>
+                        </constraint>
                         <constraint firstAttribute="height" constant="30" id="oKc-of-SzW"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <state key="normal" title="机构搜索">
+                    <state key="normal" title="按机构搜">
                         <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <variation key="default">
@@ -121,11 +125,13 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y2c-L2-Db5">
                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="60" id="Ogi-Hd-z04"/>
+                        <constraint firstAttribute="width" constant="60" id="Ogi-Hd-z04">
+                            <variation key="heightClass=regular-widthClass=compact" constant="70"/>
+                        </constraint>
                         <constraint firstAttribute="height" constant="30" id="U3c-BQ-nqt"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <state key="normal" title="周边搜索">
+                    <state key="normal" title="按周边搜">
                         <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <variation key="default">
@@ -177,13 +183,13 @@
                     <variation key="heightClass=regular-widthClass=compact" constant="13"/>
                 </constraint>
                 <constraint firstItem="y2c-L2-Db5" firstAttribute="leading" secondItem="bx6-uG-Oaa" secondAttribute="trailing" constant="22" id="nIU-sb-N84">
-                    <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                    <variation key="heightClass=regular-widthClass=compact" constant="15"/>
                 </constraint>
                 <constraint firstAttribute="bottom" secondItem="ZZX-Rs-SOo" secondAttribute="bottom" constant="197" id="t51-qR-70W">
                     <variation key="heightClass=regular-widthClass=compact" constant="75"/>
                 </constraint>
                 <constraint firstItem="bx6-uG-Oaa" firstAttribute="leading" secondItem="K8w-1K-WMy" secondAttribute="trailing" constant="22" id="tdf-bi-wVk">
-                    <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                    <variation key="heightClass=regular-widthClass=compact" constant="15"/>
                 </constraint>
                 <constraint firstItem="y2c-L2-Db5" firstAttribute="centerY" secondItem="bx6-uG-Oaa" secondAttribute="centerY" id="uZm-kM-4oI"/>
                 <constraint firstAttribute="trailing" secondItem="j4X-OW-chK" secondAttribute="trailing" constant="33" id="wmq-ma-mL5"/>
@@ -361,6 +367,6 @@
         <image name="home_down" width="11" height="6"/>
         <image name="home_glass" width="30" height="25"/>
         <image name="home_logoImage" width="176" height="56"/>
-        <image name="home_logoTitle" width="160" height="16"/>
+        <image name="home_logoTitle" width="207" height="23"/>
     </resources>
 </document>
