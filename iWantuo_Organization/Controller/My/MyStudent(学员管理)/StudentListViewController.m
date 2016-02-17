@@ -11,6 +11,7 @@
 #import "StudentModel.h"
 #import "MyStudentViewController.h"
 #import "StudentCell.h"
+#import "ApiDelStudentByOrgRequest.h"
 
 #define kStudentCellReuse @"studentCellReuse"
 @interface StudentListViewController ()<UITableViewDataSource, UITableViewDelegate, APIRequestDelegate, PageManagerDelegate, MyStudentCellDelegate>
@@ -20,6 +21,8 @@
 @property (nonatomic, strong) ApiStudentListRequest *api;
 @property (nonatomic, strong) PageManager *pageManager;
 @property (weak, nonatomic) IBOutlet UIImageView *emptyImageView;
+@property (nonatomic, strong) ApiDelStudentByOrgRequest *apiDelete;
+@property (nonatomic, strong) NSIndexPath *indexPath;
 
 @end
 
@@ -49,6 +52,7 @@
     __weak typeof(self) weakSelf = self;
     [self setRightBtnImage:[UIImage imageNamed:@"my_myclassadd"] eventHandler:^(id sender) {
         MyStudentViewController *addVC = [[MyStudentViewController alloc] init];
+        addVC.infoType = AddInfoType;
         [weakSelf.navigationController pushViewController:addVC animated:YES];
     }];
 }
@@ -56,11 +60,12 @@
 #pragma mark - MyStudentCellDelegate
 - (void)myStudentCellCliecDeleBtn:(UIButton *)btn withIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"%@", @(indexPath.row));
+     self.indexPath = indexPath;
     StudentModel *model = [self.dataArray objectAtIndex:indexPath.row];
-//    self.apiDelete = [[ApiDeleteTeacherRequest alloc] initWithDelegate:self];
-//    [self.apiDelete setApiParamsWithTeacherId:model.teacherId];
-//    [APIClient execute:self.apiDelete];
-//    [HUDManager showLoadingHUDView:self.tableView];
+    self.apiDelete = [[ApiDelStudentByOrgRequest alloc] initWithDelegate:self];
+    [self.apiDelete setApiParmsWithOrganizationAccounts:model.organizationAccounts studentId:model.studentId];
+    [APIClient execute:self.apiDelete];
+    [HUDManager showLoadingHUDView:self.tableView];
 }
 
 #pragma mark - UITableViewDataSource,UITableViewDelegate
@@ -84,7 +89,10 @@
 {
     DDLog(@"选中 －－ indexPath.row = %ld",(long)indexPath.row);
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    StudentModel *model = [self.dataArray objectAtIndex:indexPath.row];
     MyStudentViewController *updateVC = [[MyStudentViewController alloc] init];
+    updateVC.studentId = model.studentId;
+    updateVC.infoType = UpdateInfoType;
     [self.navigationController pushViewController:updateVC animated:YES];
 }
 
@@ -117,27 +125,38 @@
     if (sr.dic == nil || [sr.dic isKindOfClass:[NSNull class]]) {
         return;
     }
-    if (sr.status == 0) {
-        if (self.api.requestCurrentPage == 1) {
-            [self.dataArray removeAllObjects];
-        }
-        self.api.requestCurrentPage++;
-       
-        NSArray *array = [sr.dic objectForKey:@"studentSchoolList"];
-        if (array.count == 0) {
-            self.emptyImageView.hidden = NO;
-            return;
+    if (api == self.api) {
+        if (sr.status == 0) {
+            if (self.api.requestCurrentPage == 1) {
+                [self.dataArray removeAllObjects];
+            }
+            self.api.requestCurrentPage++;
+            
+            NSArray *array = [sr.dic objectForKey:@"studentSchoolList"];
+            if (array.count == 0) {
+                self.emptyImageView.hidden = NO;
+                return;
+            } else {
+                self.emptyImageView.hidden = YES;
+            }
+            for (NSDictionary *dic in array) {
+                StudentModel *model = [StudentModel initWithDic:dic];
+                [self.dataArray addObject:model];
+            }
+            [self.tableView reloadData];
         } else {
-            self.emptyImageView.hidden = YES;
+            [HUDManager showWarningWithText:sr.msg];
         }
-        for (NSDictionary *dic in array) {
-            StudentModel *model = [StudentModel initWithDic:dic];
-            [self.dataArray addObject:model];
+    } else if (api == self.apiDelete) {
+        
+        if (sr.status == 0) {
+            [self.dataArray removeObjectAtIndex:self.indexPath.row];
+            [self.tableView reloadData];
+        } else {
+            [HUDManager showWarningWithText:sr.msg];
         }
-        [self.tableView reloadData];
-    } else {
-        [HUDManager showWarningWithText:sr.msg];
     }
+    
 
 }
 

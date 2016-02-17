@@ -22,6 +22,7 @@
 @property (nonatomic, copy) NSString *loginAccounts;
 @property (nonatomic, copy) NSString *beginDate;
 @property (nonatomic, copy) NSString *endDate;
+@property (nonatomic, copy) NSString *sex;
 
 + (StudentModel *)initWithDic:(NSDictionary *)dic;
 

@@ -15,6 +15,7 @@
 #import "ApiAddressListRequest.h"
 #import "CityInfoModel.h"
 #import "NSString+Verify.h"
+#import "ApiGetStudentInfoRequest.h"
 
 
 #define kAddStudentCellReuse  @"AddStudentCellReuse"
@@ -42,6 +43,7 @@
 
 @property (nonatomic, strong) ApiSaveStudentRequest *apiSaveStudent;
 @property (nonatomic, strong) ApiAddressListRequest *apiAddressList;//地区列表
+@property (nonatomic, strong) ApiGetStudentInfoRequest *apiStudentInfo;
 
 @end
 
@@ -61,11 +63,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.title = @"学员管理";
-    
-    self.sexTextField.text = @"男";
-    self.gradeTextField.text = @"小学一年级";
-    self.parentSexTextField.text = @"父亲";
     self.otherPhoneTextField.keyboardType = UIKeyboardTypeNumberPad;
     
     self.pickView = [TFDatePickerView tfDatePickerViewWithDatePickerMode:UIDatePickerModeDateAndTime Delegate:self];
@@ -78,7 +75,24 @@
     self.apiAddressList = [[ApiAddressListRequest alloc]initWithDelegate:self];
     [self.apiAddressList setApiParamsWithParentId:@"3"];
     [APIClient execute:self.apiAddressList];
-//    [HUDManager showLoadingHUDView:self.view];
+//    [HUDManager showLoadingHUDView:KeyWindow];
+    
+    if (self.infoType == AddInfoType) {
+        self.title = @"添加学员";
+        
+        self.sexTextField.text = @"男";
+        self.gradeTextField.text = @"小学一年级";
+        self.parentSexTextField.text = @"父亲";
+
+    } else if (self.infoType == UpdateInfoType) {
+        self.title = @"修改学员信息";
+        self.timeTextField.userInteractionEnabled = NO;
+        self.apiStudentInfo = [[ApiGetStudentInfoRequest alloc] initWithDelegate:self];
+        [self.apiStudentInfo setApiParmsWithStudentId:self.studentId];
+        [APIClient execute:self.apiStudentInfo];
+        [HUDManager showLoadingHUDView:KeyWindow];
+    
+    }
     
 }
 -(void)viewWillAppear:(BOOL)animated{
@@ -178,11 +192,15 @@
 
 #pragma mark - APIRequestDelegate
 - (void)serverApi_RequestFailed:(APIRequest *)api error:(NSError *)error {
-
+    
     [HUDManager hideHUDView];
     
-    [AlertViewManager showAlertViewWithMessage:kDefaultNetWorkErrorString];
-    
+    if (api == self.apiStudentInfo) {
+        [HUDManager showWarningWithText:kDefaultNetWorkErrorString];
+        [self.navigationController popViewControllerAnimated:YES];
+    } else {
+        [AlertViewManager showAlertViewWithMessage:kDefaultNetWorkErrorString];
+    }
 }
 
 - (void)serverApi_FinishedSuccessed:(APIRequest *)api result:(APIResult *)sr {
@@ -202,18 +220,38 @@
             [self.areaArray addObject:model.name];
             [self.areaModelArry addObject:model];
         }
+    } else if (api == self.apiStudentInfo) {
+        NSDictionary *dataDic = [sr.dic objectForKey:@"student"];
+       
+        self.nameTextField.text = [ValueUtils stringFromObject:[dataDic objectForKey:@"name"]];
+        NSString *sexStr = [ValueUtils stringFromObject:[dataDic objectForKey:@"sex"]];
+        self.sexTextField.text = sexStr;
+        self.locationTextField.text = [ValueUtils stringFromObject:[dataDic objectForKey:@"bairro"]];
+        self.schoolTextField.text = [ValueUtils stringFromObject:[dataDic objectForKey:@"school"]];
+        self.gradeTextField.text = [ValueUtils stringFromObject:[dataDic objectForKey:@"grade"]];
+        self.timeTextField.text = [ValueUtils stringFromObject:[dataDic objectForKey:@"createDate"]];
+        self.parentSexTextField.text = [ValueUtils stringFromObject:[dataDic objectForKey:@"patriarch"]];;
+        self.parentAccountTextField.text = [ValueUtils stringFromObject:[dataDic objectForKey:@"loginAccounts"]];
+        self.otherRelationTextField.text = [ValueUtils stringFromObject:[dataDic objectForKey:@"kinsfolk"]];
+        self.otherPhoneTextField.text = [ValueUtils stringFromObject:[dataDic objectForKey:@"phone"]];
     }
     
 }
 
 - (void)serverApi_FinishedFailed:(APIRequest *)api result:(APIResult *)sr {
-
+    
     NSString *message = sr.msg;
     [HUDManager hideHUDView];
     if (message.length == 0) {
         message = kDefaultServerErrorString;
     }
-    [AlertViewManager showAlertViewWithMessage:message];
+
+    if (api == self.apiStudentInfo) {
+        [HUDManager showWarningWithText:message];
+        [self.navigationController popViewControllerAnimated:YES];
+    } else {
+        [AlertViewManager showAlertViewWithMessage:message];
+    }
 }
 
 

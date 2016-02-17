@@ -186,7 +186,7 @@
                     <variation key="heightClass=regular-widthClass=compact" constant="15"/>
                 </constraint>
                 <constraint firstAttribute="bottom" secondItem="ZZX-Rs-SOo" secondAttribute="bottom" constant="197" id="t51-qR-70W">
-                    <variation key="heightClass=regular-widthClass=compact" constant="75"/>
+                    <variation key="heightClass=regular-widthClass=compact" constant="175"/>
                 </constraint>
                 <constraint firstItem="bx6-uG-Oaa" firstAttribute="leading" secondItem="K8w-1K-WMy" secondAttribute="trailing" constant="22" id="tdf-bi-wVk">
                     <variation key="heightClass=regular-widthClass=compact" constant="15"/>
