@@ -355,13 +355,77 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "iWantuo_Organization/Controller/My/MyStudent(&#x5b66;&#x5458;&#x7ba1;&#x7406;)/MyStudentViewController.m"
-            timestampString = "477451173.294839"
+            filePath = "iWantuo_Organization/Controller/My/MyPusheMessage(&#x63a8;&#x9001;&#x6d88;&#x606f;)/MyPushMessageViewController.m"
+            timestampString = "477452851.032384"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "320"
-            endingLineNumber = "320"
-            landmarkName = "-addStudentAction:"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "-serverApi_FinishedSuccessed:result:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iWantuo_Organization/Controller/My/MyPusheMessage(&#x63a8;&#x9001;&#x6d88;&#x606f;)/MyPushMessageViewController.m"
+            timestampString = "477457903.771511"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "-serverApi_FinishedFailed:result:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iWantuo_Organization/Controller/My/MyPusheMessage(&#x63a8;&#x9001;&#x6d88;&#x606f;)/MyPushMessageViewController.m"
+            timestampString = "477457903.771511"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "-sendBtnAction:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iWantuo_Organization/Controller/Login/LoginViewController.m"
+            timestampString = "477467416.475848"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "-loginAction"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iWantuo_Organization/Controller/My/MyStudent(&#x5b66;&#x5458;&#x7ba1;&#x7406;)/MyStudentViewController.m"
+            timestampString = "477468212.242062"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "256"
+            endingLineNumber = "256"
+            landmarkName = "-serverApi_FinishedSuccessed:result:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

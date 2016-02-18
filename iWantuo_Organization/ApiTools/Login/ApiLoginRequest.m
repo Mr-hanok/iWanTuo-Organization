@@ -7,7 +7,7 @@
 //
 
 #import "ApiLoginRequest.h"
-//#import "APNsManager.h"
+#import "APNsManager.h"
 
 @implementation ApiLoginRequest
 - (ApiAccessType)accessType
@@ -24,7 +24,7 @@
 -(void)setApiParamsWithLoginAccount:(NSString *)loginAccount Password:(NSString *)Password{
     [self.params setValue:loginAccount forKey:@"loginAccounts"];
     [self.params setValue:Password forKey:@"password"];
-    //[self.params setValue:[APNsManager sharedInstance].deviceToken forKey:@"device_token"];
+    [self.params setValue:[APNsManager sharedInstance].deviceToken forKey:@"deviceToken"];
     //[self.params setValue:loginAccount forKey:@"deviceToken"];
     // [self.params setValue:[AccountManager sharedInstance].uuid forKey:@"uuId"];
 }

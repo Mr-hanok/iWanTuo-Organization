@@ -22,6 +22,8 @@
 @property (nonatomic, strong) NSString *locationX; //用户当前位置坐标
 @property (nonatomic, strong) NSString *locationY;
 @property (nonatomic, strong) NSMutableArray *addressArray;
+@property (nonatomic, strong) NSString *deviceToken;
+
 
 
 

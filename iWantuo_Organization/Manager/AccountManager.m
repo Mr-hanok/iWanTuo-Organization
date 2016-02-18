@@ -94,6 +94,7 @@ static AccountManager *sharedInstance;
     [ud setValue:self.locationY forKey:@"locationY"];
     [ud setValue:self.account.isLogin forKey:@"isLogin"];
     [ud setValue:self.account.accountsType forKey:@"accountsType"];
+    [ud setValue:self.deviceToken forKey:@"deviceToken"];
 
     [ud synchronize];
 }
@@ -154,6 +155,8 @@ static AccountManager *sharedInstance;
     self.locationId = [ValueUtils stringFromObject:[ud objectForKey:@"locationId"]];
     self.locationX = [ValueUtils stringFromObject:[ud objectForKey:@"locationX"]];
     self.locationY = [ValueUtils stringFromObject:[ud objectForKey:@"locationY"]];
+    self.deviceToken = [ValueUtils stringFromObject:[ud objectForKey:@"deviceToken"]];
+
 }
 
 

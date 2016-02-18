@@ -11,8 +11,8 @@
 #import "MineNetWork.h"
 
 //#define SERVER_HOST_PRODUCT             @"http://192.168.1.169:8090/wantuo/"           // 内网地址
-//#define SERVER_HOST_PRODUCT             @"http://192.168.1.107:8080/wantuo/"           // 外网地址
-#define SERVER_HOST_PRODUCT             @"http://www.iwantuo.com/"           // 外网地址
+#define SERVER_HOST_PRODUCT             @"http://192.168.1.107:8080/wantuo/"           // 外网地址
+//#define SERVER_HOST_PRODUCT             @"http://www.iwantuo.com/"           // 外网地址
 #define SERVER_FILE_PRODUCT             @"http://img.yilingboshi.com/"              // 图片服务器地址
 
 #define SDKKey_Msg                  @"msg"

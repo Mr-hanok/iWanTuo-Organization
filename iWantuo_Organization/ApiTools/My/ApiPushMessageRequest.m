@@ -23,11 +23,10 @@
 }
 
 
-- (void)setApiParmsWithContent:(NSString *)content
+- (void)setApiParmsWithContent:(NSString *)content 
 {
     [self.params setObject:[AccountManager sharedInstance].account.loginAccounts forKey:@"push_login_accounts"];
-    [self.params setObject:@"" forKey:@"login_accounts"];
-    [self.params setObject:[AccountManager sharedInstance].account.locationName forKey:@"push_name"];
+    [self.params setObject:[AccountManager sharedInstance].account.organizationAbbreviation forKey:@"push_name"];
     [self.params setObject:content forKey:@"push_details"];
     
     

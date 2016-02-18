@@ -56,6 +56,9 @@
     }
 
     [HUDManager showWarningWithText:sr.msg];
+    if (sr.status == 0) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 
 }
 

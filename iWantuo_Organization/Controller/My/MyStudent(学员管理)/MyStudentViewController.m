@@ -157,7 +157,7 @@
     } else if (textField == self.gradeTextField) {
         //选择年ji
         [self hiddenKeyBoard];
-        self.pickviewGrade = [[ZHPickView alloc] initPickviewWithArray:@[@"学前班大班", @"学前班小班", @"小学一年级", @"小学二年级", @"小学三年级", @"小学四年级", @"小学五年级", @"小学六年级", @"初中一年级", @"初中二年级", @"初中三年级"] isHaveNavControler:NO];
+        self.pickviewGrade = [[ZHPickView alloc] initPickviewWithArray:@[@"学前班小班", @"学前班大班", @"小学一年级", @"小学二年级", @"小学三年级", @"小学四年级", @"小学五年级", @"小学六年级", @"初中一年级", @"初中二年级", @"初中三年级"] isHaveNavControler:NO];
         self.pickviewGrade.delegate = self;
         [self.pickviewGrade show];
         return NO;
@@ -316,7 +316,7 @@
             [APIClient execute:self.apiSaveStudent];
         } else if (self.infoType == UpdateInfoType) {
             self.apiUpdateStudent = [[ApiUpdateStudentRequest alloc] initWithDelegate:self];
-            [self.apiUpdateStudent setApiParmsWithStudentId:self.studentId name:self.nameTextField.text school:self.schoolTextField.text grade:self.gradeTextField.text loginAccounts:self.parentAccountTextField.text patriarchId:self.patriarchId patriarch:self.parentSexTextField.text kinsfolk:self.sex phone:self.otherPhoneTextField.text  sex:self.sex organizationAccounts:orgLoginAccount locationId:[AccountManager sharedInstance].locationId location:@"上海" bairroId:bairroId bairro:self.locationTextField.text];
+            [self.apiUpdateStudent setApiParmsWithStudentId:self.studentId name:self.nameTextField.text school:self.schoolTextField.text grade:self.gradeTextField.text loginAccounts:self.parentAccountTextField.text patriarchId:self.patriarchId patriarch:self.parentSexTextField.text kinsfolk:self.otherRelationTextField.text phone:self.otherPhoneTextField.text  sex:self.sex organizationAccounts:orgLoginAccount locationId:[AccountManager sharedInstance].locationId location:@"上海" bairroId:bairroId bairro:self.locationTextField.text];
             [APIClient execute:self.apiUpdateStudent];
         }
         
