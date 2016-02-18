@@ -5,7 +5,7 @@
 //  Created by yuntai on 16/1/24.
 //  Copyright © 2016年 月 吴. All rights reserved.
 //
-
+#define ClassViewHeight 40.0
 #import "FollowSummaryController.h"
 #import "ZHPickView.h"
 #import "ApiFollowSubject.h"
@@ -37,13 +37,17 @@
 @property (nonatomic, copy) NSString *summaryPerson;
 @property (nonatomic, copy) NSString *leavePerson;
 
+@property (weak, nonatomic) IBOutlet UIView *classView;//学科总view
+@property (weak, nonatomic) IBOutlet UIButton *addClassBtn;//添加学科按钮
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *viewHeightLayout;//学科view高度
+@property (nonatomic)NSInteger count;
 @end
 
 @implementation FollowSummaryController
 #pragma mark - life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.count = 1;
     //判断是老师还是机构
     if ([[AccountManager sharedInstance].account.accountsType isEqualToString:@"3"]) {//老师
         self.loginName = [AccountManager sharedInstance].account.name;
@@ -73,6 +77,9 @@
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [MobClick endLogPageView:@"跟踪总结页面"];
+}
+-(void)dealloc{
+    [self.classPick remove];
 }
 #pragma mark -  APIRequestDelegate
 
@@ -135,7 +142,7 @@
 #pragma mark  - ZhpickVIewDelegate
 
 -(void)toobarDonBtnHaveClick:(ZHPickView *)pickView resultString:(NSString *)resultString level1:(NSString *)level1 row1:(NSInteger)row1 row2:(NSInteger)row2{
-    NSLog(@"%@-%@-%d-%d",resultString,level1,row1,row2);
+    NSLog(@"%@-%@-%ld-%ld",resultString,level1,row1,row2);
     [self.classChoseBtn setTitle:resultString forState:UIControlStateNormal];
     self.model = self.subjectModelArray[row1];
     
@@ -263,6 +270,30 @@
     [APIClient execute:self.apiChange];
 
 }
+/**
+ * 添加学科
+ */
+- (IBAction)addClassAction:(UIButton *)sender {
+    self.viewHeightLayout.constant = self.viewHeightLayout.constant +ClassViewHeight;
+    UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(self.classChoseBtn.frame.origin.x, self.classChoseBtn.frame.origin.y+ClassViewHeight*self.count, self.classChoseBtn.frame.size.width, self.classChoseBtn.frame.size.height)];
+    [btn.titleLabel setFont:[UIFont systemFontOfSize:14]];
+    [btn setTitle:@"学科  v" forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+    btn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    
+    UITextField *tf = [[UITextField alloc]initWithFrame:CGRectMake(self.gradeTF.frame.origin.x, self.gradeTF.frame.origin.y+ClassViewHeight*self.count, self.gradeTF.frame.size.width, self.gradeTF.frame.size.height)];
+    tf.font = [UIFont systemFontOfSize:14];
+    tf.text = @"123";
+    
+    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(self.gradeTF.frame.origin.x, self.gradeTF.frame.origin.y+ClassViewHeight*self.count+ClassViewHeight, self.gradeTF.frame.size.width, 1)];
+    view.backgroundColor = kBGColor;
+    
+    self.count++;
+    [self.classView addSubview:btn];
+    [self.classView addSubview:tf];
+    [self.classView addSubview:view];
+}
+
 #pragma mark - private methods
 - (void)changeViewInfoNotification:(NSNotification *)noti{
     FollowModel *info = noti.object;

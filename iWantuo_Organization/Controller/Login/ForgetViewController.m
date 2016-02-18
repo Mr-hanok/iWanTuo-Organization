@@ -114,7 +114,7 @@
     
     self.apiFind = [[ApiFindPassWord alloc]initWithDelegate:self];
 
-    [self.apiFind setApiParamsWithLoginAccount:self.passwordTF.text Password:self.passwordTF.text];
+    [self.apiFind setApiParamsWithLoginAccount:self.phoneNumTF.text Password:self.passwordTF.text];
     [APIClient execute:self.apiFind];
 }
 /**

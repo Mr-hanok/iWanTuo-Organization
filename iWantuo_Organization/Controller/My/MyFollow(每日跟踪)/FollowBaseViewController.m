@@ -14,6 +14,7 @@
 #import "ZHPickView.h"
 #import "ApiFollowCheckRequest.h"
 #import "FollowModel.h"
+#import "NSDate+FSExtension.h"
 
 @interface FollowBaseViewController ()<UIScrollViewDelegate,ZHPickViewDelegate,APIRequestDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *signBtn;
@@ -169,7 +170,7 @@
 
 -(void)toobarDonBtnHaveClick:(ZHPickView *)pickView resultString:(NSString *)resultString level1:(NSString *)level1 row1:(NSInteger)row1 row2:(NSInteger)row2{
     NSLog(@"%@",resultString);
-    
+    [self.view endEditing:YES];
     //nsstring->nsdate->设置按钮显示时间 记录时间
     NSString *dateStr = [resultString substringToIndex:10];
     [self.timeBtn setTitle:dateStr forState:UIControlStateNormal];
@@ -182,12 +183,21 @@
     
     NSInteger selDate = [seleteDatestr integerValue];
     NSInteger curDate = [curDatestr integerValue]+600;
-    if (selDate >curDate) {
+    [self.mview removeFromSuperview];
+    if (![curedate fs_isEqualToDateForDay:date]&& selDate>curDate) {
+        //大于当前时间
         [AlertViewManager showAlertViewWithMessage:@"请选择正确日期"];
         self.mview = [[UIView alloc]initWithFrame:self.scrollview.frame];
         [self.view addSubview:self.mview];
         return ;
-    }else {
+    }else if(![curedate fs_isEqualToDateForDay:date]&& selDate<curDate){
+        //小于当前时间
+        self.mview = [[UIView alloc]initWithFrame:self.scrollview.frame];
+        [self.view addSubview:self.mview];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapWarming)];
+        [self.mview addGestureRecognizer:tap];
+    }else{
+        //当前时间
         self.mview.frame = CGRectZero;
         [self.mview removeFromSuperview];
     }
@@ -323,6 +333,10 @@
 - (void)tapAction{
     [self.view endEditing:YES];
     [self.dataPickView remove];
+}
+
+- (void)tapWarming{
+    [HUDManager showWarningWithText:@"历史信息不能修改！"];
 }
 
 - (NSDate *)stringToDate:(NSString *)strdate
