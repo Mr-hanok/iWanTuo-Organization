@@ -150,6 +150,7 @@
 		BE69F3B31C520FEC00EFA44D /* ApiDeleteClassRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F3B21C520FEC00EFA44D /* ApiDeleteClassRequest.m */; };
 		BE69F3B61C52108200EFA44D /* ApiStudentByOrgRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F3B51C52108200EFA44D /* ApiStudentByOrgRequest.m */; };
 		BE976C641C740D770018EA33 /* ApiDelStudentByOrgRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE976C631C740D770018EA33 /* ApiDelStudentByOrgRequest.m */; };
+		BE9A06F61C7461A900C08725 /* ApiUpdateStudentRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9A06F51C7461A900C08725 /* ApiUpdateStudentRequest.m */; };
 		BEBDEE831C58D4CD006AE4EF /* UserInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBDEE811C58D4CD006AE4EF /* UserInfoCell.m */; };
 		BEBDEE841C58D4CD006AE4EF /* UserInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEBDEE821C58D4CD006AE4EF /* UserInfoCell.xib */; };
 		BEC7A9BC1C7423BC00C34C34 /* ApiGetStudentInfoRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC7A9BB1C7423BC00C34C34 /* ApiGetStudentInfoRequest.m */; };
@@ -538,6 +539,8 @@
 		BE69F3B51C52108200EFA44D /* ApiStudentByOrgRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiStudentByOrgRequest.m; sourceTree = "<group>"; };
 		BE976C621C740D770018EA33 /* ApiDelStudentByOrgRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiDelStudentByOrgRequest.h; sourceTree = "<group>"; };
 		BE976C631C740D770018EA33 /* ApiDelStudentByOrgRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiDelStudentByOrgRequest.m; sourceTree = "<group>"; };
+		BE9A06F41C7461A900C08725 /* ApiUpdateStudentRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiUpdateStudentRequest.h; sourceTree = "<group>"; };
+		BE9A06F51C7461A900C08725 /* ApiUpdateStudentRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiUpdateStudentRequest.m; sourceTree = "<group>"; };
 		BEBDEE801C58D4CD006AE4EF /* UserInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoCell.h; sourceTree = "<group>"; };
 		BEBDEE811C58D4CD006AE4EF /* UserInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoCell.m; sourceTree = "<group>"; };
 		BEBDEE821C58D4CD006AE4EF /* UserInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInfoCell.xib; sourceTree = "<group>"; };
@@ -1563,6 +1566,8 @@
 				BE976C631C740D770018EA33 /* ApiDelStudentByOrgRequest.m */,
 				BEC7A9BA1C7423BC00C34C34 /* ApiGetStudentInfoRequest.h */,
 				BEC7A9BB1C7423BC00C34C34 /* ApiGetStudentInfoRequest.m */,
+				BE9A06F41C7461A900C08725 /* ApiUpdateStudentRequest.h */,
+				BE9A06F51C7461A900C08725 /* ApiUpdateStudentRequest.m */,
 			);
 			path = MyStudent;
 			sourceTree = "<group>";
@@ -2080,6 +2085,7 @@
 				37E1DDD51C4DD92600245BE6 /* SettingViewController.m in Sources */,
 				37D724E21C4F1AA40055721B /* ApiSendPhoneMessage.m in Sources */,
 				37033E351C4C9033009F27DB /* LoginViewController.m in Sources */,
+				BE9A06F61C7461A900C08725 /* ApiUpdateStudentRequest.m in Sources */,
 				BED0C4BD1C5EF739000A75B3 /* HistoryCommentViewController.m in Sources */,
 				BED0C4AD1C5EF71B000A75B3 /* OrganizationListViewController.m in Sources */,
 				BED7D8CB1C50D3E6005A338E /* PageManager.m in Sources */,

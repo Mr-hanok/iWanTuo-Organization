@@ -7,8 +7,9 @@
 //
 
 #import "BaseViewController.h"
+#import "PatriarchModel.h"
 
-typedef void (^BackBlock)(NSString *phone);
+typedef void (^BackBlock)(PatriarchModel *model);
 @interface AccountListViewController : BaseViewController
 
 @property (nonatomic, copy) BackBlock backBlock;

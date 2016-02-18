@@ -34,7 +34,7 @@
     // Do any additional setup after loading the view from its nib.
     
     __weak typeof(self) weakself = self;
-    [self setRightBtn:@"确定" eventHandler:^(id sender) {
+    [self setRightBtn:@"添加" eventHandler:^(id sender) {
         if (weakself.addArray.count == 0) {
             [HUDManager showWarningWithText:@"请选择学生"];
             return ;

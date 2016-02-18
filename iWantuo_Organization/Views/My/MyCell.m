@@ -52,6 +52,10 @@
             self.typeLabel.text = @"推送消息";
             self.typeIV.image = [UIImage imageNamed:@"my_pushMessage"];
             break;
+        case 7:
+            self.typeLabel.text = @"设置";
+            self.typeIV.image = [UIImage imageNamed:@"setting"];
+            break;
 
     }
 }

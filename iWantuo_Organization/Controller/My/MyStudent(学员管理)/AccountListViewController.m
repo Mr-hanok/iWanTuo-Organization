@@ -73,7 +73,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     PatriarchModel *model = [self.dataArray objectAtIndex:indexPath.row];
-    self.backBlock(model.loginAccounts);
+    self.backBlock(model);
     [self.navigationController popViewControllerAnimated:YES];
 }
 

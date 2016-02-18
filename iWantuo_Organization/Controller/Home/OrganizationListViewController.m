@@ -222,7 +222,6 @@
             self.area = @"";
 
         } else if (_index == 1) {
-//            self.area = _currentAreaArr[indexPath.row];
             for (CityInfoModel *model in [AccountManager sharedInstance].addressArray) {
                 if ([model.name isEqualToString:_currentAreaArr[indexPath.row]]) {
                     self.area = model.cityId;
@@ -232,8 +231,6 @@
         }
         [self.leftDownMenuBtn setTitle:_currentAreaArr[indexPath.row] forState:UIControlStateNormal];
         //调接口 刷新数据
-//        self.api.requestCurrentPage = 1;
-//        [self loadingOrganizationData];
         [self.tableView.mj_header beginRefreshing];
         [HUDManager showLoadingHUDView:KeyWindow];
     }
