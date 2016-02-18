@@ -76,10 +76,10 @@
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
+    [self.classPick remove];
     [MobClick endLogPageView:@"跟踪总结页面"];
 }
 -(void)dealloc{
-    [self.classPick remove];
 }
 #pragma mark -  APIRequestDelegate
 
