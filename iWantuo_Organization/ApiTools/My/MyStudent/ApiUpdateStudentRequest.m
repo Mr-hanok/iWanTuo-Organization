@@ -40,7 +40,7 @@
                           bairro:(NSString *)bairro
 {
     [self.params setObject:organizationAccounts forKey:@"organizationAccounts"];
-    [self.params setObject:studentId forKey:@"studentId"];
+    [self.params setObject:studentId forKey:@"id"];
     [self.params setObject:name forKey:@"name"];
     [self.params setObject:school forKey:@"school"];
     [self.params setObject:grade forKey:@"grade"];
