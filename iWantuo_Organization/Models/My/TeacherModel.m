@@ -22,7 +22,7 @@
     model.createDate = [ValueUtils stringFromObject:[dic objectForKey:@"createDate"]];
     model.phone = [ValueUtils stringFromObject:[dic objectForKey:@"phone"]];
     model.teacherName = [ValueUtils stringFromObject:[dic objectForKey:@"name"]];
-    model.passWord = [ValueUtils stringFromObject:[dic objectForKey:@"passWord"]];
+    model.passWord = [ValueUtils stringFromObject:[dic objectForKey:@"password"]];
 
     return model;
 }
