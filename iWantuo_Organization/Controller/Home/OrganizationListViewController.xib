@@ -141,10 +141,6 @@
                 <mask key="constraints">
                     <exclude reference="WCF-Vp-Z4q"/>
                     <exclude reference="tbc-eN-Ewe"/>
-                    <exclude reference="1cW-Y8-1id"/>
-                    <exclude reference="WsV-SM-lWZ"/>
-                    <exclude reference="kIF-mM-yeY"/>
-                    <exclude reference="zyf-sb-k8n"/>
                     <exclude reference="H7m-Y0-euf"/>
                     <exclude reference="brF-tw-zfV"/>
                     <exclude reference="6eD-Jo-JoC"/>
@@ -152,11 +148,15 @@
                     <exclude reference="fYb-b7-00k"/>
                     <exclude reference="wll-Hx-COk"/>
                     <exclude reference="zPK-Li-rEv"/>
+                    <exclude reference="T3A-gk-9sL"/>
+                    <exclude reference="hGK-2j-oVg"/>
                     <exclude reference="Anv-x0-Hse"/>
                     <exclude reference="H2M-TU-QVj"/>
                     <exclude reference="c9q-Sx-dfR"/>
-                    <exclude reference="T3A-gk-9sL"/>
-                    <exclude reference="hGK-2j-oVg"/>
+                    <exclude reference="1cW-Y8-1id"/>
+                    <exclude reference="WsV-SM-lWZ"/>
+                    <exclude reference="kIF-mM-yeY"/>
+                    <exclude reference="zyf-sb-k8n"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
@@ -171,10 +171,6 @@
                 <mask key="constraints">
                     <include reference="WCF-Vp-Z4q"/>
                     <include reference="tbc-eN-Ewe"/>
-                    <include reference="1cW-Y8-1id"/>
-                    <include reference="WsV-SM-lWZ"/>
-                    <include reference="kIF-mM-yeY"/>
-                    <include reference="zyf-sb-k8n"/>
                     <include reference="H7m-Y0-euf"/>
                     <include reference="brF-tw-zfV"/>
                     <include reference="6eD-Jo-JoC"/>
@@ -182,11 +178,15 @@
                     <include reference="fYb-b7-00k"/>
                     <include reference="wll-Hx-COk"/>
                     <include reference="zPK-Li-rEv"/>
+                    <include reference="T3A-gk-9sL"/>
+                    <include reference="hGK-2j-oVg"/>
                     <include reference="Anv-x0-Hse"/>
                     <exclude reference="H2M-TU-QVj"/>
                     <include reference="c9q-Sx-dfR"/>
-                    <include reference="T3A-gk-9sL"/>
-                    <include reference="hGK-2j-oVg"/>
+                    <include reference="1cW-Y8-1id"/>
+                    <include reference="WsV-SM-lWZ"/>
+                    <include reference="kIF-mM-yeY"/>
+                    <include reference="zyf-sb-k8n"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="177" y="226"/>

@@ -254,6 +254,11 @@
         self.otherRelationTextField.text = [ValueUtils stringFromObject:[self.dataDic objectForKey:@"kinsfolk"]];
         self.otherPhoneTextField.text = [ValueUtils stringFromObject:[self.dataDic objectForKey:@"phone"]];
         self.patriarchId = [ValueUtils stringFromObject:[self.dataDic objectForKey:@"patriarchId"]];
+    } else if (api == self.apiUpdateStudent) {
+        [HUDManager showWarningWithText:sr.msg];
+        if (sr.status == 0) {
+            [self.navigationController popViewControllerAnimated:YES];
+        }
     }
     
 }
