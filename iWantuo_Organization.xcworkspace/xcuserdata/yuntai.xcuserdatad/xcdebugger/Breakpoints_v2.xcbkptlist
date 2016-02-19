@@ -16,31 +16,127 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "iWantuo_Organization/Controller/Login/ForgetViewController.m"
-            timestampString = "477397229.709933"
+            filePath = "iWantuo_Organization/Controller/My/MyFollow(&#x6bcf;&#x65e5;&#x8ddf;&#x8e2a;)/FollowSummaryController.m"
+            timestampString = "477575521.654318"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
-            landmarkName = "-serverApi_FinishedSuccessed:result:"
+            startingLineNumber = "346"
+            endingLineNumber = "346"
+            landmarkName = "-addClassAction:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "iWantuo_Organization/Controller/Login/ForgetViewController.m"
-            timestampString = "477397231.277548"
+            filePath = "iWantuo_Organization/Controller/My/MyFollow(&#x6bcf;&#x65e5;&#x8ddf;&#x8e2a;)/FollowSummaryController.m"
+            timestampString = "477575751.906667"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "430"
+            endingLineNumber = "430"
+            landmarkName = "-changeViewInfoNotification:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iWantuo_Organization/Controller/My/MyFollow(&#x6bcf;&#x65e5;&#x8ddf;&#x8e2a;)/FollowSummaryController.m"
+            timestampString = "477575751.906667"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "454"
+            endingLineNumber = "454"
+            landmarkName = "-changeViewInfoNotification:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iWantuo_Organization/Controller/My/MyFollow(&#x6bcf;&#x65e5;&#x8ddf;&#x8e2a;)/FollowSummaryController.m"
+            timestampString = "477575751.906667"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "447"
+            endingLineNumber = "447"
+            landmarkName = "-changeViewInfoNotification:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iWantuo_Organization/Controller/My/MyFollow(&#x6bcf;&#x65e5;&#x8ddf;&#x8e2a;)/FollowSummaryController.m"
+            timestampString = "477575751.906667"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "449"
+            endingLineNumber = "449"
+            landmarkName = "-changeViewInfoNotification:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iWantuo_Organization/Controller/My/MyFollow(&#x6bcf;&#x65e5;&#x8ddf;&#x8e2a;)/FollowSummaryController.m"
+            timestampString = "477576034.42283"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "492"
+            endingLineNumber = "492"
+            landmarkName = "-changeViewInfoNotification:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iWantuo_Organization/Controller/My/MyFollow(&#x6bcf;&#x65e5;&#x8ddf;&#x8e2a;)/FollowSummaryController.m"
+            timestampString = "477576034.42283"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "503"
+            endingLineNumber = "503"
+            landmarkName = "-changeViewInfoNotification:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iWantuo_Organization/Controller/My/MyFollow(&#x6bcf;&#x65e5;&#x8ddf;&#x8e2a;)/FollowSummaryController.m"
+            timestampString = "477575521.654318"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "-serverApi_RequestFailed:error:"
             landmarkType = "5">
          </BreakpointContent>
@@ -51,12 +147,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "iWantuo_Organization/Controller/Login/ForgetViewController.m"
-            timestampString = "477397234.414063"
+            filePath = "iWantuo_Organization/Controller/My/MyFollow(&#x6bcf;&#x65e5;&#x8ddf;&#x8e2a;)/FollowSummaryController.m"
+            timestampString = "477575521.654318"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
             landmarkName = "-serverApi_FinishedFailed:result:"
             landmarkType = "5">
          </BreakpointContent>
@@ -64,15 +160,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "iWantuo_Organization/Controller/Login/ForgetViewController.m"
-            timestampString = "477397322.486019"
+            filePath = "iWantuo_Organization/Controller/My/MyStudent(&#x5b66;&#x5458;&#x7ba1;&#x7406;)/MyStudentViewController.m"
+            timestampString = "477570615.833253"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "223"
+            endingLineNumber = "223"
             landmarkName = "-serverApi_FinishedSuccessed:result:"
             landmarkType = "5">
          </BreakpointContent>
@@ -83,12 +179,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "iWantuo_Organization/Controller/My/MyClassTeacher(&#x73ed;&#x4e3b;&#x4efb;&#x7ba1;&#x7406;)/MyClassTeacherViewController.m"
-            timestampString = "477455324.107091"
+            filePath = "iWantuo_Organization/Controller/My/MyStudent(&#x5b66;&#x5458;&#x7ba1;&#x7406;)/StudentListViewController.m"
+            timestampString = "477570647.434058"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
             landmarkName = "-serverApi_FinishedSuccessed:result:"
             landmarkType = "5">
          </BreakpointContent>
@@ -99,13 +195,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "iWantuo_Organization/Controller/BaseViewController.m"
-            timestampString = "477457831.206689"
+            filePath = "iWantuo_Organization/Controller/My/MyFollow(&#x6bcf;&#x65e5;&#x8ddf;&#x8e2a;)/FollowSummaryController.m"
+            timestampString = "477575521.654318"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "-setBackBtn"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "-serverApi_FinishedSuccessed:result:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -115,13 +211,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "iWantuo_Organization/Controller/BaseViewController.m"
-            timestampString = "477457842.982281"
+            filePath = "iWantuo_Organization/Controller/My/MyFollow(&#x6bcf;&#x65e5;&#x8ddf;&#x8e2a;)/FollowSummaryController.m"
+            timestampString = "477575751.906667"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "-setBackBtnEventHandler:"
+            startingLineNumber = "420"
+            endingLineNumber = "420"
+            landmarkName = "-changeViewInfoNotification:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -131,29 +227,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "iWantuo_Organization/Controller/BaseViewController.m"
-            timestampString = "477457864.899835"
+            filePath = "iWantuo_Organization/Controller/My/MyFollow(&#x6bcf;&#x65e5;&#x8ddf;&#x8e2a;)/FollowSummaryController.m"
+            timestampString = "477576034.42283"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "-setLeftBtnImage:eventHandler:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iWantuo_Organization/Controller/BaseViewController.m"
-            timestampString = "477457867.734693"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
-            landmarkName = "-setLeftBtnImage:Size:eventHandler:"
+            startingLineNumber = "510"
+            endingLineNumber = "510"
+            landmarkName = "-changeViewInfoNotification:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
