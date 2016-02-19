@@ -39,11 +39,16 @@
         [self.navigationController pushViewController:listVC animated:YES];
     }];
     
+    self.api = [[ApiActiveRequest alloc] initWithDelegate:self];
+    [APIClient execute:self.api];
+    [HUDManager showLoadingHUDView:KeyWindow];
+    
     [self.top1IV bk_whenTapped:^{
         if (self.dataArray.count >= 1){
             ActivityDetailViewController *detailVC = [[ActivityDetailViewController alloc] init];
             ActivityModel *model = [self.dataArray objectAtIndex:0];
-            detailVC.imageUrl = model.largePath;
+            detailVC.imageUrl = [NSString stringWithFormat:@"http://www.%@", model.largePath];
+            detailVC.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:detailVC animated:YES];
         }
     }];
@@ -52,7 +57,8 @@
         if (self.dataArray.count >= 2){
             ActivityDetailViewController *detailVC = [[ActivityDetailViewController alloc] init];
             ActivityModel *model = [self.dataArray objectAtIndex:1];
-            detailVC.imageUrl = model.largePath;
+            detailVC.imageUrl = [NSString stringWithFormat:@"http://www.%@", model.largePath];
+            detailVC.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:detailVC animated:YES];
         }
     }];
@@ -61,7 +67,8 @@
         if (self.dataArray.count >= 3){
             ActivityDetailViewController *detailVC = [[ActivityDetailViewController alloc] init];
             ActivityModel *model = [self.dataArray objectAtIndex:2];
-            detailVC.imageUrl = model.largePath;
+            detailVC.imageUrl = [NSString stringWithFormat:@"http://www.%@", model.largePath];
+            detailVC.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:detailVC animated:YES];
         }
     }];
@@ -70,7 +77,8 @@
         if (self.dataArray.count >= 4){
             ActivityDetailViewController *detailVC = [[ActivityDetailViewController alloc] init];
             ActivityModel *model = [self.dataArray objectAtIndex:3];
-            detailVC.imageUrl = model.largePath;
+            detailVC.imageUrl = [NSString stringWithFormat:@"http://www.%@", model.largePath];
+            detailVC.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:detailVC animated:YES];
         }
     }];
@@ -79,7 +87,7 @@
         if (self.dataArray.count >= 5){
             ActivityDetailViewController *detailVC = [[ActivityDetailViewController alloc] init];
             ActivityModel *model = [self.dataArray objectAtIndex:4];
-            detailVC.imageUrl = model.largePath;
+            detailVC.imageUrl = [NSString stringWithFormat:@"http://www.%@", model.largePath];
             [self.navigationController pushViewController:detailVC animated:YES];
         }
     }];
@@ -89,9 +97,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [MobClick beginLogPageView:@"广场"];
-    self.api = [[ApiActiveRequest alloc] initWithDelegate:self];
-    [APIClient execute:self.api];
-    [HUDManager showLoadingHUDView:self.view];
+    
     
 }
 -(void)viewWillDisappear:(BOOL)animated{
@@ -117,7 +123,7 @@
     }
     if (sr.status == 0) {
         self.dataArray = [NSMutableArray array];
-        NSArray *array = [sr.dic objectForKey:@"activityList"];
+        NSArray *array = [sr.dic objectForKey:@"ActivityList"];
         for (NSDictionary *dic in array) {
             ActivityModel *model = [ActivityModel initWithDic:dic];
             [self.dataArray addObject:model];
@@ -125,19 +131,19 @@
         //赋值~~
         for (ActivityModel *model in self.dataArray) {
             if (model.location.integerValue == 1) {
-                [self.top1IV sd_setImageWithURL:[NSURL URLWithString:model.thumbnailPath] placeholderImage:[UIImage imageNamed:@"top1"]];
+                [self.top1IV sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.%@", model.thumbnailPath]] placeholderImage:[UIImage imageNamed:@"DefaultImage"]];
             }
             if (model.location.integerValue == 2) {
-                [self.top2IV sd_setImageWithURL:[NSURL URLWithString:model.thumbnailPath] placeholderImage:[UIImage imageNamed:@"top2"]];
+                [self.top2IV sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.%@", model.thumbnailPath]] placeholderImage:[UIImage imageNamed:@"DefaultImage"]];
             }
             if (model.location.integerValue == 3) {
-                [self.top3IV sd_setImageWithURL:[NSURL URLWithString:model.thumbnailPath] placeholderImage:[UIImage imageNamed:@"top3"]];
+                [self.top3IV sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.%@", model.thumbnailPath]] placeholderImage:[UIImage imageNamed:@"DefaultImage"]];
             }
             if (model.location.integerValue == 4) {
-                [self.top4IV sd_setImageWithURL:[NSURL URLWithString:model.thumbnailPath] placeholderImage:[UIImage imageNamed:@"top4"]];
+                [self.top4IV sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.%@", model.thumbnailPath]] placeholderImage:[UIImage imageNamed:@"DefaultImage"]];
             }
             if (model.location.integerValue == 5) {
-                [self.top5IV sd_setImageWithURL:[NSURL URLWithString:model.thumbnailPath] placeholderImage:[UIImage imageNamed:@"top5"]];
+                [self.top5IV sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.%@", model.thumbnailPath]] placeholderImage:[UIImage imageNamed:@"DefaultImage"]];
             }
         }
         
