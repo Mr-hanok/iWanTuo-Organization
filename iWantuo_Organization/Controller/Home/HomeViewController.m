@@ -40,6 +40,7 @@ typedef enum : NSUInteger {
 @property (nonatomic, assign) SearchType searchType;
 @property (nonatomic, strong) ApiAddressListRequest *apiAddress;
 @property (nonatomic, strong) NSMutableArray *addressArray;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomConstraint;
 
 @end
 
@@ -99,6 +100,22 @@ typedef enum : NSUInteger {
 {
     [super viewWillDisappear:animated];
     [MobClick endLogPageView:@"首页"];
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    if (IS_IPHONE5) {
+        self.bottomConstraint.constant = 175;
+    } else if (IS_IPHONE4) {
+        self.bottomConstraint.constant = 110;
+        
+    } else if (IS_IPHONE6) {
+        self.bottomConstraint.constant = 250;
+        
+    } else if (IS_IPHONE6P) {
+        self.bottomConstraint.constant = 280;
+        
+    }
 }
 
 #pragma mark - APIRequestDelegate

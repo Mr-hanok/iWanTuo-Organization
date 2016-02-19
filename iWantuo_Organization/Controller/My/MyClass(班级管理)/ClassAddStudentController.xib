@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ClassAddStudentController">
             <connections>
+                <outlet property="emptyImageView" destination="2qf-HD-MxW" id="bAN-8h-7vg"/>
                 <outlet property="tableview" destination="fdd-gI-BTn" id="aF2-Ti-a7W"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -24,9 +25,14 @@
                         <outlet property="delegate" destination="-1" id="5vk-hC-Sav"/>
                     </connections>
                 </tableView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty" translatesAutoresizingMaskIntoConstraints="NO" id="2qf-HD-MxW">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="2qf-HD-MxW" firstAttribute="centerX" secondItem="fdd-gI-BTn" secondAttribute="centerX" id="0Xs-W3-X0t"/>
+                <constraint firstItem="2qf-HD-MxW" firstAttribute="centerY" secondItem="fdd-gI-BTn" secondAttribute="centerY" id="GKw-Ec-7Uh"/>
                 <constraint firstItem="fdd-gI-BTn" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="TLU-DX-Z8q"/>
                 <constraint firstItem="fdd-gI-BTn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="VfO-7s-5PU"/>
                 <constraint firstAttribute="bottom" secondItem="fdd-gI-BTn" secondAttribute="bottom" id="jdf-9m-bMn"/>
@@ -36,8 +42,11 @@
             <variation key="default">
                 <mask key="subviews">
                     <exclude reference="fdd-gI-BTn"/>
+                    <exclude reference="2qf-HD-MxW"/>
                 </mask>
                 <mask key="constraints">
+                    <exclude reference="0Xs-W3-X0t"/>
+                    <exclude reference="GKw-Ec-7Uh"/>
                     <exclude reference="TLU-DX-Z8q"/>
                     <exclude reference="VfO-7s-5PU"/>
                     <exclude reference="jdf-9m-bMn"/>
@@ -47,8 +56,11 @@
             <variation key="heightClass=regular-widthClass=compact">
                 <mask key="subviews">
                     <include reference="fdd-gI-BTn"/>
+                    <include reference="2qf-HD-MxW"/>
                 </mask>
                 <mask key="constraints">
+                    <include reference="0Xs-W3-X0t"/>
+                    <include reference="GKw-Ec-7Uh"/>
                     <include reference="TLU-DX-Z8q"/>
                     <include reference="VfO-7s-5PU"/>
                     <include reference="jdf-9m-bMn"/>
@@ -57,4 +69,7 @@
             </variation>
         </view>
     </objects>
+    <resources>
+        <image name="empty" width="158" height="134"/>
+    </resources>
 </document>

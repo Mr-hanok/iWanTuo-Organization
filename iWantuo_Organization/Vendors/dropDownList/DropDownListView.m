@@ -111,7 +111,7 @@
             }
             [sectionBtn  setTitle:sectionBtnTitle forState:UIControlStateNormal];
             [sectionBtn setTitleColor:kNavigationColor forState:UIControlStateNormal];
-            sectionBtn.backgroundColor = kBGColor;
+            sectionBtn.backgroundColor = [UIColor whiteColor];
             sectionBtn.titleLabel.font = [UIFont boldSystemFontOfSize:14.0f];
             [self addSubview:sectionBtn];
             
@@ -119,18 +119,18 @@
             [sectionBtnIv setImage:[UIImage imageNamed:@"down_dark.png"]];
             [sectionBtnIv setContentMode:UIViewContentModeScaleToFill];
             sectionBtnIv.tag = SECTION_IV_TAG_BEGIN + i;
-            
-            UIView *sectionLine = [[UIView alloc] initWithFrame:CGRectMake(sectionWidth*i, frame.size.height - 0.5, sectionWidth, 0.5)];
-            sectionLine.backgroundColor = [UIColor lightGrayColor];
-            
-            
-            [self addSubview: sectionLine];
-            
-            if (i<sectionNum && i != 0) {
-                UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(sectionWidth*i, frame.size.height/4, 1, frame.size.height/2)];
-                lineView.backgroundColor = [UIColor lightGrayColor];
-                [self addSubview:lineView];
-            }
+//            
+//            UIView *sectionLine = [[UIView alloc] initWithFrame:CGRectMake(sectionWidth*i, frame.size.height - 0.5, sectionWidth, 0.5)];
+//            sectionLine.backgroundColor = [UIColor lightGrayColor];
+//            
+//            
+//            [self addSubview: sectionLine];
+//            
+//            if (i<sectionNum && i != 0) {
+//                UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(sectionWidth*i, frame.size.height/4, 1, frame.size.height/2)];
+//                lineView.backgroundColor = [UIColor lightGrayColor];
+//                [self addSubview:lineView];
+//            }
             
         }
         

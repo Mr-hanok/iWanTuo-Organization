@@ -157,7 +157,7 @@
     } else if (textField == self.gradeTextField) {
         //选择年ji
         [self hiddenKeyBoard];
-        self.pickviewGrade = [[ZHPickView alloc] initPickviewWithArray:@[@"学前班小班", @"学前班大班", @"小学一年级", @"小学二年级", @"小学三年级", @"小学四年级", @"小学五年级", @"小学六年级", @"初中一年级", @"初中二年级", @"初中三年级"] isHaveNavControler:NO];
+        self.pickviewGrade = [[ZHPickView alloc] initPickviewWithArray:@[@"学前班小班", @"学前班大班", @"小学一年级", @"小学二年级", @"小学三年级", @"小学四年级", @"小学五年级", @"小学六年级", @"初中一年级", @"初中二年级", @"初中三年级", @"高中一年级", @"高中二年级", @"高中三年级"] isHaveNavControler:NO];
         self.pickviewGrade.delegate = self;
         [self.pickviewGrade show];
         return NO;

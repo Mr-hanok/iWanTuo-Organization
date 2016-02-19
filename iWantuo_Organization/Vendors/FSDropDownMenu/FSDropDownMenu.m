@@ -56,9 +56,9 @@
         [_backGroundView addGestureRecognizer:gesture];
         
         //add bottom shadow
-        UIView *bottomShadow = [[UIView alloc] initWithFrame:CGRectMake(0, self.frame.size.height-0.5, screenSize.width, 0.5)];
-        bottomShadow.backgroundColor = [UIColor lightGrayColor];
-        [self addSubview:bottomShadow];
+//        UIView *bottomShadow = [[UIView alloc] initWithFrame:CGRectMake(0, self.frame.size.height-0.5, screenSize.width, 0.5)];
+//        bottomShadow.backgroundColor = [UIColor lightGrayColor];
+//        [self addSubview:bottomShadow];
     }
     return self;
 }

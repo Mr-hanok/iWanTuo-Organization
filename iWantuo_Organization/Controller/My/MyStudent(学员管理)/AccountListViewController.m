@@ -20,6 +20,7 @@
 @property (nonatomic, strong) PageManager *pageManager;
 @property (nonatomic, strong) ApiPatriarchListRequest *apiPatriarch;
 @property (nonatomic, strong) NSString *searchKey;
+@property (weak, nonatomic) IBOutlet UIImageView *emptyImageView;
 
 @end
 
@@ -44,6 +45,8 @@
     
     [self inistalSearch];
     self.title = @"家长账号列表";
+    self.emptyImageView.hidden = YES;
+
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -106,6 +109,13 @@
             PatriarchModel *model = [PatriarchModel initWithDic:dic];
             [self.dataArray addObject:model];
         }
+        //是否有数据
+        if (self.dataArray.count > 0 ) {
+            self.emptyImageView.hidden = YES;
+        } else {
+            self.emptyImageView.hidden = NO;
+        }
+
         [self.tableView reloadData];
     } else {
         [HUDManager showWarningWithText:sr.msg];

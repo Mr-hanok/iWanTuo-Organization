@@ -141,6 +141,9 @@
 		BE4055751C535AB900590788 /* ClassModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4055741C535AB900590788 /* ClassModel.m */; };
 		BE4055781C535F3300590788 /* ApiDeleteTeacherRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4055771C535F3300590788 /* ApiDeleteTeacherRequest.m */; };
 		BE40557B1C5369A700590788 /* StudentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE40557A1C5369A700590788 /* StudentModel.m */; };
+		BE4F16881C76F69E00296F5F /* ActivityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4F16871C76F69E00296F5F /* ActivityModel.m */; };
+		BE4F16901C76FEC900296F5F /* ActivityDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4F168E1C76FEC900296F5F /* ActivityDetailViewController.m */; };
+		BE4F16911C76FEC900296F5F /* ActivityDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE4F168F1C76FEC900296F5F /* ActivityDetailViewController.xib */; };
 		BE69F3A11C51C88B00EFA44D /* ApiTeacherListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F3A01C51C88B00EFA44D /* ApiTeacherListRequest.m */; };
 		BE69F3A41C51C94D00EFA44D /* TeacherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F3A31C51C94D00EFA44D /* TeacherModel.m */; };
 		BE69F3A71C51D81E00EFA44D /* ApiAddTeacherRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F3A61C51D81E00EFA44D /* ApiAddTeacherRequest.m */; };
@@ -149,6 +152,7 @@
 		BE69F3B01C520F2900EFA44D /* ApiClassListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F3AF1C520F2900EFA44D /* ApiClassListRequest.m */; };
 		BE69F3B31C520FEC00EFA44D /* ApiDeleteClassRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F3B21C520FEC00EFA44D /* ApiDeleteClassRequest.m */; };
 		BE69F3B61C52108200EFA44D /* ApiStudentByOrgRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F3B51C52108200EFA44D /* ApiStudentByOrgRequest.m */; };
+		BE9113D71C76DF34006E2A0A /* ApiActiveRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9113D61C76DF34006E2A0A /* ApiActiveRequest.m */; };
 		BE976C641C740D770018EA33 /* ApiDelStudentByOrgRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE976C631C740D770018EA33 /* ApiDelStudentByOrgRequest.m */; };
 		BE9A06F61C7461A900C08725 /* ApiUpdateStudentRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9A06F51C7461A900C08725 /* ApiUpdateStudentRequest.m */; };
 		BEBDEE831C58D4CD006AE4EF /* UserInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBDEE811C58D4CD006AE4EF /* UserInfoCell.m */; };
@@ -522,6 +526,11 @@
 		BE4055771C535F3300590788 /* ApiDeleteTeacherRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiDeleteTeacherRequest.m; sourceTree = "<group>"; };
 		BE4055791C5369A700590788 /* StudentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentModel.h; sourceTree = "<group>"; };
 		BE40557A1C5369A700590788 /* StudentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentModel.m; sourceTree = "<group>"; };
+		BE4F16861C76F69E00296F5F /* ActivityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityModel.h; sourceTree = "<group>"; };
+		BE4F16871C76F69E00296F5F /* ActivityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityModel.m; sourceTree = "<group>"; };
+		BE4F168D1C76FEC900296F5F /* ActivityDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityDetailViewController.h; sourceTree = "<group>"; };
+		BE4F168E1C76FEC900296F5F /* ActivityDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityDetailViewController.m; sourceTree = "<group>"; };
+		BE4F168F1C76FEC900296F5F /* ActivityDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityDetailViewController.xib; sourceTree = "<group>"; };
 		BE69F39F1C51C88B00EFA44D /* ApiTeacherListRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiTeacherListRequest.h; sourceTree = "<group>"; };
 		BE69F3A01C51C88B00EFA44D /* ApiTeacherListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiTeacherListRequest.m; sourceTree = "<group>"; };
 		BE69F3A21C51C94D00EFA44D /* TeacherModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeacherModel.h; sourceTree = "<group>"; };
@@ -538,6 +547,8 @@
 		BE69F3B21C520FEC00EFA44D /* ApiDeleteClassRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiDeleteClassRequest.m; sourceTree = "<group>"; };
 		BE69F3B41C52108200EFA44D /* ApiStudentByOrgRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiStudentByOrgRequest.h; sourceTree = "<group>"; };
 		BE69F3B51C52108200EFA44D /* ApiStudentByOrgRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiStudentByOrgRequest.m; sourceTree = "<group>"; };
+		BE9113D51C76DF34006E2A0A /* ApiActiveRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiActiveRequest.h; sourceTree = "<group>"; };
+		BE9113D61C76DF34006E2A0A /* ApiActiveRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiActiveRequest.m; sourceTree = "<group>"; };
 		BE976C621C740D770018EA33 /* ApiDelStudentByOrgRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiDelStudentByOrgRequest.h; sourceTree = "<group>"; };
 		BE976C631C740D770018EA33 /* ApiDelStudentByOrgRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiDelStudentByOrgRequest.m; sourceTree = "<group>"; };
 		BE9A06F41C7461A900C08725 /* ApiUpdateStudentRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiUpdateStudentRequest.h; sourceTree = "<group>"; };
@@ -856,6 +867,7 @@
 		37D724FB1C4F6ABC0055721B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BE9113D81C76F451006E2A0A /* Top */,
 				BED7D8CF1C51043A005A338E /* My */,
 				37D725021C4F7AF70055721B /* Home */,
 				37D724FC1C4F6B500055721B /* AccountModel.h */,
@@ -1157,6 +1169,9 @@
 				BED0C4C41C5EF74F000A75B3 /* TopViewController.h */,
 				BED0C4C51C5EF74F000A75B3 /* TopViewController.m */,
 				BED0C4C61C5EF74F000A75B3 /* TopViewController.xib */,
+				BE4F168D1C76FEC900296F5F /* ActivityDetailViewController.h */,
+				BE4F168E1C76FEC900296F5F /* ActivityDetailViewController.m */,
+				BE4F168F1C76FEC900296F5F /* ActivityDetailViewController.xib */,
 			);
 			path = Top;
 			sourceTree = "<group>";
@@ -1191,13 +1206,6 @@
 				37D725001C4F78AF0055721B /* ApiAddressListRequest.m */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		37E1DE161C4E1A2000245BE6 /* Top */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Top;
 			sourceTree = "<group>";
 		};
 		37E1DE731C4E3FFF00245BE6 /* ZHPickView */ = {
@@ -1310,10 +1318,10 @@
 		BE25EB651C44FD8500068309 /* ApiTools */ = {
 			isa = PBXGroup;
 			children = (
+				BE9113D41C76DF21006E2A0A /* Top */,
 				BED7D8BB1C50BA45005A338E /* My */,
 				37E1DE131C4E1A2000245BE6 /* Discover */,
 				37E1DE141C4E1A2000245BE6 /* Home */,
-				37E1DE161C4E1A2000245BE6 /* Top */,
 				37033E391C4C910B009F27DB /* Login */,
 				BE25EB661C44FD8500068309 /* Api */,
 				37D724EC1C4F27040055721B /* UploadApiRequest.h */,
@@ -1558,6 +1566,24 @@
 				BE25EC051C4501C000068309 /* BaseViewController.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		BE9113D41C76DF21006E2A0A /* Top */ = {
+			isa = PBXGroup;
+			children = (
+				BE9113D51C76DF34006E2A0A /* ApiActiveRequest.h */,
+				BE9113D61C76DF34006E2A0A /* ApiActiveRequest.m */,
+			);
+			path = Top;
+			sourceTree = "<group>";
+		};
+		BE9113D81C76F451006E2A0A /* Top */ = {
+			isa = PBXGroup;
+			children = (
+				BE4F16861C76F69E00296F5F /* ActivityModel.h */,
+				BE4F16871C76F69E00296F5F /* ActivityModel.m */,
+			);
+			path = Top;
 			sourceTree = "<group>";
 		};
 		BE976C611C740D2E0018EA33 /* MyStudent */ = {
@@ -1917,6 +1943,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE4F16911C76FEC900296F5F /* ActivityDetailViewController.xib in Resources */,
 				37C4E8FB1C51C26C00583902 /* ClassAddStudentCell.xib in Resources */,
 				37033E361C4C9033009F27DB /* LoginViewController.xib in Resources */,
 				BED7D8BA1C50A6DB005A338E /* AddStudentCell.xib in Resources */,
@@ -2110,6 +2137,7 @@
 				3794641E1C55EB7100368B3A /* ApiFollowCheckRequest.m in Sources */,
 				BE25EB6F1C44FD8500068309 /* APIResult.m in Sources */,
 				37033E4A1C4CB7EC009F27DB /* SigningViewController.m in Sources */,
+				BE9113D71C76DF34006E2A0A /* ApiActiveRequest.m in Sources */,
 				BED0C4DD1C5EF7B7000A75B3 /* OrganizationCell.m in Sources */,
 				BE25EBB11C44FDB300068309 /* TimerHelper.m in Sources */,
 				BE25EB991C44FD9200068309 /* NSDate+CalendarLogic.m in Sources */,
@@ -2120,6 +2148,7 @@
 				37D725011C4F78AF0055721B /* ApiAddressListRequest.m in Sources */,
 				BED0C4F61C5EF7F2000A75B3 /* ApiSubmitCommentRequest.m in Sources */,
 				BEED9E921C72FC8B0081BDBA /* ApiSystemMsgRequest.m in Sources */,
+				BE4F16881C76F69E00296F5F /* ActivityModel.m in Sources */,
 				63B1EFC61C744B4E00137B28 /* AppDeviceManager.m in Sources */,
 				37E1DE101C4E149800245BE6 /* ApiFindPassWord.m in Sources */,
 				BEED9E961C72FCD10081BDBA /* MyNewsDetailViewController.m in Sources */,
@@ -2156,6 +2185,7 @@
 				BE25EBFB1C44FDFE00068309 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				37C4E8FA1C51C26C00583902 /* ClassAddStudentCell.m in Sources */,
 				BE976C641C740D770018EA33 /* ApiDelStudentByOrgRequest.m in Sources */,
+				BE4F16901C76FEC900296F5F /* ActivityDetailViewController.m in Sources */,
 				BED0C5161C5EF937000A75B3 /* CancelAttentionHandler.m in Sources */,
 				BE25EBF81C44FDFE00068309 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				37C4E8FF1C51DEFB00583902 /* StudentChoseViewController.m in Sources */,

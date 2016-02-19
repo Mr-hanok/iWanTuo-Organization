@@ -107,17 +107,19 @@
         }
         api.requestCurrentPage ++;
         NSArray *array = [sr.dic objectForKey:@"manageList"];
-        //是否有数据
-        if (array.count > 0 ) {
-            self.emptyImageView.hidden = YES;
-        } else {
-            self.emptyImageView.hidden = NO;
-        }
+        
 
         for (NSDictionary *dic in array) {
             MsgModel *model = [MsgModel initWithDic:dic];
             [self.messageArray addObject:model];
         }
+        //是否有数据
+        if (self.messageArray.count > 0 ) {
+            self.emptyImageView.hidden = YES;
+        } else {
+            self.emptyImageView.hidden = NO;
+        }
+        
         [self.messageTableView reloadData];
         
     } else {

@@ -16,6 +16,7 @@
 @property (nonatomic, strong) NSMutableArray *dataArray;
 @property (nonatomic, strong) ApiStudentByOrgRequest *api;
 @property (nonatomic, strong) ApiSaveStudentsByClassRequest *apiSave;
+@property (weak, nonatomic) IBOutlet UIImageView *emptyImageView;
 @property (nonatomic, strong) NSMutableArray *addArray;
 @end
 
@@ -99,6 +100,13 @@
                 StudentModel *model = [StudentModel initWithDic:dic];
                 [self.dataArray addObject:model];
             }
+            
+            //是否有数据
+            if (self.dataArray.count > 0 ) {
+                self.emptyImageView.hidden = YES;
+            } else {
+                self.emptyImageView.hidden = NO;
+            }
             [self.tableview reloadData];
         } else {
             [HUDManager showWarningWithText:sr.msg];
@@ -107,6 +115,13 @@
         if (sr.status == 0) {
             
             [self.dataArray removeObjectsInArray:self.addArray];
+            
+            //是否有数据
+            if (self.dataArray.count > 0 ) {
+                self.emptyImageView.hidden = YES;
+            } else {
+                self.emptyImageView.hidden = NO;
+            }
             
             [self.addArray removeAllObjects];
             [self.tableview reloadData];

@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController">
             <connections>
+                <outlet property="bottomConstraint" destination="t51-qR-70W" id="7jY-UK-sWm"/>
                 <outlet property="cityNameBtn" destination="mua-RY-RlI" id="NWx-Xp-p0b"/>
                 <outlet property="cityNameView" destination="bP6-Uz-GuY" id="Wos-vl-sjD"/>
                 <outlet property="searchByLocationBtn" destination="y2c-L2-Db5" id="Lvx-6a-40d"/>
@@ -117,8 +118,8 @@
                     </variation>
                     <variation key="heightClass=regular-widthClass=compact">
                         <mask key="constraints">
-                            <include reference="h4u-BP-nIb"/>
-                            <include reference="tH3-1b-Att"/>
+                            <exclude reference="h4u-BP-nIb"/>
+                            <exclude reference="tH3-1b-Att"/>
                         </mask>
                     </variation>
                 </imageView>
@@ -164,8 +165,8 @@
                     </variation>
                     <variation key="heightClass=regular-widthClass=compact">
                         <mask key="constraints">
-                            <include reference="fsU-6X-U4q"/>
-                            <include reference="uJj-pd-45K"/>
+                            <exclude reference="fsU-6X-U4q"/>
+                            <exclude reference="uJj-pd-45K"/>
                         </mask>
                     </variation>
                 </imageView>
