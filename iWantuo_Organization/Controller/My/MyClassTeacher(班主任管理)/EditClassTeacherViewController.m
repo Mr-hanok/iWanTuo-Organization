@@ -30,6 +30,7 @@
     self.nameTF.text = self.model.teacherName;
     self.accountTF.text = self.model.loginAccounts;
     self.passWordTF.text = self.model.passWord;
+    self.phoneNumTF.keyboardType = UIKeyboardTypeNumberPad;
 }
 
 -(void)viewWillAppear:(BOOL)animated{

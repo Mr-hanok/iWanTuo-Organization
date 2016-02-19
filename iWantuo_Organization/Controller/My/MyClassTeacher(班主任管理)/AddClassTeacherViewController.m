@@ -27,7 +27,7 @@
     // Do any additional setup after loading the view from its nib.
     self.title = @"添加辅导员";
     
-    self.phoneNumTF.keyboardType = UIKeyboardTypePhonePad;
+    self.phoneNumTF.keyboardType = UIKeyboardTypeNumberPad;
     self.accountTF.keyboardType = UIKeyboardTypeEmailAddress;
     self.passWordTF.keyboardType = UIKeyboardTypeEmailAddress;
     self.accountTF.delegate = self;

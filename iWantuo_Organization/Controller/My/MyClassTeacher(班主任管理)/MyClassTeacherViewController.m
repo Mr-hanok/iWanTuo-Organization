@@ -151,17 +151,20 @@
             }
             api.requestCurrentPage ++;
             NSArray *array = [sr.dic objectForKey:@"queryList"];
+            
+            for (NSDictionary *dic in array) {
+                TeacherModel *model = [TeacherModel initWithDic:dic];
+                [self.dataArray addObject:model];
+            }
+            
             //是否有数据
-            if (array.count > 0 ) {
+            if (self.dataArray.count > 0 ) {
                 self.emptyImageView.hidden = YES;
             } else {
                 self.emptyImageView.hidden = NO;
             }
 
-            for (NSDictionary *dic in array) {
-                TeacherModel *model = [TeacherModel initWithDic:dic];
-                [self.dataArray addObject:model];
-            }
+            
             [self.tableview reloadData];
         } else {
             [HUDManager showWarningWithText:sr.msg];

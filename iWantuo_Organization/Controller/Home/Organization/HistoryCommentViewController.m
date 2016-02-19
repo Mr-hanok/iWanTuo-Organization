@@ -15,6 +15,7 @@
 @property (nonatomic, strong) ApiCommentListRequest *api;
 @property (nonatomic, strong) NSMutableArray *dataArray;
 @property (nonatomic, strong) PageManager *pageManager;
+@property (weak, nonatomic) IBOutlet UIImageView *emptyImageView;
 
 @end
 
@@ -37,6 +38,8 @@
     self.pageManager = [PageManager handlerWithDelegate:self TableView:self.tableView];
     [self.tableView.mj_header beginRefreshing];
     self.tableView.tableFooterView = [[UIView alloc] init];
+    
+    self.emptyImageView.hidden = YES;
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -104,6 +107,11 @@
         for (NSDictionary *dic in array) {
             CommentModel *model = [CommentModel initWithDic:dic];
             [self.dataArray addObject:model];
+        }
+        if (self.dataArray.count > 0) {
+            self.emptyImageView.hidden = YES;
+        } else {
+            self.emptyImageView.hidden = NO;
         }
         [self.tableView reloadData];
         

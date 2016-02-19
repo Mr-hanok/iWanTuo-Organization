@@ -99,17 +99,18 @@
         }
         api.requestCurrentPage ++;
         NSArray *array = [sr.dic objectForKey:@"organizationList"];
+        
+        for (NSDictionary *dic in array) {
+            OrganizationModel *model = [OrganizationModel initWithDic:dic];
+            [self.dataArray addObject:model];
+        }
         //是否有数据
-        if (array.count > 0 ) {
+        if (self.dataArray.count > 0 ) {
             self.emptyImageView.hidden = YES;
         } else {
             self.emptyImageView.hidden = NO;
         }
 
-        for (NSDictionary *dic in array) {
-            OrganizationModel *model = [OrganizationModel initWithDic:dic];
-            [self.dataArray addObject:model];
-        }
         [self.tableView reloadData];
     } else {
         [HUDManager showWarningWithText:sr.msg];

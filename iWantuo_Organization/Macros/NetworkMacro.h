@@ -84,8 +84,9 @@
 #define MyCollectionAction           @"collect/phoneQueryByList"
 #define GrowCurveAction              @"trace/phoneSelectShow"
 #define MyChildAction                @"student/phoneSelect"//获取我的小孩
-#define FollowCheckRequest        @"trace/phoneGetById" //每日表现查询接口
+#define FollowCheckRequest           @"trace/phoneGetById" //每日表现查询接口
 
-
+//top
+#define TopActiveAction                 @"activity/phoneQueryList" //广场活动接口
 
 #endif

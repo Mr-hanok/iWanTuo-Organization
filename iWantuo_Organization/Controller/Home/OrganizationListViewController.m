@@ -151,16 +151,18 @@
         }
         api.requestCurrentPage ++;
         NSArray *array = [sr.dic objectForKey:@"organizationList"];
-        //是否有数据
-        if (array.count > 0 ) {
-            self.emptyImageView.hidden = YES;
-        } else {
-            self.emptyImageView.hidden = NO;
-        }
+        
 
         for (NSDictionary *dic in array) {
             OrganizationModel *model = [OrganizationModel initWithDic:dic];
             [self.dataArray addObject:model];
+        }
+
+        //是否有数据
+        if (self.dataArray.count > 0 ) {
+            self.emptyImageView.hidden = YES;
+        } else {
+            self.emptyImageView.hidden = NO;
         }
         [self.tableView reloadData];
     } else {
@@ -290,7 +292,7 @@
     
     _currentAreaArr = _areaArr[0];
     
-    self.leftDownMenu = [[FSDropDownMenu alloc] initWithOrigin:CGPointMake(0, 30) andHeight:kScreenBoundHeight - kNavigationHeight - 30 ];
+    self.leftDownMenu = [[FSDropDownMenu alloc] initWithOrigin:CGPointMake(0, 40) andHeight:kScreenBoundHeight - kNavigationHeight - 40 ];
     self.leftDownMenu.transformView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"expandableImage"]];
     self.leftDownMenu.tag = 1001;
     self.leftDownMenu.dataSource = self;
@@ -302,7 +304,7 @@
                                                         
                                                         ]];
     
-    self.rightDownMenu = [[DropDownListView alloc] initWithFrame:CGRectMake(kScreenBoundWidth / 2, 0, kScreenBoundWidth / 2, 30) dataSource:self delegate:self superView:self.view];
+    self.rightDownMenu = [[DropDownListView alloc] initWithFrame:CGRectMake(kScreenBoundWidth / 2, 0, kScreenBoundWidth / 2, 40) dataSource:self delegate:self superView:self.view];
     self.rightDownMenu.mSuperView = self.view;
     
     

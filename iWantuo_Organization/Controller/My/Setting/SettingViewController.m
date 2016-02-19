@@ -85,7 +85,14 @@
     BaseViewController *vc = nil;
     switch (indexPath.row) {
         case 0://修改密码
+        {
+            if ([AccountManager sharedInstance].isLogin == NO) {
+                [HUDManager showWarningWithText:@"尚未登录."];
+                return;
+            }
             vc = [[ChangePasswordController alloc]init];
+        }
+            
             break;
         case 1://意见反馈
             vc = [[FeedbackViewController alloc]init];
