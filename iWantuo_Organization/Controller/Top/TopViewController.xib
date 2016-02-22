@@ -31,24 +31,6 @@
                         <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tNq-fc-XNY">
                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                         </imageView>
-                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3zc-6x-tGb">
-                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                            <constraints>
-                                <constraint firstAttribute="width" secondItem="3zc-6x-tGb" secondAttribute="height" multiplier="132:295" id="Ngd-07-QBB">
-                                    <variation key="heightClass=regular-widthClass=compact" constant="2.1593220338983059"/>
-                                </constraint>
-                            </constraints>
-                            <variation key="default">
-                                <mask key="constraints">
-                                    <exclude reference="Ngd-07-QBB"/>
-                                </mask>
-                            </variation>
-                            <variation key="heightClass=regular-widthClass=compact">
-                                <mask key="constraints">
-                                    <include reference="Ngd-07-QBB"/>
-                                </mask>
-                            </variation>
-                        </imageView>
                         <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r0n-CC-tmC">
                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             <constraints>
@@ -83,6 +65,24 @@
                             <variation key="heightClass=regular-widthClass=compact">
                                 <mask key="constraints">
                                     <include reference="jYO-NU-mRM"/>
+                                </mask>
+                            </variation>
+                        </imageView>
+                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3zc-6x-tGb">
+                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="3zc-6x-tGb" secondAttribute="height" multiplier="132:295" id="Ngd-07-QBB">
+                                    <variation key="heightClass=regular-widthClass=compact" constant="2.1593220338983059"/>
+                                </constraint>
+                            </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="Ngd-07-QBB"/>
+                                </mask>
+                            </variation>
+                            <variation key="heightClass=regular-widthClass=compact">
+                                <mask key="constraints">
+                                    <include reference="Ngd-07-QBB"/>
                                 </mask>
                             </variation>
                         </imageView>
@@ -131,10 +131,10 @@
                         <mask key="subviews">
                             <exclude reference="1b6-z2-krC"/>
                             <exclude reference="tNq-fc-XNY"/>
-                            <exclude reference="3zc-6x-tGb"/>
                             <exclude reference="r0n-CC-tmC"/>
                             <exclude reference="AVV-ZW-rv0"/>
                             <exclude reference="hfW-rh-sW5"/>
+                            <exclude reference="3zc-6x-tGb"/>
                         </mask>
                         <mask key="constraints">
                             <exclude reference="2UN-mm-x5h"/>
@@ -167,10 +167,10 @@
                         <mask key="subviews">
                             <include reference="1b6-z2-krC"/>
                             <include reference="tNq-fc-XNY"/>
-                            <include reference="3zc-6x-tGb"/>
                             <include reference="r0n-CC-tmC"/>
                             <include reference="AVV-ZW-rv0"/>
                             <include reference="hfW-rh-sW5"/>
+                            <include reference="3zc-6x-tGb"/>
                         </mask>
                         <mask key="constraints">
                             <include reference="2UN-mm-x5h"/>

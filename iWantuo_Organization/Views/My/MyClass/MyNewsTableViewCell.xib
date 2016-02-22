@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -39,6 +39,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="aL6-1a-SLk" secondAttribute="bottom" constant="12" id="2eW-BS-a11"/>
+                            <constraint firstAttribute="trailing" secondItem="aL6-1a-SLk" secondAttribute="trailing" constant="30" id="6Ff-bu-sR1">
+                                <variation key="heightClass=regular-widthClass=compact" constant="10"/>
+                            </constraint>
                             <constraint firstItem="pNn-pc-WGg" firstAttribute="leading" secondItem="Gp9-nc-GUW" secondAttribute="leading" constant="15" id="9Bk-gq-iZD"/>
                             <constraint firstItem="8Vt-Xi-qov" firstAttribute="leading" secondItem="pNn-pc-WGg" secondAttribute="leading" id="TCc-MF-NNj"/>
                             <constraint firstItem="pNn-pc-WGg" firstAttribute="top" secondItem="Gp9-nc-GUW" secondAttribute="top" constant="13" id="b1M-hy-mQm"/>
@@ -52,12 +55,13 @@
                                 <exclude reference="aL6-1a-SLk"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="9Bk-gq-iZD"/>
-                                <exclude reference="b1M-hy-mQm"/>
                                 <exclude reference="TCc-MF-NNj"/>
                                 <exclude reference="eyo-O5-YQs"/>
                                 <exclude reference="2eW-BS-a11"/>
+                                <exclude reference="6Ff-bu-sR1"/>
                                 <exclude reference="lFO-tf-ja6"/>
+                                <exclude reference="9Bk-gq-iZD"/>
+                                <exclude reference="b1M-hy-mQm"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -67,12 +71,13 @@
                                 <include reference="aL6-1a-SLk"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="9Bk-gq-iZD"/>
-                                <include reference="b1M-hy-mQm"/>
                                 <include reference="TCc-MF-NNj"/>
                                 <include reference="eyo-O5-YQs"/>
                                 <include reference="2eW-BS-a11"/>
+                                <include reference="6Ff-bu-sR1"/>
                                 <include reference="lFO-tf-ja6"/>
+                                <include reference="9Bk-gq-iZD"/>
+                                <include reference="b1M-hy-mQm"/>
                             </mask>
                         </variation>
                     </view>

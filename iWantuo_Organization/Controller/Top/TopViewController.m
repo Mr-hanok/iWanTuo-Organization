@@ -92,7 +92,20 @@
         }
     }];
     
+    self.top1IV.layer.masksToBounds = YES;
+    self.top1IV.layer.cornerRadius = 8;
     
+    self.top2IV.layer.masksToBounds = YES;
+    self.top2IV.layer.cornerRadius = 8;
+    
+    self.top3IV.layer.masksToBounds = YES;
+    self.top3IV.layer.cornerRadius = 8;
+    
+    self.top4IV.layer.masksToBounds = YES;
+    self.top4IV.layer.cornerRadius = 8;
+    
+    self.top5IV.layer.masksToBounds = YES;
+    self.top5IV.layer.cornerRadius = 8;
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -104,8 +117,6 @@
     [super viewWillDisappear:animated];
     [MobClick endLogPageView:@"广场"];
 }
-
-#pragma mark - APIRequestDelegate
 
 #pragma mark - APIRequestDelegate
 - (void)serverApi_RequestFailed:(APIRequest *)api error:(NSError *)error {
