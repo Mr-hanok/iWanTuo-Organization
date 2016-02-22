@@ -153,6 +153,9 @@
 		BE69F3B31C520FEC00EFA44D /* ApiDeleteClassRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F3B21C520FEC00EFA44D /* ApiDeleteClassRequest.m */; };
 		BE69F3B61C52108200EFA44D /* ApiStudentByOrgRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F3B51C52108200EFA44D /* ApiStudentByOrgRequest.m */; };
 		BE9113D71C76DF34006E2A0A /* ApiActiveRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9113D61C76DF34006E2A0A /* ApiActiveRequest.m */; };
+		BE9199601C7AF9270035C002 /* PushInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BE91995F1C7AF9270035C002 /* PushInfoManager.m */; };
+		BE9199651C7AFECB0035C002 /* BaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9199621C7AFECB0035C002 /* BaseWebViewController.m */; };
+		BE9199661C7AFECB0035C002 /* WebHudViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9199641C7AFECB0035C002 /* WebHudViewController.m */; };
 		BE976C641C740D770018EA33 /* ApiDelStudentByOrgRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE976C631C740D770018EA33 /* ApiDelStudentByOrgRequest.m */; };
 		BE9A06F61C7461A900C08725 /* ApiUpdateStudentRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9A06F51C7461A900C08725 /* ApiUpdateStudentRequest.m */; };
 		BEBDEE831C58D4CD006AE4EF /* UserInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBDEE811C58D4CD006AE4EF /* UserInfoCell.m */; };
@@ -549,6 +552,12 @@
 		BE69F3B51C52108200EFA44D /* ApiStudentByOrgRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiStudentByOrgRequest.m; sourceTree = "<group>"; };
 		BE9113D51C76DF34006E2A0A /* ApiActiveRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiActiveRequest.h; sourceTree = "<group>"; };
 		BE9113D61C76DF34006E2A0A /* ApiActiveRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiActiveRequest.m; sourceTree = "<group>"; };
+		BE91995E1C7AF9270035C002 /* PushInfoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushInfoManager.h; sourceTree = "<group>"; };
+		BE91995F1C7AF9270035C002 /* PushInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushInfoManager.m; sourceTree = "<group>"; };
+		BE9199611C7AFECB0035C002 /* BaseWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseWebViewController.h; sourceTree = "<group>"; };
+		BE9199621C7AFECB0035C002 /* BaseWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseWebViewController.m; sourceTree = "<group>"; };
+		BE9199631C7AFECB0035C002 /* WebHudViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebHudViewController.h; sourceTree = "<group>"; };
+		BE9199641C7AFECB0035C002 /* WebHudViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebHudViewController.m; sourceTree = "<group>"; };
 		BE976C621C740D770018EA33 /* ApiDelStudentByOrgRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiDelStudentByOrgRequest.h; sourceTree = "<group>"; };
 		BE976C631C740D770018EA33 /* ApiDelStudentByOrgRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiDelStudentByOrgRequest.m; sourceTree = "<group>"; };
 		BE9A06F41C7461A900C08725 /* ApiUpdateStudentRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiUpdateStudentRequest.h; sourceTree = "<group>"; };
@@ -1163,6 +1172,10 @@
 		37E1DDFE1C4DE26C00245BE6 /* Top */ = {
 			isa = PBXGroup;
 			children = (
+				BE9199611C7AFECB0035C002 /* BaseWebViewController.h */,
+				BE9199621C7AFECB0035C002 /* BaseWebViewController.m */,
+				BE9199631C7AFECB0035C002 /* WebHudViewController.h */,
+				BE9199641C7AFECB0035C002 /* WebHudViewController.m */,
 				BED0C4C11C5EF74F000A75B3 /* TopListViewController.h */,
 				BED0C4C21C5EF74F000A75B3 /* TopListViewController.m */,
 				BED0C4C31C5EF74F000A75B3 /* TopListViewController.xib */,
@@ -1492,6 +1505,8 @@
 		BE25EBBA1C44FDC700068309 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				BE91995E1C7AF9270035C002 /* PushInfoManager.h */,
+				BE91995F1C7AF9270035C002 /* PushInfoManager.m */,
 				BED0C50E1C5EF8FB000A75B3 /* SharSdkManager.h */,
 				BED0C50F1C5EF8FB000A75B3 /* SharSdkManager.m */,
 				BED7D8C91C50D3E6005A338E /* PageManager.h */,
@@ -2095,8 +2110,10 @@
 				37AE23751C546AD9006CFCCC /* FollowSignInViewController.m in Sources */,
 				37D724FE1C4F6B500055721B /* AccountModel.m in Sources */,
 				379464281C55F57400368B3A /* ApiFollowSubject.m in Sources */,
+				BE9199661C7AFECB0035C002 /* WebHudViewController.m in Sources */,
 				BED0C4D31C5EF77F000A75B3 /* SchoolModel.m in Sources */,
 				BECC8C331C5771ED00AB93E3 /* NewVersionViewController.m in Sources */,
+				BE9199601C7AF9270035C002 /* PushInfoManager.m in Sources */,
 				37E1DDDC1C4DDA8A00245BE6 /* MyCell.m in Sources */,
 				BE69F3A41C51C94D00EFA44D /* TeacherModel.m in Sources */,
 				37BE7E601C58BA40000F7CF8 /* ApiChangeArganization.m in Sources */,
@@ -2107,6 +2124,7 @@
 				BED0C4C91C5EF74F000A75B3 /* TopViewController.m in Sources */,
 				BED0C4C71C5EF74F000A75B3 /* TopListViewController.m in Sources */,
 				BECC8C391C57721900AB93E3 /* NewVersionCollectionCell.m in Sources */,
+				BE9199651C7AFECB0035C002 /* BaseWebViewController.m in Sources */,
 				BE25EBA01C44FD9200068309 /* NSURL+Path.m in Sources */,
 				BE25EB371C44FC5F00068309 /* AppDelegate.m in Sources */,
 				BE25EB981C44FD9200068309 /* NSCalendar+FSExtension.m in Sources */,

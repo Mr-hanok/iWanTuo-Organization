@@ -58,6 +58,7 @@
     
     MyNewsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kSystemNewsCellID];
     MsgModel *model = [self.messageArray objectAtIndex:indexPath.row];
+    model.push_name = @"系统消息";//因为需求不让显示管理员的姓名, 所以这里把系统消息的push_name都改为系统消息
     [cell configCellWithModel:model];
     return cell;
 }
