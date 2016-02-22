@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iWantuo_Organization/Controller/My/MyFollow(&#x6bcf;&#x65e5;&#x8ddf;&#x8e2a;)/FollowSummaryController.m"
-            timestampString = "477802421.049288"
+            timestampString = "477813110.146176"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "344"
-            endingLineNumber = "344"
+            startingLineNumber = "332"
+            endingLineNumber = "332"
             landmarkName = "-addClassAction:"
             landmarkType = "5">
          </BreakpointContent>
@@ -36,11 +36,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iWantuo_Organization/Controller/My/MyFollow(&#x6bcf;&#x65e5;&#x8ddf;&#x8e2a;)/FollowSummaryController.m"
-            timestampString = "477802421.049288"
+            timestampString = "477813110.146176"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "428"
-            endingLineNumber = "428"
+            startingLineNumber = "417"
+            endingLineNumber = "417"
             landmarkName = "-changeViewInfoNotification:"
             landmarkType = "5">
          </BreakpointContent>
@@ -52,11 +52,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iWantuo_Organization/Controller/My/MyFollow(&#x6bcf;&#x65e5;&#x8ddf;&#x8e2a;)/FollowSummaryController.m"
-            timestampString = "477802421.049288"
+            timestampString = "477813110.146176"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "452"
-            endingLineNumber = "452"
+            startingLineNumber = "441"
+            endingLineNumber = "441"
             landmarkName = "-changeViewInfoNotification:"
             landmarkType = "5">
          </BreakpointContent>
@@ -68,11 +68,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iWantuo_Organization/Controller/My/MyFollow(&#x6bcf;&#x65e5;&#x8ddf;&#x8e2a;)/FollowSummaryController.m"
-            timestampString = "477802421.049288"
+            timestampString = "477813110.146176"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "445"
-            endingLineNumber = "445"
+            startingLineNumber = "434"
+            endingLineNumber = "434"
             landmarkName = "-changeViewInfoNotification:"
             landmarkType = "5">
          </BreakpointContent>
@@ -84,11 +84,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iWantuo_Organization/Controller/My/MyFollow(&#x6bcf;&#x65e5;&#x8ddf;&#x8e2a;)/FollowSummaryController.m"
-            timestampString = "477802421.049288"
+            timestampString = "477813110.146176"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "447"
-            endingLineNumber = "447"
+            startingLineNumber = "436"
+            endingLineNumber = "436"
             landmarkName = "-changeViewInfoNotification:"
             landmarkType = "5">
          </BreakpointContent>
@@ -100,11 +100,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iWantuo_Organization/Controller/My/MyFollow(&#x6bcf;&#x65e5;&#x8ddf;&#x8e2a;)/FollowSummaryController.m"
-            timestampString = "477802421.049288"
+            timestampString = "477813246.352783"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "490"
-            endingLineNumber = "490"
+            startingLineNumber = "480"
+            endingLineNumber = "480"
             landmarkName = "-changeViewInfoNotification:"
             landmarkType = "5">
          </BreakpointContent>
@@ -116,28 +116,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iWantuo_Organization/Controller/My/MyFollow(&#x6bcf;&#x65e5;&#x8ddf;&#x8e2a;)/FollowSummaryController.m"
-            timestampString = "477802421.049288"
+            timestampString = "477813246.352783"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "501"
-            endingLineNumber = "501"
+            startingLineNumber = "491"
+            endingLineNumber = "491"
             landmarkName = "-changeViewInfoNotification:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iWantuo_Organization/Controller/My/MyFollow(&#x6bcf;&#x65e5;&#x8ddf;&#x8e2a;)/FollowSummaryController.m"
-            timestampString = "477802421.049288"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
-            landmarkName = "-serverApi_RequestFailed:error:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -148,11 +132,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iWantuo_Organization/Controller/My/MyFollow(&#x6bcf;&#x65e5;&#x8ddf;&#x8e2a;)/FollowSummaryController.m"
-            timestampString = "477802421.049288"
+            timestampString = "477813110.146176"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
             landmarkName = "-serverApi_FinishedFailed:result:"
             landmarkType = "5">
          </BreakpointContent>
@@ -196,11 +180,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iWantuo_Organization/Controller/My/MyFollow(&#x6bcf;&#x65e5;&#x8ddf;&#x8e2a;)/FollowSummaryController.m"
-            timestampString = "477802421.049288"
+            timestampString = "477813110.146176"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
             landmarkName = "-serverApi_FinishedSuccessed:result:"
             landmarkType = "5">
          </BreakpointContent>
@@ -212,11 +196,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iWantuo_Organization/Controller/My/MyFollow(&#x6bcf;&#x65e5;&#x8ddf;&#x8e2a;)/FollowSummaryController.m"
-            timestampString = "477802421.049288"
+            timestampString = "477813110.146176"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "418"
-            endingLineNumber = "418"
+            startingLineNumber = "407"
+            endingLineNumber = "407"
             landmarkName = "-changeViewInfoNotification:"
             landmarkType = "5">
          </BreakpointContent>
@@ -228,11 +212,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iWantuo_Organization/Controller/My/MyFollow(&#x6bcf;&#x65e5;&#x8ddf;&#x8e2a;)/FollowSummaryController.m"
-            timestampString = "477802421.049288"
+            timestampString = "477813246.352783"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "508"
-            endingLineNumber = "508"
+            startingLineNumber = "498"
+            endingLineNumber = "498"
             landmarkName = "-changeViewInfoNotification:"
             landmarkType = "5">
          </BreakpointContent>

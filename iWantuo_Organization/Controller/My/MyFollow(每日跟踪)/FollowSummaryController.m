@@ -344,7 +344,7 @@
     tf.tag = self.count;
     tf.font = [UIFont systemFontOfSize:14];
     tf.placeholder = @"分数";
-    [tf setKeyboardType:UIKeyboardTypePhonePad];;
+    [tf setKeyboardType:UIKeyboardTypeNumberPad];;
     [self.otherTF addObject:tf];
     
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(self.gradeTF.frame.origin.x, self.gradeTF.frame.origin.y+ClassViewHeight*self.count+ClassViewHeight, self.gradeTF.frame.size.width, 1)];
@@ -456,7 +456,7 @@
                     tf.font = [UIFont systemFontOfSize:14];
                     tf.text = fenshuArray[i];
                     tf.placeholder = @"分数";
-                    [tf setKeyboardType:UIKeyboardTypePhonePad];
+                    [tf setKeyboardType:UIKeyboardTypeNumberPad];
                     [self.otherTF addObject:tf];
                     
                     [self.classView addSubview:tf];
