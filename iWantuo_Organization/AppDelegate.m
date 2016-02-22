@@ -10,6 +10,7 @@
 #import "SystemHandler.h"
 #import "LoginViewController.h"
 #import "APNsManager.h"
+#import "PushInfoManager.h"
 
 //第三方平台的SDK头文件，根据需要的平台导入。
 #import <ShareSDK/ShareSDK.h>
@@ -81,9 +82,9 @@
     
     @try {
         if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateActive) {
-            
+            [[PushInfoManager sharedInstance] onLineReceivePushInfoWithDict:userInfo];
         } else {
-            
+            [[PushInfoManager sharedInstance] offLineReceivePushInfoWithDict:userInfo];
         }
     }
     @catch (NSException *exception) {

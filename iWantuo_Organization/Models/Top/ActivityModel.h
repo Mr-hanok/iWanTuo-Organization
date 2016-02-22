@@ -18,4 +18,5 @@
 @property (nonatomic, copy) NSString *largePath;//详细图地址
 
 + (ActivityModel *)initWithDic:(NSDictionary *)dic;
+
 @end

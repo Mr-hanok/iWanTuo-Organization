@@ -10,7 +10,8 @@
 #import "TopListViewController.h"
 #import "ApiActiveRequest.h"
 #import "ActivityModel.h"
-#import "ActivityDetailViewController.h"
+//#import "ActivityDetailViewController.h"
+#import "WebHudViewController.h"
 
 @interface TopViewController ()<APIRequestDelegate>
 
@@ -45,9 +46,9 @@
     
     [self.top1IV bk_whenTapped:^{
         if (self.dataArray.count >= 1){
-            ActivityDetailViewController *detailVC = [[ActivityDetailViewController alloc] init];
+            WebHudViewController *detailVC = [[WebHudViewController alloc] init];
             ActivityModel *model = [self.dataArray objectAtIndex:0];
-            detailVC.imageUrl = [NSString stringWithFormat:@"http://www.%@", model.largePath];
+            detailVC.webUrl = [NSString stringWithFormat:@"http://www.iwantuo.com/phoneImg.html?id=%@", model.activityId];
             detailVC.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:detailVC animated:YES];
         }
@@ -55,9 +56,9 @@
     
     [self.top2IV bk_whenTapped:^{
         if (self.dataArray.count >= 2){
-            ActivityDetailViewController *detailVC = [[ActivityDetailViewController alloc] init];
+            WebHudViewController *detailVC = [[WebHudViewController alloc] init];
             ActivityModel *model = [self.dataArray objectAtIndex:1];
-            detailVC.imageUrl = [NSString stringWithFormat:@"http://www.%@", model.largePath];
+            detailVC.webUrl = [NSString stringWithFormat:@"http://www.iwantuo.com/phoneImg.html?id=%@", model.activityId];
             detailVC.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:detailVC animated:YES];
         }
@@ -65,9 +66,9 @@
     
     [self.top3IV bk_whenTapped:^{
         if (self.dataArray.count >= 3){
-            ActivityDetailViewController *detailVC = [[ActivityDetailViewController alloc] init];
+            WebHudViewController *detailVC = [[WebHudViewController alloc] init];
             ActivityModel *model = [self.dataArray objectAtIndex:2];
-            detailVC.imageUrl = [NSString stringWithFormat:@"http://www.%@", model.largePath];
+            detailVC.webUrl = [NSString stringWithFormat:@"http://www.iwantuo.com/phoneImg.html?id=%@", model.activityId];
             detailVC.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:detailVC animated:YES];
         }
@@ -75,9 +76,9 @@
     
     [self.top4IV bk_whenTapped:^{
         if (self.dataArray.count >= 4){
-            ActivityDetailViewController *detailVC = [[ActivityDetailViewController alloc] init];
+            WebHudViewController *detailVC = [[WebHudViewController alloc] init];
             ActivityModel *model = [self.dataArray objectAtIndex:3];
-            detailVC.imageUrl = [NSString stringWithFormat:@"http://www.%@", model.largePath];
+            detailVC.webUrl = [NSString stringWithFormat:@"http://www.iwantuo.com/phoneImg.html?id=%@", model.activityId];
             detailVC.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:detailVC animated:YES];
         }
@@ -85,9 +86,9 @@
     
     [self.top5IV bk_whenTapped:^{
         if (self.dataArray.count >= 5){
-            ActivityDetailViewController *detailVC = [[ActivityDetailViewController alloc] init];
+            WebHudViewController *detailVC = [[WebHudViewController alloc] init];
             ActivityModel *model = [self.dataArray objectAtIndex:4];
-            detailVC.imageUrl = [NSString stringWithFormat:@"http://www.%@", model.largePath];
+            detailVC.webUrl = [NSString stringWithFormat:@"http://www.iwantuo.com/phoneImg.html?id=%@", model.activityId];
             [self.navigationController pushViewController:detailVC animated:YES];
         }
     }];
