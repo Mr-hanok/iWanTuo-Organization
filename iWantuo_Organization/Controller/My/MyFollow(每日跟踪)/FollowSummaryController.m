@@ -149,6 +149,26 @@
     }
     return YES;
 }
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    
+    NSInteger num = [textField.text integerValue];
+    if (num>100 ) {
+        [HUDManager showWarningWithText:@"请输入100以内的分数!"];
+        textField.text = nil;
+        return NO;
+    }
+    return YES;
+}
+-(BOOL)textFieldShouldEndEditing:(UITextField *)textField{
+    NSInteger num = [textField.text integerValue];
+    if (num>100 ||num <= 0 ) {
+        [HUDManager showWarningWithText:@"请输入100以内的分数!"];
+        textField.text = nil;
+        return NO;
+    }
+
+    return YES;
+}
 #pragma mark  - ZhpickVIewDelegate
 
 -(void)toobarDonBtnHaveClick:(ZHPickView *)pickView resultString:(NSString *)resultString level1:(NSString *)level1 row1:(NSInteger)row1 row2:(NSInteger)row2{

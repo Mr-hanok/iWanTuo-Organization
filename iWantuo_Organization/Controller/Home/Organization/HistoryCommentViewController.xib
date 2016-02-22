@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -44,12 +44,12 @@
                     <exclude reference="GTL-UQ-Tdw"/>
                 </mask>
                 <mask key="constraints">
+                    <exclude reference="jL2-ZV-IMP"/>
+                    <exclude reference="kkb-Sb-gVh"/>
                     <exclude reference="6tN-sB-K13"/>
                     <exclude reference="Jsd-Jy-QbZ"/>
                     <exclude reference="Snv-5r-hwP"/>
                     <exclude reference="iYU-xa-Nov"/>
-                    <exclude reference="jL2-ZV-IMP"/>
-                    <exclude reference="kkb-Sb-gVh"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
@@ -58,12 +58,12 @@
                     <include reference="GTL-UQ-Tdw"/>
                 </mask>
                 <mask key="constraints">
+                    <include reference="jL2-ZV-IMP"/>
+                    <include reference="kkb-Sb-gVh"/>
                     <include reference="6tN-sB-K13"/>
                     <include reference="Jsd-Jy-QbZ"/>
                     <include reference="Snv-5r-hwP"/>
                     <include reference="iYU-xa-Nov"/>
-                    <include reference="jL2-ZV-IMP"/>
-                    <include reference="kkb-Sb-gVh"/>
                 </mask>
             </variation>
         </view>
