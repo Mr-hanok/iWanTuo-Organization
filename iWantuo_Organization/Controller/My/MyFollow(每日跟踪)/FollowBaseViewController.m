@@ -92,6 +92,16 @@
     //注册 刷新页面 通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeViewInfoNotification:) name:ChangeViewInfoNoti object:nil];
     
+    //设置返回按钮
+    __weak typeof(self) weakself = self;
+    [self setBackBtnEventHandler:^(id sender) {
+        [weakself.summaryVC.classPick remove];
+        [weakself.summaryVC.otherPick remove];
+        [weakself.navigationController popViewControllerAnimated:YES];
+        
+    }];
+
+    
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];

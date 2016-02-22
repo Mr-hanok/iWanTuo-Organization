@@ -22,7 +22,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *classChoseBtn;//学科选择btn
 @property (weak, nonatomic) IBOutlet UITextField *gradeTF;//成绩
 
-@property (nonatomic, strong) ZHPickView *classPick;//学科选择
 @property (nonatomic, strong) ApiFollowSubject *apiSubject;//学科查询
 @property (nonatomic, strong) NSMutableArray *subjectArray;//学科数组
 @property (nonatomic, strong) NSMutableArray *subjectModelArray;//学科模型数组
@@ -41,7 +40,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *addClassBtn;//添加学科按钮
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *viewHeightLayout;//学科view高度
 @property (nonatomic)NSInteger count;
-@property (nonatomic, strong) ZHPickView *otherPick;//其他学科pick
 @property (nonatomic, strong) NSMutableArray *otherBtns;//其他学科btn
 @property (nonatomic, strong) NSMutableArray *otherTF;//其他学科TF
 @property (nonatomic, strong) NSMutableArray *otherView;//线
@@ -97,8 +95,8 @@
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    [self.classPick remove];
-    [self.otherPick remove];
+//    [self.classPick remove];
+//    [self.otherPick remove];
     [MobClick endLogPageView:@"跟踪总结页面"];
 }
 -(void)dealloc{
