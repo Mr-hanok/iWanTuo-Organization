@@ -261,7 +261,7 @@
                         </mask>
                     </variation>
                 </view>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wyl-ko-fmY" customClass="TPKeyboardAvoidingScrollView">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wyl-ko-fmY">
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                     <connections>
                         <outlet property="delegate" destination="-1" id="b1E-0q-hSH"/>

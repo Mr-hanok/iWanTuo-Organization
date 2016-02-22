@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -28,7 +28,7 @@
                     </connections>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gLL-zN-tv5">
-                    <rect key="frame" x="56" y="568" width="263" height="35"/>
+                    <rect key="frame" x="56" y="577" width="263" height="35"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="35" id="bkn-Ec-5hM"/>
                     </constraints>
@@ -43,7 +43,7 @@
             <constraints>
                 <constraint firstItem="cmL-mo-kuA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="0CP-wa-ChJ"/>
                 <constraint firstAttribute="trailing" secondItem="cmL-mo-kuA" secondAttribute="trailing" id="7rq-AT-C8y"/>
-                <constraint firstAttribute="bottom" secondItem="gLL-zN-tv5" secondAttribute="bottom" constant="64" id="O3f-Ci-dNJ"/>
+                <constraint firstAttribute="bottom" secondItem="gLL-zN-tv5" secondAttribute="bottom" constant="55" id="O3f-Ci-dNJ"/>
                 <constraint firstItem="gLL-zN-tv5" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="QZm-BT-kwg"/>
                 <constraint firstItem="cmL-mo-kuA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="w9K-zU-apb"/>
             </constraints>

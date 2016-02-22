@@ -5,7 +5,7 @@
 //  Created by yuntai on 16/1/24.
 //  Copyright © 2016年 月 吴. All rights reserved.
 //
-#define ClassViewHeight 40.0
+#define ClassViewHeight 30.0
 #import "FollowSummaryController.h"
 #import "ZHPickView.h"
 #import "ApiFollowSubject.h"
@@ -334,7 +334,7 @@
         [HUDManager  showWarningWithText:@"请填写学科分数!"];
         return;
     }
-    if (self.count>self.subjectArray.count) {
+    if (self.count>2) {
         [HUDManager showWarningWithText:@"选择太多学科了！"];
         return;
     }
