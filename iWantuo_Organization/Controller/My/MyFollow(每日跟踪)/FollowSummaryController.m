@@ -95,26 +95,18 @@
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-//    [self.classPick remove];
-//    [self.otherPick remove];
     [MobClick endLogPageView:@"跟踪总结页面"];
-}
--(void)dealloc{
 }
 #pragma mark -  APIRequestDelegate
 
 - (void)serverApi_RequestFailed:(APIRequest *)api error:(NSError *)error {
-    
     [HUDManager hideHUDView];
-    
     [AlertViewManager showAlertViewWithMessage:kDefaultNetWorkErrorString];
-    
 }
 
 - (void)serverApi_FinishedSuccessed:(APIRequest *)api result:(APIResult *)sr {
     
     [HUDManager hideHUDView];
-    
     if (sr.dic == nil || [sr.dic isKindOfClass:[NSNull class]]) {
         return;
     }
@@ -125,7 +117,6 @@
             [self.subjectArray addObject:model.name];
             [self.subjectModelArray addObject:model];
         }
-
     }
     
     if (api == self.apiChange) {//总结
@@ -143,7 +134,6 @@
 }
 
 - (void)serverApi_FinishedFailed:(APIRequest *)api result:(APIResult *)sr {
-    
     NSString *message = sr.msg;
     [HUDManager hideHUDView];
     if (message.length == 0) {
@@ -162,7 +152,7 @@
 #pragma mark  - ZhpickVIewDelegate
 
 -(void)toobarDonBtnHaveClick:(ZHPickView *)pickView resultString:(NSString *)resultString level1:(NSString *)level1 row1:(NSInteger)row1 row2:(NSInteger)row2{
-    NSLog(@"%@-%@-%ld-%ld",resultString,level1,row1,row2);
+    
     self.model = self.subjectModelArray[row1];
     //记录classId 学科名字
     if (self.otherBtns.count==0) {
@@ -203,8 +193,6 @@
             self.workStatus = @"0";
             self.workStatusName =@"未完成作业";
             break;
-            
-
     }
 }
 /**
@@ -356,6 +344,7 @@
     tf.tag = self.count;
     tf.font = [UIFont systemFontOfSize:14];
     tf.placeholder = @"分数";
+    [tf setKeyboardType:UIKeyboardTypeNumberPad];;
     [self.otherTF addObject:tf];
     
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(self.gradeTF.frame.origin.x, self.gradeTF.frame.origin.y+ClassViewHeight*self.count+ClassViewHeight, self.gradeTF.frame.size.width, 1)];
@@ -467,6 +456,7 @@
                     tf.font = [UIFont systemFontOfSize:14];
                     tf.text = fenshuArray[i];
                     tf.placeholder = @"分数";
+                    [tf setKeyboardType:UIKeyboardTypeNumberPad];
                     [self.otherTF addObject:tf];
                     
                     [self.classView addSubview:tf];
