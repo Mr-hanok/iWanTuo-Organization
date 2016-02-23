@@ -24,7 +24,8 @@
                          signInImage:(NSString *)signInImage
                             status:(NSString *)status
                         statusName:(NSString *)statusName
-                      signInPerson:(NSString *)signinPerson{
+                      signInPerson:(NSString *)signinPerson
+                           classId:(NSString *)classId{
     
     
     [self.params setValue:createDate forKey:@"createDate"];
@@ -35,9 +36,7 @@
     [self.params setValue:status forKey:@"status"];
     [self.params setValue:statusName forKey:@"statusName"];
     [self.params setValue:signinPerson forKey:@"signinPerson"];
-
-
-    
+    [self.params setValue:classId forKey:@"classId"];
 }
 
 @end

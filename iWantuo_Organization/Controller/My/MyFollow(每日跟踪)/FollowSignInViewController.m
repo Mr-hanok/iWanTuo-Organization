@@ -180,7 +180,9 @@
                                                signIn:self.remarkTV.text
                                           signInImage:self.imageName
                                                status:self.status
-                                           statusName:self.statusName signInPerson:self.loginName];
+                                           statusName:self.statusName signInPerson:self.loginName
+                                              classId:self.classId];
+        
         [APIClient execute:self.apiFollowAdd];
 
     }
