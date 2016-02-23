@@ -25,6 +25,8 @@
     self.dateLabel.text = self.model.create_date;
     self.nameLabel.text = self.model.push_name;
     self.detailLabel.text = self.model.push_details;
+    
+    self.detailLabel.editable = NO;
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];

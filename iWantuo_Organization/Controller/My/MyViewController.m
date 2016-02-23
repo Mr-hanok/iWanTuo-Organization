@@ -72,8 +72,7 @@
     }
     
     //保存用户信息
-    AccountModel *model =[AccountManager sharedInstance].account;
-    model.isLogin = @"no";
+    [AccountManager sharedInstance].account.isLogin = @"no";
     [[AccountManager sharedInstance] saveAccountInfoToDisk];
     [HUDManager showWarningWithText:@"退出登录成功"];
     kRootViewController = [SystemHandler rootViewController];
