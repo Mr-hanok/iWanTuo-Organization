@@ -14,6 +14,7 @@
 #import "ApiStudentByClassRequest.h"
 #import "StudentModel.h"
 #import "FollowSummaryController.h"
+#import "MCGrowCurveViewController.h"
 
 @interface StudentChoseViewController ()<UITableViewDataSource,UITableViewDelegate,PageManagerDelegate,APIRequestDelegate,UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
@@ -192,7 +193,11 @@
 - (void)curveBtnClick:(UIButton *)button {
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:(button.tag - 3000000) inSection:0];
+    StudentModel *model = self.dataArray[indexPath.row];
     
+    MCGrowCurveViewController *curveVC = [[MCGrowCurveViewController alloc] init];
+    curveVC.studentId = model.studentId;
+    [self.navigationController pushViewController:curveVC animated:YES];
 }
 
 
