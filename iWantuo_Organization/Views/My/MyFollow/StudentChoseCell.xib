@@ -27,7 +27,7 @@
                             <constraint firstAttribute="height" constant="1" id="moT-6F-gtr"/>
                         </constraints>
                     </view>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xkL-A0-6uK">
+                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xkL-A0-6uK">
                         <rect key="frame" x="168" y="5.5" width="66" height="32"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="66" id="Vwa-Xc-64j"/>

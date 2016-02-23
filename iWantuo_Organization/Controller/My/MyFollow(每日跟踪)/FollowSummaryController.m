@@ -159,23 +159,9 @@
 }
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
     
-    NSInteger num = [textField.text integerValue];
-    if (num>100 ) {
-//        [HUDManager showWarningWithText:@"请输入100以内的分数!"];
-//        textField.text = nil;
-        return NO;
-    }
     return YES;
 }
 -(BOOL)textFieldShouldEndEditing:(UITextField *)textField{
-    NSInteger num = [textField.text integerValue];
-//    if (self.gradeTF != textField) {
-//        if (num>100 ||num <= 0 ) {
-//            [HUDManager showWarningWithText:@"请输入100以内的分数!"];
-//            textField.text = nil;
-//            return YES;
-//        }
-//    }
     return YES;
 }
 #pragma mark  - ZhpickVIewDelegate

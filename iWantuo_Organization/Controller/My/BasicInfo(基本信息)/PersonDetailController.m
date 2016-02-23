@@ -19,6 +19,7 @@
 @interface PersonDetailController ()<APIRequestDelegate,ZHPickViewDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *areaBtn;//地区按钮
 @property (weak, nonatomic) IBOutlet UITextField *areaTF;//地区TF
+@property (weak, nonatomic) IBOutlet UITextField *shortNameTF;//简称
 @property (weak, nonatomic) IBOutlet UITextField *nameTF;//机构全称TF
 @property (weak, nonatomic) IBOutlet UITextField *describeTF;//机构描述
 @property (weak, nonatomic) IBOutlet UITextField *tagTF;//机构标签
@@ -124,6 +125,14 @@
     }
     if (api == self.apiChange) {//信息修改接口
         
+        NSDictionary *origanDic = [sr.dic objectForKey:[ValueUtils stringFromObject:@"organization"]];
+        
+        if (origanDic) {//机构登录
+            [AccountManager sharedInstance].account =[AccountModel initWithDict:[sr.dic objectForKey:@"organization"] accountType:@"2"];
+        }
+        //保存用户信息
+        [[AccountManager sharedInstance] saveAccountInfoToDisk];
+        
         [AlertViewManager showAlertViewSuccessedMessage:@"修改成功" handlerBlock:^{
             [self.navigationController popViewControllerAnimated:YES];
         }];
@@ -209,7 +218,8 @@
                                         introduce:self.describeTF.text
                                             label:self.tagTF.text
                                        photoAlbum:self.imageName
-                                             cost:self.priceTF.text];
+                                             cost:self.priceTF.text
+                         organizationAbbreviation:self.shortNameTF.text];
     [APIClient execute:self.apiChange];
 }
 
@@ -268,6 +278,7 @@
     self.typeTF.text = self.organiTypeName;
     self.areaTF.text = self.areaName;
     self.nameTF.text = self.model.organization;
+    self.shortNameTF.text = self.model.organizationAbbreviation;
     self.describeTF.text = self.model.introduce;
     self.tagTF.text = self.model.label;
     if ([self.model.cost isEqualToString:@"0"]) {

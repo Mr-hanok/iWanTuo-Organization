@@ -34,7 +34,8 @@
                             introduce:(NSString *)introduce
                                 label:(NSString *)label
                            photoAlbum:(NSString *)photoAlbum
-                                 cost:(NSString *)cost{
+                                 cost:(NSString *)cost
+             organizationAbbreviation:(NSString *)organizationAbbreviation{
     
     [self.params setValue:loginAccounts forKey:@"loginAccounts"];
     [self.params setValue:location forKey:@"location"];
@@ -50,6 +51,7 @@
     [self.params setValue:label forKey:@"label"];
     [self.params setValue:photoAlbum forKey:@"photoAlbum"];
     [self.params setValue:cost forKey:@"cost"];
+    [self.params setValue:organizationAbbreviation forKey:@"organizationAbbreviation"];
     
 }
 

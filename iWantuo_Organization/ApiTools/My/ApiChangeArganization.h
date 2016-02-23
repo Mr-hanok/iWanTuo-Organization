@@ -28,6 +28,7 @@
  *  @param label                标签
  *  @param photoAlbum           效果图
  *  @param cost                 价格
+ *  @param organizationAbbreviation 简称
  */
 - (void)setApiParamsWithLoginAccounts:(NSString *)loginAccounts
                              location:(NSString *)location
@@ -42,5 +43,6 @@
                             introduce:(NSString *)introduce
                                 label:(NSString *)label
                            photoAlbum:(NSString *)photoAlbum
-                                 cost:(NSString *)cost;
+                                 cost:(NSString *)cost
+             organizationAbbreviation:(NSString *)organizationAbbreviation;
 @end

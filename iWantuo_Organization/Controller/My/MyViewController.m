@@ -23,6 +23,7 @@
 @interface MyViewController ()<UITableViewDataSource,UITableViewDelegate,APIRequestDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *logoutBtn;
 @property (nonatomic, strong) ApiLoginOutRequest *apiLoginOut;
+@property (weak, nonatomic) IBOutlet UITableView *tableview;
 
 @end
 
@@ -46,6 +47,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [self.tableview reloadData];
     [MobClick beginLogPageView:@"我的"];
 }
 -(void)viewWillDisappear:(BOOL)animated{
@@ -115,6 +117,7 @@
         if ([[AccountManager sharedInstance].account.accountsType isEqualToString:@"3"]) {
             cell1.userNameLabel.text = [AccountManager sharedInstance].account.name;
         } else {
+            NSLog(@"%@",[AccountManager sharedInstance].account.organizationAbbreviation);
             cell1.userNameLabel.text = [AccountManager sharedInstance].account.organizationAbbreviation;
         }
 
@@ -143,7 +146,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    
     BaseViewController *vc = nil;
     switch (indexPath.row) {
             

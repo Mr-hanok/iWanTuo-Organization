@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyViewController">
             <connections>
                 <outlet property="logoutBtn" destination="gLL-zN-tv5" id="tXi-el-YAb"/>
+                <outlet property="tableview" destination="cmL-mo-kuA" id="tN9-tA-pcM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -27,7 +28,7 @@
                         <outlet property="delegate" destination="-1" id="aXI-C8-zX7"/>
                     </connections>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gLL-zN-tv5">
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gLL-zN-tv5">
                     <rect key="frame" x="56" y="577" width="263" height="35"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="35" id="bkn-Ec-5hM"/>
