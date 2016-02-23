@@ -160,9 +160,9 @@
             
             break;
         case 3://我的消息
-            if ([self limitAccountType]) {
-                vc = [[MyMessageViewController alloc]init];
-            }
+//            if ([self limitAccountType]) {
+            vc = [[MyMessageViewController alloc]init];
+//            }
             break;
         case 2://学员管理
             if ([self limitAccountType]) {
