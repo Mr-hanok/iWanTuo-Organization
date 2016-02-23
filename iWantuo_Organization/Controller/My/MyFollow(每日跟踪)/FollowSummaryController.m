@@ -147,26 +147,35 @@
         [HUDManager  showWarningWithText:@"请选择科目"];
         return NO;
     }
+    if (self.otherBtns.count >0) {
+        for (UIButton *btn in self.otherBtns) {
+            if ([btn.titleLabel.text isEqualToString:@"选择学科V"]) {
+                [HUDManager  showWarningWithText:@"请选择科目"];
+                return NO;
+            }
+        }
+    }
     return YES;
 }
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
     
-    NSInteger num = [textField.text integerValue];
-    if (num>100 ) {
-        [HUDManager showWarningWithText:@"请输入100以内的分数!"];
-        textField.text = nil;
-        return NO;
-    }
+//    NSInteger num = [textField.text integerValue];
+//    if (num>100 ) {
+////        [HUDManager showWarningWithText:@"请输入100以内的分数!"];
+//        textField.text = nil;
+//        return NO;
+//    }
     return YES;
 }
 -(BOOL)textFieldShouldEndEditing:(UITextField *)textField{
     NSInteger num = [textField.text integerValue];
-    if (num>100 ||num <= 0 ) {
-        [HUDManager showWarningWithText:@"请输入100以内的分数!"];
-        textField.text = nil;
-        return NO;
-    }
-
+//    if (self.gradeTF != textField) {
+//        if (num>100 ||num <= 0 ) {
+//            [HUDManager showWarningWithText:@"请输入100以内的分数!"];
+//            textField.text = nil;
+//            return YES;
+//        }
+//    }
     return YES;
 }
 #pragma mark  - ZhpickVIewDelegate
@@ -322,6 +331,12 @@
  */
 - (IBAction)addClassAction:(UIButton *)sender {
     [self.view endEditing:YES];
+    if ([self.gradeTF.text integerValue]>100 ||[self.gradeTF.text integerValue]<=0) {
+        [HUDManager showWarningWithText:@"请输入100以内的分数!"];
+        self.gradeTF.text = nil;
+        return;
+    }
+    
     if (self.otherBtns.count>0) {
         UIButton *classbtn = [self.otherBtns lastObject];
         if ([classbtn.titleLabel.text isEqualToString:@"选择学科V"]) {
@@ -334,6 +349,13 @@
         if (classTf.text.length==0 || [[classTf.text stringByTrimmingCharactersInSet:[NSMutableCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
           [HUDManager  showWarningWithText:@"请填写分数!"];
             return;
+        }
+        for (UITextField *te in self.otherTF) {
+            if ([te.text integerValue]>100 ||[te.text integerValue]<=0) {
+                [HUDManager showWarningWithText:@"请输入100以内的分数!"];
+                te.text = nil;
+                return;
+            }
         }
     }
     if (self.gradeTF.text.length ==0|| [[self.gradeTF.text stringByTrimmingCharactersInSet:[NSMutableCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
