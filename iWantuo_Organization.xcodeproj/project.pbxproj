@@ -136,6 +136,16 @@
 		BE25EBFB1C44FDFE00068309 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BE25EBE81C44FDFD00068309 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		BE25EC021C45018800068309 /* ValueUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BE25EC011C45018800068309 /* ValueUtils.m */; };
 		BE25EC161C4501C000068309 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE25EC051C4501C000068309 /* BaseViewController.m */; };
+		BE342F5A1C7BF5D9005EF386 /* MCGrowCurveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE342F581C7BF5D9005EF386 /* MCGrowCurveViewController.m */; };
+		BE342F5B1C7BF5D9005EF386 /* MCGrowCurveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE342F591C7BF5D9005EF386 /* MCGrowCurveViewController.xib */; };
+		BE342F691C7BF5F6005EF386 /* UUBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BE342F5E1C7BF5F6005EF386 /* UUBar.m */; };
+		BE342F6A1C7BF5F6005EF386 /* UUBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = BE342F601C7BF5F6005EF386 /* UUBarChart.m */; };
+		BE342F6B1C7BF5F6005EF386 /* UUChart.m in Sources */ = {isa = PBXBuildFile; fileRef = BE342F621C7BF5F6005EF386 /* UUChart.m */; };
+		BE342F6C1C7BF5F6005EF386 /* UUChartConst.m in Sources */ = {isa = PBXBuildFile; fileRef = BE342F641C7BF5F6005EF386 /* UUChartConst.m */; };
+		BE342F6D1C7BF5F6005EF386 /* UUChartLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE342F661C7BF5F6005EF386 /* UUChartLabel.m */; };
+		BE342F6E1C7BF5F6005EF386 /* UULineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = BE342F681C7BF5F6005EF386 /* UULineChart.m */; };
+		BE342F731C7BF6DB005EF386 /* ApiGrowAvgRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE342F701C7BF6DB005EF386 /* ApiGrowAvgRequest.m */; };
+		BE342F741C7BF6DB005EF386 /* ApiGrowCurveRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE342F721C7BF6DB005EF386 /* ApiGrowCurveRequest.m */; };
 		BE40556F1C5355EC00590788 /* ApiSaveStudentsByClassRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE40556E1C5355EC00590788 /* ApiSaveStudentsByClassRequest.m */; };
 		BE4055721C5355FF00590788 /* ApiDeleteStudentsByClassRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4055711C5355FF00590788 /* ApiDeleteStudentsByClassRequest.m */; };
 		BE4055751C535AB900590788 /* ClassModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4055741C535AB900590788 /* ClassModel.m */; };
@@ -519,6 +529,25 @@
 		BE25EC011C45018800068309 /* ValueUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValueUtils.m; sourceTree = "<group>"; };
 		BE25EC041C4501C000068309 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		BE25EC051C4501C000068309 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		BE342F571C7BF5D9005EF386 /* MCGrowCurveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCGrowCurveViewController.h; sourceTree = "<group>"; };
+		BE342F581C7BF5D9005EF386 /* MCGrowCurveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCGrowCurveViewController.m; sourceTree = "<group>"; };
+		BE342F591C7BF5D9005EF386 /* MCGrowCurveViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MCGrowCurveViewController.xib; sourceTree = "<group>"; };
+		BE342F5D1C7BF5F6005EF386 /* UUBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUBar.h; sourceTree = "<group>"; };
+		BE342F5E1C7BF5F6005EF386 /* UUBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUBar.m; sourceTree = "<group>"; };
+		BE342F5F1C7BF5F6005EF386 /* UUBarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUBarChart.h; sourceTree = "<group>"; };
+		BE342F601C7BF5F6005EF386 /* UUBarChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUBarChart.m; sourceTree = "<group>"; };
+		BE342F611C7BF5F6005EF386 /* UUChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUChart.h; sourceTree = "<group>"; };
+		BE342F621C7BF5F6005EF386 /* UUChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUChart.m; sourceTree = "<group>"; };
+		BE342F631C7BF5F6005EF386 /* UUChartConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUChartConst.h; sourceTree = "<group>"; };
+		BE342F641C7BF5F6005EF386 /* UUChartConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUChartConst.m; sourceTree = "<group>"; };
+		BE342F651C7BF5F6005EF386 /* UUChartLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUChartLabel.h; sourceTree = "<group>"; };
+		BE342F661C7BF5F6005EF386 /* UUChartLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUChartLabel.m; sourceTree = "<group>"; };
+		BE342F671C7BF5F6005EF386 /* UULineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UULineChart.h; sourceTree = "<group>"; };
+		BE342F681C7BF5F6005EF386 /* UULineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UULineChart.m; sourceTree = "<group>"; };
+		BE342F6F1C7BF6DB005EF386 /* ApiGrowAvgRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiGrowAvgRequest.h; sourceTree = "<group>"; };
+		BE342F701C7BF6DB005EF386 /* ApiGrowAvgRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiGrowAvgRequest.m; sourceTree = "<group>"; };
+		BE342F711C7BF6DB005EF386 /* ApiGrowCurveRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiGrowCurveRequest.h; sourceTree = "<group>"; };
+		BE342F721C7BF6DB005EF386 /* ApiGrowCurveRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiGrowCurveRequest.m; sourceTree = "<group>"; };
 		BE40556D1C5355EC00590788 /* ApiSaveStudentsByClassRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiSaveStudentsByClassRequest.h; sourceTree = "<group>"; };
 		BE40556E1C5355EC00590788 /* ApiSaveStudentsByClassRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiSaveStudentsByClassRequest.m; sourceTree = "<group>"; };
 		BE4055701C5355FF00590788 /* ApiDeleteStudentsByClassRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiDeleteStudentsByClassRequest.h; sourceTree = "<group>"; };
@@ -842,6 +871,10 @@
 		379464151C55BDC500368B3A /* Follow */ = {
 			isa = PBXGroup;
 			children = (
+				BE342F6F1C7BF6DB005EF386 /* ApiGrowAvgRequest.h */,
+				BE342F701C7BF6DB005EF386 /* ApiGrowAvgRequest.m */,
+				BE342F711C7BF6DB005EF386 /* ApiGrowCurveRequest.h */,
+				BE342F721C7BF6DB005EF386 /* ApiGrowCurveRequest.m */,
 				379464191C55C6AD00368B3A /* ApiFollowAddRequest.h */,
 				3794641A1C55C6AD00368B3A /* ApiFollowAddRequest.m */,
 				3794641C1C55EB7100368B3A /* ApiFollowCheckRequest.h */,
@@ -1108,6 +1141,9 @@
 		37E1DDF61C4DDE1800245BE6 /* MyFollow(每日跟踪) */ = {
 			isa = PBXGroup;
 			children = (
+				BE342F571C7BF5D9005EF386 /* MCGrowCurveViewController.h */,
+				BE342F581C7BF5D9005EF386 /* MCGrowCurveViewController.m */,
+				BE342F591C7BF5D9005EF386 /* MCGrowCurveViewController.xib */,
 				37E1DDF71C4DDE3C00245BE6 /* MyFollowViewController.h */,
 				37E1DDF81C4DDE3C00245BE6 /* MyFollowViewController.m */,
 				37E1DDF91C4DDE3C00245BE6 /* MyFollowViewController.xib */,
@@ -1532,6 +1568,7 @@
 		BE25EBC41C44FDFD00068309 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				BE342F5C1C7BF5F6005EF386 /* UUChart */,
 				BED0C5441C5EFCB3000A75B3 /* BaiduMap_IOSSDK_v2.9.1_Lib */,
 				BED0C5171C5EF95D000A75B3 /* ShareSDK */,
 				BED0C5031C5EF89B000A75B3 /* dropDownList */,
@@ -1581,6 +1618,25 @@
 				BE25EC051C4501C000068309 /* BaseViewController.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		BE342F5C1C7BF5F6005EF386 /* UUChart */ = {
+			isa = PBXGroup;
+			children = (
+				BE342F5D1C7BF5F6005EF386 /* UUBar.h */,
+				BE342F5E1C7BF5F6005EF386 /* UUBar.m */,
+				BE342F5F1C7BF5F6005EF386 /* UUBarChart.h */,
+				BE342F601C7BF5F6005EF386 /* UUBarChart.m */,
+				BE342F611C7BF5F6005EF386 /* UUChart.h */,
+				BE342F621C7BF5F6005EF386 /* UUChart.m */,
+				BE342F631C7BF5F6005EF386 /* UUChartConst.h */,
+				BE342F641C7BF5F6005EF386 /* UUChartConst.m */,
+				BE342F651C7BF5F6005EF386 /* UUChartLabel.h */,
+				BE342F661C7BF5F6005EF386 /* UUChartLabel.m */,
+				BE342F671C7BF5F6005EF386 /* UULineChart.h */,
+				BE342F681C7BF5F6005EF386 /* UULineChart.m */,
+			);
+			path = UUChart;
 			sourceTree = "<group>";
 		};
 		BE9113D41C76DF21006E2A0A /* Top */ = {
@@ -1999,6 +2055,7 @@
 				BED0C4CA1C5EF74F000A75B3 /* TopViewController.xib in Resources */,
 				37033E341C4C9033009F27DB /* ForgetViewController.xib in Resources */,
 				37E1DDF51C4DDD8C00245BE6 /* MyStudentViewController.xib in Resources */,
+				BE342F5B1C7BF5D9005EF386 /* MCGrowCurveViewController.xib in Resources */,
 				63B2E8011C59EE170038EEF3 /* MyNewsTableViewCell.xib in Resources */,
 				37E1DDDD1C4DDA8A00245BE6 /* MyCell.xib in Resources */,
 				375001B11C50D85800B14021 /* AddMyClassViewController.xib in Resources */,
@@ -2133,6 +2190,8 @@
 				37033E351C4C9033009F27DB /* LoginViewController.m in Sources */,
 				BE9A06F61C7461A900C08725 /* ApiUpdateStudentRequest.m in Sources */,
 				BED0C4BD1C5EF739000A75B3 /* HistoryCommentViewController.m in Sources */,
+				BE342F731C7BF6DB005EF386 /* ApiGrowAvgRequest.m in Sources */,
+				BE342F6A1C7BF5F6005EF386 /* UUBarChart.m in Sources */,
 				BED0C4AD1C5EF71B000A75B3 /* OrganizationListViewController.m in Sources */,
 				BED7D8CB1C50D3E6005A338E /* PageManager.m in Sources */,
 				BE69F3AD1C520E9400EFA44D /* ApiAddClassRequest.m in Sources */,
@@ -2164,6 +2223,7 @@
 				37C4E9051C51E02A00583902 /* StudentChoseCell.m in Sources */,
 				BE69F3AA1C520E0500EFA44D /* ApiStudentByClassRequest.m in Sources */,
 				37D725011C4F78AF0055721B /* ApiAddressListRequest.m in Sources */,
+				BE342F691C7BF5F6005EF386 /* UUBar.m in Sources */,
 				BED0C4F61C5EF7F2000A75B3 /* ApiSubmitCommentRequest.m in Sources */,
 				BEED9E921C72FC8B0081BDBA /* ApiSystemMsgRequest.m in Sources */,
 				BE4F16881C76F69E00296F5F /* ActivityModel.m in Sources */,
@@ -2174,6 +2234,7 @@
 				37033E421C4C910B009F27DB /* ApiLoginRequest.m in Sources */,
 				BE4055751C535AB900590788 /* ClassModel.m in Sources */,
 				37D7250A1C4F97E10055721B /* MyClassCell.m in Sources */,
+				BE342F6D1C7BF5F6005EF386 /* UUChartLabel.m in Sources */,
 				37E1DDF41C4DDD8C00245BE6 /* MyStudentViewController.m in Sources */,
 				63B2E8001C59EE170038EEF3 /* MyNewsTableViewCell.m in Sources */,
 				BEBDEE831C58D4CD006AE4EF /* UserInfoCell.m in Sources */,
@@ -2182,6 +2243,7 @@
 				BE25EB9E1C44FD9200068309 /* NSString+Validation.m in Sources */,
 				BE25EBA31C44FD9200068309 /* UIImage+Video.m in Sources */,
 				BE25EB6E1C44FD8500068309 /* APIRequest.m in Sources */,
+				BE342F741C7BF6DB005EF386 /* ApiGrowCurveRequest.m in Sources */,
 				37033E461C4C914C009F27DB /* JKCountDownButton.m in Sources */,
 				37AE237F1C5490C8006CFCCC /* FollowSummaryController.m in Sources */,
 				BED0C4D21C5EF77F000A75B3 /* OrganizationModel.m in Sources */,
@@ -2209,17 +2271,21 @@
 				37C4E8FF1C51DEFB00583902 /* StudentChoseViewController.m in Sources */,
 				BED0C4F01C5EF7F2000A75B3 /* ApiAttentionRequest.m in Sources */,
 				3794641B1C55C6AD00368B3A /* ApiFollowAddRequest.m in Sources */,
+				BE342F6E1C7BF5F6005EF386 /* UULineChart.m in Sources */,
+				BE342F6C1C7BF5F6005EF386 /* UUChartConst.m in Sources */,
 				BED0C4D11C5EF77F000A75B3 /* CommentModel.m in Sources */,
 				375001B01C50D85800B14021 /* AddMyClassViewController.m in Sources */,
 				37033E371C4C9033009F27DB /* RegisterViewController.m in Sources */,
 				BED0C49B1C5EF6FF000A75B3 /* DisSearchViewController.m in Sources */,
 				BEED9EA61C7320530081BDBA /* StudentCell.m in Sources */,
 				37D724EE1C4F27040055721B /* UploadApiRequest.m in Sources */,
+				BE342F5A1C7BF5D9005EF386 /* MCGrowCurveViewController.m in Sources */,
 				BE25EB341C44FC5F00068309 /* main.m in Sources */,
 				BE69F3A71C51D81E00EFA44D /* ApiAddTeacherRequest.m in Sources */,
 				379464251C55F0B200368B3A /* ApiFollowChangeRequest.m in Sources */,
 				BE40557B1C5369A700590788 /* StudentModel.m in Sources */,
 				BE25EBF91C44FDFE00068309 /* TPKeyboardAvoidingScrollView.m in Sources */,
+				BE342F6B1C7BF5F6005EF386 /* UUChart.m in Sources */,
 				37B864BF1C743884006CC640 /* EditClassTeacherViewController.m in Sources */,
 				BED7D8CE1C510217005A338E /* ApiPatriarchListRequest.m in Sources */,
 				BE25EC021C45018800068309 /* ValueUtils.m in Sources */,
