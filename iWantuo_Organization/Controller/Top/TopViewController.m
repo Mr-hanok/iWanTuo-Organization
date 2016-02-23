@@ -143,19 +143,19 @@
         //赋值~~
         for (ActivityModel *model in self.dataArray) {
             if (model.location.integerValue == 1) {
-                [self.top1IV sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.%@", model.thumbnailPath]] placeholderImage:[UIImage imageNamed:@"DefaultImage"]];
+                [self.top1IV sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@", model.thumbnailPath]] placeholderImage:[UIImage imageNamed:@"DefaultImage"]];
             }
             if (model.location.integerValue == 2) {
-                [self.top2IV sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.%@", model.thumbnailPath]] placeholderImage:[UIImage imageNamed:@"DefaultImage"]];
+                [self.top2IV sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@", model.thumbnailPath]] placeholderImage:[UIImage imageNamed:@"DefaultImage"]];
             }
             if (model.location.integerValue == 3) {
-                [self.top3IV sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.%@", model.thumbnailPath]] placeholderImage:[UIImage imageNamed:@"DefaultImage"]];
+                [self.top3IV sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@", model.thumbnailPath]] placeholderImage:[UIImage imageNamed:@"DefaultImage"]];
             }
             if (model.location.integerValue == 4) {
-                [self.top4IV sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.%@", model.thumbnailPath]] placeholderImage:[UIImage imageNamed:@"DefaultImage"]];
+                [self.top4IV sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@", model.thumbnailPath]] placeholderImage:[UIImage imageNamed:@"DefaultImage"]];
             }
             if (model.location.integerValue == 5) {
-                [self.top5IV sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.%@", model.thumbnailPath]] placeholderImage:[UIImage imageNamed:@"DefaultImage"]];
+                [self.top5IV sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@", model.thumbnailPath]] placeholderImage:[UIImage imageNamed:@"DefaultImage"]];
             }
         }
         

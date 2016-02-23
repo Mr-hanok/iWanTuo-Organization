@@ -420,12 +420,12 @@
                   moduleName = "iWantuo_Organization"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wuyue/iWanTuo_Organization/iWantuo_Organization/Controller/Top/TopViewController.m"
-                  timestampString = "477889471.116106"
+                  timestampString = "477898532.580251"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "144"
                   endingLineNumber = "144"
-                  offsetFromSymbolStart = "1182">
+                  offsetFromSymbolStart = "1052">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -435,12 +435,12 @@
                   moduleName = "iWantuo_Organization"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wuyue/iWanTuo_Organization/iWantuo_Organization/Controller/Top/TopViewController.m"
-                  timestampString = "477889471.11628"
+                  timestampString = "477898532.580394"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "144"
                   endingLineNumber = "144"
-                  offsetFromSymbolStart = "1190">
+                  offsetFromSymbolStart = "1068">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -474,6 +474,22 @@
             startingLineNumber = "147"
             endingLineNumber = "147"
             landmarkName = "-serverApi_FinishedSuccessed:result:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iWantuo_Organization/Controller/Top/WebHudViewController.m"
+            timestampString = "477896955.651087"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
