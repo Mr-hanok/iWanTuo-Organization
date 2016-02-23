@@ -159,12 +159,12 @@
 }
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
     
-//    NSInteger num = [textField.text integerValue];
-//    if (num>100 ) {
-////        [HUDManager showWarningWithText:@"请输入100以内的分数!"];
+    NSInteger num = [textField.text integerValue];
+    if (num>100 ) {
+//        [HUDManager showWarningWithText:@"请输入100以内的分数!"];
 //        textField.text = nil;
-//        return NO;
-//    }
+        return NO;
+    }
     return YES;
 }
 -(BOOL)textFieldShouldEndEditing:(UITextField *)textField{
@@ -265,6 +265,19 @@
         [HUDManager showWarningWithText:@"请先签到"];
         return;
     }
+    if (![self.classChoseBtn.titleLabel.text isEqualToString:@"选择学科V"]&& self.otherTF.count==0) {
+        [HUDManager  showWarningWithText:@"请输入100以内的分数!"];
+        return ;
+    }
+
+    if (self.otherTF.count>0) {
+        UITextField *classTf = [self.otherTF lastObject];
+        if (classTf.text.length==0 || [[classTf.text stringByTrimmingCharactersInSet:[NSMutableCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
+            [HUDManager  showWarningWithText:@"请输入100以内的分数!"];
+            return;
+        }
+    }
+
     //记录分数
     self.classGrade = self.gradeTF.text;
     for (UITextField *tf in self.otherTF) {
