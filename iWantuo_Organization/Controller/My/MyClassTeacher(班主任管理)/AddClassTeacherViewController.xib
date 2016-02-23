@@ -77,7 +77,7 @@
                                         <constraint firstAttribute="height" constant="30" id="Hzk-gM-YtO"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     <variation key="default">
                                         <mask key="constraints">
                                             <exclude reference="Hzk-gM-YtO"/>
@@ -88,6 +88,9 @@
                                             <include reference="Hzk-gM-YtO"/>
                                         </mask>
                                     </variation>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="NTz-p7-lVa"/>
+                                    </connections>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="辅导老师密码：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ApX-Fm-cba">
                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -125,7 +128,7 @@
                                         <constraint firstAttribute="height" constant="30" id="ddd-hC-fmB"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     <variation key="default">
                                         <mask key="constraints">
                                             <exclude reference="ddd-hC-fmB"/>

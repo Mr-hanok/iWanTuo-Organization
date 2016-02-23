@@ -45,12 +45,12 @@
                     <exclude reference="7qW-Q9-GZY"/>
                 </mask>
                 <mask key="constraints">
+                    <exclude reference="0A1-E0-3fB"/>
+                    <exclude reference="zcR-Va-oQi"/>
                     <exclude reference="PyY-lM-NrR"/>
                     <exclude reference="V1w-Df-5jE"/>
                     <exclude reference="afK-gY-UVG"/>
                     <exclude reference="bVf-Qf-btd"/>
-                    <exclude reference="0A1-E0-3fB"/>
-                    <exclude reference="zcR-Va-oQi"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
@@ -59,12 +59,12 @@
                     <include reference="7qW-Q9-GZY"/>
                 </mask>
                 <mask key="constraints">
+                    <include reference="0A1-E0-3fB"/>
+                    <include reference="zcR-Va-oQi"/>
                     <include reference="PyY-lM-NrR"/>
                     <include reference="V1w-Df-5jE"/>
                     <include reference="afK-gY-UVG"/>
                     <include reference="bVf-Qf-btd"/>
-                    <include reference="0A1-E0-3fB"/>
-                    <include reference="zcR-Va-oQi"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="160" y="4"/>

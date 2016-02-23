@@ -133,6 +133,11 @@
     
     StudentModel *model = [self.dataArray objectAtIndex:indexPath.row];
     cell.nameLabel.text = model.name;
+    cell.GCExpressionBtn.tag = 3000000 + indexPath.row;
+    [cell.GCExpressionBtn addTarget:self action:@selector(expressionBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    
+    cell.GCCurveBtn.tag = 3000000 + indexPath.row;
+    [cell.GCCurveBtn addTarget:self action:@selector(curveBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     return cell;
 }
 
@@ -147,13 +152,6 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    FollowBaseViewController *vc = [[FollowBaseViewController alloc]init];
-    vc.student = self.dataArray[indexPath.row];
-    [self.navigationController pushViewController:vc animated:YES];
-//    FollowSummaryController *vc = [[FollowSummaryController alloc]init];
-//    //vc.student = self.dataArray[indexPath.row];
-//    [self.navigationController pushViewController:vc animated:YES];
     
 }
 #pragma mark - UITextFieldDelegate
@@ -177,6 +175,27 @@
 }
 
 #pragma mark - event response
+/**
+ * 每日表现（每日追踪）
+ */
+- (void)expressionBtnClick:(UIButton *)button {
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:(button.tag - 3000000) inSection:0];
+    FollowBaseViewController *vc = [[FollowBaseViewController alloc]init];
+    vc.student = self.dataArray[indexPath.row];
+    [self.navigationController pushViewController:vc animated:YES];
+
+}
+/**
+ * 成长曲线
+ */
+- (void)curveBtnClick:(UIButton *)button {
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:(button.tag - 3000000) inSection:0];
+    
+}
+
+
 #pragma mark - private methods
 - (void)inistalSearch{
    // self.title = @"选择学生";

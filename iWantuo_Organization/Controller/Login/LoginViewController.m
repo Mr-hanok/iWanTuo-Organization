@@ -162,10 +162,10 @@ typedef enum :NSInteger {
         [HUDManager showWarningWithText:@"请输入密码"];
         return NO;
     }
-//    if (![NSString tf_isSimpleMobileNumber:self.userNameTF.text]  ) {
-//        [HUDManager showWarningWithText:@"请输入正确手机号"];
-//        return NO;
-//    }
+    if (![NSString tf_isSimpleMobileNumber:self.userNameTF.text]  ) {
+        [HUDManager showWarningWithText:@"请输入正确手机号"];
+        return NO;
+    }
     return YES;
 }
 @end

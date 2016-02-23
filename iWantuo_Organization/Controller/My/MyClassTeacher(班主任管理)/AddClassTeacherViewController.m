@@ -28,7 +28,6 @@
     self.title = @"添加辅导员";
     
     self.phoneNumTF.keyboardType = UIKeyboardTypeNumberPad;
-    self.accountTF.keyboardType = UIKeyboardTypeEmailAddress;
     self.passWordTF.keyboardType = UIKeyboardTypeEmailAddress;
     self.accountTF.delegate = self;
     self.passWordTF.delegate = self;
@@ -121,6 +120,11 @@
     }
     if (self.accountTF.text.length==0 || [[self.accountTF.text stringByTrimmingCharactersInSet:[NSMutableCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
         [HUDManager showWarningWithText:@"请输入账号"];
+        return NO;
+    }
+    //判断账号是否是手机号
+    if (![NSString tf_isSimpleMobileNumber:self.accountTF.text] || [[self.accountTF.text stringByTrimmingCharactersInSet:[NSMutableCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
+        [HUDManager showWarningWithText:@"请输入正确手机号"];
         return NO;
     }
     if (![NSString tf_isSimpleMobileNumber:self.phoneNumTF.text] || [[self.phoneNumTF.text stringByTrimmingCharactersInSet:[NSMutableCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {

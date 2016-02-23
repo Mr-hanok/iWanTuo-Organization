@@ -9,7 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface StudentChoseCell : UITableViewCell
+/**学生姓名*/
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+/**每日表现*/
+@property (weak, nonatomic) IBOutlet UIButton *GCExpressionBtn;
+/**每日追踪*/
+@property (weak, nonatomic) IBOutlet UIButton *GCCurveBtn;
 
 + (StudentChoseCell *)shareStudentChoseCell;
 @end
