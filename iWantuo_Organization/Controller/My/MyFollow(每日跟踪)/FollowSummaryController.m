@@ -266,8 +266,10 @@
         return;
     }
     if (![self.classChoseBtn.titleLabel.text isEqualToString:@"选择学科V"]&& self.otherTF.count==0) {
-        [HUDManager  showWarningWithText:@"请输入100以内的分数!"];
-        return ;
+        if ([self.gradeTF.text integerValue]>100 ||[self.gradeTF.text integerValue]<=0) {
+            [HUDManager  showWarningWithText:@"请输入100以内的分数!"];
+            return ;
+        }
     }
 
     if (self.otherTF.count>0) {
