@@ -70,6 +70,7 @@
     self.signVC.status = @"1";
     self.signVC.statusName = @"签到";
     self.signVC.studentId = self.student.studentId;
+    self.signVC.classId = self.student.classId;
     self.followIV.image = [UIImage imageNamed:@"followshortofline"];
     [self.signBtn setTitleColor:kNavigationColor forState:UIControlStateSelected];
     [self.sumaryBtn setTitleColor:kNavigationColor forState:UIControlStateSelected];
@@ -242,6 +243,7 @@
             self.signVC.status = @"1";
             self.signVC.statusName = @"签到";
             self.signVC.studentId = self.student.studentId;
+            self.signVC.classId = self.student.classId;
         }
             break;
             

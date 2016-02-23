@@ -17,5 +17,6 @@
 @property (nonatomic, copy) NSString *status;//状态0删除1签到2总结3离校
 @property (nonatomic, copy) NSString *statusName;//状态0删除1签到2总结3离校
 @property (nonatomic, copy) NSString *studentId;
+@property (nonatomic, copy) NSString *classId;
 @property (nonatomic, strong) FollowModel *followmodel;
 @end
