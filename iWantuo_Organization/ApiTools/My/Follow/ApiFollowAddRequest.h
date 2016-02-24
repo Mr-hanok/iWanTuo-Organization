@@ -31,5 +31,6 @@
                             status:(NSString *)status
                         statusName:(NSString *)statusName
                       signInPerson:(NSString *)signinPerson
-                           classId:(NSString *)classId;
+                           classId:(NSString *)classId
+                           loginin:(NSString *)loginin;
 @end

@@ -151,7 +151,8 @@
                            signInImage:@""
                                   note:@""
                          summaryPerson:@""
-                           leavePerson:self.loginName];
+                           leavePerson:self.loginName
+                               loginin:[AccountManager sharedInstance].account.loginAccounts];
     [APIClient execute:self.apiChange];
 }
 #pragma mark - private methods

@@ -25,7 +25,8 @@
                             status:(NSString *)status
                         statusName:(NSString *)statusName
                       signInPerson:(NSString *)signinPerson
-                           classId:(NSString *)classId{
+                           classId:(NSString *)classId
+                           loginin:(NSString *)loginin{
     
     
     [self.params setValue:createDate forKey:@"createDate"];
@@ -37,6 +38,7 @@
     [self.params setValue:statusName forKey:@"statusName"];
     [self.params setValue:signinPerson forKey:@"signinPerson"];
     [self.params setValue:classId forKey:@"classId"];
+    [self.params setValue:loginin forKey:@"loginin"];
 }
 
 @end

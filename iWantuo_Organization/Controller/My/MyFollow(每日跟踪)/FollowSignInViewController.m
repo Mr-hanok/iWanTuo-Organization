@@ -181,7 +181,8 @@
                                           signInImage:self.imageName
                                                status:self.status
                                            statusName:self.statusName signInPerson:self.loginName
-                                              classId:self.classId];
+                                              classId:self.classId
+                                              loginin:[AccountManager sharedInstance].account.loginAccounts];
         
         [APIClient execute:self.apiFollowAdd];
 
@@ -213,7 +214,8 @@
                                signInImage:self.imageName
                                       note:@""
                              summaryPerson:self.loginName
-                               leavePerson:self.loginName];
+                               leavePerson:self.loginName
+                                   loginin:[AccountManager sharedInstance].account.loginAccounts];
 
         [APIClient execute:self.apiChange];
     }
