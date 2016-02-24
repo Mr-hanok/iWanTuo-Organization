@@ -46,5 +46,6 @@
                signInImage:(NSString *)signInImage
                       note:(NSString *)note
              summaryPerson:(NSString *)summaryPerson
-               leavePerson:(NSString *)leavePerson;
+               leavePerson:(NSString *)leavePerson
+                   loginin:(NSString *)loginin;
 @end

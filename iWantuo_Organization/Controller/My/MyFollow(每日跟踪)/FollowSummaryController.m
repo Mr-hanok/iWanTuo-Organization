@@ -299,7 +299,8 @@
                                signInImage:@""
                                       note:self.remarkTV.text
                              summaryPerson:self.loginName
-                               leavePerson:@""];
+                               leavePerson:@""
+                                   loginin:[AccountManager sharedInstance].account.loginAccounts];
 
     }
     if ([self.followmodel.status isEqualToString:@"3"]) {
@@ -321,7 +322,8 @@
                                signInImage:@""
                                       note:self.remarkTV.text
                              summaryPerson:@""
-                               leavePerson:self.loginName];
+                               leavePerson:self.loginName
+                                   loginin:[AccountManager sharedInstance].account.loginAccounts];
 
     }
     [APIClient execute:self.apiChange];

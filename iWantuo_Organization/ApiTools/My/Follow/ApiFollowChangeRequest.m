@@ -34,6 +34,7 @@
                       note:(NSString *)note
              summaryPerson:(NSString *)summaryPerson
                leavePerson:(NSString *)leavePerson
+                   loginin:(NSString *)loginin
 {
     [self.params setValue:kid forKey:@"Id"];
     [self.params setValue:leave forKey:@"leave"];
@@ -53,6 +54,7 @@
     [self.params setValue:note forKey:@"note"];
     [self.params setValue:summaryPerson forKey:@"summaryPerson"];
     [self.params setValue:leavePerson forKey:@"leavePerson"];
+    [self.params setValue:loginin forKey:@"loginin"];
     
 }
 
