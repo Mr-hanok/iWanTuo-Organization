@@ -140,7 +140,7 @@
 #pragma mark - private methods
 - (void)loadingOrganizationData{
 
-    [self.api setApiParamsWithLocation:[AccountManager sharedInstance].locationId bairro:@"" organization:@"" page:[NSString stringWithFormat:@"%@", @(self.api.requestCurrentPage)] locationX:@"0.0" locationY:@"0.0" distance:@"" Type:@"2" rows:kRequestDataRows];
+    [self.api setApiParamsWithLocation:[AccountManager sharedInstance].locationId bairro:@"" organization:@"" page:[NSString stringWithFormat:@"%@", @(self.api.requestCurrentPage)] locationX:@"0.0" locationY:@"0.0" distance:@"" Type:@"3" rows:kRequestDataRows];
 
     [APIClient execute:self.api];
 }

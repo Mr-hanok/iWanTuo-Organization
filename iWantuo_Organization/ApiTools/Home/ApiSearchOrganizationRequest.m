@@ -31,7 +31,7 @@
     [self.params setValue:locationX forKey:@"x"];
     [self.params setValue:locationY forKey:@"y"];
     [self.params setValue:distance forKey:@"distance"];
-    [self.params setValue:Type forKey:@"Type"];//1 附近查询 2 星级查询
+    [self.params setValue:Type forKey:@"Type"];//1 附近查询 2 星级查询  3 排行榜
 }
 
 

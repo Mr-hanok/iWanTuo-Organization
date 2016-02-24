@@ -19,7 +19,7 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eUb-Gi-awP">
@@ -155,26 +155,26 @@
                             <exclude reference="BsE-v8-fEb"/>
                             <exclude reference="YAo-JB-VdM"/>
                             <exclude reference="wWL-FA-6zh"/>
-                            <exclude reference="1Nu-AI-CRc"/>
-                            <exclude reference="3c3-8l-zLH"/>
-                            <exclude reference="Wf9-Q2-YX5"/>
-                            <exclude reference="cWE-eY-emx"/>
-                            <exclude reference="7Qd-QJ-b0d"/>
-                            <exclude reference="G8j-3x-0M3"/>
-                            <exclude reference="KkH-eF-a4T"/>
-                            <exclude reference="fkj-7P-LGr"/>
                             <exclude reference="1Mp-fV-3BH"/>
                             <exclude reference="Iil-mI-I7n"/>
                             <exclude reference="VcO-OV-mnA"/>
                             <exclude reference="Xby-Aq-sVT"/>
-                            <exclude reference="XGj-7I-5KM"/>
-                            <exclude reference="qWl-yS-fhO"/>
-                            <exclude reference="zrb-vO-Hg3"/>
+                            <exclude reference="7Qd-QJ-b0d"/>
+                            <exclude reference="G8j-3x-0M3"/>
+                            <exclude reference="KkH-eF-a4T"/>
+                            <exclude reference="fkj-7P-LGr"/>
                             <exclude reference="7Br-wk-qbm"/>
                             <exclude reference="Ul5-GO-1U3"/>
                             <exclude reference="VGs-xO-mR9"/>
                             <exclude reference="ZBr-2v-aiv"/>
                             <exclude reference="ufV-GO-Wa5"/>
+                            <exclude reference="XGj-7I-5KM"/>
+                            <exclude reference="qWl-yS-fhO"/>
+                            <exclude reference="zrb-vO-Hg3"/>
+                            <exclude reference="1Nu-AI-CRc"/>
+                            <exclude reference="3c3-8l-zLH"/>
+                            <exclude reference="Wf9-Q2-YX5"/>
+                            <exclude reference="cWE-eY-emx"/>
                         </mask>
                     </variation>
                     <variation key="heightClass=regular-widthClass=compact">
@@ -192,26 +192,26 @@
                             <include reference="BsE-v8-fEb"/>
                             <include reference="YAo-JB-VdM"/>
                             <exclude reference="wWL-FA-6zh"/>
-                            <exclude reference="1Nu-AI-CRc"/>
-                            <include reference="3c3-8l-zLH"/>
-                            <include reference="Wf9-Q2-YX5"/>
-                            <include reference="cWE-eY-emx"/>
-                            <include reference="7Qd-QJ-b0d"/>
-                            <include reference="G8j-3x-0M3"/>
-                            <include reference="KkH-eF-a4T"/>
-                            <exclude reference="fkj-7P-LGr"/>
                             <include reference="1Mp-fV-3BH"/>
                             <include reference="Iil-mI-I7n"/>
                             <include reference="VcO-OV-mnA"/>
                             <include reference="Xby-Aq-sVT"/>
-                            <include reference="XGj-7I-5KM"/>
-                            <include reference="qWl-yS-fhO"/>
-                            <include reference="zrb-vO-Hg3"/>
+                            <include reference="7Qd-QJ-b0d"/>
+                            <include reference="G8j-3x-0M3"/>
+                            <include reference="KkH-eF-a4T"/>
+                            <exclude reference="fkj-7P-LGr"/>
                             <include reference="7Br-wk-qbm"/>
                             <include reference="Ul5-GO-1U3"/>
                             <include reference="VGs-xO-mR9"/>
                             <include reference="ZBr-2v-aiv"/>
                             <include reference="ufV-GO-Wa5"/>
+                            <include reference="XGj-7I-5KM"/>
+                            <include reference="qWl-yS-fhO"/>
+                            <include reference="zrb-vO-Hg3"/>
+                            <exclude reference="1Nu-AI-CRc"/>
+                            <include reference="3c3-8l-zLH"/>
+                            <include reference="Wf9-Q2-YX5"/>
+                            <include reference="cWE-eY-emx"/>
                         </mask>
                     </variation>
                 </scrollView>

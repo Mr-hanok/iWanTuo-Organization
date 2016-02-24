@@ -23,6 +23,12 @@
 #define kGtAppKey          @"JYd49ugwx762hImEBIdwp1"
 #define kGtAppSecret       @"C88yQCw8SF8bgTVekaVVu1"
 
+//appstore上线更换这个
+//#define kGtAppId           @"53NxC9HIv27jt0EH4LCUm"
+//#define kGtAppKey          @"TqdTlxdaAg5CLvJ5a4rhq"
+//#define kGtAppSecret       @"NvIQ6fr9Uv9JcorMQZcHg"
+
+
 @interface AppDelegate ()<GeTuiSdkDelegate>
 @property (nonatomic, strong) BMKMapManager *mapManager;
 @end
@@ -118,6 +124,7 @@
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     [[APNsManager sharedInstance] startSdk];
     [[AccountManager sharedInstance] loadAccountInfoFromDisk];
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
 
 }
 
