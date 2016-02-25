@@ -72,7 +72,6 @@
     if (sr.dic == nil || [sr.dic isKindOfClass:[NSNull class]]) {
         return;
     }
-    
     //保存用户信息
     [AccountManager sharedInstance].account.isLogin = @"no";
     [[AccountManager sharedInstance] saveAccountInfoToDisk];

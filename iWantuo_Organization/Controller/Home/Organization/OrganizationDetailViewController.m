@@ -134,50 +134,50 @@
  *  收藏
  */
 - (IBAction)collectionBtnAction:(UIButton *)sender {
-    if (![AccountManager sharedInstance].isLogin) {
-        [AlertViewManager showAlertViewMessage:@"尚未登录,请登录!" handlerBlock:^{
-//            kRootViewController = [SystemHandler loginViewController];
-            [self pushLoginVC];
-        }];
-        
-        return;
-    }
-    [HUDManager showLoadingHUDView:self.view];
-    if (sender.selected) {
-        //取消收藏
-        [[CancelAttentionHandler sharedInstance] cancelAttentionWithOrgId:self.organizationModel.loginAccounts success:^(NSString *result) {
-            [HUDManager hideHUDView];
-            sender.selected = !sender.selected;
-        } failure:^(NSString *message) {
-            [HUDManager hideHUDView];
-        }];
-    } else {
-        //收藏
-        [[AttentionHandler sharedInstance] attentionWithOrgId:self.organizationModel.loginAccounts success:^(NSString *result) {
-            [HUDManager hideHUDView];
-            sender.selected = !sender.selected;
-        } failure:^(NSString *message) {
-            [HUDManager hideHUDView];
-        }];
-    }
-    
+//    if (![AccountManager sharedInstance].isLogin) {
+//        [AlertViewManager showAlertViewMessage:@"尚未登录,请登录!" handlerBlock:^{
+////            kRootViewController = [SystemHandler loginViewController];
+//            [self pushLoginVC];
+//        }];
+//        
+//        return;
+//    }
+//    [HUDManager showLoadingHUDView:self.view];
+//    if (sender.selected) {
+//        //取消收藏
+//        [[CancelAttentionHandler sharedInstance] cancelAttentionWithOrgId:self.organizationModel.loginAccounts success:^(NSString *result) {
+//            [HUDManager hideHUDView];
+//            sender.selected = !sender.selected;
+//        } failure:^(NSString *message) {
+//            [HUDManager hideHUDView];
+//        }];
+//    } else {
+//        //收藏
+//        [[AttentionHandler sharedInstance] attentionWithOrgId:self.organizationModel.loginAccounts success:^(NSString *result) {
+//            [HUDManager hideHUDView];
+//            sender.selected = !sender.selected;
+//        } failure:^(NSString *message) {
+//            [HUDManager hideHUDView];
+//        }];
+//    }
+//    
     
 }
 /**
  *  评价
  */
 - (IBAction)commentBtnAction:(UIButton *)sender {
-    if (![AccountManager sharedInstance].isLogin) {
-        [AlertViewManager showAlertViewMessage:@"尚未登录,请登录!" handlerBlock:^{
-//            kRootViewController = [SystemHandler loginViewController];
-            [self pushLoginVC];
-        }];
-        
-        return;
-    }
-    CommentViewController *vc = [[CommentViewController alloc]init];
-    vc.loginAccounts = self.organizationModel.loginAccounts;
-    [self.navigationController pushViewController:vc animated:YES];
+//    if (![AccountManager sharedInstance].isLogin) {
+//        [AlertViewManager showAlertViewMessage:@"尚未登录,请登录!" handlerBlock:^{
+////            kRootViewController = [SystemHandler loginViewController];
+//            [self pushLoginVC];
+//        }];
+//        
+//        return;
+//    }
+//    CommentViewController *vc = [[CommentViewController alloc]init];
+//    vc.loginAccounts = self.organizationModel.loginAccounts;
+//    [self.navigationController pushViewController:vc animated:YES];
 }
 /**
  *  分享

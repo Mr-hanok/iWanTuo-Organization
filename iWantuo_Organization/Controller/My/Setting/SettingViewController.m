@@ -86,10 +86,10 @@
     switch (indexPath.row) {
         case 0://修改密码
         {
-            if ([AccountManager sharedInstance].isLogin == NO) {
-                [HUDManager showWarningWithText:@"尚未登录."];
-                return;
-            }
+//            if ([AccountManager sharedInstance].isLogin == NO) {
+//                [HUDManager showWarningWithText:@"尚未登录."];
+//                return;
+//            }
             vc = [[ChangePasswordController alloc]init];
         }
             
