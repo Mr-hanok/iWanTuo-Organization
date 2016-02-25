@@ -195,13 +195,13 @@
             
 //            ClassModel *model = [self.dataArray objectAtIndex:indexPath.row];
             self.apiDelete = [[ApiDeleteClassRequest alloc] initWithDelegate:self];
-            [self.apiDelete setApiParamsWithClassId:model.classId];
+            [self.apiDelete setApiParamsWithClassId:model.classId login:[AccountManager sharedInstance].account.loginAccounts];
             [APIClient execute:self.apiDelete];
             [HUDManager showLoadingHUDView:self.tableview];
         }];
     } else {
         self.apiDelete = [[ApiDeleteClassRequest alloc] initWithDelegate:self];
-        [self.apiDelete setApiParamsWithClassId:model.classId];
+        [self.apiDelete setApiParamsWithClassId:model.classId login:[AccountManager sharedInstance].account.loginAccounts];
         [APIClient execute:self.apiDelete];
         [HUDManager showLoadingHUDView:self.tableview];
     }

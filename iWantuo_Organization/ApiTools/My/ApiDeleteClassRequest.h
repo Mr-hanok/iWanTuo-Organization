@@ -7,9 +7,11 @@
 //
 
 #import "APIRequest.h"
-
+/**
+ *  删除班级
+ */
 @interface ApiDeleteClassRequest : APIRequest
 
-- (void)setApiParamsWithClassId:(NSString *)classId;
+- (void)setApiParamsWithClassId:(NSString *)classId login:(NSString *)login;
 
 @end

@@ -62,7 +62,7 @@
             }
         }
         weakself.apiDelete = [[ApiDeleteStudentsByClassRequest alloc] initWithDelegate:weakself];
-        [weakself.apiDelete setApiParamsWithStudentIds:deleteStr classId:weakself.classModel.classId];
+        [weakself.apiDelete setApiParamsWithStudentIds:deleteStr classId:weakself.classModel.classId login:[AccountManager sharedInstance].account.loginAccounts];
         [APIClient execute:weakself.apiDelete];
         [HUDManager showLoadingHUDView:weakself.tableview];
     }];

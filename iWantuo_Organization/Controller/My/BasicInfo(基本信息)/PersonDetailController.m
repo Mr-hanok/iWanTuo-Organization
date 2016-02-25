@@ -16,11 +16,12 @@
 #import "CameraTakeMamanger.h"
 #import "UploadManager.h"
 
-@interface PersonDetailController ()<APIRequestDelegate,ZHPickViewDelegate>
+@interface PersonDetailController ()<APIRequestDelegate,ZHPickViewDelegate,UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *areaBtn;//地区按钮
 @property (weak, nonatomic) IBOutlet UITextField *areaTF;//地区TF
 @property (weak, nonatomic) IBOutlet UITextField *shortNameTF;//简称
 @property (weak, nonatomic) IBOutlet UITextField *nameTF;//机构全称TF
+@property (weak, nonatomic) IBOutlet UITextView *describeTV;
 @property (weak, nonatomic) IBOutlet UITextField *describeTF;//机构描述
 @property (weak, nonatomic) IBOutlet UITextField *tagTF;//机构标签
 @property (weak, nonatomic) IBOutlet UITextField *priceTF;//机构价格
@@ -59,6 +60,7 @@
     self.title = @"基本信息";
     self.areaArray = [NSMutableArray array];
     self.areaModelArry = [NSMutableArray array];
+    self.describeTF.hidden = YES;
     //修改头像 手势
     self.imageIV1.userInteractionEnabled = YES;
     self.imageIV2.userInteractionEnabled = YES;
@@ -171,7 +173,17 @@
     }
         
 }
-
+#pragma mark -UItextViewDelegate
+-(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
+    if (textView.text.length==0) {
+        self.describeTF.hidden = NO;
+        self.describeTV.text = nil;
+    }else{
+        self.describeTF.hidden = YES;
+        self.describeTV.text = textView.text;
+    }
+    return YES;
+}
 
 #pragma mark - event response
 /**区域选择按钮*/
@@ -215,7 +227,7 @@
                               organizatioTypeName:self.organiTypeName
                                      organization:self.nameTF.text
                                             phone:self.phoneTF.text
-                                        introduce:self.describeTF.text
+                                        introduce:self.describeTV.text
                                             label:self.tagTF.text
                                        photoAlbum:self.imageName
                                              cost:self.priceTF.text
@@ -279,7 +291,13 @@
     self.areaTF.text = self.areaName;
     self.nameTF.text = self.model.organization;
     self.shortNameTF.text = self.model.organizationAbbreviation;
-    self.describeTF.text = self.model.introduce;
+    if (self.model.introduce.length>0) {
+        self.describeTF.hidden = YES;
+        self.describeTV.text = self.model.introduce;
+    }else{
+        self.describeTF.hidden = NO;
+        self.describeTF.text = nil;
+    }
     self.tagTF.text = self.model.label;
     if ([self.model.cost isEqualToString:@"0"]) {
         self.priceTF.text = nil;

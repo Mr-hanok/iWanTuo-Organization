@@ -38,6 +38,7 @@
                         location:(NSString *)location
                         bairroId:(NSString *)bairroId
                           bairro:(NSString *)bairro
+                           login:(NSString *)login
 {
     [self.params setObject:organizationAccounts forKey:@"organizationAccounts"];
     [self.params setObject:studentId forKey:@"id"];
@@ -54,6 +55,7 @@
     [self.params setObject:location forKey:@"location"];
     [self.params setObject:bairroId forKey:@"bairroId"];
     [self.params setObject:bairro forKey:@"bairro"];
+    [self.params setObject:login forKey:@"login"];
 }
 
 @end

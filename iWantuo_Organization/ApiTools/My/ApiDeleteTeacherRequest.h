@@ -7,9 +7,11 @@
 //
 
 #import "APIRequest.h"
-
+/**
+ *  删除辅导老师
+ */
 @interface ApiDeleteTeacherRequest : APIRequest
 
-- (void)setApiParamsWithTeacherId:(NSString *)teacherId ;
+- (void)setApiParamsWithTeacherId:(NSString *)teacherId login:(NSString *)login;
 
 @end

@@ -14,5 +14,6 @@
 
 - (void)setApiParamsWithTeacherId:(NSString *)teacherId
                              name:(NSString *)name
-                            phone:(NSString *)phone;
+                            phone:(NSString *)phone
+                            login:(NSString *)login;
 @end

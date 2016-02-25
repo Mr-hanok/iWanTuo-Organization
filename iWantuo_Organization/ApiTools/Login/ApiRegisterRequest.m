@@ -35,6 +35,7 @@
                     organizatioType:(NSString *)organizatioType
                 organizatioTypeName:(NSString *)organizatioTypeName
                         idCardImage:(NSString *)idCardImage
+                              phone:(NSString *)phone
 
 {
     
@@ -53,8 +54,7 @@
     [self.params setValue:organizatioType forKey:@"organizatioType"];
     [self.params setValue:organizatioTypeName forKey:@"organizatioTypeName"];
     [self.params setValue:idCardImage forKey:@"idCardImage"];
-
-    
+    [self.params setValue:phone forKey:@"phone"];
 }
 
 @end

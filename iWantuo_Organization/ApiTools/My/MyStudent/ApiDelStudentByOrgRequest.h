@@ -7,9 +7,13 @@
 //
 
 #import "APIRequest.h"
-
+/**
+ *  删除学员api
+ */
 @interface ApiDelStudentByOrgRequest : APIRequest
 
-- (void)setApiParmsWithOrganizationAccounts:(NSString *)organizationAccounts studentId:(NSString *)studentId;
+- (void)setApiParmsWithOrganizationAccounts:(NSString *)organizationAccounts
+                                  studentId:(NSString *)studentId
+                                      login:(NSString *)login;
 
 @end

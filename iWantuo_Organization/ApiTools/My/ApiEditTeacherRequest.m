@@ -19,11 +19,14 @@
 
 - (void)setApiParamsWithTeacherId:(NSString *)teacherId
                              name:(NSString *)name
-                            phone:(NSString *)phone {
+                            phone:(NSString *)phone
+                            login:(NSString *)login{
     
     [self.params setValue:teacherId forKey:@"id"];
     [self.params setValue:name forKey:@"name"];
     [self.params setValue:phone forKey:@"phone"];
+    [self.params setValue:login forKey:@"login"];
+    [self.params setValue:login forKey:@"login"];
     
 }
 

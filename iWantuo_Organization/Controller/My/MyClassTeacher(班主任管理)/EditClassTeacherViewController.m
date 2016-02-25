@@ -75,7 +75,7 @@
 - (IBAction)editBtnAction:(UIButton *)sender {
     if ([self dataCheck]) {
         self.api = [[ApiEditTeacherRequest alloc] initWithDelegate:self];
-        [self.api setApiParamsWithTeacherId:self.model.teacherId name:self.nameTF.text phone:self.phoneNumTF.text];
+        [self.api setApiParamsWithTeacherId:self.model.teacherId name:self.nameTF.text phone:self.phoneNumTF.text login:[AccountManager sharedInstance].account.loginAccounts];
         [APIClient execute:self.api];
         [HUDManager showLoadingHUDView:self.view];
     }

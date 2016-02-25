@@ -63,7 +63,7 @@
      self.indexPath = indexPath;
     StudentModel *model = [self.dataArray objectAtIndex:indexPath.row];
     self.apiDelete = [[ApiDelStudentByOrgRequest alloc] initWithDelegate:self];
-    [self.apiDelete setApiParmsWithOrganizationAccounts:model.organizationAccounts studentId:model.studentId];
+    [self.apiDelete setApiParmsWithOrganizationAccounts:model.organizationAccounts studentId:model.studentId login:[AccountManager sharedInstance].account.loginAccounts];
     [APIClient execute:self.apiDelete];
     [HUDManager showLoadingHUDView:self.tableView];
 }

@@ -7,7 +7,9 @@
 //
 
 #import "APIRequest.h"
-
+/**
+ *  修改学生信息
+ */
 @interface ApiUpdateStudentRequest : APIRequest
 - (void)setApiParmsWithStudentId:(NSString *)studentId
                             name:(NSString *)name
@@ -23,5 +25,6 @@
                       locationId:(NSString *)locationId
                         location:(NSString *)location
                         bairroId:(NSString *)bairroId
-                          bairro:(NSString *)bairro;
+                          bairro:(NSString *)bairro
+                           login:(NSString *)login;
 @end

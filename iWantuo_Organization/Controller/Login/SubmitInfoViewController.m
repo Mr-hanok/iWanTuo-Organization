@@ -232,7 +232,8 @@
                                         bairroName:model.name
                                    organizatioType:self.organiType
                                organizatioTypeName:self.organiTypeName
-                                       idCardImage:self.imageName];
+                                       idCardImage:self.imageName
+                                             phone:self.phoneNum];
     [APIClient execute:self.apiRegister];
 }
 

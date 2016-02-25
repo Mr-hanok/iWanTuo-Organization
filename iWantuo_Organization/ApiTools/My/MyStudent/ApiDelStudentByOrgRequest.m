@@ -23,10 +23,13 @@
 }
 
 
-- (void)setApiParmsWithOrganizationAccounts:(NSString *)organizationAccounts studentId:(NSString *)studentId
+- (void)setApiParmsWithOrganizationAccounts:(NSString *)organizationAccounts
+                                  studentId:(NSString *)studentId
+                                      login:(NSString *)login
 {
     [self.params setObject:organizationAccounts forKey:@"organizationAccounts"];
     [self.params setObject:studentId forKey:@"studentId"];
+    [self.params setObject:login forKey:@"login"];
 }
 
 

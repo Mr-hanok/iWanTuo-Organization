@@ -25,5 +25,6 @@
                          bairroName:(NSString *)bairroName
                     organizatioType:(NSString *)organizatioType
                 organizatioTypeName:(NSString *)organizatioTypeName
-                        idCardImage:(NSString *)idCardImage;
+                        idCardImage:(NSString *)idCardImage
+                              phone:(NSString *)phone;
 @end

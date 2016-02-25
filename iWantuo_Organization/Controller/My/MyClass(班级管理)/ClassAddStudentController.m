@@ -53,7 +53,7 @@
             }
         }
         weakself.apiSave = [[ApiSaveStudentsByClassRequest alloc] initWithDelegate:weakself];
-        [weakself.apiSave setApiParamsWithStudentIds:addStr classId:weakself.classId];
+        [weakself.apiSave setApiParamsWithStudentIds:addStr classId:weakself.classId login:[AccountManager sharedInstance].account.loginAccounts];
         [APIClient execute:weakself.apiSave];
         [HUDManager showLoadingHUDView:weakself.tableview];
 

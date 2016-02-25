@@ -18,10 +18,11 @@
     return kApiAccessPost;
 }
 
-- (void)setApiParamsWithStudentIds:(NSString *)studentIds classId:(NSString *)classId {
+- (void)setApiParamsWithStudentIds:(NSString *)studentIds classId:(NSString *)classId login:(NSString *)login{
     
     [self.params setValue:studentIds forKey:@"studentIds"];
     [self.params setValue:classId forKey:@"classId"];
+    [self.params setValue:login forKey:@"login"];
 }
 
 
