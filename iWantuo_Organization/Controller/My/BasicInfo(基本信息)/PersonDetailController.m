@@ -190,13 +190,12 @@
 }
 #pragma mark -UItextViewDelegate
 -(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
-    if (textView.text.length==0) {
+    if (textView.text.length==0  ||[textView.text isEqualToString:@" "]) {
         self.describeTF.hidden = NO;
         self.describeTV.text = nil;
     }else{
         self.describeTF.hidden = YES;
-        self.describeTV.text = textView.text;
-    }
+        }
     return YES;
 }
 
@@ -229,6 +228,9 @@
     [self.view endEditing:YES];
     [self.areaPick remove];
     [self.typePick remove];
+    if ([self.describeTV.text isEqualToString:@""]) {
+        self.describeTV.text = @" ";
+    }
     
     [HUDManager showLoadingHUDView:self.view];
     self.apiChange = [[ApiChangeArganization alloc]initWithDelegate:self];
@@ -306,12 +308,12 @@
     self.areaTF.text = self.areaName;
     self.nameTF.text = self.model.organization;
     self.shortNameTF.text = self.model.organizationAbbreviation;
-    if (self.model.introduce.length>0) {
+    if (self.model.introduce.length==0 || [self.model.introduce isEqualToString:@" "] ) {
+        self.describeTF.hidden = NO;
+        self.describeTF.text = @"";
+    }else {
         self.describeTF.hidden = YES;
         self.describeTV.text = self.model.introduce;
-    }else{
-        self.describeTF.hidden = NO;
-        self.describeTF.text = nil;
     }
     self.tagTF.text = self.model.label;
     if ([self.model.cost isEqualToString:@"0"]) {
