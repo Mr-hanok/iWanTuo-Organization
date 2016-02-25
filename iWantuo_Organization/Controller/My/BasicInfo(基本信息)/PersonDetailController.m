@@ -15,9 +15,12 @@
 #import "AccountModel.h"
 #import "CameraTakeMamanger.h"
 #import "UploadManager.h"
+#import "TPKeyboardAvoidingScrollView.h"
 
 @interface PersonDetailController ()<APIRequestDelegate,ZHPickViewDelegate,UITextViewDelegate>
+@property (weak, nonatomic) IBOutlet TPKeyboardAvoidingScrollView *scrolloview;
 @property (weak, nonatomic) IBOutlet UIButton *areaBtn;//地区按钮
+@property (weak, nonatomic) IBOutlet UIButton *commitBtn;
 @property (weak, nonatomic) IBOutlet UITextField *areaTF;//地区TF
 @property (weak, nonatomic) IBOutlet UITextField *shortNameTF;//简称
 @property (weak, nonatomic) IBOutlet UITextField *nameTF;//机构全称TF
@@ -50,6 +53,7 @@
 @property (nonatomic, copy) NSString *imageName1;
 @property (nonatomic, copy) NSString *imageName2;
 @property (nonatomic, copy) NSString *imageName3;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConst;
 @end
 
 @implementation PersonDetailController
@@ -60,7 +64,14 @@
     self.title = @"基本信息";
     self.areaArray = [NSMutableArray array];
     self.areaModelArry = [NSMutableArray array];
-    self.describeTF.hidden = YES;
+    //self.describeTF.hidden = YES;
+
+    if ([UIScreen mainScreen].bounds.size.height == 667 ) {
+        self.heightConst.constant = 667-64;
+    }
+    if ([UIScreen mainScreen].bounds.size.height == 736) {
+        self.heightConst.constant = 736-64;
+    }
     //修改头像 手势
     self.imageIV1.userInteractionEnabled = YES;
     self.imageIV2.userInteractionEnabled = YES;
@@ -93,6 +104,10 @@
     [self.areaPick remove];
     [self.typePick remove];
 }
+-(void)viewWillLayoutSubviews{
+    [super viewWillLayoutSubviews];
+}
+
 #pragma mark -  APIRequestDelegate
 
 - (void)serverApi_RequestFailed:(APIRequest *)api error:(NSError *)error {
@@ -175,13 +190,12 @@
 }
 #pragma mark -UItextViewDelegate
 -(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
-    if (textView.text.length==0) {
+    if (textView.text.length==0  ||[textView.text isEqualToString:@" "]) {
         self.describeTF.hidden = NO;
         self.describeTV.text = nil;
     }else{
         self.describeTF.hidden = YES;
-        self.describeTV.text = textView.text;
-    }
+        }
     return YES;
 }
 
@@ -214,6 +228,9 @@
     [self.view endEditing:YES];
     [self.areaPick remove];
     [self.typePick remove];
+    if ([self.describeTV.text isEqualToString:@""]) {
+        self.describeTV.text = @" ";
+    }
     
     [HUDManager showLoadingHUDView:self.view];
     self.apiChange = [[ApiChangeArganization alloc]initWithDelegate:self];
@@ -291,12 +308,12 @@
     self.areaTF.text = self.areaName;
     self.nameTF.text = self.model.organization;
     self.shortNameTF.text = self.model.organizationAbbreviation;
-    if (self.model.introduce.length>0) {
+    if (self.model.introduce.length==0 || [self.model.introduce isEqualToString:@" "] ) {
+        self.describeTF.hidden = NO;
+        self.describeTF.text = @"";
+    }else {
         self.describeTF.hidden = YES;
         self.describeTV.text = self.model.introduce;
-    }else{
-        self.describeTF.hidden = NO;
-        self.describeTF.text = nil;
     }
     self.tagTF.text = self.model.label;
     if ([self.model.cost isEqualToString:@"0"]) {
@@ -306,6 +323,7 @@
     }
     self.adressTF.text = self.model.address;
     self.phoneTF.text = self.model.phone;
+    
 }
 /**
  *  上传ImageView
