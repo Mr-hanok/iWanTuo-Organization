@@ -51,6 +51,7 @@
     self.textField.layer.masksToBounds = YES;
     self.textField.layer.borderColor = kNavigationColor.CGColor;
     self.textField.layer.borderWidth = 1;
+    self.textField.returnKeyType = UIReturnKeySearch;
 }
 
 - (void)viewWillAppear:(BOOL)animated {

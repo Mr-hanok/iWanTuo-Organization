@@ -31,6 +31,7 @@
     self.passWordTF.keyboardType = UIKeyboardTypeEmailAddress;
     self.accountTF.delegate = self;
     self.passWordTF.delegate = self;
+//    self.passWordTF.returnKeyType = UIReturnKeyNext;
     
 }
 -(void)viewWillAppear:(BOOL)animated{

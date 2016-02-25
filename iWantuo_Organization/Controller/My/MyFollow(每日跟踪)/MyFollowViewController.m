@@ -204,6 +204,7 @@
     [tf setBorderStyle:UITextBorderStyleRoundedRect];
     tf.layer.borderColor = kNavigationColor.CGColor;
     tf.delegate = self;
+    tf.returnKeyType = UIReturnKeySearch;
     self.navigationItem.titleView =tf;
     
 }

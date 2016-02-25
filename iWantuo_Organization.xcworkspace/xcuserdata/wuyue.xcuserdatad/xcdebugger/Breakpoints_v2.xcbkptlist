@@ -116,11 +116,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iWantuo_Organization/Controller/My/MyClassTeacher(&#x73ed;&#x4e3b;&#x4efb;&#x7ba1;&#x7406;)/AddClassTeacherViewController.m"
-            timestampString = "475752312.840774"
+            timestampString = "478058734.619884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "-textField:shouldChangeCharactersInRange:replacementString:"
             landmarkType = "5">
          </BreakpointContent>
@@ -148,11 +148,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iWantuo_Organization/Controller/My/MyClassTeacher(&#x73ed;&#x4e3b;&#x4efb;&#x7ba1;&#x7406;)/AddClassTeacherViewController.m"
-            timestampString = "475754943.714511"
+            timestampString = "478058734.619884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "-serverApi_FinishedSuccessed:result:"
             landmarkType = "5">
          </BreakpointContent>
@@ -170,38 +170,6 @@
             startingLineNumber = "67"
             endingLineNumber = "67"
             landmarkName = "-viewDidLoad"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iWantuo_Organization/Controller/Discover/DiscoverViewController.m"
-            timestampString = "475989704.379628"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
-            landmarkName = "-didUpdateBMKUserLocation:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iWantuo_Organization/Controller/Discover/DiscoverViewController.m"
-            timestampString = "475989708.027819"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
-            landmarkName = "-didUpdateUserHeading:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -260,11 +228,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iWantuo_Organization/Controller/Discover/DisSearchViewController.m"
-            timestampString = "477470952.383743"
+            timestampString = "478058734.619884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
             landmarkName = "-searchAddress"
             landmarkType = "5">
          </BreakpointContent>
@@ -340,11 +308,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iWantuo_Organization/Controller/My/MyPusheMessage(&#x63a8;&#x9001;&#x6d88;&#x606f;)/MyPushMessageViewController.m"
-            timestampString = "477452851.032384"
+            timestampString = "478059878.163604"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "-serverApi_FinishedSuccessed:result:"
             landmarkType = "5">
          </BreakpointContent>
@@ -356,11 +324,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iWantuo_Organization/Controller/My/MyPusheMessage(&#x63a8;&#x9001;&#x6d88;&#x606f;)/MyPushMessageViewController.m"
-            timestampString = "477457903.771511"
+            timestampString = "478059878.163604"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "-serverApi_FinishedFailed:result:"
             landmarkType = "5">
          </BreakpointContent>
@@ -372,11 +340,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iWantuo_Organization/Controller/My/MyPusheMessage(&#x63a8;&#x9001;&#x6d88;&#x606f;)/MyPushMessageViewController.m"
-            timestampString = "477457903.771511"
+            timestampString = "478059878.163604"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "-sendBtnAction:"
             landmarkType = "5">
          </BreakpointContent>
@@ -420,12 +388,12 @@
                   moduleName = "iWantuo_Organization"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wuyue/iWanTuo_Organization/iWantuo_Organization/Controller/Top/TopViewController.m"
-                  timestampString = "477905304.620551"
+                  timestampString = "478058468.932012"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "144"
                   endingLineNumber = "144"
-                  offsetFromSymbolStart = "779">
+                  offsetFromSymbolStart = "1052">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -435,12 +403,12 @@
                   moduleName = "iWantuo_Organization"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wuyue/iWanTuo_Organization/iWantuo_Organization/Controller/Top/TopViewController.m"
-                  timestampString = "477905304.620692"
+                  timestampString = "478058468.932157"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "144"
                   endingLineNumber = "144"
-                  offsetFromSymbolStart = "807">
+                  offsetFromSymbolStart = "1068">
                </Location>
             </Locations>
          </BreakpointContent>
