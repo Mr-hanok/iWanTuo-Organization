@@ -161,6 +161,7 @@
     UITextField *tf = [[UITextField alloc]initWithFrame:CGRectMake(33, 0, 200, 30)];
     tf.delegate = self;
     [tf setBorderStyle:UITextBorderStyleNone];
+    tf.returnKeyType = UIReturnKeySearch;
     [view addSubview:iv];
     [view addSubview:tf];
     

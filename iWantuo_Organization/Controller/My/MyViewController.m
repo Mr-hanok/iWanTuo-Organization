@@ -72,7 +72,6 @@
     if (sr.dic == nil || [sr.dic isKindOfClass:[NSNull class]]) {
         return;
     }
-    
     //保存用户信息
     [AccountManager sharedInstance].account.isLogin = @"no";
     [[AccountManager sharedInstance] saveAccountInfoToDisk];
@@ -201,10 +200,10 @@
  */
 - (IBAction)Logout:(UIButton *)sender {
     
-    if ([[AccountManager sharedInstance].account.isLogin isEqualToString:@"no"] ||[[ValueUtils stringFromObject:[AccountManager sharedInstance].account.isLogin] isEqualToString:@""]) {
-        [HUDManager showWarningWithText:@"尚未登录"];
-        return;
-    }
+//    if ([[AccountManager sharedInstance].account.isLogin isEqualToString:@"no"] ||[[ValueUtils stringFromObject:[AccountManager sharedInstance].account.isLogin] isEqualToString:@""]) {
+//        [HUDManager showWarningWithText:@"尚未登录"];
+//        return;
+//    }
     [AlertViewManager showAlertViewMessage:@"确定要退出登录吗" handlerBlock:^{
         self.apiLoginOut = [[ApiLoginOutRequest alloc]initWithDelegate:self];
         [self.apiLoginOut setApiParams];

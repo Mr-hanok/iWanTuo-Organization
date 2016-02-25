@@ -44,7 +44,7 @@
     
     // Do any additional setup after loading the view from its nib.
     self.mapView = [[BMKMapView alloc]initWithFrame:self.view.bounds];
-    [self.mapView setZoomLevel:13];
+    [self.mapView setZoomLevel:13.8];
     [self.mapView setMapType:BMKMapTypeStandard]; //设置地图模式:标准, 卫星
     self.view = self.mapView;
     
@@ -108,6 +108,21 @@
  */
 - (void)mapView:(BMKMapView *)mapView didSelectAnnotationView:(BMKAnnotationView *)view {
     NSLog(@"paopaoclick___tag:%@",@(view.tag));
+//    if (view.tag == 0) {
+//        return;
+//    }
+//    if ([view isKindOfClass:[BMKAnnotationView class]]){
+//        OrganizationDetailViewController *detailVC = [[OrganizationDetailViewController alloc] init];
+//        detailVC.loginAccounts = [NSString stringWithFormat:@"%@", @(view.tag)];
+//        [self.navigationController pushViewController:detailVC animated:YES];
+//    }
+    
+}
+
+// 当点击annotation view弹出的泡泡时，调用此接口
+- (void)mapView:(BMKMapView *)mapView annotationViewForBubble:(BMKAnnotationView *)view;
+{
+    NSLog(@"paopaoclick");
     if (view.tag == 0) {
         return;
     }
@@ -115,8 +130,8 @@
         OrganizationDetailViewController *detailVC = [[OrganizationDetailViewController alloc] init];
         detailVC.loginAccounts = [NSString stringWithFormat:@"%@", @(view.tag)];
         [self.navigationController pushViewController:detailVC animated:YES];
+        return;
     }
-    
 }
 
 #pragma mark - BMKLocationServiceDelegate

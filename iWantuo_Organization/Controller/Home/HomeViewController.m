@@ -256,6 +256,7 @@ typedef enum : NSUInteger {
     self.searchTextField.leftViewMode = UITextFieldViewModeAlways;
     self.searchTextField.layer.cornerRadius = 5;
     self.searchTextField.layer.masksToBounds = YES;
+    self.searchTextField.returnKeyType = UIReturnKeySearch;
 }
 
 - (void) starLocation {
