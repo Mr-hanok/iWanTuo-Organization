@@ -308,11 +308,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iWantuo_Organization/Controller/My/MyPusheMessage(&#x63a8;&#x9001;&#x6d88;&#x606f;)/MyPushMessageViewController.m"
-            timestampString = "478059878.163604"
+            timestampString = "478060123.914075"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "-serverApi_FinishedSuccessed:result:"
             landmarkType = "5">
          </BreakpointContent>
@@ -324,11 +324,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iWantuo_Organization/Controller/My/MyPusheMessage(&#x63a8;&#x9001;&#x6d88;&#x606f;)/MyPushMessageViewController.m"
-            timestampString = "478059878.163604"
+            timestampString = "478060123.914075"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "-serverApi_FinishedFailed:result:"
             landmarkType = "5">
          </BreakpointContent>
@@ -340,11 +340,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iWantuo_Organization/Controller/My/MyPusheMessage(&#x63a8;&#x9001;&#x6d88;&#x606f;)/MyPushMessageViewController.m"
-            timestampString = "478059878.163604"
+            timestampString = "478060123.914075"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "-sendBtnAction:"
             landmarkType = "5">
          </BreakpointContent>

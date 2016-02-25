@@ -36,7 +36,6 @@
     [super viewWillLayoutSubviews];
     self.messageTV.layer.borderWidth = 1.f;
     self.messageTV.layer.borderColor = [UIColor lightGrayColor].CGColor;
-//    self.messageTV.returnKeyType = UIReturnKeyDone;
     
 }
 #pragma mark - 协议名
