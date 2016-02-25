@@ -53,6 +53,7 @@
 @property (nonatomic, copy) NSString *imageName1;
 @property (nonatomic, copy) NSString *imageName2;
 @property (nonatomic, copy) NSString *imageName3;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConst;
 @end
 
 @implementation PersonDetailController
@@ -64,6 +65,13 @@
     self.areaArray = [NSMutableArray array];
     self.areaModelArry = [NSMutableArray array];
     //self.describeTF.hidden = YES;
+
+    if ([UIScreen mainScreen].bounds.size.height == 667 ) {
+        self.heightConst.constant = 667-64;
+    }
+    if ([UIScreen mainScreen].bounds.size.height == 736) {
+        self.heightConst.constant = 736-64;
+    }
     //修改头像 手势
     self.imageIV1.userInteractionEnabled = YES;
     self.imageIV2.userInteractionEnabled = YES;
@@ -313,7 +321,7 @@
     }
     self.adressTF.text = self.model.address;
     self.phoneTF.text = self.model.phone;
-    self.scrolloview.contentSize = CGSizeMake(320, 590);
+    
 }
 /**
  *  上传ImageView

@@ -13,6 +13,7 @@
                 <outlet property="commitBtn" destination="Pi0-qG-d1S" id="q26-Mj-Icd"/>
                 <outlet property="describeTF" destination="9oZ-Mv-JcR" id="Nn4-1N-5Ws"/>
                 <outlet property="describeTV" destination="Qkt-GU-ftx" id="6Ea-XY-8vm"/>
+                <outlet property="heightConst" destination="6oO-fE-AJZ" id="G2P-np-aBC"/>
                 <outlet property="imageIV1" destination="O3z-5D-Cai" id="npd-qU-FS3"/>
                 <outlet property="imageIV2" destination="nLc-0x-s9l" id="F76-3x-RLQ"/>
                 <outlet property="imageIV3" destination="mh8-hn-f9R" id="WyN-mt-ZUP"/>
@@ -778,16 +779,19 @@
                                             <rect key="frame" x="20" y="20" width="260" height="35"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="35" id="cSS-Vk-mEL"/>
+                                                <constraint firstAttribute="height" constant="35" id="lph-fs-MQV"/>
                                             </constraints>
                                             <state key="normal" image="register_commitBtn"/>
                                             <variation key="default">
                                                 <mask key="constraints">
                                                     <exclude reference="cSS-Vk-mEL"/>
+                                                    <exclude reference="lph-fs-MQV"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
                                                 <mask key="constraints">
-                                                    <include reference="cSS-Vk-mEL"/>
+                                                    <exclude reference="cSS-Vk-mEL"/>
+                                                    <include reference="lph-fs-MQV"/>
                                                 </mask>
                                             </variation>
                                             <connections>
@@ -795,8 +799,8 @@
                                             </connections>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="Pi0-qG-d1S" secondAttribute="bottom" constant="20" id="AEu-8d-oYb"/>
                                         <constraint firstAttribute="trailing" secondItem="Pi0-qG-d1S" secondAttribute="trailing" constant="20" id="Edd-bv-ehl"/>
                                         <constraint firstItem="Pi0-qG-d1S" firstAttribute="leading" secondItem="Ocs-0g-iPb" secondAttribute="leading" constant="20" id="ghZ-vz-4Lm"/>
                                         <constraint firstItem="Pi0-qG-d1S" firstAttribute="top" secondItem="Ocs-0g-iPb" secondAttribute="top" constant="5" id="m4k-ow-EuJ"/>
@@ -805,6 +809,7 @@
                                     <variation key="default">
                                         <mask key="constraints">
                                             <exclude reference="xEP-3d-0eV"/>
+                                            <exclude reference="AEu-8d-oYb"/>
                                             <exclude reference="Edd-bv-ehl"/>
                                             <exclude reference="ghZ-vz-4Lm"/>
                                             <exclude reference="m4k-ow-EuJ"/>
@@ -812,10 +817,11 @@
                                     </variation>
                                     <variation key="heightClass=regular-widthClass=compact">
                                         <mask key="constraints">
-                                            <include reference="xEP-3d-0eV"/>
+                                            <exclude reference="xEP-3d-0eV"/>
+                                            <include reference="AEu-8d-oYb"/>
                                             <include reference="Edd-bv-ehl"/>
                                             <include reference="ghZ-vz-4Lm"/>
-                                            <include reference="m4k-ow-EuJ"/>
+                                            <exclude reference="m4k-ow-EuJ"/>
                                         </mask>
                                     </variation>
                                 </view>
@@ -823,13 +829,14 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="JTE-yN-DIo" secondAttribute="trailing" id="5L1-Dg-i4b"/>
-                                <constraint firstAttribute="height" constant="560" id="6oO-fE-AJZ"/>
+                                <constraint firstAttribute="height" constant="590" id="6oO-fE-AJZ"/>
                                 <constraint firstItem="dO6-v0-gxw" firstAttribute="leading" secondItem="IG7-gf-wiu" secondAttribute="leading" id="8lD-NA-cKf"/>
                                 <constraint firstItem="JTE-yN-DIo" firstAttribute="leading" secondItem="IG7-gf-wiu" secondAttribute="leading" id="CcQ-PN-moP"/>
-                                <constraint firstItem="Ocs-0g-iPb" firstAttribute="top" secondItem="JTE-yN-DIo" secondAttribute="bottom" constant="20" id="GuI-gR-hm2"/>
+                                <constraint firstItem="Ocs-0g-iPb" firstAttribute="top" secondItem="JTE-yN-DIo" secondAttribute="bottom" constant="10" id="GuI-gR-hm2"/>
                                 <constraint firstAttribute="trailing" secondItem="dO6-v0-gxw" secondAttribute="trailing" id="Hiu-f0-D6q"/>
                                 <constraint firstAttribute="trailing" secondItem="Ocs-0g-iPb" secondAttribute="trailing" id="M9c-qS-8lT"/>
                                 <constraint firstItem="Ocs-0g-iPb" firstAttribute="leading" secondItem="IG7-gf-wiu" secondAttribute="leading" id="dXz-Rp-sEG"/>
+                                <constraint firstAttribute="bottom" secondItem="Ocs-0g-iPb" secondAttribute="bottom" id="nAd-FT-9dl"/>
                                 <constraint firstItem="JTE-yN-DIo" firstAttribute="top" secondItem="dO6-v0-gxw" secondAttribute="bottom" constant="5" id="tMq-jp-Kwk"/>
                                 <constraint firstItem="dO6-v0-gxw" firstAttribute="top" secondItem="IG7-gf-wiu" secondAttribute="top" id="xR5-1T-xHo"/>
                             </constraints>
@@ -849,6 +856,7 @@
                                     <exclude reference="GuI-gR-hm2"/>
                                     <exclude reference="M9c-qS-8lT"/>
                                     <exclude reference="dXz-Rp-sEG"/>
+                                    <exclude reference="nAd-FT-9dl"/>
                                 </mask>
                             </variation>
                             <variation key="heightClass=regular-widthClass=compact">
@@ -867,6 +875,7 @@
                                     <include reference="GuI-gR-hm2"/>
                                     <include reference="M9c-qS-8lT"/>
                                     <include reference="dXz-Rp-sEG"/>
+                                    <include reference="nAd-FT-9dl"/>
                                 </mask>
                             </variation>
                         </view>
