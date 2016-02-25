@@ -15,9 +15,12 @@
 #import "AccountModel.h"
 #import "CameraTakeMamanger.h"
 #import "UploadManager.h"
+#import "TPKeyboardAvoidingScrollView.h"
 
 @interface PersonDetailController ()<APIRequestDelegate,ZHPickViewDelegate,UITextViewDelegate>
+@property (weak, nonatomic) IBOutlet TPKeyboardAvoidingScrollView *scrolloview;
 @property (weak, nonatomic) IBOutlet UIButton *areaBtn;//地区按钮
+@property (weak, nonatomic) IBOutlet UIButton *commitBtn;
 @property (weak, nonatomic) IBOutlet UITextField *areaTF;//地区TF
 @property (weak, nonatomic) IBOutlet UITextField *shortNameTF;//简称
 @property (weak, nonatomic) IBOutlet UITextField *nameTF;//机构全称TF
@@ -60,7 +63,7 @@
     self.title = @"基本信息";
     self.areaArray = [NSMutableArray array];
     self.areaModelArry = [NSMutableArray array];
-    self.describeTF.hidden = YES;
+    //self.describeTF.hidden = YES;
     //修改头像 手势
     self.imageIV1.userInteractionEnabled = YES;
     self.imageIV2.userInteractionEnabled = YES;
@@ -93,6 +96,10 @@
     [self.areaPick remove];
     [self.typePick remove];
 }
+-(void)viewWillLayoutSubviews{
+    [super viewWillLayoutSubviews];
+}
+
 #pragma mark -  APIRequestDelegate
 
 - (void)serverApi_RequestFailed:(APIRequest *)api error:(NSError *)error {
@@ -306,6 +313,7 @@
     }
     self.adressTF.text = self.model.address;
     self.phoneTF.text = self.model.phone;
+    self.scrolloview.contentSize = CGSizeMake(320, 590);
 }
 /**
  *  上传ImageView

@@ -10,6 +10,7 @@
                 <outlet property="adressTF" destination="Nxc-MM-dob" id="a7o-8V-Rzg"/>
                 <outlet property="areaBtn" destination="8Y5-9n-0yb" id="yEj-om-yR9"/>
                 <outlet property="areaTF" destination="VGf-Vs-use" id="FbX-3o-6lZ"/>
+                <outlet property="commitBtn" destination="Pi0-qG-d1S" id="q26-Mj-Icd"/>
                 <outlet property="describeTF" destination="9oZ-Mv-JcR" id="Nn4-1N-5Ws"/>
                 <outlet property="describeTV" destination="Qkt-GU-ftx" id="6Ea-XY-8vm"/>
                 <outlet property="imageIV1" destination="O3z-5D-Cai" id="npd-qU-FS3"/>
@@ -18,6 +19,7 @@
                 <outlet property="nameTF" destination="SEp-2W-uRc" id="zRb-iQ-erb"/>
                 <outlet property="phoneTF" destination="ZR1-DA-qGm" id="Fx6-NT-ajf"/>
                 <outlet property="priceTF" destination="mNc-Cj-pTi" id="jgP-FG-PrH"/>
+                <outlet property="scrolloview" destination="7gJ-6M-5ez" id="nVk-Or-aVs"/>
                 <outlet property="shortNameTF" destination="LYJ-2s-3gG" id="DKf-EJ-Iq7"/>
                 <outlet property="tagTF" destination="KO5-mW-t2o" id="yFY-SO-Kr9"/>
                 <outlet property="typeBtn" destination="ZNU-bA-7yp" id="Lu7-bM-DKU"/>
@@ -821,9 +823,10 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="JTE-yN-DIo" secondAttribute="trailing" id="5L1-Dg-i4b"/>
+                                <constraint firstAttribute="height" constant="560" id="6oO-fE-AJZ"/>
                                 <constraint firstItem="dO6-v0-gxw" firstAttribute="leading" secondItem="IG7-gf-wiu" secondAttribute="leading" id="8lD-NA-cKf"/>
                                 <constraint firstItem="JTE-yN-DIo" firstAttribute="leading" secondItem="IG7-gf-wiu" secondAttribute="leading" id="CcQ-PN-moP"/>
-                                <constraint firstItem="Ocs-0g-iPb" firstAttribute="top" secondItem="JTE-yN-DIo" secondAttribute="bottom" constant="10" id="GuI-gR-hm2"/>
+                                <constraint firstItem="Ocs-0g-iPb" firstAttribute="top" secondItem="JTE-yN-DIo" secondAttribute="bottom" constant="20" id="GuI-gR-hm2"/>
                                 <constraint firstAttribute="trailing" secondItem="dO6-v0-gxw" secondAttribute="trailing" id="Hiu-f0-D6q"/>
                                 <constraint firstAttribute="trailing" secondItem="Ocs-0g-iPb" secondAttribute="trailing" id="M9c-qS-8lT"/>
                                 <constraint firstItem="Ocs-0g-iPb" firstAttribute="leading" secondItem="IG7-gf-wiu" secondAttribute="leading" id="dXz-Rp-sEG"/>
@@ -836,12 +839,13 @@
                                     <exclude reference="JTE-yN-DIo"/>
                                 </mask>
                                 <mask key="constraints">
-                                    <exclude reference="5L1-Dg-i4b"/>
-                                    <exclude reference="CcQ-PN-moP"/>
-                                    <exclude reference="tMq-jp-Kwk"/>
+                                    <exclude reference="6oO-fE-AJZ"/>
                                     <exclude reference="8lD-NA-cKf"/>
                                     <exclude reference="Hiu-f0-D6q"/>
                                     <exclude reference="xR5-1T-xHo"/>
+                                    <exclude reference="5L1-Dg-i4b"/>
+                                    <exclude reference="CcQ-PN-moP"/>
+                                    <exclude reference="tMq-jp-Kwk"/>
                                     <exclude reference="GuI-gR-hm2"/>
                                     <exclude reference="M9c-qS-8lT"/>
                                     <exclude reference="dXz-Rp-sEG"/>
@@ -853,12 +857,13 @@
                                     <include reference="JTE-yN-DIo"/>
                                 </mask>
                                 <mask key="constraints">
-                                    <include reference="5L1-Dg-i4b"/>
-                                    <include reference="CcQ-PN-moP"/>
-                                    <include reference="tMq-jp-Kwk"/>
+                                    <include reference="6oO-fE-AJZ"/>
                                     <include reference="8lD-NA-cKf"/>
                                     <include reference="Hiu-f0-D6q"/>
                                     <include reference="xR5-1T-xHo"/>
+                                    <include reference="5L1-Dg-i4b"/>
+                                    <include reference="CcQ-PN-moP"/>
+                                    <include reference="tMq-jp-Kwk"/>
                                     <include reference="GuI-gR-hm2"/>
                                     <include reference="M9c-qS-8lT"/>
                                     <include reference="dXz-Rp-sEG"/>
@@ -866,6 +871,7 @@
                             </variation>
                         </view>
                     </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="IG7-gf-wiu" secondAttribute="trailing" id="5Bl-dr-E4x"/>
                         <constraint firstAttribute="bottom" secondItem="IG7-gf-wiu" secondAttribute="bottom" id="BQd-9c-xyg"/>
@@ -897,7 +903,7 @@
                             <include reference="BmZ-Lr-NOB"/>
                             <include reference="SdJ-UE-PhS"/>
                             <include reference="XNs-yV-Myi"/>
-                            <include reference="vcu-Hd-4Ur"/>
+                            <exclude reference="vcu-Hd-4Ur"/>
                         </mask>
                     </variation>
                 </scrollView>
