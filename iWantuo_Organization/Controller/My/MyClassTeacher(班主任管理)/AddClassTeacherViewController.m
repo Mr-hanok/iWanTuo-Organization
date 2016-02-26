@@ -124,10 +124,10 @@
         return NO;
     }
     //判断账号是否是手机号
-//    if (![NSString tf_isSimpleMobileNumber:self.accountTF.text] || [[self.accountTF.text stringByTrimmingCharactersInSet:[NSMutableCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
-//        [HUDManager showWarningWithText:@"请输入正确手机号"];
-//        return NO;
-//    }
+    if (![NSString tf_isSimpleMobileNumber:self.accountTF.text] || [[self.accountTF.text stringByTrimmingCharactersInSet:[NSMutableCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
+        [HUDManager showWarningWithText:@"账号必须为手机号！"];
+        return NO;
+    }
     if (![NSString tf_isSimpleMobileNumber:self.phoneNumTF.text] || [[self.phoneNumTF.text stringByTrimmingCharactersInSet:[NSMutableCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
         [HUDManager showWarningWithText:@"请输入正确手机号"];
         return NO;

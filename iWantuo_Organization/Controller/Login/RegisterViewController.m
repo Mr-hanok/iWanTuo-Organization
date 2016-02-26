@@ -30,7 +30,8 @@
     // Do any additional setup after loading the view from its nib.
     self.title = @"机构注册";
     //设置验证码按钮
-    [self.registerBtn setTitleColor:kNavigationColor forState:UIControlStateNormal];
+    [self.registerBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.registerBtn setBackgroundColor:kNavigationColor];
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -131,10 +132,11 @@
     [sender startWithSecond:30];
     [sender didChange:^NSString *(JKCountDownButton *countDownButton,int second) {
         NSString *title = [NSString stringWithFormat:@"剩余%d秒",second];
-        [countDownButton setBackgroundColor:[UIColor clearColor]];
+        [countDownButton setBackgroundColor:[UIColor darkGrayColor]];
         return title;
     }];
     [sender didFinished:^NSString *(JKCountDownButton *countDownButton, int second) {
+        [countDownButton setBackgroundColor:kNavigationColor];
         countDownButton.enabled = YES;
         return @"重新获取";
     }];

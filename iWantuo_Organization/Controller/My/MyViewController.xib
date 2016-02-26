@@ -28,7 +28,7 @@
                         <outlet property="delegate" destination="-1" id="aXI-C8-zX7"/>
                     </connections>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gLL-zN-tv5">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gLL-zN-tv5">
                     <rect key="frame" x="56" y="577" width="263" height="35"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="35" id="bkn-Ec-5hM"/>

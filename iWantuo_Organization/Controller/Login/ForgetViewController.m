@@ -33,7 +33,8 @@
     // Do any additional setup after loading the view from its nib.
     self.title = @"忘记密码";
     //设置验证码按钮
-    [self.registerBtn setTitleColor:kNavigationColor forState:UIControlStateNormal];
+    [self.registerBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.registerBtn setBackgroundColor:kNavigationColor];
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -79,6 +80,7 @@
         [self.navigationController popViewControllerAnimated:YES];
     }
     if (api == self.apiSM) {//短信验证
+        [self countDownBtn:self.registerBtn];
         //记录验证码
         self.verificatCode = [ValueUtils stringFromObject:[sr.dic objectForKey:@"verificatCode"]];
     }
@@ -125,18 +127,7 @@
         [HUDManager showWarningWithText:@"请输入正确手机号码！"];
         return;
     }
-    //倒计时
-    sender.enabled = NO;
-    [sender startWithSecond:30];
-    [sender didChange:^NSString *(JKCountDownButton *countDownButton,int second) {
-        NSString *title = [NSString stringWithFormat:@"剩余%d秒",second];
-        [countDownButton setBackgroundColor:[UIColor clearColor]];
-        return title;
-    }];
-    [sender didFinished:^NSString *(JKCountDownButton *countDownButton, int second) {
-        countDownButton.enabled = YES;
-        return @"重新获取";
-    }];
+    
     //获取验证码请求
     self.apiSM = [[ApiSendPhoneMessage alloc]initWithDelegate:self];
     [self.apiSM setApiParamsWithPhone:self.phoneNumTF.text];
@@ -146,6 +137,23 @@
 }
 
 #pragma mark - private methods
+- (void)countDownBtn:(JKCountDownButton *)sender{
+    //倒计时
+    sender.enabled = NO;
+    [sender startWithSecond:30];
+    [sender didChange:^NSString *(JKCountDownButton *countDownButton,int second) {
+        NSString *title = [NSString stringWithFormat:@"剩余%d秒",second];
+        [countDownButton setBackgroundColor:[UIColor darkGrayColor]];
+        return title;
+    }];
+    [sender didFinished:^NSString *(JKCountDownButton *countDownButton, int second) {
+        [countDownButton setBackgroundColor:kNavigationColor];
+        countDownButton.enabled = YES;
+        return @"重新获取";
+    }];
+    
+}
+
 - (BOOL)dataCheck{
     if (![NSString tf_isSimpleMobileNumber:self.phoneNumTF.text]) {
         [HUDManager showWarningWithText:@"请输入正确手机号码！"];

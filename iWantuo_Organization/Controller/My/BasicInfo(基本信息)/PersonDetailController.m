@@ -64,7 +64,7 @@
     self.title = @"基本信息";
     self.areaArray = [NSMutableArray array];
     self.areaModelArry = [NSMutableArray array];
-    //self.describeTF.hidden = YES;
+    self.describeTF.hidden = YES;
 
     if ([UIScreen mainScreen].bounds.size.height == 667 ) {
         self.heightConst.constant = 667-64;
@@ -189,13 +189,27 @@
         
 }
 #pragma mark -UItextViewDelegate
+-(BOOL)textViewShouldBeginEditing:(UITextView *)textView{
+    self.describeTF.hidden = YES;
+    return YES;
+}
+-(BOOL)textViewShouldEndEditing:(UITextView *)textView{
+        if (textView.text.length==0  ||[textView.text isEqualToString:@" "]) {
+            self.describeTF.hidden = NO;
+            self.describeTV.text = nil;
+        }else{
+            self.describeTF.hidden = YES;
+            }
+
+    return YES;
+}
 -(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
-    if (textView.text.length==0  ||[textView.text isEqualToString:@" "]) {
-        self.describeTF.hidden = NO;
-        self.describeTV.text = nil;
-    }else{
-        self.describeTF.hidden = YES;
-        }
+//    if (textView.text.length==0  ||[textView.text isEqualToString:@" "]) {
+//        self.describeTF.hidden = NO;
+//        self.describeTV.text = nil;
+//    }else{
+//        self.describeTF.hidden = YES;
+//        }
     return YES;
 }
 
