@@ -29,6 +29,9 @@
 @property (nonatomic, copy) NSString *loginName;
 @property (nonatomic, copy) NSString *loginAccount;
 
+@property (weak, nonatomic) IBOutlet UILabel *followTimeLabel;//追踪时间
+@property (weak, nonatomic) IBOutlet UILabel *followTeacherLabel;//追踪老师
+
 @end
 
 @implementation FollowSignInViewController
@@ -261,7 +264,13 @@
         }
         NSURL *url = [NSURL URLWithString:str];
         [self.upLoadBtn sd_setImageWithURL:url forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"register_addImageBtn"]];
- 
+        //追踪时间老师
+        if (![self.followmodel.signinDate isEqualToString:@""]) {
+            self.followTimeLabel.text = self.followmodel.signinDate;
+        }
+        if (![self.followmodel.signinPerson isEqualToString:@""]) {
+            self.followTeacherLabel.text = self.followmodel.signinPerson;
+        }
     }
     
 }
@@ -273,6 +282,7 @@
         self.statusName = @"签到";
         self.lossBtn.selected = NO;
         [self.upLoadBtn sd_setImageWithURL:nil forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"register_addImageBtn"]];
+        self.followTimeLabel.text = self.followTeacherLabel.text = @"未签到";
     }
    
 }
