@@ -83,14 +83,14 @@
 //    [HUDManager showLoadingHUDView:KeyWindow];
     
     if (self.infoType == AddInfoType) {
-        self.title = @"添加学员";
+        self.title = @"添加学生";
         
         self.sexTextField.text = @"男";
         self.gradeTextField.text = @"小学一年级";
         self.parentSexTextField.text = @"父亲";
 
     } else if (self.infoType == UpdateInfoType) {
-        self.title = @"修改学员信息";
+        self.title = @"修改学生信息";
         self.timeTextField.userInteractionEnabled = NO;
         self.apiStudentInfo = [[ApiGetStudentInfoRequest alloc] initWithDelegate:self];
         //判断是老师还是机构

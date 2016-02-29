@@ -164,7 +164,7 @@
             vc = [[MyMessageViewController alloc]init];
 //            }
             break;
-        case 2://学员管理
+        case 2://学生管理
             if ([self limitAccountType]) {
                 vc = [[StudentListViewController alloc]init];
             }

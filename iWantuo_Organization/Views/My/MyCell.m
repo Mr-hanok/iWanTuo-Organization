@@ -33,7 +33,7 @@
             self.typeIV.image = [UIImage imageNamed:@"my_follow"];
             break;
         case 2:
-            self.typeLabel.text = @"学员管理";
+            self.typeLabel.text = @"学生管理";
             self.typeIV.image = [UIImage imageNamed:@"my_ student"];
             break;
         case 3:
