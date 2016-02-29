@@ -66,12 +66,12 @@
     self.areaModelArry = [NSMutableArray array];
     self.describeTF.hidden = YES;
 
-    if ([UIScreen mainScreen].bounds.size.height == 667 ) {
-        self.heightConst.constant = 667-64;
-    }
-    if ([UIScreen mainScreen].bounds.size.height == 736) {
-        self.heightConst.constant = 736-64;
-    }
+//    if ([UIScreen mainScreen].bounds.size.height == 667 ) {
+//        self.heightConst.constant = 667-64;
+//    }
+//    if ([UIScreen mainScreen].bounds.size.height == 736) {
+//        self.heightConst.constant = 736-64;
+//    }
     //修改头像 手势
     self.imageIV1.userInteractionEnabled = YES;
     self.imageIV2.userInteractionEnabled = YES;
