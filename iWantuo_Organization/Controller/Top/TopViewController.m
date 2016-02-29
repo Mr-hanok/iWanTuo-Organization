@@ -89,6 +89,7 @@
             WebHudViewController *detailVC = [[WebHudViewController alloc] init];
             ActivityModel *model = [self.dataArray objectAtIndex:4];
             detailVC.webUrl = [NSString stringWithFormat:@"http://www.iwantuo.com/phoneImg.html?id=%@", model.activityId];
+            detailVC.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:detailVC animated:YES];
         }
     }];

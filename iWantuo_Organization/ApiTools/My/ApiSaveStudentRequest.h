@@ -23,6 +23,7 @@
                     location:(NSString *)location
                     bairroId:(NSString *)bairroId
                       bairro:(NSString *)bairro
-                    kinsfolk:(NSString *)kinsfolk;
+                    kinsfolk:(NSString *)kinsfolk
+                    schoolId:(NSString *)schoolId;
 
 @end

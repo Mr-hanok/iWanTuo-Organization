@@ -26,5 +26,6 @@
                         location:(NSString *)location
                         bairroId:(NSString *)bairroId
                           bairro:(NSString *)bairro
-                           login:(NSString *)login;
+                           login:(NSString *)login
+                        schoolId:(NSString *)schoolId;
 @end

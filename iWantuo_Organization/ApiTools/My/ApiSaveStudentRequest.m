@@ -32,10 +32,12 @@
                     location:(NSString *)location
                     bairroId:(NSString *)bairroId
                       bairro:(NSString *)bairro
-                    kinsfolk:(NSString *)kinsfolk {
+                    kinsfolk:(NSString *)kinsfolk
+                    schoolId:(NSString *)schoolId{
     
     [self.params setValue:name forKey:@"name"];
     [self.params setValue:school forKey:@"school"];
+    [self.params setValue:schoolId forKey:@"school_id"];
     [self.params setValue:grade forKey:@"grade"];
     [self.params setValue:loginAccounts forKey:@"loginAccounts"];//家长帐号
     [self.params setValue:locationId forKey:@"locationId"]; //所在市id

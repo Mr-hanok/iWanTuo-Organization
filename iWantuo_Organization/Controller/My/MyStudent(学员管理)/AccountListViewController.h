@@ -7,9 +7,9 @@
 //
 
 #import "BaseViewController.h"
-#import "PatriarchModel.h"
+#import "SchoolModel.h"
 
-typedef void (^BackBlock)(PatriarchModel *model);
+typedef void (^BackBlock)(SchoolModel *model);
 @interface AccountListViewController : BaseViewController
 
 @property (nonatomic, copy) BackBlock backBlock;

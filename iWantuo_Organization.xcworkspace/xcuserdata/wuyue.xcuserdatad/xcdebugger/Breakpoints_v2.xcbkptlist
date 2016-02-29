@@ -2,4 +2,70 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iWantuo_Organization/Controller/My/MyStudent(&#x5b66;&#x5458;&#x7ba1;&#x7406;)/MyStudentViewController.m"
+            timestampString = "478423203.46196"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "271"
+            endingLineNumber = "271"
+            landmarkName = "-serverApi_FinishedSuccessed:result:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[MyStudentViewController serverApi_FinishedSuccessed:result:]"
+                  moduleName = "iWantuo_Organization"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wuyue/iWanTuo_Organization/iWantuo_Organization/Controller/My/MyStudent(%E5%AD%A6%E5%91%98%E7%AE%A1%E7%90%86)/MyStudentViewController.m"
+                  timestampString = "478424539.659058"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "271"
+                  endingLineNumber = "271"
+                  offsetFromSymbolStart = "5152">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__62-[MyStudentViewController serverApi_FinishedSuccessed:result:]_block_invoke"
+                  moduleName = "iWantuo_Organization"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wuyue/iWanTuo_Organization/iWantuo_Organization/Controller/My/MyStudent(%E5%AD%A6%E5%91%98%E7%AE%A1%E7%90%86)/MyStudentViewController.m"
+                  timestampString = "478424539.659606"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "271"
+                  endingLineNumber = "271"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iWantuo_Organization/Controller/My/MyStudent(&#x5b66;&#x5458;&#x7ba1;&#x7406;)/AccountListViewController.m"
+            timestampString = "478424539.527463"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "-serverApi_FinishedSuccessed:result:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
