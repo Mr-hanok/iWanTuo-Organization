@@ -39,7 +39,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.title = @"学员管理";
+    self.title = @"学生管理";
     
     [self.tableView registerNib:[UINib nibWithNibName:@"StudentCell" bundle:nil] forCellReuseIdentifier:kStudentCellReuse];
     self.tableView.tableFooterView = [[UIView alloc] init];

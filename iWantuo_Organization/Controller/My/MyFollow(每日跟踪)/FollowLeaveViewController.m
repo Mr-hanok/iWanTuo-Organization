@@ -19,6 +19,9 @@
 @property (nonatomic, copy) NSString *imageName;//记录图片名
 @property (nonatomic, copy) NSString *loginName;
 
+@property (weak, nonatomic) IBOutlet UILabel *followTimeLabel;//追踪时间
+@property (weak, nonatomic) IBOutlet UILabel *followTeacherLabel;//追踪老师
+
 @property (nonatomic, strong) ApiFollowChangeRequest *apiChange;//改变跟踪状态接口
 @end
 
@@ -78,6 +81,8 @@
     NSDictionary *dic =  [sr.dic objectForKey:@"trace"];
     self.followmodel = [FollowModel initWithDic:dic];
     self.imageName = @"";
+    //发送通知 修改界面
+    [[NSNotificationCenter defaultCenter] postNotificationName:ChangeViewInfoNoti object:self.followmodel];
     //发送通知 改变进度条图片
     [[NSNotificationCenter defaultCenter] postNotificationName:ChangeImageIvNoti object:@"3"];
     [HUDManager showWarningWithText:@"成功"];
@@ -170,10 +175,18 @@
         }
         NSURL *url = [NSURL URLWithString:str];
         [self.upLoadBtn sd_setImageWithURL:url forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"register_addImageBtn"]];
+        //追踪时间老师
+        if (![self.followmodel.leaveDate isEqualToString:@""]) {
+            self.followTimeLabel.text = self.followmodel.leaveDate;
+        }
+        if (![self.followmodel.leavePerson isEqualToString:@""]) {
+            self.followTeacherLabel.text = self.followmodel.leavePerson;
+        }
 
     }else{
         self.remarkTV.text = @"";
         [self.upLoadBtn sd_setImageWithURL:nil forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"register_addImageBtn"]];
+        self.followTimeLabel.text = self.followTeacherLabel.text = @"未离校";
     }
     
     

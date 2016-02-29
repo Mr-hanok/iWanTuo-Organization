@@ -36,6 +36,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageIV;
 /**添加图片按钮*/
 @property (weak, nonatomic) IBOutlet UIButton *addImageBtn;
+@property (weak, nonatomic) IBOutlet UITextField *connectTF;//联系电话
 //地区
 @property (weak, nonatomic) IBOutlet UITextField *areaTF;
 
@@ -137,7 +138,6 @@
 -(void)toobarDonBtnHaveClick:(ZHPickView *)pickView resultString:(NSString *)resultString level1:(NSString *)level1 row1:(NSInteger)row1 row2:(NSInteger)row2{
     self.number = row2;
     self.areaTF.text = [NSString stringWithFormat:@"%@%@",@"上海市",resultString];
-    NSLog(@"%@-%@-%ld-%ld",resultString,level1,row1,row2);
 }
 
 #pragma mark - event response
@@ -233,7 +233,7 @@
                                    organizatioType:self.organiType
                                organizatioTypeName:self.organiTypeName
                                        idCardImage:self.imageName
-                                             phone:self.phoneNum];
+                                             phone:self.connectTF.text];
     [APIClient execute:self.apiRegister];
 }
 
@@ -253,23 +253,23 @@
 }
 
 - (BOOL)dataCheck{
-    if (self.shortNameTF.text.length == 0) {
+    if (self.shortNameTF.text.length == 0 ||[[self.shortNameTF.text stringByTrimmingCharactersInSet:[NSMutableCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
         [HUDManager showWarningWithText:@"请输入机构简称"];
         return NO;
     }
-    if (self.FullNameTF.text.length == 0) {
+    if (self.FullNameTF.text.length == 0 ||[[self.FullNameTF.text stringByTrimmingCharactersInSet:[NSMutableCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
         [HUDManager showWarningWithText:@"请输入机构全称"];
         return NO;
     }
-    if (self.trueNameTF.text.length == 0) {
+    if (self.trueNameTF.text.length == 0 ||[[self.trueNameTF.text stringByTrimmingCharactersInSet:[NSMutableCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
         [HUDManager showWarningWithText:@"请输入真实姓名"];
         return NO;
     }
-    if (self.detialAdressTF.text.length == 0) {
+    if (self.detialAdressTF.text.length == 0 ||[[self.detialAdressTF.text stringByTrimmingCharactersInSet:[NSMutableCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
         [HUDManager showWarningWithText:@"请输入详细地址"];
         return NO;
     }
-    if (self.emailTF.text.length == 0) {
+    if (self.emailTF.text.length == 0 ||[[self.emailTF.text stringByTrimmingCharactersInSet:[NSMutableCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
         [HUDManager showWarningWithText:@"请输入邮箱"];
         return NO;
     }
@@ -287,6 +287,10 @@
     }
     if (self.areaTF.text.length == 0) {
         [HUDManager showWarningWithText:@"请选择地区"];
+        return NO;
+    }
+    if (self.connectTF.text.length == 0 ||[[self.connectTF.text stringByTrimmingCharactersInSet:[NSMutableCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
+        [HUDManager showWarningWithText:@"请输入联系方式"];
         return NO;
     }
     if (self.imageName.length == 0) {

@@ -51,6 +51,9 @@
 @property (nonatomic, strong) NSMutableArray *fenshus;//分数数组
 @property (nonatomic)NSInteger few;
 
+@property (weak, nonatomic) IBOutlet UILabel *followTimeLabel;//追踪时间
+@property (weak, nonatomic) IBOutlet UILabel *followTeacherLabel;//追踪老师
+
 
 @end
 
@@ -565,6 +568,14 @@
                 self.study = [NSString stringWithFormat:@"%ld",btn.tag-105];
             }
         }
+        //追踪时间老师
+        if (![self.followmodel.summaryDate isEqualToString:@""]) {
+            self.followTimeLabel.text = self.followmodel.summaryDate;
+        }
+        if (![self.followmodel.summaryPerson isEqualToString:@""]) {
+            self.followTeacherLabel.text = self.followmodel.summaryPerson;
+        }
+
 
         
     }
@@ -584,6 +595,7 @@
         self.remarkTV.text = @"";
         self.uncompleteBtn.selected = NO;
         [self.classChoseBtn setTitle:@"选择学科V" forState:UIControlStateNormal];
+        self.followTimeLabel.text = self.followTeacherLabel.text = @"未总结";
     }
     
 }
