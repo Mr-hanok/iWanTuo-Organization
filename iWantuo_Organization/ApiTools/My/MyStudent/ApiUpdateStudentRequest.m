@@ -39,11 +39,13 @@
                         bairroId:(NSString *)bairroId
                           bairro:(NSString *)bairro
                            login:(NSString *)login
+                        schoolId:(NSString *)schoolId
 {
     [self.params setObject:organizationAccounts forKey:@"organizationAccounts"];
     [self.params setObject:studentId forKey:@"id"];
     [self.params setObject:name forKey:@"name"];
     [self.params setObject:school forKey:@"school"];
+    [self.params setObject:schoolId forKey:@"school_id"];
     [self.params setObject:grade forKey:@"grade"];
     [self.params setObject:loginAccounts forKey:@"loginAccounts"];
     [self.params setObject:patriarchId forKey:@"patriarchId"];

@@ -95,29 +95,25 @@
     if (sr.dic == nil || [sr.dic isKindOfClass:[NSNull class]]) {
         return;
     }
-    
-    if (sr.status == 0) {
-        if (api.requestCurrentPage == 1) {
-            [self.dataArray removeAllObjects];
-        }
-        api.requestCurrentPage ++;
-        NSArray *array = [sr.dic objectForKey:@"schoolList"];
-        
-
-        for (NSDictionary *dic in array) {
-            SchoolModel *model = [SchoolModel initWithDic:dic];
-            [self.dataArray addObject:model];
-        }
-        //是否有数据
-        if (self.dataArray.count > 0 ) {
-            self.emptyImageView.hidden = YES;
-        } else {
-            self.emptyImageView.hidden = NO;
-        }
-        [self.tableView reloadData];
-    } else {
-        [HUDManager showWarningWithText:sr.msg];
+    if (api.requestCurrentPage == 1) {
+        [self.dataArray removeAllObjects];
     }
+    api.requestCurrentPage ++;
+    NSArray *array = [sr.dic objectForKey:@"schoolList"];
+    
+    
+    for (NSDictionary *dic in array) {
+        SchoolModel *model = [SchoolModel initWithDic:dic];
+        [self.dataArray addObject:model];
+    }
+    //是否有数据
+    if (self.dataArray.count > 0 ) {
+        self.emptyImageView.hidden = YES;
+    } else {
+        self.emptyImageView.hidden = NO;
+    }
+    [self.tableView reloadData];
+
     
 }
 

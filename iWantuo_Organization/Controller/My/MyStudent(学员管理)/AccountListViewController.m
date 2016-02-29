@@ -7,18 +7,19 @@
 //
 
 #import "AccountListViewController.h"
-#import "ApiPatriarchListRequest.h"
+#import "ApiSearchSchoolRequest.h"
 #import "PageManager.h"
-#import "PatriarchModel.h"
 #import "UserInfoCell.h"
+#import "SchoolModel.h"
 
-#define kUserInfoCellReuse @"UserInfoCell"
+
+#define kCellReuse @"CellReuse"
 @interface AccountListViewController ()<UITableViewDataSource, UITableViewDelegate, APIRequestDelegate, PageManagerDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (nonatomic, strong) NSMutableArray *dataArray;
 @property (nonatomic, strong) PageManager *pageManager;
-@property (nonatomic, strong) ApiPatriarchListRequest *apiPatriarch;
+@property (nonatomic, strong) ApiSearchSchoolRequest *api;
 @property (nonatomic, strong) NSString *searchKey;
 @property (weak, nonatomic) IBOutlet UIImageView *emptyImageView;
 
@@ -37,11 +38,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.apiPatriarch = [[ApiPatriarchListRequest alloc] initWithDelegate:self];
+    self.api = [[ApiSearchSchoolRequest alloc] initWithDelegate:self];
     self.pageManager = [PageManager handlerWithDelegate:self TableView:self.tableView];
     [self.tableView.mj_header beginRefreshing];
     self.tableView.tableFooterView = [[UIView alloc] init];
-    [self.tableView registerNib:[UINib nibWithNibName:@"UserInfoCell" bundle:nil] forCellReuseIdentifier:kUserInfoCellReuse];
     
     [self inistalSearch];
     self.title = @"家长账号列表";
@@ -51,11 +51,11 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [MobClick beginLogPageView:@"绑定家长账号"];
+    [MobClick beginLogPageView:@"添加学生选择学校"];
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    [MobClick endLogPageView:@"绑定家长账号"];
+    [MobClick endLogPageView:@"添加学生选择学校"];
 }
 
 #pragma mark - UITableViewDataSource, UITableViewDelegate
@@ -64,18 +64,18 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-
-    UserInfoCell *cell = [self.tableView dequeueReusableCellWithIdentifier:kUserInfoCellReuse];
-    PatriarchModel *model = [self.dataArray objectAtIndex:indexPath.row];
-    cell.nameLabel.text = model.nickName;
-    [cell.headImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.%@", model.headPortrait]] placeholderImage:[UIImage imageNamed:@"defaultHead"]];
-    cell.accountLabel.text = model.loginAccounts;
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:kCellReuse];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kCellReuse];
+    }
+    SchoolModel *model = [self.dataArray objectAtIndex:indexPath.row];
+    cell.textLabel.text = model.schoolName;
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    PatriarchModel *model = [self.dataArray objectAtIndex:indexPath.row];
+    SchoolModel *model = [self.dataArray objectAtIndex:indexPath.row];
     self.backBlock(model);
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -98,28 +98,24 @@
     if (sr.dic == nil || [sr.dic isKindOfClass:[NSNull class]]) {
         return;
     }
-    
-    if (sr.status == 0) {
-        if (api.requestCurrentPage == 1) {
-            [self.dataArray removeAllObjects];
-        }
-        api.requestCurrentPage ++;
-        NSArray *array = [sr.dic objectForKey:@"patriarchList"];
-        for (NSDictionary *dic in array) {
-            PatriarchModel *model = [PatriarchModel initWithDic:dic];
-            [self.dataArray addObject:model];
-        }
-        //是否有数据
-        if (self.dataArray.count > 0 ) {
-            self.emptyImageView.hidden = YES;
-        } else {
-            self.emptyImageView.hidden = NO;
-        }
-
-        [self.tableView reloadData];
-    } else {
-        [HUDManager showWarningWithText:sr.msg];
+   
+    if (api.requestCurrentPage == 1) {
+        [self.dataArray removeAllObjects];
     }
+    api.requestCurrentPage ++;
+    NSArray *array = [sr.dic objectForKey:@"schoolList"];
+    for (NSDictionary *dic in array) {
+        SchoolModel *model = [SchoolModel initWithDic:dic];
+        [self.dataArray addObject:model];
+    }
+    //是否有数据
+    if (self.dataArray.count > 0 ) {
+        self.emptyImageView.hidden = YES;
+    } else {
+        self.emptyImageView.hidden = NO;
+    }
+    
+    [self.tableView reloadData];
     
 }
 
@@ -135,15 +131,13 @@
 }
 #pragma mark - PageManagerDelegate
 - (void)headerRefreshing {
-    
-    self.apiPatriarch.requestCurrentPage = 1;
-    [self.apiPatriarch setApiParamsWithLoginAccounts:self.searchKey page:[NSString stringWithFormat:@"%@", @(self.apiPatriarch.requestCurrentPage)]];
-    [APIClient execute:self.apiPatriarch];
+    self.api.requestCurrentPage = 1;
+    [self.api setApiParamsWithLocation:[AccountManager sharedInstance].locationId schoolName:self.searchKey page:[NSString stringWithFormat:@"%@", @(self.api.requestCurrentPage)] locationX:[AccountManager sharedInstance].locationX locationY:[AccountManager sharedInstance].locationY];
+    [APIClient execute:self.api];
 }
 - (void)footerRereshing {
-    
-    [self.apiPatriarch setApiParamsWithLoginAccounts:self.searchKey page:[NSString stringWithFormat:@"%@", @(self.apiPatriarch.requestCurrentPage)]];
-    [APIClient execute:self.apiPatriarch];
+    [self.api setApiParamsWithLocation:[AccountManager sharedInstance].locationId schoolName:self.searchKey page:[NSString stringWithFormat:@"%@", @(self.api.requestCurrentPage)] locationX:[AccountManager sharedInstance].locationX locationY:[AccountManager sharedInstance].locationY];
+    [APIClient execute:self.api];
 }
 #pragma mark - UITextFieldDelegate
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
