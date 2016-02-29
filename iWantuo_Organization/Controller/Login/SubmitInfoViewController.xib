@@ -756,7 +756,7 @@
                                 <constraint firstItem="0P1-G0-ryk" firstAttribute="leading" secondItem="sxs-7U-IrD" secondAttribute="leading" id="XA1-67-4O3"/>
                                 <constraint firstItem="KTi-1X-sqB" firstAttribute="top" secondItem="YzT-fJ-DDx" secondAttribute="bottom" constant="10" id="Zt4-J9-PBX"/>
                                 <constraint firstItem="KtH-Ga-IHA" firstAttribute="leading" secondItem="sxs-7U-IrD" secondAttribute="leading" id="aSg-Ye-mwl"/>
-                                <constraint firstAttribute="height" constant="600" id="eAp-Nx-bXn"/>
+                                <constraint firstAttribute="height" constant="640" id="eAp-Nx-bXn"/>
                                 <constraint firstItem="0P1-G0-ryk" firstAttribute="top" secondItem="KtH-Ga-IHA" secondAttribute="bottom" id="jAm-zH-0O5"/>
                                 <constraint firstItem="KtH-Ga-IHA" firstAttribute="top" secondItem="KTi-1X-sqB" secondAttribute="bottom" id="krU-xb-u8d"/>
                                 <constraint firstAttribute="trailing" secondItem="KtH-Ga-IHA" secondAttribute="trailing" id="sgy-Ub-kef"/>
@@ -807,6 +807,7 @@
                             </variation>
                         </view>
                     </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="sxs-7U-IrD" firstAttribute="top" secondItem="6Or-30-wZo" secondAttribute="top" id="JDH-83-nfl"/>
                         <constraint firstAttribute="trailing" secondItem="sxs-7U-IrD" secondAttribute="trailing" id="RE0-up-jO2"/>
