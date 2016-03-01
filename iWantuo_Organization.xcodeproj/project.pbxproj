@@ -162,6 +162,7 @@
 		BE69F3B01C520F2900EFA44D /* ApiClassListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F3AF1C520F2900EFA44D /* ApiClassListRequest.m */; };
 		BE69F3B31C520FEC00EFA44D /* ApiDeleteClassRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F3B21C520FEC00EFA44D /* ApiDeleteClassRequest.m */; };
 		BE69F3B61C52108200EFA44D /* ApiStudentByOrgRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F3B51C52108200EFA44D /* ApiStudentByOrgRequest.m */; };
+		BE8D95161C85313700915315 /* NSString+Emoji.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D95151C85313700915315 /* NSString+Emoji.m */; };
 		BE9113D71C76DF34006E2A0A /* ApiActiveRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9113D61C76DF34006E2A0A /* ApiActiveRequest.m */; };
 		BE9199601C7AF9270035C002 /* PushInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BE91995F1C7AF9270035C002 /* PushInfoManager.m */; };
 		BE9199651C7AFECB0035C002 /* BaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9199621C7AFECB0035C002 /* BaseWebViewController.m */; };
@@ -579,6 +580,8 @@
 		BE69F3B21C520FEC00EFA44D /* ApiDeleteClassRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiDeleteClassRequest.m; sourceTree = "<group>"; };
 		BE69F3B41C52108200EFA44D /* ApiStudentByOrgRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiStudentByOrgRequest.h; sourceTree = "<group>"; };
 		BE69F3B51C52108200EFA44D /* ApiStudentByOrgRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiStudentByOrgRequest.m; sourceTree = "<group>"; };
+		BE8D95141C85313700915315 /* NSString+Emoji.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Emoji.h"; sourceTree = "<group>"; };
+		BE8D95151C85313700915315 /* NSString+Emoji.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Emoji.m"; sourceTree = "<group>"; };
 		BE9113D51C76DF34006E2A0A /* ApiActiveRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiActiveRequest.h; sourceTree = "<group>"; };
 		BE9113D61C76DF34006E2A0A /* ApiActiveRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiActiveRequest.m; sourceTree = "<group>"; };
 		BE91995E1C7AF9270035C002 /* PushInfoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushInfoManager.h; sourceTree = "<group>"; };
@@ -1439,6 +1442,8 @@
 		BE25EB811C44FD9200068309 /* NSString+Emoji */ = {
 			isa = PBXGroup;
 			children = (
+				BE8D95141C85313700915315 /* NSString+Emoji.h */,
+				BE8D95151C85313700915315 /* NSString+Emoji.m */,
 			);
 			path = "NSString+Emoji";
 			sourceTree = "<group>";
@@ -2162,6 +2167,7 @@
 				37AE237A1C546B49006CFCCC /* FollowLeaveViewController.m in Sources */,
 				BE25EBAD1C44FDA500068309 /* SystemHandler.m in Sources */,
 				BED0C4F21C5EF7F2000A75B3 /* ApiCommentListRequest.m in Sources */,
+				BE8D95161C85313700915315 /* NSString+Emoji.m in Sources */,
 				BED0C4A91C5EF71B000A75B3 /* AddressListViewController.m in Sources */,
 				63B2E7E81C59EB4D0038EEF3 /* AboutViewController.m in Sources */,
 				37AE23751C546AD9006CFCCC /* FollowSignInViewController.m in Sources */,

@@ -26,6 +26,7 @@
 #import "AccountManager.h"
 #import "UIView+Frame.h"
 #import "PageManager.h"
+#import "NSString+Emoji.h"
 
 
 #pragma mark - baidu map

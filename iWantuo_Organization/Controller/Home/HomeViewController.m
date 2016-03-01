@@ -217,6 +217,7 @@ typedef enum : NSUInteger {
     [self.searchBySchoolBtn       setTitleColor:kNavigationColor forState:(UIControlStateNormal)];
     [self.searchByOrganizationBtn setTitleColor:kGrayColor       forState:(UIControlStateNormal)];
     [self.searchByLocationBtn     setTitleColor:kGrayColor       forState:(UIControlStateNormal)];
+    self.searchTextField.placeholder = @"请输入学校名称";
 }
 - (IBAction)searchByOrganizationAction:(id)sender {
     //改变查询类型searchType, 设置三个按钮的颜色
@@ -224,6 +225,7 @@ typedef enum : NSUInteger {
     [self.searchByOrganizationBtn setTitleColor:kNavigationColor forState:(UIControlStateNormal)];
     [self.searchBySchoolBtn       setTitleColor:kGrayColor       forState:(UIControlStateNormal)];
     [self.searchByLocationBtn     setTitleColor:kGrayColor       forState:(UIControlStateNormal)];
+    self.searchTextField.placeholder = @"请输入晚托机构名称";
     
 }
 - (IBAction)searchByLocationAction:(id)sender {

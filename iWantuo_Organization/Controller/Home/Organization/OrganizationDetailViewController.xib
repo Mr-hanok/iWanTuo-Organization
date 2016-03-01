@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -456,12 +456,6 @@
                                                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="私营企业" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WbU-Rm-Jhs">
-                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQn-aB-xXU">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                                     <constraints>
@@ -485,7 +479,7 @@
                                                         <action selector="appointmentBtnAction:" destination="-1" eventType="touchUpInside" id="oD7-22-Plu"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lmy-zr-oyD">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lmy-zr-oyD">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="16" id="Wig-MS-p4Z"/>
@@ -509,17 +503,27 @@
                                                         </mask>
                                                     </variation>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="私营企业" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WbU-Rm-Jhs">
+                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="42Y-rg-GiZ" firstAttribute="centerX" secondItem="8g2-6n-Gi0" secondAttribute="centerX" multiplier="3:4" id="7Ig-eV-LxJ"/>
                                                 <constraint firstItem="pQn-aB-xXU" firstAttribute="top" secondItem="lmy-zr-oyD" secondAttribute="bottom" constant="20" id="APh-wI-KkK"/>
                                                 <constraint firstAttribute="trailing" secondItem="lmy-zr-oyD" secondAttribute="trailing" constant="45" id="Ifs-hb-FLj">
-                                                    <variation key="heightClass=regular-widthClass=compact" constant="15"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                                                 </constraint>
                                                 <constraint firstItem="Go4-Tc-vlO" firstAttribute="leading" secondItem="M6Z-k4-xXb" secondAttribute="trailing" constant="5" id="JeN-LB-Fub"/>
-                                                <constraint firstItem="lmy-zr-oyD" firstAttribute="centerX" secondItem="8g2-6n-Gi0" secondAttribute="centerX" multiplier="5:4" id="Nxd-Ur-eYE"/>
+                                                <constraint firstItem="lmy-zr-oyD" firstAttribute="centerX" secondItem="8g2-6n-Gi0" secondAttribute="centerX" multiplier="5:4" id="Nxd-Ur-eYE">
+                                                    <variation key="heightClass=regular-widthClass=compact" constant="7"/>
+                                                </constraint>
                                                 <constraint firstItem="M6Z-k4-xXb" firstAttribute="centerY" secondItem="Go4-Tc-vlO" secondAttribute="centerY" id="OPs-7D-26R"/>
-                                                <constraint firstItem="lmy-zr-oyD" firstAttribute="centerY" secondItem="WbU-Rm-Jhs" secondAttribute="centerY" id="QQO-e0-QaS"/>
+                                                <constraint firstItem="lmy-zr-oyD" firstAttribute="centerY" secondItem="WbU-Rm-Jhs" secondAttribute="centerY" id="QQO-e0-QaS">
+                                                    <variation key="heightClass=regular-widthClass=compact" constant="0.25"/>
+                                                </constraint>
                                                 <constraint firstItem="nLN-ox-Ufg" firstAttribute="centerY" secondItem="42Y-rg-GiZ" secondAttribute="centerY" id="SgQ-xx-13F"/>
                                                 <constraint firstItem="WbU-Rm-Jhs" firstAttribute="centerX" secondItem="8g2-6n-Gi0" secondAttribute="centerX" multiplier="7:10" id="Tvy-kM-9gx"/>
                                                 <constraint firstItem="42Y-rg-GiZ" firstAttribute="top" secondItem="Go4-Tc-vlO" secondAttribute="bottom" constant="5" id="Uhg-Uh-8Mu"/>
@@ -527,9 +531,11 @@
                                                 <constraint firstItem="nLN-ox-Ufg" firstAttribute="centerX" secondItem="8g2-6n-Gi0" secondAttribute="centerX" multiplier="5:4" id="Y0N-0t-AhA"/>
                                                 <constraint firstItem="pQn-aB-xXU" firstAttribute="centerX" secondItem="8g2-6n-Gi0" secondAttribute="centerX" id="cbF-WR-DvA"/>
                                                 <constraint firstItem="lmy-zr-oyD" firstAttribute="leading" secondItem="WbU-Rm-Jhs" secondAttribute="trailing" constant="-41" id="fHd-nN-GeN">
-                                                    <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" constant="10"/>
                                                 </constraint>
-                                                <constraint firstItem="WbU-Rm-Jhs" firstAttribute="top" secondItem="42Y-rg-GiZ" secondAttribute="bottom" constant="10" id="fPb-yY-zRy"/>
+                                                <constraint firstItem="WbU-Rm-Jhs" firstAttribute="top" secondItem="42Y-rg-GiZ" secondAttribute="bottom" constant="10" id="fPb-yY-zRy">
+                                                    <variation key="heightClass=regular-widthClass=compact" constant="10"/>
+                                                </constraint>
                                                 <constraint firstItem="Go4-Tc-vlO" firstAttribute="top" secondItem="8g2-6n-Gi0" secondAttribute="top" id="pM7-Dk-2NP"/>
                                                 <constraint firstItem="Go4-Tc-vlO" firstAttribute="centerX" secondItem="8g2-6n-Gi0" secondAttribute="centerX" multiplier="10:9" id="xYT-SX-JbF"/>
                                             </constraints>
@@ -539,9 +545,9 @@
                                                     <exclude reference="Go4-Tc-vlO"/>
                                                     <exclude reference="42Y-rg-GiZ"/>
                                                     <exclude reference="nLN-ox-Ufg"/>
-                                                    <exclude reference="WbU-Rm-Jhs"/>
                                                     <exclude reference="pQn-aB-xXU"/>
                                                     <exclude reference="lmy-zr-oyD"/>
+                                                    <exclude reference="WbU-Rm-Jhs"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <exclude reference="WsJ-q8-fkw"/>
@@ -569,9 +575,9 @@
                                                     <include reference="Go4-Tc-vlO"/>
                                                     <include reference="42Y-rg-GiZ"/>
                                                     <include reference="nLN-ox-Ufg"/>
-                                                    <include reference="WbU-Rm-Jhs"/>
                                                     <include reference="pQn-aB-xXU"/>
                                                     <include reference="lmy-zr-oyD"/>
+                                                    <include reference="WbU-Rm-Jhs"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <include reference="WsJ-q8-fkw"/>
