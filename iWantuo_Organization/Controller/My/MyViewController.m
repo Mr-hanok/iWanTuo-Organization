@@ -35,14 +35,6 @@
     [super viewDidLoad];
     
     self.title = @"我的";
-
-//    __weak typeof(self) weakSelf = self;
-//    [self setRightBtnImage:[UIImage imageNamed:@"setting"] eventHandler:^(id sender) {
-//        SettingViewController *vc = [[SettingViewController alloc]init];
-//        vc.hidesBottomBarWhenPushed = YES;
-//        [weakSelf.navigationController pushViewController:vc animated:YES];
-//    }];
-   
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -157,35 +149,36 @@
             //if ([self limitAccountType]) {
                 vc = [[MyFollowViewController alloc]init];
            // }
-            
-            break;
-        case 3://我的消息
-//            if ([self limitAccountType]) {
-            vc = [[MyMessageViewController alloc]init];
-//            }
             break;
         case 2://学生管理
             if ([self limitAccountType]) {
                 vc = [[StudentListViewController alloc]init];
             }
             break;
-        case 4://班级管理
+        case 3://班级管理
             if ([self limitAccountType]) {
                 vc = [[MyClassViewController alloc]init];
             }
             break;
-        case 5://班主任管理
+        case 4://班主任管理
             if ([self limitAccountType]) {
                 vc = [[MyClassTeacherViewController alloc]init];
             }
             break;
-        case 6://推送消息
+        case 5://推送消息
             if ([self limitAccountType]) {
                 vc = [[MyPushMessageViewController alloc]init];
             }
             break;
-        case 7:
-            vc = [[SettingViewController alloc] init];
+        case 6://我的消息
+            //            if ([self limitAccountType]) {
+            vc = [[MyMessageViewController alloc]init];
+            //            }
+            break;
+        case 7://设置
+             if ([self limitAccountType]) {
+                 vc = [[SettingViewController alloc] init];
+             }
             break;
 
     }

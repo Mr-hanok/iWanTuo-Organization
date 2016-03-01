@@ -14,6 +14,7 @@
                 <outlet property="followTeacherLabel" destination="p6K-th-m4p" id="64O-fw-iO7"/>
                 <outlet property="followTimeLabel" destination="RGV-9T-1M9" id="huD-sL-hON"/>
                 <outlet property="gradeTF" destination="1mk-DF-wD5" id="y04-p7-4vt"/>
+                <outlet property="jianTouIV" destination="m3i-UO-WxQ" id="T9R-Ug-gqo"/>
                 <outlet property="remarkTV" destination="NLk-2F-5dI" id="Nyl-nb-0yS"/>
                 <outlet property="uncompleteBtn" destination="ugm-Qc-Fu4" id="B6d-Ec-hxX"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -501,11 +502,11 @@
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kYh-Cn-gbA">
                                             <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="70" id="MFv-WW-9y3"/>
+                                                <constraint firstAttribute="width" constant="55" id="MFv-WW-9y3"/>
                                                 <constraint firstAttribute="height" constant="30" id="idk-fc-ari"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <state key="normal" title="选择学科V">
+                                            <state key="normal" title="选学科">
                                                 <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <variation key="default">
@@ -547,6 +548,9 @@
                                                 <action selector="addClassAction:" destination="-1" eventType="touchUpInside" id="TFa-zt-bCG"/>
                                             </connections>
                                         </button>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_down" translatesAutoresizingMaskIntoConstraints="NO" id="m3i-UO-WxQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="V1o-mn-Veo" secondAttribute="bottom" id="5Lm-19-65E"/>
@@ -559,6 +563,7 @@
                                         <constraint firstItem="1mk-DF-wD5" firstAttribute="leading" secondItem="V1o-mn-Veo" secondAttribute="trailing" constant="10" id="KNY-FN-fpZ"/>
                                         <constraint firstAttribute="trailing" secondItem="1mk-DF-wD5" secondAttribute="trailing" constant="50" id="PTT-9O-Gm9"/>
                                         <constraint firstAttribute="trailing" secondItem="gIA-af-FIb" secondAttribute="trailing" id="RON-as-KqF"/>
+                                        <constraint firstItem="m3i-UO-WxQ" firstAttribute="trailing" secondItem="kYh-Cn-gbA" secondAttribute="trailing" id="VWn-4w-X9u"/>
                                         <constraint firstItem="kYh-Cn-gbA" firstAttribute="bottom" secondItem="V1o-mn-Veo" secondAttribute="bottom" id="Zbt-F6-tZF">
                                             <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                                         </constraint>
@@ -569,6 +574,7 @@
                                         </constraint>
                                         <constraint firstItem="V1o-mn-Veo" firstAttribute="leading" secondItem="gTP-vF-0mP" secondAttribute="leading" constant="20" id="cqk-H5-yH7"/>
                                         <constraint firstAttribute="height" constant="40" id="e5D-ZC-1lD"/>
+                                        <constraint firstItem="m3i-UO-WxQ" firstAttribute="centerY" secondItem="kYh-Cn-gbA" secondAttribute="centerY" id="fls-8f-lfT"/>
                                         <constraint firstItem="kYh-Cn-gbA" firstAttribute="top" secondItem="V1o-mn-Veo" secondAttribute="top" id="gPL-dg-dIs">
                                             <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                                         </constraint>
@@ -581,24 +587,27 @@
                                             <exclude reference="V1o-mn-Veo"/>
                                             <exclude reference="kYh-Cn-gbA"/>
                                             <exclude reference="gIA-af-FIb"/>
+                                            <exclude reference="m3i-UO-WxQ"/>
                                         </mask>
                                         <mask key="constraints">
                                             <exclude reference="e5D-ZC-1lD"/>
-                                            <exclude reference="KNY-FN-fpZ"/>
-                                            <exclude reference="PTT-9O-Gm9"/>
-                                            <exclude reference="aJL-T8-RiW"/>
-                                            <exclude reference="RON-as-KqF"/>
-                                            <exclude reference="a6I-H1-avR"/>
+                                            <exclude reference="5Lm-19-65E"/>
+                                            <exclude reference="cqk-H5-yH7"/>
+                                            <exclude reference="pKW-WS-4jt"/>
                                             <exclude reference="CZw-c8-f7k"/>
                                             <exclude reference="Zbt-F6-tZF"/>
                                             <exclude reference="b0b-eg-g93"/>
                                             <exclude reference="gPL-dg-dIs"/>
-                                            <exclude reference="5Lm-19-65E"/>
-                                            <exclude reference="cqk-H5-yH7"/>
-                                            <exclude reference="pKW-WS-4jt"/>
+                                            <exclude reference="VWn-4w-X9u"/>
+                                            <exclude reference="fls-8f-lfT"/>
+                                            <exclude reference="KNY-FN-fpZ"/>
+                                            <exclude reference="PTT-9O-Gm9"/>
+                                            <exclude reference="aJL-T8-RiW"/>
                                             <exclude reference="8wP-1o-edf"/>
                                             <exclude reference="EeI-fN-noJ"/>
                                             <exclude reference="FF1-7x-qCz"/>
+                                            <exclude reference="RON-as-KqF"/>
+                                            <exclude reference="a6I-H1-avR"/>
                                         </mask>
                                     </variation>
                                     <variation key="heightClass=regular-widthClass=compact">
@@ -608,24 +617,27 @@
                                             <include reference="V1o-mn-Veo"/>
                                             <include reference="kYh-Cn-gbA"/>
                                             <include reference="gIA-af-FIb"/>
+                                            <include reference="m3i-UO-WxQ"/>
                                         </mask>
                                         <mask key="constraints">
                                             <include reference="e5D-ZC-1lD"/>
-                                            <include reference="KNY-FN-fpZ"/>
-                                            <include reference="PTT-9O-Gm9"/>
-                                            <include reference="aJL-T8-RiW"/>
-                                            <include reference="RON-as-KqF"/>
-                                            <include reference="a6I-H1-avR"/>
+                                            <exclude reference="5Lm-19-65E"/>
+                                            <include reference="cqk-H5-yH7"/>
+                                            <include reference="pKW-WS-4jt"/>
                                             <include reference="CZw-c8-f7k"/>
                                             <exclude reference="Zbt-F6-tZF"/>
                                             <exclude reference="b0b-eg-g93"/>
                                             <include reference="gPL-dg-dIs"/>
-                                            <exclude reference="5Lm-19-65E"/>
-                                            <include reference="cqk-H5-yH7"/>
-                                            <include reference="pKW-WS-4jt"/>
+                                            <include reference="VWn-4w-X9u"/>
+                                            <include reference="fls-8f-lfT"/>
+                                            <include reference="KNY-FN-fpZ"/>
+                                            <include reference="PTT-9O-Gm9"/>
+                                            <include reference="aJL-T8-RiW"/>
                                             <include reference="8wP-1o-edf"/>
                                             <include reference="EeI-fN-noJ"/>
                                             <include reference="FF1-7x-qCz"/>
+                                            <include reference="RON-as-KqF"/>
+                                            <include reference="a6I-H1-avR"/>
                                         </mask>
                                     </variation>
                                 </view>
@@ -1069,6 +1081,7 @@
     </objects>
     <resources>
         <image name="followsumup" width="267" height="35"/>
+        <image name="home_down" width="11" height="6"/>
         <image name="my_myclassadd" width="20" height="20"/>
         <image name="organization_StarGray" width="13" height="12"/>
         <image name="organization_StarYellow" width="13" height="12"/>

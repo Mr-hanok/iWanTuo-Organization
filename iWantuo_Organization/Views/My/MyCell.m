@@ -37,20 +37,20 @@
             self.typeIV.image = [UIImage imageNamed:@"my_ student"];
             break;
         case 3:
-            self.typeLabel.text = @"我的消息";
-            self.typeIV.image = [UIImage imageNamed:@"my_message"];
-            break;
-        case 4:
             self.typeLabel.text = @"班级管理";
             self.typeIV.image = [UIImage imageNamed:@"my_class"];
             break;
-        case 5:
+        case 4:
             self.typeLabel.text = @"辅导老师管理";
             self.typeIV.image = [UIImage imageNamed:@"my_classteacher"];
             break;
-        case 6:
+        case 5:
             self.typeLabel.text = @"推送消息";
             self.typeIV.image = [UIImage imageNamed:@"my_pushMessage"];
+            break;
+        case 6:
+            self.typeLabel.text = @"我的消息";
+            self.typeIV.image = [UIImage imageNamed:@"my_message"];
             break;
         case 7:
             self.typeLabel.text = @"设置";
