@@ -116,6 +116,12 @@
         [HUDManager showWarningWithText:@"请填写您的联系方式"];
         return;
     }
+    if ([self.suggestionTView.text containsString:[NSString specialBlankCharacter]] || [self.connectTF.text containsString:[NSString specialBlankCharacter]]) {
+        [HUDManager showWarningWithText:@"暂不支持系统表情哦~"
+         ];
+        return ;
+    }
+    
     [self.feedbackApi setApiParmsWithDic:@{@"feedbackDetails":self.suggestionTView.text, @"contact":self.connectTF.text}];
     [APIClient execute:self.feedbackApi];
     [HUDManager showLoadingHUDView:self.view withText:@"发送中..."];

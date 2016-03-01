@@ -112,7 +112,7 @@
 #pragma mark - private methods
 - (BOOL)dataCheck{
     if (self.nameTF.text.length == 0 || [[self.nameTF.text stringByTrimmingCharactersInSet:[NSMutableCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
-        [HUDManager showWarningWithText:@"请输入名称"];
+        [HUDManager showWarningWithText:@"请输入老师姓名"];
         return NO;
     }
     if (self.passWordTF.text.length == 0 || [[self.passWordTF.text stringByTrimmingCharactersInSet:[NSMutableCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
@@ -132,6 +132,12 @@
         [HUDManager showWarningWithText:@"请输入正确手机号"];
         return NO;
     }
+    if ([self.passWordTF.text containsString:[NSString specialBlankCharacter]] || [self.nameTF.text containsString:[NSString specialBlankCharacter]]) {
+        [HUDManager showWarningWithText:@"暂不支持系统表情哦~"
+         ];
+        return NO;
+    }
+    
     return YES;
 }
 

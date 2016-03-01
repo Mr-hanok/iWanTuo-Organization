@@ -83,11 +83,16 @@
 #pragma mark - private methods
 - (BOOL)dataCheck{
     if (self.nameTF.text.length == 0 || [[self.nameTF.text stringByTrimmingCharactersInSet:[NSMutableCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
-        [HUDManager showWarningWithText:@"请输入名称"];
+        [HUDManager showWarningWithText:@"请输入老师姓名"];
         return NO;
     }
     if (![NSString tf_isSimpleMobileNumber:self.phoneNumTF.text] || [[self.phoneNumTF.text stringByTrimmingCharactersInSet:[NSMutableCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
         [HUDManager showWarningWithText:@"请输入正确手机号"];
+        return NO;
+    }
+    if ([self.nameTF.text containsString:[NSString specialBlankCharacter]]) {
+        [HUDManager showWarningWithText:@"暂不支持系统表情哦~"
+         ];
         return NO;
     }
     return YES;

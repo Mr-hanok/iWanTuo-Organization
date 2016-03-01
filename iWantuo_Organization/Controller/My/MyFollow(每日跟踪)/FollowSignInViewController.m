@@ -171,6 +171,11 @@
  */
 - (IBAction)signBtnAction:(UIButton *)sender {
     [self.view endEditing:YES];
+    if ([self.remarkTV.text containsString:[NSString specialBlankCharacter]]) {
+        [HUDManager showWarningWithText:@"暂不支持系统表情哦~"
+         ];
+        return ;
+    }
     [HUDManager showLoadingHUDView:KeyWindow];
 //    if (![self limitAccountType]) {
 //        return;

@@ -34,7 +34,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.title = @"排行榜";
+    self.title = @"爱晚托推荐榜";
     [self.tableView registerNib:[OrganizationCell nibWithCell] forCellReuseIdentifier:kOrganizationCellReuse];
     self.tableView.tableFooterView = [[UIView alloc] init];
     

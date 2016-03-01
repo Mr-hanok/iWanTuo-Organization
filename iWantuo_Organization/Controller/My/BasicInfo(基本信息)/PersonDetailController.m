@@ -246,6 +246,12 @@
         self.describeTV.text = @" ";
     }
     
+    if ([self.shortNameTF.text containsString:[NSString specialBlankCharacter]] || [self.nameTF.text containsString:[NSString specialBlankCharacter]] || [self.tagTF.text containsString:[NSString specialBlankCharacter]] || [self.adressTF.text containsString:[NSString specialBlankCharacter]] || [self.describeTV.text containsString:[NSString specialBlankCharacter]]) {
+        [HUDManager showWarningWithText:@"暂不支持系统表情哦~"
+         ];
+        return ;
+    }
+    
     [HUDManager showLoadingHUDView:self.view];
     self.apiChange = [[ApiChangeArganization alloc]initWithDelegate:self];
     [self.apiChange setApiParamsWithLoginAccounts:[AccountManager sharedInstance].account.loginAccounts

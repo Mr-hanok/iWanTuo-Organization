@@ -154,16 +154,21 @@ typedef enum :NSInteger {
 #pragma mark - private methods
 
 - (BOOL)dataCheck{
-    if (self.userNameTF.text.length==0) {
+    if (self.userNameTF.text.length==0 || [[self.userNameTF.text stringByTrimmingCharactersInSet:[NSMutableCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
         [HUDManager showWarningWithText:@"请输入账号"];
         return NO;
     }
-    if (self.passWordTF.text.length==0) {
+    if (self.passWordTF.text.length==0 || [[self.passWordTF.text stringByTrimmingCharactersInSet:[NSMutableCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
         [HUDManager showWarningWithText:@"请输入密码"];
         return NO;
     }
     if (![NSString tf_isSimpleMobileNumber:self.userNameTF.text]  ) {
         [HUDManager showWarningWithText:@"请输入正确手机号"];
+        return NO;
+    }
+    if ([self.passWordTF.text containsString:[NSString specialBlankCharacter]]) {
+        [HUDManager showWarningWithText:@"暂不支持系统表情哦~"
+         ];
         return NO;
     }
     return YES;

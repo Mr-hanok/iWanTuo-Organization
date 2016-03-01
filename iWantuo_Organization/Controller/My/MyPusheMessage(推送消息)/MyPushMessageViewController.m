@@ -83,6 +83,11 @@
         [HUDManager showWarningWithText:@"请输入推送内容"];
         return;
     }
+    if ([self.messageTV.text containsString:[NSString specialBlankCharacter]]) {
+        [HUDManager showWarningWithText:@"暂不支持系统表情哦~"
+         ];
+        return;
+    }
     self.api = [[ApiPushMessageRequest alloc] initWithDelegate:self];
     [self.api setApiParmsWithContent:self.messageTV.text];
     [APIClient execute:self.api];

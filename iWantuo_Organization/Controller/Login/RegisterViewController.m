@@ -164,6 +164,14 @@
         [HUDManager showWarningWithText:@"请输入6位以上密码"];
         return NO;
     }
+    
+    if ([self.passwordTF.text containsString:[NSString specialBlankCharacter]]) {
+        [HUDManager showWarningWithText:@"暂不支持系统表情哦~"
+         ];
+        return NO;
+    }
+    
+    
     return YES;
 }
 @end

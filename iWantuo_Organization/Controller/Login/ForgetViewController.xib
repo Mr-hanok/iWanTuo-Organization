@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -49,7 +49,7 @@
                                         <constraint firstAttribute="height" constant="44" id="qZ3-wb-xQT"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     <variation key="default">
                                         <mask key="constraints">
                                             <exclude reference="qZ3-wb-xQT"/>
@@ -93,7 +93,7 @@
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入验证码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AZi-2f-FxS">
                                     <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 </textField>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37n-qc-cWf">
                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -188,28 +188,28 @@
                                     <exclude reference="8lY-Ge-r3y"/>
                                     <exclude reference="9HE-EB-4jS"/>
                                     <exclude reference="oqY-pu-5ha"/>
-                                    <exclude reference="YAc-3S-HO9"/>
-                                    <exclude reference="YIf-DZ-cjq"/>
-                                    <exclude reference="zr9-Ar-Vg8"/>
                                     <exclude reference="5Jh-a7-jJ6"/>
                                     <exclude reference="BjN-VC-SEO"/>
                                     <exclude reference="HEB-Gx-Z5j"/>
-                                    <exclude reference="1ae-hs-lVa"/>
-                                    <exclude reference="8yB-k1-HfB"/>
-                                    <exclude reference="UBv-W0-cLX"/>
                                     <exclude reference="6vH-Gr-wGr"/>
                                     <exclude reference="Duq-MO-w1W"/>
                                     <exclude reference="V6C-iA-R7Q"/>
                                     <exclude reference="Vuk-Pr-Bqn"/>
+                                    <exclude reference="0I4-jw-DXS"/>
+                                    <exclude reference="ea0-r8-HBx"/>
+                                    <exclude reference="1bq-mv-VW0"/>
+                                    <exclude reference="SWp-br-p2w"/>
+                                    <exclude reference="Z6e-GV-Fn1"/>
                                     <exclude reference="Frk-4P-a60"/>
                                     <exclude reference="Joj-ph-ZFZ"/>
                                     <exclude reference="bzl-q9-onS"/>
                                     <exclude reference="wj4-qv-FcJ"/>
-                                    <exclude reference="1bq-mv-VW0"/>
-                                    <exclude reference="SWp-br-p2w"/>
-                                    <exclude reference="Z6e-GV-Fn1"/>
-                                    <exclude reference="0I4-jw-DXS"/>
-                                    <exclude reference="ea0-r8-HBx"/>
+                                    <exclude reference="YAc-3S-HO9"/>
+                                    <exclude reference="YIf-DZ-cjq"/>
+                                    <exclude reference="zr9-Ar-Vg8"/>
+                                    <exclude reference="1ae-hs-lVa"/>
+                                    <exclude reference="8yB-k1-HfB"/>
+                                    <exclude reference="UBv-W0-cLX"/>
                                 </mask>
                             </variation>
                             <variation key="heightClass=regular-widthClass=compact">
@@ -227,28 +227,28 @@
                                     <include reference="8lY-Ge-r3y"/>
                                     <include reference="9HE-EB-4jS"/>
                                     <include reference="oqY-pu-5ha"/>
-                                    <include reference="YAc-3S-HO9"/>
-                                    <include reference="YIf-DZ-cjq"/>
-                                    <include reference="zr9-Ar-Vg8"/>
                                     <include reference="5Jh-a7-jJ6"/>
                                     <include reference="BjN-VC-SEO"/>
                                     <include reference="HEB-Gx-Z5j"/>
-                                    <include reference="1ae-hs-lVa"/>
-                                    <include reference="8yB-k1-HfB"/>
-                                    <include reference="UBv-W0-cLX"/>
                                     <include reference="6vH-Gr-wGr"/>
                                     <include reference="Duq-MO-w1W"/>
                                     <include reference="V6C-iA-R7Q"/>
                                     <include reference="Vuk-Pr-Bqn"/>
+                                    <include reference="0I4-jw-DXS"/>
+                                    <include reference="ea0-r8-HBx"/>
+                                    <include reference="1bq-mv-VW0"/>
+                                    <include reference="SWp-br-p2w"/>
+                                    <include reference="Z6e-GV-Fn1"/>
                                     <include reference="Frk-4P-a60"/>
                                     <include reference="Joj-ph-ZFZ"/>
                                     <include reference="bzl-q9-onS"/>
                                     <include reference="wj4-qv-FcJ"/>
-                                    <include reference="1bq-mv-VW0"/>
-                                    <include reference="SWp-br-p2w"/>
-                                    <include reference="Z6e-GV-Fn1"/>
-                                    <include reference="0I4-jw-DXS"/>
-                                    <include reference="ea0-r8-HBx"/>
+                                    <include reference="YAc-3S-HO9"/>
+                                    <include reference="YIf-DZ-cjq"/>
+                                    <include reference="zr9-Ar-Vg8"/>
+                                    <include reference="1ae-hs-lVa"/>
+                                    <include reference="8yB-k1-HfB"/>
+                                    <include reference="UBv-W0-cLX"/>
                                 </mask>
                             </variation>
                         </view>

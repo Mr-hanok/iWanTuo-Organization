@@ -257,6 +257,7 @@
         [HUDManager showWarningWithText:@"请输入机构简称"];
         return NO;
     }
+    
     if (self.FullNameTF.text.length == 0 ||[[self.FullNameTF.text stringByTrimmingCharactersInSet:[NSMutableCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
         [HUDManager showWarningWithText:@"请输入机构全称"];
         return NO;
@@ -297,6 +298,17 @@
         [HUDManager showWarningWithText:@"请上传图片"];
         return NO;
     }
+    
+    if ([self.shortNameTF.text containsString:[NSString specialBlankCharacter]] ||
+        [self.FullNameTF.text containsString:[NSString specialBlankCharacter]] ||
+        [self.trueNameTF.text containsString:[NSString specialBlankCharacter]] ||
+        [self.detialAdressTF.text containsString:[NSString specialBlankCharacter]] ||
+        [self.emailTF.text containsString:[NSString specialBlankCharacter]]) {
+        [HUDManager showWarningWithText:@"暂不支持系统表情哦~"
+         ];
+        return NO;
+    }
+    
     return YES;
 }
 

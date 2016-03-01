@@ -254,6 +254,11 @@
         [HUDManager showWarningWithText:@"请先签到"];
         return;
     }
+    if ([self.remarkTV.text containsString:[NSString specialBlankCharacter]]) {
+        [HUDManager showWarningWithText:@"暂不支持系统表情哦~"
+         ];
+        return ;
+    }
     if (![self.classChoseBtn.titleLabel.text isEqualToString:@"选择学科V"]&& self.otherTF.count==0) {
         if ([self.gradeTF.text integerValue]>100 ||[self.gradeTF.text integerValue]<=0) {
             [HUDManager  showWarningWithText:@"请输入100以内的分数!"];

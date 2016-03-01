@@ -135,9 +135,15 @@
 - (IBAction)signBtnAction:(UIButton *)sender {
     [self.view endEditing:YES];
     
+    
     if (self.followmodel ==nil) {
         [HUDManager showWarningWithText:@"请先签到"];
         return;
+    }
+    if ([self.remarkTV.text containsString:[NSString specialBlankCharacter]]) {
+        [HUDManager showWarningWithText:@"暂不支持系统表情哦~"
+         ];
+        return ;
     }
     [HUDManager showLoadingHUDView:KeyWindow];
     [self.apiChange setApiParamsWithId:self.followmodel.kid
