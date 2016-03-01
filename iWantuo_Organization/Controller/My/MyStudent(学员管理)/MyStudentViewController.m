@@ -345,10 +345,10 @@
 //        return NO;
 //    }
     
-    if (![NSString tf_isSimpleMobileNumber:self.otherPhoneTextField.text]) {
-        [HUDManager showWarningWithText:@"请输入正确的联系方式"];
-        return NO;
-    }
+//    if (![NSString tf_isSimpleMobileNumber:self.otherPhoneTextField.text]) {
+//        [HUDManager showWarningWithText:@"请输入正确的联系方式"];
+//        return NO;
+//    }
     
     if (self.parentAccountTextField.text.length <= 0  || [[self.parentAccountTextField.text stringByTrimmingCharactersInSet:[NSMutableCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
         [HUDManager showWarningWithText:@"请输入家长账号"];
