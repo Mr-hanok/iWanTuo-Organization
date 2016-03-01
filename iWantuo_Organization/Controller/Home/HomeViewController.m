@@ -234,7 +234,8 @@ typedef enum : NSUInteger {
     [self.searchByLocationBtn     setTitleColor:kNavigationColor forState:(UIControlStateNormal)];
     [self.searchByOrganizationBtn setTitleColor:kGrayColor       forState:(UIControlStateNormal)];
     [self.searchBySchoolBtn       setTitleColor:kGrayColor       forState:(UIControlStateNormal)];
-    
+    self.searchTextField.placeholder = @"请输入搜索地址";
+
 }
 
 /**
