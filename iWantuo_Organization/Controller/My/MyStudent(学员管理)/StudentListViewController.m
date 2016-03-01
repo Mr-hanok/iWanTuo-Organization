@@ -55,6 +55,7 @@
         addVC.infoType = AddInfoType;
         [weakSelf.navigationController pushViewController:addVC animated:YES];
     }];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadDataSource:) name:kRefreshStudentNotification object:nil];
 }
 
 #pragma mark - MyStudentCellDelegate
@@ -126,37 +127,31 @@
         return;
     }
     if (api == self.api) {
-        if (sr.status == 0) {
-            if (self.api.requestCurrentPage == 1) {
-                [self.dataArray removeAllObjects];
-            }
-            self.api.requestCurrentPage++;
-            
-            NSArray *array = [sr.dic objectForKey:@"studentSchoolList"];
-            
-            for (NSDictionary *dic in array) {
-                StudentModel *model = [StudentModel initWithDic:dic];
-                [self.dataArray addObject:model];
-            }
-            
-            if (self.dataArray.count == 0) {
-                self.emptyImageView.hidden = NO;
-                return;
-            } else {
-                self.emptyImageView.hidden = YES;
-            }
-            [self.tableView reloadData];
-        } else {
-            [HUDManager showWarningWithText:sr.msg];
+        if (self.api.requestCurrentPage == 1) {
+            [self.dataArray removeAllObjects];
         }
+        self.api.requestCurrentPage++;
+        
+        NSArray *array = [sr.dic objectForKey:@"studentSchoolList"];
+        
+        for (NSDictionary *dic in array) {
+            StudentModel *model = [StudentModel initWithDic:dic];
+            [self.dataArray addObject:model];
+        }
+        
+        if (self.dataArray.count == 0) {
+            self.emptyImageView.hidden = NO;
+            return;
+        } else {
+            self.emptyImageView.hidden = YES;
+        }
+        [self.tableView reloadData];
+
     } else if (api == self.apiDelete) {
         
-        if (sr.status == 0) {
-            [self.dataArray removeObjectAtIndex:self.indexPath.row];
-            [self.tableView reloadData];
-        } else {
-            [HUDManager showWarningWithText:sr.msg];
-        }
+        [self.dataArray removeObjectAtIndex:self.indexPath.row];
+        [self.tableView reloadData];
+
     }
     
 
@@ -171,6 +166,10 @@
         message = kDefaultServerErrorString;
     }
     [AlertViewManager showAlertViewWithMessage:message];
+}
+#pragma mark - private methods
+- (void)reloadDataSource:(NSNotification *)noti {
+    [self.tableView.mj_header beginRefreshing];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -230,6 +230,7 @@
     }
     if (api == self.apiSaveStudent) {
         [HUDManager showWarningWithText:sr.msg];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kRefreshStudentNotification object:nil];
         [self.navigationController popViewControllerAnimated:YES];
     } else if (api == self.apiAddressList){
         NSArray *array = [sr.dic objectForKey:@"sysCodeList"];
@@ -260,6 +261,7 @@
         self.patriarchId = [ValueUtils stringFromObject:[self.dataDic objectForKey:@"patriarchId"]];
     } else if (api == self.apiUpdateStudent) {
         [HUDManager showWarningWithText:sr.msg];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kRefreshStudentNotification object:nil];
         [self.navigationController popViewControllerAnimated:YES];
     } else if (api == self.apiPatriarch) {
         api.requestCurrentPage ++;
@@ -274,8 +276,7 @@
         } else {
             [HUDManager showWarningWithText:@"您输入的家长账号不存在"];
         }
-        
-        
+  
     }
     
 }

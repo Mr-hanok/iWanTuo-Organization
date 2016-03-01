@@ -53,6 +53,7 @@
     self.pageManager = [PageManager handlerWithDelegate:self TableView:self.tableview];
     [self.tableview.mj_header beginRefreshing];
   
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadDataSource:) name:kRefreshClassNotification object:nil];
     
 }
 -(void)viewWillAppear:(BOOL)animated{
@@ -213,5 +214,7 @@
 
 
 #pragma mark - private methods
-
+- (void)reloadDataSource:(NSNotification *)noti {
+    [self.tableview.mj_header beginRefreshing];
+}
 @end

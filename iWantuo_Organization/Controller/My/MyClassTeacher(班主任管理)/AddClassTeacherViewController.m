@@ -59,10 +59,9 @@
         return;
     }
     
-    if (sr.status == 0) {
-        [HUDManager showWarningWithText:sr.msg];
-        [self.navigationController popViewControllerAnimated:YES];
-    }
+    [HUDManager showWarningWithText:sr.msg];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kRefreshTeacherNotification object:nil];
+    [self.navigationController popViewControllerAnimated:YES];
     
 }
 

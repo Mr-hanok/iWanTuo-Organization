@@ -13,6 +13,10 @@
 
 #define kKeyBoardHideNotification UIKeyboardWillHideNotification
 
+#define kRefreshClassNotification    @"refreshClassNotification"
+#define kRefreshStudentNotification  @"refreshStudentNotification"
+#define kRefreshTeacherNotification  @"refreshTeacherNotification"
+
 #define ChangeImageIvNoti  @"ChangeImageIvNoti"
 #define ChangeViewInfoNoti @"ChangeViewInfo"
 #endif

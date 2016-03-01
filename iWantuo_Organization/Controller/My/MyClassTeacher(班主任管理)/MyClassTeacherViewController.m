@@ -54,6 +54,8 @@
     self.pageManager = [PageManager handlerWithDelegate:self TableView:self.tableview];
     [self.tableview.mj_header beginRefreshing];
     self.tableview.tableFooterView = [[UIView alloc] init];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadDataSource:) name:kRefreshTeacherNotification object:nil];
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -140,36 +142,31 @@
     }
     
     if (api == self.apiDelete) {
-        if (sr.status == 0) {
             [self.dataArray removeObjectAtIndex:self.indexPath.row];
             [self.tableview reloadData];
-        }
 
     } else if (api == self.api) {
-        if (sr.status == 0) {
-            if (api.requestCurrentPage == 1) {
-                [self.dataArray removeAllObjects];
-            }
-            api.requestCurrentPage ++;
-            NSArray *array = [sr.dic objectForKey:@"queryList"];
-            
-            for (NSDictionary *dic in array) {
-                TeacherModel *model = [TeacherModel initWithDic:dic];
-                [self.dataArray addObject:model];
-            }
-            
-            //是否有数据
-            if (self.dataArray.count > 0 ) {
-                self.emptyImageView.hidden = YES;
-            } else {
-                self.emptyImageView.hidden = NO;
-            }
-
-            
-            [self.tableview reloadData];
-        } else {
-            [HUDManager showWarningWithText:sr.msg];
+        
+        if (api.requestCurrentPage == 1) {
+            [self.dataArray removeAllObjects];
         }
+        api.requestCurrentPage ++;
+        NSArray *array = [sr.dic objectForKey:@"queryList"];
+        
+        for (NSDictionary *dic in array) {
+            TeacherModel *model = [TeacherModel initWithDic:dic];
+            [self.dataArray addObject:model];
+        }
+        
+        //是否有数据
+        if (self.dataArray.count > 0 ) {
+            self.emptyImageView.hidden = YES;
+        } else {
+            self.emptyImageView.hidden = NO;
+        }
+
+        [self.tableview reloadData];
+
     }
 
 }
@@ -202,5 +199,8 @@
 
 
 #pragma mark - private methods
+- (void)reloadDataSource:(NSNotification *)noti {
+    [self.tableview.mj_header beginRefreshing];
+}
 
 @end
