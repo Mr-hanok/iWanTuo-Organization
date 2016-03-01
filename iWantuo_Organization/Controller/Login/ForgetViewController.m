@@ -159,12 +159,21 @@
         [HUDManager showWarningWithText:@"请输入正确手机号码！"];
         return NO;
     }
-    if (self.phoneNumTF.text.length==0) {
+    if (self.phoneNumTF.text.length==0 || [[self.phoneNumTF.text stringByTrimmingCharactersInSet:[NSMutableCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
         [HUDManager showWarningWithText:@"请输入手机号码！"];
         return NO;
     }
-    if (self.registerNumTF.text.length == 0) {
+    if (self.registerNumTF.text.length == 0 || [[self.registerNumTF.text stringByTrimmingCharactersInSet:[NSMutableCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
         [HUDManager showWarningWithText:@"请输入验证码"];
+        return NO;
+    }
+    if (self.passwordTF.text.length == 0 || [[self.registerNumTF.text stringByTrimmingCharactersInSet:[NSMutableCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
+        [HUDManager showWarningWithText:@"请输入密码"];
+        return NO;
+    }
+    if ([self.passwordTF.text containsString:[NSString specialBlankCharacter]]) {
+        [HUDManager showWarningWithText:@"暂不支持系统表情哦~"
+         ];
         return NO;
     }
     

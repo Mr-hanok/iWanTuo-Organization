@@ -279,15 +279,43 @@
     //        }
     //    }
     
+    if ([self.remarkTV.text containsString:[NSString specialBlankCharacter]]) {
+        [HUDManager showWarningWithText:@"暂不支持系统表情哦~"
+         ];
+        return ;
+    }
+    if (![self.classChoseBtn.titleLabel.text isEqualToString:@"选学科"]&& self.otherTF.count==0) {
+        if ([self.gradeTF.text integerValue]>100 ||[self.gradeTF.text integerValue]<=0) {
+            [HUDManager  showWarningWithText:@"请输入100以内的分数!"];
+            return ;
+        }
+    }
+
+    if (self.otherTF.count>0) {
+        UITextField *classTf = [self.otherTF lastObject];
+        if (classTf.text.length==0 || [[classTf.text stringByTrimmingCharactersInSet:[NSMutableCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
+            [HUDManager  showWarningWithText:@"请输入100以内的分数!"];
+            return;
+        }
+    }
+
     //记录分数
-    self.classGrade = self.gradeTF.text;
+    if (self.gradeTF.text == nil || self.gradeTF.text.length == 0) {
+        self.classGrade = @"";
+    }else{
+        self.classGrade = self.gradeTF.text;
+    }
     for (UITextField *tf in self.otherTF) {
         if (tf.text != nil || tf.text.length > 0) {
             self.classGrade = [self.classGrade stringByAppendingString:[NSString stringWithFormat:@",%@",tf.text]];
         }
     }
     //记录学科
-    self.className = self.classChoseBtn.titleLabel.text;
+    if (![self.classChoseBtn.titleLabel.text isEqualToString:@"选学科"]) {
+        self.className = self.classChoseBtn.titleLabel.text;
+    }else{
+        self.className = @"";
+    }
     if (self.otherBtns.count > 0) {
         for (UIButton *btn in self.otherBtns) {
             if (![btn.titleLabel.text isEqualToString:@"选学科"]) {
@@ -520,14 +548,19 @@
                 iv.tag = self.count;
                 [self.jinTous addObject:iv];
                 
+                
                     UITextField *tf = [[UITextField alloc]initWithFrame:CGRectMake(self.gradeTF.frame.origin.x, self.gradeTF.frame.origin.y+ClassViewHeight*i, self.gradeTF.frame.size.width, self.gradeTF.frame.size.height)];
                     tf.delegate = self;
                     tf.tag = self.count;
                     tf.font = [UIFont systemFontOfSize:14];
+                if (i < self.fenshus.count) {
                     tf.text = self.fenshus[i];
+                }
                     tf.placeholder = @"分数";
                     [tf setKeyboardType:UIKeyboardTypeNumberPad];
                     [self.otherTF addObject:tf];
+                    [self.classView addSubview:tf];
+               
                 
                 UIView *view = [[UIView alloc]initWithFrame:CGRectMake(self.gradeTF.frame.origin.x, self.gradeTF.frame.origin.y+ClassViewHeight*i+ClassViewHeight, self.gradeTF.frame.size.width, 1)];
                 view.backgroundColor = kBGColor;
@@ -536,7 +569,6 @@
                 [self.classView addSubview:view];
                 [self.classView addSubview:btn];
                 [self.classView addSubview:iv];
-                [self.classView addSubview:tf];
 
             }
 

@@ -69,6 +69,11 @@
         [HUDManager showWarningWithText:@"请输入班级名称"];
         return;
     }
+    if ([self.classNameTF.text containsString:[NSString specialBlankCharacter]]) {
+        [HUDManager showWarningWithText:@"暂不支持系统表情哦~"
+         ];
+        return ;
+    }
     
     self.api = [[ApiAddClassRequest alloc] initWithDelegate:self];
     [self.api setApiParamsWithOrganizationAccounts:[AccountManager sharedInstance].account.loginAccounts organizationClass:self.classNameTF.text];

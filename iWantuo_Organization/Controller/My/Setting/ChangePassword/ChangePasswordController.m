@@ -110,6 +110,13 @@
         [HUDManager showWarningWithText:@"两次密码不一致"];
         return NO;
     }
+    
+    if ([self.oldPasswordTF.text containsString:[NSString specialBlankCharacter]] || [self.changePasswordTF.text containsString:[NSString specialBlankCharacter]] || [self.verifyPasswordTF.text containsString:[NSString specialBlankCharacter]]) {
+        [HUDManager showWarningWithText:@"暂不支持系统表情哦~"
+         ];
+        return NO;
+    }
+    
     return YES;
 }
 
