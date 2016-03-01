@@ -61,7 +61,7 @@
                                             <state key="normal" title="完成" image="register_unSelect">
                                                 <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
-                                            <state key="selected" image="register_agree"/>
+                                            <state key="selected" title="完成" image="register_agree"/>
                                             <variation key="default">
                                                 <mask key="constraints">
                                                     <exclude reference="Cjk-LH-PbN"/>
@@ -86,7 +86,7 @@
                                             <state key="normal" title="未完成" image="register_unSelect">
                                                 <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
-                                            <state key="selected" title="未完成作业" image="register_agree"/>
+                                            <state key="selected" title="未完成" image="register_agree"/>
                                             <variation key="default">
                                                 <mask key="constraints">
                                                     <exclude reference="7uU-bK-dix"/>
