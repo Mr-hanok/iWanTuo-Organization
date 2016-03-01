@@ -54,7 +54,7 @@
     self.remarkTV.layer.borderWidth = 1.f;
     self.remarkTV.layer.borderColor = kBGColor.CGColor;
     self.remarkTV.layer.cornerRadius = 5.f;
-    [self.upLoadBtn.imageView setContentMode:UIViewContentModeScaleToFill];
+    [self.upLoadBtn.imageView setContentMode:UIViewContentModeScaleAspectFit];
     self.signBtn.selected = YES;
     self.statusName = @"签到";
     self.apiFollowAdd = [[ApiFollowAddRequest alloc]initWithDelegate:self];
