@@ -70,6 +70,8 @@
     self.signVC.status = @"1";
     self.signVC.statusName = @"签到";
     self.signVC.studentId = self.student.studentId;
+    self.summaryVC.studentId = self.student.studentId;
+    self.leaveVC.studentId = self.student.studentId;
     self.signVC.classId = self.student.classId;
     self.followIV.image = [UIImage imageNamed:@"followshortofline"];
     [self.signBtn setTitleColor:kNavigationColor forState:UIControlStateSelected];

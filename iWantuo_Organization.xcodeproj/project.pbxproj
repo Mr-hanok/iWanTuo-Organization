@@ -33,6 +33,7 @@
 		379464221C55EC7300368B3A /* FollowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 379464211C55EC7300368B3A /* FollowModel.m */; };
 		379464251C55F0B200368B3A /* ApiFollowChangeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 379464241C55F0B200368B3A /* ApiFollowChangeRequest.m */; };
 		379464281C55F57400368B3A /* ApiFollowSubject.m in Sources */ = {isa = PBXBuildFile; fileRef = 379464271C55F57400368B3A /* ApiFollowSubject.m */; };
+		37A2EBEF1C86D33800339B91 /* ImageZoomTap.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A2EBEE1C86D33800339B91 /* ImageZoomTap.m */; };
 		37AE23751C546AD9006CFCCC /* FollowSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AE23731C546AD9006CFCCC /* FollowSignInViewController.m */; };
 		37AE23761C546AD9006CFCCC /* FollowSignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37AE23741C546AD9006CFCCC /* FollowSignInViewController.xib */; };
 		37AE237A1C546B49006CFCCC /* FollowLeaveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AE23781C546B49006CFCCC /* FollowLeaveViewController.m */; };
@@ -339,6 +340,8 @@
 		379464241C55F0B200368B3A /* ApiFollowChangeRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiFollowChangeRequest.m; sourceTree = "<group>"; };
 		379464261C55F57400368B3A /* ApiFollowSubject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiFollowSubject.h; sourceTree = "<group>"; };
 		379464271C55F57400368B3A /* ApiFollowSubject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiFollowSubject.m; sourceTree = "<group>"; };
+		37A2EBED1C86D33800339B91 /* ImageZoomTap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageZoomTap.h; sourceTree = "<group>"; };
+		37A2EBEE1C86D33800339B91 /* ImageZoomTap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageZoomTap.m; sourceTree = "<group>"; };
 		37AE23721C546AD9006CFCCC /* FollowSignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowSignInViewController.h; sourceTree = "<group>"; };
 		37AE23731C546AD9006CFCCC /* FollowSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowSignInViewController.m; sourceTree = "<group>"; };
 		37AE23741C546AD9006CFCCC /* FollowSignInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowSignInViewController.xib; sourceTree = "<group>"; };
@@ -1522,6 +1525,8 @@
 		BE25EBAE1C44FDB300068309 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				37A2EBED1C86D33800339B91 /* ImageZoomTap.h */,
+				37A2EBEE1C86D33800339B91 /* ImageZoomTap.m */,
 				BE25EBAF1C44FDB300068309 /* TimerHelper.h */,
 				BE25EBB01C44FDB300068309 /* TimerHelper.m */,
 			);
@@ -2191,6 +2196,7 @@
 				BE25EBA01C44FD9200068309 /* NSURL+Path.m in Sources */,
 				BE25EB371C44FC5F00068309 /* AppDelegate.m in Sources */,
 				BE25EB981C44FD9200068309 /* NSCalendar+FSExtension.m in Sources */,
+				37A2EBEF1C86D33800339B91 /* ImageZoomTap.m in Sources */,
 				37E1DDD51C4DD92600245BE6 /* SettingViewController.m in Sources */,
 				37D724E21C4F1AA40055721B /* ApiSendPhoneMessage.m in Sources */,
 				37033E351C4C9033009F27DB /* LoginViewController.m in Sources */,
@@ -2490,7 +2496,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.uniomx.iwantuoOrganization;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1bdafd56-043f-4b22-b39c-397714bdc9ee";
+				PROVISIONING_PROFILE = "bc0d40b3-571f-4333-93da-e9b2d500a99d";
 			};
 			name = Debug;
 		};
@@ -2526,7 +2532,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.uniomx.iwantuoOrganization;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1bdafd56-043f-4b22-b39c-397714bdc9ee";
+				PROVISIONING_PROFILE = "bc0d40b3-571f-4333-93da-e9b2d500a99d";
 			};
 			name = Release;
 		};

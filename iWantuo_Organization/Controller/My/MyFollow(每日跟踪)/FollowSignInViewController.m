@@ -216,14 +216,15 @@
                                      grade:@""
                                    subject:@""
                                subjectName:@""
-                                    status:self.status
-                                statusName:self.statusName
+                                    status:@""
+                                statusName:@""
                                     signIn:self.remarkTV.text
                                signInImage:self.imageName
                                       note:@""
                              summaryPerson:self.loginName
                                leavePerson:self.loginName
-                                   loginin:[AccountManager sharedInstance].account.loginAccounts];
+                                   loginin:[AccountManager sharedInstance].account.loginAccounts
+                                 studentId:self.studentId];
 
         [APIClient execute:self.apiChange];
     }

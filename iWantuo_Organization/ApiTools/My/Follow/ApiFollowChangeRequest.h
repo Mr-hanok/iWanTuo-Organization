@@ -47,5 +47,6 @@
                       note:(NSString *)note
              summaryPerson:(NSString *)summaryPerson
                leavePerson:(NSString *)leavePerson
-                   loginin:(NSString *)loginin;
+                   loginin:(NSString *)loginin
+                 studentId:(NSString *)studentId;
 @end

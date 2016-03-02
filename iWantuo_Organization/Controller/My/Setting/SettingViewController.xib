@@ -23,11 +23,24 @@
                         <outlet property="delegate" destination="-1" id="hKR-5o-MvC"/>
                     </connections>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P8o-uO-bxq">
+                    <rect key="frame" x="56" y="577" width="263" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="WdK-KE-fXO"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" backgroundImage="quitBtn"/>
+                    <connections>
+                        <action selector="Logout:" destination="-1" eventType="touchUpInside" id="OI4-ar-G8c"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="Un3-mX-QJn" secondAttribute="trailing" id="8B0-ka-pQa"/>
                 <constraint firstAttribute="bottom" secondItem="Un3-mX-QJn" secondAttribute="bottom" id="A1K-yl-U6r"/>
+                <constraint firstItem="P8o-uO-bxq" firstAttribute="centerX" secondItem="Un3-mX-QJn" secondAttribute="centerX" id="GLI-4E-rsW"/>
+                <constraint firstAttribute="bottom" secondItem="P8o-uO-bxq" secondAttribute="bottom" constant="55" id="PoF-A8-F2R"/>
                 <constraint firstItem="Un3-mX-QJn" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="lnj-AP-rpm"/>
                 <constraint firstItem="Un3-mX-QJn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="r9G-7F-moO"/>
             </constraints>
@@ -35,26 +48,35 @@
             <variation key="default">
                 <mask key="subviews">
                     <exclude reference="Un3-mX-QJn"/>
+                    <exclude reference="P8o-uO-bxq"/>
                 </mask>
                 <mask key="constraints">
                     <exclude reference="8B0-ka-pQa"/>
                     <exclude reference="A1K-yl-U6r"/>
                     <exclude reference="lnj-AP-rpm"/>
                     <exclude reference="r9G-7F-moO"/>
+                    <exclude reference="GLI-4E-rsW"/>
+                    <exclude reference="PoF-A8-F2R"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
                 <mask key="subviews">
                     <include reference="Un3-mX-QJn"/>
+                    <include reference="P8o-uO-bxq"/>
                 </mask>
                 <mask key="constraints">
                     <include reference="8B0-ka-pQa"/>
                     <include reference="A1K-yl-U6r"/>
                     <include reference="lnj-AP-rpm"/>
                     <include reference="r9G-7F-moO"/>
+                    <include reference="GLI-4E-rsW"/>
+                    <include reference="PoF-A8-F2R"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="211.5" y="235.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="quitBtn" width="263" height="35"/>
+    </resources>
 </document>

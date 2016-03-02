@@ -30,7 +30,7 @@
 
 @property (nonatomic, copy) NSString *behavior;//行为评价
 @property (nonatomic, copy) NSString *study;//学习评价
-@property (nonatomic, copy) NSString *workStatus;//作业状态0未完成1完成
+@property (nonatomic, copy) NSString *workStatus;//作业状态2未完成1完成
 @property (nonatomic, copy) NSString *workStatusName;//作业状态
 @property (nonatomic, copy) NSString *loginName;
 @property (nonatomic, copy) NSString *summaryPerson;
@@ -129,6 +129,8 @@
         NSDictionary *dic =  [sr.dic objectForKey:@"trace"];
         self.followmodel = [FollowModel initWithDic:dic];
         self.gradeTF.text = nil;
+        self.workStatus = nil;
+        self.workStatusName = nil;
         self.model = nil;
         //发送通知 传入界面
         [[NSNotificationCenter defaultCenter] postNotificationName:ChangeViewInfoNoti object:self.followmodel];
@@ -218,7 +220,7 @@
             
         case 112://未完成作业
             self.completeBtn.selected = NO;
-            self.workStatus = @"0";
+            self.workStatus = @"2";
             self.workStatusName =@"未完成";
             break;
     }
@@ -284,18 +286,25 @@
          ];
         return ;
     }
+    //只选择了一个学科 选了学科没写分数
     if (![self.classChoseBtn.titleLabel.text isEqualToString:@"选学科"]&& self.otherTF.count==0) {
         if ([self.gradeTF.text integerValue]>100 ||[self.gradeTF.text integerValue]<=0) {
             [HUDManager  showWarningWithText:@"请输入100以内的分数!"];
             return ;
         }
     }
-
-    if (self.otherTF.count>0) {
-        UITextField *classTf = [self.otherTF lastObject];
-        if (classTf.text.length==0 || [[classTf.text stringByTrimmingCharactersInSet:[NSMutableCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
-            [HUDManager  showWarningWithText:@"请输入100以内的分数!"];
-            return;
+    //添加了不只一个学科
+    if (self.otherBtns.count>0) {
+        
+        for (int i=0 ; i<self.otherBtns.count; i++) {
+            UITextField *tf = self.otherTF[i];
+            UIButton *btn = self.otherBtns[i];
+            if (![btn.titleLabel.text isEqualToString:@"选学科"]) {
+                if (tf.text.length==0 || [[tf.text stringByTrimmingCharactersInSet:[NSMutableCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]||[tf.text integerValue]>100 ||[tf.text integerValue]<=0) {
+                    [HUDManager  showWarningWithText:@"请输入100以内的分数!"];
+                    return;
+                }
+            }
         }
     }
 
@@ -325,7 +334,7 @@
     }
     
     [HUDManager showLoadingHUDView:KeyWindow];
-    if ([self.followmodel.status isEqualToString:@"2"]||[self.followmodel.status isEqualToString:@"1"]) {
+    if ([self.followmodel.status isEqualToString:@"1"]) {//已经签到
         self.status = @"2";
         self.statusName =@"总结";
         [self.apiChange setApiParamsWithId:self.followmodel.kid
@@ -345,10 +354,13 @@
                                       note:self.remarkTV.text
                              summaryPerson:self.loginName
                                leavePerson:@""
-                                   loginin:[AccountManager sharedInstance].account.loginAccounts];
+                                   loginin:[AccountManager sharedInstance].account.loginAccounts
+                                 studentId:self.studentId];
         
     }
-    if ([self.followmodel.status isEqualToString:@"3"]) {
+
+    if ([self.followmodel.status isEqualToString:@"2"] ||[self.followmodel.status isEqualToString:@"3"]) {
+        //已经总结 或者签到
         self.status = @"3";
         self.statusName =@"离校";
         [self.apiChange setApiParamsWithId:self.followmodel.kid
@@ -361,14 +373,15 @@
                                      grade:self.classGrade
                                    subject:self.classid
                                subjectName:self.className
-                                    status:self.status
-                                statusName:self.statusName
+                                    status:@""
+                                statusName:@""
                                     signIn:@""
                                signInImage:@""
                                       note:self.remarkTV.text
                              summaryPerson:@""
                                leavePerson:self.loginName
-                                   loginin:[AccountManager sharedInstance].account.loginAccounts];
+                                   loginin:[AccountManager sharedInstance].account.loginAccounts
+                                 studentId:self.studentId];
     }
     [APIClient execute:self.apiChange];
 }
@@ -504,10 +517,14 @@
     self.followmodel = info;
     if (info != nil) {
         //设置界面
+        //备注 作业完成情况
         self.remarkTV.text = info.note;
-        if ([self.followmodel.workStatus isEqualToString:@"1"]) {
+        if ([self.followmodel.workStatus isEqualToString:@"1"]) {//完成
             self.completeBtn.selected = YES;
             self.uncompleteBtn.selected = NO;
+        }else if ([self.followmodel.workStatus isEqualToString:@"2"]){//未完成
+            self.completeBtn.selected = NO;
+            self.uncompleteBtn.selected = YES;
         }
         //分隔字符串 加入学科数组  分数数字
         self.className = self.followmodel.subjectName;

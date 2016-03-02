@@ -146,24 +146,70 @@
         return ;
     }
     [HUDManager showLoadingHUDView:KeyWindow];
-    [self.apiChange setApiParamsWithId:self.followmodel.kid
-                                 leave:self.remarkTV.text
-                            leaveImage:self.imageName
-                            workStatus:@""
-                        workStatusName:@""
-                              behavior:@""
-                                 study:@""
-                                 grade:@""
-                               subject:@""
-                           subjectName:@""
-                                status:@"3"
-                            statusName:@"离校"
-                                signIn:@""
-                           signInImage:@""
-                                  note:@""
-                         summaryPerson:@""
-                           leavePerson:self.loginName
-                               loginin:[AccountManager sharedInstance].account.loginAccounts];
+    if ([self.followmodel.status isEqualToString:@"3"]) {//已经离校
+        [self.apiChange setApiParamsWithId:self.followmodel.kid
+                                     leave:self.remarkTV.text
+                                leaveImage:self.imageName
+                                workStatus:@""
+                            workStatusName:@""
+                                  behavior:@""
+                                     study:@""
+                                     grade:@""
+                                   subject:@""
+                               subjectName:@""
+                                    status:@""
+                                statusName:@""
+                                    signIn:@""
+                               signInImage:@""
+                                      note:@""
+                             summaryPerson:@""
+                               leavePerson:self.loginName
+                                   loginin:[AccountManager sharedInstance].account.loginAccounts
+                                 studentId:self.studentId];
+    }
+    if ([self.followmodel.status isEqualToString:@"2"]) {//已经总结
+        [self.apiChange setApiParamsWithId:self.followmodel.kid
+                                     leave:self.remarkTV.text
+                                leaveImage:self.imageName
+                                workStatus:@""
+                            workStatusName:@""
+                                  behavior:@""
+                                     study:@""
+                                     grade:@""
+                                   subject:@""
+                               subjectName:@""
+                                    status:@"3"
+                                statusName:@"离校"
+                                    signIn:@""
+                               signInImage:@""
+                                      note:@""
+                             summaryPerson:@""
+                               leavePerson:self.loginName
+                                   loginin:[AccountManager sharedInstance].account.loginAccounts
+                                 studentId:self.studentId];
+    }
+    if ([self.followmodel.status isEqualToString:@"1"]) {//已经签到
+        [self.apiChange setApiParamsWithId:self.followmodel.kid
+                                     leave:self.remarkTV.text
+                                leaveImage:self.imageName
+                                workStatus:@""
+                            workStatusName:@""
+                                  behavior:@""
+                                     study:@""
+                                     grade:@""
+                                   subject:@""
+                               subjectName:@""
+                                    status:@"3"
+                                statusName:@"离校"
+                                    signIn:@""
+                               signInImage:@""
+                                      note:@""
+                             summaryPerson:@""
+                               leavePerson:self.loginName
+                                   loginin:[AccountManager sharedInstance].account.loginAccounts
+                                 studentId:self.studentId];
+    }
+    
     [APIClient execute:self.apiChange];
 }
 #pragma mark - private methods

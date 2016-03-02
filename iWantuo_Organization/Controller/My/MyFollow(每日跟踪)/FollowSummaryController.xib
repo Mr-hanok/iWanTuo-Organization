@@ -591,23 +591,23 @@
                                         </mask>
                                         <mask key="constraints">
                                             <exclude reference="e5D-ZC-1lD"/>
-                                            <exclude reference="5Lm-19-65E"/>
-                                            <exclude reference="cqk-H5-yH7"/>
-                                            <exclude reference="pKW-WS-4jt"/>
+                                            <exclude reference="KNY-FN-fpZ"/>
+                                            <exclude reference="PTT-9O-Gm9"/>
+                                            <exclude reference="aJL-T8-RiW"/>
+                                            <exclude reference="RON-as-KqF"/>
+                                            <exclude reference="a6I-H1-avR"/>
                                             <exclude reference="CZw-c8-f7k"/>
                                             <exclude reference="Zbt-F6-tZF"/>
                                             <exclude reference="b0b-eg-g93"/>
                                             <exclude reference="gPL-dg-dIs"/>
-                                            <exclude reference="VWn-4w-X9u"/>
-                                            <exclude reference="fls-8f-lfT"/>
-                                            <exclude reference="KNY-FN-fpZ"/>
-                                            <exclude reference="PTT-9O-Gm9"/>
-                                            <exclude reference="aJL-T8-RiW"/>
+                                            <exclude reference="5Lm-19-65E"/>
+                                            <exclude reference="cqk-H5-yH7"/>
+                                            <exclude reference="pKW-WS-4jt"/>
                                             <exclude reference="8wP-1o-edf"/>
                                             <exclude reference="EeI-fN-noJ"/>
                                             <exclude reference="FF1-7x-qCz"/>
-                                            <exclude reference="RON-as-KqF"/>
-                                            <exclude reference="a6I-H1-avR"/>
+                                            <exclude reference="VWn-4w-X9u"/>
+                                            <exclude reference="fls-8f-lfT"/>
                                         </mask>
                                     </variation>
                                     <variation key="heightClass=regular-widthClass=compact">
@@ -621,23 +621,23 @@
                                         </mask>
                                         <mask key="constraints">
                                             <include reference="e5D-ZC-1lD"/>
-                                            <exclude reference="5Lm-19-65E"/>
-                                            <include reference="cqk-H5-yH7"/>
-                                            <include reference="pKW-WS-4jt"/>
+                                            <include reference="KNY-FN-fpZ"/>
+                                            <include reference="PTT-9O-Gm9"/>
+                                            <include reference="aJL-T8-RiW"/>
+                                            <include reference="RON-as-KqF"/>
+                                            <include reference="a6I-H1-avR"/>
                                             <include reference="CZw-c8-f7k"/>
                                             <exclude reference="Zbt-F6-tZF"/>
                                             <exclude reference="b0b-eg-g93"/>
                                             <include reference="gPL-dg-dIs"/>
-                                            <include reference="VWn-4w-X9u"/>
-                                            <include reference="fls-8f-lfT"/>
-                                            <include reference="KNY-FN-fpZ"/>
-                                            <include reference="PTT-9O-Gm9"/>
-                                            <include reference="aJL-T8-RiW"/>
+                                            <exclude reference="5Lm-19-65E"/>
+                                            <include reference="cqk-H5-yH7"/>
+                                            <include reference="pKW-WS-4jt"/>
                                             <include reference="8wP-1o-edf"/>
                                             <include reference="EeI-fN-noJ"/>
                                             <include reference="FF1-7x-qCz"/>
-                                            <include reference="RON-as-KqF"/>
-                                            <include reference="a6I-H1-avR"/>
+                                            <include reference="VWn-4w-X9u"/>
+                                            <include reference="fls-8f-lfT"/>
                                         </mask>
                                     </variation>
                                 </view>

@@ -11,9 +11,11 @@
 #import "FeedbackViewController.h"
 #import "ChangePasswordController.h"
 #import "AboutViewController.h"
+#import "ApiLoginOutRequest.h"
+#import "SystemHandler.h"
 
 @interface SettingViewController ()<UITableViewDataSource,UITableViewDelegate>
-
+@property (nonatomic, strong) ApiLoginOutRequest *apiLoginOut;
 @end
 
 @implementation SettingViewController
@@ -69,6 +71,41 @@
     return cell;
     
 }
+#pragma mark -  APIRequestDelegate
+
+- (void)serverApi_RequestFailed:(APIRequest *)api error:(NSError *)error {
+    
+    [HUDManager hideHUDView];
+    
+    [AlertViewManager showAlertViewWithMessage:kDefaultNetWorkErrorString];
+    
+}
+
+- (void)serverApi_FinishedSuccessed:(APIRequest *)api result:(APIResult *)sr {
+    
+    [HUDManager hideHUDView];
+    
+    if (sr.dic == nil || [sr.dic isKindOfClass:[NSNull class]]) {
+        return;
+    }
+    //保存用户信息
+    [AccountManager sharedInstance].account.isLogin = @"no";
+    [[AccountManager sharedInstance] saveAccountInfoToDisk];
+    [HUDManager showWarningWithText:@"退出登录成功"];
+    kRootViewController = [SystemHandler rootViewController];
+    
+}
+
+- (void)serverApi_FinishedFailed:(APIRequest *)api result:(APIResult *)sr {
+    
+    NSString *message = sr.msg;
+    [HUDManager hideHUDView];
+    if (message.length == 0) {
+        message = kDefaultServerErrorString;
+    }
+    [AlertViewManager showAlertViewWithMessage:message];
+}
+
 
 #pragma mark - UITableViewDelegate
 
@@ -106,6 +143,20 @@
 
 
 #pragma mark - event response
+/**
+ *  退出按钮
+ */
+- (IBAction)Logout:(UIButton *)sender {
+    
+    [AlertViewManager showAlertViewMessage:@"确定要退出登录吗" handlerBlock:^{
+        self.apiLoginOut = [[ApiLoginOutRequest alloc]initWithDelegate:self];
+        [self.apiLoginOut setApiParams];
+        [APIClient execute:self.apiLoginOut];
+        [HUDManager showLoadingHUDView:self.view];
+        
+    }];
+}
+
 
 #pragma mark - private methods
 

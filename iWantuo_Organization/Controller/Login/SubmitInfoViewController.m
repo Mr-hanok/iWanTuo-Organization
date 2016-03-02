@@ -65,6 +65,10 @@
     self.addressArray = [NSMutableArray array];
     self.areaArray = [NSMutableArray array];
     self.areaModelArry = [NSMutableArray array];
+    
+    self.organiType = @"15";
+    self.organiTypeName = @"工作室";
+
     //添加手势
     UITapGestureRecognizer *ontTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(swapLabels:)];
     ontTap.numberOfTapsRequired = 1;
@@ -115,7 +119,7 @@
     
     if (api == self.apiRegister) {//注册
         
-        [HUDManager showWarningWithText:@"注册成功，请登录"];
+        [HUDManager showWarningWithText:@"感谢您的申请，我们会在24小时内为您开通账号"];
 //        LoginViewController *vc = [[LoginViewController alloc]init];
 //        [self.navigationController pushViewController:vc animated:YES];
         [self.navigationController popToRootViewControllerAnimated:YES];

@@ -16,6 +16,7 @@
 #import "SystemHandler.h"
 #import "HistoryCommentViewController.h"
 #import "LoginViewController.h"
+#import "ImageZoomTap.h"
 
 @interface OrganizationDetailViewController ()<APIRequestDelegate>
 
@@ -43,7 +44,6 @@
 @property (nonatomic, strong) ApiAddBookRequest *apiAddBook;
 @property (nonatomic, strong) OrganizationModel *organizationModel;
 
-
 @end
 
 @implementation OrganizationDetailViewController
@@ -54,6 +54,13 @@
     // Do any additional setup after loading the view from its nib.
     self.title = @"机构信息";
     
+    self.organizationIV1.userInteractionEnabled =self.organizationIV2.userInteractionEnabled= self.organizationIV3.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tap1  = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(magnifyImage1)];
+    [self.organizationIV1 addGestureRecognizer:tap1];
+    UITapGestureRecognizer *tap2  = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(magnifyImage2)];
+    [self.organizationIV2 addGestureRecognizer:tap2];
+    UITapGestureRecognizer *tap3  = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(magnifyImage3)];
+    [self.organizationIV3 addGestureRecognizer:tap3];
     
 }
 -(void)viewWillAppear:(BOOL)animated{
@@ -284,8 +291,15 @@
     LoginViewController *loginVC = [[LoginViewController alloc]init];
     loginVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:loginVC animated:YES];
-    
-    
+}
+- (void)magnifyImage1{
+    [ImageZoomTap showImage:self.organizationIV1];//调用方法
+}
+- (void)magnifyImage2{
+    [ImageZoomTap showImage:self.organizationIV2];//调用方法
+}
+- (void)magnifyImage3{
+    [ImageZoomTap showImage:self.organizationIV3];//调用方法
 }
 
 @end
