@@ -94,10 +94,10 @@
     self.followmodel = [FollowModel initWithDic:dic];
     
     if (api == self.apiFollowAdd) {//追踪签到按钮 新增签到
-        [HUDManager showWarningWithText:@"签到成功"];
+        [HUDManager showWarningWithText:@"签到操作成功"];
     }
     if (api == self.apiChange) {//追踪签到修改
-        [HUDManager showWarningWithText:@"修改成功"];
+        [HUDManager showWarningWithText:@"签到操作修改成功"];
     }
     self.imageName = @"";
     //发送通知 修改界面

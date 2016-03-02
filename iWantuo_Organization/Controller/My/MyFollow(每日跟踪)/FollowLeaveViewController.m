@@ -5,6 +5,8 @@
 //  Created by yuntai on 16/1/24.
 //  Copyright © 2016年 月 吴. All rights reserved.
 //
+#define Add @"add"
+#define Change @"change"
 
 #import "FollowLeaveViewController.h"
 #import "ApiFollowChangeRequest.h"
@@ -23,6 +25,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *followTeacherLabel;//追踪老师
 
 @property (nonatomic, strong) ApiFollowChangeRequest *apiChange;//改变跟踪状态接口
+@property (nonatomic, copy) NSString *type;
 @end
 
 @implementation FollowLeaveViewController
@@ -85,7 +88,12 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:ChangeViewInfoNoti object:self.followmodel];
     //发送通知 改变进度条图片
     [[NSNotificationCenter defaultCenter] postNotificationName:ChangeImageIvNoti object:@"3"];
-    [HUDManager showWarningWithText:@"成功"];
+    if ([self.type isEqualToString:Add]) {
+        [HUDManager showWarningWithText:@"离校操作成功"];
+    }
+    if ([self.type isEqualToString:Change]) {
+        [HUDManager showWarningWithText:@"离校操作修改成功"];
+    }
 }
 
 - (void)serverApi_FinishedFailed:(APIRequest *)api result:(APIResult *)sr {
@@ -147,6 +155,7 @@
     }
     [HUDManager showLoadingHUDView:KeyWindow];
     if ([self.followmodel.status isEqualToString:@"3"]) {//已经离校
+        self.type = Change;
         [self.apiChange setApiParamsWithId:self.followmodel.kid
                                      leave:self.remarkTV.text
                                 leaveImage:self.imageName
@@ -168,6 +177,7 @@
                                  studentId:self.studentId];
     }
     if ([self.followmodel.status isEqualToString:@"2"]) {//已经总结
+        self.type = Add;
         [self.apiChange setApiParamsWithId:self.followmodel.kid
                                      leave:self.remarkTV.text
                                 leaveImage:self.imageName
@@ -189,6 +199,7 @@
                                  studentId:self.studentId];
     }
     if ([self.followmodel.status isEqualToString:@"1"]) {//已经签到
+        self.type = Add;
         [self.apiChange setApiParamsWithId:self.followmodel.kid
                                      leave:self.remarkTV.text
                                 leaveImage:self.imageName

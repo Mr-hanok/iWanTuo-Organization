@@ -5,6 +5,10 @@
 //  Created by yuntai on 16/1/24.
 //  Copyright © 2016年 月 吴. All rights reserved.
 //
+#define Add @"add"
+#define Change @"change"
+
+
 #define ClassViewHeight 30.0
 #import "FollowSummaryController.h"
 #import "ZHPickView.h"
@@ -55,6 +59,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *followTeacherLabel;//追踪老师
 @property (weak, nonatomic) IBOutlet UIImageView *jianTouIV;//箭头图片
 @property (nonatomic, strong) NSMutableArray *jinTous;//图片数组
+@property (nonatomic, copy) NSString *type;//修改总结 新增总结
 
 @end
 
@@ -132,11 +137,18 @@
         self.workStatus = nil;
         self.workStatusName = nil;
         self.model = nil;
+        self.count = 1;
         //发送通知 传入界面
         [[NSNotificationCenter defaultCenter] postNotificationName:ChangeViewInfoNoti object:self.followmodel];
         //发送通知 改变进度条图片
         [[NSNotificationCenter defaultCenter] postNotificationName:ChangeImageIvNoti object:self.status];
-        [HUDManager showWarningWithText:@"总结成功"];
+        if ([self.type isEqualToString:Add]) {
+            [HUDManager showWarningWithText:@"总结操作成功"];
+        }
+        if ([self.type isEqualToString:Change]) {
+            [HUDManager showWarningWithText:@"总结操作修改成功"];
+        }
+        
     }
     
 }
@@ -335,6 +347,7 @@
     
     [HUDManager showLoadingHUDView:KeyWindow];
     if ([self.followmodel.status isEqualToString:@"1"]) {//已经签到
+        self.type = Add;
         self.status = @"2";
         self.statusName =@"总结";
         [self.apiChange setApiParamsWithId:self.followmodel.kid
@@ -361,6 +374,7 @@
 
     if ([self.followmodel.status isEqualToString:@"2"] ||[self.followmodel.status isEqualToString:@"3"]) {
         //已经总结 或者签到
+        self.type = Change;
         self.status = @"3";
         self.statusName =@"离校";
         [self.apiChange setApiParamsWithId:self.followmodel.kid
@@ -593,9 +607,9 @@
             if ([self.followmodel.grade isEqualToString:@"0"] || [self.followmodel.grade isEqualToString:@""]) {
                 self.gradeTF.text = nil;
             }else{
-                self.gradeTF.text = self.followmodel.grade;
+                self.gradeTF.text = self.fenshus[0];
             }
-            [self.classChoseBtn setTitle:self.followmodel.subjectName forState:UIControlStateNormal];
+            [self.classChoseBtn setTitle:self.xuekes[0] forState:UIControlStateNormal];
             
         }else if (self.xuekes.count == 0){//没有学科
             [self.classChoseBtn setTitle:@"选学科" forState:UIControlStateNormal];
