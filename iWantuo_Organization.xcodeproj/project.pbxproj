@@ -2496,7 +2496,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.uniomx.iwantuoOrganization;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1bdafd56-043f-4b22-b39c-397714bdc9ee";
+				PROVISIONING_PROFILE = "bc0d40b3-571f-4333-93da-e9b2d500a99d";
 			};
 			name = Debug;
 		};
@@ -2532,7 +2532,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.uniomx.iwantuoOrganization;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1bdafd56-043f-4b22-b39c-397714bdc9ee";
+				PROVISIONING_PROFILE = "bc0d40b3-571f-4333-93da-e9b2d500a99d";
 			};
 			name = Release;
 		};

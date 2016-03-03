@@ -268,6 +268,7 @@
 - (void)locationBtnAction:(UIButton *)btn {
     //启动LocationService
     [_locService startUserLocationService];
+    [self requestData1];
 //    [HUDManager showLoadingHUDView:self.view];
     
 }
@@ -291,10 +292,29 @@
     //请求数据
     self.api = [[ApiSearchOrganizationRequest alloc] initWithDelegate:self];
     [self.api setApiParamsWithLocation:[AccountManager sharedInstance].locationId bairro:@"" organization:@"" page:@"1" locationX:[NSString stringWithFormat:@"%@", @(self.coordinate.latitude)] locationY:[NSString stringWithFormat:@"%@", @(self.coordinate.longitude)] distance:@"5000" Type:@"1" rows:@"1000"];
+
     [APIClient execute:self.api];
     [HUDManager showLoadingHUDView:self.view];
     
 }
+- (void)requestData1 {
+    //清除之前的图层
+    [_mapView removeOverlays:_mapView.overlays];
+    [_mapView removeAnnotations:_mapView.annotations];
+    //画图层
+    [self addOverlayViewWithLatitude:self.coordinate.latitude longitude:self.coordinate.longitude];
+    //设置地图中心
+    [self.mapView setCenterCoordinate:self.coordinate animated:YES];
+    
+    //请求数据
+    self.api = [[ApiSearchOrganizationRequest alloc] initWithDelegate:self];
+    [self.api setApiParamsWithLocation:[AccountManager sharedInstance].locationId bairro:@"" organization:@"" page:@"1" locationX:[NSString stringWithFormat:@"%@", @(self.coordinate.latitude)] locationY:[NSString stringWithFormat:@"%@", @(self.coordinate.longitude)] distance:@"5000" Type:@"1" rows:@"1000"];
+    
+    [APIClient execute:self.api];
+//    [HUDManager showLoadingHUDView:self.view];
+    
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
