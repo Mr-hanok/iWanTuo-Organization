@@ -55,14 +55,12 @@
 {
     [HUDManager hideHUDView];
     
-    [HUDManager showWarningWithText:@"修改成功,请重新登录"];
+    [HUDManager showWarningWithText:@"修改密码成功!"];
     //保存用户信息
-    AccountModel *model =[AccountManager sharedInstance].account;
-    model.isLogin = @"no";
-    [[AccountManager sharedInstance] saveAccountInfoToDisk];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        kRootViewController = [SystemHandler rootViewController];
-    });
+    [self.navigationController popToRootViewControllerAnimated:YES];
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        kRootViewController = [SystemHandler rootViewController];
+//    });
     
 }
 - (void)serverApi_FinishedFailed:(APIRequest *)api result:(APIResult *)sr

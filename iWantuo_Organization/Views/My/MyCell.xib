@@ -145,7 +145,7 @@
                 <outlet property="typeIV" destination="Ts9-xR-brl" id="cdg-Ug-Ytj"/>
                 <outlet property="typeLabel" destination="fXt-fb-eDK" id="6G4-sR-a5E"/>
             </connections>
-            <point key="canvasLocation" x="-70" y="228"/>
+            <point key="canvasLocation" x="59" y="287"/>
         </tableViewCell>
     </objects>
     <resources>

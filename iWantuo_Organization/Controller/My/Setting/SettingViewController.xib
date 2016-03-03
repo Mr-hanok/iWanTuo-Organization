@@ -23,7 +23,7 @@
                         <outlet property="delegate" destination="-1" id="hKR-5o-MvC"/>
                     </connections>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P8o-uO-bxq">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P8o-uO-bxq">
                     <rect key="frame" x="56" y="577" width="263" height="35"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="35" id="WdK-KE-fXO"/>
