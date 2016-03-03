@@ -96,21 +96,16 @@
         return;
     }
     if (api == self.apiDetail) {
-        if (sr.status == 0) {
-            NSDictionary *dic = [sr.dic objectForKey:@"organization"];
-            self.organizationModel = [OrganizationModel initWithDic:dic];
-            self.organizationModel.isCollect = [ValueUtils stringFromObject:[sr.dic objectForKey:@"isCollect"]];
-            [self loadDataWithModel:self.organizationModel];
-        } else {
-            [HUDManager showWarningWithText:sr.msg];
-        }
+        
+        NSDictionary *dic = [sr.dic objectForKey:@"organization"];
+        self.organizationModel = [OrganizationModel initWithDic:dic];
+        self.organizationModel.isCollect = [ValueUtils stringFromObject:[sr.dic objectForKey:@"isCollect"]];
+        [self loadDataWithModel:self.organizationModel];
+       
     } else if (api == self.apiAddBook) {
-        if (sr.status == 1) {
-            [HUDManager showWarningWithText:sr.msg];
-        } else {
-            NSString *url=[NSString stringWithFormat:@"tel://%@",self.organizationModel.loginAccounts];
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
-        }
+        
+        NSString *url=[NSString stringWithFormat:@"tel://%@",self.organizationModel.loginAccounts];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
     }
 }
 
