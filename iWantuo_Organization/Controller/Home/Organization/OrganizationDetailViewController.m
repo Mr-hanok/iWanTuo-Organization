@@ -81,7 +81,9 @@
 - (void)serverApi_RequestFailed:(APIRequest *)api error:(NSError *)error {
 
     [HUDManager hideHUDView];
-    
+    if (api == self.apiDetail) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
     [AlertViewManager showAlertViewWithMessage:kDefaultNetWorkErrorString];
     
 }
@@ -113,7 +115,9 @@
 }
 
 - (void)serverApi_FinishedFailed:(APIRequest *)api result:(APIResult *)sr {
-
+    if (api == self.apiDetail) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
     NSString *message = sr.msg;
     [HUDManager hideHUDView];
     if (message.length == 0) {
