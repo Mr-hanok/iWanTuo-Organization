@@ -189,7 +189,7 @@
  *  分享
  */
 - (IBAction)shareBtnAction:(UIButton *)sender {
-    [SharSdkManager ShareEventClicked:self.view content:@"找好晚托，上爱晚托" url:[NSString stringWithFormat:@"http://iwantuo.com/fenxiang.html?id=%@", self.organizationModel.organizationId] imageUrl:@"http://iwantuo.com:10000/1.png"];
+    [SharSdkManager ShareEventClicked:self.view content:@"找好晚托，上爱晚托" url:[NSString stringWithFormat:@"%@fenxiang.html?id=%@", SERVER_HOST_PRODUCT, self.organizationModel.organizationId] imageUrl:@"http://iwantuo.com:10000/1.png"];
 }
 /**
  *  已评价
@@ -205,7 +205,12 @@
 
 - (void)loadDataWithModel:(OrganizationModel *)model {
     
-    self.organizationDetailTV.text = model.introduce;
+    if (model.introduce.length == 0) {
+        self.organizationDetailTV.text = @"本机构提供晚托、寒暑托服务，以培养孩子良好的学习习惯，生活习惯及综合能力为理念，以一切为了孩子为宗旨；让您的孩子爱上学习、让家长工作无忧。";
+    } else {
+       self.organizationDetailTV.text = model.introduce;
+    }
+    
     self.organizationNameLabel.text = model.organization;
     
     //设置上面三个图
@@ -220,13 +225,13 @@
             }
 
             if (i == 0) {
-                [self.organizationIV1 sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"DefaultImage"]];
+                [self.organizationIV1 sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"organization_place1"]];
             }
             if (i == 1) {
-                [self.organizationIV2 sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"DefaultImage"]];
+                [self.organizationIV2 sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"organization_place2"]];
             }
             if (i == 2) {
-                [self.organizationIV3 sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"DefaultImage"]];
+                [self.organizationIV3 sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"organization_place3"]];
             }
             
         }

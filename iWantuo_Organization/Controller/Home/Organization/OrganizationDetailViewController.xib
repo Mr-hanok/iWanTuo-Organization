@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -63,13 +63,12 @@
                                                 </mask>
                                             </variation>
                                         </label>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HrI-5t-AHc">
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="本机构提供晚托、寒暑托服务，以培养孩子良好的学习习惯，生活习惯及综合能力为理念，以一切为了孩子为宗旨；让您的孩子爱上学习、让家长工作无忧。" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HrI-5t-AHc">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="110" id="g9b-BN-ZmI"/>
                                             </constraints>
-                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo </string>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             <variation key="default">
@@ -124,7 +123,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KtK-qP-4EL">
                                     <rect key="frame" x="2" y="0.0" width="394" height="229"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="F7g-V5-adY">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="organization_place1" translatesAutoresizingMaskIntoConstraints="NO" id="F7g-V5-adY">
                                             <rect key="frame" x="20" y="20" width="100" height="120"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="F7g-V5-adY" secondAttribute="height" multiplier="5:6" id="qEN-a6-HIK"/>
@@ -140,7 +139,7 @@
                                                 </mask>
                                             </variation>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="Kuw-fa-7ym">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="organization_place3" translatesAutoresizingMaskIntoConstraints="NO" id="Kuw-fa-7ym">
                                             <rect key="frame" x="235" y="20" width="100" height="120"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="Kuw-fa-7ym" secondAttribute="height" multiplier="5:6" id="C3p-A4-kJx"/>
@@ -175,7 +174,7 @@
                                                 </mask>
                                             </variation>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="GhJ-AZ-Bq8">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="organization_place2" translatesAutoresizingMaskIntoConstraints="NO" id="GhJ-AZ-Bq8">
                                             <rect key="frame" x="168" y="55" width="100" height="120"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="GhJ-AZ-Bq8" secondAttribute="height" multiplier="5:6" id="EuY-a2-FwX"/>
@@ -503,7 +502,7 @@
                                                         </mask>
                                                     </variation>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="私营企业" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WbU-Rm-Jhs">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="工作室" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WbU-Rm-Jhs">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1037,13 +1036,15 @@
         </view>
     </objects>
     <resources>
-        <image name="DefaultImage" width="162" height="161"/>
         <image name="organization_StarGray" width="13" height="12"/>
         <image name="organization_StarYellow" width="13" height="12"/>
         <image name="organization_auth" width="78" height="70"/>
         <image name="organization_bookBtn" width="188" height="30"/>
         <image name="organization_comment" width="16" height="16"/>
         <image name="organization_location" width="12" height="16"/>
+        <image name="organization_place1" width="111" height="86"/>
+        <image name="organization_place2" width="150" height="99"/>
+        <image name="organization_place3" width="152" height="113"/>
         <image name="organization_tag" width="14" height="14"/>
     </resources>
 </document>
