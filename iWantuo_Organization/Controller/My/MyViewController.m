@@ -176,9 +176,9 @@
             //            }
             break;
         case 7://设置
-             if ([self limitAccountType]) {
+            // if ([self limitAccountType]) {
                  vc = [[SettingViewController alloc] init];
-             }
+            // }
             break;
 
     }

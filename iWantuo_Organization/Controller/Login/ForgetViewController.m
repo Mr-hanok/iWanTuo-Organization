@@ -10,6 +10,8 @@
 #import "ApiFindPassWord.h"
 #import "ApiSendPhoneMessage.h"
 #import "JKCountDownButton.h"
+#import "ApiLoginRequest.h"
+#import "SystemHandler.h"
 
 @interface ForgetViewController ()<APIRequestDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *registerBtn;
@@ -23,6 +25,7 @@
 @property (nonatomic, strong) ApiFindPassWord *apiFind;//找回密码
 @property (nonatomic, strong) ApiSendPhoneMessage *apiSM;//短信
 @property (nonatomic, copy) NSString *verificatCode;
+@property (nonatomic, strong) ApiLoginRequest *apiLogin;//登录接口
 @end
 
 @implementation ForgetViewController
@@ -75,9 +78,17 @@
         return;
     }
     if (api == self.apiFind) {//找回密码
-        //修改成功 重新登录
-        [HUDManager showWarningWithText:@"找回成功，请登录"];
-        [self.navigationController popViewControllerAnimated:YES];
+        //修改成功 调用登录接口 直接登录
+//        [HUDManager showWarningWithText:@"找回成功，请登录"];
+//        [self.navigationController popViewControllerAnimated:YES];
+        [HUDManager showLoadingHUDView:self.view];
+        self.apiLogin = [[ApiLoginRequest alloc]initWithDelegate:self];
+        [self.apiLogin setApiParamsWithLoginAccount:self.phoneNumTF.text Password:self.passwordTF.text];
+        [APIClient execute:self.apiLogin];
+
+    }
+    if (api == self.apiLogin) {
+        [self loginsuccess:sr];
     }
     if (api == self.apiSM) {//短信验证
         [self countDownBtn:self.registerBtn];
@@ -113,7 +124,6 @@
         return;
     }
 
-    
     self.apiFind = [[ApiFindPassWord alloc]initWithDelegate:self];
 
     [self.apiFind setApiParamsWithLoginAccount:self.phoneNumTF.text Password:self.passwordTF.text];
@@ -179,6 +189,32 @@
     
     return YES;
 }
+- (void)loginsuccess:(APIResult *)sr{
+    NSDictionary *teacherDic = [sr.dic objectForKey:[ValueUtils stringFromObject:@"Teacher"]];
+    NSDictionary *origanDic = [sr.dic objectForKey:[ValueUtils stringFromObject:@"Organization"]];
+    AccountModel *model = nil;
+    if ([teacherDic isKindOfClass:[NSNull class]] && origanDic ==nil ) {
+        [HUDManager showWarningWithText:@"尚未认证！"];
+        return;
+    }
+    if ([origanDic isKindOfClass:[NSNull class]] && teacherDic == nil ) {
+        [HUDManager showWarningWithText:@"尚未认证！"];
+        return;
+    }
+    if (teacherDic) {//教师登录
+        model =[AccountModel initWithDict:[sr.dic objectForKey:@"Teacher"] accountType:@"3"];
+    }
+    
+    if (origanDic) {//机构登录
+        model =[AccountModel initWithDict:[sr.dic objectForKey:@"Organization"] accountType:@"2"];
+    }
+    //保存用户信息
+    model.isLogin = @"yes";
+    [AccountManager sharedInstance].account = model;
+    [[AccountManager sharedInstance] saveAccountInfoToDisk];
+    //登录成功 切换根控制器
+    kRootViewController = [SystemHandler rootViewController];
 
+}
 
 @end

@@ -16,8 +16,9 @@
 #import "ApiFollowChangeRequest.h"
 #import "CityInfoModel.h"
 #import "ApiFollowChangeRequest.h"
+#import "AFFNumericKeyboard.h"
 
-@interface FollowSummaryController ()<ZHPickViewDelegate,APIRequestDelegate,UITextFieldDelegate>
+@interface FollowSummaryController ()<ZHPickViewDelegate,APIRequestDelegate,UITextFieldDelegate,AFFNumericKeyboardDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *remarkTV;//备注
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *xingweiStarts;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *studyStarts;
@@ -60,6 +61,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *jianTouIV;//箭头图片
 @property (nonatomic, strong) NSMutableArray *jinTous;//图片数组
 @property (nonatomic, copy) NSString *type;//修改总结 新增总结
+@property (nonatomic, strong) UITextField *currTF;
+@property (nonatomic, strong) AFFNumericKeyboard *aff;
 
 @end
 
@@ -102,6 +105,11 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [MobClick beginLogPageView:@"跟踪总结页面"];
+    //数字键盘处理
+    self.aff = [[AFFNumericKeyboard alloc] initWithFrame:CGRectMake(0, 200, kScreenBoundWidth, 216)];
+    self.gradeTF.inputView = self.aff;
+    self.aff.delegate = self;
+
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
@@ -175,6 +183,7 @@
             }
         }
     }
+    self.currTF = textField;
     return YES;
 }
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
@@ -215,6 +224,24 @@
     }
     
     
+}
+#pragma mark - AFFNumericKeyboardDelegate
+-(void)numberKeyboardBackspace
+{
+    if (self.currTF.text.length != 0)
+    {
+        self.currTF.text = [self.currTF.text substringToIndex:self.currTF.text.length -1];
+    }
+}
+
+-(void)numberKeyboardInput:(NSInteger)number
+{
+    int num = (int)number;
+    self.currTF.text = [self.currTF.text stringByAppendingString:[NSString stringWithFormat:@"%d",num]];
+}
+
+- (void)writeInRadixPoint{
+    self.currTF.text = [self.currTF.text stringByAppendingString:[NSString stringWithFormat:@"%@",@"."]];
 }
 
 #pragma mark - event response
@@ -278,21 +305,10 @@
         [HUDManager showWarningWithText:@"请先签到"];
         return;
     }
-    //    if (![self.classChoseBtn.titleLabel.text isEqualToString:@"选学科"]&& self.otherTF.count==0) {
-    //        if ([self.gradeTF.text integerValue]>100 ||[self.gradeTF.text integerValue]<=0) {
-    //            [HUDManager  showWarningWithText:@"请输入100以内的分数!"];
-    //            return ;
-    //        }
-    //    }
-    //
-    //    if (self.otherTF.count>0) {
-    //        UITextField *classTf = [self.otherTF lastObject];
-    //        if (classTf.text.length==0 || [[classTf.text stringByTrimmingCharactersInSet:[NSMutableCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
-    //            [HUDManager  showWarningWithText:@"请输入100以内的分数!"];
-    //            return;
-    //        }
-    //    }
-    
+    if ([self.workStatus isEqualToString:@"0"]) {
+        [HUDManager showWarningWithText:@"请选择作业是否完成!"];
+        return;
+    }
     if ([self.remarkTV.text containsString:[NSString specialBlankCharacter]]) {
         [HUDManager showWarningWithText:@"暂不支持系统表情哦~"
          ];
@@ -471,6 +487,9 @@
     [tf setKeyboardType:UIKeyboardTypeNumberPad];;
     [self.otherTF addObject:tf];
     
+    tf.inputView = self.aff;
+    self.aff.delegate = self;
+    
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(self.gradeTF.frame.origin.x, self.gradeTF.frame.origin.y+ClassViewHeight*self.count+ClassViewHeight, self.gradeTF.frame.size.width, 1)];
     view.backgroundColor = kBGColor;
     [self.otherView addObject:view];
@@ -536,9 +555,19 @@
         if ([self.followmodel.workStatus isEqualToString:@"1"]) {//完成
             self.completeBtn.selected = YES;
             self.uncompleteBtn.selected = NO;
+            self.workStatus = @"1";
+            self.workStatusName = @"完成";
         }else if ([self.followmodel.workStatus isEqualToString:@"2"]){//未完成
             self.completeBtn.selected = NO;
             self.uncompleteBtn.selected = YES;
+            self.workStatus = @"2";
+            self.workStatusName = @"未完成";
+
+        }else{
+            self.completeBtn.selected = NO;
+            self.uncompleteBtn.selected = NO;
+            self.workStatus = @"0";
+            self.workStatusName = nil;
         }
         //分隔字符串 加入学科数组  分数数字
         self.className = self.followmodel.subjectName;
@@ -592,6 +621,8 @@
                     [self.otherTF addObject:tf];
                     [self.classView addSubview:tf];
                
+                tf.inputView = self.aff;
+                self.aff.delegate = self;
                 
                 UIView *view = [[UIView alloc]initWithFrame:CGRectMake(self.gradeTF.frame.origin.x, self.gradeTF.frame.origin.y+ClassViewHeight*i+ClassViewHeight, self.gradeTF.frame.size.width, 1)];
                 view.backgroundColor = kBGColor;
