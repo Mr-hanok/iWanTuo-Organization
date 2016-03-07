@@ -129,6 +129,7 @@
     if ([view isKindOfClass:[BMKAnnotationView class]]){
         OrganizationDetailViewController *detailVC = [[OrganizationDetailViewController alloc] init];
         detailVC.loginAccounts = [NSString stringWithFormat:@"%@", @(view.tag)];
+        detailVC.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:detailVC animated:YES];
         return;
     }

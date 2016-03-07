@@ -98,6 +98,7 @@
             NSArray *array = [sr.dic objectForKey:@"studentList"];
             for (NSDictionary *dic in array) {
                 StudentModel *model = [StudentModel initWithDic:dic];
+                model.isAdd = NO;
                 [self.dataArray addObject:model];
             }
             
@@ -208,6 +209,16 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    StudentModel *model = [self.dataArray objectAtIndex:indexPath.row];
+    model.isAdd = !model.isAdd;
+    
+    if ([self.addArray indexOfObject:model] < self.addArray.count) {
+        [self.addArray removeObject:model];
+    } else {
+        [self.addArray addObject:model];
+    }
+    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:(UITableViewRowAnimationNone)];
+//    btn.selected = !btn.selected;
 }
 
 #pragma mark - event response

@@ -113,8 +113,7 @@
         self.indexPath = indexPath;
         TeacherModel *model = [self.dataArray objectAtIndex:indexPath.row];
         self.apiDelete = [[ApiDeleteTeacherRequest alloc] initWithDelegate:self];
-        [self.apiDelete setApiParamsWithTeacherId:model.teacherId
-                                            login:[AccountManager sharedInstance].account.loginAccounts];
+        [self.apiDelete setApiParamsWithTeacherId:model.teacherId login:[AccountManager sharedInstance].account.loginAccounts loginAccounts:model.loginAccounts];
         [APIClient execute:self.apiDelete];
         [HUDManager showLoadingHUDView:self.tableview];
        

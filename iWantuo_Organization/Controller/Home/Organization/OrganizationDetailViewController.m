@@ -62,6 +62,12 @@
     UITapGestureRecognizer *tap3  = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(magnifyImage3)];
     [self.organizationIV3 addGestureRecognizer:tap3];
     
+    self.organizationIV1.image =[UIImage imageNamed:@"organization_place1"];
+    self.organizationIV2.image =[UIImage imageNamed:@"organization_place2"];
+    self.organizationIV3.image =[UIImage imageNamed:@"organization_place3"];
+
+    [self.historyCommentBtn setTitleColor:kNavigationColor forState:(UIControlStateNormal)];
+
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
