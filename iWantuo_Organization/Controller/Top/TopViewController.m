@@ -41,8 +41,6 @@
     }];
     
     self.api = [[ApiActiveRequest alloc] initWithDelegate:self];
-    [APIClient execute:self.api];
-    [HUDManager showLoadingHUDView:KeyWindow];
     
     [self.top1IV bk_whenTapped:^{
         if (self.dataArray.count >= 1){
