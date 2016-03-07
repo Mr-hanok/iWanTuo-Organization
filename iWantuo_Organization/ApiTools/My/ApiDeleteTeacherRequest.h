@@ -12,6 +12,5 @@
  */
 @interface ApiDeleteTeacherRequest : APIRequest
 
-- (void)setApiParamsWithTeacherId:(NSString *)teacherId login:(NSString *)login;
-
+- (void)setApiParamsWithTeacherId:(NSString *)teacherId login:(NSString *)login loginAccounts:(NSString *)loginAccounts;
 @end

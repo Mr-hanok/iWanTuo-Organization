@@ -112,6 +112,7 @@
             for (NSDictionary *dic in array) {
                 
                 StudentModel *model = [StudentModel initWithDic:dic];
+                model.isDelete = NO;
                 [self.dataArray addObject:model];
             }
             //是否有数据
@@ -225,6 +226,14 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    StudentModel *model = [self.dataArray objectAtIndex:indexPath.row];
+    model.isDelete = !model.isDelete;
+    if ([self.deleteArray indexOfObject:model] < self.deleteArray.count) {
+        [self.deleteArray removeObject:model];
+    } else {
+        [self.deleteArray addObject:model];
+    }
+    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:(UITableViewRowAnimationNone)];
 }
 #pragma mark -ClassDetailCellDelegate
 -(void)classDetailCellSeletBtn:(UIButton *)btn withIndexPathRow:(NSInteger)row{
