@@ -274,14 +274,14 @@
         [HUDManager showWarningWithText:@"请输入详细地址"];
         return NO;
     }
-    if (self.emailTF.text.length == 0 ||[[self.emailTF.text stringByTrimmingCharactersInSet:[NSMutableCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
-        [HUDManager showWarningWithText:@"请输入邮箱"];
-        return NO;
-    }
-    if (![NSString tf_isValidateEmail:self.emailTF.text]) {
-        [HUDManager showWarningWithText:@"请输入正确邮箱地址"];
-        return NO;
-    }
+//    if (self.emailTF.text.length == 0 ||[[self.emailTF.text stringByTrimmingCharactersInSet:[NSMutableCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
+//        [HUDManager showWarningWithText:@"请输入邮箱"];
+//        return NO;
+//    }
+//    if (![NSString tf_isValidateEmail:self.emailTF.text]) {
+//        [HUDManager showWarningWithText:@"请输入正确邮箱地址"];
+//        return NO;
+//    }
     if (self.shortNameTF.text.length>10) {
         [HUDManager showWarningWithText:@"请输入10字以内的简称"];
         return NO;
@@ -306,8 +306,7 @@
     if ([self.shortNameTF.text containsString:[NSString specialBlankCharacter]] ||
         [self.FullNameTF.text containsString:[NSString specialBlankCharacter]] ||
         [self.trueNameTF.text containsString:[NSString specialBlankCharacter]] ||
-        [self.detialAdressTF.text containsString:[NSString specialBlankCharacter]] ||
-        [self.emailTF.text containsString:[NSString specialBlankCharacter]]) {
+        [self.detialAdressTF.text containsString:[NSString specialBlankCharacter]]) {
         [HUDManager showWarningWithText:@"暂不支持系统表情哦~"
          ];
         return NO;

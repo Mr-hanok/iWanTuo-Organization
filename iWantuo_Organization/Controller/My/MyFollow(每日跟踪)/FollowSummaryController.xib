@@ -67,7 +67,8 @@
                                                     <exclude reference="Cjk-LH-PbN"/>
                                                 </mask>
                                             </variation>
-                                            <variation key="heightClass=regular-widthClass=compact">
+                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                <rect key="frame" x="73" y="7" width="95" height="16"/>
                                                 <mask key="constraints">
                                                     <include reference="Cjk-LH-PbN"/>
                                                 </mask>
@@ -92,7 +93,8 @@
                                                     <exclude reference="7uU-bK-dix"/>
                                                 </mask>
                                             </variation>
-                                            <variation key="heightClass=regular-widthClass=compact">
+                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                <rect key="frame" x="193" y="7" width="95" height="16"/>
                                                 <mask key="constraints">
                                                     <include reference="7uU-bK-dix"/>
                                                 </mask>
@@ -462,7 +464,7 @@
                                                 <constraint firstAttribute="height" constant="30" id="9zM-QX-Oxu"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            <textInputTraits key="textInputTraits"/>
                                             <variation key="default">
                                                 <mask key="constraints">
                                                     <exclude reference="9zM-QX-Oxu"/>

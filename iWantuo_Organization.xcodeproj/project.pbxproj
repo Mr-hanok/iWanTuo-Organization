@@ -67,6 +67,7 @@
 		37D7250B1C4F97E10055721B /* MyClassCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37D725091C4F97E10055721B /* MyClassCell.xib */; };
 		37D725121C4FA6960055721B /* MyClassTeacherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D725101C4FA6960055721B /* MyClassTeacherCell.m */; };
 		37D725131C4FA6960055721B /* MyClassTeacherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37D725111C4FA6960055721B /* MyClassTeacherCell.xib */; };
+		37D821621C8D26F500982CC3 /* AFFNumericKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D821611C8D26F500982CC3 /* AFFNumericKeyboard.m */; };
 		37E1DDC31C4DD92600245BE6 /* PersonDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E1DD9E1C4DD92600245BE6 /* PersonDetailController.m */; };
 		37E1DDC41C4DD92600245BE6 /* PersonDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E1DD9F1C4DD92600245BE6 /* PersonDetailController.xib */; };
 		37E1DDCB1C4DD92600245BE6 /* MyMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E1DDAE1C4DD92600245BE6 /* MyMessageViewController.m */; };
@@ -405,6 +406,8 @@
 		37D7250F1C4FA6960055721B /* MyClassTeacherCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyClassTeacherCell.h; sourceTree = "<group>"; };
 		37D725101C4FA6960055721B /* MyClassTeacherCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyClassTeacherCell.m; sourceTree = "<group>"; };
 		37D725111C4FA6960055721B /* MyClassTeacherCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyClassTeacherCell.xib; sourceTree = "<group>"; };
+		37D821601C8D26F500982CC3 /* AFFNumericKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFFNumericKeyboard.h; sourceTree = "<group>"; };
+		37D821611C8D26F500982CC3 /* AFFNumericKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFFNumericKeyboard.m; sourceTree = "<group>"; };
 		37E1DD9D1C4DD92600245BE6 /* PersonDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonDetailController.h; sourceTree = "<group>"; };
 		37E1DD9E1C4DD92600245BE6 /* PersonDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonDetailController.m; sourceTree = "<group>"; };
 		37E1DD9F1C4DD92600245BE6 /* PersonDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonDetailController.xib; sourceTree = "<group>"; };
@@ -1548,6 +1551,8 @@
 		BE25EBAE1C44FDB300068309 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				37D821601C8D26F500982CC3 /* AFFNumericKeyboard.h */,
+				37D821611C8D26F500982CC3 /* AFFNumericKeyboard.m */,
 				37A2EBED1C86D33800339B91 /* ImageZoomTap.h */,
 				37A2EBEE1C86D33800339B91 /* ImageZoomTap.m */,
 				BE25EBAF1C44FDB300068309 /* TimerHelper.h */,
@@ -2233,6 +2238,7 @@
 				BE69F3A41C51C94D00EFA44D /* TeacherModel.m in Sources */,
 				37BE7E601C58BA40000F7CF8 /* ApiChangeArganization.m in Sources */,
 				37D725121C4FA6960055721B /* MyClassTeacherCell.m in Sources */,
+				37D821621C8D26F500982CC3 /* AFFNumericKeyboard.m in Sources */,
 				BED7D8B91C50A6DB005A338E /* AddStudentCell.m in Sources */,
 				BE2DEF8E1C8D5A3500FD072F /* MJPhoto.m in Sources */,
 				BE25EB9F1C44FD9200068309 /* NSString+Verify.m in Sources */,
