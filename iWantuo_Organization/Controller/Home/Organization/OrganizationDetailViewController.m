@@ -17,6 +17,8 @@
 #import "HistoryCommentViewController.h"
 #import "LoginViewController.h"
 #import "ImageZoomTap.h"
+#import "MJPhotoBrowser.h"
+#import "MJPhoto.h"
 
 @interface OrganizationDetailViewController ()<APIRequestDelegate>
 
@@ -44,10 +46,19 @@
 @property (nonatomic, strong) ApiAddBookRequest *apiAddBook;
 @property (nonatomic, strong) OrganizationModel *organizationModel;
 
+@property (nonatomic, strong) NSMutableArray *photoArray;
+
 @end
 
 @implementation OrganizationDetailViewController
 #pragma mark - life cycle
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.photoArray = [NSMutableArray array];
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -68,15 +79,25 @@
 
     [self.historyCommentBtn setTitleColor:kNavigationColor forState:(UIControlStateNormal)];
 
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [HUDManager showLoadingHUDView:self.view];
+        self.apiDetail = [[ApiOrganizationDetailRequest alloc] initWithDelegate:self];
+        [self.apiDetail setApiParamsWithLoginAccounts:self.loginAccounts currentLogin:[AccountManager sharedInstance].account.loginAccounts];
+        [APIClient execute:self.apiDetail];
+        
+    });
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [MobClick beginLogPageView:self.title];
     
-    self.apiDetail = [[ApiOrganizationDetailRequest alloc] initWithDelegate:self];
-    [self.apiDetail setApiParamsWithLoginAccounts:self.loginAccounts currentLogin:[AccountManager sharedInstance].account.loginAccounts];
-    [APIClient execute:self.apiDetail];
-    [HUDManager showLoadingHUDView:self.view];
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [HUDManager showLoadingHUDView:self.view];
+//        self.apiDetail = [[ApiOrganizationDetailRequest alloc] initWithDelegate:self];
+//        [self.apiDetail setApiParamsWithLoginAccounts:self.loginAccounts currentLogin:[AccountManager sharedInstance].account.loginAccounts];
+//        [APIClient execute:self.apiDetail];
+//        
+//    });
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
@@ -195,7 +216,7 @@
  *  分享
  */
 - (IBAction)shareBtnAction:(UIButton *)sender {
-    [SharSdkManager ShareEventClicked:self.view content:@"找好晚托，上爱晚托" url:[NSString stringWithFormat:@"%@fenxiang.html?id=%@", SERVER_HOST_PRODUCT, self.organizationModel.organizationId] imageUrl:@"http://iwantuo.com:10000/1.png"];
+    [SharSdkManager ShareEventClicked:self.view content:@"找好晚托，上爱晚托" url:[NSString stringWithFormat:@"iwantuo.com/wantuo/fenxiang.html?id=%@", self.organizationModel.organizationId] imageUrl:@"http://iwantuo.com:10000/1.png"];
 }
 /**
  *  已评价
@@ -229,7 +250,7 @@
             }else{
                 url = [NSString stringWithFormat:@"%@%@",@"http://www.",url];
             }
-
+            [self.photoArray addObject:url];
             if (i == 0) {
                 [self.organizationIV1 sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"organization_place1"]];
             }
@@ -303,13 +324,72 @@
     [self.navigationController pushViewController:loginVC animated:YES];
 }
 - (void)magnifyImage1{
-    [ImageZoomTap showImage:self.organizationIV1];//调用方法
+//    [ImageZoomTap showImage:self.organizationIV1];//调用方法
+    
+    // 图片浏览器
+    MJPhotoBrowser *browser = [[MJPhotoBrowser alloc] init];
+    // 传给照片模型
+    MJPhoto *photo = [[MJPhoto alloc] init];
+    
+    photo.srcImageView = self.organizationIV1;
+    if (self.photoArray.count >= 1) {
+        photo.url = [NSURL URLWithString:self.photoArray[0]];
+    } else {
+        photo.image = [UIImage imageNamed:@"organization_place1"];
+        photo.url = [NSURL URLWithString:@"http://iwantuo.com:10000/03071.png"];
+    }
+    
+    photo.save = YES;
+    
+    browser.photos = @[photo];
+    browser.currentPhotoIndex = 0;
+    browser.originalIndex = 0;
+    [browser show];
+    
 }
 - (void)magnifyImage2{
-    [ImageZoomTap showImage:self.organizationIV2];//调用方法
+//    [ImageZoomTap showImage:self.organizationIV2];//调用方法
+    // 图片浏览器
+    MJPhotoBrowser *browser = [[MJPhotoBrowser alloc] init];
+    // 传给照片模型
+    MJPhoto *photo = [[MJPhoto alloc] init];
+    
+    photo.srcImageView = self.organizationIV2;
+    if (self.photoArray.count >= 2) {
+        photo.url = [NSURL URLWithString:self.photoArray[1]];
+    } else {
+        photo.image = [UIImage imageNamed:@"organization_place2"];
+        photo.url = [NSURL URLWithString:@"http://iwantuo.com:10000/03072.png"];
+    }
+    
+    //    photo.save = YES;
+    
+    browser.photos = @[photo];
+    browser.currentPhotoIndex = 0;
+    browser.originalIndex = 0;
+    [browser show];
 }
 - (void)magnifyImage3{
-    [ImageZoomTap showImage:self.organizationIV3];//调用方法
+//    [ImageZoomTap showImage:self.organizationIV3];//调用方法
+    // 图片浏览器
+    MJPhotoBrowser *browser = [[MJPhotoBrowser alloc] init];
+    // 传给照片模型
+    MJPhoto *photo = [[MJPhoto alloc] init];
+    
+    photo.srcImageView = self.organizationIV1;
+    if (self.photoArray.count >= 3) {
+        photo.url = [NSURL URLWithString:self.photoArray[2]];
+    } else {
+        photo.image = [UIImage imageNamed:@"organization_place3"];
+        photo.url = [NSURL URLWithString:@"http://iwantuo.com:10000/03073.png"];
+    }
+    
+    //    photo.save = YES;
+    
+    browser.photos = @[photo];
+    browser.currentPhotoIndex = 0;
+    browser.originalIndex = 0;
+    [browser show];
 }
 
 @end
