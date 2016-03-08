@@ -29,6 +29,7 @@
 @property (nonatomic, strong) NSMutableArray *behaviorArray;
 @property (nonatomic, strong) NSMutableArray *growArray;
 @property (nonatomic, strong) NSMutableArray *comprehensiveArray;
+@property (nonatomic, strong) NSMutableArray *avgTitleArray;
 
 @property (nonatomic, strong) NSString *overRun;
 
@@ -44,6 +45,7 @@
         self.behaviorArray = [NSMutableArray array];
         self.growArray = [NSMutableArray array];
         self.comprehensiveArray = [NSMutableArray array];
+        self.avgTitleArray = [NSMutableArray array];
     }
     return self;
 }
@@ -52,6 +54,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.title = @"成长曲线";
+    
     NSDate *date = [NSDate date];
     NSInteger time = date.timeIntervalSince1970;
     
@@ -66,8 +69,9 @@
     
     
     [self.selectedDateBtn setTitle:[date fs_stringWithFormat:@"yyyy年MM月"] forState:UIControlStateNormal];
+    //    self.overLabel.lineBreakMode = UILineBreakModeWordWrap;
+    //    UILineBreakModeWordWrap
     
-
     [self setupPickView];
     
     
@@ -91,18 +95,18 @@
 
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 #pragma mark - APIRequestDelegate
 - (void)serverApi_RequestFailed:(APIRequest *)api error:(NSError *)error {
-
+    
     [HUDManager hideHUDView];
     
     [AlertViewManager showAlertViewWithMessage:kDefaultNetWorkErrorString];
@@ -110,7 +114,7 @@
 }
 
 - (void)serverApi_FinishedSuccessed:(APIRequest *)api result:(APIResult *)sr {
-
+    
     [HUDManager hideHUDView];
     
     if (sr.dic == nil || [sr.dic isKindOfClass:[NSNull class]]) {
@@ -125,10 +129,11 @@
             self.overRun = [ValueUtils stringFromObject:[sr.dic objectForKey:@"average"]];
             
             self.overLabel.font = [UIFont systemFontOfSize:16];
-            NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"您的孩子打败了'爱晚托'同级%@%%的同学!", self.overRun]];
+            NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"您的孩子打败了'爱晚托'同级%@%%的同学", self.overRun]];
             [str addAttribute:NSForegroundColorAttributeName value:kNavigationColor range:NSMakeRange(14,self.overRun.length + 1)];
             [str addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Helvetica-Bold" size:20] range:NSMakeRange(14,self.overRun.length + 1)];
             self.overLabel.attributedText = str;
+            
             
             NSArray *array = [sr.dic objectForKey:@"traceList"];
             for (NSDictionary *dic in array) {
@@ -145,8 +150,14 @@
             [self setupChartView];
         } else if (api == self.apiAvg) {
             [self.comprehensiveArray removeAllObjects];
+            [self.avgTitleArray removeAllObjects];
             NSArray *array = [sr.dic objectForKey:@"traceList"];
             for (NSDictionary *dic in array) {
+                NSString *str = [dic objectForKey:@"createDate"];
+                NSInteger length = str.length - 2;
+                NSRange range = {length, 2};
+                str = [str substringWithRange:range];
+                [self.avgTitleArray addObject:[ValueUtils stringFromObject:str]];
                 [self.comprehensiveArray addObject:[ValueUtils stringFromObject:[dic objectForKey:@"average"]]];
             }
             [self setupAvgChartView];
@@ -160,7 +171,7 @@
 }
 
 - (void)serverApi_FinishedFailed:(APIRequest *)api result:(APIResult *)sr {
-
+    
     NSString *message = sr.msg;
     [HUDManager hideHUDView];
     if (message.length == 0) {
@@ -181,18 +192,24 @@
     [HUDManager showLoadingHUDView:KeyWindow];
     [self.api setApiParamesWithStudentId:self.studentId createDate:[NSString stringWithFormat:@"%@", @(selectDate.timeIntervalSince1970)]];
     [APIClient execute:self.api];
+    
+    self.apiAvg = [[ApiGrowAvgRequest alloc] initWithDelegate:self];
+    [self.apiAvg setApiParamesWithStudentId:self.studentId createDate:[NSString stringWithFormat:@"%@", @(selectDate.timeIntervalSince1970)]];
+    [APIClient execute:self.apiAvg];
 }
 
 #pragma mark - UUChartDataSource
 //横坐标标题数组
 - (NSArray *)chartConfigAxisXLabel:(UUChart *)chart {
-    
+    if (chart.tag == 6000003) {
+        return self.avgTitleArray;
+    }
     return self.titleArray;
 }
 
 //数值多重数组
 - (NSArray *)chartConfigAxisYValue:(UUChart *)chart {
-
+    
     
     if (chart.tag == 6000001) {
         return @[self.behaviorArray];
@@ -253,7 +270,7 @@
  *  @brief 设置pickDateView
  */
 - (void)setupPickView {
-
+    
     NSDate *currentDate = [NSDate date];
     NSMutableArray *pickYearArray = [NSMutableArray arrayWithCapacity:100];
     for (NSInteger i = 0; i < 100; i++) {
