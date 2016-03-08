@@ -253,14 +253,24 @@
     switch (sender.tag) {
         case 111://已完成作业
             self.uncompleteBtn.selected = NO;
-            self.workStatus = @"1";
-            self.workStatusName =@"完成";
+            if (sender.selected) {
+                self.workStatus = @"1";
+                self.workStatusName =@"完成";
+            }else{
+                self.workStatus = @"0";
+                self.workStatusName = nil;
+            }
             break;
             
         case 112://未完成作业
             self.completeBtn.selected = NO;
-            self.workStatus = @"2";
-            self.workStatusName =@"未完成";
+            if (sender.selected) {
+                self.workStatus = @"2";
+                self.workStatusName =@"未完成";
+            }else{
+                self.workStatus = @"0";
+                self.workStatusName = nil;
+            }
             break;
     }
 }
@@ -387,9 +397,34 @@
                                  studentId:self.studentId];
         
     }
+    if ([self.followmodel.status isEqualToString:@"2"] ) {
+        //已经总结
+        self.type = Change;
+        self.status = @"2";
+        self.statusName =@"总结";
+        [self.apiChange setApiParamsWithId:self.followmodel.kid
+                                     leave:@""
+                                leaveImage:@""
+                                workStatus:self.workStatus
+                            workStatusName:self.workStatusName
+                                  behavior:self.behavior
+                                     study:self.study
+                                     grade:self.classGrade
+                                   subject:self.classid
+                               subjectName:self.className
+                                    status:@""
+                                statusName:@""
+                                    signIn:@""
+                               signInImage:@""
+                                      note:self.remarkTV.text
+                             summaryPerson:@""
+                               leavePerson:@""
+                                   loginin:[AccountManager sharedInstance].account.loginAccounts
+                                 studentId:self.studentId];
+    }
 
-    if ([self.followmodel.status isEqualToString:@"2"] ||[self.followmodel.status isEqualToString:@"3"]) {
-        //已经总结 或者签到
+    if ([self.followmodel.status isEqualToString:@"3"]) {
+        //已经离校
         self.type = Change;
         self.status = @"3";
         self.statusName =@"离校";
