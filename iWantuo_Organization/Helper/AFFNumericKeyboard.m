@@ -107,7 +107,7 @@
 
     if (num<10)
     {
-        UILabel *labelNum = [[UILabel alloc] initWithFrame:CGRectMake(0, 5, frameW*kF, 28)];
+        UILabel *labelNum = [[UILabel alloc] initWithFrame:CGRectMake(0, 5, frameW, 28)];
         labelNum.text = [NSString stringWithFormat:@"%ld",(long)num];
         labelNum.textColor = [UIColor blackColor];
         labelNum.textAlignment = NSTextAlignmentCenter;
@@ -116,7 +116,7 @@
         
         if (num != 1)
         {
-            UILabel *labelLetter = [[UILabel alloc] initWithFrame:CGRectMake(0, 33, frameW*kF, 16)];
+            UILabel *labelLetter = [[UILabel alloc] initWithFrame:CGRectMake(0, 33, frameW, 16)];
             labelLetter.text = [arrLetter objectAtIndex:num-2];
             labelLetter.textColor = [UIColor blackColor];
             labelLetter.textAlignment = NSTextAlignmentCenter;
@@ -126,7 +126,7 @@
     }
     else if (num == 11)
     {
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 15, frameW*kF, 28)];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 15, frameW, 28)];
         label.text = @"0";
         label.textColor = [UIColor blackColor];
         label.textAlignment = NSTextAlignmentCenter;
@@ -135,7 +135,7 @@
     }
     else if (num == 10)
     {
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 15, frameW*kF, 28)];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 15, frameW, 28)];
         label.text = @".";
         label.textColor = [UIColor blackColor];
         label.textAlignment = NSTextAlignmentCenter;
@@ -143,7 +143,7 @@
     }
     else
     {
-        UIImageView *arrow = [[UIImageView alloc] initWithFrame:CGRectMake(42, 19, 22, 17)];
+        UIImageView *arrow = [[UIImageView alloc] initWithFrame:CGRectMake(42*kF, 19, 22, 17)];
         arrow.image = [UIImage imageNamed:@"arrowInKeyboard"];
         [button addSubview:arrow];
         
