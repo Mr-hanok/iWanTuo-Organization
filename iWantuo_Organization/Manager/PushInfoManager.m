@@ -71,8 +71,15 @@ static PushInfoManager *sharedInstance;
             [[AccountManager sharedInstance] saveAccountInfoToDisk];
             kRootViewController = [SystemHandler rootViewController];
         }];
+    }else if ([[dic objectForKey:@"type"] integerValue] == 4) {
+        //踢人
+        [AlertViewManager showAlertViewSuccessedMessage:@"您的账号已失效." handlerBlock:^{
+            //保存用户信息
+            [AccountManager sharedInstance].account.isLogin = @"no";
+            [[AccountManager sharedInstance] saveAccountInfoToDisk];
+            kRootViewController = [SystemHandler rootViewController];
+        }];
     }
-
 }
 
 // 不在线收到信息
@@ -108,6 +115,14 @@ static PushInfoManager *sharedInstance;
         kRootViewController = [SystemHandler rootViewController];
         [HUDManager showWarningWithText:@"您的账号已在别处登录."];
 
+    } else if ([[dic objectForKey:@"type"] integerValue] == 4) {
+        //踢人
+        [AlertViewManager showAlertViewSuccessedMessage:@"您的账号已失效." handlerBlock:^{
+            //保存用户信息
+            [AccountManager sharedInstance].account.isLogin = @"no";
+            [[AccountManager sharedInstance] saveAccountInfoToDisk];
+            kRootViewController = [SystemHandler rootViewController];
+        }];
     }
 }
 

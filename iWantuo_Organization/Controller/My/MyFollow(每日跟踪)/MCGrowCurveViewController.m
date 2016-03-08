@@ -124,6 +124,7 @@
             [self.growArray removeAllObjects];
             self.overRun = [ValueUtils stringFromObject:[sr.dic objectForKey:@"average"]];
             
+            self.overLabel.font = [UIFont systemFontOfSize:16];
             NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"您的孩子打败了'爱晚托'同级%@%%的同学!", self.overRun]];
             [str addAttribute:NSForegroundColorAttributeName value:kNavigationColor range:NSMakeRange(14,self.overRun.length + 1)];
             [str addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Helvetica-Bold" size:20] range:NSMakeRange(14,self.overRun.length + 1)];
