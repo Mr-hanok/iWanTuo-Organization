@@ -32,5 +32,5 @@
 
 - (void)saveAccountInfoToDisk;
 - (void)loadAccountInfoFromDisk;
-
+- (void)checkLoginStatus;
 @end

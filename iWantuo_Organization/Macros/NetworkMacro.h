@@ -42,7 +42,7 @@
 #define SendPhoneMessageToFind      @"SendSMS/phoneSendSMSToFind"//发送验证码找回密码
 #define UploadImageApi              @"FileUpload/phoneFilesUpload"//上传图片头像
 #define CityAreaList                @"syscode/phoneQueryByList"//城市地区列表
-
+#define CheckLoginAccount           @"login/phoneVerifyLogin"//检测账号是否禁用, 是否被踢出.
 
 
 //my

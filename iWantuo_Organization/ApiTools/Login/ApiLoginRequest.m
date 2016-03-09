@@ -8,6 +8,7 @@
 
 #import "ApiLoginRequest.h"
 #import "APNsManager.h"
+#import "UUIDManager.h"
 
 @implementation ApiLoginRequest
 - (ApiAccessType)accessType
@@ -25,6 +26,8 @@
     [self.params setValue:loginAccount forKey:@"loginAccounts"];
     [self.params setValue:Password forKey:@"password"];
     [self.params setValue:[APNsManager sharedInstance].deviceToken forKey:@"deviceToken"];
+    NSString *uuid = [UUIDManager deviceUUID];
+    [self.params setValue:uuid forKey:@"phoneUuid"];
     //[self.params setValue:loginAccount forKey:@"deviceToken"];
     // [self.params setValue:[AccountManager sharedInstance].uuid forKey:@"uuId"];
 }

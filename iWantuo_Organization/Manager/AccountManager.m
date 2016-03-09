@@ -8,8 +8,13 @@
 
 #import "AccountManager.h"
 #import "ApiRequest.h"
+#import "ApiCheckLoginAccount.h"
+#import "SystemHandler.h"
 
-@interface AccountManager ()
+
+@interface AccountManager ()<APIRequestDelegate>
+
+@property (nonatomic, strong) ApiCheckLoginAccount *ApiCheckLogin;
 
 
 @end
@@ -29,6 +34,7 @@ static AccountManager *sharedInstance;
         sharedInstance.locationX = @"";
         sharedInstance.locationY = @"";
         sharedInstance.addressArray = [NSMutableArray array];
+        sharedInstance.ApiCheckLogin = [[ApiCheckLoginAccount alloc] initWithDelegate:sharedInstance];
         [sharedInstance loadAccountInfoFromDisk];
         
     });
@@ -165,6 +171,41 @@ static AccountManager *sharedInstance;
 
 - (BOOL)isLogin {
     return [self.account.isLogin isEqualToString:@"yes"];
+}
+#pragma mark - 检测登录状态
+- (void)checkLoginStatus {
+    
+    //判断是老师还是机构
+    NSString *loginAccounts;
+    if ([[AccountManager sharedInstance].account.accountsType isEqualToString:@"3"]) {//老师
+        loginAccounts = [AccountManager sharedInstance].account.organizationAccounts;
+        
+    }else {//机构
+        loginAccounts = [AccountManager sharedInstance].account.loginAccounts;
+    }
+    [self.ApiCheckLogin setApiParamsWithLoginAccounts:loginAccounts];
+    [APIClient execute:self.ApiCheckLogin];
+}
+#pragma mark - APIRequestDelegate
+- (void)serverApi_RequestFailed:(APIRequest *)api error:(NSError *)error {
+    
+    //    [HUDManager showWarningWithText:kDefaultNetWorkErrorString];
+}
+- (void)serverApi_FinishedSuccessed:(APIRequest *)api result:(APIResult *)sr {
+    
+
+    
+}
+- (void)serverApi_FinishedFailed:(APIRequest *)api result:(APIResult *)sr {
+    if (self.isLogin) {
+        // 退出
+        [AlertViewManager showAlertViewWithMessage:sr.msg];
+        [AccountManager sharedInstance].account.isLogin = @"no";
+        [[AccountManager sharedInstance] saveAccountInfoToDisk];
+        kRootViewController = [SystemHandler rootViewController];
+        
+    }
+    //    [AlertViewManager showAlertViewWithMessage:sr.msg];
 }
 
 

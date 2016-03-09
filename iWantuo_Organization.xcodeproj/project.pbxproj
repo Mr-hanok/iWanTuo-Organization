@@ -286,6 +286,10 @@
 		BEED9EA21C7315E80081BDBA /* ApiStudentListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BEED9EA11C7315E80081BDBA /* ApiStudentListRequest.m */; };
 		BEED9EA61C7320530081BDBA /* StudentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BEED9EA41C7320530081BDBA /* StudentCell.m */; };
 		BEED9EA71C7320530081BDBA /* StudentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEED9EA51C7320530081BDBA /* StudentCell.xib */; };
+		BEF29E5B1C8FC69D00A024C2 /* ApiCheckLoginAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF29E5A1C8FC69D00A024C2 /* ApiCheckLoginAccount.m */; };
+		BEF29E611C8FC89100A024C2 /* UUIDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF29E601C8FC89100A024C2 /* UUIDManager.m */; };
+		BEF29E901C8FCA4900A024C2 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF29E8D1C8FCA4900A024C2 /* SSKeychain.m */; };
+		BEF29E911C8FCA4900A024C2 /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF29E8F1C8FCA4900A024C2 /* SSKeychainQuery.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -785,6 +789,14 @@
 		BEED9EA31C7320530081BDBA /* StudentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentCell.h; sourceTree = "<group>"; };
 		BEED9EA41C7320530081BDBA /* StudentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentCell.m; sourceTree = "<group>"; };
 		BEED9EA51C7320530081BDBA /* StudentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StudentCell.xib; sourceTree = "<group>"; };
+		BEF29E591C8FC69D00A024C2 /* ApiCheckLoginAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiCheckLoginAccount.h; sourceTree = "<group>"; };
+		BEF29E5A1C8FC69D00A024C2 /* ApiCheckLoginAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiCheckLoginAccount.m; sourceTree = "<group>"; };
+		BEF29E5F1C8FC89100A024C2 /* UUIDManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UUIDManager.h; sourceTree = "<group>"; };
+		BEF29E601C8FC89100A024C2 /* UUIDManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UUIDManager.m; sourceTree = "<group>"; };
+		BEF29E8C1C8FCA4900A024C2 /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
+		BEF29E8D1C8FCA4900A024C2 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
+		BEF29E8E1C8FCA4900A024C2 /* SSKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychainQuery.h; sourceTree = "<group>"; };
+		BEF29E8F1C8FCA4900A024C2 /* SSKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychainQuery.m; sourceTree = "<group>"; };
 		E11EE862B914DC8D84148A51 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1285,6 +1297,8 @@
 				BED0C4EE1C5EF7F2000A75B3 /* ApiSubmitCommentRequest.m */,
 				37D724FF1C4F78AF0055721B /* ApiAddressListRequest.h */,
 				37D725001C4F78AF0055721B /* ApiAddressListRequest.m */,
+				BEF29E591C8FC69D00A024C2 /* ApiCheckLoginAccount.h */,
+				BEF29E5A1C8FC69D00A024C2 /* ApiCheckLoginAccount.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1599,6 +1613,8 @@
 				63B1EFC21C743A5900137B28 /* APNsManager.m */,
 				63B1EFC41C744B4E00137B28 /* AppDeviceManager.h */,
 				63B1EFC51C744B4E00137B28 /* AppDeviceManager.m */,
+				BEF29E5F1C8FC89100A024C2 /* UUIDManager.h */,
+				BEF29E601C8FC89100A024C2 /* UUIDManager.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -1606,6 +1622,7 @@
 		BE25EBC41C44FDFD00068309 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				BEF29E8B1C8FCA4900A024C2 /* SSKeychain */,
 				BE2DEF7E1C8D5A3500FD072F /* MJPhotoBrowser */,
 				BE342F5C1C7BF5F6005EF386 /* UUChart */,
 				BED0C5441C5EFCB3000A75B3 /* BaiduMap_IOSSDK_v2.9.1_Lib */,
@@ -1962,6 +1979,17 @@
 			path = GtSdkLib1.3.2;
 			sourceTree = "<group>";
 		};
+		BEF29E8B1C8FCA4900A024C2 /* SSKeychain */ = {
+			isa = PBXGroup;
+			children = (
+				BEF29E8C1C8FCA4900A024C2 /* SSKeychain.h */,
+				BEF29E8D1C8FCA4900A024C2 /* SSKeychain.m */,
+				BEF29E8E1C8FCA4900A024C2 /* SSKeychainQuery.h */,
+				BEF29E8F1C8FCA4900A024C2 /* SSKeychainQuery.m */,
+			);
+			path = SSKeychain;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2281,6 +2309,7 @@
 				3794641E1C55EB7100368B3A /* ApiFollowCheckRequest.m in Sources */,
 				BE25EB6F1C44FD8500068309 /* APIResult.m in Sources */,
 				37033E4A1C4CB7EC009F27DB /* SigningViewController.m in Sources */,
+				BEF29E5B1C8FC69D00A024C2 /* ApiCheckLoginAccount.m in Sources */,
 				BE9113D71C76DF34006E2A0A /* ApiActiveRequest.m in Sources */,
 				BED0C4DD1C5EF7B7000A75B3 /* OrganizationCell.m in Sources */,
 				BE25EBB11C44FDB300068309 /* TimerHelper.m in Sources */,
@@ -2314,6 +2343,7 @@
 				37033E461C4C914C009F27DB /* JKCountDownButton.m in Sources */,
 				37AE237F1C5490C8006CFCCC /* FollowSummaryController.m in Sources */,
 				BED0C4D21C5EF77F000A75B3 /* OrganizationModel.m in Sources */,
+				BEF29E611C8FC89100A024C2 /* UUIDManager.m in Sources */,
 				37BE7E631C58C7E4000F7CF8 /* ApiOrganizationInfoRequest.m in Sources */,
 				BE2DEF941C8D5A3500FD072F /* MJPhotoView.m in Sources */,
 				375001B51C50FD0D00B14021 /* ClassDetailViewController.m in Sources */,
@@ -2347,6 +2377,7 @@
 				37033E371C4C9033009F27DB /* RegisterViewController.m in Sources */,
 				BED0C49B1C5EF6FF000A75B3 /* DisSearchViewController.m in Sources */,
 				BEED9EA61C7320530081BDBA /* StudentCell.m in Sources */,
+				BEF29E901C8FCA4900A024C2 /* SSKeychain.m in Sources */,
 				37D724EE1C4F27040055721B /* UploadApiRequest.m in Sources */,
 				BE342F5A1C7BF5D9005EF386 /* MCGrowCurveViewController.m in Sources */,
 				BE25EB341C44FC5F00068309 /* main.m in Sources */,
@@ -2392,6 +2423,7 @@
 				BE25EB9B1C44FD9200068309 /* NSString+Device.m in Sources */,
 				37E1DDE51C4DDD3E00245BE6 /* MyClassViewController.m in Sources */,
 				63B2E7DC1C59E80D0038EEF3 /* ChangePasswordController.m in Sources */,
+				BEF29E911C8FCA4900A024C2 /* SSKeychainQuery.m in Sources */,
 				BE25EBFA1C44FDFE00068309 /* TPKeyboardAvoidingTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2556,7 +2588,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.uniomx.iwantuoOrganization;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1bdafd56-043f-4b22-b39c-397714bdc9ee";
+				PROVISIONING_PROFILE = "bc0d40b3-571f-4333-93da-e9b2d500a99d";
 			};
 			name = Debug;
 		};
@@ -2592,7 +2624,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.uniomx.iwantuoOrganization;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1bdafd56-043f-4b22-b39c-397714bdc9ee";
+				PROVISIONING_PROFILE = "bc0d40b3-571f-4333-93da-e9b2d500a99d";
 			};
 			name = Release;
 		};
