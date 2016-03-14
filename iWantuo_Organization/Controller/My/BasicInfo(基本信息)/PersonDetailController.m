@@ -204,15 +204,17 @@
     return YES;
 }
 -(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
-//    if (textView.text.length==0  ||[textView.text isEqualToString:@" "]) {
-//        self.describeTF.hidden = NO;
-//        self.describeTV.text = nil;
-//    }else{
-//        self.describeTF.hidden = YES;
-//        }
+    if (text.length == 0) return YES;
+    NSInteger existedLength = textView.text.length;
+    NSInteger selectedLength = range.length;
+    NSInteger replaceLength = text.length;
+    //大于11位 不能在输入
+    if (existedLength - selectedLength + replaceLength > 500) {
+        return NO;
+    }
+    
     return YES;
 }
-
 #pragma mark - event response
 /**区域选择按钮*/
 - (IBAction)areaBtnAction:(UIButton *)sender {
@@ -245,7 +247,10 @@
     if ([self.describeTV.text isEqualToString:@""]) {
         self.describeTV.text = @" ";
     }
-    
+    if (self.describeTV.text.length>500) {
+        [HUDManager showWarningWithText:@"请输入500字以内的机构介绍"];
+        return;
+    }
     if ([self.shortNameTF.text containsString:[NSString specialBlankCharacter]] || [self.nameTF.text containsString:[NSString specialBlankCharacter]] || [self.tagTF.text containsString:[NSString specialBlankCharacter]] || [self.adressTF.text containsString:[NSString specialBlankCharacter]] || [self.describeTV.text containsString:[NSString specialBlankCharacter]]) {
         [HUDManager showWarningWithText:@"暂不支持系统表情哦~"
          ];

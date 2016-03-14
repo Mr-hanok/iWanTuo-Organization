@@ -164,6 +164,13 @@
         } else {
             self.emptyImageView.hidden = NO;
         }
+        if ([self.sortType isEqualToString:@"2"]) {
+            [self.dataArray sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+                OrganizationModel *obj3 = obj1;
+                OrganizationModel *obj4 = obj2;
+                return  [obj4.evaluate compare:obj3.evaluate];
+            }];
+        }
         [self.tableView reloadData];
     } else {
         [HUDManager showWarningWithText:sr.msg];
@@ -315,17 +322,17 @@
 - (void)loadingOrganizationData{
     if (self.originType == OriginAddress) {
         //地址搜索
-        [self.api setApiParamsWithLocation:[AccountManager sharedInstance].locationId bairro:self.area organization:@"" page:[NSString stringWithFormat:@"%@", @(self.api.requestCurrentPage)] locationX:self.locationX locationY:self.locationY distance:self.distance Type:self.sortType rows:kRequestDataRows];
+        [self.api setApiParamsWithLocation:[AccountManager sharedInstance].locationId bairro:self.area organization:@"" page:[NSString stringWithFormat:@"%@", @(self.api.requestCurrentPage)] locationX:self.locationX locationY:self.locationY distance:self.distance Type:@"1" rows:kRequestDataRows];
         
     } else if (self.originType == OriginOrganization) {
         
         //机构搜索
-        [self.api setApiParamsWithLocation:[AccountManager sharedInstance].locationId bairro:self.area organization:self.searchKey page:[NSString stringWithFormat:@"%@", @(self.api.requestCurrentPage)] locationX:[AccountManager sharedInstance].locationX locationY:[AccountManager sharedInstance].locationY distance:self.distance Type:self.sortType rows:kRequestDataRows];
+        [self.api setApiParamsWithLocation:[AccountManager sharedInstance].locationId bairro:self.area organization:self.searchKey page:[NSString stringWithFormat:@"%@", @(self.api.requestCurrentPage)] locationX:[AccountManager sharedInstance].locationX locationY:[AccountManager sharedInstance].locationY distance:self.distance Type:@"1" rows:kRequestDataRows];
         
     } else if (self.originType == OriginSchool) {
         
         //学校搜索
-        [self.api setApiParamsWithLocation:[AccountManager sharedInstance].locationId bairro:self.area organization:@"" page:[NSString stringWithFormat:@"%@", @(self.api.requestCurrentPage)] locationX:self.locationX locationY:self.locationY distance:self.distance Type:self.sortType rows:kRequestDataRows];
+        [self.api setApiParamsWithLocation:[AccountManager sharedInstance].locationId bairro:self.area organization:@"" page:[NSString stringWithFormat:@"%@", @(self.api.requestCurrentPage)] locationX:self.locationX locationY:self.locationY distance:self.distance Type:@"1" rows:kRequestDataRows];
         
     }
     [APIClient execute:self.api];

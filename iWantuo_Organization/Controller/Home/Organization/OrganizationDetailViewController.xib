@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -63,7 +63,7 @@
                                                 </mask>
                                             </variation>
                                         </label>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="本机构提供晚托、寒暑托服务，以培养孩子良好的学习习惯，生活习惯及综合能力为理念，以一切为了孩子为宗旨；让您的孩子爱上学习、让家长工作无忧。" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HrI-5t-AHc">
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="本机构提供晚托、寒暑托服务，以培养孩子良好的学习习惯，生活习惯及综合能力为理念，以一切为了孩子为宗旨；让您的孩子爱上学习、让家长工作无忧。" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HrI-5t-AHc">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -78,12 +78,13 @@
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
                                                 <mask key="constraints">
-                                                    <include reference="g9b-BN-ZmI"/>
+                                                    <exclude reference="g9b-BN-ZmI"/>
                                                 </mask>
                                             </variation>
                                         </textView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="HrI-5t-AHc" secondAttribute="bottom" constant="20" id="GOI-1P-YfA"/>
                                         <constraint firstItem="HrI-5t-AHc" firstAttribute="top" secondItem="B8x-OM-mmQ" secondAttribute="bottom" constant="10" id="UnC-TL-vQy"/>
                                         <constraint firstItem="B8x-OM-mmQ" firstAttribute="centerX" secondItem="ywx-ki-zkE" secondAttribute="centerX" id="Vcg-vb-lCa"/>
                                         <constraint firstAttribute="trailing" secondItem="HrI-5t-AHc" secondAttribute="trailing" constant="20" id="Wic-mj-c9k"/>
@@ -98,11 +99,12 @@
                                         </mask>
                                         <mask key="constraints">
                                             <exclude reference="peV-3h-XZQ"/>
-                                            <exclude reference="Vcg-vb-lCa"/>
-                                            <exclude reference="xg1-LK-1MC"/>
+                                            <exclude reference="GOI-1P-YfA"/>
                                             <exclude reference="UnC-TL-vQy"/>
                                             <exclude reference="Wic-mj-c9k"/>
                                             <exclude reference="l0i-bQ-SdE"/>
+                                            <exclude reference="Vcg-vb-lCa"/>
+                                            <exclude reference="xg1-LK-1MC"/>
                                         </mask>
                                     </variation>
                                     <variation key="heightClass=regular-widthClass=compact">
@@ -112,11 +114,12 @@
                                         </mask>
                                         <mask key="constraints">
                                             <exclude reference="peV-3h-XZQ"/>
-                                            <include reference="Vcg-vb-lCa"/>
-                                            <include reference="xg1-LK-1MC"/>
+                                            <include reference="GOI-1P-YfA"/>
                                             <include reference="UnC-TL-vQy"/>
                                             <include reference="Wic-mj-c9k"/>
                                             <include reference="l0i-bQ-SdE"/>
+                                            <include reference="Vcg-vb-lCa"/>
+                                            <include reference="xg1-LK-1MC"/>
                                         </mask>
                                     </variation>
                                 </view>
@@ -927,7 +930,7 @@
                             <constraints>
                                 <constraint firstItem="ywx-ki-zkE" firstAttribute="top" secondItem="KtK-qP-4EL" secondAttribute="bottom" id="6Uq-sA-QFH"/>
                                 <constraint firstAttribute="trailing" secondItem="KtK-qP-4EL" secondAttribute="trailing" id="BMt-v2-688"/>
-                                <constraint firstAttribute="height" constant="600" id="Rkh-v4-INM"/>
+                                <constraint firstAttribute="height" constant="667" id="Rkh-v4-INM"/>
                                 <constraint firstAttribute="width" constant="320" id="T9B-aJ-gSW"/>
                                 <constraint firstItem="ywx-ki-zkE" firstAttribute="leading" secondItem="IdG-3w-26G" secondAttribute="leading" id="TTl-iZ-8fj"/>
                                 <constraint firstItem="KtK-qP-4EL" firstAttribute="leading" secondItem="IdG-3w-26G" secondAttribute="leading" id="cfB-tz-Ys1"/>
