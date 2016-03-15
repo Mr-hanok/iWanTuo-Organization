@@ -228,6 +228,7 @@
             NSString *strOrigin = _currentAreaArr[indexPath.row];
             //去掉米字
             self.distance = [strOrigin substringToIndex:strOrigin.length - 1];
+            self.distance = [NSString stringWithFormat:@"%@",@(self.distance.intValue+50)];
             self.area = @"";
 
         } else if (_index == 1) {
