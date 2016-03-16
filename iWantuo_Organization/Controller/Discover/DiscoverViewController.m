@@ -129,6 +129,10 @@
     if ([view isKindOfClass:[BMKAnnotationView class]]){
         OrganizationDetailViewController *detailVC = [[OrganizationDetailViewController alloc] init];
         detailVC.loginAccounts = [NSString stringWithFormat:@"%@", @(view.tag)];
+        NSString *str = [NSString stringWithFormat:@"%ld",view.tag];
+        if ([str hasPrefix:@"21"]||[str hasPrefix:@"400"]) {
+            detailVC.loginAccounts = [NSString stringWithFormat:@"0%@", @(view.tag)];
+        }
         detailVC.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:detailVC animated:YES];
         return;

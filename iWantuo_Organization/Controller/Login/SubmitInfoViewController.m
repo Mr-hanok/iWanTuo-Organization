@@ -119,9 +119,8 @@
     
     if (api == self.apiRegister) {//注册
         
-        [HUDManager showWarningWithText:@"感谢您的申请，我们会在24小时内为您开通账号"];
-//        LoginViewController *vc = [[LoginViewController alloc]init];
-//        [self.navigationController pushViewController:vc animated:YES];
+       [AlertViewManager showAlertViewWithMessage:@"感谢您的申请，我们会在24小时内为您开通账号"];
+
         [self.navigationController popToRootViewControllerAnimated:YES];
     }
 }

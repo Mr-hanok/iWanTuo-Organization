@@ -30,7 +30,7 @@
     if ([model.distance integerValue] < 1000) {
         self.distanceLabel.text = [NSString stringWithFormat:@"%@m", @([model.distance integerValue])];
     } else {
-        self.distanceLabel.text = [NSString stringWithFormat:@"%@km", @([model.distance integerValue] / 1000)];
+        self.distanceLabel.text = [NSString stringWithFormat:@"%.1fkm",[model.distance integerValue] / 1000.0];
     }
     
     self.organization_nameLabel.text = model.organization;
