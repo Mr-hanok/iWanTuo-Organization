@@ -19,14 +19,14 @@
 
 
 /// 个推开发者网站中申请App时注册的AppId、AppKey、AppSecret
-#define kGtAppId           @"mdQNCtTzlb70jzCqQI4u43"
-#define kGtAppKey          @"JYd49ugwx762hImEBIdwp1"
-#define kGtAppSecret       @"C88yQCw8SF8bgTVekaVVu1"
+//#define kGtAppId           @"mdQNCtTzlb70jzCqQI4u43"
+//#define kGtAppKey          @"JYd49ugwx762hImEBIdwp1"
+//#define kGtAppSecret       @"C88yQCw8SF8bgTVekaVVu1"
 
 //appstore上线更换这个
-//#define kGtAppId           @"53NxC9HIv27jt0EH4LCUm"
-//#define kGtAppKey          @"TqdTlxdaAg5CLvJ5a4rhq"
-//#define kGtAppSecret       @"NvIQ6fr9Uv9JcorMQZcHg"
+#define kGtAppId           @"53NxC9HIv27jt0EH4LCUm"
+#define kGtAppKey          @"TqdTlxdaAg5CLvJ5a4rhq"
+#define kGtAppSecret       @"NvIQ6fr9Uv9JcorMQZcHg"
 
 
 @interface AppDelegate ()<GeTuiSdkDelegate>

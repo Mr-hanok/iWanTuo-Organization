@@ -2060,7 +2060,6 @@
 				TargetAttributes = {
 					BE25EB2E1C44FC5F00068309 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 9W9VC28A53;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -2512,7 +2511,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "1bdafd56-043f-4b22-b39c-397714bdc9ee";
+				PROVISIONING_PROFILE = "bc0d40b3-571f-4333-93da-e9b2d500a99d";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -2550,7 +2549,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "1bdafd56-043f-4b22-b39c-397714bdc9ee";
+				PROVISIONING_PROFILE = "bc0d40b3-571f-4333-93da-e9b2d500a99d";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -2586,9 +2585,9 @@
 					"$(PROJECT_DIR)/iWantuo_Organization/Vendors/GtSdkLib1.3.2",
 					"$(PROJECT_DIR)/iWantuo_Organization/Vendors/ShareSDK/Support/PlatformSDK/WeChatSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.uniomx.iwantuoOrganization;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yuntai.iWantuoOrganization;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9b652f03-a8a1-4c26-9028-ed55b9972a97";
+				PROVISIONING_PROFILE = "bc0d40b3-571f-4333-93da-e9b2d500a99d";
 			};
 			name = Debug;
 		};
@@ -2622,9 +2621,9 @@
 					"$(PROJECT_DIR)/iWantuo_Organization/Vendors/GtSdkLib1.3.2",
 					"$(PROJECT_DIR)/iWantuo_Organization/Vendors/ShareSDK/Support/PlatformSDK/WeChatSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.uniomx.iwantuoOrganization;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yuntai.iWantuoOrganization;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9b652f03-a8a1-4c26-9028-ed55b9972a97";
+				PROVISIONING_PROFILE = "bc0d40b3-571f-4333-93da-e9b2d500a99d";
 			};
 			name = Release;
 		};
