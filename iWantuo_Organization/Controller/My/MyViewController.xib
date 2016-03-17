@@ -17,12 +17,17 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cmL-mo-kuA">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="407"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cmL-mo-kuA">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="407" id="Zb6-io-FbN"/>
                     </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="Zb6-io-FbN"/>
+                        </mask>
+                    </variation>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="qx9-hT-k3S"/>
                         <outlet property="delegate" destination="-1" id="aXI-C8-zX7"/>
@@ -43,13 +48,20 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="cmL-mo-kuA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="0CP-wa-ChJ"/>
+                <constraint firstAttribute="bottom" secondItem="cmL-mo-kuA" secondAttribute="bottom" id="0wd-S9-8s2"/>
                 <constraint firstAttribute="trailing" secondItem="cmL-mo-kuA" secondAttribute="trailing" id="7rq-AT-C8y"/>
                 <constraint firstAttribute="bottom" secondItem="gLL-zN-tv5" secondAttribute="bottom" constant="55" id="O3f-Ci-dNJ"/>
                 <constraint firstItem="gLL-zN-tv5" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="QZm-BT-kwg"/>
+                <constraint firstItem="gLL-zN-tv5" firstAttribute="top" secondItem="cmL-mo-kuA" secondAttribute="bottom" id="q8U-dg-Enk"/>
                 <constraint firstItem="cmL-mo-kuA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="w9K-zU-apb"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-            <point key="canvasLocation" x="216.5" y="250.5"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="q8U-dg-Enk"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="255.5" y="229.5"/>
         </view>
     </objects>
     <resources>
