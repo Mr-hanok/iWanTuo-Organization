@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface ValueUtils : NSObject
-
+/**非空判断*/
 + (NSString *)stringFromObject:(id)obj;
 + (NSNumber *)numberFromObject:(id)obj;
 
