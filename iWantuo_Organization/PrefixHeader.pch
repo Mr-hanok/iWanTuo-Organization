@@ -1,0 +1,45 @@
+//
+//  PrefixHeader.pch
+//  iWantuo_Organization
+//
+//  Created by 月 吴 on 16/1/12.
+//  Copyright © 2016年 月 吴. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "AppMacro.h"
+#import "ValueUtils.h"
+#import "AlertViewManager.h"
+#import "HUDManager.h"
+#import "UIColor+NSString.h"
+#import "BaseViewController.h"
+#import "APIClient.h"
+#import "MobClick.h"
+#import "NSString+Verify.h"
+#import "CameraTakeMamanger.h"
+#import "UploadManager.h"
+#import "AccountManager.h"
+#import "UIView+Frame.h"
+#import "PageManager.h"
+#import "NSString+Emoji.h"
+
+
+#pragma mark - baidu map
+#import <BaiduMapAPI_Base/BMKBaseComponent.h>//引入base相关所有的头文件
+#import <BaiduMapAPI_Map/BMKMapComponent.h>//引入地图功能所有的头文件
+#import <BaiduMapAPI_Location/BMKLocationComponent.h>//引入定位功能所有的头文件
+#import <BaiduMapAPI_Map/BMKMapView.h>//只引入所需的单个头文件
+#import <BaiduMapAPI_Search/BMKSearchComponent.h>//引入检索功能所有的头文件
+
+
+#pragma mark - cocoapods
+#import <BlocksKit/BlocksKit.h>
+#import <BlocksKit/BlocksKit+UIKit.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+
+#endif /* PrefixHeader_pch */

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StudentChoseCell" id="KGk-i7-Jjw" customClass="StudentChoseCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="学生姓名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIk-wd-1om">
+                        <rect key="frame" x="20" y="0.0" width="280" height="43"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cYd-9A-lIE">
+                        <rect key="frame" x="0.0" y="43" width="320" height="1"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="moT-6F-gtr"/>
+                        </constraints>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xkL-A0-6uK">
+                        <rect key="frame" x="168" y="5.5" width="66" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="66" id="Vwa-Xc-64j"/>
+                        </constraints>
+                        <state key="normal" title="Button" image="MC_Star"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Vwa-Xc-64j"/>
+                            </mask>
+                        </variation>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nu1-gy-CbW">
+                        <rect key="frame" x="244" y="5.5" width="66" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="66" id="8k1-sT-eSW"/>
+                        </constraints>
+                        <state key="normal" title="Button" image="MC_line"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="cYd-9A-lIE" secondAttribute="trailing" id="6UD-CK-8sT"/>
+                    <constraint firstItem="fIk-wd-1om" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="8zD-25-nop"/>
+                    <constraint firstItem="cYd-9A-lIE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="HKT-Ng-vLf"/>
+                    <constraint firstItem="nu1-gy-CbW" firstAttribute="leading" secondItem="xkL-A0-6uK" secondAttribute="trailing" constant="10" id="NLa-zH-RLR"/>
+                    <constraint firstAttribute="trailing" secondItem="fIk-wd-1om" secondAttribute="trailing" constant="20" id="SC2-19-ndu"/>
+                    <constraint firstAttribute="trailing" secondItem="nu1-gy-CbW" secondAttribute="trailing" constant="10" id="Sxp-Ef-GOE"/>
+                    <constraint firstItem="xkL-A0-6uK" firstAttribute="width" secondItem="nu1-gy-CbW" secondAttribute="width" id="Tg1-2p-ZOb"/>
+                    <constraint firstItem="nu1-gy-CbW" firstAttribute="centerY" secondItem="fIk-wd-1om" secondAttribute="centerY" id="Ylx-YV-sZB"/>
+                    <constraint firstAttribute="bottom" secondItem="cYd-9A-lIE" secondAttribute="bottom" id="aCu-iw-iS6"/>
+                    <constraint firstItem="xkL-A0-6uK" firstAttribute="centerY" secondItem="fIk-wd-1om" secondAttribute="centerY" id="hO1-JI-OCD"/>
+                    <constraint firstItem="cYd-9A-lIE" firstAttribute="top" secondItem="fIk-wd-1om" secondAttribute="bottom" id="nx4-em-pjU"/>
+                    <constraint firstItem="fIk-wd-1om" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="t6z-O0-6y6"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="GCCurveBtn" destination="nu1-gy-CbW" id="rYz-1b-aaR"/>
+                <outlet property="GCExpressionBtn" destination="xkL-A0-6uK" id="BbQ-tA-njJ"/>
+                <outlet property="nameLabel" destination="fIk-wd-1om" id="bER-EB-tTn"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="MC_Star" width="82" height="32"/>
+        <image name="MC_line" width="82" height="32"/>
+    </resources>
+</document>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ClassDetailViewController">
+            <connections>
+                <outlet property="emptyImageView" destination="Mgs-og-WKh" id="neo-9w-5FC"/>
+                <outlet property="tableview" destination="GjI-FM-sOc" id="a7z-fl-Npw"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GjI-FM-sOc">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="nPl-sO-6Ug"/>
+                        <outlet property="delegate" destination="-1" id="DHp-nf-vQY"/>
+                    </connections>
+                </tableView>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty" translatesAutoresizingMaskIntoConstraints="NO" id="Mgs-og-WKh">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Mgs-og-WKh" firstAttribute="centerY" secondItem="GjI-FM-sOc" secondAttribute="centerY" id="EcR-y0-Cjl"/>
+                <constraint firstItem="Mgs-og-WKh" firstAttribute="centerX" secondItem="GjI-FM-sOc" secondAttribute="centerX" id="Y8f-01-YnR"/>
+                <constraint firstAttribute="trailing" secondItem="GjI-FM-sOc" secondAttribute="trailing" id="ZEs-2O-jLR"/>
+                <constraint firstItem="GjI-FM-sOc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="nRD-8n-6nn"/>
+                <constraint firstItem="GjI-FM-sOc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="r0w-7v-itE"/>
+                <constraint firstAttribute="bottom" secondItem="GjI-FM-sOc" secondAttribute="bottom" id="wCH-kU-GiM"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="GjI-FM-sOc"/>
+                    <exclude reference="Mgs-og-WKh"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="ZEs-2O-jLR"/>
+                    <exclude reference="nRD-8n-6nn"/>
+                    <exclude reference="r0w-7v-itE"/>
+                    <exclude reference="wCH-kU-GiM"/>
+                    <exclude reference="EcR-y0-Cjl"/>
+                    <exclude reference="Y8f-01-YnR"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="GjI-FM-sOc"/>
+                    <include reference="Mgs-og-WKh"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="ZEs-2O-jLR"/>
+                    <include reference="nRD-8n-6nn"/>
+                    <include reference="r0w-7v-itE"/>
+                    <include reference="wCH-kU-GiM"/>
+                    <include reference="EcR-y0-Cjl"/>
+                    <include reference="Y8f-01-YnR"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="260" y="175"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="empty" width="158" height="134"/>
+    </resources>
+</document>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DiscoverViewController">
+            <connections>
+                <outlet property="cityNameBtn" destination="3zh-2g-TbH" id="GWn-1H-5IQ"/>
+                <outlet property="cityNameView" destination="zSw-8N-5B0" id="2G3-KV-iFs"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+        </view>
+        <view contentMode="scaleToFill" id="zSw-8N-5B0">
+            <rect key="frame" x="0.0" y="0.0" width="60" height="32"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3zh-2g-TbH">
+                    <rect key="frame" x="0.0" y="0.0" width="47" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="CfW-KG-VgK">
+                            <variation key="heightClass=regular-widthClass=compact" constant="39"/>
+                        </constraint>
+                        <constraint firstAttribute="height" constant="30" id="y8R-Xw-3mH">
+                            <variation key="heightClass=regular-widthClass=compact" constant="22"/>
+                        </constraint>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="北京">
+                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="CfW-KG-VgK"/>
+                            <exclude reference="y8R-Xw-3mH"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="CfW-KG-VgK"/>
+                            <include reference="y8R-Xw-3mH"/>
+                        </mask>
+                    </variation>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xzc-yQ-d0r">
+                    <rect key="frame" x="47" y="0.0" width="11" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="11" id="uM0-eX-SJ3"/>
+                    </constraints>
+                    <state key="normal" image="home_down"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="uM0-eX-SJ3"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="uM0-eX-SJ3"/>
+                        </mask>
+                    </variation>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Xzc-yQ-d0r" secondAttribute="trailing" constant="2" id="2LF-Tk-REN">
+                    <variation key="heightClass=regular-widthClass=compact" constant="14"/>
+                </constraint>
+                <constraint firstItem="Xzc-yQ-d0r" firstAttribute="leading" secondItem="3zh-2g-TbH" secondAttribute="trailing" constant="3" id="FiZ-OQ-W5m">
+                    <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                </constraint>
+                <constraint firstItem="Xzc-yQ-d0r" firstAttribute="centerY" secondItem="3zh-2g-TbH" secondAttribute="centerY" id="IAD-tR-gLn"/>
+                <constraint firstItem="3zh-2g-TbH" firstAttribute="leading" secondItem="zSw-8N-5B0" secondAttribute="leading" constant="8" id="PzB-qL-06d">
+                    <variation key="heightClass=regular-widthClass=compact" constant="5"/>
+                </constraint>
+                <constraint firstAttribute="trailing" secondItem="Xzc-yQ-d0r" secondAttribute="trailing" constant="4" id="Rfd-V0-GLo">
+                    <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                </constraint>
+                <constraint firstItem="3zh-2g-TbH" firstAttribute="leading" secondItem="zSw-8N-5B0" secondAttribute="leading" constant="5" id="SKW-Ve-c0e">
+                    <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                </constraint>
+                <constraint firstItem="3zh-2g-TbH" firstAttribute="centerY" secondItem="zSw-8N-5B0" secondAttribute="centerY" id="peN-ac-7VA"/>
+                <constraint firstAttribute="trailing" secondItem="Xzc-yQ-d0r" secondAttribute="trailing" constant="3" id="wxf-VI-gnz"/>
+                <constraint firstAttribute="trailing" secondItem="Xzc-yQ-d0r" secondAttribute="trailing" constant="9" id="xDh-dF-vNo"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="3zh-2g-TbH"/>
+                    <exclude reference="Xzc-yQ-d0r"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="PzB-qL-06d"/>
+                    <exclude reference="SKW-Ve-c0e"/>
+                    <exclude reference="peN-ac-7VA"/>
+                    <exclude reference="2LF-Tk-REN"/>
+                    <exclude reference="FiZ-OQ-W5m"/>
+                    <exclude reference="IAD-tR-gLn"/>
+                    <exclude reference="Rfd-V0-GLo"/>
+                    <exclude reference="wxf-VI-gnz"/>
+                    <exclude reference="xDh-dF-vNo"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="3zh-2g-TbH"/>
+                    <include reference="Xzc-yQ-d0r"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="PzB-qL-06d"/>
+                    <include reference="SKW-Ve-c0e"/>
+                    <include reference="peN-ac-7VA"/>
+                    <exclude reference="2LF-Tk-REN"/>
+                    <include reference="FiZ-OQ-W5m"/>
+                    <include reference="IAD-tR-gLn"/>
+                    <include reference="Rfd-V0-GLo"/>
+                    <exclude reference="wxf-VI-gnz"/>
+                    <exclude reference="xDh-dF-vNo"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="-184" y="-75"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="home_down" width="11" height="6"/>
+    </resources>
+</document>

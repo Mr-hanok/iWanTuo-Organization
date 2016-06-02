@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewVersionViewController">
+            <connections>
+                <outlet property="collectionView" destination="TjQ-OJ-5mX" id="ozR-hI-X7c"/>
+                <outlet property="layout" destination="qfC-XY-N9s" id="Ljo-eC-SE6"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="TjQ-OJ-5mX">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qfC-XY-N9s">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="rXO-Xi-67q"/>
+                        <outlet property="delegate" destination="-1" id="76M-Ka-Eyj"/>
+                    </connections>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="TjQ-OJ-5mX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9H5-8l-JaJ"/>
+                <constraint firstAttribute="trailing" secondItem="TjQ-OJ-5mX" secondAttribute="trailing" id="Zv9-we-7kE"/>
+                <constraint firstItem="TjQ-OJ-5mX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="i0W-Gq-U64"/>
+                <constraint firstAttribute="bottom" secondItem="TjQ-OJ-5mX" secondAttribute="bottom" id="yEE-K9-jFp"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="TjQ-OJ-5mX"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="9H5-8l-JaJ"/>
+                    <exclude reference="Zv9-we-7kE"/>
+                    <exclude reference="i0W-Gq-U64"/>
+                    <exclude reference="yEE-K9-jFp"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="TjQ-OJ-5mX"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="9H5-8l-JaJ"/>
+                    <include reference="Zv9-we-7kE"/>
+                    <include reference="i0W-Gq-U64"/>
+                    <include reference="yEE-K9-jFp"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="251" y="219"/>
+        </view>
+    </objects>
+</document>

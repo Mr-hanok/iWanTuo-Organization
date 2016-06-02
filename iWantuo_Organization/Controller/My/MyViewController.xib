@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyViewController">
+            <connections>
+                <outlet property="logoutBtn" destination="gLL-zN-tv5" id="tXi-el-YAb"/>
+                <outlet property="tableview" destination="cmL-mo-kuA" id="tN9-tA-pcM"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cmL-mo-kuA">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="407" id="Zb6-io-FbN"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="Zb6-io-FbN"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="qx9-hT-k3S"/>
+                        <outlet property="delegate" destination="-1" id="aXI-C8-zX7"/>
+                    </connections>
+                </tableView>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gLL-zN-tv5">
+                    <rect key="frame" x="56" y="577" width="263" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="bkn-Ec-5hM"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" backgroundImage="quitBtn"/>
+                    <connections>
+                        <action selector="Logout:" destination="-1" eventType="touchUpInside" id="2Uz-ob-Vbf"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="cmL-mo-kuA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="0CP-wa-ChJ"/>
+                <constraint firstAttribute="bottom" secondItem="cmL-mo-kuA" secondAttribute="bottom" id="0wd-S9-8s2"/>
+                <constraint firstAttribute="trailing" secondItem="cmL-mo-kuA" secondAttribute="trailing" id="7rq-AT-C8y"/>
+                <constraint firstAttribute="bottom" secondItem="gLL-zN-tv5" secondAttribute="bottom" constant="55" id="O3f-Ci-dNJ"/>
+                <constraint firstItem="gLL-zN-tv5" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="QZm-BT-kwg"/>
+                <constraint firstItem="gLL-zN-tv5" firstAttribute="top" secondItem="cmL-mo-kuA" secondAttribute="bottom" id="q8U-dg-Enk"/>
+                <constraint firstItem="cmL-mo-kuA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="w9K-zU-apb"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="q8U-dg-Enk"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="255.5" y="229.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="quitBtn" width="263" height="35"/>
+    </resources>
+</document>
